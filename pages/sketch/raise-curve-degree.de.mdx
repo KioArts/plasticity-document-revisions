@@ -1,0 +1,28 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+# Kurvengrad erhöhen
+
+<Reference shortcut="Shift + S" command="Grad erhöhen" button="Rechts von der Befehlsleiste" buttonIcon="button-raise-degree-curve-face" />
+
+Erhöhe den Grad einer Kurve.
+
+## Grundlegende Nutzung
+
+1. Wählen Sie eine oder mehrere Kurven aus.
+2. Drücken Sie <kbd> Shift + S </kbd> oder klicken Sie auf die Schaltfläche 'Grad der Kurve oder Fläche erhöhen' <ButtonIcon type="button-raise-degree-curve-face"/> rechts in der Befehlsleiste, um den Grad der Kurven um 1 zu erhöhen
+
+
+<VideoPlayer fileName="raise-degree-curve"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    Verwenden Sie den Befehl 'Punkte umschalten', um die Stützpunkte der ausgewählten Kurve zu verstecken.
+<VideoPlayer fileName="raise-degree-curve-hidepoints"/>
+</Callout>
+
+## Siehe auch
+- [Subdivide Curve](subdivide-curve)

@@ -1,0 +1,27 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+# 度数を上げる
+
+<Reference shortcut="Shift + S" command="Raise Degree" button="" />
+
+面やソリッドの表面を編集し、制御点(CV)を増やします。
+
+## 基本的な使い方
+
+1. 面またはソリッドを選択します。
+2. <kbd> Shift + S </kbd> を押して面またはソリッドの度数を上げます。
+3. コマンドダイアログで OK をクリックするか、右クリックして確認します。
+
+<VideoPlayer fileName="raise-surface-degree"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    表面の制御点を非表示にするには、コマンドパレットの「ポイント切り替え」を使用します。
+<VideoPlayer fileName="raise-surface-degree-hidepoints"/>
+</Callout>
+
+## 関連項目
+- [Raise Curve Degree](raise-curve-degree)

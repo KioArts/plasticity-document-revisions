@@ -1,0 +1,27 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+# Raise Degree
+
+<Reference shortcut="Shift + S" command="Raise Degree" button="" />
+
+Edit the surface of a Face or Solid by increasing surface Control Vertices(CV).
+
+## Basic Usage
+
+1. Select a Face or Solid.
+2. Raise the degree of the Face or Solid by pressing <kbd> Shift + S </kbd>.
+3. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="raise-surface-degree"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    To hide the CVs of the surface, you can use the "Toggle Points" in the command palette.
+<VideoPlayer fileName="raise-surface-degree-hidepoints"/>
+</Callout>
+
+## See also
+- [Raise Curve Degree](raise-curve-degree)

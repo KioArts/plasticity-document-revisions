@@ -1,0 +1,28 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+# Raise Curve Degree (曲線の次数を上げる)
+
+<Reference shortcut="Shift + S" command="Raise Degree" button="コマンドバー右" buttonIcon="button-raise-degree-curve-face" />
+
+Raise a Curve's degree.
+
+## 基本的な使い方
+
+1. 一つ以上の曲線を選択してください。
+2. <kbd> Shift + S </kbd> を押すか、コマンドバー右側の <ButtonIcon type="button-raise-degree-curve-face"/> ボタンをクリックして、曲線の次数を1上げます。
+
+
+<VideoPlayer fileName="raise-degree-curve"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    選択した曲線の CV を非表示にするには、「トグルポイント」コマンドを使用してください。
+<VideoPlayer fileName="raise-degree-curve-hidepoints"/>
+</Callout>
+
+## 関連項目
+- [Subdivide Curve](subdivide-curve)
