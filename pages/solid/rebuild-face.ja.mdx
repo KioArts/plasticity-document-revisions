@@ -1,0 +1,27 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+
+# 顔を再構築する
+
+<Reference shortcut="" command="Rebuild" button="Right of Command Bar" buttonIcon="button-rebuild"/>
+
+顔の表面を再構築する
+
+## 基本的な使い方
+
+1. 再構築したい顔または顔を選択します。
+2. コマンドパレットで **再構築**コマンドを使用するか、コマンドバーの右側にある再構築ボタン <ButtonIcon type="button-rebuild"/> をクリックしてください。
+3. コマンドダイアログでオプションを設定します。
+    - <Kst>コマンドダイアログ</Kst>
+          - **許容差:** 表面CVの数の許容差を指定します。値が低いと多くの表面CVが生成され、値が高いと少ないCVが生成されます。これにより表面の出力品質が決まります。
+          - **拡張:** UとVの拡張値を指定します。
+          - **縮小:** CVの投影行または列を境界エッジに縮小します。
+5. コマンドダイアログでOKをクリックするか、右クリックして確認します。
+
+<VideoPlayer fileName="rebuild-face"/>
+
+## 関連項目
+- [Rebuild](rebuild)
+- [Raise Surface Degree](raise-surface-degree)

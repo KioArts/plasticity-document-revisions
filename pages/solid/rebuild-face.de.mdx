@@ -1,0 +1,27 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+
+# Gesicht neu aufbauen
+
+<Reference shortcut="" command="Rebuild" button="Right of Command Bar" buttonIcon="button-rebuild"/>
+
+Die Oberfläche eines Gesichts rekonstruieren
+
+## Grundlegende Nutzung
+
+1. Wählen Sie ein Gesicht oder Gesichter aus, die Sie neu aufbauen möchten.
+2. Verwenden Sie den Neu aufbauen-Befehl in der Befehlsleiste oder klicken Sie auf den Neu aufbauen-Button <ButtonIcon type="button-rebuild"/> rechts in der Befehlsleiste.
+3. Stellen Sie die Optionen im Befehlsdialog ein.
+    - <Kst>Befehlsdialog</Kst>
+          - **Toleranz:** Geben Sie die Toleranz der Oberflächen-CV-Anzahl an. Ein niedrigerer Wert führt zu einer großen Anzahl von Oberflächen-CVs und ein höherer Wert führt zu einer geringeren Anzahl von CVs. Dies bestimmt die Qualität der Oberflächen-Ausgabe.
+          - **Erweitern:** Geben Sie den U- und V-Erweiterungswert an.
+          - **Verkleinern:** Verkleinern Sie die projizierten Reihen oder Spalten von CVs bis zu den Begrenzungskanten.
+5. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+
+<VideoPlayer fileName="rebuild-face"/>
+
+## Siehe auch
+- [Rebuild](rebuild)
+- [Raise Surface Degree](raise-surface-degree)
