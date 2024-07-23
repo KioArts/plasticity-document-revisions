@@ -1,0 +1,23 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+# Remove Nominal Surface
+
+<Reference shortcut="" command="Remove Nominal Surface" button="" />
+
+## Basic Usage
+A Nominal Surface is a feature that heals holes on a surface area by generating additional spans in a hidden manner when working with visible surface CVs, allowing easy direct surface editing. The Remove Nominal Surface command displays the additional hidden spans on the surface area.  
+
+1. Select a face you want to reveal hidden CVs.
+2. Use the **Remove Nominal Surface** command in the Command Palette.
+
+<VideoPlayer fileName="remove-nominal-surface"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    Use the command **Rebuild** <ButtonIcon type="button-rebuild"/> on the Right of Command Bar or in the Command Palette to rebuild the surface area and remove unnecessary spans of the surface.
+<VideoPlayer fileName="rebuild-surface-nominal-surface-example"/>
+</Callout>
