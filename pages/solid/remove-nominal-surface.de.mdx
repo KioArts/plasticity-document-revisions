@@ -1,0 +1,23 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+# Remove Nominal Surface
+
+<Reference shortcut="" command="Remove Nominal Surface" button="" />
+
+## Basic Usage
+Eine nominale Fläche ist eine Funktion, die Löcher in einer Fläche heilt, indem sie zusätzliche Spannen auf versteckte Weise erzeugt, während Sie mit sichtbaren Oberflächen-Kontrollpunkten arbeiten. Dies ermöglicht eine einfache direkte Bearbeitung der Oberfläche. Der Befehl "Nominale Fläche entfernen" zeigt die zusätzlichen versteckten Spannen auf der Fläche an.
+
+1. Wählen Sie die Fläche aus, bei der Sie die versteckten Kontrollpunkte (CVs) anzeigen möchten.
+2. Verwenden Sie den Befehl **Remove Nominal Surface** in der Befehls-Palette. 
+
+<VideoPlayer fileName="remove-nominal-surface"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    Verwenden Sie den Befehl **Rebuild** <ButtonIcon type="button-rebuild"/> rechts in der Befehlsleiste oder in der Befehls-Palette, um die Fläche neu zu erstellen und unnötige Spannen der Fläche zu entfernen.
+<VideoPlayer fileName="rebuild-surface-nominal-surface-example"/>
+</Callout>

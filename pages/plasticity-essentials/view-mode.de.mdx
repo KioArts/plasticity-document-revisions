@@ -1,3 +1,6 @@
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
 # Ansichtsmodus
 
 ## Ansichtsmodus umschalten
@@ -15,16 +18,21 @@ Der Ansichtsmodus kann durch Klicken auf die Schaltfläche oben rechts auf dem B
 ## Ansichtsmodus auswählen
 
 Wenn der Render-Modus ausgeschaltet ist, wählen Sie den Anzeigemodus durch Rechtsklick auf die Schaltfläche (4) und Auswahl aus den Miniaturansichten.
+
 ![Render-Modus Vorschau](/img/render-mode-preview.png)
 
 - (5) Standard
 - (6) Rot, glänzend
-- (7) Überprüfung der Oberflächenkontinuität, horizontal
-- (8) Überprüfung der Oberflächenkontinuität, vertikal
-- (9) Highlights überprüfen
+- (7) Schwarz, glänzend
+- (8) Weiß, Ambientbeleuchtung
+- (9) Überprüfen von Highlights
 - (10) Matt
-- (11) Silhouetten überprüfen
-- (12) Keine Schatten
+- (11) Silhouette
+- (12) Flach, keine Schattierung
+- (13) Isophote, statischer Shader zur Überprüfung der Oberflächenkontinuität (Ausrichtung des Shaders bestimmt durch die Ansichtsausrichtung zum Zeitpunkt der Aktivierung)
+- (14) Entformungsschräge, zur Analyse der Entformungsschrägen in Bezug auf die Ziehrichtung (+Z-Achse der aktiven Arbeitsebene)
+- (15) Horizontale Zebrastreifen, zur Überprüfung der Oberflächenkontinuität
+- (16) Vertikale Zebrastreifen, zur Überprüfung der Oberflächenkontinuität
 
 ## Kanten und Flächen anzeigen umschalten
 
@@ -32,5 +40,25 @@ Das Umschalten der Anzeige von Kanten und Flächen kann durch Rechtsklick auf di
 
 | Funktion                                                                                     | Tastenkombination | Schaltfläche | Befehlsname            |
 | -------------------------------------------------------------------------------------------- | ----------------- | ------------ | ---------------------- |
-| Kantenanzeige umschalten<br />(Wenn dies deaktiviert ist, werden die Kanten ausgeblendet.)   |                   | (13)         | viewport: toggle Edges |
-| Flächenanzeige umschalten<br />(Wenn dies deaktiviert ist, werden die Flächen ausgeblendet.) |                   | (14)         | viewport: toggle Faces |
+| Kantenanzeige umschalten<br />(Wenn dies deaktiviert ist, werden die Kanten ausgeblendet.)   |                   | (17)         | viewport: toggle Edges |
+| Flächenanzeige umschalten<br />(Wenn dies deaktiviert ist, werden die Flächen ausgeblendet.) |                   | (18)         | viewport: toggle Faces |
+
+## Benutzerdefinierte Matcaps
+
+1. Bereiten Sie Ihre benutzerdefinierten Matcap-Dateien vor (sowohl EXR- als auch PNG-Dateien müssen denselben Namen haben).
+2. Suchen Sie das .plasticity-Verzeichnis auf Ihrem Betriebssystem (Operating System) und erstellen Sie einen neuen Ordner namens "matcaps".
+
+Der vollständige Dateipfad für die Matcap-Dateien auf Ihrem Betriebssystem sollte wie folgt sein:
+
+- Windows - "C:\Users\USERNAME\ .plasticity\matcaps"
+- Mac - "Macintosh HD\Users\ .plasticity\matcaps"
+- Linux -"home/.plasticity/matcaps"
+
+3. Platzieren Sie Ihre benutzerdefinierten Matcap-Dateien in diesem Ordner und starten Sie Plasticity neu.
+
+![Custom matcaps example](/img/custom-matcaps-example-de.png)
+
+<Callout type="info" emoji="💡">
+**Tip**
+   Stellen Sie sicher, dass die PNG-Dateien 512x512 Pixel mit transparentem Hintergrund sind. Die EXR-Datei sollte maximal 16 Bit sein und komprimiert sein (ZIP-Kompression bevorzugt). 
+</Callout>

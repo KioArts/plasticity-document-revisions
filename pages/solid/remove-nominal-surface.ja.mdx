@@ -1,0 +1,23 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+# 公称面を削除する
+
+<Reference shortcut="" command="Remove Nominal Surface" button="" />
+
+## 基本的な使い方
+公称面は、表面のCVを操作する際に、目に見えない形で追加のスパンを生成して表面の穴を埋める機能です。これにより、簡単に直接表面を編集することができます。「公称面を削除」コマンドは、表面領域にある追加の隠されたスパンを表示します
+
+1. 隠された制御点（CV）を表示したい面を選択します。
+2. コマンドパレットで **Remove Nominal Surface** コマンドを使用します。
+
+<VideoPlayer fileName="remove-nominal-surface"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    コマンドバーの右側またはコマンドパレットで **Rebuild** <ButtonIcon type="button-rebuild"/> コマンドを使用して、表面領域を再構築し、不要なスパンを削除します
+<VideoPlayer fileName="rebuild-surface-nominal-surface-example"/>
+</Callout>
