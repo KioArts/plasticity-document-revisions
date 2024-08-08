@@ -1,0 +1,38 @@
+import VideoPlayer from '/components/VideoPlayer';
+import  Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Spline Curve
+
+<Reference shortcut="" command="Spline Curve" button="ツールバー"  buttonIcon='button-spline-curve'/>
+
+カーブが通過する点をクリックしてカーブを作成します。
+
+## 基本的な使い方
+
+1. ツールバーのボタン <ButtonIcon type="button-spline-curve" /> をクリックします。
+2. カーブの始点でクリックします。
+3. カーブが通過する点をクリックしてカーブを作成します。
+   - <Kst>キーボードショートカット</Kst>
+      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
+      - <kbd>Tab</kbd> **Control /  Through-point:** Control Point Curveに切り替えます。
+      - <kbd>Ctrl + Z</kbd> **Undo:** 直前のクリックを取り消します。
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+4. 最後の点をクリックしたら、右クリックで確定します。
+5. カーブが作成されます。
+
+<Callout type="info" emoji="💡">
+**２つのカーブの違い**
+- Spline Curve: カーブが通過する点をクリックして、カーブを作成します。
+- Control Point Curve: カーブの制御点をクリックして、カーブを作成します。
+</Callout>
+
+<VideoPlayer fileName="spline-curve"/>
+
+## 関連項目
+- [Control Point Curve](control-point-curve)
+
+
+
