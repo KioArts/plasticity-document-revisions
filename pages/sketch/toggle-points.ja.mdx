@@ -1,0 +1,30 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+# ポイント切り替え
+
+<Reference shortcut="" command="Toggle Points" button="" />
+
+面、曲線、ボディのポイントを非表示または表示します。
+
+## 基本的な使い方
+
+1. CVポイントを非表示または表示したい面、曲線、またはボディを選択します。
+2. コマンドパレットに **Toggle Points** と入力し、それを左クリックします。
+
+<VideoPlayer fileName="toggle-points"/>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    簡単に使用およびアクセスするためのキーボードショートカットを作成します。コマンドパレットでコマンドを右クリックし、「ショートカットを割り当て」を左クリックして、キー割り当てを指定します。
+<VideoPlayer fileName="assign-shortcut"/>
+</Callout>
+
+## 関連項目
+- [Rebuild Curve](rebuild-curve)
+- [Rebuild Face](/solid/rebuild-face)
+- [Raise Curve Degree](raise-curve-degree)
+- [Raise Surface Degree](/solid/raise-surface-degree)
