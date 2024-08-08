@@ -1,0 +1,53 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+
+# XNurbs
+
+<Reference shortcut="" command="XNurbs" button=""/>
+
+XNurbsは、高品質なN辺形および四辺形サーフェスを生成できるツールです。サーフェス上の隙間を埋めたり、複雑な穴を閉じたりすることができます。
+
+## 基本的な使い方
+
+1. サーフェスのフレームを作成するために、境界エッジを選択してください。
+2. コマンドパレットでXNurbsコマンドを使用してください。.
+3. コマンドダイアログでオプションを設定してください。
+    - <Kst>Command Dialog</Kst>
+          - **Continuity:** **G0, G1, G2**
+          - **Quad sided:** 四辺形エッジを持つサーフェスエリア上に、トリムされていない四辺形スプラインサーフェスを生成します。
+          - **Flatness:** このオプションは生成されるサーフェスの平坦さと品質に影響します。高い値を指定すると高品質なサーフェスが生成され、低い値を指定すると低品質なサーフェスが生成されます。
+          - **Boundary:** 
+                - **Natural:** UVフローの要件はありません。
+                - **Normal:** UVアイソカーブを相互に直交させるオプションです。四辺形サーフェスの場合、このオプションを選択すると、生成されるXNurbsサーフェスのアイソカーブが境界曲線に対して垂直に保たれます。
+          - **Quality:** 生成されるサーフェスの品質を決定します。
+                - **Auto:** サーフェスに基づいた自動品質生成
+                - **High:** 高品質なサーフェス
+                - **Max:** 最高品質のサーフェス
+          - **Tolerance:** 生成されるサーフェスの公差を指定します。一般的なサーフェス作業では、デフォルトの公差値を使用することをお勧めします。
+5. コマンドダイアログで「OK」をクリックするか、右クリックして確認してください。
+
+<VideoPlayer fileName="xnurbs-0"/>
+
+<Callout type="info" emoji="💡">
+      **Tip**
+### Quad sided
+      「四辺形サイド」オプションを使用すると、トリムされていない四辺形スプラインサーフェスを作成できます。これは、4つの境界エッジを持つサーフェスを構築する際に特に便利です。このオプションは4つの境界エッジでのみ機能し、高品質なサーフェスを正しいスプラインの向きで生成します。
+<VideoPlayer fileName="xnurbs-2"/>
+### Flatness
+      平坦さは、コマンドダイアログで入力値を増減させることによってサーフェスの出力品質を決定します。四辺形サイドオプションを使用する場合、四辺形サーフェスでは平坦さの値を0.95〜1.00の範囲に設定することで、最適な結果が得られます。
+<VideoPlayer fileName="xnurbs-3"/>
+### Quality
+      **Auto**、**High**、および**Max**オプションは、生成されるサーフェスの品質を決定します。デフォルトではAutoに設定されていますが、より良い結果を得るためにHighまたはMaxを選択することもできます。ただし、**High**や**Max**はより複雑なサーフェスを生成します。
+<VideoPlayer fileName="xnurbs-4"/>
+### Profile Guides 
+      ロフトやパッチコマンドとは異なり、XNurbsは境界ガイドと交差しない開いたプロファイルガイドを使用してサーフェスを生成することができます。これにより、サーフェスを簡単に生成できる柔軟性が得られ、サーフェスの探索に対する創造的な機会が広がります。
+<VideoPlayer fileName="xnurbs-1"/>
+
+</Callout> 
+
+## 関連項目
+- [Rebuild](rebuild)
+- [Raise Surface Degree](raise-surface-degree)
