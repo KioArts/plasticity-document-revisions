@@ -74,5 +74,22 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <VideoPlayer fileName="patch-4"/>
 
+## パッチでシートをトリムする
+
+パッチツールを使用してシートをトリムすることができます。
+
+1. 選択したいトリム対象のシートを選択し、一時的に非表示にします。
+2. ベースシートを選択し、穴のある部分でエッジループ選択を行います。
+3. ボディ選択モードに入り、トリム対象のシートを再表示させ、追加選択を行います。
+5. コマンドバーの右側にある<ButtonIcon type="button-patch"/>ボタンをクリックします。
+6. コマンドダイアログでオプションを設定します。 
+    - <Kst>Command Dialog</Kst>
+        - **Method:**
+            - **Trim to hole:** 対象シートをベースシートの穴にトリムします。
+            - **Trim to sheet:** 対象シートをベースシートの端部に合わせてトリムします。
+        - **Tolerance:** パッチの公差を指定します。
+        
+<VideoPlayer fileName="patch-5"/>
+
 ## 関連項目
 - [Loft](loft)
