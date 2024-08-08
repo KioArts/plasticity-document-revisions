@@ -1,0 +1,315 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+
+# Update Information Version 1.4
+
+Release date: March 5, 2024
+
+## Minor Improvement
+
+### Radial Array 
+
+Improved interactivity of the Radial Array command, allowing you to directly see live interactivity on the viewport and improving your consistency of work. For more information on Radial Array, click [here](/common/radial-array).
+
+### Planar Face Polygons
+
+Enhanced accuracy of the midpoint computation for planar face polygons. For more information on Regular Polygon Tool, click [here](/tool/polygon).
+
+### Export Dialog
+
+The export dialog now has an improved functionality where it retains the last used filename. This means that when you export a file, Plasticity will automatically suggest the name you previously used, streamlining the process and saving you time.
+
+### Image/OBJ Import
+
+Introducing a feature that automatically names imported image and OBJ files based on their original import filename. This means that when you import a file, Plasticity will use the existing filename as the default name within the application.
+
+### New Orbit/Rotation 
+
+Introduced a new orbit and rotation strategy using the classic tumble/turntable approach.
+
+### Tangent Circle Command
+
+The Tangent Circle command now supports constructing tangents to three curves or edges. This enhancement allows users to create a circle that is tangent to three different curves or edges at once, improving versatility and precision in complex designs. For more information click [here](/tool/tangent-circle).
+
+<VideoPlayer fileName="tangent-circle"/>
+
+### New shaders and Built-In Matcaps
+
+Added new shaders for isophotes and draft angle analysis and new built-in matcaps for advanced surfacing workflows, including the option to insert custom matcaps. Refer to [here](/plasticity-essential/view-mode).
+
+![Matcaps and Shaders](/img/custom-matcaps-example.png)
+
+### New Faceting Preference - "Ultra"
+
+New faceting preference "Ultra" has been introduced to enhance surface smoothness in surfacing workflows. It is recommended for surfacing workflows and working on small documents, for example, a car body. It is also recommended on high-end computers.
+
+### Command Palette
+
+The Command Palette now highlights clashing keybindings in red. This feature makes it easier to identify and resolve conflicts, ensuring smoother workflow and improved usability.
+
+![Keybind conflict highlighter](/img/keybind-conflict-highlight.png)
+
+### Diagnostic Error Bodies in Loft and Sweep Commands
+
+Diagnostic error bodies are now displayed in the Loft and Sweep commands to identify issues such as self-intersections.
+
+![Self-Intersections](/img/self-intersections-loft-sweep.png)
+
+### Patch Command
+
+Patch Command now optionally accepts an overbuilt sheet to trim into a hole and trim main sheet to align with the end section of the base sheet. For more information, click [here](/solid/patch#trim-sheet-with-patch).
+
+<VideoPlayer fileName="patch-5"/>
+
+### Untrim 
+
+Untrim Command has been enhanced to create holes instead of only duplicating. For more information of the Untrim Command, click [here](/solid/untrim).
+
+<VideoPlayer fileName="untrim-example"/> 
+
+### Extend Curve
+
+Extend Curve command expanded to accept curves in addition to vertices, extending in two directions simultaneously. For more information on Extend Curve, click [here](/sketch/extend-curve).
+
+<VideoPlayer fileName="extend-curve-example"/>
+
+### Join Sheet
+
+Join Sheets Command can be triggered with one sheet selected, and it will prompt to select the second sheet. For more information on Join Sheet, click [here](/solid/join-sheets).
+
+<VideoPlayer fileName="join-sheet-example"/>
+
+### Extend Sheet
+
+Introducing a new behavior for the Extend Sheet Command which will extend a sheet up to and intersecting a target body. For more information on Extend Sheet, click [here](/solid/extend-sheet#dependant-offset).
+
+<VideoPlayer fileName="extend-sheet-dependant-offset"/> 
+
+### Point Picking Enhancement 
+
+When pressing <kbd>Shift+X</kbd>, you can now temporarily disable undesirable snaps during point picking on a curve, edge, and solid. This allows you to snap on specific points without slowing you down.
+
+<VideoPlayer fileName="point-picking-enhancement-example"/>
+
+### Snapping Features 
+
+Introduced new edge snaps "closest, perpendicular, and tangent" allowing for more control and precision when working with edges. For more information on grid snapping features click [here](/plasticity-essential/grid-and-snap).
+
+<VideoPlayer fileName="snapping-features-example"/>
+
+![Edge snapping example](/img/new-edge-snapping.png)
+
+Additionally, new hover snaps are introduced where curves and edges intersect or pierce the construction plane and axes. For more information on construction planes, click [here](/plasticity-essential/construction-plane).
+
+<VideoPlayer fileName="construction-plane-intersection-curve-edges-example"/>
+
+![Construction plane intersection example](/img/construction-plane-example.png)
+
+### Tangent Circle and Arc
+
+Introduced new hover snaps for tangent circles and arcs, allowing for more precise and consistent work. Refer to Tangent Circle [here](/tool/tangent-circle) and Tangent Arc [here](/tool/tangent-arc).
+
+### Measurement Panel 
+
+The measurements panel now displays the angles between two edges, providing precise angular measurements. This update enhances accuracy in analyzing and adjusting the relationships between design elements.
+
+<VideoPlayer fileName="measurement-panel-example"/>
+
+### Outliner
+
+The Outliner's right-click menu now includes an option to create a group with selected items. This new feature allows for easier organization and management of multiple items by grouping them together directly from the context menu.
+
+<VideoPlayer fileName="outliner-example"/>
+
+![Outliner group right click option](/img/outliner-example.png)
+
+### Construction Plane  
+
+"Plane from selection" now allows using surface CVs to create construction planes. For more information about construction planes click [here](/plasticity-essentials/construction-plane).
+
+<VideoPlayer fileName="construction-plane-example"/>
+
+### OBJ/STL Unit Confirmation
+
+ Importing OBJ/STL files now prompts for unit confirmation.
+
+ ![Unit Confirmation](/img/unit-confirmation.png) 
+
+### Improved Panel Interactivity
+
+ Measurements in the lower-right panel can now be clicked to be copied directly to the clipboard.
+
+![Panel Interactivity](/img/measurements.png)
+
+### STEP Export Enhacement
+
+ Enhanced the STEP export dialog to include options for converting analytic surfaces to NURBS and selecting the STEP version.
+
+![STEP Export](/img/step-export.png)
+
+### Warning Indicator for Unsaved Files
+
+ A warning for unsaved changes now appears when opening files, along with an indicator dot for unsaved changes in general.
+
+ ![Warning indicator](/img/warning-indicator.png)
+ 
+### Simplified Pipe Gizmo
+
+ The Gizmo for the Pipe Command has been simplified, making it now easy to use and work with. Refer to the example below.  
+
+ ![Pipe Gizmo](/img/pipe-gizmo-example.png)
+
+### New OBJ Export Option: "Inflexion"
+
+The "Inflexion" option inserts additional line cuts on surface areas, particularly noticeable on curvatures. This increases topology resolution for higher quality rendering when exported to other 3D packages. However, you now have the option to disable it for a more evenly distributed topology control overall.
+
+![Inflexion OBJ Option](/img/obj-export-example-1.png)
+
+### OBJ Export Feature: Matcap and Wireframe Options
+
+OBJ export can now optionally use the current matcap and disable the wireframe during inspection. This feature is useful for checking surface quality or optimization with high-resolution zebra or other shaders. 
+
+ <VideoPlayer fileName="obj-export-example-2"/>
+
+### Dimension Command Enhancement
+
+ Resizing cylinders with the Dimension Command is now possible. For more information on the Dimension Command, click [here](/common/dimension).
+
+ <VideoPlayer fileName="dimension-command-example"/>
+
+### Rebuild Edge
+
+The Rebuild Command has expanded to now rebuild broken edges on a surface. This is useful when manually deleting the edges with <kbd>Shift+X</kbd> and Delete Redundant Topology Command don't work.
+
+<VideoPlayer fileName="rebuild-edge-1"/> 
+
+
+
+## Major Improvement
+
+### Dependent Offset 
+
+Introducing new behaviour for Offset Face (push/pull) command which now supports dependent offsets, allowing you to match and intersect a body. Refer to [here](/solid/offset-face).
+
+<VideoPlayer fileName="dependant-offset-face"/>
+
+### Surface CV Editing
+
+Surface CV editing now allows direct manipulation of both trimmed and untrimmed faces.
+
+<VideoPlayer fileName="direct-manipulation-cv"/>
+
+### Raise Surface Degree
+
+Raise Degree Command increases surface complexity by converting analytic surfaces to spline and increasing the spline degree. Refer to [here](/solid/raise-surface-degree).
+
+<VideoPlayer fileName="raise-surface-degree"/>
+
+### Nominal Face
+
+Faces with visible CVs now have a nominal surface to allow easier edits in the presence of direct editing. Remove Nominal Surface Command is available in case it needs to be removed. Refer to [here](/solid/remove-nominal-surface).
+
+<VideoPlayer fileName="remove-nominal-surface"/>
+
+### Toggle Points
+
+Introduced Toggle Points command to show/hide points on faces, curves, and bodies. Refer to [here](/curve/toggle-points).
+
+<VideoPlayer fileName="toggle-points"/> 
+
+### Pipe and Sweep
+
+Added scaling options to the Pipe and Sweep commands. Refer to [Pipe](/solid/pipe) and [Sweep](/solid/sweeop) for more details.
+
+### Full Round Fillet
+
+The Full Round option has been added to the solid fillet feature. This option gives you the option to create a rounded fillet on a face when two edges are selected. For more details on Fillet Shell, see [here](/solid/fillet-shell#fillet-options).
+
+<VideoPlayer fileName="fillet-shell-shape"/>
+
+### Rebuild Face
+
+Rebuild command now can rebuild the surfaces of faces, extend and shrink options allow for easily overbuilding surfaces. Refer to [here](/solid/rebuild-face). 
+
+<VideoPlayer fileName="rebuild-face"/>
+
+## Small but Significant Changes
+
+### CV Alignment with Screen Space
+
+Dragging CVs of curves and surfaces now aligns with screen space rather than on construction plane. This will speed up your workflow and not get. 
+
+### Sketch Operations
+
+Enhanced sketch operations to confirm with a single **enter** press or single left-click. These affect the following sketch tools: 
+
+|   **Circle Tools**  |  **Regular Polygon** |  **Rectangle Tools**   | 
+|---------------------|----------------------|------------------------|
+| [Centre Circle](/tool/centre-circle) | -                              |  [Corner Rectangle](/tool/corner-rectangle)      | 
+| [Two Point Circle](/tool/two-point-circle)  | -                      |  [Centre Rectangle](/tool/centre-rectangle)      | 
+| [Three Point Circle](/tool/three-point-circle) | -                   |  [Three Point Rectangle](/tool/three-point-rectangle) | 
+| [Tangent Circle](/tool/tangent-circle)    | -                        |  -                     | 
+| [Centre Point Arc](/tool/centre-point-arc)  | -                     |  -                     | 
+| [Three Point Arc](/tool/three-point-arc)  | -                       |  -                     | 
+| [Tangent Arc](/tool/tangent-arc)      | -                            |  -                     | 
+
+## Studio-Exclusive Features
+
+### XNurbs
+
+Plasticity now features the XNurbs addon enabling the creation of high-quality surfaces. XNurbs is a powerful tool that enhances the ability to design smooth, complex surfaces with precision that greatly improves the overall design process. XNurbs is only available on PC and Mac. For more information on XNurbs click [here](/solid/xnurbs).
+
+<VideoPlayer fileName="xnurbs-example"/> 
+
+### Rhino 8 Import
+
+Added support for Rhino 8 imports.
+
+## Noteworthy Optimizations
+
+Enhanced parallelism in OBJ/STL exports.
+
+Object transformations (move/rotate/scale) now bypass refaceting on confirmation for efficiency.
+
+Implemented 16-bit snorm normals and 16-bit indices where possible to optimize memory usage.
+
+
+## New Commands 
+
+### Remove Nominal Surface
+
+Remove hiden surface CVs for more control. Only applicable when you've raised surface degree. Refer to [here](/solid/remove-nominal-surface).
+
+### Toggle Points
+
+Introduced Toggle Points command to show/hide points on faces, curves, and bodies. Refer to [here](/curve/toggle-points).
+
+### Raise Surface Degree
+
+Raise Degree Command increases surface complexity by converting analytic surfaces to spline and increasing the spline degree. Refer to [here](/solid/raise-surface-degree).
+
+### Rebuild Face
+
+Rebuild command now can rebuild the surfaces of faces, extend and shrink options allow for easily overbuilding surfaces. Refer to [here](/solid/rebuild-face).
+
+### Rebuild Edge
+
+The Rebuild Command has expanded to now rebuild broken edges on a surface.
+
+### Extend Sheet
+
+Extend Sheet Command which will extend a sheet up to and intersecting a target body. For more information on Extend Sheet, click [here](/solid/extend-sheet#dependant-offset).
+
+### XNurbs
+
+Create smooth and high-quality quad-sided and N-sided surfaces. For more information on XNurbs, click [here](/solid/xnurbs).
+
+
+## Download and Installation
+
+Plasticity 2024.1 is now available for download. Please refer to [this link](/getting-started/download-and-install) for more details.
+
+## Past Update Information
+
+- December 18, 2023 [Version 1.4](/release-notes/whats-new-1-4)
