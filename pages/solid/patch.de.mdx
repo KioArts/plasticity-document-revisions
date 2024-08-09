@@ -73,5 +73,22 @@ Wenn es ein Loch gibt, das nicht gefüllt werden kann, schlägt der Befehl fehl.
 
 <VideoPlayer fileName="patch-4"/>
 
+## Schicht mit Patch trimmen 
+
+Sie können eine Fläche mit dem Patch-Werkzeug zuschneiden.
+
+1. Wählen Sie die Ziel-Fläche aus, die Sie zuschneiden möchten, und blenden Sie sie vorübergehend aus.
+2. Wählen Sie die Basis-Fläche aus und treffen Sie eine Kantenloop-Auswahl an der Stelle, wo sich ein Loch befindet.
+3. Wechseln Sie in den Körperauswahlmodus, blenden Sie die Ziel-Fläche wieder ein und fügen Sie eine additive Auswahl hinzu.
+5. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-patch"/> rechts in der Befehlsleiste.
+6. Stellen Sie die Optionen im Befehlsdialog ein.
+    - <Kst>Command Dialog</Kst>
+        - **Method:**
+            - **Trim to hole:** Trimmen Sie die Ziel-Fläche an das Loch der Basis-Fläche an.
+            - **Trim to sheet:** Trimmen Sie die Ziel-Fläche, um sie mit dem Endbereich der Basis-Fläche auszurichten.
+        - **Tolerance:** Geben Sie die Toleranz für den Patch an.
+        
+<VideoPlayer fileName="patch-5"/>
+
 ## Siehe auch
 - [Loft](loft)

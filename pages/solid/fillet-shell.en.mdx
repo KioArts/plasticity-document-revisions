@@ -38,6 +38,8 @@ Fillet or chamfer the Edges which can be conic or G2 continuous. Variable distan
     - **Conic:** The Conic fillet option is known for producing a more natural and smooth transition compared to traditional round fillets. This makes it especially useful in applications where aerodynamics or aesthetics are crucial.
     - **Chordal:** The hallmark of a Chordal fillet is that it maintains a constant length for the chord of the fillet, regardless of the angles being filleted. This uniformity can be particularly beneficial when aiming for visual consistency across different parts of a model.
     - **G2:** The G2 option generates curves that are smoothly continuous with the surfaces at both ends of the fillet. This setting is optimal for intricate designs and complex surface handling that require an extremely smooth and natural shape transition. See [Surface Continuity](/cad-essentials/continuity-curve-and-surface).
+    - **Full:** The full option will create a rounded fillet shape on either side of a face with 2 edges selected. The operation differs from a regular clamping effect when filleting. The round fillet is a surface that is tangential to all 3 neighbouring faces (left, centre, and right faces) and thus will result in generating perfect round fillet depending on the diameter or distance of neighbouring faces and edges.
+    
     <VideoPlayer fileName="fillet-shell-shape"/>
 
 **Y-Blend:** 

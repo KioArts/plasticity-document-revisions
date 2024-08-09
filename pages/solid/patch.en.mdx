@@ -74,5 +74,22 @@ If there is a hole that cannot be filled, the command fails.
 
 <VideoPlayer fileName="patch-4"/>
 
+## Trim Sheet with Patch 
+
+You can trim a sheet with the patch tool.
+
+1. Select the target sheet you want to trim and temporarily hide it.
+2. Select the base sheet and make an edge loop selection where there is a hole.
+3. Enter in body selection mode, unhide the target sheet and make an additive selection to it. 
+5. Click the button <ButtonIcon type="button-patch"/> on the Right of Command Bar.
+6. Set the options in the command dialog. 
+    - <Kst>Command Dialog</Kst>
+        - **Method:**
+            - **Trim to hole:** Trim the target sheet to hole of base sheet.
+            - **Trim to sheet:** Trim the target sheet to align with the end section of the base sheet.
+        - **Tolerance:** Specify the tolerance for the patch.
+        
+<VideoPlayer fileName="patch-5"/>
+
 ## See also
 - [Loft](loft)
