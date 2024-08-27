@@ -1,0 +1,29 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Deform Solid and Sheet 
+
+<Reference shortcut="" command="Deform" button="" />
+
+Wrap existing curves onto a regular and irregular surface.
+
+## Basic Usage
+
+1. Select the curves you want to wrap.
+2. Type **Deform** in the Command Pallete.
+3. Select a reference face where the existing curves are placed at as a neutral plane.
+4. Select the target face to deform curves with.
+5. Set the options in the Command Dialog.
+    - <Kst>Command Dialog</Kst>
+          - **Scale:** Scale in **Z,Y,X Value**
+          - **Offset:** Offset in **Z,Y,X Value**
+          - **Flip:** 
+                - **Mirror:** Mirror the deformed curves in Z Axis.
+                - **UV:** Flip the U and V orientation of the deformed curves.
+                - **Normal:** Flip the normal of the deformed curves.
+          - **Keep Tools:** Performs Deform operation while keeping the tool objects intact.
+6. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="deform-curve"/>
