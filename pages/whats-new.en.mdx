@@ -51,28 +51,36 @@ Release date: September 5, 2024
 ## File Formats Enhacement
 
 ### OBJ
-    - Export OBJ with Face and Surface UVs.
-    - Export OBJ with MTL file.
-
+    - Exporting OBJ in Plasticity with UVs and a material files (MTL) is now possible to do.
     ![OBJ](/img/obj-2024.2.png)
 ### STEP
-    - Export STEP with colors and assembly information (groups). 
-    - Import STEP preserves colors.
+    - Exporting STEP files in Plasticity with colors and assembly information, such as groups, is now possible to do.
+    - Importing STEP files in Plasticity now preserves the colors. 
 ### Meshes and Images
-    - Snap to Empties (OBJ, Reference Images).
-    - OBJ Empties - Vertex snap feature. 
-        - Snapping to Vertex is now possible on OBJ meshes whenever your mouse is close to the vertex point. You can do basic reverse engineering on the meshes with any sketch tool but the following tools are best suited for this task:
-        - Line, Spline Curve and Control Point Curve, Three point circle, Three point rectangle, and Constrained Surface.
+    - Snapping to Meshes and Images are now possible to do in Plasticity. 
 
+   | Type                | Snap target | Tip help |
+   | ------------------- | ----------- | -------- |
+   | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face | Vertex/Face|
+   | Image (.PNG, .JPG, .JPEG)| Corner | Corner | 
     - Image empties corner snaps. 
-- .Plasticity -
-    - Import and Appending Plasticity documents preserves groups, names, and materials.
-- Parasolid (.*x_t/x_b) - 
-    - Import Parasolid files support colors, names, assemblies but do not support instanes yet. 
-### New Import Formats
-- 3MF Import
-- SVG Import
 
+### Plasticity Files (.plasticity)
+    - Import and Appending Plasticity documents preserves groups, names, and materials.
+### Parasolid (.*x_t/x_b)
+    - Importing Parasolid files in Plasticity now support colors, names, and assemblies but do not support instanes yet. 
+### New Supported Formats
+- 3MF Import/export formats 
+- SVG Import
+- Now suporting export and import 3MF file format is possible in Plasticity, alongside with importing only SVG format. To check out all the supported file formats for Import and Export in Plasticity, click [here](/plasticity-essentials/import-export).
+
+## Minor Changes
+ 
+- New Offset Edge gizmo which resembles the two-sided fillet gizmo.
+- Copy and Paste Command now inherits material and name. 
+- Alternative-Duplicate faces inherits name and material.
+- Text tool has been updated a few additional fonts.
+- Touchpad 
 
 ### Measurements 
 - Measurements are now possible to be moved when selected in the outliner and in conjestion with the move command, allowing you to tweak measurement position.
