@@ -9,16 +9,25 @@ Release date: September 5, 2024
 ## New Commands 
 
 ### Square Command 
+    - Square Command is an XNurbs based command that allows you to create various surfaces with excplicit control for UV degrees and spans. It is available only on Studio License of Plasticity. For more information on Square Command, click [here](/solid/square).
+
+    <VideoPlayer fileName="square-0"/>
 
 ### Deform Command
+    - Deform Command allows you to wrap existing solid objects onto regular and irregular surfaces and wire bodies, allowing you to create complex and unique patterns and wrappings. For more information on Deform Command, click [here](/solid/deform-solid-and-sheet) for Solid and Sheet and [here](/sketch/deform-curve) for Curves.
+
+    <VideoPlayer fileName="deform-solid"/>
+    <VideoPlayer fileName="deform-curve"/>
 
 ### Reverse Command 
-- Reverse Command can reverse the direction of a curve and normal direction of a sheet. 
+    - Reverse Command is a command that allows you to reverse the direction of a curve and normal direction of a sheet. This can be useful on the [Pipe Tool](/solid/pipe) as you can reverse the direction of the Pipe when using the Scale option. Refer [here](/sketch/reverse-curve) for Reverse Curve and [here](/solid/reverse-sheet) for Reverse Sheet.
+
+    <VideoPlayer fileName="reverse-curve"/>
 
 ## Improved and New Command Features
 
 ### Rebuild Command
-    - Rebuild Face - Introducing now "Explicit Control" with which you can control the value of degrees and spans. Studio-exclusive feature.
+    - Rebuild Face - Introducing now "Explicit Control" which you can control the value of degrees and spans.
     - Rebuild Curve - The command now allows explicit control of degrees and spans.
 ### XNurbs Command
     - Introducing a new boundary alignment option called "Next", allowing you to generate a perpendicular flow of UV whenever boundary conditions are relatively flat. For more information, click [here](/solid/xnurbs).
@@ -28,16 +37,14 @@ Release date: September 5, 2024
 ### Square Command 
     - Square Command now has a "Match-CVs" option which can produce higher quality surfaces. For more information, click [here](/solid/square).
 ### Rectangular and Radial Array 
-    - The Rectangular and Radial Array commands now support arraying faces that are part of a body. This feature is especially effective when arraying fillets. 
-    #### Distance Mode
-    Moreover, both commands now have individually different distance modes, allowing you to control the distance and spacing behaviour. For more information on Rectangular Array click [here](/common/rectangular-array) and [here](/common/radial-array) for Radial Array.
+    - The Rectangular and Radial Array commands now support arraying faces that are part of a body. This feature is especially effective when arraying fillets. Moreover, both commands now have individually different distance modes - Rectangular Array [Extend and Spacing] and Radial Array [Total and Spacing] - allowing you to control the distance and spacing behaviour. For more information on Rectangular Array click [here](/common/rectangular-array) and [here](/common/radial-array) for Radial Array.
 ### Polygon Command 
     - Polygon Command now remembers last used number of vertices.
 ### Unwrap Command 
     - The Unwrap Command now generates a flat sheet of the selected face from a solid, which can be used in conjunction with the [Deform Command](/solid/deform) for further modifications.
 ### Draft Command 
-    - Introducing a Gizmo feature where you can control the position of the reference face and having the option to select multiple faces to draft with <kbd>Ctrl</kbd>. This can be applied to non-unifrom planar surface, however, without the option to offset the reference face. Refer to [here](/solid/draft-face).
-### Patch 
+    - Introducing a Gizmo feature where you can control the position of the reference face and having the option to select multiple faces to draft with <kbd>Ctrl</kbd> button. This can be applied to non-unifrom planar surface, however, without the option to offset the reference face. Refer to [here](/solid/draft-face).
+### Patch Command
     - Patch Command can now create sheets from a close edge selection of a solid. Refer to [here](/solid/patch).
 
 ## Removed Commands
@@ -46,6 +53,8 @@ Release date: September 5, 2024
 ## Outliner 
 - Construction Planes can now be renamed in the Outliner, allowing for better organization and management. This improvement eliminates unnecessary steps when searching for the correct construction plane, streamlining task selection and workflow. For more information on Construction Planes, click [here](/plasticity-essentials/construction-plane). 
 - Outliner now separates meshes and images into their own sections rather than "empties". 
+- Context menu in the Outliner with right mouse button now has a new function "move selected items to root" whenever you have selected items in a group.
+- Context menu in the Outliner with right mouse button now has a new group function "Group selection here" and "Group selection at root".
 - Transparent materials are now displayed with 50% transparency, even when using default and custom [matcaps](/plasticity-essentials/view-mode) in non-render mode.
 
 ## File Formats Enhacement
@@ -63,52 +72,54 @@ Release date: September 5, 2024
    | ------------------- | ----------- | -------- |
    | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face | Vertex/Face|
    | Image (.PNG, .JPG, .JPEG)| Corner | Corner | 
-    - Image empties corner snaps. 
 
 ### Plasticity Files (.plasticity)
     - Import and Appending Plasticity documents preserves groups, names, and materials.
 ### Parasolid (.*x_t/x_b)
     - Importing Parasolid files in Plasticity now support colors, names, and assemblies but do not support instanes yet. 
 ### New Supported Formats
-- 3MF Import/export formats 
-- SVG Import
-- Now suporting export and import 3MF file format is possible in Plasticity, alongside with importing only SVG format. To check out all the supported file formats for Import and Export in Plasticity, click [here](/plasticity-essentials/import-export).
+    - 3MF Import/export formats 
+    - SVG Import
+    - Now suporting export and import 3MF file format is possible in Plasticity, alongside with importing only SVG format. To check out all the supported file formats for Import and Export in Plasticity, click [here](/plasticity-essentials/import-export).
 
 ## Minor Changes
  
-- New Offset Edge gizmo which resembles the two-sided fillet gizmo.
-- Copy and Paste Command now inherits material and name. 
-- Alternative-Duplicate faces inherits name and material.
-- Text tool has been updated a few additional fonts.
-- Touchpad 
+    - New Offset Edge gizmo which resembles the two-sided fillet gizmo.
+    - Copy and Paste Command now inherits material and name. 
+    - Alternative-Duplicate Command on faces now inherits name and material.
+    - Text tool has been updated a few additional fonts.
+    - Touchpad now can be used with cursor track orbit point. 
+    - New Autosave Option now allows to save current saved file every X amount of minutes, which can be configured in the Preference section.
+### Group Command 
+    - The Group Command now features a new behavior where items under the same parent group are automatically grouped together. Additionally, when a group is deleted within the same hierarchy, its child items are moved to the parent group.
 
-### Measurements 
-- Measurements are now possible to be moved when selected in the outliner and in conjestion with the move command, allowing you to tweak measurement position.
+### Measurements and Measurements Panel
+    - Measurements can now be moved when selected in the Outliner and used in conjunction with the Move Command, enabling you to enter specific values directly in the viewport for more precise adjustments.
+    - Measurements Panel now displays the angle between two planes. 
+    - Sidebar in the Measurements Panel now introduces surface class, allowing specific selection of faces. 
+    - Measurements can be coppied to clipboard in user's preferred units.
 
-### Text
-- 4 additional fonts
+### Snaps 
+    - New Snap types in the following: 
+
+   | Type               | Snap target | Tip help |
+   | ------------------- | ----------- | -------- |
+   | Regular Polygon     | Closed polygon center point| Center point|
+   | Image (.PNG, .JPG, .JPEG)| Corner                | Corner | 
+   | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face          | Vertex/Face |
+   | Measurements             | Measurement Point    | Measurement |
+   | Freestyle Rotate         | Parallel/Perpendicular | Parallel/Perpendicular | 
+
 
 ### Groups
-- Grouping items - If all items are in the same group then creating a new group will be located in tha same directory, otherwise at root directory.
-- Item/Group rightclick menu - "move selected items to root"
-- Items in Outliner now have two grouping commands in right click menu - "Group here" and "Group at root"
-- Groups - Deleting a group moves its children to its immediate parent, rather than root.
+    - Grouping items - If all items are in the same group then creating a new group will be located in tha same directory, otherwise at root directory.
+    - Item/Group rightclick menu - "move selected items to root"
+    - Items in Outliner now have two grouping commands in right click menu - "Group here" and "Group at root"
+    - Groups - Deleting a group moves its children to its immediate parent, rather than root.
 ### Shader
 Transparent materials - Materials with transparent value less than 1 will appear 50% transparent when using matcaps in non-render mode.
 ### Snaps
-- Freestyle Rotate - Now has a Parallel snap feature. 
-
-
-### Misc.
-- New Autosave option - allows to save current saved file every 10 minutes. This setting can be configurable in the Preference section.
-- Measurements panel - Show angle between two selected planes.
-
-Patch Hole
-
-- Patch Command with edges selected of a solid will generate a new sheet body.
-
-Orbit Controls
-- Touchpad - Track orbit point
+    - Freestyle Rotate - Now has a Parallel snap feature. 
 
 ## Download and Installation
 
