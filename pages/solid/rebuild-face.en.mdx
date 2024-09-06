@@ -15,9 +15,16 @@ Rebuild the surface of a face.
 2. Use the **Rebuild** command in the Command Palette or click on the Rebuild Button <ButtonIcon type="button-rebuild"/> on the Right of Command Bar.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
-          - **Tolerance:** Specify the tolerance of surface CV count. Lower value results in large number of surface CVs and higher value results in small number of CVs. This determines the surface output quality.
-          - **Extend:** Specify the U and V extend value.
-          - **Shrink:** Shrink projecting rows and columns of CVs to fit more closely to the boundary edges of the trimmed surface.
+    - **Method:**
+        - **Explicit control:**
+            - **Degree:** Specify the U and V degree value.
+            - **Spans:** Specify the U and V spans value.
+            - **Extend:** Specify the U and V extend value.
+            - **Shrink:** Shrink projecting rows and columns of CVs to fit more closely to the boundary edges of the trimmed surface.
+        - **Tolerance:**
+            - **Tolerance:** Specify the tolerance of surface CV count. Lower value results in large number of surface CVs and higher value results in small number of CVs. This determines the surface output quality.
+            - **Extend:** Specify the U and V extend value.
+            - **Shrink:** Shrink projecting rows and columns of CVs to fit more closely to the boundary edges of the trimmed surface.
 5. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="rebuild-face"/>

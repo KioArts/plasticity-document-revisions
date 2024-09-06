@@ -9,12 +9,11 @@ import ButtonIcon from '/components/ButtonIcon'
 
 ## 表示されるオブジェクト
 
-- 作成したオブジェクトは「Solids」「Sheets」「Curves」「Empties」「Measurements」の各セクションに分類されます。
-- 「Empties」にはインポートしたイメージとメッシュが、「Measurements」には寸法が表示されます。
+- 作成したオブジェクトは「Solids」「Sheets」「Curves」「Meshes」「Images」「Measurements」の各セクションに分類されます。
 
 ## オブジェクトの整理
 
-- セクションラベルを右クリックして「すべて選択」を選ぶと、そのセクション内の全オブジェクトを選択できます。
+- セクションラベル（「ソリッド」、「シート」、「カーブ」、「メッシュ」、「画像」、および「測定」）を右クリックし、「すべて選択」を選択して、そのセクション内のすべてのオブジェクトを選択します。
 - アウトライナー内のオブジェクトは、ドラッグ&ドロップで並べ替えが可能です。
 
 ## オブジェクトのグループ化 [#group-objects]
@@ -24,6 +23,7 @@ import ButtonIcon from '/components/ButtonIcon'
 | 操作                                                     | ショートカット                                                       | コマンド名       |
 | -------------------------------------------------------- | -------------------------------------------------------------------- | ---------------- |
 | 新しいグループを作成し、選択していたオブジェクトを移動する。 | <kbd>Ctrl + G</kbd> または <ButtonIcon type="outliner-gruop-icon" /> | Group Selected   |
+| ルートディレクトリにグループを作成し、選択したオブジェクトをその新しいグループに移動します。 | <kbd>Ctrl + G</kbd> | Group Selected at Root |
 | 選択しているオブジェクトをグループから削除する。             | <kbd>Alt + G</kbd>                                                   | Ungroup Selected |
 
 グループフォルダーを右クリックすると、関連するコマンドが表示されます。
@@ -34,6 +34,7 @@ import ButtonIcon from '/components/ButtonIcon'
 | Add current selection to group      | 選択しているオブジェクトをグループに追加します。                                |
 | Select all                          | グループ内のすべてのオブジェクトを選択します。                                  |
 | New subgroup with current selection | 選択したオブジェクトで新しいサブグループを作成します。                          |
+| Move selected items to root         | 選択したアイテムをグループからルートディレクトリに移動します。             |
 | Collapse all                        | すべてのグループを折りたたす。                                                  |
 | Expand all                          | すべてのグループを展開します。                                                  |
 | Add material                        | グループにマテリアルを設定します。[マテリアルカラー](#material-color)を参照。   |
@@ -98,6 +99,7 @@ import ButtonIcon from '/components/ButtonIcon'
 
 ソリッド、シート、カーブにマテリアルを設定できます。グループに設定したマテリアルは、そのグループ内のオブジェクトにも適用されます。
 詳しくは、[マテリアル設定](/common/set-material) と [マテリアル削除](/common/remove-material) を参照してください。
+![Outliner 4](/img/outliner-04.png)
 
 アウトライナーでは以下の操作が可能です：
 

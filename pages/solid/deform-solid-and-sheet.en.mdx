@@ -1,0 +1,41 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Deform Solid and Sheet
+
+<Reference shortcut="" command="Deform" button="" />
+
+Wrap existing solid and sheet objects onto a regular and irregular surface.
+
+## Basic Usage
+
+1. Select the objects you want to wrap.
+2. Type **Deform** in the Command Palette.
+3. Select a reference face as a neutral plane.
+4. Select the target face to deform objects with.
+5. Set the options in the Command Dialog.
+    - <Kst>Command Dialog</Kst>
+          - **Scale:** Scale in **Z,Y,X Value**
+          - **Offset:** Offset in **Z,Y,X Value**
+          - **Flip:** 
+                - **Mirror:** Mirror the deformed objects in Z Axis.
+                - **UV:** Flip the U and V orientation of the deformed objects.
+                - **Normal:** Flip the normal of the deformed objects.
+          - **Reblend:** Reblend the deformed objects. Recalculates the fillets of your objects and translates them again, removing any unwanted deformations.
+          - **Keep Tools:** Performs Deform operation while keeping the tool objects intact.
+6. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="deform-solid"/>
+<VideoPlayer fileName="deform-solid-reblend"/>
+<Callout type="info" emoji="💡">
+**Tip**
+
+To avoid unwanted deformations or inaccurate placement, use the **Unwrap Face** command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
+      
+<VideoPlayer fileName="deform-solid-unwrap"/>
+</Callout>
+
+## See also
+- [Copy with Placement](/common/copy-with-placement)

@@ -1,0 +1,35 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Square 
+
+<Reference shortcut="" command="Square" button="" />
+
+Square is an XNurbs based command that can create high-quality quad sided surfaces with the parametric feature of explicit control for UV degrees and spans.
+
+## Basic Usage
+
+1. Select the boundary edges you want to use Square Command.
+2. Type **Square** in the Command Palette.
+3. Set the options in the Command Dialog.
+   - <Kst>Command Dialog</Kst>
+   - **Continuity:** **G0, G1, G2**
+   - **Flatness:** Similarly to XNurbs, this option affects the flatness and quality of generated surfaces. Specifying higher value will generate high quality surfaces and lower value will generate low quality surfaces. 
+   - **Degree:** Specify the UV degree value.
+   - **Spans:** Specify the UV spans value.
+   - **Boundary condition:** Specify the condition of UV flow.
+        - **Natural:** No requirement for UV Flow.
+        - **Normal:** Maintain UV isocurve mutually perpendicular.
+        - **Next:** Generate a perpendicular flow of UV if boundary conditions are relatively flat.
+   - **Match CVs:** Match CVs of boundary edges.
+   - **Weight:** Specify and match the input constraints for curves and edges of a solid body. A lower value will ignore these constraints, leading to unwanted UV flow connection and a higher value will respect the constraints and produce the desired UV flow connection based on the given **Degree** and **Span** values.
+   - **Scale:** The Scale option allows you to control size of the red lines that appear on the boundary edges. These lines represent the Edge Deviation Plot, which indicates the distance between the boundary edge of the created surface and input you are inserting it.
+4. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="square-0"/>
+
+## See also
+- [XNurbs](xnurbs)
+- [Rebuild Face](rebuild-face)
+- [Raise Surface Degree](raise-surface-degree)

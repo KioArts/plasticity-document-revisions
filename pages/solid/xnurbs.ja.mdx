@@ -22,6 +22,7 @@ XNurbsは、高品質なN辺形および四辺形サーフェスを生成でき�
           - **Boundary:** 
                 - **Natural:** UVフローの要件はありません。
                 - **Normal:** UVアイソカーブを相互に直交させるオプションです。四辺形サーフェスの場合、このオプションを選択すると、生成されるXNurbsサーフェスのアイソカーブが境界曲線に対して垂直に保たれます。
+                - **Next:** 境界条件が比較的平坦な場合、UおよびVの垂直フローを生成します。このオプションは、**Quad-sided** が有効な場合にうまく機能します。
           - **Quality:** 生成されるサーフェスの品質を決定します。
                 - **Auto:** サーフェスに基づいた自動品質生成
                 - **High:** 高品質なサーフェス
@@ -31,23 +32,36 @@ XNurbsは、高品質なN辺形および四辺形サーフェスを生成でき�
 
 <VideoPlayer fileName="xnurbs-0"/>
 
-<Callout type="info" emoji="💡">
-      **Tip**
+<Callout type="info" emoji="🗒️">
+      **Note**
 ### Quad sided
       「四辺形サイド」オプションを使用すると、トリムされていない四辺形スプラインサーフェスを作成できます。これは、4つの境界エッジを持つサーフェスを構築する際に特に便利です。このオプションは4つの境界エッジでのみ機能し、高品質なサーフェスを正しいスプラインの向きで生成します。
 <VideoPlayer fileName="xnurbs-2"/>
+</Callout>
+
+<Callout type="info" emoji="🗒️">
+      **Note**
 ### Flatness
       平坦さは、コマンドダイアログで入力値を増減させることによってサーフェスの出力品質を決定します。四辺形サイドオプションを使用する場合、四辺形サーフェスでは平坦さの値を0.95〜1.00の範囲に設定することで、最適な結果が得られます。
 <VideoPlayer fileName="xnurbs-3"/>
+</Callout>
+
+<Callout type="info" emoji="🗒️">
+      **Note**
 ### Quality
       **Auto**、**High**、および**Max**オプションは、生成されるサーフェスの品質を決定します。デフォルトでは**Auto**に設定されていますが、より良い結果を得るためにHighまたはMaxを選択することもできます。ただし、**High**や**Max**はより複雑なサーフェスを生成します。
 <VideoPlayer fileName="xnurbs-4"/>
+</Callout>
+
+<Callout type="info" emoji="🗒️">
+      **Note**
 ### Profile Guides 
       ロフトやパッチコマンドとは異なり、XNurbsは境界ガイドと交差しない開いたプロファイルガイドを使用してサーフェスを生成することができます。これにより、サーフェスを簡単に生成できる柔軟性が得られ、サーフェスの探索に対する創造的な機会が広がります。
 <VideoPlayer fileName="xnurbs-1"/>
-
 </Callout> 
 
 ## 関連項目
 - [Rebuild](rebuild)
 - [Raise Surface Degree](raise-surface-degree)
+- [Loft](loft)
+- [Patch](patch)

@@ -7,7 +7,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="" command="Rebuild Curve" button="Right of Command Bar" buttonIcon='button-rebuild'/>
 
-Rebuilt by optimizing the positions of the Control Vertices(CVs) without changing the shape of the Curve.
+Rebuild by optimizing the positions of the Control Vertices(CVs) without changing the shape of the Curve.
 
 ## Basic Usage
 
@@ -19,8 +19,10 @@ Rebuilt by optimizing the positions of the Control Vertices(CVs) without changin
       - **Refit:** Rebuild within tolerances.
         - **Tolerance:** Specify the Tolerances.
         - **Keep corners:** When enabled, the corners of the Curve are not changed.
-      - **# points** Rebuild whith in the specified number of CVs .
+      - **Points** Rebuild within the specified number of CVs.
         - **Points:** Specify the number of CVs.
+      - **Explicit Control:** Rebuild within the specified number of degree and spans.
+        - **Degree & Spans:** Specify the value of degree and number of spans.
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="rebuild-curve"/>

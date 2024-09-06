@@ -10,12 +10,22 @@ import ButtonIcon from '/components/ButtonIcon'
 - To temporarily turn off grid snapping, hold <kbd>Ctrl</kbd> while dragging.
 - You can execute the grid snapping in the Command Palette; **Grid: toggle grid snapping**, **Viewport: decrease grid size**, **Viewport: increase grid size**.
 
+## Mesh and Image Snap[#mesh-and-image-snap]
+
+- You can use limited snapping features on respective Meshes and Images.
+
+   | Type                | Snap target | Tip help |
+   | ------------------- | ----------- | -------- |
+   | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face | Vertex/Face|
+   | Image (.PNG, .JPG, .JPEG)| Corner | Corner | 
+
 ## Object Snap[#object-snap]
 
 - You can use snapping to snap your cursor to features while drawing or moving objects.
 - To toggle the object snapping, click the **Enable snapping** in the top right of the window.  To toggle different types of snapping, click the <ButtonIcon type="button-types-of-snapping" /> and adjust the options.
 - To temporarily enable snapping, hold the <kbd>Ctrl</kbd> key. Snapping is automatically enabled when drawing Curves.
-- You can snap to points on various types of objects: Control-Vertex, Curve, Region, Edge, and Face. A snap target appears as a small black dot.
+- To temporarily disable snapping, press <kbd>Ctrl+X</kbd> key. This will allow you to temporarily disable different types of snaps if you repeat pressing it.  
+- You can snap to points on various types of objects: Control-Vertex, Curve, Region, Edge, Face, and Measurement. A snap target appears as a small black dot.
 - Tip help appears when you point to a snap target. Click when the tip help is visible to snap accurately.
 
     | Snap target    | Tip help                                                                                                                     |
@@ -25,6 +35,7 @@ import ButtonIcon from '/components/ButtonIcon'
     | Region         | Region, Center                                                                                                               |
     | Edge           | Edge, End, Middle                                                                                                            |
     | Face           | Face, Center                                                                                                                 |
+    | Measurement Point | Measurement                                                                                                               |
 
 - You can execute the object snapping in the Command Palette; **Snaps: toggle snap snapping**. 
 

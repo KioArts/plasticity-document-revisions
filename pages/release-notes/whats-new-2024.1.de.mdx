@@ -1,0 +1,313 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+
+# # Update-Informationen Version 2024.1
+
+Veröffentlichungsdatum: 5. März 2024
+
+## Kleine Verbesserung
+
+### Radial Array 
+
+Verbesserte Interaktivität des Radial Array-Befehls, sodass Sie die Live-Interaktivität direkt im Viewport sehen können, was die Konsistenz Ihrer Arbeit verbessert. Für weitere Informationen zum Radial Array klicken Sie [hier](/common/radial-array).
+
+### Planar Face Polygons
+
+Verbesserte Genauigkeit der Mittelpunktberechnung für planare Flächenpolygone. Für weitere Informationen zum Regular Polygon Tool klicken Sie [hier](/tool/polygon).
+
+### Export Dialog
+
+Das Export-Dialogfeld verfügt nun über eine verbesserte Funktionalität, bei der der zuletzt verwendete Dateiname beibehalten wird. Das bedeutet, dass Plasticity beim Exportieren einer Datei automatisch den zuvor verwendeten Namen vorschlägt, was den Vorgang rationalisiert und Ihnen Zeit spart.
+
+### Image/OBJ Import
+
+Einführung einer Funktion, die importierten Bild- und OBJ-Dateien automatisch basierend auf ihrem ursprünglichen Importdateinamen einen Namen zuweist. Das bedeutet, dass Plasticity beim Importieren einer Datei den vorhandenen Dateinamen als Standardname innerhalb der Anwendung verwendet.
+
+### Neuer Orbit/Rotation 
+
+Einführung einer neuen Orbit- und Rotationsstrategie unter Verwendung des klassischen Tumble/Turntable-Ansatzes.
+
+### Tangent Circle Command
+
+Der Befehl Tangent Circle unterstützt jetzt das Konstruieren von Tangenten an drei Kurven oder Kanten. Diese Erweiterung ermöglicht es den Benutzern, einen Kreis zu erstellen, der gleichzeitig an drei verschiedene Kurven oder Kanten tangiert, wodurch die Vielseitigkeit und Präzision bei komplexen Designs verbessert wird. Für weitere Informationen klicken Sie [hier](/tool/tangent-circle).
+
+<VideoPlayer fileName="tangent-circle"/>
+
+### Neue Shader und eingebaute Matcaps
+
+Neue Shader für Isophoten- und Neigungswinkelanalyse sowie neue eingebaute Matcaps für fortgeschrittene Oberflächen-Workflows hinzugefügt, einschließlich der Option, benutzerdefinierte Matcaps einzufügen. Weitere Informationen finden Sie [hier](/plasticity-essentials/view-mode).
+
+![Matcaps and Shaders](/img/custom-matcaps-example-de.png)
+
+### Neue Facettierungspräferenz – „Ultra“
+
+Eine neue Facettierungspräferenz "Ultra" wurde eingeführt, um die Oberflächenglätte in Oberflächen-Workflows zu verbessern. Sie wird für Oberflächen-Workflows und die Arbeit an kleinen Dokumenten, zum Beispiel einer Karosserie, empfohlen. Diese Einstellung wird auch für leistungsstarke Computer empfohlen.
+
+### Befehlspalette
+
+Die Befehlspalette hebt nun überschneidende Tastenkombinationen in Rot hervor. Diese Funktion erleichtert das Erkennen und Beheben von Konflikten und sorgt für einen reibungsloseren Arbeitsablauf sowie eine verbesserte Benutzerfreundlichkeit.
+
+![Keybind conflict highlighter](/img/keybind-conflict-highlight.png)
+
+### Diagnoseschaltflächen in den Befehlen Loft und Sweep
+
+Diagnoseschaltflächen werden jetzt in den Befehlen Loft und Sweep angezeigt, um Probleme wie Selbstüberschneidungen zu identifizieren.
+
+![Self-Intersections](/img/self-intersections-loft-sweep-de.png)
+
+### Patch Command
+
+Der Patch-Befehl akzeptiert jetzt optional eine überbaute Fläche, um sie in ein Loch zu schneiden, und passt das Hauptblatt an das Endstück des Basissheets an. Weitere Informationen finden Sie [hier](/solid/patch#trim-sheet-with-patch).
+
+<VideoPlayer fileName="patch-5"/>
+
+### Untrim 
+
+Der Untrim-Befehl wurde verbessert, sodass nun Löcher erstellt werden können, anstatt nur Duplikate zu erzeugen. Weitere Informationen zum Untrim-Befehl finden Sie [hier](/solid/untrim).
+
+<VideoPlayer fileName="untrim-example"/> 
+
+### Extend Curve
+
+Der Befehl Extend Curve wurde erweitert, um neben Punkten auch Kurven zu akzeptieren und diese in zwei Richtungen gleichzeitig zu verlängern. Weitere Informationen zum Befehl Extend Curve finden Sie [hier](/sketch/extend-curve).
+
+<VideoPlayer fileName="extend-curve-example"/>
+
+### Join Sheet
+
+Der Befehl Join Sheets kann jetzt mit einem ausgewählten Blatt aktiviert werden, und es wird aufgefordert, das zweite Blatt auszuwählen. Weitere Informationen zum Befehl Join Sheets finden Sie [hier](/solid/join-sheets).
+
+<VideoPlayer fileName="join-sheet-example"/>
+
+### Extend Sheet
+
+Ein neues Verhalten für den Befehl Extend Sheet wurde eingeführt, bei dem ein Blatt bis zu einem Zielkörper verlängert und mit diesem geschnitten wird. Weitere Informationen zum Befehl Extend Sheet finden Sie [hier](/solid/extend-sheet#dependant-offset).
+
+<VideoPlayer fileName="extend-sheet-dependant-offset"/> 
+
+### Verbesserung der Punktwahl 
+
+Beim Drücken von <kbd>Shift+X</kbd> können Sie jetzt vorübergehend unerwünschte Snaps beim Punktwählen an einer Kurve, Kante oder Fläche deaktivieren. Dies ermöglicht es Ihnen, gezielt auf bestimmte Punkte zu snappen, ohne Ihren Arbeitsfluss zu verlangsamen.
+
+<VideoPlayer fileName="point-picking-enhancement-example"/>
+
+### Snap-Funktionen
+
+Neue Kanten-Snaps „nächster Punkt“, „senkrecht“ und „tangential“ eingeführt, die mehr Kontrolle und Präzision beim Arbeiten mit Kanten ermöglichen. Weitere Informationen zu den Raster-Snap-Funktionen finden Sie [hier](/plasticity-essentials/grid-and-snap).
+
+<VideoPlayer fileName="snapping-features-example"/>
+
+![Edge snapping example](/img/new-edge-snapping-de.png)
+
+Zusätzlich wurden neue Hover-Snaps eingeführt, bei denen Kurven und Kanten an den Schnittpunkten oder Durchdringungen der Konstruktionsebene und Achsen erkannt werden. Weitere Informationen zu Konstruktionsebenen finden Sie [hier](/plasticity-essentials/construction-plane).
+
+<VideoPlayer fileName="construction-plane-intersection-curve-edges-example"/>
+
+![Construction plane intersection example](/img/construction-plane-example-de.png)
+
+### Tangent Circle and Arc
+Neue Hover-Snaps für Tangentialkreise und -bögen eingeführt, die präzisere und konsistentere Arbeit ermöglichen. Weitere Informationen finden Sie zum Tangentialkreis [hier](/tool/tangent-circle) und zum Tangentialbogen [hier](/tool/tangent-arc).
+
+### Measurement Panel 
+
+Das Messfenster zeigt jetzt die Winkel zwischen zwei Kanten an und bietet präzise Winkelmessungen. Dieses Update verbessert die Genauigkeit bei der Analyse und Anpassung der Beziehungen zwischen Designelementen.
+
+<VideoPlayer fileName="measurement-panel-example"/>
+
+### Outliner
+
+Das Rechtsklick-Menü im Outliner enthält jetzt eine Option zum Erstellen einer Gruppe mit den ausgewählten Elementen. Diese neue Funktion ermöglicht eine einfachere Organisation und Verwaltung mehrerer Elemente, indem sie direkt über das Kontextmenü gruppiert werden.
+
+<VideoPlayer fileName="outliner-example"/>
+
+![Outliner group right click option](/img/outliner-example.png)
+
+### Construction Plane  
+
+„Ebene aus Auswahl“ ermöglicht jetzt die Verwendung von Flächen-CVs zur Erstellung von Konstruktionsebenen. Weitere Informationen zu Konstruktionsebenen finden Sie [hier](/plasticity-essentials/construction-plane).
+
+<VideoPlayer fileName="construction-plane-example"/>
+
+### OBJ/STL Unit Confirmation
+
+ Importing OBJ/STL files now prompts for unit confirmation.
+
+ ![Unit Confirmation](/img/unit-confirmation.png) 
+
+### Improved Panel Interactivity
+
+ Messungen im unteren rechten Bereich können nun angeklickt werden, um direkt in die Zwischenablage kopiert zu werden.
+
+![Panel Interactivity](/img/measurements-de.png)
+
+### STEP Export Enhacement
+
+Der STEP-Export-Dialog wurde erweitert, um Optionen zum Konvertieren von analytischen Flächen in NURBS und zur Auswahl der STEP-Version einzuschließen.
+
+![STEP Export](/img/step-export.png)
+
+### Warning Indicator for Unsaved Files
+
+ Ein Warnhinweis für nicht gespeicherte Änderungen wird jetzt beim Öffnen von Dateien angezeigt, zusammen mit einem Indikatorpunkt für allgemeine nicht gespeicherte Änderungen.
+
+ ![Warning indicator](/img/warning-indicator.png)
+ 
+### Vereinfachtes Pipe-Gizmo
+
+ Der Gizmo für den Pipe-Befehl wurde vereinfacht, wodurch er jetzt leichter zu verwenden und zu bedienen ist. Siehe das folgende Beispiel.  
+
+ ![Pipe Gizmo](/img/pipe-gizmo-example.png)
+
+### Neue OBJ-Exportoption: „Inflexion“
+
+Die Option „Inflexion“ fügt zusätzliche Linien-Schnitte auf Oberflächenbereichen ein, insbesondere an Krümmungen. Dies erhöht die Topologieauflösung für eine höhere Renderqualität beim Export in andere 3D-Pakete. Sie haben jedoch jetzt die Möglichkeit, diese Option zu deaktivieren, um eine gleichmäßigere Verteilung der Topologie insgesamt zu ermöglichen.
+
+![Inflexion OBJ Option](/img/obj-export-example-1.png)
+
+### OBJ-Export-Funktion: Matcap- und Drahtgitter-Optionen
+
+Der OBJ-Export kann jetzt optional das aktuelle Matcap verwenden und das Drahtgitter während der Inspektion deaktivieren. Diese Funktion ist nützlich, um die Oberflächenqualität oder -optimierung mit hochauflösenden Zebra- oder anderen Shadern zu überprüfen.
+
+ <VideoPlayer fileName="obj-export-example-2"/>
+
+### Erweiterung des Dimension-Befehls
+
+Das Ändern der Größe von Zylindern mit dem Dimension-Befehl ist jetzt möglich. Weitere Informationen zum Dimension-Befehl finden Sie [hier](/common/dimension).
+
+ <VideoPlayer fileName="dimension-command-example"/>
+
+### Rebuild Edge
+
+Der Rebuild-Befehl wurde erweitert, um nun auch beschädigte Kanten auf einer Fläche wiederherzustellen. Dies ist nützlich, wenn das manuelle Löschen der Kanten mit <kbd>Shift+X</kbd> und dem Befehl „Redundant Topology entfernen“ nicht funktioniert.
+
+<VideoPlayer fileName="rebuild-edge-1"/> 
+
+
+
+## Wesentliche Verbesserung
+
+### Dependent Offset 
+
+Ein neues Verhalten des Befehls „Offset Face“ (Schieben/Zeiehen) wird eingeführt, das jetzt abhängige Versätze unterstützt und es Ihnen ermöglicht, einen Körper anzupassen und zu schneiden. Weitere Informationen finden Sie [hier](/solid/offset-face).
+
+<VideoPlayer fileName="dependant-offset-face"/>
+
+### Flächen-CV-Bearbeitung
+
+Die Bearbeitung von Flächen-CVs ermöglicht jetzt die direkte Manipulation sowohl von zugeschnittenen als auch von unbeschnittenen Flächen.
+
+<VideoPlayer fileName="direct-manipulation-cv"/>
+
+### Raise Surface Degree
+
+Der Befehl „Raise Degree“ erhöht die Komplexität von Flächen, indem analytische Flächen in Splines umgewandelt und der Spline-Grad erhöht wird. Weitere Informationen finden Sie [hier](/solid/raise-surface-degree).
+
+<VideoPlayer fileName="raise-surface-degree"/>
+
+### Nominal Face
+
+Flächen mit sichtbaren CVs haben jetzt eine nominale Fläche, die einfachere Bearbeitungen bei direkter Bearbeitung ermöglicht. Der Befehl „Nominale Fläche entfernen“ steht zur Verfügung, falls die nominale Fläche entfernt werden muss. Weitere Informationen finden Sie [hier](/solid/remove-nominal-surface).
+
+<VideoPlayer fileName="remove-nominal-surface"/>
+
+### Toggle Points
+
+Der Befehl „Toggle Points“ wurde eingeführt, um Punkte auf Flächen, Kurven und Körpern ein- oder auszublenden. Weitere Informationen finden Sie [hier](/sketch/toggle-points).
+
+<VideoPlayer fileName="toggle-points"/> 
+
+### Pipe and Sweep
+
+Skalierungsoptionen wurden zu den Befehlen Pipe und Sweep hinzugefügt. Weitere Details finden Sie unter [Pipe](/solid/pipe) und [Sweep](/solid/sweep).
+
+### Full Round Fillet
+
+Die Option „Full Round“ wurde zur Festkörper-Fasenfunktion hinzugefügt. Diese Option ermöglicht es, eine abgerundete Fase auf einer Fläche zu erstellen, wenn zwei Kanten ausgewählt sind. Weitere Details zur Fillet Shell finden Sie [hier](/solid/fillet-shell#fillet-options).
+
+<VideoPlayer fileName="fillet-shell-shape"/>
+
+### Rebuild Face
+
+Der Befehl „Rebuild“ kann jetzt die Flächen von Gesichtern wiederherstellen. Die Optionen „Erweitern“ und „Verkleinern“ ermöglichen ein einfaches Überbauen von Flächen. Weitere Informationen finden Sie [hier](/solid/rebuild-face). 
+
+<VideoPlayer fileName="rebuild-face"/>
+
+## Kleine, aber bedeutende Änderungen
+
+### CV-Ausrichtung mit Bildschirmraum
+
+Das Ziehen von CVs bei Kurven und Flächen richtet sich jetzt nach dem Bildschirmraum statt nach der Konstruktionsebene aus. Dies beschleunigt Ihren Arbeitsablauf und vermeidet Verwirrung durch ungenaue Ausrichtung.
+
+### Skizzieroperationen
+
+Die Skizzieroperationen wurden verbessert, sodass sie mit einem einzelnen Enter-Druck oder einem einzigen Linksklick bestätigt werden können. Dies betrifft die folgenden Skizzierwerkzeuge:
+
+|   **Circle Tools**  |  **Regular Polygon** |  **Rectangle Tools**   | 
+|---------------------|----------------------|------------------------|
+| [Center Circle](/tool/center-circle) | -                              |  [Corner Rectangle](/tool/corner-rectangle)      | 
+| [Two Point Circle](/tool/two-point-circle)  | -                      |  [Center Rectangle](/tool/center-rectangle)      | 
+| [Three Point Circle](/tool/three-point-circle) | -                   |  [Three Point Rectangle](/tool/three-point-rectangle) | 
+| [Tangent Circle](/tool/tangent-circle)    | -                        |  -                     | 
+| [Center Point Arc](/tool/center-point-arc)  | -                     |  -                     | 
+| [Three Point Arc](/tool/three-point-arc)  | -                       |  -                     | 
+| [Tangent Arc](/tool/tangent-arc)      | -                            |  -                     | 
+
+## Studio-exklusive Funktionen
+
+### XNurbs
+Plasticity bietet jetzt das XNurbs-Addon, das die Erstellung von hochwertigen Oberflächen ermöglicht. XNurbs ist ein leistungsstarkes Werkzeug, das die Fähigkeit zur präzisen Gestaltung glatter, komplexer Oberflächen verbessert und den gesamten Designprozess erheblich optimiert. XNurbs ist nur für PC und Mac verfügbar. Weitere Informationen zu XNurbs finden Sie [hier](/solid/xnurbs).
+
+<VideoPlayer fileName="xnurbs-example"/> 
+
+### Rhino 8 Import
+
+Unterstützung für den Import von Rhino 8 wurde hinzugefügt.
+
+## Bemerkenswerte Optimierungen
+
+Der Parallelismus bei OBJ/STL-Ex- und -Importen wurde verbessert.
+
+Objekttransformationen (Verschieben/Rotieren/Skalieren) umgehen nun die Neuberechnung der Facettierung bei der Bestätigung zur Steigerung der Effizienz.
+
+Implementierung von 16-Bit-Snorm-Normalen und 16-Bit-Indizes, wo möglich, zur Optimierung der Speichernutzung.
+
+
+## Neue Befehle
+
+### Remove Nominal Surface
+
+Entfernen Sie versteckte Flächen-CVs für mehr Kontrolle. Dies ist nur anwendbar, wenn Sie den Flächen-Grad erhöht haben. Weitere Informationen finden Sie [hier](/solid/remove-nominal-surface).
+
+### Toggle Points
+
+Der Befehl „Toggle Points“ wurde eingeführt, um Punkte auf Flächen, Kurven und Körpern ein- oder auszublenden. Weitere Informationen finden Sie [hier](/sketch/toggle-points).
+
+### Raise Surface Degree
+
+Der Befehl „Raise Degree“ erhöht die Komplexität von Flächen, indem analytische Flächen in Splines umgewandelt und der Spline-Grad erhöht wird. Weitere Informationen finden Sie [hier](/solid/raise-surface-degree).
+
+### Rebuild Face
+
+Der Befehl „Rebuild“ kann jetzt die Flächen von Gesichtern wiederherstellen. Die Optionen „Erweitern“ und „Verkleinern“ ermöglichen ein einfaches Überbauen von Flächen. Weitere Informationen finden Sie [hier](/solid/rebuild-face).
+
+### Rebuild Edge
+
+Der Befehl „Rebuild“ wurde erweitert und kann jetzt beschädigte Kanten auf einer Fläche wiederherstellen.
+
+### Extend Sheet
+
+Der Befehl „Extend Sheet“ verlängert eine Fläche bis zu einem Zielkörper und schneidet diesen. Weitere Informationen zum Befehl „Extend Sheet“ finden Sie [hier](/solid/extend-sheet#dependant-offset).
+
+### XNurbs
+
+Erstellen Sie glatte und hochwertige viereckige und N-seitige Flächen. Weitere Informationen zu XNurbs finden Sie [hier](/solid/xnurbs).
+
+
+## Download und Installation
+
+Plasticity 2024.1 steht jetzt zum Download bereit. Weitere Informationen finden Sie unter [diesem Link](/getting-started/download-and-install).
+
+## Frühere Update-Informationen
+
+- 18. Dezember 2023 [Version 1.4](/release-notes/whats-new-1-4)

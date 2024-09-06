@@ -1,0 +1,41 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Deform Solid and Sheet
+
+<Reference shortcut="" command="Deform" button="" />
+
+Wickeln Sie vorhandene Solids- und Sheet-Objekte auf eine regelmäßige oder unregelmäßige Oberfläche.
+
+## Grundlegende Nutzung
+
+1. Wählen Sie die Objekte aus, die Sie umhüllen möchten.
+2. Geben Sie **Deform** in die Befehlsleiste ein.
+3. Wählen Sie eine Referenzfläche als Neutralebene aus.
+4. Wählen Sie die Zielfläche aus, auf die die Objekte deformiert werden sollen.
+5. Stellen Sie die Optionen im Befehlsdialog ein.
+    - <Kst>Befehlsdialog</Kst>
+          - **Skalierung:** Skalierung in **Z,Y,X Wert**
+          - **Offset:** Offset in **Z,Y,X Wert**
+          - **Flip:** 
+                - **Spiegeln:** Spiegeln Sie die deformierten Objekte in der Z-Achse.
+                - **UV:** Drehen Sie die U- und V-Ausrichtung der deformierten Objekte um.
+                - **Normal:** Drehen Sie die Normalen der deformierten Objekte um.
+          - **Neuabmischen:** Mischen Sie die deformierten Objekte neu. Berechnet die Fasen Ihrer Objekte neu und übersetzt sie erneut, um unerwünschte Verformungen zu entfernen.
+          - **Werkzeuge behalten:** Führen Sie die Deform-Operation durch, während die Werkzeugobjekte intakt bleiben.
+6. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+
+<VideoPlayer fileName="deform-solid"/>
+<VideoPlayer fileName="deform-solid-reblend"/>
+<Callout type="info" emoji="💡">
+**Tip**
+
+Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den **Unwrap Face**-Befehl aus der Befehlsleiste für das Zielobjekt. Dies erzeugt eine korrekt gemappte Oberfläche, die dann als genaue Referenzfläche verwendet werden kann.
+      
+<VideoPlayer fileName="deform-solid-unwrap"/>
+</Callout>
+
+## Siehe auch
+- [Copy with Placement](/common/copy-with-placement)

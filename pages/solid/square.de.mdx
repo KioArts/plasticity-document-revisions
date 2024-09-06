@@ -1,0 +1,35 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Square 
+
+<Reference shortcut="" command="Square" button="" />
+
+Square ist ein auf XNurbs basierender Befehl, der hochwertige viereckige Flächen mit der parametrischen Funktion zur expliziten Steuerung von UV-Graden und Spannweiten erstellen kann.
+
+## Grundlegende Nutzung
+
+1. Wählen Sie die Begrenzungskanten aus, die Sie für den Square-Befehl verwenden möchten.
+2. Geben Sie **Square** in die Befehlsleiste ein.
+3. Stellen Sie die Optionen im Befehlsdialog ein.
+   - <Kst>Befehlsdialog</Kst>
+   - **Kontinuität:** **G0, G1, G2**
+   - **Flachheit: ** Ähnlich wie bei XNurbs beeinflusst diese Option die Flachheit und Qualität der generierten Flächen. Ein höherer Wert erzeugt hochwertige Flächen, ein niedrigerer Wert erzeugt minderwertige Flächen.
+   - **Grad:** Geben Sie den UV-Gradwert an.
+   - **Spannweiten:** Geben Sie den UV-Spannweitenwert an.
+   - **Randbedingung:** Bestimmen Sie die Bedingung des UV-Flusses.
+        - **Natürlich:** Keine Anforderung an den UV-Fluss.
+        - **Normal:** Erhalten Sie eine wechselseitig senkrechte UV-Isolinie.
+        - **Nächste:** Erzeugen Sie einen senkrechten UV-Fluss, wenn die Randbedingungen relativ flach sind.
+   - **CVs anpassen:** Passen Sie die CVs der Begrenzungskanten an.
+   - **Gewicht:** Bestimmen und passen Sie die Eingabebedingungen für Kurven und Kanten eines festen Körpers an. Ein niedrigerer Wert ignoriert diese Bedingungen, was zu unerwünschten UV-Flussverbindungen führt. Ein höherer Wert respektiert die Bedingungen und erzeugt die gewünschte UV-Flussverbindung basierend auf den angegebenen **Grad-** und **Spannweiten**-Werten.
+   - **Skalierung:** Die Option Skalierung ermöglicht es Ihnen, die Größe der roten Linien zu steuern, die an den Begrenzungskanten erscheinen. Diese Linien stellen das Edge Deviation Plot dar, welches den Abstand zwischen der Begrenzungskante der erstellten Fläche und der von Ihnen eingegebenen Position anzeigt.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+
+<VideoPlayer fileName="square-0"/>
+
+## Siehe auch
+- [XNurbs](xnurbs)
+- [Rebuild Face](rebuild-face)
+- [Raise Surface Degree](raise-surface-degree)
