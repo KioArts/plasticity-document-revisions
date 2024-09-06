@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Draft Face
 
@@ -11,11 +12,11 @@ Wenden Sie einen Neigungswinkel auf die ausgewählte Face an.
 
 ## Grundlegende Nutzung
 
-1. Wählen Sie die Face aus, die als Referenzebene verwendet werden soll.
-2. Klicken Sie auf den Button <ButtonIcon type="button-draft-face" /> rechts von der Befehlsleiste.
-3. Wählen Sie Faces aus, die geneigt werden sollen.
-4. Ziehen Sie den weißen Kreis, um den Neigungswinkel festzulegen.
-5. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+1. Wählen Sie die Fläche aus, die Sie als Referenzebene verwenden möchten.
+2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-draft-face" /> rechts in der Befehlsleiste.
+3. Wählen Sie Fläche(n) mit der <kbd>Ctrl</kbd>-Taste aus, um sie zu entwerfen.
+4. Ziehen Sie den weißen Kreis, um den Entwurfswinkel festzulegen, oder verwenden Sie das Gizmo, um die Position der Referenzebene anzupassen.
+5. Stellen Sie die Optionen im Befehlsdialog und den Tastenkombinationen ein.
     - <Kst>Befehlsdialog</Kst>
         - **Degrees:** Geben Sie den Neigungswinkel an.
         - **Grow:**
@@ -28,6 +29,11 @@ Wenden Sie einen Neigungswinkel auf die ausgewählte Face an.
 6. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
 
 <VideoPlayer fileName="draft-face"/>
+
+<Callout type="info" emoji="🗒️">
+**Note**
+Das Anwenden des Draft-Befehls auf einer nicht gleichmäßigen Fläche ist möglich, jedoch mit bestimmten Einschränkungen. Sie können den Draft-Winkel angeben, aber die Referenzebene nicht verschieben.
+</Callout>
 
 ## Siehe auch
 - [Offset Face](offset-face)

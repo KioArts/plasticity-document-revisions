@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Draft Face
 
@@ -13,8 +14,8 @@ Apply a draft angle to the selected Face.
 
 1. Select the face to use as a reference plane.
 2. Click the button <ButtonIcon type="button-draft-face" /> on the Right of Command Bar.
-3. Select Faces to draft.
-4. Drag the white circle to specify the angle of draft.
+3. Select Face or Faces with <kbd>Ctrl</kbd> button to draft.
+4. Drag the white circle to specify the angle of draft or Gizmo to adjust the position of the reference plane.
 5. Set the options in the Command Dialog and Keyboard Shortcuts.
     - <Kst>Command Dialog</Kst>
         - **Degrees:** Specify the angle of draft.
@@ -28,6 +29,11 @@ Apply a draft angle to the selected Face.
 6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="draft-face"/>
+
+<Callout type="info" emoji="🗒️">
+**Note**
+Applying Draft Command on a non-uniform surface is possible, however, with certain limitations. You can specify the draft angle but cannot move the reference plane.
+</Callout>
 
 ## See also
 - [Offset Face](offset-face)

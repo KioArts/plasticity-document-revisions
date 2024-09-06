@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Draft Face（フェイスを傾ける）
 
@@ -12,9 +13,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 ## 基本的な使い方
 
 1. リファレンス面となるフェイスを選択します。
-2. コマンドバーの右側にある <ButtonIcon type="button-draft-face" /> ボタンをクリックします。
-3. 傾けるフェイスを選択します。
-4. 白い円をドラッグして傾ける角度を指定します。
+2. コマンドバーの右にある <ButtonIcon type="button-draft-face" /> ボタンをクリックします。
+3. <kbd>Ctrl</kbd> ボタンを押しながら、ドラフトする面を選択します。
+4. 白い円をドラッグしてドラフトの角度を指定するか、ギズモを使って参照平面の位置を調整します。
 5. コマンドダイアログとキーボードショートカットでオプションを設定します。
     - <Kst>コマンドダイアログ</Kst>
         - **Degrees:** 傾ける角度を指定します。
@@ -28,6 +29,11 @@ import Kst from '/components/KeyboardShortcutsTitle'
 6. コマンドダイアログのOKボタンをクリックするか、右クリックして確定します。
 
 <VideoPlayer fileName="draft-face"/>
+
+<Callout type="info" emoji="🗒️">
+**Note**
+非均一な面にドラフトコマンドを適用することは可能ですが、いくつかの制限があります。ドラフト角度を指定することはできますが、参照平面を移動することはできません。
+</Callout>
 
 ## 関連項目
 - [Offset Face](offset-face)

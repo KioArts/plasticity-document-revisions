@@ -1,0 +1,41 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Deform Solid and Sheet
+
+<Reference shortcut="" command="Deform" button="" />
+
+既存のソリッドおよびシートオブジェクトを、規則的および不規則な表面にラップします。
+
+## 基本的な使い方
+
+1. ラップしたいオブジェクトを選択します。
+2. コマンドパレットに **Deform** と入力します
+3. 中立平面として参照面を選択します。
+4. オブジェクトを変形させる対象面を選択します。
+5. コマンドダイアログでオプションを設定します。
+    - <Kst>コマンドダイアログ</Kst>
+          - **スケール:** Z、Y、X 値でスケールします。
+          - **オフセット:** Z、Y、X 値でオフセットします。
+          - **反転:** 
+                - **ミラー:** Z軸で変形したオブジェクトをミラーします。
+                - **UV:** 変形したオブジェクトのUおよびVの向きを反転します。
+                - **法線:** 変形したオブジェクトの法線を反転します。
+          - **ブレンド:** 変形したオブジェクトを再ブレンドします。オブジェクトのフィレットを再計算し、再度変換して不要な変形を取り除きます。
+          - **ツールを保持:** ツールオブジェクトをそのまま保持しながら、Deform 操作を実行します。
+6. コマンドダイアログで OK をクリックするか、右クリックして確認します。
+
+<VideoPlayer fileName="deform-solid"/>
+<VideoPlayer fileName="deform-solid-reblend"/>
+<Callout type="info" emoji="💡">
+**Tip**
+
+不要な変形や不正確な配置を避けるために、コマンドパレットから **Unwrap Face** コマンドをターゲットオブジェクトに対して使用します。これにより、正しくマッピングされた表面が生成され、それを正確な参照面として使用できます。
+      
+<VideoPlayer fileName="deform-solid-unwrap"/>
+</Callout>
+
+## 関連項目
+- [Copy with Placement](/common/copy-with-placement)

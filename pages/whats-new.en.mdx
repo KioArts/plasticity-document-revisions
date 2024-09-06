@@ -62,7 +62,9 @@ Introducing a Gizmo feature where you can control the position of the reference 
 
 Patch Command can now create sheets from a close edge selection of a solid. Refer to [here](/solid/patch).
 
-## Removed Commands Rebuild Edge Command 
+## Removed Commands 
+
+### Rebuild Edge Command 
 
 It has been removed due to its unsafe implementation and has been replaced with the delete command for edges. This strategy should allow to join more fractured edges.
 
@@ -72,14 +74,15 @@ It has been removed due to its unsafe implementation and has been replaced with 
 2. **Meshes and Images** - Outliner now separates meshes and images into their own sections rather than "empties". 
 3. **Context Menu for Selected Items in Outliner** - Context menu in the Outliner with right mouse button now has a new function "move selected items to root" whenever you have selected items in a group. 
 4. **Context Menu for Group** - Context menu in the Outliner with right mouse button now has a new group function "Group selection here" and "Group selection at root". 
-5. **View Mode** - Transparent materials are now displayed with 50% transparency, even when using default and custom [matcaps](/plasticity-essentials/view-mode) in non-render mode.
+5. **Grouping items** - If all items are in the same group then creating a new group will be located in tha same directory, otherwise at root directory.
+6. **Group Hierarchy** - Deleting a group moves its children to its immediate parent, rather than root.
+5. **Assigning Material** - Transparent materials are now displayed with 50% transparency, even when using default and custom [matcaps](/plasticity-essentials/view-mode) in non-render mode.
 
 ## File Formats Enhacement
 
 ### OBJ
 
-Exporting OBJ in Plasticity with UVs and a material files (MTL) is now possible to do.
-    ![OBJ](/img/obj-2024.2.png)
+Exporting OBJ in Plasticity with UVs and a MTL file is now possible to do.
 
 ### STEP
 
@@ -104,30 +107,35 @@ Import and Appending Plasticity documents preserves groups, names, and materials
 Importing Parasolid files in Plasticity now support colors, names, and assemblies but do not support instanes yet. 
 
 ### New Supported Formats
-1. 3MF Import/export formats 
-2. SVG Import
-3. Now suporting export and import 3MF file format is possible in Plasticity, alongside with importing only SVG format. To check out all the supported file formats for Import and Export in Plasticity, click [here](/plasticity-essentials/import-export).
+
+1. Importing and Exporting 3MF is supported.
+2. Importing SVG is supported.
+
+To check out all the supported file formats for Import and Export in Plasticity, click [here](/plasticity-essentials/import-export).
 
 ## Minor Changes
 
-1. New Offset Edge gizmo which resembles the two-sided fillet gizmo.
-2. Copy and Paste Command now inherits material and name. 
-3. Alternative-Duplicate Command on faces now inherits name and material.
-4. Text tool has been updated a few additional fonts.
-5. Touchpad now can be used with cursor track orbit point. 
-6. New Autosave Option now allows to save current saved file every X amount of minutes, which can be configured in the Preference section.
+1. **Offset Edge Gizmo** - New Offset Edge gizmo which resembles the two-sided fillet gizmo.
+2. **Copy and Paste** - Copy and Paste Command now inherits material and name. 
+3. **Alternative- Duplicate** - Alternative-Duplicate Command on faces now inherits name and material.
+4. **Text Tool** - Text tool has been updated a few additional fonts.
+5. **Touchpad** - Touchpad now can be used with cursor track orbit point. 
+6. **Autosave Option** - New Autosave Option now allows to save current saved file every X amount of minutes, which can be configured in the Preference section.
 
 ### Group Command 
-    - The Group Command now features a new behavior where items under the same parent group are automatically grouped together. Additionally, when a group is deleted within the same hierarchy, its child items are moved to the parent group.
+
+The Group Command now features a new behavior where items under the same parent group are automatically grouped together. Additionally, when a group is deleted within the same hierarchy, its child items are moved to the parent group.
 
 ### Measurements and Measurements Panel
-    - Measurements can now be moved when selected in the Outliner and used in conjunction with the Move Command, enabling you to enter specific values directly in the viewport for more precise adjustments.
-    - Measurements Panel now displays the angle between two planes. 
-    - Sidebar in the Measurements Panel now introduces surface class, allowing specific selection of faces. 
-    - Measurements can be coppied to clipboard in user's preferred units.
+
+ 1. **Measurements Enhancement** - Measurements can now be moved when selected in the Outliner and used in conjunction with the Move Command, enabling you to enter specific values directly in the viewport for more precise adjustments.
+ 2. **Measurements Enhancement** - Measurements can be coppied to clipboard in user's preferred units.
+ 3. **Measurement Panel** - Measurement Panel now displays the angle between two planes. 
+ 4. **Surface Class** - Lower-right panel in the Measurements Panel now introduces surface class, allowing specific selection of faces. 
 
 ### Snaps 
-    - New Snap types in the following: 
+
+New Snap types in the following: 
 
    | Type               | Snap target | Tip help |
    | ------------------- | ----------- | -------- |
@@ -136,13 +144,6 @@ Importing Parasolid files in Plasticity now support colors, names, and assemblie
    | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face          | Vertex/Face |
    | Measurements             | Measurement Point    | Measurement |
    | Freestyle Rotate         | Parallel/Perpendicular | Parallel/Perpendicular | 
-
-
-### Groups
-    - Grouping items - If all items are in the same group then creating a new group will be located in tha same directory, otherwise at root directory.
-    - Item/Group rightclick menu - "move selected items to root"
-    - Items in Outliner now have two grouping commands in right click menu - "Group here" and "Group at root"
-    - Groups - Deleting a group moves its children to its immediate parent, rather than root. 
 
 ## Download and Installation
 
