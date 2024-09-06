@@ -2,314 +2,154 @@ import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 import Reference from '/components/Reference'
 
-# 更新情報 バージョン2024.1
+# 更新情報 バージョン 2024.2
 
-リリース日: 2024年3月5日
-
-## 軽微な改善
-
-### Radial Array 
-
-Radial Array コマンドのインタラクティブ性が向上し、ビューポート上でライブのインタラクションを直接確認できるようになりました。これにより、作業の一貫性が向上します。Radial Array についての詳細は [こちら](/common/radial-array) をご覧ください。.
-
-### 平面フェースポリゴン
-
-平面面ポリゴンの中点計算精度が向上しました。Regular Polygon Tool についての詳細は[こちら]](/tool/polygon)をご覧ください。
-
-### エクスポートダイアログ
-
-エクスポートダイアログの機能が改善され、最後に使用したファイル名を保持するようになりました。これにより、ファイルをエクスポートする際に、Plasticityが前回使用した名前を自動的に提案するため、プロセスが簡略化され、時間を節約できます。
-
-### 画像/OBJインポート
-
-元のインポートファイル名に基づいて、インポートされた画像およびOBJファイルに自動的に名前を付ける機能を導入しました。これにより、ファイルをインポートすると、Plasticityが既存のファイル名をアプリケーション内でのデフォルト名として使用します。
-
-### 新しいオービット/回転 
-
-クラシックなタンブル/ターンテーブルアプローチを使用した新しいオービットおよび回転戦略を導入しました。
-
-### Tangent Circle Command
-
-タンジェントサークルコマンドは、3つの曲線やエッジに接する円を構築できるようになりました。この強化により、3つの異なる曲線やエッジに同時に接する円を作成でき、複雑なデザインにおける多様性と精度が向上します。詳細については [こちら](/tool/tangent-circle)をクリックしてください。
-
-<VideoPlayer fileName="tangent-circle"/>
-
-### 新しいシェーダーと内蔵マットキャップ
-
-等方線およびドラフト角度解析用の新しいシェーダー、ならびに高度なサーフェス処理ワークフローのための内蔵マットキャップが追加されました。カスタムマットキャップを挿入するオプションも含まれています。詳細については [こちら](/plasticity-essentials/view-mode)を参照してください。
-
-![Matcaps and Shaders](/img/custom-matcaps-example-ja.png)
-
-### 新しいファセット設定 - 「ウルトラ」
-
-新しいファセット設定「ウルトラ」が導入され、サーフェスの滑らかさが向上します。サーフェス処理ワークフローや、小さなドキュメント（例えば、車体）において推奨されます。また、高性能なコンピュータでの使用にも適しています
-
-### Command Palette
-
-コマンドパレットは、競合するキー バインディングを赤で強調表示するようになりました。この機能により、競合を識別して解決しやすくなり、よりスムーズなワークフローと使いやすさが向上します
-
-![Keybind conflict highlighter](/img/keybind-conflict-highlight.png)
-
-### ロフトおよびスイープコマンドにおける診断エラーボディ
-
-ロフトおよびスイープコマンドで診断エラーボディが表示されるようになり、自己交差などの問題を特定できるようになりました
-
-![Self-Intersections](/img/self-intersections-loft-sweep-ja.png)
-
-### Patch Command
-
-パッチコマンドは、オプションで過剰に構築されたシートを穴にトリムし、基礎シートの終端部に合わせてメインシートをトリムする機能を受け付けるようになりました。詳細については [こちら](/solid/patch#trim-sheet-with-patch)をクリックしてください。
-
-<VideoPlayer fileName="patch-5"/>
-
-### Untrim 
-
-「アンチリム」コマンドが強化され、単に複製するだけでなく、穴を作成できるようになりました。詳細については [こちら](/solid/untrim)をクリックしてください。
-
-<VideoPlayer fileName="untrim-example"/> 
-
-### Extend Curve
-
-「エクステンドカーブ」コマンドが拡張され、頂点に加えてカーブも受け付けるようになり、同時に二方向に延長できるようになりました。詳細については [こちら](/sketch/extend-curve)をクリックしてください。
-
-<VideoPlayer fileName="extend-curve-example"/>
-
-### Join Sheet
-
-「ジョインシート」コマンドは、1つのシートが選択された状態でトリガーできるようになり、第二のシートの選択を促します。詳細については [こちら](/solid/join-sheets)をクリックしてください。
-
-<VideoPlayer fileName="join-sheet-example"/>
-
-### Extend Sheet
-
-「エクステンドシート」コマンドの新しい動作が導入され、シートを目標ボディにまで延長し、交差させることができるようになりました。詳細については [こちら](/solid/extend-sheet#dependant-offset)をクリックしてください。
-
-<VideoPlayer fileName="extend-sheet-dependant-offset"/> 
-
-### ポイント選択の強化
-
-<kbd>Shift+X</kbd> を押すことで、曲線、エッジ、ソリッド上でのポイント選択中に不必要なスナップを一時的に無効にできるようになりました。これにより、特定のポイントにスナップしながらも作業をスムーズに進めることができます。
-
-<VideoPlayer fileName="point-picking-enhancement-example"/>
-
-### スナッピング機能 
-
-新しいエッジスナップ機能「最も近い」「垂直」「接線」を導入し、エッジ作業時のコントロールと精度が向上しました。グリッドスナッピング機能の詳細については [こちら](/plasticity-essentials/grid-and-snap)をクリックしてください。
-
-<VideoPlayer fileName="snapping-features-example"/>
-
-![Edge snapping example](/img/new-edge-snapping-ja.png)
-
-さらに、曲線やエッジがコンストラクションプレーンや軸と交差する位置に新しいホバー スナップが追加されました。コンストラクションプレーンの詳細については [こちら](/plasticity-essentials/construction-plane)をクリックしてください。
-
-<VideoPlayer fileName="construction-plane-intersection-curve-edges-example"/>
-
-![Construction plane intersection example](/img/construction-plane-example-ja.png)
-
-### Tangent Circle and Arc
-
-接線円や接線弧のための新しいホバースナップが導入され、より精密で一貫性のある作業が可能になりました。接線円については [こちら](/tool/tangent-circle)、接線弧については [こちら](/tool/tangent-arc)をご参照ください。
-
-### Measurement Panel 
-
-測定パネルに、2つのエッジ間の角度が表示されるようになり、正確な角度測定が可能になりました。この更新により、デザイン要素間の関係を分析および調整する際の精度が向上します
-
-<VideoPlayer fileName="measurement-panel-example"/>
-
-### Outliner
-
-アウトライナーの右クリックメニューに、選択したアイテムでグループを作成するオプションが追加されました。この新機能により、複数のアイテムをグループ化し、コンテキストメニューから直接整理・管理することが簡単になります
-
-<VideoPlayer fileName="outliner-example"/>
-
-![Outliner group right click option](/img/outliner-example.png)
-
-### Construction Plane  
-
-「選択から平面」機能が、サーフェスのCV（制御点）を使用してコンストラクションプレーンを作成できるようになりました。コンストラクションプレーンの詳細については [こちら](/plasticity-essentials/construction-plane)をクリックしてください。
-
-<VideoPlayer fileName="construction-plane-example"/>
-
-### OBJ/STL単位確認
-
- OBJ/STLファイルをインポートする際に、単位の確認が求められるようになりました
-
- ![Unit Confirmation](/img/unit-confirmation.png) 
-
-### パネルのインタラクティブ性の向上
-
- 右下のパネル内の測定値をクリックすることで、直接クリップボードにコピーできるようになりました。
-
-![Panel Interactivity](/img/measurements-ja.png)
-
-### STEPエクスポートの強化
-
- STEPエクスポートダイアログが強化され、解析サーフェスをNURBSに変換するオプションとSTEPバージョンの選択が可能になりました。
-
-![STEP Export](/img/step-export.png)
-
-### 保存されていないファイルの警告インジケーター
-
-ファイルを開く際に保存されていない変更の警告が表示され、一般的に保存されていない変更にはインジケーター ドットが表示されるようになりました。
-
- ![Warning indicator](/img/warning-indicator.png)
- 
-### 簡素化されたパイプギズモ
-
-パイプコマンドのギズモが簡素化され、使いやすくなりました。以下の例をご参照ください。 
-
- ![Pipe Gizmo](/img/pipe-gizmo-example.png)
-
-### 新しいOBJエクスポートオプション: 「インフレクション」
-
-「インフレクション」オプションは、特に曲面で目立つ追加のラインカットをサーフェス領域に挿入します。これにより、他の3Dパッケージにエクスポートする際のレンダリング品質が向上します。ただし、全体的により均等に分布したトポロジー制御を望む場合は、これを無効にするオプションも用意されています。
-
-![Inflexion OBJ Option](/img/obj-export-example-1.png)
-
-### OBJエクスポート機能: マットキャップおよびワイヤーフレームオプション
-
-OBJエクスポートでは、現在、オプションで現在のマットキャップを使用し、検査中にワイヤーフレームを無効にすることができます。この機能は、高解像度のゼブラシェーダーやその他のシェーダーを使用してサーフェス品質や最適化を確認する際に便利です。
-
- <VideoPlayer fileName="obj-export-example-2"/>
-
-### 寸法コマンドの強化
-
-寸法コマンドを使用してシリンダーのサイズ変更が可能になりました。寸法コマンドの詳細については [こちら](/common/dimension)をクリックしてください。
-
- <VideoPlayer fileName="dimension-command-example"/>
-
-### エッジの再構築
-
-再構築コマンドが拡張され、サーフェス上の壊れたエッジを再構築できるようになりました。これは、<kbd>Shift+X</kbd> や「不要なトポロジーの削除」コマンドで手動でエッジを削除してもうまくいかない場合に便利です
-
-<VideoPlayer fileName="rebuild-edge-1"/> 
-
-
-
-## 主要な改善
-
-### Dependent Offset 
-
-**オフセットフェース（プッシュ/プル）**コマンドの新しい動作が導入され、依存オフセットをサポートするようになりました。これにより、ボディを一致させて交差させることができます。詳細については [こちら](/solid/offset-face)をご参照ください。
-
-<VideoPlayer fileName="dependant-offset-face"/>
-
-### Surface CV Editing
-
-Surface CV編集は、トリムされた面とトリムされていない面の両方を直接操作できるようになりました。
-
-<VideoPlayer fileName="direct-manipulation-cv"/>
-
-### Raise Surface Degree
-
-Raise Degree コマンドは、解析面をスプラインに変換し、スプラインの次数を増加させることで表面の複雑さを高めます。詳細については、 [こちら](/solid/raise-surface-degree)を参照してください。
-
-<VideoPlayer fileName="raise-surface-degree"/>
-
-### Nominal Face
-
-可視CVを持つ面には、直接編集時に編集を容易にするための名目上のサーフェスが追加されました。名目上のサーフェスを削除する必要がある場合は、[こちら](/solid/remove-nominal-surface)から「Remove Nominal Surface コマンド」を使用できます。
-
-<VideoPlayer fileName="remove-nominal-surface"/>
-
-### Toggle Points
-
-ポイントの表示/非表示を切り替える「トグルポイント」コマンドを導入しました。詳細については [こちら](/sketch/toggle-points)をご参照ください。
-
-<VideoPlayer fileName="toggle-points"/> 
-
-### Pipe and Sweep
-
-パイプおよびスイープコマンドにスケーリングオプションを追加しました。詳細については[パイプ](/solid/pipe)および[スイープ](/solid/sweep)をご参照ください。
-
-### Full Round Fillet
-
-ソリッドフィレット機能に「フルラウンド」オプションが追加されました。このオプションを使用すると、2つのエッジを選択した際に面に丸みを帯びたフィレットを作成することができます。フィレットシェルの詳細については [こちら](/solid/fillet-shell#fillet-options)をご参照ください。
-
-<VideoPlayer fileName="fillet-shell-shape"/>
-
-### Rebuild Face
-
-リビルドコマンドは、面のサーフェスを再構築できるようになりました。拡張および縮小オプションにより、サーフェスのオーバービルドが簡単に行えます。詳細については [こちら](/solid/rebuild-face)をご参照ください。
-
-<VideoPlayer fileName="rebuild-face"/>
-
-## 小さな変更ですが、重要な改善
-
-### 画面空間とのCVアライメント
-
-曲線やサーフェスのCVをドラッグすると、構築平面ではなく画面空間に合わせて整列します。これにより、作業効率が向上し、スムーズな操作が可能になります。
-
-### Sketch Operations
-
-スケッチ操作が強化され、単一のEnterキーまたは左クリックで確認できるようになりました。これに影響を与えるスケッチツールは以下の通りです：
-
-|   **Circle Tools**  |  **Regular Polygon** |  **Rectangle Tools**   | 
-|---------------------|----------------------|------------------------|
-| [Center Circle](/tool/center-circle) | -                              |  [Corner Rectangle](/tool/corner-rectangle)      | 
-| [Two Point Circle](/tool/two-point-circle)  | -                      |  [Center Rectangle](/tool/center-rectangle)      | 
-| [Three Point Circle](/tool/three-point-circle) | -                   |  [Three Point Rectangle](/tool/three-point-rectangle) | 
-| [Tangent Circle](/tool/tangent-circle)    | -                        |  -                     | 
-| [Center Point Arc](/tool/center-point-arc)  | -                     |  -                     | 
-| [Three Point Arc](/tool/three-point-arc)  | -                       |  -                     | 
-| [Tangent Arc](/tool/tangent-arc)      | -                            |  -                     | 
-
-## スタジオ専用機能
-
-### XNurbs
-
-PlasticityにXNurbsアドオンが追加され、高品質なサーフェスの作成が可能になりました。XNurbsは、滑らかで複雑なサーフェスを高精度で設計できる強力なツールで、全体的なデザインプロセスが大幅に改善されます。XNurbsはPCおよびMac専用です。XNurbsの詳細については [こちら](/solid/xnurbs)をご覧ください。
-
-<VideoPlayer fileName="xnurbs-example"/> 
-
-### Rhino 8 Import
-
-Rhino 8のインポートに対応しました。
-
-## 注目すべき最適化
-
-OBJ/STLエクスポートの並列処理が強化されました。
-
-オブジェクトの変形（移動/回転/スケール）が確認時にリファセクティングをバイパスするようになり、効率が向上しました。
-
-メモリ使用量を最適化するために、可能な限り16ビットのスナップノーマルおよび16ビットのインデックスが実装されました。
-
+リリース日: 2024年9月5日
 
 ## 新しいコマンド
 
-### Remove Nominal Surface
+### Square Command 
+スクエアコマンドは、XNurbsベースのコマンドで、UVの度数とスパンを明示的に制御してさまざまなサーフェスを作成できます。スタジオライセンスでのみ利用可能です。詳細については [こちら](/solid/square)をご覧ください。
 
-隠れたサーフェスCVを削除して、より詳細なコントロールが可能になりました。これは、サーフェスの次数を上げた場合にのみ適用されます。詳細については [こちら](/solid/remove-nominal-surface)をご参照ください。
+<VideoPlayer fileName="square-0"/>
 
-### Toggle Points
+### Deform Command
+変形コマンドを使用すると、既存のソリッドオブジェクトやワイヤーボディを、規則的および不規則な表面にラップし、複雑でユニークなパターンやラッピングを作成できます。詳細については、ソリッドとシートについては[こちら](/solid/deform-solid-and-sheet)、カーブについてはこ [こちら](/sketch/deform-curve)をご覧ください。
 
-「トグルポイント」コマンドを導入し、面、曲線、ボディ上のポイントを表示/非表示にできるようになりました。詳細については [こちら](/sketch/toggle-points)をご参照ください。
+<VideoPlayer fileName="deform-solid"/>
+<VideoPlayer fileName="deform-curve"/>
 
-### Raise Surface Degree
+### Reverse Command 
 
-「次数を上げる」コマンドは、解析サーフェスをスプラインに変換し、スプラインの次数を増加させることでサーフェスの複雑さを高めます。詳細については [こちら](/solid/raise-surface-degree)をご参照ください。
+リバースコマンドは、カーブの方向やシートの法線方向を反転させることができるコマンドです。これにより、パイプツールでスケールオプションを使用する際に、パイプの方向を逆にすることができます。リバースカーブについては[こちら](/sketch/reverse-curve)、リバースシートについては[こちら](/solid/reverse-sheet)をご覧ください。
 
-### Rebuild Face
+<VideoPlayer fileName="reverse-curve"/>
 
-リビルドコマンドは、面のサーフェスを再構築できるようになりました。拡張および縮小オプションを使用することで、サーフェスのオーバービルドが簡単に行えます。詳細については [こちら](/solid/rebuild-face)をご参照ください。
+## コマンド機能の改善
 
-### Rebuild Edge
+### Rebuild Command
 
-リビルドコマンドが拡張され、サーフェス上の破損したエッジも再構築できるようになりました。
+リビルドフェイスとカーブコマンドには、新しい「明示的なコントロール」機能が追加され、UV方向の度数とスパンの数を制御できるようになりました。詳細は [こちら](/solid/rebuild)をご覧ください。
 
-### Extend Sheet
+### XNurbs Command
 
-「シート拡張」コマンドが追加され、シートをターゲットボディに向かって延長し、交差させることができます。シート拡張の詳細については [こちら](/solid/extend-sheet#dependant-offset)をご覧ください。
+新しい境界整列オプション「Next」を導入し、境界条件が比較的平坦な場合にUVの垂直フローを生成できます。また、XNurbsには、入力が競合している場合に警告メッセージを表示するインジケーターも追加されました。詳細は[こちら](/solid/xnurbs)をご覧ください。 
 
-### XNurbs
+### Bridge Vertex and Curve Command
 
-滑らかで高品質な四辺形およびN辺形のサーフェスを作成できます。XNurbsの詳細については [こちら](/solid/xnurbs)をご覧ください。
+継続性ギズモが実装され、対話性が向上し、操作性とワークフローの効率が向上しました。ブリッジコマンドの詳細は[こちら](/sketch/bridge)をご覧ください。  
 
+### Square Command 
+
+スクエアコマンドには、より高品質なサーフェスを生成できる「Match-CVs」オプションが追加されました。詳細は[こちら](/solid/square)をご覧ください。
+
+### Rectangular and Radial Array
+
+矩形および放射状配列コマンドでは、ボディの一部であるフェイスの配列がサポートされるようになりました。この機能は、フィレットの配列時に特に効果的です。また、両コマンドにはそれぞれ異なる距離モードが追加されました。矩形配列には[Extend および Spacing]、放射状配列には[Total および Spacing] があり、複製オブジェクトの距離と間隔の挙動を制御できます。矩形配列の詳細は[こちら](/common/rectangular-array)、放射状配列の詳細は[こちら](/common/radial-array)をご覧ください。
+
+### Polygon Command
+
+ポリゴンコマンドは、前回使用した頂点数を記憶するようになりました。
+
+### Unwrap Command 
+
+アンラップコマンドでは、選択したフェイスをソリッドからフラットシートとして生成でき、これを[変形コマンド](/solid/deform)と組み合わせてさらなる修正を行うことができます。
+
+### Draft Command
+
+基準フェイスの位置を制御できるギズモ機能が追加され、<kbd>Ctrl</kbd>ボタンを使用して複数のフェイスを選択してドラフトするオプションが追加されました。これを不均一な平面サーフェスに適用できますが、基準フェイスをオフセットするオプションはありません。詳細は[こちら](/solid/draft-face)をご覧ください。
+
+### Patch Command
+
+パッチコマンドでは、ソリッドの閉じたエッジ選択からシートを作成できるようになりました。詳細は[こちら](/solid/patch)をご覧ください。
+
+## 削除されたコマンド
+
+### Rebuild Edge Command 
+
+安全性の問題により削除され、エッジに対する削除コマンドに置き換えられました。この戦略により、より多くの断片化されたエッジを結合できるようになるはずです。
+
+## Outliner  
+
+1. **構造平面** - 構造平面はアウトライナーで名前を変更できるようになり、より良い組織化と管理が可能になりました。これにより、正しい構造平面を検索する際の不要な手順が排除され、タスクの選択とワークフローが効率化されます。詳細については [こちら](/plasticity-essentials/construction-plane)をご覧ください。
+2. **メッシュと画像** - アウトライナーは、メッシュと画像を「空」に分類するのではなく、それぞれ独自のセクションに分けるようになりました。
+3. **選択したアイテムのコンテキストメニュー** - アウトライナーで右クリックすると、グループ内の選択したアイテムを「ルートに移動」する新しい機能がコンテキストメニューに追加されました。
+4. **グループのコンテキストメニュー** - アウトライナーで右クリックすると、「ここで選択をグループ化」と「ルートで選択をグループ化」の新しいグループ機能が追加されました。
+5. **アイテムのグループ化** - すべてのアイテムが同じグループに属している場合、新しいグループを作成すると、そのディレクトリに配置されます。それ以外の場合はルートディレクトリに配置されます。
+6. **グループ階層** - グループを削除すると、その子要素はルートではなく直近の親に移動されます。
+5. **マテリアルの割り当て** - 透明なマテリアルは、デフォルトおよびカスタム [matcaps](/plasticity-essentials/view-mode) を使用している場合でも、非レンダーモードで50%の透明度で表示されるようになりました。
+
+## ファイルフォーマットの強化
+
+### OBJ
+
+1. PlasticityでUVとMTLファイルを含むOBJのエクスポートが可能になりました。
+
+### STEP
+
+1. Plasticityで色とグループなどのアセンブリ情報を持つSTEPファイルのエクスポートが可能になりました。
+2. PlasticityでSTEPファイルをインポートすると、色が保持されるようになりました。
+
+### メッシュと画像
+
+Plasticityでメッシュや画像へのスナップが可能になりました。 
+
+   | タイプ                | スナップ対象 | ヒントヘルプ |
+   | ------------------- | ----------- | -------- |
+   | メッシュ (OBJ, STL, FBX, 3MF)| 頂点/面 | 頂点/面|
+   | 画像 (.PNG, .JPG, .JPEG)| 角 | 角 | 
+
+### Plasticityファイル (.plasticity)
+
+Plasticityドキュメントのインポートおよび追加では、グループ、名前、マテリアルが保持されます。
+
+### Parasolid (.*x_t/x_b)
+
+PlasticityでParasolidファイルをインポートすると、色、名前、アセンブリがサポートされるようになりましたが、インスタンスはまだサポートされていません。
+
+### 新しいサポート形式
+
+1. 3MFのインポートおよびエクスポートがサポートされました。
+2. SVGのインポートがサポートされました。
+
+Plasticityでサポートされているすべてのインポートおよびエクスポートファイル形式の詳細については, [こちら](/plasticity-essentials/import-export)をご覧ください。
+
+## 小さな変更点
+
+1. **オフセットエッジギズモ** - 新しいオフセットエッジギズモは、両面フィレットギズモに似ています。
+2. **コピーと貼り付け** - コピーと貼り付けコマンドが、マテリアルと名前を継承するようになりました。
+3. **オルタナティブ複製 ** - オルタナティブ複製コマンドは、名前とマテリアルを継承するようになりました。
+4. **テキストツール** - テキストツールに、いくつかの追加フォントが含まれるようになりました。
+5. **タッチパッド** - タッチパッドで、カーソルトラックの軌道ポイントを操作できるようになりました。
+6. **自動保存オプション** - 設定可能なX分ごとに現在保存されているファイルを自動保存する新しいオプションが追加されました。このオプションは設定セクションで構成できます。
+
+### Group Command 
+
+グループコマンドは、新しい動作を特徴としています。同じ親グループにあるアイテムが自動的に一緒にグループ化され、同じ階層内でグループが削除された場合、その子アイテムは親グループに移動されます。
+
+### 測定と測定パネル
+
+ 1. **測定の強化** - アウトライナーで選択された測定値は、移動コマンドと一緒に使用して、より正確な調整のためにビューポート内で直接値を入力できます。
+ 2. **測定の強化** - 測定値をユーザーの好みの単位でクリップボードにコピーできるようになりました。
+ 3. **Measurement Panel** -  測定パネルが、2つの平面間の角度を表示するようになりました。 
+ 4. **Surface Class** -  測定パネルの右下のセクションに、表面クラスが導入され、特定の面を選択できるようになりました。
+
+### スナップ
+
+以下の新しいスナップタイプが追加されました：
+
+   | タイプ            | スナップターゲット |ヒントヘルプ |
+   | ------------------- | ----------- | -------- |
+   | Regular Polygon     | Closed polygon center point| Center point|
+   | イメージ (.PNG, .JPG, .JPEG)| Corner                | Corner | 
+   | メッシュ (OBJ, STL, FBX, 3MF)| Vertex/Face          | Vertex/Face |
+   | 測定            | Measurement Point    | Measurement |
+   | フリースタイル回転         | Parallel/Perpendicular | Parallel/Perpendicular | 
 
 ## ダウンロードとインストール
 
-Plasticity 2024.1のダウンロードとインストールの詳細は[こちら](/getting-started/download-and-install)をご覧ください。
+Plasticity 2024.2は現在ダウンロード可能です。詳細は [こちら](/getting-started/download-and-install) をご覧ください。
 
 ## 過去の更新情報
 
-- 2023年12月18日 [バージョン1.4](/release-notes/whats-new-1-4)
+2024年3月5日 [バージョン 2024.1](/release-notes/whats-new-2024.1)
