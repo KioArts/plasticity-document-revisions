@@ -17,8 +17,8 @@ Wrap existing solid and sheet objects onto a regular and irregular surface.
 4. Select the target face to deform objects with.
 5. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
-          - **Scale:** Scale in **Z,Y,X Value**
-          - **Offset:** Offset in **Z,Y,X Value**
+          - **Scale:** Scale in **U, V, N** Value.  
+          - **Offset:** Offset in **U, V, N** Value.
           - **Flip:** 
                 - **Mirror:** Mirror the deformed objects in Z Axis.
                 - **UV:** Flip the U and V orientation of the deformed objects.
@@ -29,11 +29,20 @@ Wrap existing solid and sheet objects onto a regular and irregular surface.
 
 <VideoPlayer fileName="deform-solid"/>
 <VideoPlayer fileName="deform-solid-reblend"/>
+
+<Callout type="info" emoji="🗒️">
+
+**Note**
+
+Scale and Offset use UVN value system instead of XYZ system. 
+
+</Callout>
+
 <Callout type="info" emoji="💡">
 **Tip**
 
-To avoid unwanted deformations or inaccurate placement, use the **Unwrap Face** command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
-      
+To avoid unwanted deformation or inaccurate placement, use the **Unwrap Face** command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
+
 <VideoPlayer fileName="deform-solid-unwrap"/>
 </Callout>
 
