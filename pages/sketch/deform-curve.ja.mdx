@@ -3,7 +3,7 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Deform Solid and Sheet
+# Deform Curve
 
 <Reference shortcut="" command="Deform" button="" />
 
@@ -23,28 +23,20 @@ import Kst from '/components/KeyboardShortcutsTitle'
                 - **ミラー:** 変形したオブジェクトを、表面に対して水平方向に鏡像反転します。
                 - **UV:** 変形したオブジェクトのUおよびVの向きを反転します。
                 - **法線:** 変形したオブジェクトの法線を反転します。
-          - **ブレンド:** 変形したオブジェクトを再ブレンドします。オブジェクトのフィレットを再計算し、再度変換して不要な変形を取り除きます。
           - **ツールを保持:** ツールオブジェクトをそのまま保持しながら、Deform 操作を実行します。
 6. コマンドダイアログで OK をクリックするか、右クリックして確認します。
 
-<VideoPlayer fileName="deform-solid"/>
-<VideoPlayer fileName="deform-solid-reblend"/>
-<Callout type="info" emoji="💡">
+<VideoPlayer fileName="deform-curve"/>
 
 <Callout type="info" emoji="🗒️">
-
 **Note**
-
 スケールとオフセットは、パラメトリック値を調整する際にXYZ座標系の代わりにUVN座標系を使用します。これにより、変形したオブジェクトの向きをターゲット表面に対する特定のポイントで定義できます。UVN座標系についての詳細は, [こちら](/cad-essentials/uvn-coordinate-system)をクリックしてください。
 
 </Callout>
 
-**Tip**
-
+<Callout type="info" emoji="💡">
+**Tip** 
 不要な変形や不正確な配置を避けるために、コマンドパレットから **Unwrap Face** コマンドをターゲットオブジェクトに対して使用します。これにより、正しくマッピングされた表面が生成され、それを正確な参照面として使用できます。
-      
-<VideoPlayer fileName="deform-solid-unwrap"/>
-</Callout>
 
-## 関連項目
-- [Copy with Placement](/common/copy-with-placement)
+<VideoPlayer fileName="deform-curve-unwrap"/>
+</Callout>

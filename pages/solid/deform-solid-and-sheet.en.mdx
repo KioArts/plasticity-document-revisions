@@ -17,10 +17,10 @@ Wrap existing solid and sheet objects onto a regular and irregular surface.
 4. Select the target face to deform objects with.
 5. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
-          - **Scale:** Scale in **Z,Y,X Value**
-          - **Offset:** Offset in **Z,Y,X Value**
+          - **Scale:** Scale in **U, V, N** Value.  
+          - **Offset:** Offset in **U, V, N** Value.
           - **Flip:** 
-                - **Mirror:** Mirror the deformed objects in Z Axis.
+                - **Mirror:** Mirror horizontally the deformed objects relative to the surface. 
                 - **UV:** Flip the U and V orientation of the deformed objects.
                 - **Normal:** Flip the normal of the deformed objects.
           - **Reblend:** Reblend the deformed objects. Recalculates the fillets of your objects and translates them again, removing any unwanted deformations.
@@ -29,11 +29,20 @@ Wrap existing solid and sheet objects onto a regular and irregular surface.
 
 <VideoPlayer fileName="deform-solid"/>
 <VideoPlayer fileName="deform-solid-reblend"/>
+
+<Callout type="info" emoji="🗒️">
+
+**Note**
+
+Scale and Offset uses a **UVN** coordinate system instead of **XYZ** coordinate system when adjsuting the parametric value, allowing you to define the orientation of the deformed objests at a specific point in relation to the target surface. For more information on the UVN coordiante system, click [here](/cad-essentials/uvn-coordinate-system).
+
+</Callout>
+
 <Callout type="info" emoji="💡">
 **Tip**
 
-To avoid unwanted deformations or inaccurate placement, use the **Unwrap Face** command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
-      
+To avoid unwanted deformation or inaccurate placement, use the **Unwrap Face** command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
+
 <VideoPlayer fileName="deform-solid-unwrap"/>
 </Callout>
 

@@ -17,8 +17,8 @@ Wrap existing curves onto a regular and irregular surface.
 4. Select the target face to deform curves with.
 5. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
-          - **Scale:** Scale in **Z,Y,X Value**
-          - **Offset:** Offset in **Z,Y,X Value**
+          - **Scale:** Scale in **U, V, N** Value. 
+          - **Offset:** Offset in **U, V, N** Value. 
           - **Flip:** 
                 - **Mirror:** Mirror the deformed curves in Z Axis.
                 - **UV:** Flip the U and V orientation of the deformed curves.
@@ -27,6 +27,12 @@ Wrap existing curves onto a regular and irregular surface.
 6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="deform-curve"/>
+
+<Callout type="info" emoji="🗒️">
+**Note**
+Scale and Offset uses a **UVN** coordinate system instead of **XYZ** coordinate system when adjsuting the parametric value, allowing you to define the orientation of the deformed objests at a specific point in relation to the target surface. For more information on the UVN coordiante system, click [here](/cad-essentials/uvn-coordinate-system).
+
+</Callout>
 
 <Callout type="info" emoji="💡">
 **Tip** 

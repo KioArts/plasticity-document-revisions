@@ -3,7 +3,7 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Deform Solid and Sheet
+# Deform Curve
 
 <Reference shortcut="" command="Deform" button="" />
 
@@ -23,27 +23,20 @@ Wickeln Sie vorhandene Solids- und Sheet-Objekte auf eine regelmäßige oder unr
                 - **Spiegeln:** Spiegeln Sie die deformierten Objekte horizontal zur Oberfläche.
                 - **UV:** Drehen Sie die U- und V-Ausrichtung der deformierten Objekte um.
                 - **Normal:** Drehen Sie die Normalen der deformierten Objekte um.
-          - **Neuabmischen:** Mischen Sie die deformierten Objekte neu. Berechnet die Fasen Ihrer Objekte neu und übersetzt sie erneut, um unerwünschte Verformungen zu entfernen.
           - **Werkzeuge behalten:** Führen Sie die Deform-Operation durch, während die Werkzeugobjekte intakt bleiben.
 6. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
-<VideoPlayer fileName="deform-solid"/>
-<VideoPlayer fileName="deform-solid-reblend"/>
+<VideoPlayer fileName="deform-curve"/>
 
 <Callout type="info" emoji="🗒️">
-
 **Note**
 Scale und Offset verwenden ein **UVN**-Koordinatensystem anstelle eines **XYZ**-Koordinatensystems, wenn der parametrische Wert angepasst wird. Dies ermöglicht es Ihnen, die Ausrichtung der deformierten Objekte an einem bestimmten Punkt in Bezug auf die Zieloberfläche festzulegen. Für weitere Informationen zum UVN-Koordinatensystem klicken Sie [hier](/cad-essentials/uvn-coordinate-system).
 
 </Callout>
 
 <Callout type="info" emoji="💡">
-**Tip**
-
+**Tip** 
 Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den **Unwrap Face**-Befehl aus der Befehlsleiste für das Zielobjekt. Dies erzeugt eine korrekt gemappte Oberfläche, die dann als genaue Referenzfläche verwendet werden kann.
-      
-<VideoPlayer fileName="deform-solid-unwrap"/>
+    
+<VideoPlayer fileName="deform-curve-unwrap"/>
 </Callout>
-
-## Siehe auch
-- [Copy with Placement](/common/copy-with-placement)

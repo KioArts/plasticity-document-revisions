@@ -1,0 +1,43 @@
+# UVN Coordinate System
+
+## What is UVN in CAD?
+
+The UVN system in CAD and 3D modeling is a local coordinate system used to define the orientation of a surface. It consists of three vectors that describe the surface's behavior at a specific point:
+
+1. U (Tangent Vector): The U vector represents one tangent direction along the surface, often aligned with a parametric direction of the surface. It describes how the surface stretches or bends in one axis.
+2. V (Tangent Vector): The V vector is perpendicular to the U vector and represents another tangent direction along the surface. Together, the U and V vectors create a local 2D grid on the surface, defining how the surface behaves in two tangential directions.
+3. N (Normal Vector): The N vector is perpendicular to both U and V and points outward from the surface. It defines the surface's orientation in space, indicating which direction the surface is facing. The normal is crucial for lighting, shading, and rendering, as it tells the system how light should interact with the surface.
+
+Together, the UVN system is used to control surface orientation, texture mapping, and lighting effects. It describes the geometry of surfaces in detail, helping to map 2D textures onto 3D surfaces and calculate realistic lighting and shading.
+
+![UVN Image Example](/img/uvn.png)
+
+## What is the difference between UVN and XYZ coordinate system? 
+
+The UVN and XYZ coordinate systems serve different purposes in 3D modeling and CAD:
+
+### XYZ Coordinate System:
+
+- **Global Coordinate System** The **XYZ** system represents the global or world coordinate system. It defines the position of objects, points, and surfaces in 3D space.
+- **Axes:** It consists of three axes — **X** (horizontal), **Y** (vertical), and **Z** (depth). These axes are fixed and used to locate objects within the entire 3D scene.
+- **Purpose:** The **XYZ** system is used to define absolute positions in the 3D space. It tells where objects are located in relation to a common origin (0, 0, 0) in the overall scene.
+
+### UVN Coordinate System:
+
+- **Local Surface Coordinate System:** The **UVN** system is used to define the orientation of a surface at a specific point in relation to that surface. It describes how the surface is oriented and how it curves or stretches.
+- **Vectors:**
+    - **U:** Tangent vector along the surface in one direction.
+    - **V:** Tangent vector in the perpendicular direction.
+    - **N:** Normal vector perpendicular to the surface.
+- **Purpose:** UVN is used to manage surface behavior, such as texture mapping, lighting, and surface deformation. It describes local properties of the surface rather than the object’s global position.
+
+### Key Differences:
+
+1. XYZ is a global system used to position objects in the entire 3D space, while UVN is a local system used to define the orientation and behavior of surfaces.
+2. XYZ is fixed across the scene, but UVN changes dynamically based on the surface point being evaluated.
+3. XYZ is concerned with absolute positioning, while UVN is concerned with relative surface orientation, curvature, and texture alignment.
+
+### Conclusion 
+
+In summary, XYZ locates objects in the 3D world, while UVN defines how a surface behaves locally within that world.
+

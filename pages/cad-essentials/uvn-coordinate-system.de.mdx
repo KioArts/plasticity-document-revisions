@@ -1,0 +1,43 @@
+# UVN-Koordinatensystem
+
+## Was ist UVN in CAD?
+
+Das UVN-System in CAD und 3D-Modellierung ist ein lokales Koordinatensystem, das zur Definition der Orientierung einer Fläche verwendet wird. Es besteht aus drei Vektoren, die das Verhalten der Fläche an einem bestimmten Punkt beschreiben:
+
+1. **U (Tangentenvektor)**: Der U-Vektor repräsentiert eine Tangentenrichtung entlang der Fläche, oft ausgerichtet nach einer parametrischen Richtung der Fläche. Er beschreibt, wie die Fläche sich entlang einer Achse dehnt oder biegt.
+2. **V (Tangentenvektor)**: Der V-Vektor ist senkrecht zum U-Vektor und stellt eine weitere Tangentenrichtung entlang der Fläche dar. Zusammen schaffen die U- und V-Vektoren ein lokales 2D-Raster auf der Fläche, das definiert, wie die Fläche sich in zwei tangentialen Richtungen verhält.
+3. **N (Normalenvektor)**: Der N-Vektor steht senkrecht zu beiden, U und V, und zeigt von der Fläche weg. Er definiert die Orientierung der Fläche im Raum und zeigt, in welche Richtung die Fläche zeigt. Der Normalenvektor ist entscheidend für Beleuchtung, Schattierung und Rendering, da er dem System mitteilt, wie Licht mit der Fläche interagieren soll.
+
+Zusammen wird das UVN-System verwendet, um die Orientierung der Fläche, die Texturzuordnung und die Beleuchtungseffekte zu steuern. Es beschreibt die Geometrie der Flächen im Detail, hilft bei der Zuordnung von 2D-Texturen auf 3D-Oberflächen und berechnet realistische Beleuchtung und Schattierung.
+
+![UVN Image Example](/img/uvn.png)
+
+## Was ist der Unterschied zwischen dem UVN- und dem XYZ-Koordinatensystem?
+
+Die UVN- und XYZ-Koordinatensysteme dienen unterschiedlichen Zwecken in der 3D-Modellierung und CAD:
+
+### XYZ-Koordinatensystem:
+
+- **Globales Koordinatensystem:** Das **XYZ**-System repräsentiert das globale oder Welt-Koordinatensystem. Es definiert die Position von Objekten, Punkten und Flächen im 3D-Raum.
+- **Achsen:** Es besteht aus drei Achsen — **X** (horizontal), **Y** (vertikal) und **Z** (Tiefe). Diese Achsen sind fixiert und werden verwendet, um Objekte im gesamten 3D-Szenario zu lokalisieren.
+- **Zweck:** Das **XYZ**-System wird verwendet, um absolute Positionen im 3D-Raum zu definieren. Es zeigt, wo sich Objekte relativ zu einem gemeinsamen Ursprung (0, 0, 0) im Gesamtbild befinden.
+
+### UVN-Koordinatensystem:
+
+- **Lokales Oberflächen-Koordinatensystem:** Das **UVN**-System wird verwendet, um die Orientierung einer Fläche an einem bestimmten Punkt in Bezug auf diese Fläche zu definieren. Es beschreibt, wie die Fläche ausgerichtet ist und wie sie sich krümmt oder dehnt.
+- **Vektoren:**
+    - **U:** Tangentenvektor entlang der Fläche in eine Richtung.
+    - **V:** Tangentenvektor in der senkrechten Richtung.
+    - **N:** Normalenvektor, der senkrecht zur Fläche steht.
+- **Zweck:** UVN wird verwendet, um das Verhalten der Fläche zu steuern, wie z.B. Texturzuordnung, Beleuchtung und Flächenverformung. Es beschreibt lokale Eigenschaften der Fläche anstelle der globalen Position des Objekts.
+
+### Wichtige Unterschiede:
+
+1. XYZ ist ein globales System zur Positionierung von Objekten im gesamten 3D-Raum, während UVN ein lokales System zur Definition der Orientierung und des Verhaltens von Flächen ist.
+2. XYZ ist im gesamten Szenario fixiert, während UVN sich dynamisch basierend auf dem ausgewerteten Oberflächenpunkt ändert.
+3. XYZ beschäftigt sich mit absoluter Positionierung, während UVN sich mit relativer Flächenorientierung, Krümmung und Texturausrichtung beschäftigt.
+
+### Fazit 
+
+Zusammenfassend lässt sich sagen, dass XYZ Objekte in der 3D-Welt lokalisiert, während UVN definiert, wie sich eine Fläche lokal innerhalb dieser Welt verhält.
+
