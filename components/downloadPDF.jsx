@@ -5,12 +5,12 @@ export default function DownloadPDF() {
         <>
             <br />
             <a
-                href="https://app.box.com/s/l21381x6kjth2cyz25qpdesn3ix4d7fv"
+                href="https://app.box.com/s/rx3m8vx7qz962r2mitmck5b67uf3qlvc"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 <div className="nx-text-primary-600">
-                    Plasticity_1.4_Shortcut_Key_Sheet_rev.1.pdf
+                    Plasticity 2024.2 - All Command List and Shortcuts.pdf
                 </div>
             </a>
         </>
