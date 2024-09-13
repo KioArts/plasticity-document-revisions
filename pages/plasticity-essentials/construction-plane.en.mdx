@@ -2,7 +2,7 @@
 title: Construction Planes
 description: A guide to using construction planes. How to create, save, rename, reuse them.
 ---
-
+import { Callout } from 'nextra/components'
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
@@ -30,6 +30,24 @@ You can create a construction plane that aligns with the Face of a Solid or Shee
 - If you don't want to change your view, press <kbd>Shift + Space</kbd> instead of <kbd>Space</kbd>.
 
 <VideoPlayer fileName="construction-plane-1"/>
+
+### Creating a construction plane aligned perpendicular with a surface through face and edge selection
+
+You can create a construction plane that aligns perpendiculat with a surface by selecting a face and edge.
+
+1. Select the Face and Edge you want to use as a construction plane.
+2. Press <kbd>Space</kbd>.
+3. The construction plane is created.
+4. Your view will align with the created construction plane.
+
+- If you don't want to change your view, press <kbd>Shift + Space</kbd> instead of <kbd>Space</kbd>.
+
+<VideoPlayer fileName="construction-plane-6"/>
+
+<Callout type="info" emoji="💡">
+**Tip**
+   Selecting a face acts as a reference for aligning the view, while selecting an edge provides a directional guide to orient the view.
+</Callout>
 
 ### Creating a midplane construction plane from opposing parallel faces and regions
 
