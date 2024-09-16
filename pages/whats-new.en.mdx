@@ -20,6 +20,7 @@ Deform Command allows you to wrap existing solid objects and wire bodies onto re
 <VideoPlayer fileName="deform-curve"/>
 
 ### Reverse Command 
+
 Reverse Command is a command that allows you to reverse the direction of a curve and normal direction of a sheet. This can be useful for the [Pipe Tool](/solid/pipe) as you can reverse the direction of the Pipe when using the Scale option. Refer [here](/sketch/reverse-curve) for Reverse Curve and [here](/solid/reverse-sheet) for Reverse Sheet.
 
 <VideoPlayer fileName="reverse-curve"/>
@@ -28,11 +29,11 @@ Reverse Command is a command that allows you to reverse the direction of a curve
 
 ### Rebuild Command
 
-Both Rebuild Face and Curve command have a new feature called "Explicit Control" which you can control the value of degrees and number of spans for UV direction. For more information, click [here](/solid/rebuild). 
+Both Rebuild Face and Curve command have a new feature called **"Explicit Control"** which you can control the value of degrees and number of spans for UV direction. **"Explicit Control"** on Rebuild Curve is available on both Indie and Studio License, while on Rebuild Face is only available on Studio License. For more information on the Rebuild Command, click [here](/solid/rebuild). 
 
 ### XNurbs Command
 
-Introducing a new boundary alignment option called "Next", allowing you to generate a perpendicular flow of UV whenever boundary conditions are relatively flat. Additionally, XNurbs now includes an indicator to display warning messages whenever conflicting inputs are detected. For more information, click [here](/solid/xnurbs). 
+Introducing a new boundary alignment option called **"Next"**, allowing you to generate a perpendicular flow of UV whenever boundary conditions are relatively flat. Additionally, XNurbs now includes an indicator to display warning messages whenever conflicting inputs are detected. For more information, click [here](/solid/xnurbs). 
 
 ### Bridge Vertex and Curve Command
 
@@ -40,7 +41,7 @@ Continuity gizmo has been implemented to enhance interactivity, providing improv
 
 ### Square Command 
 
-Square Command now has a "Match-CVs" option which can produce higher quality surfaces. For more information, click [here](/solid/square).
+Square Command now has a **"Match-CVs"** option which can produce higher quality surfaces. For more information, click [here](/solid/square).
 
 ### Rectangular and Radial Array
 
@@ -56,7 +57,7 @@ The Unwrap Command now generates a flat sheet of the selected face from a solid,
 
 ### Draft Command
 
-Introducing a Gizmo feature where you can control the position of the reference face and having the option to select multiple faces to draft with <kbd>Ctrl</kbd> button. This can be applied to non-unifrom planar surface, however, without the option to offset the reference face. Refer to [here](/solid/draft-face).
+Introducing a Gizmo feature that allows you to control the position of the reference face and provides the option to select multiple faces for drafting using the <kbd>Ctrl</kbd> button. This can be applied to non-uniform planar surfaces; however, the option to offset the reference face is not available. Refer to [here](/solid/draft-face).
 
 ### Patch Command
 
@@ -66,23 +67,23 @@ Patch Command can now create sheets from a close edge selection of a solid. Refe
 
 ### Rebuild Edge Command 
 
-It has been removed due to its unsafe implementation and has been replaced with the delete command for edges. This strategy should allow to join more fractured edges.
+It was removed due to unsafe implementation and replaced with the delete command <kbd>X</kbd> for edges. This strategy should allow for the joining of more fractured edges.
 
 ## Outliner  
 
-1. **Construction Planes** -  Construction Planes can now be renamed in the Outliner, allowing for better organization and management. This improvement eliminates unnecessary steps when searching for the correct construction plane, streamlining task selection and workflow. For more information on Construction Planes, click [here](/plasticity-essentials/construction-plane).
-2. **Meshes and Images** - Outliner now separates meshes and images into their own sections rather than "empties". 
-3. **Context Menu for Selected Items in Outliner** - Context menu in the Outliner with right mouse button now has a new function "move selected items to root" whenever you have selected items in a group. 
-4. **Context Menu for Group** - Context menu in the Outliner with right mouse button now has a new group function "Group selection here" and "Group selection at root". 
-5. **Grouping items** - If all items are in the same group then creating a new group will be located in tha same directory, otherwise at root directory.
-6. **Group Hierarchy** - Deleting a group moves its children to its immediate parent, rather than root.
-5. **Assigning Material** - Transparent materials are now displayed with 50% transparency, even when using default and custom [matcaps](/plasticity-essentials/view-mode) in non-render mode.
+1. **Construction Planes** - Construction Planes can now be renamed in the Outliner, allowing for better organization and management. This improvement removes unnecessary steps when searching for the correct plane, streamlining task selection and workflow. For more information on Construction Planes, click [here](/plasticity-essentials/construction-plane).
+2. **Meshes and Images** - The Outliner now separates meshes and images into their own sections instead of categorizing them as "empties." 
+3. **Context Menu for Selected Items in the Outliner** - The context menu, accessible with the right mouse button, now includes a new option: "Move selected items to root" when you have selected items in a group. 
+4. **Context Menu for Group** - The context menu in the Outliner, accessed with the right mouse button, now includes two new grouping functions: **"Group selection here"** and **"Group selection at root.** 
+5. **Grouping items** - If all selected items are in the same group, creating a new group will place it in the same directory; otherwise, the new group will be located in the root directory.
+6. **Group Hierarchy** - Deleting a group now moves its child items to the immediate parent group rather than to the root directory.
+5. **Assigning Material** - Transparent materials are now displayed with 50% transparency, even when using both default and custom [matcaps](/plasticity-essentials/view-mode) in non-render mode.
 
 ## File Formats Enhacement
 
 ### OBJ
 
-1. Exporting OBJ in Plasticity with UVs and a MTL file is now possible to do.
+1. Exporting OBJ files with UVs and an MTL file in Plasticity is now possible.
 
 ### STEP
 
@@ -104,7 +105,7 @@ Importing and Appending Plasticity documents preserves groups, names, and materi
 
 ### Parasolid (.*x_t/x_b)
 
-Importing Parasolid files in Plasticity now support colors, names, and assemblies but do not support instanes yet. 
+Importing Parasolid files into Plasticity now supports colors, names, and assemblies, but does not yet support instances. 
 
 ### New Supported Formats
 
@@ -115,14 +116,14 @@ To check out all the supported file formats for Import and Export in Plasticity,
 
 ## Minor Changes
 
-1. **Offset Edge Gizmo** - New Offset Edge gizmo which resembles the two-sided fillet gizmo.
-2. **Copy and Paste** - Copy and Paste Command now inherits material and name. 
-3. **Alternative-Duplicate** - Alternative-Duplicate Command on faces now inherits name and material.
-4. **Text Tool** - Text tool has been updated with a few additional fonts.
-5. **Touchpad** - Touchpad now can be used with cursor track orbit point. 
-6. **Autosave Option** - New Autosave Option now allows to save current saved file every X amount of minutes, which can be configured in the Preference section.
+1. **Offset Edge Gizmo** - A new Offset Edge gizmo, resembling the two-sided fillet gizmo, has been introduced.
+2. **Copy and Paste** - The Copy and Paste command now inherits the material and name from the original object.
+3. **Alternative-Duplicate** - The Alternative-Duplicate command for faces now also inherits the name and material.
+4. **Text Tool** - The Text tool has been updated to include several additional fonts.
+5. **Touchpad** - The touchpad can now be used with the cursor track orbit point. 
+6. **Autosave Option** - A new Autosave option allows you to save the current file every X minutes, with the interval configurable in the Preferences section.
 7. **Incremental Snapping** - When *Snap to Grid* is enabled, the X (Red), Y (Green), and Z (Blue) arrows will snap to increment units along their respective axes. Meanwhile, the white circle, which by default the pivot point is centered, will snap to the absolute grid increments rather than moving the entire object incrementally. For more information on Grid and Snap, click [here](/plasticity-essentials/grid-and-snap).
-8. **Midplane Construction** - Create a midplane construction plane by averaging the positions of at least two parallel opposing faces and regions. For more information on Construction Planes, click [here](/plasticity-essentials/construction-plane).
+8. **Midplane Construction** - You can now create a midplane construction plane by averaging the positions of at least two parallel opposing faces and regions. For more information on Construction Planes, click [here](/plasticity-essentials/construction-plane).
 
 ### Group Command 
 
