@@ -1,21 +1,34 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
 # Raise Curve Degree
 
-<Reference shortcut="Shift + S" command="Raise Degree" button="" />
+<Reference shortcut="Shift + S" command="Raise Degree" button="Right of Command Bar" buttonIcon="button-raise-degree-curve-face" />
 
-Increase the number of Control Vertices(CVs) on the selected Curves.
+Increase the number of Control Vertices(CVs) and number of Degrees on the selected Curves.
 
 ## Basic Usage
 
-1. Select a curve.
-2. Increase the CVs of the curve by pressing <kbd> Shift + S </kbd>.
-
+1. Select one or more curves.
+2. Press <kbd>Shift + S</kbd> or click on the button <ButtonIcon type="button-raise-degree-curve-face"/> on the right side of the Command Bar to increase the degree of the curves.
 
 <VideoPlayer fileName="raise-degree-curve"/>
 
+<Callout type="info" emoji="💡">
+    **Tip**
+    Use the "Toggle Points" command to hide the control points of the selected curve.
+<VideoPlayer fileName="raise-degree-curve-hidepoints"/>
+</Callout>
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    In Plasticity, the increased curve segments are displayed as a single curve with control vertices (CVs). Additionally, the Interactive Panel provides information about the selected curve, including its degree, the number of spans, and its classification.
+    ![Interactive Panel](/img/interactive-panel-subdivide-raise-degree-curve.png)
+</Callout>
+
 ## See also
 - [Subdivide Curve](subdivide-curve)
+- [Rebuild Curve](rebuild-curve)

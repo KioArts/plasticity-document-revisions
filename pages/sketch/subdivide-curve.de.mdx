@@ -1,14 +1,24 @@
 import Reference from '/components/Reference'
-import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
 
 # Subdivide Curve
 
-<Reference shortcut="Umschalt + S" command="Subdivide Curve" button="Rechts von der Befehlsleiste"  buttonIcon='button-subdivide-curve'/>
+<Reference shortcut="Alt + S" command="Subdivide Curve" button="" />
 
-Erhöht die Anzahl der Control Vertices(CVs) auf den ausgewählten Curves.
+Erhöhen Sie die Anzahl der Stützpunkte (CVs) und Kurvensegmente auf den ausgewählten Kurven. 
 
 ## Grundlegende Nutzung
 
-1. Wählen Sie einen oder mehrere Curves aus.
-2. Drücken Sie <kbd>Umschalt + S</kbd> oder klicken Sie auf die Schaltfläche <ButtonIcon type="button-subdivide-curve" /> rechts von der Befehlsleiste.
-3. Die Anzahl der CVs wird erhöht und sie werden ausgewählt.
+1. Wählen Sie eine oder mehrere Kurven aus.
+2. Drücken Sie <kbd>Alt + S</kbd> oder geben Sie **Subdivide** in die Befehlspalette ein.
+3. Die Anzahl der CVs wird erhöht, und sie werden ausgewählt.
+
+<Callout type="info" emoji="💡">
+    **Tip**
+    In Plasticity werden die erhöhten Kurvensegmente als eine einzelne Kurve mit Stützpunkten (CVs) angezeigt. Außerdem bietet das interaktive Panel Informationen zur ausgewählten Kurve, einschließlich ihres Grads, der Anzahl der Spannen und ihrer Klassifizierung.
+    ![Interactive Panel](/img/interactive-panel-subdivide-raise-degree-curve.png)
+</Callout>
+
+## Siehe auch
+- [Raise Curve Degree](raise-curve-degree)
+- [Rebuild Curve](rebuild-curve) 
