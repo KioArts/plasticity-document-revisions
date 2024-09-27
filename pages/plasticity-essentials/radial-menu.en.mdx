@@ -70,12 +70,12 @@ For instance, we'll design a "My Menu" Radial Menu with "Spline Curve", "Bridge"
 ```
 Explanation: (Please note, the explanations starting with // are just for reference and should not be included in the actual file.)
 
-- name: Represents the radial menu's title. You can choose any name you like. It's displayed in the command palette and will adopt the format "Radial Menu: (name)".
-- command: A unique identifier for the radial menu. To avoid conflicts with existing commands, consider incorporating the author's name or other unique elements.
-- items: Lists the commands integrated into the radial menu. You can include multiple commands.
-    - command: The internal designation for the command to be incorporated. A list of these designations can be found [here](#internal-designation-for-the-command).
-    - icon: Denotes the icon that appears in the radial menu. Be aware that some commands might not have a preset icon.
-    - label: The central label in the radial menu. If there's no corresponding icon, the label's first two characters will be shown.
+- **name:** Represents the radial menu's title. You can choose any name you like. It's displayed in the command palette and will adopt the format "Radial Menu: (name)".
+- **command:** A unique identifier for the radial menu. To avoid conflicts with existing commands, consider incorporating the author's name or other unique elements.
+- **items:** Lists the commands integrated into the radial menu. You can include multiple commands.
+    - **command:** The internal designation for the command to be incorporated. A list of these designations can be found [here](#internal-designation-for-the-command).
+    - **icon:** Denotes the icon that appears in the radial menu. Be aware that some commands might not have a preset icon.
+    - **label:** The central label in the radial menu. If there's no corresponding icon, the label's first two characters will be shown.
 ```json
 {
     "name": "My Menu",      // Represents the radial menu's title
