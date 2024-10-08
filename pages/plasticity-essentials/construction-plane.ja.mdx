@@ -2,6 +2,7 @@
 title: 構築平面
 description: 構築平面の使用方法。新規に作成、保存、再利用の仕方説明します。
 ---
+import { Callout } from 'nextra/components'
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
@@ -17,7 +18,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 - <kbd>テンキー 3</kbd> : YZ 平面を使用。右から見た視線になります。
 - <kbd>テンキー 1</kbd> : XZ 平面を使用。正面から見た視線になります。
 
-### 平面に合わせた構築平面を作成する
+### 1. 平面に合わせた構築平面を作成する
 
 ソリッドまたはシートの平面のフェイスに合わせて構築平面を作成できます。
 
@@ -30,7 +31,24 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 視線を変更したくないときは、<kbd>スペース</kbd>の代わりに<kbd>Shift + スペース</kbd>を押します。
 
-### 対向する平行面および領域からミッドプレーン構造平面を作成する
+### 2. 面とエッジの選択による、表面に垂直に整列した構築平面の作成
+
+面とエッジを選択することで、表面に垂直に整列した構築平面を作成できます。
+
+1. 使用したい面とエッジを選択します。
+2. <kbd>スペース</kbd> キーを押します。
+3. 構築平面が作成されます。
+4. ビューが作成された構築平面に整列します。
+
+- ビューを変更したくない場合は、<kbd>Shift + スペース</kbd> を押してください。
+<VideoPlayer fileName="construction-plane-6"/>
+
+<Callout type="info" emoji="💡">
+**Tip**
+   面の選択はビューの整列の基準となり、エッジの選択はビューの方向を定めるガイドとして機能します。
+</Callout>
+
+### 3. 対向する平行面および領域からミッドプレーン構造平面を作成する
 
 対向する平行面の平均距離位置に基づいて構造平面を作成し、ミッドプレーン構造が得られます。
 
@@ -43,7 +61,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ビューを変更したくない場合は、<kbd>Space</kbd> の代わりに <kbd>Shift + Space</kbd> を押してください。
 
-### 複数の頂点から構築平面を作成する
+### 4. 複数の頂点から構築平面を作成する
 
 3つ以上の点をもとに構築平面を作成できます。
 
@@ -57,11 +75,11 @@ import Kst from '/components/KeyboardShortcutsTitle'
 視線を変更したくないときは、<kbd>スペース</kbd>の代わりに<kbd>Shift + スペース</kbd>を押します。
 また、スケッチのリージョンを選択して、これに合わせて構築平面を作成することもできます。
 
-### 見えている視線に合わせた構築平面を作成する
+### 5. 見えている視線に合わせた構築平面を作成する
 
 作業エリアに見えている視線に合わせて構築平面を作成できます。
 
-#### ワールド原点を通る構築平面を作成する
+#### 5.1 ワールド原点を通る構築平面を作成する
 
 1. 構築平面にしたい視線にします。
 2. <kbd>Ctrl + Space</kbd>>を押します。
@@ -69,7 +87,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <VideoPlayer fileName="construction-plane-4"/> 
 
-#### 選択した点を通る構築平面を作成する
+#### 5.2 選択した点を通る構築平面を作成する
 
 1. 構築平面にしたい視線にします。
 2. <kbd>Ctrl + Shift + Space</kbd>>を押します。
@@ -78,23 +96,23 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <VideoPlayer fileName="construction-plane-5"/>
 
-### 構築平面の保存と利用
+### 6. 構築平面の保存と利用
 
 作成した構築平面を保存して後から利用できます。
 
-#### 構築平面の保存
+#### 6.1 構築平面の保存
 
 1. 画面上部の**Temporary constraction plane**をクリックします。
 2. 画面右に**Custom plane 0**が追加されます。
 
-#### 保存した構築平面の利用
+#### 6.2 保存した構築平面の利用
 
 1. 画面右の**Custom plane 0**をクリックします。
 2. 保存した構築平面がアクティブになります。
 
 - **Custom plane 0**をダブルクリックすると、保存した構築平面がアクティブになり、正対する視線になります。
 
-#### コンストラクションプレーンの名前変更
+#### 6.3 コンストラクションプレーンの名前変更
 
 1. アウトライナーで保存されたコンストラクションプレーンをダブルクリックします。
 2. コンストラクションプレーンの名前を変更し、Enterキーを押すか、3D ビューポートで左クリックします。

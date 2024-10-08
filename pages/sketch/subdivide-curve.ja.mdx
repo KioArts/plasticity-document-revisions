@@ -1,14 +1,26 @@
 import Reference from '/components/Reference'
-import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
 
-# Subdivide Curve（カーブの制御点を増やす）
+# Subdivide Curve
 
-<Reference shortcut="Shift + S" command="Subdivide Curve" button="コマンドバー右"  buttonIcon='button-subdivide-curve'/>
+<Reference shortcut="Alt + S" command="Subdivide Curve" button="" />
 
-カーブの制御点を増やすことができます。
+選択したカーブのコントロールポイント（CV）とカーブセグメントの数を増やします。 
 
 ## 基本的な使い方
 
-1. 制御点を増やしたいカーブを選択します。
-2. <kbd>Shift + S</kbd>を押すか、コマンドバー右の<ButtonIcon type="button-subdivide-curve" />をクリックします。
-3. 制御点の数が増え、増えた制御点が選択されます。
+1. 1つ以上のカーブを選択します。
+2. <kbd>Alt + S</kbd>を押すか、コマンドパレットで **Subdivide** と入力します。
+3. CVの数が増加し、それらが選択されます。
+
+<Callout type="info" emoji="💡">
+    **Tip**
+プラスティシティでは、増加したカーブセグメントは、CVを持つ単一のカーブとして表示されます。また、 [詳細表示 ](/plasticity-essentials/user-interface-overview) パネルは、選択されたカーブに関する情報を提供し、その次数、スパンの数、および分類が含まれます。
+
+![Interactive Panel](/img/interactive-panel-subdivide-raise-degree-curve.png)
+
+</Callout>
+
+## See also
+- [Raise Curve Degree](raise-curve-degree)
+- [Rebuild Curve](rebuild-curve) 

@@ -3,13 +3,13 @@ import { Tabs } from 'nextra/components'
 
 # Radial Menu
 
-The Radial Menu is a circular interface for executing commands. You can execute all commands available in Plasticity. By default, there are two radial menus: "Selection mode" and "Viewport settings". Additionally, users can create their own custom radial menus.
+The Radial Menu is a circular interface for executing commands. You can execute all commands available in Plasticity. By default, there are two radial menus: **"Selection mode"** and **"Viewport settings"**. Additionally, users can create their own custom radial menus.
 
 ![Radial Menu](/img/radial-menu.png)
 
 ## Setting Up the Radial Menu
 
-To use the default "Selection mode" and "Viewport settings" radial menus, some setup is required.
+To use the default **"Selection mode"** and **"Viewport settings"** radial menus, some setup is required.
 
 1. Download the following two text files: When you click, the content of the text will be displayed. Click "Download" at the top right.
     - [selection-mode.radial.json](https://app.box.com/s/xrh5xjepvcio33fvmy4thbc00ady5p4k)
@@ -20,9 +20,9 @@ To use the default "Selection mode" and "Viewport settings" radial menus, some s
 You'll need to assign shortcuts to access the radial menus.
 
 4. Press the <kbd>F</kbd> key to open the Command Palette.
-5. Type "menu" into the Command Palette. You'll see entries for "Radial Menu: Selection Mode" and "Radial Menu: Viewport Settings".
-6. Right-click on "Radial Menu: Selection Mode" and assign a shortcut. For guidance on assigning shortcuts, see [this section](command-palette#assign-a-shortcut).
-7. Right-click on "Radial Menu: Viewport Settings" and assign a shortcut.
+5. Type "menu" into the Command Palette. You'll see entries for **"Radial Menu: Selection Mode"** and **"Radial Menu: Viewport Settings"**.
+6. Right-click on **"Radial Menu: Selection Mode"** and assign a shortcut. For guidance on assigning shortcuts, see [this section](command-palette#assign-a-shortcut).
+7. Right-click on **"Radial Menu: Viewport Settings"** and assign a shortcut.
 8. Now, by pressing the shortcut you've assigned, you can display the radial menu.
 
 ## Using the Radial Menu
@@ -70,12 +70,12 @@ For instance, we'll design a "My Menu" Radial Menu with "Spline Curve", "Bridge"
 ```
 Explanation: (Please note, the explanations starting with // are just for reference and should not be included in the actual file.)
 
-- name: Represents the radial menu's title. You can choose any name you like. It's displayed in the command palette and will adopt the format "Radial Menu: (name)".
-- command: A unique identifier for the radial menu. To avoid conflicts with existing commands, consider incorporating the author's name or other unique elements.
-- items: Lists the commands integrated into the radial menu. You can include multiple commands.
-    - command: The internal designation for the command to be incorporated. A list of these designations can be found [here](#internal-designation-for-the-command).
-    - icon: Denotes the icon that appears in the radial menu. Be aware that some commands might not have a preset icon.
-    - label: The central label in the radial menu. If there's no corresponding icon, the label's first two characters will be shown.
+- **name:** Represents the radial menu's title. You can choose any name you like. It's displayed in the command palette and will adopt the format "Radial Menu: (name)".
+- **command:** A unique identifier for the radial menu. To avoid conflicts with existing commands, consider incorporating the author's name or other unique elements.
+- **items:** Lists the commands integrated into the radial menu. You can include multiple commands.
+    - **command:** The internal designation for the command to be incorporated. A list of these designations can be found [here](#internal-designation-for-the-command).
+    - **icon:** Denotes the icon that appears in the radial menu. Be aware that some commands might not have a preset icon.
+    - **label:** The central label in the radial menu. If there's no corresponding icon, the label's first two characters will be shown.
 ```json
 {
     "name": "My Menu",      // Represents the radial menu's title
@@ -105,11 +105,11 @@ The files you've created for configuration are saved in the Plasticity settings 
 1. Open the settings folder:
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigate to `C:\Users\<user name>\.plasticity\radials`.
+    Navigate to `C:\Users\<username>\.plasticity\radials`.
     </Tabs.Tab>
     <Tabs.Tab>
     Enable the setting to show hidden folders.<br />
-    Navigate to `/Users/<user name>/.plasticity/radials/`.
+    Navigate to `/Users/<username>/.plasticity/radials/`.
     </Tabs.Tab>
     <Tabs.Tab>
     Open the Plasticity settings folder.
@@ -128,11 +128,11 @@ You can remove a radial menu by deleting a specific file located in a particular
 1. Open the specified folder:
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigate to `C:\Users\<user name>\.plasticity\radials`.
+    Navigate to `C:\Users\<username>\.plasticity\radials`.
     </Tabs.Tab>
     <Tabs.Tab>
     Enable the setting to show hidden folders.<br />
-    Navigate to `/Users/<user name>/.plasticity/radials/`.
+    Navigate to `/Users/<username>/.plasticity/radials/`.
     </Tabs.Tab>
     <Tabs.Tab>
     Open the Plasticity configuration folder.
@@ -246,6 +246,7 @@ command:curve-array
 command:cut
 command:cut-curve
 command:cylinder
+command:deform
 command:delete
 command:delete-control-point
 command:delete-edge
@@ -253,18 +254,19 @@ command:delete-face
 command:delete-group
 command:delete-redundant-topology
 command:deselect-all
+command:dimension
 command:dissolve
-command:dissolve-face
 command:draft-face
 command:duplicate
 command:duplicate-curve-and-project
+command:duplicate-edge-and-project
 command:unjoin
 command:unjoin-curves
 command:unjoin-faces
 command:unjoin-shells
-command:export-cad
 command:export-obj
 command:export-stl
+command:export3mf
 command:extend
 command:extend-curve
 command:extend-edge
@@ -278,12 +280,9 @@ command:find-boundary-edges
 command:focus
 command:freestyle-mirror
 command:freestyle-move
-command:freestyle-move-item
 command:freestyle-offset-planar-curve
 command:freestyle-rotate
-command:freestyle-rotate-item
 command:freestyle-scale
-command:freestyle-scale-item
 command:group-selected
 command:hide-selected
 command:hide-unselected
@@ -292,6 +291,7 @@ command:hollow-solid
 command:imprint
 command:imprint-body-body
 command:imprint-curve-body
+command:insert-knot
 command:invert-hidden
 command:invert-selection
 command:isoparam
@@ -303,10 +303,10 @@ command:lock-selected
 command:loft
 command:loft-guide
 command:match-face
+command:measure
 command:mirror
 command:move
 command:move-control-point
-command:move-empty
 command:move-face
 command:move-item
 command:offset-curve
@@ -315,6 +315,8 @@ command:offset-face
 command:offset-face-loop
 command:offset-planar-curve
 command:offset-region
+command:offset-vertex
+command:paste-with-placement
 command:patch
 command:pipe
 command:place
@@ -323,38 +325,41 @@ command:project
 command:project-body-body
 command:project-curve-body
 command:project-curve-curve
+command:project-outline
 command:push-face
 command:radial-array
+command:raise-degree
 command:rebuild
 command:rebuild-curve
 command:rebuild-face
 command:rectangular-array
 command:refillet-face
 command:remove-fillets-from-shell
-command:remove-item
 command:remove-material
+command:remove-nominal-surface
+command:reverse
 command:revolve
 command:rotate
 command:rotate-control-point
-command:rotate-empty
 command:rotate-face
 command:rotate-item
 command:scale
 command:scale-control-point
-command:scale-empty
 command:scale-face
 command:scale-item
 command:select-adjacent
 command:select-all
 command:select-all-curves
 command:set-material
-command:smart-command
 command:sphere
 command:spiral
 command:split-segment
-command:subdivide-curve
+command:square  
+command:subdivide
 command:sweep
 command:sweep-tool
+command:tangent-arc
+command:tangent-circle
 command:text
 command:thicken
 command:thicken-sheet
@@ -362,25 +367,32 @@ command:three-point-arc
 command:three-point-box
 command:three-point-circle
 command:three-point-rectangle
+command:toggle-points
 command:trim
 command:two-point-circle
 command:ungroup-selected
 command:unhide-all
+command:unisolate
+command:unjoin
+command:unjoin-curves
+command:unjoin-faces
+command:unjoin-shells
 command:untrim
 command:unwrap-face
-command:wrap-face
+command:xnurbs
 edit:repeat-last-command
 file:export
 file:import
 file:new
 file:open
+file:save-version
 file:save
 file:save-as
 file:save-as-startup
-file:save-version
-selection:convert:edge
-selection:convert:face
-selection:convert:solid
+selection:convert:edges
+selection:convert:faces
+selection:convert:groups
+selection:convert:solids
 selection:mode:set:all
 selection:mode:set:control-point
 selection:mode:set:edge

@@ -2,7 +2,7 @@
 title: Konstruktionsebenen
 description: Ein Leitfaden zur Verwendung von Konstruktionsebenen. Wie man sie erstellt, speichert und wiederverwendet.
 ---
-
+import { Callout } from 'nextra/components'
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
@@ -18,7 +18,7 @@ Konstruktionsebenen können die XY-, YZ- oder XZ-Ebenen sein, und Sie können au
 - <kbd>Ziffernblock 3</kbd>: Verwenden Sie die YZ-Ebene. Dies gibt Ihnen eine Ansicht von rechts.
 - <kbd>Ziffernblock 1</kbd>: Verwenden Sie die XZ-Ebene. Dies gibt Ihnen eine Frontansicht.
 
-### Erstellung einer Konstruktionsebene ausgerichtet mit einer Oberfläche
+### 1. Erstellung einer Konstruktionsebene ausgerichtet mit einer Oberfläche
 
 Sie können eine Konstruktionsebene erstellen, die mit dem Gesicht eines Festkörpers oder Blattes ausgerichtet ist.
 
@@ -31,7 +31,25 @@ Sie können eine Konstruktionsebene erstellen, die mit dem Gesicht eines Festkö
 
 Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie <kbd>Shift + Leertaste</kbd> anstelle von <kbd>Leertaste</kbd>.
 
-### Erstellen einer Mittelflächen-Konstruktionsfläche aus gegenüberliegenden parallelen Flächen und Bereichen
+### 2. Erstellen einer Konstruktionsfläche senkrecht zu einer Oberfläche durch Auswahl von Fläche und Kante
+
+Sie können eine Konstruktionsfläche erstellen, die senkrecht zu einer Oberfläche ausgerichtet ist, indem Sie eine Fläche und eine Kante auswählen.
+
+1. Wählen Sie die Fläche und die Kante aus, die Sie als Konstruktionsfläche verwenden möchten.
+2. Drücken Sie <kbd>Space</kbd>.
+3. Die Konstruktionsfläche wird erstellt.
+4. Ihre Ansicht wird an die erstellte Konstruktionsfläche ausgerichtet.
+
+- Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie <kbd>Shift + Space</kbd> anstelle der <kbd>Space</kbd>.
+
+<VideoPlayer fileName="construction-plane-6"/>
+
+<Callout type="info" emoji="💡">
+**Tip**
+   Das Auswählen einer Fläche dient als Referenz für die Ausrichtung der Ansicht, während die Auswahl einer Kante eine Richtungsführung bietet, um die Ansicht zu orientieren.
+</Callout>
+
+### 3. Erstellen einer Mittelflächen-Konstruktionsfläche aus gegenüberliegenden parallelen Flächen und Bereichen
 
 Sie können eine Konstruktionsfläche basierend auf der durchschnittlichen Entfernung von gegenüberliegenden parallelen Flächen erstellen, was zu einer Mittelflächen-Konstruktion führt.
 
@@ -44,7 +62,7 @@ Sie können eine Konstruktionsfläche basierend auf der durchschnittlichen Entfe
 
 Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie stattdessen <kbd>Shift + Space</kbd>.
 
-### Erstellung einer Konstruktionsebene aus mehreren Punkten
+### 4. Erstellung einer Konstruktionsebene aus mehreren Punkten
 
 Sie können eine Konstruktionsebene basierend auf drei oder mehr Punkten erstellen.
 
@@ -58,11 +76,11 @@ Sie können eine Konstruktionsebene basierend auf drei oder mehr Punkten erstell
 Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie <kbd>Shift + Leertaste</kbd> anstelle von <kbd>Leertaste</kbd>.
 Sie können auch eine Region einer Skizze auswählen, um eine Konstruktionsebene zu erstellen, die damit ausgerichtet ist.
 
-### Erstellung einer Konstruktionsebene ausgerichtet mit der aktuellen Ansicht
+### 5. Erstellung einer Konstruktionsebene ausgerichtet mit der aktuellen Ansicht
 
 Sie können eine Konstruktionsebene erstellen, die mit Ihrer aktuellen Ansicht im Arbeitsbereich ausgerichtet ist.
 
-#### Erstellung einer Konstruktionsebene durch den Weltursprung
+#### 5.1 Erstellung einer Konstruktionsebene durch den Weltursprung
 
 1. Richten Sie Ihre Ansicht auf die gewünschte Sichtlinie für die Konstruktionsebene aus.
 2. Drücken Sie <kbd>Strg + Leertaste</kbd>.
@@ -70,7 +88,7 @@ Sie können eine Konstruktionsebene erstellen, die mit Ihrer aktuellen Ansicht i
 
 <VideoPlayer fileName="construction-plane-4"/>
 
-#### Erstellung einer Konstruktionsebene durch ausgewählten Punkt
+#### 5.2 Erstellung einer Konstruktionsebene durch ausgewählten Punkt
 
 1. Richten Sie Ihre Ansicht auf die gewünschte Sichtlinie für die Konstruktionsebene aus.
 2. Drücken Sie <kbd>Strg + Shift + Leertaste</kbd>.
@@ -79,23 +97,23 @@ Sie können eine Konstruktionsebene erstellen, die mit Ihrer aktuellen Ansicht i
 
 <VideoPlayer fileName="construction-plane-5"/> 
 
-### Speichern und Verwenden von Konstruktionsebenen
+### 6. Speichern und Verwenden von Konstruktionsebenen
 
 Sie können Ihre erstellten Konstruktionsebenen für eine spätere Verwendung speichern.
 
-#### Speichern von Konstruktionsebenen
+#### 6.1 Speichern von Konstruktionsebenen
 
 1. Klicken Sie oben auf dem Bildschirm auf **Temporary construction plane**.
 2. **Custom plane 0** wird auf der rechten Seite des Bildschirms hinzugefügt.
 
-#### Verwenden von gespeicherten Konstruktionsebenen
+#### 6.2 Verwenden von gespeicherten Konstruktionsebenen
 
 1. Klicken Sie auf der rechten Seite des Bildschirms auf **Custom plane 0**.
 2. Die gespeicherte Konstruktionsebene wird aktiviert.
 
 - Ein Doppelklick auf **Custom plane 0** aktiviert die gespeicherte Konstruktionsebene und richtet Ihre Ansicht darauf aus.
 
-#### Umbenennen von Konstruktionsflächen
+#### 6.3 Umbenennen von Konstruktionsflächen
 
 1. Doppelklicken Sie im Outliner auf die gespeicherte Konstruktionsfläche.
 2. Ändern Sie den Namen der Konstruktionsfläche und drücken Sie die Enter-Taste oder klicken Sie mit der linken Maustaste in den 3D-Viewport.

@@ -2,7 +2,7 @@
 title: Construction Planes
 description: A guide to using construction planes. How to create, save, rename, reuse them.
 ---
-
+import { Callout } from 'nextra/components'
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
@@ -18,7 +18,7 @@ Construction planes can be the XY, YZ, or XZ planes, and you can also create new
 - <kbd>Numpad 3</kbd>: Use the YZ plane. This gives you a view from the right.
 - <kbd>Numpad 1</kbd>: Use the XZ plane. This gives you a front view.
 
-### Creating a construction plane aligned with a surface
+### 1. Creating a construction plane aligned with a surface
 
 You can create a construction plane that aligns with the Face of a Solid or Sheet. 
 
@@ -31,7 +31,25 @@ You can create a construction plane that aligns with the Face of a Solid or Shee
 
 <VideoPlayer fileName="construction-plane-1"/>
 
-### Creating a midplane construction plane from opposing parallel faces and regions
+### 2. Creating a construction plane aligned perpendicular with a surface through face and edge selection
+
+You can create a construction plane that aligns perpendiculat with a surface by selecting a face and edge.
+
+1. Select the Face and Edge you want to use as a construction plane.
+2. Press <kbd>Space</kbd>.
+3. The construction plane is created.
+4. Your view will align with the created construction plane.
+
+- If you don't want to change your view, press <kbd>Shift + Space</kbd> instead of <kbd>Space</kbd>.
+
+<VideoPlayer fileName="construction-plane-6"/>
+
+<Callout type="info" emoji="💡">
+**Tip**
+   Selecting a face acts as a reference for aligning the view, while selecting an edge provides a directional guide to orient the view.
+</Callout>
+
+### 3. Creating a midplane construction plane from opposing parallel faces and regions
 
 You can create a construction plane based on the average position of opposing parallel faces and regions resulting in a midplane construction.
 
@@ -44,7 +62,7 @@ You can create a construction plane based on the average position of opposing pa
 
 <VideoPlayer fileName="construction-plane-2"/> 
 
-### Creating a construction plane from multiple points
+### 4. Creating a construction plane from multiple points
 
 You can create a construction plane based on three or more points.
 
@@ -58,11 +76,11 @@ You can create a construction plane based on three or more points.
 
 <VideoPlayer fileName="construction-plane-3"/>
 
-### Creating a construction plane aligned with the current view
+### 5. Creating a construction plane aligned with the current view
 
 You can create a construction plane that aligns with your current view in the workspace:
 
-#### Creating a construction plane through the world origin
+#### 5.1 Creating a construction plane through the world origin
 
 1. Position your view to the desired line of sight for the construction plane.
 2. Press <kbd>Ctrl + Space</kbd>.
@@ -70,7 +88,7 @@ You can create a construction plane that aligns with your current view in the wo
 
 <VideoPlayer fileName="construction-plane-4"/> 
 
-#### Creating a construction plane through selected point
+#### 5.2 Creating a construction plane through selected point
 
 1. Position your view to the desired line of sight for the construction plane.
 2. Press <kbd>Ctrl + Shift + Space</kbd>.
@@ -79,23 +97,23 @@ You can create a construction plane that aligns with your current view in the wo
 
 <VideoPlayer fileName="construction-plane-5"/> 
 
-### Saving and using construction planes
+### 6. Saving and using construction planes
 
 You can save your created construction planes for later use.
 
-#### Saving construction planes
+#### 6.1 Saving construction planes
 
 1. Click on **Temporary construction plane** at the top of the screen.
 2. **Custom plane 0** will be added to the right side of the screen.
 
-#### Using saved construction planes
+#### 6.2 Using saved construction planes
 
 1. Click on **Custom plane 0** on the right side of the screen.
 2. The saved construction plane becomes active.
 
 - Double-clicking on **Custom plane 0** will activate the saved construction plane and align your view with it.
 
-#### Renaming Construction planes
+#### 6.3 Renaming Construction planes
 
 1. Double click on the saved construction plane in the Outliner. 
 2. Rename the construction plane and press Enter or Left Mouse Button on the 3D viewport.

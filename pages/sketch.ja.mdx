@@ -1,45 +1,48 @@
 # スケッチコマンド[#sketch-commands]
 
-| コマンド名                                                         | ショートカット       | 機能                                                                                             |
-| ------------------------------------------------------------------ | -------------------- | ------------------------------------------------------------------------------------------------ |
-| [Fillet](/sketch/fillet)                                           | <kbd>B</kbd>         | Fillet Curve, Fillet Vertex, Fillet Shell の統一コマンド                                         |
-| [Fillet Curve](/sketch/fillet-curve)                               | <kbd>B</kbd>         | 2つのカーブセグメントをフィレットまたは面取りできます                                            |
-| [Fillet Vertex](/sketch/fillet-vertex)                             | <kbd>B</kbd>         | 接続された頂点間をフィレットまたは面取りできます                                                 |
-| [Offset Curve](/sketch/offset-curve)                               | <kbd>O</kbd>         | Offset Planar Curve, Offset Region, Offset Face Loop, Offset Edge の統一コマンド                 |
-| [Offset Planar Curve](/sketch/offset-planar-curve)                 | <kbd>O</kbd>         | 平面カーブを指定した距離でオフセットして新しいカーブを作成できます                               |
-| [Offset Region](/sketch/offset-region)                             | <kbd>O</kbd>         | 選択したリージョンのアウトラインカーブを距離を指定してオフセットし、新しいリージョンを作成します |
-| [Offset Vertex](/sketch/offset-vertex)                             | <kbd>O</kbd>         | 頂点の両側にカーブに沿って新しい頂点を挿入します                                                 |
-| [Subdivide Curve](/sketch/subdivide-curve)                         | <kbd>Shift + S</kbd> | カーブの制御点を増やすことができます                                                             |
-| [Raise Curve Degree](/sketch/raise-curve-degree)                   | <kbd>Shift + S</kbd> | カーブのコントロールポイントを増やす。                                                                         |
-| [Extend](/sketch/extend)                                           |                      | Extend Curve, Extend Sheet の統一コマンド                                                        |
-| [Extend Curve](/sketch/extend-curve)                               |                      | カーブを延長できます                                                                             |
-| [Rebuild](/solid/rebuild)                                         |                      | Rebuild Curve, Rebuild Face の統一コマンド                                                       |
-| [Rebuild Curve](/sketch/rebuild-curve)                             |                      | カーブの形状は変えずに制御点の位置を最適化することで、カーブを再構築できます                     |
-| [Text](/sketch/text)                                               |                      | 入力したテキストでカーブを作成できます                                                           |
-| [Toggle Points](/sketch/toggle-points)                             |                      | CVポイントを表示または非表示にする。                                                                      |
-| [Deform Curve](/sketch/deform-sketch)                              |                      | 既存の曲線を異なる表面にラップします。                                                               |
-| [Reverse Curve](/sketch/reverse-curve)                              |                      | 曲線の方向を反転する。                                                                      |
-| **Project Commands**                                               |                      |                                                                                                  |
-| [Project](/sketch/project)                                         | <kbd>I</kbd>         | Project Body Body, Project Curve Body, Project Curve Curve の統一コマンド                        |
-| [Project Body Body](/sketch/project-body-body)                     | <kbd>I</kbd>         | 2つのソリッドまたはシートの交差線からカーブを作成できます                                        |
-| [Project Curve Body](/sketch/project-curve-body)                   | <kbd>I</kbd>         | カーブをソリッドまたはシートに投影して、カーブを作成できます                                     |
-| [Project Curve Curve](/sketch/project-curve-curve)                 | <kbd>I</kbd>         | ふたつのカーブを投影した交線のカーブを作成できます                                               |
-| [Project Outline](/sketch/project-outline)                         | <kbd>Alt + D</kbd>   | ソリッドまたはシートの外形を現在の構築平面に法線の方向に投影し、カーブを生成します               |
-| [Alternative Duplicate](/sketch/alternative-duplicate)             | <kbd>Alt + D</kbd>   | カーブまたはエッジを構築平面に投影したカーブを作成できます                                       |
-| [Create Outline](/sketch/create-outline)                           |                      | ソリッドまたはシートの外形を法線方向に沿って現在の構築平面に投影し、3Dのカーブを生成します       |
-| [Duplicate Curve and Project](/sketch/duplicate-curve-and-project) |                      | 曲線を複製して投影する                                                                     |
-| **Join and Split Commands**                                        |                      |                                                                                                  |
-| [Join](/sketch/join)                                               | <kbd>J</kbd>         | Join Curves, Join Sheets の統一コマンド                                                          |
-| [Join Curves](/sketch/join-curves)                                 | <kbd>J</kbd>         | 一致した点でカーブをつなぐことができます。                                                       |
-| [Bridge](/sketch/bridge)                                           |                      | Bridge Curve, Bridge Vertex, Bridge Edge の統一コマンド                                          |
-| [Bridge Curve](/sketch/bridge-curve)                               |                      | 連続性を考慮してふたつのカーブを繋げることができます                                             |
-| [Bridge Edge](/sketch/bridge-edge)                                 |                      | 連続性を考慮してふたつのエッジを繋げることができます                                             |
-| [Bridge Vertex](/sketch/bridge-vertex)                             |                      | 連続性を考慮してふたつの頂点を繋げることができます                                               |
-| [Trim](/sketch/trim)                                               | <kbd>T</kbd>         | 平面上や3次元的なカーブをセグメントごとにトリムすることができます                                |
-| [Cut Curve](/sketch/cut-curve)                                     |                      | カーブを、カーブまたはフェイスで切断できます                                                     |
-| [Split Segment](/sketch/split-segment)                             |                      | カーブをふたつのセグメントに分割することができます                                               |
-| [Unjoin](/sketch/unjoin)                                           | <kbd>Alt + J</kbd>   | Unjoin Curves, Unjoin Faces, Unjoin Shells の統一コマンド                                        |
-| [Unjoin Curves](/sketch/unjoin-curve)                              | <kbd>Alt + J</kbd>   | 繋がったカーブを切り離すことができます                                                           |
-| **Vertex Commands**                                                |                      |                                                                                                  |
-| [Delete Redundant Topology](/sketch/delete-redundant-topology)     |                      | カーブの余剰な制御点を削除することができます                                                     |
-| [Convert Vertex](/sketch/convert-vertex)                           |                      | 頂点を制御点に変換することができます                                                             |
+| コマンド名                                                         | ショートカット              | 機能                                                                                                    |
+| ----------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [Deform](/sketch/deform)                                           |                            | 曲線、ソリッド、およびシートを変形させるための統一コマンド。                                                  |
+| [Deform Curve](/sketch/deform-sketch)                              |                            | 既存の曲線を別の表面に巻き付ける。                                                                                |
+| [Extend](/sketch/extend)                                           |                            | 曲線を延長するための統一コマンド。                                                                                |
+| [Extend Curve](/sketch/extend-curve)                               |                            | 曲線を延長する。                                                                                                 |
+| [Fillet](/sketch/fillet)                                           | <kbd>B</kbd>               | フィレット曲線、フィレット頂点、フィレットシェルのための統一コマンド。                                             |
+| [Fillet Curve](/sketch/fillet-curve)                               | <kbd>B</kbd>               | 2つの曲線セグメントの間にフィレットまたは面取りを行う。                                                          |
+| [Fillet Vertex](/sketch/fillet-vertex)                             | <kbd>B</kbd>               | 接続された頂点のフィレットまたは面取りを行う。                                                                  |
+| [Offset Curve](/sketch/offset-curve)                               | <kbd>O</kbd>               | オフセット平面曲線、オフセット領域、オフセットフェースループ、オフセットエッジのための統一コマンド。                      |
+| [Offset Planar Curve](/sketch/offset-planar-curve)                 | <kbd>O</kbd>               | 平面曲線をオフセットする。                                                                                      |
+| [Offset Region](/sketch/offset-region)                             | <kbd>O</kbd>               | 領域のアウトライン曲線をオフセットする。                                                                        |
+| [Offset Vertex](/sketch/offset-vertex)                             | <kbd>O</kbd>               | 頂点の両側に沿って新しい頂点を挿入する。                                                                         |
+| [Raise Degree](/sketch/raise-degree)                               | <kbd>Shift+S</kbd>       | 曲線の次数を上げるための統一コマンド。                                                                           |
+| [Raise Curve Degree](/sketch/raise-curve-degree)                   | <kbd>Shift+S</kbd>       | 制御点と曲線の次数を増加させる。                                                                                |
+| [Rebuild](/sketch/rebuild)                                         |                            | 曲線とフェースを再構築するための統一コマンド。                                                                   |
+| [Rebuild Curve](/sketch/rebuild-curve)                             |                            | 制御点の位置を最適化して再構築する。                                                                             |
+| [Reverse](/sketch/reverse)                                         |                            | 曲線とシートを反転させるための統一コマンド。                                                                     |
+| [Reverse Curve](/sketch/reverse-curve)                             |                            | 曲線の方向を逆にする。                                                                                         |
+| [Subdivide Curve](/sketch/subdivide-curve)                         | <kbd>Alt+S</kbd>         | 曲線の制御点とスパンを増やす。                                                                                  |
+| [Text](/sketch/text)                                               |                            | テキストから曲線を作成する。                                                                                    |
+| [Toggle Points](/sketch/toggle-points)                             |                            | 制御点を隠すまたは表示する。                                                                                     |
+| **Project Commands**                                               |                           |                                                                                                            |
+| [Alternative Duplicate](/sketch/alternative-duplicate)             | <kbd>Alt+D</kbd>       | 現在の構造平面に曲線を投影する。                                                                               |
+| [Create Outline](/sketch/create-outline)                           |                          | オブジェクトのアウトラインを投影して3D曲線を作成する。                                                         |
+| [Duplicate Curve and Project](/sketch/duplicate-curve-and-project) |                          | 曲線を複製して投影する。                                                                                        |
+| [Project](/sketch/project)                                         | <kbd>I</kbd>             | ボディボディをプロジェクト、カーブボディをプロジェクト、カーブカーブをプロジェクトするための統一コマンド。                |
+| [Project Body Body](/sketch/project-body-body)                     | <kbd>I</kbd>             | 2つのソリッドまたはシート間の交差線を表す新しい曲線を作成する。                                                |
+| [Project Curve Body](/sketch/project-curve-body)                   | <kbd>I</kbd>             | ソリッドまたはシートに曲線を投影して新しい曲線を作成する。                                                     |
+| [Project Curve Curve](/sketch/project-curve-curve)                 | <kbd>I</kbd>             | 2つの独立した曲線から生成された面の交点を投影して新しい曲線を作成する。                                       |
+| [Project Outline](/sketch/project-outline)                         | <kbd>Alt+D</kbd>       | ソリッドまたはシートのアウトラインを投影する。                                                                  |
+| **Join and Split Commands**                                        |                            |                                                                                                            |
+| [Bridge](/sketch/bridge)                                           |                          | ブリッジ曲線、ブリッジ頂点、ブリッジエッジのための統一コマンド。                                               |
+| [Bridge Curve](/sketch/bridge-curve)                               |                          | 2つの曲線をつなぐ。                                                                                             |
+| [Bridge Edge](/sketch/bridge-edge)                                 |                          | 2つのエッジをつなぐ。                                                                                          |
+| [Bridge Vertex](/sketch/bridge-vertex)                             |                          | 2つの頂点をつなぐ。                                                                                            |
+| [Cut Curve](/sketch/cut-curve)                                     |                          | 曲線を切り取る。                                                                                               |
+| [Join](/sketch/join)                                               | <kbd>J</kbd>             | 曲線を結合し、シートを結合するための統一コマンド。                                                               |
+| [Join Curves](/sketch/join-curves)                                 | <kbd>J</kbd>             | 接続ポイントで曲線を結合する。                                                                                 |
+| [Split Segment](/sketch/split-segment)                             |                          | 曲線を2つのセグメントに分割する。                                                                              |
+| [Trim](/sketch/trim)                                               | <kbd>T</kbd>             | 曲線をトリムする。                                                                                             |
+| [Unjoin](/sketch/unjoin)                                           | <kbd>Alt+J</kbd>       | 曲線、面、シェルを分離するための統一コマンド。                                                                   |
+| [Unjoin Curves](/sketch/unjoin-curve)                              | <kbd>Alt+J</kbd>       | 結合された曲線を分離する。                                                                                     |
+| **Vertex Commands**                                                |                          |                                                                                                            |
+| [Convert Vertex](/sketch/convert-vertex)                           |                          | 頂点を制御点に変換する。                                                                                       |
+| [Delete Redundant Topology](/sketch/delete-redundant-topology)     |                          | 余分なポイントを削除する。                                                                                     |
