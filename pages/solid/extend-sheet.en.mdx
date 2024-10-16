@@ -6,7 +6,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="" command="Extend Sheet" button="" />
 
-Extend one or more outside Edges of the Sheet by specifying the distance. Choose from extension shapes like Liner, Soft and Reflective.
+Extend one or more boundary Edges of the Sheet by specifying the distance. Choose from extension shapes like Liner, Soft and Reflective.
 
 ## Basic Usage
 
@@ -15,8 +15,10 @@ Extend one or more outside Edges of the Sheet by specifying the distance. Choose
 3. Move the yellow dot to specify the distance.
 4. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
-        - **Shape:** **Liner** /  **Soft** /  **Reflective**
-            - Refer to the video to see the differences between each option.
+        - **Shape:** Specify the shape of the extended surface. Options **Linear**, **Soft**, and **Reflective** will directly influence the shape and curvature of the extended surface during extrusion.
+            - **Linear:** Extends the surface in a flat, straight line from the boundary edge, maintaining the current tangent direction without altering curvature.
+            - **Soft:** Gradually blends the extension with the existing surface for a smooth transition, preserving both tangent and curvature.
+            - **Reflective:** Mirrors the surface curvature and tangency for a symmetrical and seamless continuation, ideal for maintaining surface symmetry.
         - **Distance:** Specify the distance to extend.
         - **Modify:** When enabled, the Sheet becomes a single Sheet.
 5. Confirm with OK in the Command Dialog or right-click.
