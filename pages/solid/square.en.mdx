@@ -16,7 +16,7 @@ Square is an XNurbs based command that can create high-quality quad sided surfac
 3. Set the options in the Command Dialog.
    - <Kst>Command Dialog</Kst>
    - **Continuity:** **Free, G0, G1, G2**
-      - **Free:** Option that doesn't respect the boundary continuity, trading precicion continuity and resulting a better surface quality.
+      - **Free:** Option that doesn't respect the boundary continuity, trading precicion continuity and resulting a better surface quality. This option 
       - **G0, G1, G2:** Specify the [continuity of the Surface](/cad-essentials/continuity-curve-and-surface).
    - **Flatness:** Similarly to XNurbs, this option affects the flatness and quality of generated surfaces. Specifying higher value will generate high quality surfaces and lower value will generate low quality surfaces. 
    - **Degree:** Specify the UV degree value.
@@ -35,7 +35,7 @@ Square is an XNurbs based command that can create high-quality quad sided surfac
 
 <Callout type="info" emoji="🗒️">
 **Lofting with Square**
-Alternatively, Square command can be used as a lofting approach with two floating edges. 
+Alternatively, Square command can be used as a lofting approach with two seperated edges. This approach gives much more flexibility and control of generating a new surface, while with loft, you will most likely get a fixated result of the generated surface.
 <VideoPlayer fileName="square-1"/>
 </Callout>
 
@@ -48,7 +48,19 @@ Sweeping with the Square command is possible when two or three touching edges ar
 <Callout type="info" emoji="🗒️">
 **Patching with Square**
 Patching a quad-sided hole with Square is possible to do so.   
-<VideoPlayer fileName="square-2"/>
+<VideoPlayer fileName="square-3"/>
+</Callout>
+
+<Callout type="tip" emoji="💡">
+**Tip**
+Similar to the approach in XNurbs, you can execute the command in advance and begin selecting boundary edges, curves and surfaces. This speeds up the workflow efficiently and provides a live preview of surface generation.
+<VideoPlayer fileName="square-4"/> 
+</Callout>
+
+<Callout type="tip" emoji="💡">
+**Tip**
+The Square command allows you to selectively refit trimmed surfaces on a face and its adjacent surfaces, aligning the orientation of splines to match the natural flow of the surface.
+<VideoPlayer fileName="square-5"/> 
 </Callout>
 
 ## See also
