@@ -27,6 +27,10 @@
     "title":"Split Curve At Point",
     "href": "/sketch/split-segment"
   },
+  "insert-cv-at-point": {
+    "tittle":"Insert CV At Point",
+    "href": "/sketch/insert-knot"
+  },
   "sphere": "Sphere",
   "corner-box": "Corner Box",
   "center-box": "Center Box",
