@@ -1,0 +1,32 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+
+# ノット挿入
+
+<Reference shortcut="" command="ノット挿入" button="ツールバー" buttonIcon='button-split-segment' />
+
+スプライン曲線にCV（制御頂点）を挿入します。
+
+## 基本的な使い方
+
+1. ツールバーで <ButtonIcon type="button-split-segment" /> ボタンをクリックします。
+2. CVを挿入したい点をクリックします。
+3. CVが挿入され、スプライン曲線に新しい点が追加されます。
+
+<VideoPlayer fileName="insert-knot"/>
+
+<Callout type="warning" emoji="⚠️">
+スプリットセグメントとノット挿入ツールは同じアイコンを使用しています。ツールを選択する際は、アイコンのテキストを確認するか、コマンドパレットに正しいコマンドを直接入力してください。
+</Callout>
+
+<Callout type="info" emoji="🗒️">
+**注意** 制御頂点を挿入するには、曲線がスプラインである必要があります。通常の分割された曲線には効果がありません。
+</Callout>
+
+## 関連項目
+- [スプリットセグメント](split-segment)
+- [カット曲線](cut-curve)
+- [分離](unjoin)
+- [トリム](trim)
