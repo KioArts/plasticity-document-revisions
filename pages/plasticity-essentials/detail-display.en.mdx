@@ -11,31 +11,26 @@ The number indicator is a feature that displays the count of selected objects in
 ## Object Type and Sub-type
 In the Detail Display window, the object type and sub-type is shown based on your selection and the active selection mode. 
 
-<mark>For example</mark>, if face selection mode **(1)** is activated only and you select several faces and a simple conic fillet shape on a cube **(2)**, it will display the type of selection with a number of *3 Faces* **(3)**, along with the sub-type breakdown of *2 Planes* and *1 Cylinder* **(4)**.
+For example, if face selection mode **(1)** is activated only and you select several faces and a simple conic fillet shape on a cube **(2)**, it will display the type of selection with a number of *3 Faces* **(3)**, along with the sub-type breakdown of *2 Planes* and *1 Cylinder* **(4)**.
 
 ![Object Type and Sub-Type](/img/object-type.png)
 
-With Selection: Point <kbd>Num. 1</kbd> mode activated: 
+### Geometry Table
 
-Point types: Vertex and Control-Vertex (CV). 
-Point Sub-type: No Information.
+| Category       | Point          | Edge                                           | Face                                      | Solid              |
+| :------------: | :------------: | :--------------------------------------------: | :---------------------------------------: | :----------------: |
+| **Types**      | Vertex, Control-Vertex (CV) | Edge (solid), Curve (Sketch) | Face                                      | Solid, Sheet       |
+| **Sub-Types**  | No Information | Line (Solid, Sketch), Circle (Solid, Sketch), Surface curve (Solid), Intersection (Solid), Spline (Sketch) | Plane, Cone, Torus, Cylinder, Sphere, Spline | No Information     |
 
-Edge types: Edge (solid) and Curve (Sketch). 
-Edge Sub-type: Line (Solid and Sketch) Circle (Solid and Sketch), Surface curve (Solid), Intersection (Solid) and Spline (Sketch).
+<h3 align="center">Geometry Table</h3>
 
-Face type: Face. 
-Face sub-types: Plane, Cone, Torus, Cylinder, Sphere, and Spline.
+| Category       | Point          | Edge                                           | Face                                      | Solid              |
+| :------------: | :------------: | :--------------------------------------------: | :---------------------------------------: | :----------------: |
+| **Types**      | Vertex, Control-Vertex (CV) | Edge (solid), Curve (Sketch) | Face                                      | Solid, Sheet       |
+| **Sub-Types**  | No Information | Line (Solid, Sketch), Circle (Solid, Sketch), Surface curve (Solid), Intersection (Solid), Spline (Sketch) | Plane, Cone, Torus, Cylinder, Sphere, Spline | No Information     |
 
-Solid types: Solid, and Sheet.
-Solid Sub-type: No Information.
 
-| Point Types | Edge Types | Face Types | Solid Types | 
-| :-----------: | :----------: | :----------: | :-----------: |
-| Vertex and Control-Vertex (CV) | Edge (solid) and Curve (Sketch) | Face | Solid, and Sheet |
 
-| Point Sub-types | Edge Sub-types | Face Sub-types | Solid Sub-types | 
-| :-----------: | :----------: | :----------: | :-----------: |
-| No Information | Line (Solid and Sketch) Circle (Solid and Sketch), Surface curve (Solid), Intersection (Solid) and Spline (Sketch) | Plane, Cone, Torus, Cylinder, Sphere, and Spline | No Information |
 
 ## Allignment and Degree Information
 - The detail display window can display the degree between two selected objects and the allignment information in colrelation with two selected objects based on selection and type of selection mode. 
