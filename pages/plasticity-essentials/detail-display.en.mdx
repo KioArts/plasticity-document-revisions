@@ -15,21 +15,12 @@ For example, if face selection mode **(1)** is activated only and you select sev
 
 ![Object Type and Sub-Type](/img/object-type.png)
 
-### Geometry Table
+<h3 align="center">Object type and Sub-Type List</h3>
 
 | Category       | Point          | Edge                                           | Face                                      | Solid              |
 | :------------: | :------------: | :--------------------------------------------: | :---------------------------------------: | :----------------: |
-| **Types**      | Vertex, Control-Vertex (CV) | Edge (solid), Curve (Sketch) | Face                                      | Solid, Sheet       |
-| **Sub-Types**  | No Information | Line (Solid, Sketch), Circle (Solid, Sketch), Surface curve (Solid), Intersection (Solid), Spline (Sketch) | Plane, Cone, Torus, Cylinder, Sphere, Spline | No Information     |
-
-<h3 align="center">Geometry Table</h3>
-
-| Category       | Point          | Edge                                           | Face                                      | Solid              |
-| :------------: | :------------: | :--------------------------------------------: | :---------------------------------------: | :----------------: |
-| **Types**      | Vertex, Control-Vertex (CV) | Edge (solid), Curve (Sketch) | Face                                      | Solid, Sheet       |
-| **Sub-Types**  | No Information | Line (Solid, Sketch), Circle (Solid, Sketch), Surface curve (Solid), Intersection (Solid), Spline (Sketch) | Plane, Cone, Torus, Cylinder, Sphere, Spline | No Information     |
-
-
+| **Types**      | **Vertex**, **Control-Vertex (CV)** | **Edge** (Solid), **Curve** (Sketch) | **Face**                                      | **Solid**, **Sheet**       |
+| **Sub-Types**  | **No Information** | **Line** (Solid and Sketch), **Circle** (Solid and Sketch), **Surface Curve** (Solid), **Intersection** (Solid), **Spline** (Sketch) | **Plane**, **Cone**, **Torus**, **Cylinder**, **Sphere**, **Spline** | **No Information**     |
 
 
 ## Allignment and Degree Information
@@ -45,7 +36,9 @@ Alignment and Degree information:
 - If objects are alligned ... 
 ![Allignment Information](/img/Allignment-information.png)
 ### Degree Information
-- It 
+- Displaying Degree information regardless of the selection mode (beside Point mode) can be achieved when two objects are selected in a co-planar relationship.
+
+When selecting faces on one relative body, the degree information will display. This effect will only work when two objects are selected. When you select a face on one body and then select a face on another body, it will trigger an allignment information
 ![Degree Information](/img/degree-information.png)
 
 ## Dimension Property
