@@ -16,14 +16,9 @@ For example, if face selection mode **(1)** is activated only and you select sev
 ![Object Type and Sub-Type](/img/object-type.png)
 
 
+The following list contains information in regards to object type and sub-type in regards to the selection mode in active state:
+
 <h3 align="center">Object type and Sub-Type List</h3>
-
-| Category       | Point          | Edge                                           | Face                                      | Solid              |
-| :------------: | :------------: | :--------------------------------------------: | :---------------------------------------: | :----------------: |
-| **Types**      | **Vertex**, **Control-Vertex (CV)** | **Edge** (Solid), **Curve** (Sketch) | **Face**                                      | **Solid**, **Sheet**       |
-| **Sub-Types**  | **No Information** | **Line** (Solid and Sketch), **Circle** (Solid and Sketch), **Surface Curve** (Solid), **Intersection** (Solid), **Spline** (Sketch) | **Plane**, **Cone**, **Torus**, **Cylinder**, **Sphere**, **Spline** | **No Information**     |
-
-Object type and Sub-type list:
 
 | Category       | Point                        | Edge                                           | Face                                      | Solid              | 
 | :------------: | :--------------------------: | :--------------------------------------------: | :---------------------------------------: | :----------------: | 
@@ -31,34 +26,52 @@ Object type and Sub-type list:
 | **Sub-Types**  | No Information               | Line, Circle, Surface curve, Intersection, Spline | Plane, Cone, Torus, Cylinder, Sphere, Spline | No Information     | 
 | **Applicability** |  -                        | **Solid:** Edge, Surface curve, Intersection. **Sketch:** Curve, Spline Both: Line, Circle | Solid Only | Solid, Sheet    | 
 
+//Add an image that shows all of the above information. 
+
+![Object Type and Sub-type](/img/object-and-sub-type.png)
 
 ## Allignment and Degree Information
-- The detail display window can display the degree between two selected objects and the allignment information in colrelation with two selected objects based on selection and type of selection mode. 
 
-Alignment and Degree information: 
-1. Point - Coincident (Point Sketch)
-2. Edge - Parallel (Solid and Sketch), Degree Information (Solid and Sketch)
-3. Face - Parallel (Solid), Degree Information (Solid)
-4. Solid - No Information
+The detail display window can display the degree between two selected objects and the allignment information in colrelation with two selected objects based on selection and type of selection mode. 
 
-### Allignment Information 
-- If objects are alligned ... 
-![Allignment Information](/img/Allignment-information.png)
+The Detail Display window shows both alignment and degree information between selected objects, based on the type and mode of selection. This information is useful for evaluating alignment between surfaces, edges, and other features on objects, whether in solid or sketch mode.
+
 ### Degree Information
-- Displaying Degree information regardless of the selection mode (beside Point mode) can be achieved when two objects are selected in a co-planar relationship.
 
-When selecting faces on one relative body, the degree information will display. This effect will only work when two objects are selected. When you select a face on one body and then select a face on another body, it will trigger an allignment information
+Degree information is displayed based on the active selection mode when either a single object or two separate objects are selected and aligned in a single plane (co-planar relationship).
+
+For example, If edge selection mode (1) is activated and two edges are selected on a single object (2), the Detail Display window will show the degree information (3).
+
 ![Degree Information](/img/degree-information.png)
 
+### Allignment Information 
+
+Alignment information can be displayed based on the active selection mode when either a single object or two separate objects are selected in a co-planar relationship.
+
+For example, If face selection mode (1) is activated and you select two faces on a stationary object, the alignment information will be displayed in the Detail Display window based on the selected faces.
+
+![Allignment Information](/img/allignment-information.png)
+
+<h3 align="center">Allignment and Degree Information List</h3>
+
+| Category | Point | Edge | Face | Solid | 
+| -------- | ----- | ---- | ---- | ----- | 
+| Allignment Information | Coincident | Parallel | Parallel | No Information Displayed | 
+| Degree Information | No Information Displayed | Applicable | Applicable | No Information Displayed |
+
 ## Dimension Property
+
 - In the detail display window, there is a section where you can find dimension information based on object selections and the type of selection. 
+
 ### Solid Dimension Property
+
 - For solid objects, this category contains the following properties: 
         - volume
         - area
         - perimeter
 
 ### Curve Dimension Property
+
 - For curve objects, this category contains the following properties: 
         - lenght
         - circumference
