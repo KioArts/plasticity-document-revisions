@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shinjiesk/plasticity-unofficial-document.git"
+    "url": "git+https://github.com/KioArts/plasticity-unofficial-document-main.git"
   },
-  "author": "Shinji esk",
+  "author": "Shinji esk and KioArts",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shinjiesk/plasticity-unofficial-document/issues"
+    "url": "https://github.com/KioArts/plasticity-unofficial-document-main/issues"
   },
   "homepage": "https://plasticitydoc.vercel.app/",
   "dependencies": {

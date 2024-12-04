@@ -82,10 +82,10 @@ const config: DocsThemeConfig = {
         );
     },
     /*     banner: {
-        key: "1.3-release",
+        key: "2024.2-release",
         text: (
             <a href="/whats-new">
-                🎉 Plasticity 1.3 is released → Click here for details
+                🎉 Plasticity 2024.2 is released → Click here for details
             </a>
         ),
     }, */
