@@ -38,9 +38,9 @@ const config: DocsThemeConfig = {
         autoCollapse: true,
     },
     docsRepositoryBase:
-        "https://github.com/shinjiesk/plasticity-unofficial-document",
+        "https://github.com/KioArts/plasticity-document-revisions",
     project: {
-        link: "https://github.com/shinjiesk/plasticity-unofficial-document",
+        link: "https://github.com/KioArts/plasticity-document-revisions",
     },
     editLink: {
         text: <></>,
