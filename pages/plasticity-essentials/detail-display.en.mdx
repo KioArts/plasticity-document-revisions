@@ -1,5 +1,13 @@
 # Detail Display 
-The Detail Display window can be found at the bottom right of the screen (1), this window appears when an object is actively selected (2). It provides details such as the selection count, object type and sub-type, alignment and degree information, dimension property for solids and curves, and world coordinate positions.
+The Detail Display window can be found at the bottom right of the screen (1), this window appears when an object is actively selected (2). It provides details such as:
+        1. Selection count
+        2. Object type and Sub-type
+        3. Alignment and Degree information
+        4. Dimension Property for Solids and curves
+        5. Wordl coordinate positioning
+
+
+ the selection count, object type and sub-type, alignment and degree information, dimension property for solids and curves, and world coordinate positions.
 
 ![Detail Display](/img/detail-display.png)
 
@@ -24,7 +32,7 @@ The following list contains information in regards to object type and sub-type i
 | :------------: | :--------------------------: | :--------------------------------------------: | :---------------------------------------: | :----------------: | 
 | **Types**      | Vertex, Control-Vertex (CV)  | Edge, Curve                                    | Face                                      | Solid, Sheet       | 
 | **Sub-Types**  | No Information               | Line, Circle, Surface curve, Intersection, Spline | Plane, Cone, Torus, Cylinder, Sphere, Spline | No Information     | 
-| **Applicability** |  -                        | **Solid:** Edge, Surface curve, Intersection. **Sketch:** Curve, Spline Both: Line, Circle | Solid Only | Solid, Sheet    | 
+| **Applicability** |  Sketch Only                       | **Solid:** Edge, Surface curve, Intersection. **Sketch:** Curve, Spline Both: Line, Circle | Solid Only | Solid, Sheet    | 
 
 //Add an image that shows all of the above information. 
 
@@ -38,17 +46,17 @@ The Detail Display window shows both alignment and degree information between se
 
 ### Degree Information
 
-Degree information is displayed based on the active selection mode when either a single object or two separate objects are selected and aligned in a single plane (co-planar relationship).
+Degree information is displayed based on the active selection mode when either a single object or two separate objects are selected and share a co-planar relationship.
 
-For example, If edge selection mode (1) is activated and two edges are selected on a single object (2), the Detail Display window will show the degree information (3).
+For example, when the edge selection mode is active **(1)**, and two edges are selected on a single object **(2)**, the Detail Display window will show the corresponding degree information **(3)**.
 
 ![Degree Information](/img/degree-information.png)
 
 ### Allignment Information 
 
-Alignment information can be displayed based on the active selection mode when either a single object or two separate objects are selected in a co-planar relationship.
+Alignment information is displayed based on the active selection mode when a single object or two separate objects are selected with a co-planar relationship.
 
-For example, If face selection mode (1) is activated and you select two faces on a stationary object, the alignment information will be displayed in the Detail Display window based on the selected faces.
+Similarly, the Detail Display window can be used to acquire alignment information. If two edges are selected on a single object **(1)**, the alignment details will be displayed in the same manner **(2)**.
 
 ![Allignment Information](/img/allignment-information.png)
 
@@ -61,46 +69,53 @@ For example, If face selection mode (1) is activated and you select two faces on
 
 ## Dimension Property
 
-- In the detail display window, there is a section where you can find dimension information based on object selections and the type of selection. 
+In the detail display window, there's a section to access dimension information based on selected objects and selection type. 
 
 ### Solid Dimension Property
 
-- For solid objects, this category contains the following properties: 
-        - volume
-        - area
-        - perimeter
+Properties of solid objects include: 
+        - **Volume**: Space taken up by the object. 
+        - **Area:** Total outside area of the object.
+        - **Perimeter:** Distance around the object's edges. 
+
+![Solid Dimension Property](/img/solid-dimension-property.png)
 
 ### Curve Dimension Property
 
-- For curve objects, this category contains the following properties: 
-        - lenght
-        - circumference
-        - radius
+Properties of curve objects include: 
+        - **Radius**: The distance from the center to any point on the outer edge of a sphere or circle.
+        - **Circumference**: The distance around the boundary of a circle.
+        - **Length**: The distance measured from one end to the other end of an object or space.
+
+// Image here
 
 ## World Coordinate Information
+
+The woorld coordinate information displays the position of an object based on active selection selection mode. 
+ 
 ![XYZ](/img/xyz.png)
 
 ## Selection Mode Context
 
-- With Selection Mode: Body (<kbd> Number 4 </kbd>) activated, you can see the following display information:
+- With Selection Mode: Body (<kbd>4</kbd>) activated, you can see the following display information:
 
 | Solid | Sheet | Image | Mesh | 
 | ----- | ----- | ----- | ----- | 
 | Object Type, Object Dimensions and World Coordinate Positioning | Object Type, Object Dimensions and World Coordinate Positioning | No Information | No Information | 
 
-- With Selection Mode: Face (<kbd> Number 3 </kbd>) activated, you can see the following display information:
+- With Selection Mode: Face (<kbd>3</kbd>) activated, you can see the following display information:
 
 | Solid | Sheet | Sketch (Region) |  
 | ----- | ----- | ----- |
 | Object Type, Object Dimensions, Object Sub-Type (Plane and Cylinder), Plane Degree, and World Coordinate Positioning | Object Type, Object Dimensions, Object Sub-Type (Plane and Cylinder), Plane Degree, and World Coordinate Positioning | No Information | 
 
-- With Selection Mode: Edge (<kbd> Number 2 </kbd>) activated, you can see the following display information:
+- With Selection Mode: Edge (<kbd>2</kbd>) activated, you can see the following display information:
 
 | Solid | Sheet | Sketch (Curve, Vertex, Control-Vertex, and Region) |
 | ----- | ----- | ----- |  
 | Object Type, Object Dimensions, Object Sub-Type (Circle and Line), Line Degree, and World Coordinate Positioning | Object Type, Object Dimensions, Object Sub-Type (Circle and Line), Line Degree, and World Coordinate Positioning | Object Type, Object Dimensions, Object Sub-Type (Circle, Line, and Spline) Line Degree (Applicable on Lines and not Splines), and World Coordinate Positioning | 
 
-- With Selection Mode: Point (<kbd> Number 1 </kbd>) activated, you can see the following display information:
+- With Selection Mode: Point (<kbd>1</kbd>) activated, you can see the following display information:
 
 | Solid | Sheet | Sketch (Curve, Vertex, Control-Vertex, and Region) |  
 | ----- | ----- | ----- | 
@@ -108,9 +123,9 @@ For example, If face selection mode (1) is activated and you select two faces on
 
 # How To Use 
 ## Use Cases 
-1. Selection Extrapulation.  
-2. Altering Dimensions 
+1. Selection and Extrapolation.  
+2. Altering Dimensions. 
     1. Altering a lenght 
     2. Altering a radius 
     3. Altering a circumference 
-3. Copying Dimensions 
+3. Copying Dimensions. 
