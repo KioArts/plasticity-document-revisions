@@ -15,6 +15,10 @@ body {
                 var(--tw-text-opacity)
         );
     }
+    
+     // **Added Font-Smoothing Properties**
+     -webkit-font-smoothing: antialiased; /* For WebKit-based browsers like Safari */
+     -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
 
     &:lang(en),
     &:lang(de) {
