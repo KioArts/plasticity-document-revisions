@@ -8,7 +8,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx,md,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontWeight: {
+        normal: '400', // Adjust default font weight for body text
+        bold: '700',   // Adjust font weight for bold text
+      },
+    },
   },
   plugins: [],
 };
