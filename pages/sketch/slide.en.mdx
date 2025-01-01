@@ -1,0 +1,28 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+
+# Split Segment
+
+<Reference shortcut="Alt+G" command="Slide" button="" />
+
+Split the curve into two segments at any point along its length.
+
+## Basic Usage
+
+1. Click the button <ButtonIcon type="button-split-segment" /> on the Toolbar.
+2. Click on the point where you want to split the Curve.
+3. A Vertex is inserted, dividing the Curve into two segments.
+
+<VideoPlayer fileName="split-segment"/>
+
+<Callout type="warning" emoji="⚠️">
+Be mindful that the Split Segment and Insert Knot tools share the same icon. When selecting the tool, check the text on the icon or type the correct command directly in the Command Palette.   
+</Callout>
+
+## See also
+- [Insert Knot](insert-knot)
+- [Cut Curve](cut-curve)
+- [Unjoin](unjoin)
+- [Trim](trim)
