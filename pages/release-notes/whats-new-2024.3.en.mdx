@@ -15,110 +15,90 @@ Release date: September 5, 2024
 
 Plasticity 24.3 introduces a wide array of enhancements and new features aimed at improving surface modeling workflows, enhancing usability, and streamlining the user experience. Below is a detailed overview of the updates:  
 
----
+## New Commands
 
-## **1. Square Command Updates**  
-- **New "Free" Option**  
-  - Allows trading G0 precision for a higher-quality surface finish.  
-- **Improved Functionality**  
-  - The command now supports selecting one or more faces to act as a rough `RefitTrim` or `TrimConvert` tool.  
-  - It can also be executed without any preselected geometry, enhancing flexibility in various workflows.  
-
----
-
-## **2. Xnurbs/Square Enhancements**  
-- **"Adjacent" Boundary Option**  
-  - Introduces a new boundary condition that uses adjacent trimmed edges for smoother transitions.  
-- **"Tension" Feature**  
-  - Provides control over the tangent direction derivative along surface edges, similar to features in lofting or bridging workflows.  
-  - Allows alternation or amplification of surface shapes by adjusting the magnitude of tangency, giving users more creative control over surface continuity.  
-
----
-
-## **3. New Slide Command**  
+### New Slide Command  
 - **CV Sliding**  
   - Enables users to move displayed control vertices (CVs) along the surface hull.  
   - Movement is guided by the CV’s respective direction, allowing manual fine-tuning of surface topology.  
   - This feature significantly expands precision modeling capabilities for surface refinement.  
 
----
+## Modeling Enhancements
 
-## **4. CV Move Editing**  
+### Square Command Updates
+- **New "Free" Option**  
+  - Trades G0 precision for higher surface quality. For more information on this feature, click [here](/solid/square) 
+- **Improved Functionality**  
+  - The command now supports selecting one or more faces to act as a rough `RefitTrim` or `TrimConvert` tool.  
+  - It can also be executed without any preselected geometry, enhancing flexibility in various workflows.  
+
+### Xnurbs/Square Enhancements
+- **"Adjacent" Boundary Option**  
+  - Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.  
+- **"Tension" Feature**  
+  - Provides control over the tangent direction derivative along surface edges, similar to features in lofting or bridging workflows.  
+  - Allows alternation or amplification of surface shapes by adjusting the magnitude of tangency, giving users more creative control over surface continuity. For more information on this feature, click [here](/solid/square) for Square Command or [here](/solid/xnurb) for XNurbs Command
+
+### CV Move Editing 
 - **Proportional and Mirrored Transformations**  
   - Users can now edit surface CVs proportionally and with mirrored transformations, bringing the editing workflow closer to Sub-D modeling techniques.  
 
----
-
-## **5. Raise Degree Command Enhancements**  
+### Raise Degree Command Enhancement
 - The `Raise Degree` command can now be executed when a surface CV is selected, simplifying degree adjustments during modeling.  
 
----
-
-## **6. Toggle Points Improvements**  
+### Toggle Points Command Update  
 - The `Toggle Points` command is now accessible when a curve CV is selected, improving workflow consistency between curve and surface editing.  
 
----
+## Sketching and Curve Tools
 
-## **7. Construction Plane Enhancements**  
-- **Dynamic Plane Creation**  
-  - Allows users to create a construction plane passing through two selected points and aligning parallel to the camera view.  
-  - Ideal for planarizing a hull while maintaining alignment with the view direction, making the process faster and more intuitive.  
-
----
-
-## **8. Curve Rebuild Enhancements**  
+### Curve Rebuild Enhancement  
 - **Deviation Plot**  
-  - The curve rebuild tool now includes a deviation plot for precise control, enabling users to assess changes during the rebuild process.  
+  - The Curve Rebuild tool now offers a Deviation Plot, giving users a clear way to track changes during the rebuild process, helping ensure more accurate results.  
 
----
+### Snapping Enhancements  
+- **New Tangent Snapping**  
+  - Introducing `Tan/Tan` snapping for ellipses and general splines, improving precision when aligning curves. 
 
-## **9. Transform Commands (Move, Rotate, Scale)**  
+### Sketching Enhancements
+- **Region Deletion Behavior**  
+  - Deleting regions now automatically removes the curves that bound them, making manual cleanup easier and faster.  
+
+
+## Transformation Tools
+
+### Transform Command Enhancements
 - **Stored Transform Pivots**  
   - Transformation pivots are now saved with bodies, making subsequent move commands more consistent and intuitive.  
 - **Customizable Transform Options**  
   - Users can specify the transform orientation (`Local`, `CPlane`, `World`) and pivot point (`Bounding Box`, `Median`, `Last Selected`), offering greater flexibility in transformations.  
+  
+## Surface Tools
 
----
+### Sheet Extension Enhancements
+- Added a new "Natural" mode for extending sheets along natural or isoparametric edges.
+- Surface extension modes can now be toggled using the `Tab` key.  
 
-## **10. Trimming Optimization**  
-- **Performance Improvements**  
-  - Trimming operations for densely packed 2D sketches, such as hex grids, are now significantly faster and more efficient.  
+### Construction Plane Enhancements 
+- **Dynamic Plane Creation**  
+  - Users can now create a construction plane that passes through two selected points and aligns parallel to the camera view.  
+  - Ideal for planarizing a hull while maintaining alignment with the view direction, making the process faster and more intuitive.  
 
----
+### Trimming Optimization  
+- Trimming operations for densely packed 2D sketches, such as hex grids, are now significantly faster and more efficient.  
 
-## **11. Snapping Enhancements**  
-- **New Tangent Snapping**  
-  - Adds `Tan/Tan` snapping for ellipses and general splines, enhancing precision when aligning curves.  
+## Selection and Conversion
 
----
-
-## **12. Selection Conversion Enhancements**  
+### Selection Conversion Enhancements
 - **New Conversion Options**  
-  - Users can now convert vertices or CVs to points and vice versa.  
-  - Regions can also be converted to their bounding curves for easier downstream use.  
+  - Vertices or CVs can now be converted to points and vice versa.  
+  - Regions can be converted to their bounding curves for better usability.  
 
----
+## User Interface
 
-## **13. Sketching Enhancements**  
-- **Region Deletion Behavior**  
-  - Deleting regions now automatically removes the curves that bound them, reducing manual cleanup.  
-
----
-
-## **14. Sheet Extension Enhancements**  
-- **New "Natural" Mode**  
-  - Adds a mode for extending sheets along natural or isoparametric edges.  
-- **Improved Workflow**  
-  - Surface extension modes can now be toggled using the `Tab` key, making the process more intuitive.  
-
----
-
-## **15. New User Interface Design**  
-- **Revamped UI**  
-  - The updated interface retains functional elements from previous versions while introducing a cleaner and more modern design.  
-  - Features improved feature placement and visual consistency, enhancing overall usability.  
-- **Future Improvements**  
-  - This marks the beginning of further refinements to establish a strong, efficient workspace tailored to users' needs.  
+### New User Interface Design 
+- Revamped with a modern and streamlined appearance while retaining functional aspects from earlier versions.
+- Improved feature placement and enhanced usability to optimize workflows.
+- This update lays the groundwork for future UI enhancements.  
 
 ## Past Update Information
 
