@@ -1,0 +1,157 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+
+# Update-Informationen Version 2024.2
+
+Veröffentlichungsdatum: 5. September 2024
+
+## Neue Befehle 
+
+### Square Command 
+Der Quadrat-Befehl basiert auf XNurbs und ermöglicht die Erstellung verschiedener Oberflächen mit expliziter Kontrolle über UV-Grade und Spannweiten. Dieser Befehl ist nur mit einer Studio-Lizenz verfügbar. Weitere Informationen zum Quadrat-Befehl finden Sie [hier](/solid/square).
+
+<VideoPlayer fileName="square-0"/>
+
+### Deform Command
+Der Deformieren-Befehl ermöglicht das Wickeln von bestehenden Festkörpern und Drahtkörpern auf reguläre und unregelmäßige Oberflächen, sodass komplexe und einzigartige Muster und Wicklungen erstellt werden können. Weitere Informationen zum Deformieren-Befehl finden Sie [hier](/solid/deform-solid-and-sheet)für Festkörper und Blech und [hier](/sketch/deform-curve)für Kurven.
+
+<VideoPlayer fileName="deform-solid"/>
+<VideoPlayer fileName="deform-curve"/>
+
+### Reverse Command 
+
+Mit dem Umkehren-Befehl können Sie die Richtung einer Kurve und die normale Richtung eines Blatts umkehren. Dies ist besonders nützlich für das [Rohr-Werkzeug](/solid/pipe) da Sie die Richtung des Rohrs beim Verwenden der Skalierungsoption umkehren können. Weitere Informationen finden Sie [hier](/sketch/reverse-curve)für das Umkehren von Kurven und [hier](/solid/reverse-sheet) für das Umkehren von Blättern.
+
+<VideoPlayer fileName="reverse-curve"/>
+
+## Verbesserte Befehlsfunktionen
+
+### Rebuild Command
+
+Beide Befehle "Rebuild Face" und "Rebuild Curve" haben eine neue Funktion namens **"Explizite Steuerung"**, mit der Sie den Wert der Gradanzahl und die Anzahl der Segmente für die UV-Richtung steuern können. Die **"Explizite Steuerung"** bei "Rebuild Curve" ist sowohl mit der Indie- als auch der Studio-Lizenz verfügbar, während sie bei "Rebuild Face" nur mit der Studio-Lizenz verfügbar ist. Für weitere Informationen zum Rebuild-Befehl klicken Sie [hier](/solid/rebuild). 
+
+### XNurbs Command
+
+Ein neues Ausrichtungs-Feature namens **"Next"** wurde eingeführt, mit dem ein senkrechter UV-Fluss erzeugt wird, wenn die Randbedingungen relativ flach sind. Zudem zeigt XNurbs jetzt Warnmeldungen an, wenn widersprüchliche Eingaben erkannt werden. Weitere Informationen finden Sie [hier](/solid/xnurbs). 
+
+### Bridge Vertex and Curve Command
+
+Ein Kontinuitäts-Gizmo wurde implementiert, um die Interaktivität zu verbessern und eine effizientere Arbeitsweise zu ermöglichen. Weitere Informationen zum Brücken-Befehl finden Sie [hier](/sketch/bridge).   
+
+### Square Command 
+
+Der Quadrat-Befehl verfügt nun über eine **"Match-CVs"**-Option, mit der Oberflächen von höherer Qualität erstellt werden können. Weitere Informationen finden Sie [hier](/solid/square).
+
+### Rectangular and Radial Array
+
+Die Befehle für rechteckige und radiale Arrays unterstützen jetzt das Arrayen von Flächen, die Teil eines Körpers sind. Dies ist besonders effektiv beim Arrayen von Fasen. Außerdem verfügen beide Befehle über unterschiedliche Distanzmodi - *Rechteckiges Array* [**Erweitern** und **Abstand**] und *Radiales Array* [**Gesamt** und **Abstand**] - mit denen Sie das Abstandsverhalten von duplizierten Objekten steuern können. Weitere Informationen finden Sie [hier](/common/rectangular-array) für rechteckige Arrays und [hier](/common/radial-array) für radiale Arrays.
+
+### Polygon Command
+
+Der Polygon-Befehl merkt sich nun die zuletzt verwendete Anzahl der Scheitelpunkte.
+
+### Unwrap Command 
+
+Der Entfalten-Befehl erzeugt jetzt ein flaches Blatt der ausgewählten Fläche aus einem Festkörper, das in Verbindung mit dem [Deform Command](/solid/deform) für weitere Modifikationen verwendet werden kann.
+
+### Draft Command
+
+Ein neues Gizmo-Feature ermöglicht es, die Position der Referenzfläche zu steuern und die Auswahl mehrerer Flächen mithilfe der <kbd>Strg</kbd>-Taste vorzunehmen. Dies kann auf nicht gleichmäßige ebene Flächen angewendet werden, jedoch ohne die Möglichkeit, die Referenzfläche zu versetzen. Weitere Informationen finden Sie [hier](/solid/draft-face).
+
+### Patch Command
+
+Mit dem Patch-Befehl können nun Blätter aus einer geschlossenen Kantenauswahl eines Festkörpers erstellt werden. Weitere Informationen finden Sie [hier](/solid/patch).
+
+## Entfernte Befehle
+
+### Rebuild Edge Command 
+
+Er wurde aufgrund unsicherer Implementierung entfernt und durch den Löschbefehl für Kanten ersetzt. Diese Strategie soll das Verbinden von mehr gebrochenen Kanten ermöglichen.
+
+## Outliner  
+
+1. **Konstruktions-Ebenen** - Konstruktions-Ebenen können jetzt im Outliner umbenannt werden, was eine bessere Organisation und Verwaltung ermöglicht. Diese Verbesserung eliminiert unnötige Schritte bei der Suche nach der richtigen Konstruktions-Ebene und optimiert die Auswahl und den Arbeitsablauf. Weitere Informationen zu Konstruktions-Ebenen finden Sie [hier](/plasticity-essentials/construction-plane).
+2. **Netze und Bilder** - Der Outliner trennt jetzt Netze und Bilder in eigene Abschnitte anstatt in "Leere".
+3. **Kontextmenü für ausgewählte Elemente im Outliner** - Das Kontextmenü im Outliner verfügt bei einem Rechtsklick jetzt über eine neue Funktion "Ausgewählte Elemente an die Wurzel verschieben", wenn Sie Elemente in einer Gruppe ausgewählt haben.
+4. **Kontextmenü für Gruppen** - Das Kontextmenü im Outliner bietet nun eine neue Gruppenfunktion "Gruppierung hier" und "Gruppierung an der Wurzel".
+5. **Gruppieren von Elementen** - Wenn sich alle Elemente in derselben Gruppe befinden, wird die neue Gruppe im gleichen Verzeichnis erstellt, andernfalls im Stammverzeichnis.
+6. **Gruppenhierarchie** - Beim Löschen einer Gruppe werden deren untergeordnete Elemente in die übergeordnete Gruppe verschoben, nicht in das Stammverzeichnis.
+5. **Materialzuweisung** - Transparente Materialien werden jetzt mit 50 % Transparenz angezeigt, selbst bei Verwendung von Standard- und benutzerdefinierten [matcaps](/plasticity-essentials/view-mode) im Nicht-Render-Modus.
+
+## Verbesserungen bei Dateiformaten
+
+### OBJ
+
+1. Das Exportieren von OBJ-Dateien mit UVs und einer MTL-Datei ist jetzt in Plasticity möglich.
+
+### STEP
+
+1. Der Export von STEP-Dateien in Plasticity mit Farben und Baugruppeninformationen wie Gruppen ist jetzt möglich.
+2. Beim Import von STEP-Dateien in Plasticity bleiben die Farben erhalten.
+
+### Netze und Bilder
+
+Das Snapping an Netze und Bilder ist jetzt in Plasticity möglich. 
+
+   | Typ                | Snap-Ziel | Tipp-Hilfe |
+   | ------------------- | ----------- | -------- |
+   | Mesh (OBJ, STL, FBX, 3MF)| Scheitelpunkt/Fläche | Scheitelpunkt/Fläche|
+   | Bild (.PNG, .JPG, .JPEG)| Ecke | Ecke |  
+
+### Plasticity-Dateien(.plasticity)
+
+Beim Importieren und Anhängen von Plasticity-Dokumenten bleiben Gruppen, Namen und Materialien erhalten.
+
+### Parasolid (.*x_t/x_b)
+
+Das Importieren von Parasolid-Dateien in Plasticity unterstützt jetzt Farben, Namen und Baugruppen, jedoch noch keine Instanzen. 
+
+### Neue unterstützte Formate
+
+1. Der Import und Export von 3MF wird unterstützt.
+2. Der Import von SVG wird unterstützt.
+
+Eine vollständige Liste der unterstützten Import- und Exportformate in Plasticity finden Sie [hier](/plasticity-essentials/import-export).
+
+## Kleinere Änderungen
+
+1. **Offset-Kanten-Gizmo** - Neuer Offset-Kanten-Gizmo, der dem beidseitigen Fasen-Gizmo ähnelt.
+2. **Kopieren und Einfügen** - Der Befehl zum Kopieren und Einfügen übernimmt jetzt Material und Name. 
+3. **Alternative-Duplikat** - Der Alternative-Duplikat-Befehl für Flächen übernimmt jetzt Name und Material.
+4. **Textwerkzeug** - Das Textwerkzeug wurde um einige zusätzliche Schriftarten erweitert.
+5. **Touchpad** - Das Touchpad kann jetzt mit dem Orbit-Punkt des Cursor-Tracks verwendet werden.
+6. **Automatische Speicheroption** - Neue Option zum automatischen Speichern ermöglicht das Speichern der aktuellen Datei alle X Minuten, die in den Einstellungen konfiguriert werden kann.
+7. **Inkrementelles Einrasten** - Wenn *Rastereinrasten* aktiviert ist, werden die X (Rot), Y (Grün) und Z (Blau) Pfeile in den Inkrementeinheiten entlang ihrer jeweiligen Achsen eingerastet, während der weiße Kreis mit seinem aktuellen Mittelpunkt (standardmäßig das Zentrum) auf ein absolutes Rasterinkrement einrastet, anstatt das Objekt um ein Inkrement zu verschieben. Für weitere Informationen zu Raster und Einrasten klicken Sie [hier](/plasticity-essentials/grid-and-snap).
+8. **Mittelflächen-Konstruktion** - Erstellen Sie eine Mittelflächen-Konstruktionsfläche basierend auf der durchschnittlichen Position von mindestens 2 parallel gegenüberliegenden Flächen und Bereichen. Für weitere Informationen zu Konstruktionsflächen klicken Sie [hier](/plasticity-essentials/construction-plane).
+
+### Gruppenbefehl 
+
+Der Gruppenbefehl verfügt nun über ein neues Verhalten, bei dem Elemente unter derselben Elterngruppe automatisch zusammen gruppiert werden. Außerdem werden beim Löschen einer Gruppe in derselben Hierarchie die untergeordneten Elemente in die Elterngruppe verschoben.
+
+### Messungen und Messpanel
+
+ 1. **Messungsverbesserung** - Messungen können jetzt im Outliner ausgewählt und zusammen mit dem Verschiebebefehl verwendet werden, um spezifische Werte direkt im Ansichtsfenster einzugeben und präzisere Anpassungen vorzunehmen.
+ 2. **Messungsverbesserung** - Messungen können in den bevorzugten Einheiten des Benutzers in die Zwischenablage kopiert werden.
+ 3. **Messpanel** - Das Messpanel zeigt nun den Winkel zwischen zwei Ebenen an.
+ 4. **Oberflächenklasse** - Das untere rechte Panel im Messpanel führt nun die Oberflächenklasse ein, die eine spezifische Auswahl von Flächen ermöglicht.
+
+### Snaps 
+
+New Snap types in the following: 
+
+   | Typ              | Snap-Ziel | Tipp-Hilfe |
+   | ------------------- | ----------- | -------- |
+   | Regular Polygon     | Closed polygon center point| Center point|
+   | Image (.PNG, .JPG, .JPEG)| Corner                | Corner | 
+   | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face          | Vertex/Face |
+   | Measurements             | Measurement Point    | Measurement |
+   | Freestyle Rotate         | Parallel/Perpendicular | Parallel/Perpendicular | 
+
+## Download und Installation
+
+Plasticity 2024.2 ist jetzt zum Download verfügbar. Weitere Details finden Sie [hier](/getting-started/download-and-install).
+
+## Frühere Update-Informationen
+
+- 5 März 2024 [Version 2024.1](/release-notes/whats-new-2024.1)
