@@ -12,20 +12,30 @@ Move Gizmoを使用してオブジェクトを移動できます。単一軸の�
 
 ## 基本的な使い方
 
-1. 移動したいオブジェクトを選択します。
-2. <kbd>G</kbd>を押します。
-3. 表示された移動ギズモを使用して移動します。
-4. コマンドダイアログとキーボードショートカットでオプションを設定します。
-   - <Kst>コマンドダイアログ</Kst>
-    - **XYZ:** X、Y、Z軸方向の移動量を指定します。
-   - <Kst>キーボードショートカット</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z-plane:** X, Y, Z平面に拘束します。
-      - <kbd>G</kbd> **Screen space:** 見た目の平面に限定します。
-      - <kbd>F</kbd> **Freestyle:** 始点と終点をクリックして、移動の方向と距離を指定します。
-      - <kbd>V</kbd> **Pivot:** クリックしてギズモの位置を指定します。
-      - <kbd>W</kbd> **Worldspace:** ギズモの座標軸をワールド座標にします。
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+1. 移動したいオブジェクトを選択します。  
+2. <kbd>G</kbd> を押します。  
+3. 表示された移動ギズモを使用してオブジェクトを移動します。  
+4. コマンドダイアログとキーボードショートカットでオプションを設定します。  
+   - <Kst>コマンドダイアログ</Kst>  
+      - **XYZ:** X、Y、Z軸の移動量を指定します。  
+      - **オリエンテーション:** 移動ギズモの向きを設定します。  
+         - <ButtonIcon type="button-normal"/> **ノーマル:** オブジェクトの表面法線に沿ってオリエンテーションを設定します。  
+         - <ButtonIcon type="button-pivot"/> **ピボット:** 以前に定義したピボットのオリエンテーションに合わせます。  
+         - <ButtonIcon type="button-construction-plane"/> **作業平面:** アクティブな作業平面にオリエンテーションを合わせます。  
+         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）座標軸にオリエンテーションを合わせます。  
+      - **ピボット:** ピボットの位置を設定します。  
+         - <ButtonIcon type="button-bbox"/> **バウンディングボックス:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。  
+         - <ButtonIcon type="button-median"/> **中央値:** 選択したオブジェクトのピボットの平均位置に配置します。  
+         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボット位置に配置します。  
+   - <Kst>キーボードショートカット</Kst>  
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、Z軸に沿った移動を制限する](/tool/sketching-essentials#constrain-to-an-axis)。  
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z平面:** X、Y、Z平面に沿って移動を制限します。  
+      - <kbd>G</kbd> **画面空間:** 可視平面に制限します。  
+      - <kbd>F</kbd> **フリースタイル:** クリックして開始点と終了点を指定し、移動方向と距離を決定します。  
+      - <kbd>V</kbd> **ピボット:** クリックしてギズモの位置を指定します。  
+      - <kbd>Alt + V</kbd> **ピボット削除:** 設定したピボットを削除します。  
+      - <kbd>W</kbd> **オリエンテーション:** ギズモの座標軸を異なるオリエンテーションに変更します。  
+5. コマンドダイアログの「OK」をクリックするか、右クリックで確定します。  
 
 <Callout type="info" emoji="💡">
 **Tips**
@@ -45,6 +55,58 @@ Move Gizmoを使用してオブジェクトを移動できます。単一軸の�
 5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
 
 <VideoPlayer fileName="freestyle-move"/>
+
+# Move Control Point
+
+<Reference shortcut="G" command="Move" button="Left of Command Bar"  buttonIcon='button-move'/>
+
+サーフェス上に配置されたコントロールポイントをMove Gizmoを使用して移動します。  
+単一軸の制約や[**フリースタイル移動**](#freestyle-move)、プロポーショナル編集のオプションが利用可能です。  
+また、Move Gizmoの向きやピボットの配置も調整できます。
+
+## 基本的な使い方
+
+1. 移動したいオブジェクトを選択します。
+2. <kbd>G</kbd> を押します。
+3. 表示された Move Gizmo を使用して移動します。
+4. コマンドダイアログとキーボードショートカットでオプションを設定します。
+   - <Kst>コマンドダイアログ</Kst>
+      - **XYZ:** X、Y、Z軸の移動量を指定します。
+      - **方向:** Move Gizmo の方向を設定します。
+         - <ButtonIcon type="button-normal"/> **法線:** オブジェクトの表面法線に合わせて方向を設定します。
+         - <ButtonIcon type="button-pivot"/> **ピボット:** 事前に定義されたピボットの向きに合わせて方向を設定します。
+         - <ButtonIcon type="button-construction-plane"/> **作業平面:** アクティブな作業平面に方向を合わせます。
+         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）軸に方向を合わせます。
+      - **ピボット:** ピボットポイントの位置を設定します。
+         - <ButtonIcon type="button-bbox"/> **バウンディングボックス:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。
+         - <ButtonIcon type="button-median"/> **中央値:** 選択したオブジェクトのピボットの平均位置にピボットを配置します。
+         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボット位置にピボットを配置します。
+      - **プロポーショナル:** 複数のプロポーショナル編集オプションを提供し、CV（コントロールポイント）を移動させる際の影響範囲を設定できます。
+         - **なし:** プロポーショナル効果なし。選択したCVのみ移動します。
+         - **すべて:** サーフェス上のすべてのCVが影響を受けます。UおよびVのフォールオフ値を指定して、より詳細なプロポーショナル制御が可能です。
+         - **選択:** 選択したCVにのみプロポーショナル編集を適用し、影響を受ける範囲を調整できます。UおよびVのフォールオフ値を指定してください。
+      - **フォールオフ U:** U方向のフォールオフ値を指定します。
+      - **フォールオフ V:** V方向のフォールオフ値を指定します。
+      - **ミラー:** アクティブな[**作業平面**](/plasticity-essentials/construction-plane) に対してミラー効果を適用します。ミラーリング軸は、グローバル作業平面またはカスタム作業平面に適応します。
+         - **なし:** ミラープレーンを指定しません。
+         - **X/Y/Z:** X、Y、Z軸のいずれかでミラーリングを適用します。
+   - <Kst>キーボードショートカット</Kst>
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、Z軸に制約](/tool/sketching-essentials#constrain-to-an-axis)。
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z平面:** X、Y、Z平面に制約します。
+      - <kbd>G</kbd> **スクリーンスペース:** 画面上の可視平面に制約します。
+      - <kbd>F</kbd> **フリースタイル:** クリックして開始点と終了点を指定し、移動方向と距離を決定します。
+      - <kbd>V</kbd> **ピボット:** クリックしてGizmoの位置を指定します。
+      - <kbd>Alt + V</kbd> **ピボット削除:** 設定されたピボットを削除します。
+      - <kbd>W</kbd> **方向:** Gizmoの座標軸を異なる方向に変更します。
+5. コマンドダイアログでOKを押すか、右クリックで確定します。
+
+<VideoPlayer fileName="move-control-point"/>
+
+<Callout type="info" emoji="🗒️">
+**Note**
+- サーフェスのCVをプロポーショナル編集する際、最後にアクティブになったCVの選択がピボット位置を決定します。これによりプロポーショナル編集の動作が変わるため注意してください。
+</Callout>
+
 
 ## 関連項目
 - [Mirror](mirror)
