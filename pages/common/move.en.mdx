@@ -61,7 +61,7 @@ This command is equivalent to the <kbd>F</kbd> option of the **Move** command.
 
 <Reference shortcut="G" command="Move" button="Left of Command Bar"  buttonIcon='button-move'/>
 
-Move Control Points using Move Gizmo. Options for single-axis constraints or [**freestyle movement**](#freestyle-move) and Proportional Editing are available. The orientation of the Move Gizmo and Pivot placement is also adjustable.
+Move Control Points that are laid on a surface using Move Gizmo. Options for single-axis constraints or [**freestyle movement**](#freestyle-move) and Proportional Editing are available. The orientation of the Move Gizmo and Pivot placement is also adjustable.
 
 ## Basic Usage
 
@@ -71,7 +71,7 @@ Move Control Points using Move Gizmo. Options for single-axis constraints or [**
 4. Set the options in the Command Dialog and Keyboard Shortcuts.
    - <Kst>Command Dialog</Kst>
       - **XYZ:** Specify the amount of movement of the X, Y, and Z axes.
-      - **Orientation:** Set the orientation of the move gizmo.
+      - **Orientation:** Set the orientation of the Move Gizmo.
          - <ButtonIcon type="button-normal"/> **Normal:** Sets the orientation to align with the object's surface normal.
          - <ButtonIcon type="button-pivot"/> **Pivot:** Sets the orientation to match the previously defined pivot orientation.
          - <ButtonIcon type="button-construction-plane"/> **Construction Plane:** Sets the orientation to align with the active construction plane.
@@ -82,10 +82,10 @@ Move Control Points using Move Gizmo. Options for single-axis constraints or [**
          - <ButtonIcon type="button-active"/> **Active:** Positions the pivot at the last selected (active) object's pivot.
       - **Proportional:** A feature that provides multiple proportional editing options, influencing how CVs (control vertices) are affected when moved.
          - **None:** No proportional effect; only the selected CVs move.
-         - **All:** Affects all CVs on the surface. Specify the falloff value of U and V for better proportional falloff control.
+         - **All:** Affects all CVs on the surface and their movement. Specify the falloff value of U and V for better proportional falloff control.
          - **Selected:** Applies proportional editing to the selected CVs, affecting their movement. Specify the falloff value of U and V for better proportional falloff control. 
-      - **Falloff U:** Specify the falloff amount in V direction.
-      - **Falloff V:** Specify the falloff amount in U direction.
+      - **Falloff U:** Specify the falloff amount in U direction.
+      - **Falloff V:** Specify the falloff amount in V direction.
       - **Mirror:** Apply a mirror effect relative to the active [**construction plane**](/plasticity-essentials/construction-plane). The mirroring axes adapt to either the global construction plane or a custom-defined construction plane. 
          - **None:** No mirror plane is specified. 
          - **X/Y/Z:** Mirror in either X, Y, and Z axes.
@@ -99,10 +99,11 @@ Move Control Points using Move Gizmo. Options for single-axis constraints or [**
       - <kbd>W</kbd> **Orientation:** Change the Gizmo's coordinate axis to different orientations.
 4. Confirm with OK in the Command Dialog or right-click.
 
-<Callout type="info" emoji="💡">
-**Tips**
-- To move selected objects to the origin, press: <kbd>G</kbd> (Move) > <kbd>F</kbd> > right-click > right-click.
-- To move an object to the origin based on a selected point, press: <kbd>G</kbd> (Move) > <kbd>F</kbd> > Click the object's point > right-click.
+<VideoPlayer fileName="move-control-point"/>
+
+<Callout type="info" emoji="🗒️">
+**Note**
+- When proportionally editing surface CVs, the last active CV selection determines the pivot position. Keep this in mind, as it affects how proportional editing behaves.
 </Callout>
 
 ## See also

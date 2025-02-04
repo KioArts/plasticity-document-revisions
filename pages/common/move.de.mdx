@@ -11,20 +11,30 @@ Verschieben von Objekten mit dem Move Gizmo. Optionen für Einschränkungen eine
 
 ## Grundlegende Nutzung
 
-1. Wählen Sie die Objekte aus, die Sie verschieben möchten.
-2. Drücken Sie <kbd>G</kbd>.
-3. Verwenden Sie den angezeigten Move Gizmo zum Verschieben.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-   - <Kst>Befehlsdialog</Kst>
-      - **XYZ:** Geben Sie die Bewegungsmenge für die X-, Y- und Z-Achsen an.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z axis:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
-      - <kbd>Umschalt + X</kbd>/ <kbd>Umschalt + Y</kbd>/<kbd>Umschalt + Z</kbd> **X, Y, Z plane:** Auf die X-, Y- oder Z-Ebene beschränken.
-      - <kbd>G</kbd> **Screen space:** Begrenzen auf die sichtbare Ebene.
-      - <kbd>F</kbd> **Freestyle:** Klicken Sie, um den Start- und Endpunkt anzugeben, die die Richtung und Entfernung der Bewegung bestimmen.
-      - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmo anzugeben.
-      - <kbd>W</kbd> **Worldspace:** Ändern Sie die Koordinatenachse des Gizmo in Weltkoordinaten.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+1. Wählen Sie die Objekte aus, die Sie verschieben möchten.  
+2. Drücken Sie <kbd>G</kbd>.  
+3. Verwenden Sie das angezeigte Verschiebe-Gizmo, um die Objekte zu bewegen.  
+4. Legen Sie die Optionen im Befehlsdialog und in den Tastenkombinationen fest.  
+   - <Kst>Befehlsdialog</Kst>  
+      - **XYZ:** Geben Sie die Verschiebung der X-, Y- und Z-Achsen an.  
+      - **Ausrichtung:** Legen Sie die Ausrichtung des Verschiebe-Gizmos fest.  
+         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Oberflächennormalen des Objekts aus.  
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Setzt die Ausrichtung auf die zuvor definierte Pivot-Ausrichtung.  
+         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet die Ausrichtung an der aktiven Konstruktions-Ebene aus.  
+         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an den globalen (Welt-) Achsen aus.  
+      - **Pivot:** Legen Sie die Position des Pivot-Punkts fest.  
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.  
+         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.  
+         - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts.  
+   - <Kst>Tastenkombinationen</Kst>  
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).  
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.  
+      - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.  
+      - <kbd>F</kbd> **Freistil:** Klicken Sie, um den Start- und Endpunkt festzulegen, um Richtung und Distanz der Bewegung zu bestimmen.  
+      - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmos festzulegen.  
+      - <kbd>Alt + V</kbd> **Pivot entfernen:** Entfernt die konfigurierten Pivots.  
+      - <kbd>W</kbd> **Ausrichtung:** Ändert die Koordinatenachsen des Gizmos auf verschiedene Ausrichtungen.  
+5. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick. 
 
 <Callout type="info" emoji="💡">
 **Tipps**
@@ -44,6 +54,55 @@ Dieser Befehl entspricht der <kbd>F</kbd> Option des **Move** Befehls.
 4. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
 
 <VideoPlayer fileName="freestyle-move"/>
+
+# Move Control Point
+
+<Reference shortcut="G" command="Move" button="Left of Command Bar"  buttonIcon='button-move'/>
+
+Bewegen Sie Kontrollpunkte, die auf einer Oberfläche liegen, mithilfe des Verschiebungs-Gizmos. Optionen für Einzelachsenbeschränkungen oder [**Freistilbewegung**](#freestyle-move) sowie Proportionale Bearbeitung sind verfügbar. Die Ausrichtung des Verschiebungs-Gizmos und die Platzierung des Drehpunkts sind ebenfalls anpassbar.
+
+## Grundlegende Nutzung
+
+1. Wählen Sie die Objekte aus, die Sie verschieben möchten.
+2. Drücken Sie <kbd>G</kbd>.
+3. Verwenden Sie das angezeigte Verschiebungs-Gizmo, um die Objekte zu bewegen.
+4. Legen Sie die Optionen im Befehlsdialog und in den Tastenkürzeln fest.
+   - <Kst>Befehlsdialog</Kst>
+      - **XYZ:** Geben Sie die Verschiebungswerte für die X-, Y- und Z-Achse an.
+      - **Ausrichtung:** Legen Sie die Ausrichtung des Verschiebungs-Gizmos fest.
+         - <ButtonIcon type="button-normal"/> **Normal:** Richtet sich nach der Oberflächennormalen des Objekts aus.
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Entspricht der zuvor definierten Pivot-Ausrichtung.
+         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet sich an der aktiven Konstruktions-Ebene aus.
+         - <ButtonIcon type="button-world"/> **Welt:** Richtet sich an den globalen (Welt-)Achsen aus.
+      - **Pivot:** Legen Sie die Position des Drehpunkts fest.
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Platziert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.
+         - <ButtonIcon type="button-median"/> **Median:** Platziert den Pivot an der durchschnittlichen Position der Drehpunkte der ausgewählten Objekte.
+         - <ButtonIcon type="button-active"/> **Aktiv:** Platziert den Pivot am Drehpunkt des zuletzt ausgewählten (aktiven) Objekts.
+      - **Proportional:** Eine Funktion, die verschiedene proportionale Bearbeitungsoptionen bietet, die beeinflussen, wie CVs (Steuerpunkte) bewegt werden.
+         - **Keine:** Keine proportionale Wirkung; nur die ausgewählten CVs werden bewegt.
+         - **Alle:** Beeinflusst alle CVs auf der Oberfläche und ihre Bewegung. Geben Sie den Abfallwert für U und V an, um die proportionale Steuerung zu verbessern.
+         - **Ausgewählt:** Wendet die proportionale Bearbeitung auf die ausgewählten CVs an und beeinflusst deren Bewegung. Geben Sie den Abfallwert für U und V an, um die proportionale Steuerung zu verbessern. 
+      - **Abfall U:** Geben Sie die Abfallmenge in U-Richtung an.
+      - **Abfall V:** Geben Sie die Abfallmenge in V-Richtung an.
+      - **Spiegeln:** Wenden Sie einen Spiegelungseffekt relativ zur aktiven [**Konstruktions-Ebene**](/plasticity-essentials/construction-plane) an. Die Spiegelachsen passen sich entweder der globalen Konstruktions-Ebene oder einer benutzerdefinierten Ebene an.
+         - **Keine:** Keine Spiegelungsebene definiert.
+         - **X/Y/Z:** Spiegelung entlang der X-, Y- oder Z-Achse.
+   - <Kst>Tastenkürzel</Kst>
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.
+      - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.
+      - <kbd>F</kbd> **Freistil:** Klicken, um den Start- und Endpunkt zu bestimmen, der Richtung und Distanz der Bewegung festlegt.
+      - <kbd>V</kbd> **Pivot:** Klicken, um die Position des Gizmos festzulegen.
+      - <kbd>Alt + V</kbd> **Pivot entfernen:** Entfernt die konfigurierten Drehpunkte.
+      - <kbd>W</kbd> **Ausrichtung:** Ändert die Koordinatenachse des Gizmos auf verschiedene Ausrichtungen.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+
+<VideoPlayer fileName="move-control-point"/>
+
+<Callout type="info" emoji="🗒️">
+**Hinweis**  
+- Beim proportionalen Bearbeiten von Oberflächen-CVs bestimmt die zuletzt aktive CV-Auswahl die Pivot-Position. Beachten Sie dies, da es das Verhalten der proportionalen Bearbeitung beeinflusst.
+</Callout>
 
 ## Siehe auch
 - [Mirror](mirror)
