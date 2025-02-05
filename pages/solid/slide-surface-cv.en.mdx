@@ -1,0 +1,38 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Slide Surface CVs
+
+<Reference shortcut="Shift+G" command="Slide" button="" />
+
+Slide CVs along the tangential direction of the CV hull, preserving the surface flow while adjusting point positions.
+
+## Basic Usage
+
+1. Select a CV or CVs you want to slide.
+2. Press <kbd>Shift + G</kbd> to activate the Slide command.
+3. Set the options in the Command Dialog and Keyboard Shortcuts.
+   - <Kst>Command Dialog</Kst>
+      - **Distance:** Specify the distance of moved CVs.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>Ctrl + Z</kbd> **Undo:** Revert the last command execution, restoring the previous state.
+      - <kbd>U</kbd> **Positive U:** Slide in a positive U direction.
+      - <kbd>Shift + U</kbd> **Negative U:** Slide in a negative U direction.
+      - <kbd>N</kbd> **Normal:** Slide in a normal direction.
+      - <kbd>V</kbd> **Positive V:** Slide in a positive V direction.
+      - <kbd>Shift + V</kbd> **Negative V:** Slide in a negative V direction.
+3. Gizmo handles appear with specific direction controls. Use them to move CVs and adjust their positions precisely.
+4. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="slide"/>
+
+<Callout type="info" emoji="💡">
+**Tip**
+- The Slide command includes a toggle feature that lets you switch between preview and active mode by holding down <kbd>Ctrl</kbd>. This allows you to compare the before-and-after results of the command. 
+</Callout>
+
+## See also
+- [Move Control Point](/common/move#move-control-point)
