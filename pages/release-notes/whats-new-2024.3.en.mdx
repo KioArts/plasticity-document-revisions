@@ -16,6 +16,10 @@ Plasticity 24.3 introduces a wide array of enhancements and new features aimed a
 - **CV Sliding**  
 Users can move control vertices (CVs) along the surface hull, guided by the CV's direction, allowing for fine-tuned adjustments and enhancing precision modeling for surface refinement. Refer [here](/sketch/slide).
 
+### New Section Analysis Command
+- **Section Analysis
+
+
 ## 2. Modeling Enhancements
 
 ### Square Command Updates
@@ -24,7 +28,9 @@ Users can move control vertices (CVs) along the surface hull, guided by the CV's
 - **Improved Functionality**  
   - The command now supports selecting one or more faces to act as a rough `RefitTrim` or `TrimConvert` tool. It can also be executed without any preselected geometry.  
 
-### Xnurbs/Square Enhancements
+For more information, click [here](/solid/square).
+
+### Xnurbs and Square Enhancements
 - **"Adjacent" Boundary Option**  
   - Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.  
 - **"Tension" Feature**  
@@ -36,20 +42,22 @@ Users can move control vertices (CVs) along the surface hull, guided by the CV's
   - Users can now edit surface CVs proportionally and with mirrored transformations. For more information, click [here](/common/move#move-control-point).
 
 ### Raise Degree Command Enhancement
-- The **Raise Degree** command can now be executed when a surface CV is selected, simplifying degree adjustments during modeling.  
+- The [**Raise Degree**](/solid/raise-surface-degree) command can now be executed when a surface CV is selected, simplifying degree adjustments during modeling.  
 
 ### Toggle Points Command Update  
-- The **Toggle Points** command is now accessible when a curve CV is selected, improving workflow consistency between curve and surface editing.  
+- The [**Toggle Points**](/sketch/toggle-points) command is now accessible when a curve CV is selected, improving workflow consistency between curve and surface editing.  
 
 ## 3. Sketching and Curve Tools
 
 ### Curve Rebuild Enhancement  
 - **Deviation Plot**  
-  - The Curve Rebuild tool now offers a Deviation Plot, giving users a clear way to track changes during the rebuild process, helping ensure more accurate results.  
+  - The curve rebuild tool now offers a Deviation Plot, giving users a clear way to track changes during the rebuild process, helping ensure more accurate results.  
 
 ### Snapping Enhancements  
 - **New Tangent Snapping**  
   - Introducing **Tan/Tan** snapping for ellipses and general splines, improving precision when aligning curves. 
+- **New Control Point Snap Option**
+  - Object snaps sub panel now has "Control point" option
 
 ### Sketching Enhancements
 - **Region Deletion Behavior**  
@@ -68,7 +76,7 @@ For more information, click [here](/common/move).
 ## 5. Surface Tools
 
 ### Sheet Extension Enhancements
-- Introduced a new 'Natural' mode for extending sheets along natural or isoparametric edges.
+- Introducing a new **Natural** mode for extending sheets along natural or isoparametric edges.
 - Surface extension modes can now be toggled using the <kbd>Tab</kbd> key.  
 
 ### Construction Plane Enhancements 
@@ -76,7 +84,13 @@ For more information, click [here](/common/move).
   - Users can now create a construction plane that passes through two selected points and aligns with the camera view.
   - Ideal for planarizing a hull while maintaining alignment with the view direction, making the process faster and more intuitive. 
 
-### Trimming Optimization  
+For more information, click [here](/plasticity-essentials/construction-plane).
+
+### Bridge Surface
+- **New "Tension" Option**
+  	- New Tension option now available for Bridge Surface command. Refer [here](/solid/bridge-surface).
+
+### Trimming Optimization
 - Trimming operations for densely packed 2D sketches, such as hex grids, are now significantly faster and more efficient.  
 
 ## 6. Selection and Conversion
@@ -96,6 +110,45 @@ For more information, click [here](/common/move).
 ![Plasticity 2024.3 UI](/img/new-ui.png)
 
 Refer [here](/plasticity-essentials/user-interface-overview)
+
+
+## 8. Context Menu
+
+- Assets/Materials now have a right click context menu with "Select all with this material"
+
+## 9. Outliner
+
+- Planes in outliner have a rightclick context menu with "make active cplane" (set construction plane/ navigate to construction plane)
+
+## 10. UI 
+
+- Recent Files - Recent files/items can be dragged/dropped into viewport to import.
+- Focus Point Orbitting - Shows a dot of focus point when orbiting.
+- Side Bar - Pannels on right side will behave as menus.
+- Side Bar - Toggle sidebar button now introduced.
+- Viewport Cube - Repeatedly clicking on the cube will flip front/back and left/right, etc.
+- Progress Indicator - Opening large files will show a simple progress indicator.
+- Tooltips - Implemented tooltip images in certain tools on specific command options for better displaying function and concept of tool.
+- P-menu - P-menu will now notify when there's a new version to download. You can disable in preferences.
+- Thumbnails - Thumbnails can now be saved with files.
+
+## 11. Command Bar
+
+- Suggested commands (the "..." menu in the command bar) can be invoked with the keybinding shift+F.
+
+## 12. Preferences 
+
+- Grid Color - Set grid color in preferences.
+- Start-up - Preference to disable loading previous session on start-up.
+
+Section Analysis
+
+- Section Plane - Change section plane by selecting faces in section analysis command.
+- Section Plane - will show interference in red color.
+
+Spacemouse (Applications)
+- Spacemouse - Spacemouse buttons can be bound only via editing keymap.json file. Configuration file set-up can be nammed as "spacemouse0", "spacemouse1", for example.
+
 
 ## Past Update Information
 
