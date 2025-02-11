@@ -1,0 +1,40 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Section Analysis
+
+<Reference shortcut="" command="Section Analysis" button="Top Right Menu" buttonIcon='button-section-analysis' />
+
+Create a virutal slice through a 3D model, allowing to view and analyze its internal structure. Temporarily removes part of the model along a defined plane withough permanently altering the geometry. Useful for creative and technical visualizations. 
+
+## Basic Usage
+
+1. Select a face on an object to define the section plane.
+2. Press the <ButtonIcon type="button-section-analysis"/> button or type *Section Analysis* in the Command Palette.
+3. Set the options in the Command Dialog and Keyboard Shortcuts.
+    - <Kst>Command Dialog</Kst>
+        - **Plane:** Choose how to define the section plane.
+            - **Selection:** Sets the section plane based on the selected face of the object.
+            - **Previous:** Sets the section plane based on previous placement.
+            - **CPlane:** Sets the section plane to align with the active construction plane.
+        - **Distance:** Specify distance.
+        - **Flip:** Reverses the section plane's direction.
+    - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>D</kbd> **Distance:** Adjust the section plane's movement.
+      - <kbd>F</kbd> **Flip:** Reverse the section plane's direction.
+5. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="section-analysis"/>
+
+<Callout type="info" emoji="🗒️">
+**Note** 
+- After confirming in the command dialogue, a virtual slice of your object will be present, to remove this preview either click on the button <ButtonIcon type="button-section-analysis"/> or type in *Section Analysis* in the Command Palette. 
+- Your initial placement of Section Plane is saved, if you wish to restore it back, please select the **Previous** option in the command dialog. 
+- Section Analysis can display in red interfeering objects to eachother.
+</Callout>
+
+## See also
+- [Construction Plane](/plasticity-essentials/construction-plane)
