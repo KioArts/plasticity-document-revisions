@@ -14,11 +14,15 @@ Plasticity 24.3 introduces a wide array of enhancements and new features aimed a
 
 ### New Slide Command  
 - **CV Sliding**  
-Users can move control vertices (CVs) along the surface hull, guided by the CV's direction, allowing for fine-tuned adjustments and enhancing precision modeling for surface refinement. Refer [here](/sketch/slide).
+Users can move control vertices (CVs) along the surface hull, guided by the CV's direction, allowing for fine-tuned adjustments and enhancing precision modeling for surface refinement.    
+
+For more information, [here](/sketch/slide).
 
 ### New Section Analysis Command
 - **Section Analysis**  
-Section Analysis is a feature that allows users to slice through their 3D model to reveal its interior structure. This helps identify whether internal components are properly aligned or interfering with each other. It is especially useful for architectural, engineering, and design visualization. For more information, click [here](/common/section-analysis).
+Section Analysis is a feature that allows users to slice through their 3D model to reveal its interior structure. This helps identify whether internal components are properly aligned or interfering with each other. It is especially useful for architectural, engineering, and design visualization.    
+
+For more information, click [here](/common/section-analysis).
 
 ## 2. Modeling Enhancements
 
@@ -35,11 +39,15 @@ For more information, click [here](/solid/square).
 Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.  
 - **"Tension" Feature**  
 Provides control over the tangent direction derivative along surface edges, similar to features in lofting or bridging workflows.  
-Allows alternation or amplification of surface shapes by adjusting the magnitude of tangency, giving users more creative control over surface continuity. For more information on this feature, click [here](/solid/square) for Square Command or [here](/solid/xnurb) for XNurbs Command.
+Allows alternation or amplification of surface shapes by adjusting the magnitude of tangency, giving users more creative control over surface continuity.   
+
+For more information on this feature, click [here](/solid/square) for Square Command or [here](/solid/xnurb) for XNurbs Command.
 
 ### CV Move Editing 
 - **Proportional and Mirrored Transformations**  
-Users can now edit surface CVs proportionally and with mirrored transformations. For more information, click [here](/common/move#move-control-point).
+Users can now edit surface CVs proportionally and with mirrored transformations.    
+
+For more information, click [here](/common/move#move-control-point).
 
 ### Raise Degree Command Enhancement
 - The [**Raise Degree**](/solid/raise-surface-degree) command can now be executed when a surface CV is selected, simplifying degree adjustments during modeling.  
@@ -78,8 +86,10 @@ For more information, click [here](/common/move).
 ### Sheet Extension Enhancements
 - **New "Natural" Mode**  
 Introducing a new **Natural** mode for extending sheets along natural or isoparametric edges.
-- **Surface Extension** 
+- **Surface Extension**     
 Surface extension modes can now be toggled using the <kbd>Tab</kbd> key.  
+
+For more information, click [here](/common/move).
 
 ### Construction Plane Enhancements 
 - **Dynamic Plane Creation**  
@@ -93,52 +103,54 @@ For more information, click [here](/plasticity-essentials/construction-plane).
 New Tension option now available for Bridge Surface command. Refer [here](/solid/bridge-surface).
 
 ### Trimming Optimization
-Trimming operations for densely packed 2D sketches, such as hex grids, are now significantly faster and more efficient. 
+Trimming operations for densely packed 2D sketches, such as hexagonal grids, have been optimized for improved speed and efficiency. 
 
 ## 6. Selection and Conversion
 
 ### Selection Conversion Enhancements
 - **New Conversion Options**  
-Vertices or CVs can now be converted to points and vice versa.  
-Regions can be converted to their bounding curves for better usability.  
+Vertices and control vertices (CVs) can now be converted to points and vice versa, while regions can be converted to their bounding curves.
 
-## 7. User Interface
+Refer [here](/plasticity-essentials/selecting-objects#select-from-the-currently-selected-objects) for Selection Conversion.
 
-### New User Interface Design 
+## 7. User Interface and Usability Enhancements
+
+### New User Interface Design
 - Revamped with a modern and streamlined appearance while retaining functional aspects from earlier versions.
 - Improved feature placement and enhanced usability to optimize workflows.
 - This update lays the groundwork for future UI enhancements.  
 
 ![Plasticity 2024.3 UI](/img/new-ui.png)
 
-Refer [here](/plasticity-essentials/user-interface-overview)
+Refer [here](/plasticity-essentials/user-interface-overview) for User Interface Overview.
 
+### Navigation and Interaction Improvements   
+- **Recent Files** - Drag and drop files/items from the Recent Files list into the viewport for quick import.
+- **Sidebar** - Panels on the right side now function as menus.
+- **Sidebar** - A toggle button has been introduced to show or hide the sidebar.
+- **Viewport Cube** -  Repeatedly clicking the cube will flip front/back and left/right, etc.
+- **Suggested Commands Menu** - The "..." menu in the command bar can now be accessed using <kbd>Shift + F</kbd>.
+
+### Visual and Feedback Enhancements     
+- **Focus Point Orbiting** - Displays a focus point indicator (dot) when orbiting the view.
+- **Progress Indicator** - Opening large files will now show a simple progress indicator.
+- **Tooltips** - Added tooltip images to specific tools to showcase the functions of certain options.
+
+### Preferences and Customization   
+- **P-Menu** - Now displays a notification when a new version is available for download. This feature can be disabled in Preferences.
+- **Thumbnails** - Thumbnails can now be saved with files.
+- **Grid Color** - Set the grid color in Preferences.
+- **Start-up** - Added a preference to disable loading the previous session on start-up.
 
 ## 8. Context Menu
 - **Assets and Materials**  
 A right-click context menu has been added to Assets/Materials, allowing users to quickly select all objects that share the same material using the "Select All with This Material" option.
 
-## 9. Outliner
+## 9. Outliner X
 - **Construction Planes** 
 Planes in outliner have a rightclick context menu with "make active cplane" (set construction plane/ navigate to construction plane)
 
-## 10. UI 
-- **Recent Files** - Files and items from the Recent Files list can now be dragged and dropped into the viewport for quick import.
-- **Focus Point Orbitting** - Displays a focus point indicator (dot) when orbiting the view.
-- **Side Bar** - Panels on the right side now function as menus.
-- **Side Bar** - A toggle button has been introduced to show or hide the sidebar.
-- **Viewport Cube** - Repeatedly clicking on the cube will flip front/back and left/right, etc.
-- **Progress Indicator** - Opening large files will show a simple progress indicator.
-- **Tooltips** - Added tooltip images to specific tools to showcase the functions of certain options within the tool.
-- **P-menu** - Now displays a notification when a new version is available for download. This feature can be disabled in Preferences.
-- **Thumbnails** - Thumbnails can now be saved with files.
-- **Suggested Commands Menu** - The "..." menu in the command bar can now be accessed using the <kbd>Shift + F</kbd> keybinding.
-
-## 11. Preferences 
-- **Grid Color** - Set the grid color in Preferences.
-- **Start-up** - Added a preference to disable loading the previous session on start-up.
-
-## 12. Applications
+## 12. Spacemouse Support
 - **Spacemouse** - Spacemouse buttons can now be bound by editing the keymap.json file. Configuration files can be named, for example, as "spacemouse0", "spacemouse1", etc.
 
 ## Past Update Information
