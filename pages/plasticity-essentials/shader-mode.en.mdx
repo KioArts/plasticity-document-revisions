@@ -6,7 +6,7 @@ import { Tabs } from 'nextra/components'
 # Shader Mode
 
 ## Shader Mode
-- Built-in shaders in Plasticity can be switched by clicking on them, and when [Render mode](/view-mode) is off, selected Plasticity matcaps will be applied and displayed on objects.
+- You can switch between Plasticity's built-in shaders by clicking on them. When [Render mode](/view-mode) is off, selected Plasticity matcaps will be applied and displayed on objects.
 
 - Available matcaps:
 
@@ -24,7 +24,7 @@ import { Tabs } from 'nextra/components'
 | Solid Color    |  8     |  No Shadows     |
 | Isophote/Iso Angle   |   9     |   Static Surface Continuity Checker         |
 | Draft Angle          |   10    | Draft Angles Checker for Mold Removal       |
-| Hozirontal Zebra     |  11     |   Surface Continuity Checker                |
+| Horizontal Zebra     |  11     |   Surface Continuity Checker                |
 | Vertical Zebra       |  12     |  Surface Continuity Checker                 |
 
 
@@ -37,20 +37,19 @@ import { Tabs } from 'nextra/components'
 ### Installing Custom Matcaps
 
 1. Prepare your custom matcap files, ensuring that EXR and PNG files have identical names.
-
 2. Find the `.plasticity` directory on your operating system and create a new folder named "matcaps".
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigate to `C:\Users\<username>\.plasticity\radials`.
+    Navigate to `C:/Users/<username>/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
     Navigate to `~/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `X:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
     </Tabs.Tab>
 </Tabs>
-3. Place your custom matcaps in the folder and restart Plasticity.
+3. Move your custom matcap files into this folder, then restart Plasticity to apply the changes.
 
 ![Installing Matcaps](/img/installing-matcaps-preview.png)
 
