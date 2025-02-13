@@ -5,8 +5,8 @@ import Kst from '/components/KeyboardShortcutsTitle'
 # Shader Mode
 
 ## Shader Mode
-- Built-in shaders in Plasticity can be switched by clicking on them.
-- When [Render mode](/view-mode) is off, selected Plasticity matcaps will be applied and displayed on objects.
+- Built-in shaders in Plasticity can be switched by clicking on them, and when [Render mode](/view-mode) is off, selected Plasticity matcaps will be applied and displayed on objects.
+
 - Available matcaps:
 
 ![Matcaps in Shader Mode](/img/shader-mode-preview.png)
@@ -35,14 +35,20 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ### Installing Custom Matcaps
 
-1. Prepare your custom matcaps files. Both EXR and PNG files need to be with identical names.
+1. Prepare your custom matcap files, ensuring that EXR and PNG files have identical names.
 
-2. Locate the .plasticity directory on your OS (Operating System) and create a new folder labelled as "matcaps".
-
-Windows - "X:/users/username/.plasticity"
-Mac - "~/.plasticity"
-Linux -"X:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity"
-
+2. Find the `.plasticity` directory on your operating system and create a new folder named "matcaps".
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigate to `C:\Users\<username>\.plasticity\radials`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `X:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
 3. Place your custom matcaps in the folder and restart Plasticity.
 
 ![Installing Matcaps](/img/installing-matcaps-preview.png)
@@ -59,7 +65,7 @@ Linux -"X:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity"
 | Function                                                      | Shortcut | Button | Command Name           |
 | ------------------------------------------------------------- | ------- | ------ | ---------------------- |
 | Toggle show Edges <br />(Turning this off will hide the Edges.) |         | (13)   | Viewport: toggle Edges |
-| Toggle show Curves <br />(Turning this off will hide the Faces.) |         | (14)   | Viewport: toggle Curves |
+| Toggle show Curves <br />(Turning this off will hide the Curves.) |         | (14)   | Viewport: toggle Curves |
 | Toggle show Faces <br />(Turning this off will hide the Faces.) |         | (15)   | Viewport: toggle Faces |
 
 ![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png) 
