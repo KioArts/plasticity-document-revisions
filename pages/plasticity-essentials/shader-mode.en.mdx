@@ -1,0 +1,58 @@
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Shader Mode
+
+## Shader Mode
+- You can change different types of shaders that are built-in in Plasticity by clicking on them. 
+- When Render mode is off, selected matcaps from Plasticity will be active and display on objects.
+- Matcaps in the following: 
+
+![Matcaps in Shader Mode](/img/shader-mode-preview.png)
+
+| Name | Number | Applicability |
+| Default|   1    | - |
+| Red|   2    |   Glossy Appearance    |
+| Black      |  3     |  Glossy Appearance     |
+| White     |    4   |   Ambient Lighted    |
+| White      |   5    |  Highlight Checker     |
+|  Matte     |   6    |  -     |
+|  Silhouette     |  7     |  Silhouettes Checker     |
+|  Solid Color     |  8     |  No Shadows     |
+|  Isophote/Iso Angle     |   9    |   Static Surface Continuity Checker    |
+|  Draft Angle     |   10    | Draft Angles Checker for Mold Removal      |
+|  Hozirontal Zebra     |  11     |   Surface Continuity Checker    |
+|  Vertical Zebra     |  12     |  Surface Continuity Checker     |
+
+
+
+## All Matcaps
+- All Matcaps displays all of your custom shaders in (13). 
+
+![Custom Matcaps](/img/custom-matcaps-preview.png)
+
+### Installing Custom Matcaps
+
+1. Prepare your custom matcaps files. Both EXR and PNG files need to be with identical names.
+
+2. Locate the .plasticity directory on your OS (Operating System) and create a new folder labelled as "matcaps".
+
+Windows - "X:/users/username/.plasticity"
+Mac - "~/.plasticity"
+Linux -"X:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity"
+
+3. Place your custom matcaps in the folder and restart Plasticity.
+
+![Installing Matcaps](/img/installing-matcaps-preview.png)
+
+<Callout type="info" emoji="💡">
+**Tip**     
+- Ensure that both the EXR and PNG files are 512x512 pixels with a transparent background. The EXR file should also be in at least a 16-bit color range.
+</Callout>
+
+### Toggle Show Edges and Faces
+
+Toggle show Edges and Faces can be done by right-clicking the button (4) and choosing from the thumbnails.
+
+![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png) 
+
