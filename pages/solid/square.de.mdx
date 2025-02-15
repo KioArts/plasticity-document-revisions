@@ -10,22 +10,63 @@ Square ist ein auf XNurbs basierender Befehl, der hochwertige viereckige Fläche
 
 ## Grundlegende Nutzung
 
-1. Wählen Sie die Begrenzungskanten aus, die Sie für den Square-Befehl verwenden möchten.
-2. Geben Sie **Square** in die Befehlsleiste ein.
-3. Stellen Sie die Optionen im Befehlsdialog ein.
-   - <Kst>Befehlsdialog</Kst>
-   - **Kontinuität:** **G0, G1, G2**
-   - **Flachheit: ** Ähnlich wie bei XNurbs beeinflusst diese Option die Flachheit und Qualität der generierten Flächen. Ein höherer Wert erzeugt hochwertige Flächen, ein niedrigerer Wert erzeugt minderwertige Flächen.
-   - **Grad:** Geben Sie den UV-Gradwert an.
-   - **Spannweiten:** Geben Sie den UV-Spannweitenwert an.
-   - **Randbedingung:** Bestimmen Sie die Bedingung des UV-Flusses.
-        - **Natürlich:** Keine Anforderung an den UV-Fluss.
-        - **Normal:** Erhalten Sie eine wechselseitig senkrechte UV-Isolinie.
-        - **Nächste:** Erzeugen Sie einen senkrechten UV-Fluss, wenn die Randbedingungen relativ flach sind.
-   - **CVs anpassen:** Passen Sie die CVs der Begrenzungskanten an.
-   - **Gewicht:** Bestimmen und passen Sie die Eingabebedingungen für Kurven und Kanten eines festen Körpers an. Ein niedrigerer Wert ignoriert diese Bedingungen, was zu unerwünschten UV-Flussverbindungen führt. Ein höherer Wert respektiert die Bedingungen und erzeugt die gewünschte UV-Flussverbindung basierend auf den angegebenen **Grad-** und **Spannweiten**-Werten.
-   - **Skalierung:** Die Option Skalierung ermöglicht es Ihnen, die Größe der roten Linien zu steuern, die an den Begrenzungskanten erscheinen. Diese Linien stellen das Edge Deviation Plot dar, welches den Abstand zwischen der Begrenzungskante der erstellten Fläche und der von Ihnen eingegebenen Position anzeigt.
-4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+1. Wählen Sie die Randkanten aus, die Sie für den **Square-Befehl** verwenden möchten.  
+2. Geben Sie **Square** in die Befehls-Palette ein.  
+3. Legen Sie die Optionen im Befehlsdialog fest.  
+   - <Kst>Befehlsdialog</Kst>  
+   - **Kontinuität (Continuity):** **Frei (Free), G0, G1, G2**  
+      - **Frei (Free):** Ignoriert die Randkontinuität, um die Oberflächenqualität zu verbessern. Ideal für erste Oberflächen, die später weiter verfeinert werden.  
+      - **G0, G1, G2:** Geben Sie die [Oberflächenkontinuität](/cad-essentials/continuity-curve-and-surface) an.  
+   - **Flachheit (Flatness):** Ähnlich wie bei XNurbs beeinflusst diese Option die Flachheit und Qualität der erzeugten Oberfläche. Ein höherer Wert erzeugt eine hochwertigere Oberfläche, ein niedrigerer Wert reduziert die Qualität.  
+   - **Spannung (Tension):** Passt den Krümmungsübergang einer Oberfläche an.  
+   - **Grad (Degree):** Legt den UV-Grad fest.  
+   - **Spannen (Spans):** Legt den UV-Span-Wert fest.  
+   - **Randbedingung (Boundary condition):** Bestimmt die UV-Flussbedingungen.  
+        - **Natürlich (Natural):** Keine Anforderungen an den UV-Fluss.  
+        - **Normal:** Hält die UV-Isokurven gegenseitig senkrecht.  
+        - **Nächste (Next):** Erstellt einen senkrechten UV-Fluss, wenn die Randbedingungen relativ flach sind.  
+        - **Angrenzend (Adjacent):** Richtet die V-Isokurven der erzeugten Oberfläche an angrenzenden Kurven aus.  
+   - **Gewichtung (Weight):** Bestimmt, wie streng die Eingabebedingungen für Kurven und Kanten eines Volumenkörpers angewendet werden.  
+       - Niedriger Wert: Lockert die Einschränkungen, verbessert die Oberflächenqualität und Reflexionen.  
+       - Höherer Wert: Erzwingt die Einschränkungen, um sicherzustellen, dass der UV-Fluss mit den angegebenen *Degree*- und *Span*-Werten übereinstimmt und eine präzise Oberflächenkontinuität gewährleistet wird.  
+   - **Skalierung (Scale):**  
+       - Ermöglicht die Anpassung der Größe der roten Linien an den Randkanten.  
+       - Diese Linien repräsentieren die **"Kantenabweichungsdarstellung (Edge Deviation Plot)"**, die den Abstand zwischen der Randkante der erstellten Oberfläche und der Eingabegeometrie zeigt.  
+       - Die rote Farbe weist auf eine Abweichung von mehr als 0,01 mm (1e-5 m) hin und hebt Bereiche hervor, in denen die Oberfläche nicht genau mit der Eingabe übereinstimmt.  
+4. Bestätigen Sie mit **OK** im Befehlsdialog oder durch Rechtsklick.  
+
+<VideoPlayer fileName="square"/>
+
+<Callout type="info" emoji="ℹ️">
+**Lofting mit Square**  
+Alternativ kann der Square-Befehl als Lofting-Methode verwendet werden, indem zwei nicht miteinander verbundene Kanten ausgewählt werden. Diese Methode bietet eine größere Flexibilität und Kontrolle bei der Oberflächenerzeugung und ermöglicht die Anpassung von Parametern wie Grad- und Spannwerten, Randbedingungen (falls erforderlich), Flachheit und Gewichtseinfluss. Im Gegensatz dazu erzeugt ein Standard-Loft eine feste Oberfläche mit begrenzten Steuerungsoptionen.  
+</Callout>
+<VideoPlayer fileName="square-1"/>
+
+<Callout type="info" emoji="ℹ️">
+**Sweeping mit Square**  
+Ähnlich wie der Sweep-Befehl kann der Square-Befehl vergleichbare Ergebnisse erzielen, bietet jedoch eine größere Flexibilität und Kontrolle über die resultierenden Oberflächen. Dieses Ergebnis kann durch die Auswahl von zwei oder drei miteinander verbundenen Kanten erreicht werden.  
+</Callout>
+<VideoPlayer fileName="square-2"/>
+
+<Callout type="info" emoji="ℹ️">
+**Patching mit Square**  
+Der Square-Befehl kann Löcher in einer Oberfläche mit vierseitigen Begrenzungskanten füllen, ähnlich wie der Patch-Befehl.  
+</Callout>
+<VideoPlayer fileName="square-3"/>
+
+<Callout type="info" emoji="💡">
+**Tipp**  
+Ähnlich wie bei XNurbs können Sie den Befehl im Voraus ausführen und dann Begrenzungskanten, Kurven und Flächen auswählen. Dies beschleunigt den Workflow erheblich und bietet eine Live-Vorschau der Oberflächenerzeugung.  
+</Callout>
+<VideoPlayer fileName="square-4"/>
+
+<Callout type="info" emoji="💡">
+**Tipp**  
+Der Square-Befehl ermöglicht es, beschnittene Flächen selektiv an eine Fläche und ihre angrenzenden Flächen anzupassen, wobei die Ausrichtung der Splines am natürlichen Fluss der Fläche ausgerichtet wird. Diese Funktion unterscheidet sich erheblich vom Rebuild-Befehl, der sich auf das erneute Erstellen einer Oberfläche oder Kurve konzentriert, ohne die Spline-Ausrichtung anzupassen.  
+</Callout>
+<VideoPlayer fileName="square-5"/>  
+
 
 <VideoPlayer fileName="square-0"/>
 

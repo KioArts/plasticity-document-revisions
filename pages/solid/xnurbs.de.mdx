@@ -8,54 +8,77 @@ import { Callout } from 'nextra/components'
 
 <Reference shortcut="" command="XNurbs" button=""/>
 
-XNurbs ist ein Werkzeug, mit dem Sie N-seitige und vierseitige Flächen mit hoher Qualität erzeugen können. Es ermöglicht das Überbrücken von Lücken und das Schließen komplexer Löcher auf einer Fläche.
+XNurbs ist ein Werkzeug, das N-seitige und viereckige (Quad-sided) Flächen mit hoher Qualität erzeugen kann. Es ermöglicht das Überbrücken von Lücken und das Schließen komplexer Löcher auf einer Fläche. Dieser Befehl ist nur in der Studio-Lizenz verfügbar.
 
 ## Grundlegende Nutzung
 
-1. Wählen Sie die Begrenzungsränder aus, die Sie für den Rahmen der Fläche verwenden möchten.
-2. Verwenden Sie den **XNurbs-Befehl** in der Befehls-Palette.
-3. Stellen Sie die Optionen im Befehlsdialog ein.
-    - <Kst>Command Dialog</Kst>
+1. Wählen Sie die Begrenzungskanten aus, die die Oberfläche umrahmen sollen.
+2. Verwenden Sie den **XNurbs**-Befehl in der Befehlsleiste.
+3. Legen Sie die Optionen im Befehlsdialog fest.
+    - <Kst>Befehlsdialog</Kst>
           - **Continuity:** **G0, G1, G2**
-            - **G0, G1, G2:** Geben Sie die [Kontinuität der Fläche](/cad-essentials/continuity-curve-and-surface) an.
-          - **Quad sided:** Generieren Sie eine unbeschnittene vierseitige Spline-Oberfläche auf einer Fläche mit vier Kanten.
-          - **Flatness:** Diese Option beeinflusst die Flächengleichmäßigkeit und Qualität der erzeugten Oberflächen. Ein höherer Wert führt zu höherer Oberflächenqualität, während ein niedrigerer Wert zu geringerer Qualität führt.
+            - **G0, G1, G2:** Bestimmt die [Kontinuität der Oberfläche](/cad-essentials/continuity-curve-and-surface).
+          - **Quad sided:** Erzeugt eine unbeschnittene, viereckige Fläche innerhalb einer Begrenzung mit vier Kanten.
+          - **Flatness:** Steuert die Flachheit und Qualität der erzeugten Flächen.
+            - Ein höherer Wert erzeugt hochwertige Flächen, ein niedrigerer Wert führt zu geringerer Qualität.
+          - **Tension:** Passt den Krümmungsübergang einer Fläche an.
           - **Boundary:** 
-                - **Natural:** Keine Anforderungen an den UV-Fluss.
-                - **Normal:** UV-Iso-Kurven gegenseitig senkrecht halten. Bei einer vierseitigen Fläche sorgt diese Option dafür, dass die Isokurven der erzeugten XNurbs-Oberfläche normal zu den Begrenzungskurven bleiben.
-                - **Next:** Generieren Sie einen senkrechten Fluss von U und V, wenn die Randbedingungen relativ flach sind. Diese Option funktioniert gut, wenn **Quad-seitig** aktiviert ist.
-          - **Quality:** Bestimmen Sie die Qualität der erzeugten Oberfläche. 
-                - **Auto:** Automatische Qualitätsgenerierung basierend auf der Oberfläche.
-                - **High:** Hohe Oberflächenqualität.
-                - **Max:** Höchste Oberflächenqualität.
-          - **Tolerance:** Geben Sie die Toleranz für die erzeugte Oberfläche an. Es wird empfohlen, für allgemeine Oberflächenarbeitsabläufe den Standardtoleranzwert zu verwenden.
-5. Bestätigen Sie mit „OK“ im Befehlsdialog oder durch Rechtsklick.
+                - **Natural:** Keine UV-Flussanforderung.
+                - **Normal:** Hält die UV-Isokurven rechtwinklig zueinander.
+                - **Next:** Erzeugt einen senkrechten UV-Fluss, wenn die Randbedingungen relativ flach sind und **Quad sided** aktiviert ist.
+                - **Adjacent:** Richtet die V-Isokurven der erzeugten Fläche an benachbarten Kurven aus, wenn **Quad sided** aktiviert ist. Wenn **"Viereckig"** deaktiviert ist, ähnelt das Oberflächenergebnis dem Modus **"Normal"**.
+          - **Quality:** Bestimmt die Qualität der erzeugten Fläche.
+                - **Auto:** Automatische Qualitätsgenerierung basierend auf der Fläche.
+                - **High:** Hohe Flächenqualität.
+                - **Max:** Höchste Flächenqualität.
+          - **Satisfy tolerances:** Legt die Toleranz für die erzeugte Fläche fest.  
+            Es wird empfohlen, für allgemeine Flächen-Workflows die Standardtoleranzwerte zu verwenden. (Standard: **Aktiviert**)
+5. Bestätigen Sie mit **OK** im Befehlsdialog oder durch Rechtsklick.
 
-<VideoPlayer fileName="xnurbs-0"/>
+<VideoPlayer fileName="xnurbs"/>
 
-<Callout type="info" emoji="ℹ️">
-**Quad sided**
-- Die Option „Vierseitig“ ermöglicht es Ihnen, eine unbeschnittene vierseitige Spline-Oberfläche zu erstellen. Dies ist besonders nützlich beim Konstruieren einer Oberfläche mit 4 Begrenzungskanten. Diese Option funktioniert nur mit 4 Begrenzungskanten, da sie eine hochwertige Oberfläche mit korrekter Spline-Ausrichtung erstellt.
-<VideoPlayer fileName="xnurbs-2"/>
+<Callout type="warning" emoji="ℹ️">
+**Hinweis**    
+- Werkzeuge wie Patch können Schwierigkeiten mit komplexen Flächen haben. Verwenden Sie **XNurbs**, um komplexe Flächen zu erzeugen oder als Ausgangspunkt für eine spätere Verfeinerung.  
+- **XNurbs** kann Lücken auch bei schlechten Eingaben überbrücken, doch hochwertige Flächen erfordern dennoch präzise Einschränkungen.   
 </Callout>
 
 <Callout type="info" emoji="ℹ️">
-**Flatness**
-- Die Flächengleichmäßigkeit bestimmt die Ausgabewqualität einer Oberfläche, indem der Eingabewert im Befehlsdialog erhöht oder verringert wird. Bei Verwendung der Option **Vierseitig** auf einer vierseitigen Fläche sollte der Wert für die Flächengleichmäßigkeit zwischen 0,95 und 1,00 liegen, um optimale Ergebnisse zu erzielen.
-<VideoPlayer fileName="xnurbs-3"/>
+**Viereckig (Quad sided)**    
+*Quad sided* ermöglicht die Erstellung einer unbeschnittenen, viereckigen Splines-Fläche.  
+Dies ist besonders nützlich, wenn eine Fläche mit genau vier Begrenzungskanten konstruiert wird, da dies qualitativ hochwertige Ergebnisse mit korrekter Spline-Ausrichtung erzeugt.
 </Callout>
+<VideoPlayer fileName="xnurbs-quad-sided"/>
+
+<Callout type="info" emoji="ℹ️"> 
+**Flachheit (Flatness)**      
+*Flatness* bestimmt die Ausgabequalität einer Fläche, indem der Eingabewert im Befehlsdialog erhöht oder verringert wird.  
+Wenn die **Quad sided**-Option auf eine viereckige Fläche angewendet wird, sollte der Wert für optimale Ergebnisse zwischen **0,95 - 1,00** liegen.
+</Callout>
+<VideoPlayer fileName="xnurbs-flatness"/>
+
+<Callout type="info" emoji="ℹ️"> 
+**Spannung (Tension)**      
+*Tension* steuert die Krümmungsstärke einer Fläche.  
+Ein niedriger Wert von **0,1** ergibt eine entspanntere Fläche, während ein höherer Wert von **1,0** die Übergänge strafft und eine spitzere Form erzeugt. Der Standardwert ist **0,5**.  
+Diese Funktion ähnelt den Befehlen Loft und Bridge Surface.
+</Callout>
+<VideoPlayer fileName="xnurbs-tension"/>
 
 <Callout type="info" emoji="ℹ️">
-**Quality**
-- Die Optionen **Auto**, **High** und **Max** bestimmen die Qualität der erzeugten Oberfläche. Standardmäßig ist **Auto** eingestellt, aber Sie können **High** oder **Max** wählen, um bessere, aber komplexere Ergebnisse zu erzielen.
-<VideoPlayer fileName="xnurbs-4"/>
+**Qualität (Quality)**       
+Die Optionen **Auto, High und Max** bestimmen die Qualität der erzeugten Fläche.  
+Standardmäßig ist **Auto** aktiviert, aber Sie können **High** oder **Max** wählen, um eine höhere Qualität zu erzielen.  
+Dies erzeugt jedoch mehr Splines.
 </Callout>
+<VideoPlayer fileName="xnurbs-quality"/>
 
 <Callout type="info" emoji="ℹ️">
-**Profile Guides** 
-- Im Gegensatz zu den Befehlen Loft und Patch kann XNurbs Oberflächen mit offenen Profilführungen erzeugen, die nicht mit den Begrenzungsführungen schneiden. Dies bietet die Flexibilität, Oberflächen problemlos zu erstellen, und eröffnet kreative Möglichkeiten zur Erkundung von Oberflächen.
-<VideoPlayer fileName="xnurbs-1"/>
-</Callout> 
+**Profilführungen (Profile Guides)**      
+Im Gegensatz zu den Loft- und Patch-Befehlen kann **XNurbs** Flächen mit offenen Profilführungen erzeugen, die sich nicht mit Begrenzungsführungen schneiden.  
+Dies bietet mehr Flexibilität bei der Flächenerzeugung und eröffnet kreative Möglichkeiten zur Flächengestaltung.
+</Callout>
+<VideoPlayer fileName="xnurbs-profile-guides"/>
 
 ## Siehe auch
 - [Rebuild](rebuild)

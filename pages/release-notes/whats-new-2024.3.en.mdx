@@ -31,17 +31,20 @@ For more information, click [here](/common/section-analysis).
 Trades G0 precision for higher surface quality. For more information on this feature, click [here](/solid/square).
 - **Improved Functionality**  
 The command now supports selecting one or more faces to act as a rough *RefitTrim* or *TrimConvert* tool. It can also be executed without any preselected geometry.  
+- **"Adjacent" Boundary Option**  
+Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.
+- **"Tension" Feature**  
+Introduces a new feature enabling users to adjust the tension of the tangency along surface edges, similar to tools used in Lofting and Bridging workflows. It provides better control over shaping surfaces.
 
 For more information, click [here](/solid/square).
 
-### Xnurbs and Square Enhancements
+### Xnurbs Enhancements
 - **"Adjacent" Boundary Option**  
 Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.  
 - **"Tension" Feature**  
-Provides control over the tangent direction derivative along surface edges, similar to features in lofting or bridging workflows.  
-Allows alternation or amplification of surface shapes by adjusting the magnitude of tangency, giving users more creative control over surface continuity.   
+Introduces a new feature enabling users to adjust the tension of the tangency along surface edges, similar to tools used in Lofting and Bridging workflows. It provides better control over shaping surfaces.   
 
-For more information on this feature, click [here](/solid/square) for Square Command or [here](/solid/xnurb) for XNurbs Command.
+For more information, click [here](/solid/xnurb).
 
 ### CV Move Editing 
 - **Proportional and Mirrored Transformations**  
@@ -50,22 +53,22 @@ Users can now edit surface CVs proportionally and with mirrored transformations.
 For more information, click [here](/common/move#move-control-point).
 
 ### Raise Degree Command Enhancement
-- The [**Raise Degree**](/solid/raise-surface-degree) command can now be executed when a surface CV is selected, simplifying degree adjustments during modeling.  
+- The [**Raise Degree**](/solid/raise-surface-degree) command can now be executed when a surface CV is selected.  
 
 ### Toggle Points Command Update  
-- The [**Toggle Points**](/sketch/toggle-points) command is now accessible when a curve CV is selected, improving workflow consistency between curve and surface editing.  
+- The [**Toggle Points**](/sketch/toggle-points) command is now accessible when a curve CV is selected. 
 
 ## 3. Sketching and Curve Tools
 
 ### Curve Rebuild Enhancement  
-- **Deviation Plot**  
-The Rebuild command now includes a Deviation Plot when using explicit control to rebuild a curve.
+- **Weight Option**  
+The Rebuild command now includes a new option "Weight" when using explicit control to rebuild a curve.
 
 ### Snapping Enhancements  
 - **New Tangent Snapping**  
-Introducing **Tan/Tan** snapping for ellipses and general splines, improving precision when aligning curves. 
-- **New Control Point Snap Option**   
-Object snaps sub panel now has "Control point" option
+Introducing **Tan/Tan** snapping for ellipses and general splines. 
+- **New "Control Point" Snap Option**   
+A new "Control point" snap is now available in the subpanel.
 
 ### Sketching Enhancements
 - **Region Deletion Behavior**  
@@ -75,35 +78,33 @@ Deleting regions now automatically removes the curves that bound them, making ma
 
 ### Transform Command Enhancements
 - **Stored Transform Pivots**  
-Transformation pivots are now saved with bodies, making move commands more consistent and intuitive.  
+Transformation pivots are now saved with objects when using Move, Rotate and Scale commands. 
 - **Customizable Transform Options**  
 Users can specify the transform orientation (**Local**, **CPlane**, **World**) and pivot point (**Bounding Box**, **Median**, **Last Selected**), offering greater flexibility in transformations. 
 
-For more information, click [here](/common/move).
+For more information, click [here](/common/move) for Move, [here](/common/move) for Rotate and [here](/common/move) for Scale. XXX
   
 ## 5. Surface Tools
 
 ### Sheet Extension Enhancements
 - **New "Natural" Mode**  
-Introducing a new **Natural** mode for extending sheets along natural or isoparametric edges.
+Introducing a new **"Natural"** mode for extending sheets.
 - **Surface Extension**     
 Surface extension modes can now be toggled using the <kbd>Tab</kbd> key.  
 
-For more information, click [here](/common/move).
+For more information, click [here](/solid/extend-sheet).
 
 ### Construction Plane Enhancements 
-- **Dynamic Plane Creation**  
-Users can now create a construction plane that passes through two selected points and aligns with the camera view.
-Ideal for planarizing a hull while maintaining alignment with the view direction, making the process faster and more intuitive. 
+Users can now create a construction plane that passes through two selected points and aligns with the camera view. Ideal for planarizing a hull while maintaining alignment with the view direction. 
 
-For more information, click [here](/plasticity-essentials/construction-plane).
+For more information, click [here](/plasticity-essentials/construction-plane#4-creating-a-construction-plane-from-multiple-points).
 
 ### Bridge Surface
 - **New "Tension" Option**  
-New Tension option now available for Bridge Surface command. Refer [here](/solid/bridge-surface).
+New **"Tension"** option now available for Bridge Surface command. Refer [here](/solid/bridge-surface).
 
 ### Trimming Optimization
-Trimming operations for densely packed 2D sketches, such as hexagonal grids, have been optimized for improved speed and efficiency. 
+Trimming operations for densely packed 2D sketches, such as hexagonal grids, have been optimized. 
 
 ## 6. Selection and Conversion
 
@@ -111,7 +112,7 @@ Trimming operations for densely packed 2D sketches, such as hexagonal grids, hav
 - **New Conversion Options**  
 Vertices and control vertices (CVs) can now be converted to points and vice versa, while regions can be converted to their bounding curves.
 
-Refer [here](/plasticity-essentials/selecting-objects#select-from-the-currently-selected-objects) for Selection Conversion.
+For more information, click [here](/plasticity-essentials/selecting-objects#select-from-the-currently-selected-objects) for Selection Conversion.
 
 ## 7. User Interface and Usability Enhancements
 
@@ -122,7 +123,7 @@ Refer [here](/plasticity-essentials/selecting-objects#select-from-the-currently-
 
 ![Plasticity 2024.3 UI](/img/new-ui.png)
 
-Refer [here](/plasticity-essentials/user-interface-overview) for User Interface Overview.
+For more information, click [here](/plasticity-essentials/user-interface-overview).
 
 ### Navigation and Interaction Improvements   
 - **Recent Files** - Drag and drop files/items from the Recent Files list into the viewport for quick import.
@@ -142,9 +143,9 @@ Refer [here](/plasticity-essentials/user-interface-overview) for User Interface 
 - **Grid Color** - Set the grid color in Preferences.
 - **Start-up** - Added a preference to disable loading the previous session on start-up.
 
-## 8. Context Menu
-- **Assets and Materials**  
-A right-click context menu has been added to Assets/Materials, allowing users to quickly select all objects that share the same material using the "Select All with This Material" option.
+## 8. Assets Menu
+- **Context Menu**  
+A right-click context menu has been added to the Assets Menu, allowing users to quickly select all objects that share the same material using the "Select All with This Material" option.
 
 ## 9. Outliner X
 - **Construction Planes** 
