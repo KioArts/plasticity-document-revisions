@@ -17,6 +17,15 @@ Drehen Sie Objekte mit dem Rotate Gizmo. Optionen für Einschränkungen auf eine
    - <Kst>Befehlsdialog</Kst>
       - **Angle:** Geben Sie den zuletzt mit dem Rotation Gizmo angegebenen Winkel als numerischen Wert an.
       - **Axis:** Geben Sie die Drehachse mit dem Vektor X, Y oder Z an.
+      - **Orientation:** Legt die Ausrichtung des Dreh-Gizmos fest.
+         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Oberflächennormalen des Objekts aus.  
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Setzt die Ausrichtung auf die zuvor definierte Pivot-Ausrichtung.  
+         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet die Ausrichtung an der aktiven Konstruktions-Ebene aus.  
+         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an den globalen (Welt-) Achsen aus.  
+      - **Pivot:** Legen Sie die Position des Pivot-Punkts fest.  
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.  
+         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.  
+         - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts.
    - <Kst>Tastenkombinationen</Kst>
    - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Binden Sie an die X-, Y- oder Z-Achse](/tool/sketching-essentials#constrain-to-an-axis).
    - <kbd>G</kbd> **Screen space:** Begrenzen Sie auf die sichtbare Ebene.

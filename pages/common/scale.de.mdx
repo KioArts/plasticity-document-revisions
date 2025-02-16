@@ -16,6 +16,15 @@ Objekte mithilfe des Skalierungs-Gizmo skalieren. Optionen für die Einschränku
 4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
    - <Kst>Befehlsdialog</Kst>
       - **XYZ:** Geben Sie die Skalierung der X-, Y- und Z-Achsen an.
+      - **Orientation:** Legt die Ausrichtung des Skalierungs-Gizmos fest
+      - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Oberflächennormalen des Objekts aus.  
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Setzt die Ausrichtung auf die zuvor definierte Pivot-Ausrichtung.  
+         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet die Ausrichtung an der aktiven Konstruktions-Ebene aus.  
+         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an den globalen (Welt-) Achsen aus.  
+      - **Pivot:** Legen Sie die Position des Pivot-Punkts fest.  
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.  
+         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.  
+         - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts.
    - <Kst>Tastenkombinationen</Kst>
    - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Binden Sie an die X-, Y- oder Z-Achse](/tool/sketching-essentials#constrain-to-an-axis).
    - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Binden Sie an die X-, Y- oder Z-Ebene.
