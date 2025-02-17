@@ -5,7 +5,7 @@ import { Callout } from 'nextra/components'
 
 <Reference shortcut="Alt + S" command="Subdivide Curve" button="" />
 
-Increase the number of Control Vertices(CVs) and Curve Segments on the selected curves. 
+Increase the number of Control Vertices(CVs) by doubling its count on selected curves each time its being ran. 
 
 ## Basic Usage
 
@@ -14,12 +14,11 @@ Increase the number of Control Vertices(CVs) and Curve Segments on the selected 
 3. The number of CVs is increased, and they are selected.
 
 <Callout type="info" emoji="💡">
-    **Tip**
-In Plasticity, the increased curve segments are displayed as a single curve with CVs. Additionally, the [Detail Display](/plasticity-essentials/user-interface-overview) panel provides information about the selected curve, including its degree, the number of spans, and its classification.
+**Tip**     
+- Using the Raise Degree command on a single-span curve adds one control vertex (CV) per execution, whereas the Subdivide command doubles the number of CVs each time it is applied. 
+</Callout>  
 
-![Detail Display](/img/interactive-panel-subdivide-raise-degree-curve.png)
-
-</Callout>
+![Subdividing Curve](/img/subdivide-curve.png)
 
 ## See also
 - [Raise Curve Degree](raise-curve-degree)
