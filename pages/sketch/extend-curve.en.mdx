@@ -15,9 +15,15 @@ Extend a Curve by specifying the distance. Choose from extension shapes like Nat
 3. Press <kbd>D</kbd>, move the cursor, and click at the endpoint.
 4. Set the options in the Command Dialog.
    - <Kst>Command Dialog</Kst>
-      - **Shape:**
-         - **Natural** / **Liner** /  **Soft** /  **Reflective** / **Arc**
-         - Refer to the video to see the differences between each option.
+      - **Shape:** Specify the shape of the extended curve. Options **Natural**, **Linear**, **Soft**, **Reflective**, and **Arc** will directly influence the shape and curvature of the extended curve during extrusion.
+            - **Natural:** Extends the curve "naturally" by continuing the curve described by the original curve just before the start of the extension.
+            - **Linear:** Extends the curve in a flat, straight line from the boundary point, maintaining the current tangent direction without altering curvature.
+            - **Soft:** Gradually blends the extension with the existing curve for a smooth transition, preserving both tangent and curvature.
+            - **Reflective:** Mirrors the curvature and tangency of the curve for a symmetrical and seamless continuation, ideal for maintaining curve symmetry.
+            - **Arc:** Extends the curve in a circular arc from the boundary point. 
+
+            ![Extend Curve Shape](/img/extend-curve-shape.png)
+            
       - **Distance:** Specify the distance.
 5. Confirm with OK in the Command Dialog or right-click.
 
