@@ -1,6 +1,6 @@
-import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
 
 # Update Information Version 2025.1
 
@@ -13,8 +13,8 @@ Plasticity 25.1 introduces a wide array of enhancements and new features aimed a
 ## 1. New Commands
 
 ### New Slide Command  
-- **CV Sliding**  
-Users can move control vertices (CVs) along the surface hull, guided by the CV's direction, allowing for fine-tuned adjustments and enhancing precision modeling for surface refinement.    
+- **CV Sliding on Curves and Solids**  
+Users can slide control vertices (CVs) on spline curves and surface hulls, guided by the direction of the CVs, allowing for precise adjustments during modeling.
 
 For more information, click [here](/sketch/slide).
 
@@ -28,13 +28,13 @@ For more information, click [here](/common/section-analysis).
 
 ### Square Command Updates
 - **New "Free" Option**  
-Trades G0 precision for higher surface quality. For more information on this feature, click [here](/solid/square).
-- **Improved Functionality**  
-The command now supports selecting one or more faces to act as a rough *RefitTrim* or *TrimConvert* tool. It can also be executed without any preselected geometry.  
+Trades G0 precision for higher surface quality. For more information on this feature, click [here](/solid/square). 
 - **"Adjacent" Boundary Option**  
 Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.
 - **"Tension" Feature**  
 Introduces a new feature enabling users to adjust the tension of the tangency along surface edges, similar to tools used in Lofting and Bridging workflows. It provides better control over shaping surfaces.
+- **Improved Functionality**  
+The command now supports selecting one or more faces to act as a rough *RefitTrim* or *TrimConvert* tool. It can also be executed without any preselected geometry. 
 
 For more information, click [here](/solid/square).
 
@@ -68,7 +68,7 @@ The Rebuild command now includes a new option **"Weight"** when using explicit c
 - **New Tangent Snapping**  
 Introducing **Tan/Tan** snapping for ellipses and general splines. 
 - **New "Control Point" Snap Option**   
-A new "Control point" snap is now available in the "Object Snaps" subpanel.
+A new **"Control point"** snap is now available in the **"Object Snaps"** subpanel.
 
 For more information, click [here](/plasticity-essentials/snap).
 
@@ -164,7 +164,18 @@ For more information, click [here](/plasticity-essentials/user-interface-overvie
 A right-click context menu has been added to the Assets Menu, allowing users to quickly select all objects that share the same material using the "Select All with This Material" option. Refer [here](/plasticity-essentials/assets).
 
 ## 9. Spacemouse Support
-- **Spacemouse** - Spacemouse buttons can now be bound by editing the keymap.json file. Configuration files can be named, for example, as "spacemouse0", "spacemouse1", etc.
+- **Spacemouse** - Spacemouse buttons can now be bound by editing the keymap.json file. To find the JSON file, locate the `.plasticity` directory on your operating system.
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigate to `C:/Users/<username>/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
 
 ## Past Update Information
 
