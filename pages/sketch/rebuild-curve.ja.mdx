@@ -5,7 +5,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 # Rebuild Curve（カーブを再構築する）[#rebuild-curve]
 
-<Reference shortcut="" command="Rebuild Curve" button="コマンドバー右" buttonIcon='button-rebuild' />
+<Reference shortcut="" command="Rebuild Curve" button="提案されたコマンドメニュー内" buttonIcon='button-rebuild' />
 
 カーブの形状は変えずに制御点の位置を最適化することで、カーブを再構築できます。
 
@@ -23,6 +23,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
         - **ポイント:** CVの数を指定します。
       - **明示的制御:** 指定された次数とスパンの数で再構築します。*(インディーおよびスタジオライセンスで利用可能)*
         - **次数 & スパン:** 次数とスパンの数を指定します。
+        - **Weight:** *Degree と Spans* に応じて、**Weight** を調整して CV の位置を制御できます。値が低いほどカーブの形状が緩み、サーフェス作業フローでの品質が向上します。値が高いほどカーブは元の形状に近くなり、精度と構造が維持されます。 (デフォルト: 0.5)  
 4. コマンドダイアログで OK をクリックするか、右クリックして確認します。
 
 <VideoPlayer fileName="rebuild-curve"/>
