@@ -1,126 +1,114 @@
-import ButtonIcon from '/components/ButtonIcon'
+# Outliner
 
-# Gliederung
+Der Outliner zeigt alle Objekte an, die du erstellt hast. Im Outliner kannst du Objekte organisieren, gruppieren, ihre Zustände umschalten und Materialien konfigurieren.
 
-Das Gliederung zeigt alle von Ihnen erstellten Objekte an. Im Gliederung können Sie Objekte organisieren, gruppieren, ihren Zustand wechseln und Materialien konfigurieren.
-
-![Gliederung](/img/outliner-001.png)
+![Outliner](/img/outliner-001.png)
 
 ## Angezeigte Objekte
 
-- Die Objekte, die Sie erstellen, werden in verschiedene Kategorien eingeteilt: „Solids“, „Sheets“, „Curves“, „Meshes“, „Images“ und „Measurements“.
+- Die erstellten Objekte sind in verschiedene Abschnitte unterteilt: "Körper", "Flächen", "Kurven", "Meshes", "Bilder" und "Messungen".
 
-## Angezeigte Konstruktionsebenen  
+## Angezeigte Konstruktions-Ebenen
 
-- Gespeicherte [construction planes](/construction-plane) werden unter „Planes“ klassifiziert und im Menü „Added Planes“ auf der rechten Seite des Bildschirms aufgelistet.  
+- Gespeicherte [Konstruktions-Ebenen](/construction-plane) sind als "Ebenen" klassifiziert und im "Hinzugefügte Ebenen"-Menü auf der rechten Seite des Bildschirms aufgelistet.
 
-![Outliner Planes](/img/construction-plane-saved.png)   
+![Outliner Ebenen](/img/construction-plane-saved.png)   
 
-![Added Planes](/img/construction-plane-menu.png)  
+![Hinzugefügte Ebenen](/img/construction-plane-menu.png)   
 
 ## Objekte organisieren
 
-- Klicken Sie mit der rechten Maustaste auf ein Abschnittslabel („Solids“, „Sheets“, „Curves“, „Meshes“, „Images“ und „Measurements“) und wählen Sie „Alles auswählen“, um alle Objekte in diesem Abschnitt auszuwählen.
-- Sie können das Gliederung durch Ziehen und Ablegen von Objekten neu organisieren.
+- Klicke mit der rechten Maustaste auf eine Abschnittsüberschrift ("Körper", "Flächen", "Kurven", "Meshes", "Bilder" und "Messungen") und wähle "Alle auswählen", um alle Objekte in diesem Abschnitt auszuwählen.
+- Du kannst den Outliner durch Ziehen und Ablegen von Objekten neu anordnen.
 
 ## Objekte gruppieren
 
-Gruppieren ermöglicht es Ihnen, Ihre Objekte besser zu organisieren.
+Gruppierung ermöglicht eine bessere Organisation deiner Objekte.
 
-| Vorgang                                                                        | Tastenkombination                                                  | Befehlsname      |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------ | ---------------- |
-| Eine Gruppe erstellen und das ausgewählte Objekt zur neuen Gruppe verschieben. | <kbd>Strg + G</kbd> oder <ButtonIcon type="outliner-gruop-icon" /> | Group Selected   |
-| Erstellen Sie eine Gruppe im Wurzelverzeichnis und verschieben Sie das ausgewählte Objekt in die neue Gruppe. | <kbd>Ctrl + G</kbd>                                           | Group Selected at Root |
-| Das ausgewählte Objekt aus der Gruppe entfernen.                               | <kbd>Alt + G</kbd>                                                 | Ungroup Selected |
+| Aktion | Shortcut | Befehl |
+| --------------------------- | ------------------------------- | ------------------ |
+| Erstelle eine Gruppe und verschiebe das ausgewählte Objekt in die neue Gruppe. | <kbd>Ctrl + G</kbd> oder <ButtonIcon type="outliner-gruop-icon" /> | Gruppe erstellen |
+| Entferne das ausgewählte Objekt aus der Gruppe. | <kbd>Alt + G</kbd> | Gruppe auflösen |
 
-Klicken Sie mit der rechten Maustaste auf einen Gruppenordner, um auf zugehörige Befehle zuzugreifen.
+Rechtsklick auf einen Gruppenordner, um zugehörige Befehle aufzurufen.
 
-![Gruppenobjekte-Menü](/img/outliner-group-objects-menu.png)
-| Menü                                             | Anmerkung                                                                     |
-| ------------------------------------------------ | ----------------------------------------------------------------------------- |
-| Aktuelle Auswahl zur Gruppe hinzufügen           | Fügt das ausgewählte Objekt zur Gruppe hinzu.                                 |
-| Alles auswählen                                  | Wählt alle Objekte innerhalb der Gruppe aus.                                  |
-| Neue Untergruppe mit aktueller Auswahl erstellen | Erstellt eine neue Untergruppe und fügt das ausgewählte Objekt hinzu.         |
-| Verschieben Sie die ausgewählten Elemente in das Wurzelverzeichnis. | Verschieben Sie das ausgewählte Element aus einer Gruppe in das Wurzelverzeichnis.               |
-| Alles einklappen                                 | Klappen Sie alle Gruppen ein.                                                 |
-| Alles ausklappen                                 | Klappen Sie alle Gruppen aus.                                                 |
-| Material hinzufügen                              | Weist der Gruppe ein Material zu. Siehe [Materialfarbe](#material-color).     |
-| Material entfernen                               | Entfernt das Material aus der Gruppe. Siehe [Materialfarbe](#material-color). |
+![Gruppen-Menü](/img/outliner-group-objects-menu.png)
 
-Alt-Klick auf einen Ordner im Gliederung, um alle Objekte in diesem Abschnitt auszuwählen.
+| Menü | Beschreibung |
+| -------------------------------- | ------------------------------------------------------------- |
+| Auswahl zur Gruppe hinzufügen | Fügt das ausgewählte Objekt zur Gruppe hinzu. |
+| Alle auswählen | Wählt alle Objekte in der Gruppe aus. |
+| Neue Untergruppe mit Auswahl | Erstellt eine neue Untergruppe mit der Auswahl. |
+| Auswahl in die Hauptstruktur verschieben | Verschiebt das ausgewählte Objekt aus einer Gruppe in die Hauptstruktur. |
+| Alle erweitern | Erweitert alle Gruppen. |
+| Alle reduzieren | Reduziert alle Gruppen. |
+| Material hinzufügen | Weist der Gruppe ein Material zu. Siehe [Materialfarbe](#materialfarbe). |
+| Material entfernen | Entfernt das Material aus der Gruppe. Siehe [Materialfarbe](#materialfarbe). |
+| Auflösen | Löscht die Gruppe, behält aber die enthaltenen Objekte bei. |
+| Rekursiv löschen | Löscht die Gruppe und alle darin enthaltenen Objekte. |
 
-### Gruppen einklappen und ausklappen
+Alt-Klick auf einen Ordner im Outliner, um alle Objekte in diesem Abschnitt auszuwählen.
 
-![Gruppen einklappen und ausklappen](/img/outliner-collapse-expand.png)
+### Gruppen reduzieren und erweitern
 
-- Um alle Gruppen einzuklappen, klicken Sie entweder auf (1) oder bewegen Sie den Cursor über das Gliederung und drücken Sie <kbd>C</kbd>.
-- Um alle Gruppen auszuklappen, klicken Sie auf (2) und wählen Sie "Alles ausklappen" aus dem Dropdown-Menü.
+![Gruppen reduzieren und erweitern](/img/outliner-collapse-expand.png)
+
+- Um alle Gruppen zu reduzieren, klicke auf (1) oder bewege den Cursor über den Outliner und drücke <kbd>C</kbd>.
+- Um alle Gruppen zu erweitern, klicke auf (2) und wähle "Alle erweitern".
 
 ## Objekte umbenennen
 
-- Um ein Objekt umzubenennen, doppelklicken Sie auf seinen Namen.
-- Um mehrere Objekte gleichzeitig umzubenennen, halten Sie die Umschalt-Taste gedrückt, während Sie sie auswählen, und doppelklicken Sie dann, während Sie Umschalt gedrückt halten, auf einen ihrer Namen.
+- Um ein Objekt umzubenennen, doppelklicke auf seinen Namen.
+- Um mehrere Objekte gleichzeitig umzubenennen, halte die Shift-Taste gedrückt, wähle die Objekte aus und doppelklicke dann auf einen ihrer Namen.
 
-## Objekte im Gliederung suchen
+## Objekte im Outliner finden
 
-![Objekte im Gliederung suchen](/img/outliner-collapse-expand.png)
+![Gruppen reduzieren und erweitern](/img/outliner-collapse-expand.png)
 
-### Um ein ausgewähltes Objekt an den Anfang der Gliederung zu bringen
+### Ein ausgewähltes Objekt im Outliner nach oben bringen
 
-- Wählen Sie das Objekt im 3D-Viewport aus, bewegen Sie den Cursor über das Gliederung und drücken Sie <kbd>/</kbd>.
-- Alternativ können Sie das Objekt auswählen, auf (2) klicken und "Im Gliederung auswählen" wählen.
+- Wähle das Objekt im 3D-Viewport aus, bewege den Cursor über den Outliner und drücke <kbd>/</kbd>.
+- Alternativ kannst du das Objekt auswählen, auf (2) klicken und "Zur Auswahl scrollen" wählen.
 
-### Um ein ausgewähltes Objekt im Gliederung zu isolieren
+### Ein ausgewähltes Objekt im Outliner isolieren
 
-- Wählen Sie das Objekt im Gliederung aus und drücken Sie <kbd>.</kbd>. Dies klappt alle Gruppen und Abschnitte ein, außer dem, der Ihr ausgewähltes Objekt enthält.
-- Alternativ können Sie das Objekt auswählen, auf (2) klicken und "Auswahl isolieren" wählen.
+- Wähle das Objekt im Outliner und drücke <kbd>.</kbd>. Dadurch werden alle Gruppen und Abschnitte ausgeblendet, außer der mit dem gewählten Objekt.
+- Alternativ kannst du das Objekt auswählen, auf (2) klicken und "Auswahl isolieren" wählen.
 
-## Objektzustände wechseln
+## Objektzustände umschalten
 
-Sie können die Zustände von Objekten oder Gruppen wechseln, z. B. sie vorübergehend ausblenden oder anzeigen, deaktivieren oder aktivieren und sperren oder entsperren.
+Du kannst die Zustände von Objekten oder Gruppen umschalten, z. B. sie vorübergehend ausblenden, deaktivieren oder sperren.
 
-![Objektzustände wechseln](/img/toggle-object-states.png)
+![Zustände umschalten](/img/toggle-object-states.png)
 
-### Vorgänge im Gliederung
+### Aktionen im Outliner
 
-Klicken Sie auf die Symbole neben Objekten oder Gruppen, um ihre Zustände zu ändern. Sie können Zustände auch in großen Mengen ändern, indem Sie mehrere Objekte auswählen.
+Klicke auf die Symbole neben Objekten oder Gruppen, um deren Zustand zu ändern. Du kannst auch mehrere Objekte auswählen und ihre Zustände gleichzeitig ändern.
 
-- <ButtonIcon type="button-outliner-hide" double="true" />: Ausblenden wechseln
-- <ButtonIcon type="button-outliner-disable" double="true" /> : Deaktivieren wechseln
-- <ButtonIcon type="button-outliner-disable-selection" double="true"  /> : Sperren wechseln
+- <ButtonIcon type="button-outliner-hide" double="true" />: Verstecken umschalten
+- <ButtonIcon type="button-outliner-disable" double="true" /> : Deaktivieren umschalten
+- <ButtonIcon type="button-outliner-disable-selection" double="true"  /> : Sperren umschalten
 
-### Vorgänge durch Tastenkombination
+### Aktionen per Shortcut
 
-Sie können auch Tastenkombinationen verwenden, um die Zustände von Objekten oder Gruppen zu ändern.
-
-| Vorgang                                    | Tastenkombination                  | Befehlsname     |
-| ------------------------------------------ | ---------------------------------- | --------------- |
-| Ausgewählte Objekte ausblenden             | <kbd>H</kbd>                       | Hide selected   |
-| Nicht ausgewählte Objekte ausblenden       | <kbd>Umschalt + H</kbd>            | Hide unselected |
-| Alle einblenden                            | <kbd>Alt + H</kbd>                 | Unhide all      |
-| Ausgeblendete umkehren                     | <kbd>Strg + H</kbd>                | Invert Hidden   |
-| Alle Curves auf derselben Ebene ausblenden | Regionen auswählen -> <kbd>H</kbd> |                 |
-| Ausgewählte Objekte sperren                |                                    | Lock selected   |
+| Aktion | Shortcut | Befehl |
+| ---------------------------- | ---------------- | ---------------- |
+| Ausgewählte Objekte ausblenden | <kbd>H</kbd> | Verstecken |
+| Nicht ausgewählte Objekte ausblenden | <kbd>Shift + H</kbd> | Nicht ausgewählte verstecken |
+| Alle wieder einblenden | <kbd>Alt + H</kbd> | Alle einblenden |
+| Versteckten Zustand umkehren | <kbd>Ctrl + H</kbd> | Versteck umkehren |
+| Alle Kurven auf derselben Ebene ausblenden | Region auswählen -> <kbd>H</kbd> | |
+| Ausgewählte Objekte sperren | | Sperren |
 
 ## Materialfarbe
 
-Sie können Materialien Solids, Sheets und Curves zuweisen. Für eine Gruppe eingestellte Materialien werden auch auf Objekte innerhalb dieser Gruppe angewendet.
-Weitere Informationen zu Materialien finden Sie unter [**Set Material**](/common/set-material) und [**Remove Material**](/common/remove-material).
-![Gliederung 4](/img/outliner-04.png)
+Du kannst Materialien Körpern, Flächen und Kurven zuweisen. Materialien, die für eine Gruppe festgelegt wurden, gelten auch für die darin enthaltenen Objekte.
 
-Im Gliederung können Sie:
+![Materialfarbe](/img/outliner-04.png)
 
-- Die Materialfarbe des Objekts wird als Farbpunkte angezeigt.
-- Die Farbe kann durch Ziehen und Ablegen der Farbpunkte kopiert werden.
-- Materialfarben können auch für Gruppen festgelegt werden. Die Farbe kann auf die gleiche Weise kopiert werden.
-- Klicken Sie mit der rechten Maustaste auf ein Objekt, um ein Menü aufzurufen, in dem Sie Materialien festlegen oder entfernen können.
-- Sie können auch mehrere Objekte auswählen und Materialien in großen Mengen festlegen oder entfernen.
+## Seitenleisten-Sichtbarkeit umschalten
 
-## Seitenleiste Sichtbarkeit umschalten
-
-
-Die Sichtbarkeit des Outliners und der rechten Seite des Fensters umschalten.
-
-| Vorgang                                    | Tastenkombination                  | Befehlsname     |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------- | --------------- |
-| Das Anzeigen der Seitenleiste umschalten.| <kbd>Ctrl + B</kbd> or <br/> <ButtonIcon type="button-sidebar-toggle" /> rechts vom P-Menü | Sidebar: toggle |
+| Aktion | Shortcut | Befehl |
+| ---------------------------- | ---------------------------- | ---------------- |
+| Linke Seitenleiste umschalten | <kbd>Ctrl + B</kbd> oder <ButtonIcon type="button-left-sidebar-toggle" /> | Seitenleiste: Links umschalten |
+| Rechte Seitenleiste umschalten | <kbd>Ctrl + Shift + B</kbd> oder <ButtonIcon type="button-right-sidebar-toggle" /> | Seitenleiste: Rechts umschalten |

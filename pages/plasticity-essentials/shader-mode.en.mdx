@@ -12,20 +12,20 @@ import { Tabs } from 'nextra/components'
 
 ![Matcaps in Shader Mode](/img/shader-mode-preview.png)
 
-| Name | Number | Applicability |
-| ---- | ------ | ------------- |
-| Default|   1    | - |
-| Red    |   2    |   Glossy Appearance    |
-| Black  |  3     |  Glossy Appearance     |
-| White  |    4   |   Ambient Lighted      |
-| White  |   5    |  Highlight Checker     |
-| Matte |   6    |  -     |
-| Silhouette     |  7     |  Silhouettes Checker  |
-| Solid Color    |  8     |  No Shadows     |
-| Isophote/Iso Angle   |   9     |   Static Surface Continuity Checker         |
-| Draft Angle          |   10    | Draft Angles Checker for Mold Removal       |
-| Horizontal Zebra     |  11     |   Surface Continuity Checker                |
-| Vertical Zebra       |  12     |  Surface Continuity Checker                 |
+| Name | Number | Applicability | Note |
+| ---- | ------ | ------------- | ---- |
+| Default|   1    | Default Appearance |  -  |
+| Red    |   2    |   Glossy Appearance    |  -  |
+| Black  |  3     |  Glossy Appearance     |  -  |
+| White  |    4   |   Ambient Lighted      |  -  |
+| White  |   5    |  Highlight Checker     |  -  |
+| Matte |   6    |  Matte Appearance    | -  |
+| Silhouette     |  7     |  Silhouettes Checker  |  -   |
+| Solid Color    |  8     |  No Shadows     | -  |
+| Isophote/Iso Angle   |   9     |   Static Surface Continuity Checker         | Shader is applied on the object based on current camera angle. Adjust stripe density in the **"Material Options"** menu. |
+| Draft Angle          |   10    | Draft Angles Checker for Mold Removal       |  Draw angle is displayed on the object based on current construction plane. Adjust the draw angle threshold (blue) relative to the construction plane in the **"Material Options"** menu. |
+| Horizontal Zebra     |  11     |   Surface Continuity Checker                |  -  |
+| Vertical Zebra       |  12     |  Surface Continuity Checker                 |  -  |
 
 
 
@@ -62,11 +62,12 @@ import { Tabs } from 'nextra/components'
 
 - Edges, curves, and faces can be shown or hidden using the toggle buttons.
 
+![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png)
+
 | Function                                                      | Shortcut | Button | Command Name           |
 | ------------------------------------------------------------- | ------- | ------ | ---------------------- |
 | Toggle show Edges <br />(Turning this off will hide the Edges.) |         | (13)   | Viewport: toggle Edges |
 | Toggle show Curves <br />(Turning this off will hide the Curves.) |         | (14)   | Viewport: toggle Curves |
 | Toggle show Faces <br />(Turning this off will hide the Faces.) |         | (15)   | Viewport: toggle Faces |
-
-![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png) 
+ 
 
