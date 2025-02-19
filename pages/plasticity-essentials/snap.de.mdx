@@ -1,0 +1,38 @@
+import ButtonIcon from '/components/ButtonIcon'
+
+# Snapping (Einrasten)
+
+## Mesh- und Bild-Snap[#mesh-and-image-snap]
+
+- Bestimmte Snap-Funktionen können für Meshes und Bilder verwendet werden.
+
+   | Typ                  | Snap-Ziel    | Tooltip |
+   | -------------------- | ----------- | -------- |
+   | Mesh (OBJ, STL, FBX, 3MF) | Vertex / Fläche | Vertex / Fläche |
+   | Bild (.PNG, .JPG, .JPEG)  | Ecke | Ecke |
+
+## Objekt-Snap[#object-snap]
+
+![Objekt-Snap](/img/object-snap.png)
+
+- 1. Das Snap-Feature ermöglicht das Einrasten des Cursors an bestimmten Elementen beim Zeichnen oder Verschieben von Objekten.
+- 2. Um das Objekt-Snapping zu aktivieren oder zu deaktivieren, klicken Sie auf den Umschaltknopf im **„Snapping“-Fenster** in der rechten Seitenleiste. Um verschiedene Snap-Typen zu steuern, öffnen Sie den Abschnitt **„Objekt-Snaps“** und passen Sie die Optionen an.
+- 3. Um Snapping vorübergehend zu aktivieren, halten Sie die <kbd>Ctrl</kbd>-Taste gedrückt. Beim Zeichnen von Kurven wird das Snapping automatisch aktiviert.
+- 4. Um Snapping vorübergehend zu deaktivieren, drücken Sie <kbd>Shift + X</kbd>. Dies deaktiviert verschiedene Snap-Typen vorübergehend, falls ein bestimmter Snap aktiv ist. Drücken Sie wiederholt die Taste, bis der gewünschte Snap-Typ erreicht ist.  
+- 5. Snapping kann auf verschiedene Objekttypen angewendet werden: Kontrollpunkte, Kurven, Regionen, Kanten, Flächen und Messpunkte. Das Snap-Ziel wird als kleiner schwarzer Punkt angezeigt.
+- 6. Ein Tooltip wird angezeigt, wenn sich der Cursor über einem Snap-Ziel befindet. Klicken Sie, wenn der Tooltip sichtbar ist, um präzise zu snappen.
+
+    | Snap-Ziel         | Tooltip                                                                                                                     |
+    | ----------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+    | Kontrollpunkt     | CV                                                                                                                           |
+    | Kurve            | Kurve, Anfang, Ende, Mitte, Nächster, Schnittpunkt, X, Y, Z, XY, YZ, ZX, Zentrum, 1/4, 3/4, Senkrecht, Tangente, Tan/Tan |
+    | Region           | Region, Zentrum                                                                                                               |
+    | Kante            | Kante, Ende, Mitte                                                                                                            |
+    | Fläche           | Fläche, Zentrum                                                                                                               |
+    | Messpunkt        | Messung                                                                                                                       |
+
+- Sie können das **Objekt-Snapping über die Befehlspalette ausführen: „Snaps: toggle snap snapping“**. 
+
+## Skizzier-Tipps
+
+- Um eine Skizze präzise zu zeichnen, schauen Sie sich die [Skizzier-Tipps](/tool/sketching-essentials) an.

@@ -25,7 +25,7 @@ This command focuses on the selected object by displaying it exclusively on the 
 ##### How to Use
 
 1. Select the objects you wish to focus on.
-2. Press <kbd>.</kbd> to execute the command.
+2. Open the Command Palette and type "Isolate", or press <kbd>.</kbd> to execute the command.
 3. Only the selected objects will be displayed on the screen.
 
 ##### Hierarchical Isolation
@@ -38,8 +38,18 @@ This command focuses on the selected object by displaying it exclusively on the 
 
 An indicator at the top of the screen signifies that the Isolate mode is active. A number next to the indicator shows how many layers of isolation have been applied. For example, if "2 Isolated" is displayed, it indicates that you are in the second layer of isolation.
 
-<br/>
-<VideoPlayer fileName="isolate"/>
+## Unisolate Objects
+
+This command will reveal all previously isolated objects in the viewport. It will not return to the previous hierarchical isolation layer, so all objects will be visible instead.
+
+<Reference shortcut="Alt + . (Period)" command="Unisolate" button="" />
+
+##### How to Use
+
+1. Open the Command Palette and type "Unisolate", or press <kbd>Alt + .</kbd> to execute the command.
+2. After executing the Unisolate command, you can see all visible objects on the viewport.
+
+<VideoPlayer fileName="isolate-unisolate"/>
 
 ## Center Objects
 

@@ -1,0 +1,27 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Sweep Solid Tool
+
+<Reference shortcut="" command="Sweep Tool" button="" />
+
+Sweeping solid along curve guide as a reference body will generate unique a Solid. 
+
+## Basic Usage
+
+1. Activate the command by searching "Sweep Tool" in the Command Palette.
+2. Select the Solid you wish to sweep with.
+3. Select the Curve that will serve as the path for the sweep.
+4. Set the options in the Command Dialog and Keyboard Shortcuts.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>S</kbd> **Scale:** Specify the Scale value.
+      - <kbd>A</kbd> **Angle:** Specify the Angle value.
+      - <kbd>D</kbd> **Offset:** Specify the Offset value.
+5. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="sweep-tool"/>
+
+## See also
+- [Sweep](sweep)
+- [Pipe](pipe)
