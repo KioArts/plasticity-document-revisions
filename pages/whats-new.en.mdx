@@ -16,41 +16,41 @@ Plasticity 25.1 introduces a wide array of enhancements and new features aimed a
 - **CV Sliding on Curves and Solids**  
 Users can slide control vertices (CVs) on spline curves and surface hulls, guided by the direction of the CVs, allowing for precise adjustments during modeling.
 
-For more information, click [here](/sketch/slide).
+[Learn more](/sketch/slide)
 
 ### New Section Analysis Command
 - **Section Analysis**  
 Section Analysis is a feature that allows users to slice through their 3D model to reveal its interior structure. This helps identify whether internal components are properly aligned or interfering with each other. It is especially useful for architectural, engineering, and design visualization.    
 
-For more information, click [here](/common/section-analysis).
+[Learn more](/common/section-analysis)
 
 ## 2. Modeling Enhancements
 
 ### Square Command Updates
 - **New "Free" Option**  
-Introduces a new continuity option that trades G0 precision for higher surface quality. 
+Introducing a new continuity option that trades G0 precision for higher surface quality. 
 - **"Adjacent" Boundary Option**  
-Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.
+Introducing a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.
 - **"Tension" Feature**  
-Introduces a new feature enabling users to adjust the tension of the tangency along surface edges, similar to tools used in Lofting and Bridging workflows. It provides better control over shaping surfaces.
+Introducing a new feature enabling users to adjust the tension of the tangency along surface edges, similar to tools used in Lofting and Bridging workflows. It provides better control over shaping surfaces.
 - **Improved Functionality**  
-The command now supports selecting one or more faces to act as a rough *RefitTrim* or *TrimConvert* tool. It can also be executed without any preselected geometry. 
+The command allows you to selectively refit trimmed surfaces on a face and its adjacent surfaces, aligning the orientation of splines to match the natural flow of the surface. It can also be executed without any preselected geometry. 
 
-For more information, click [here](/solid/square).
+[Learn more](/solid/square)
 
 ### Xnurbs Enhancements
 - **"Adjacent" Boundary Option**  
-Introduces a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.  
+Introducing a new boundary condition that uses adjacent trimmed edges for creating smoother transitions.  
 - **"Tension" Feature**  
-Introduces a new feature enabling users to adjust the tension of the tangency along surface edges, similar to tools used in Lofting and Bridging workflows. It provides better control over shaping surfaces.   
+Introducing a new feature enabling users to adjust the tension of the tangency along surface edges, similar to tools used in Lofting and Bridging workflows. It provides better control over shaping surfaces.   
 
-For more information, click [here](/solid/xnurbs).
+[Learn more](/solid/xnurbs)
 
 ### CV Move Editing 
 - **Proportional and Mirrored Transformations**  
 Users can now edit surface CVs proportionally and with mirrored transformations.    
 
-For more information, click [here](/common/move#move-control-point).
+[Learn more](/common/move#move-control-point)
 
 ### Raise Degree Command Enhancement
 - The [**Raise Degree**](/solid/raise-surface-degree) command can now be executed when a surface CV is selected.  
@@ -62,7 +62,9 @@ For more information, click [here](/common/move#move-control-point).
 
 ### Curve Rebuild Enhancement  
 - **Weight Option**  
-The Rebuild command now includes a new option **"Weight"** when using explicit control to rebuild a curve. Refer [here](/sketch/rebuild-curve).
+The Rebuild command now includes a new option **"Weight"** when using explicit control to rebuild a curve. 
+
+[Learn more](/sketch/rebuild-curve)
 
 ### Snapping Enhancements  
 - **New Tangent Snapping**  
@@ -70,7 +72,7 @@ Introducing **Tan/Tan** snapping for ellipses and general splines.
 - **New "Control Point" Snap Option**   
 A new **"Control point"** snap is now available in the **"Object Snaps"** subpanel.
 
-For more information, click [here](/plasticity-essentials/snap).
+[Learn more](/plasticity-essentials/snap)
 
 ### Sketching Enhancement
 - **Region Deletion Behavior**  
@@ -87,7 +89,7 @@ Transformation pivots are now saved with objects when using Move, Rotate and Sca
 - **Customizable Transform Options**  
 Users can specify the transform orientation (**Local**, **CPlane**, **World**) and pivot point (**Bounding Box**, **Median**, **Last Selected**), offering greater flexibility in transformations. 
 
-For more information, click [here](/common/move) for Move, [here](/common/move) for Rotate and [here](/common/move) for Scale.
+Learn More: [Move](/common/move)|[Rotate](/common/rotate)|[Scale](/common/scale)
   
 ## 5. Surface Tools
 
@@ -97,16 +99,18 @@ Introducing a new **"Natural"** mode for extending sheets.
 - **Surface Extension**     
 Surface extension modes can now be toggled using the <kbd>Tab</kbd> key.  
 
-For more information, click [here](/solid/extend-sheet).
+[Learn more](/solid/extend-sheet)
 
 ### Construction Plane Enhancement
 Users can now create a construction plane that passes through two selected points and aligns with the camera view. Ideal for planarizing a hull while maintaining alignment with the view direction. 
 
-For more information, click [here](/plasticity-essentials/construction-plane#4-creating-a-construction-plane-from-multiple-points).
+[Learn more](/plasticity-essentials/construction-plane#4-creating-a-construction-plane-from-multiple-points)
 
 ### Bridge Surface
 - **New "Tension" Option**  
-New **"Tension"** option now available for Bridge Surface command. Refer [here](/solid/bridge-surface).
+New **"Tension"** option now available for Bridge Surface command. 
+
+[Learn more](/solid/bridge-surface)
 
 ## 6. Selection Conversion
 
@@ -114,14 +118,14 @@ New **"Tension"** option now available for Bridge Surface command. Refer [here](
 - **New Conversion Options**  
 Selecting a wire body now allows conversion to points (Vertex and Control-Vertex) and vice versa, while regions can be converted into their bounding curves.
 
-For more information, click [here](/plasticity-essentials/selecting-objects#select-from-the-currently-selected-objects) for Selection Conversion.
+[Learn more](/plasticity-essentials/selecting-objects#select-from-the-currently-selected-objects)
 
 ## 7. User Interface and Usability Enhancements
 
 ### New User Interface Design
 Plasticity has been updated with a modern, streamlined UI while retaining key functional elements from previous versions. Features are now better positioned and equipped with intuitive new icons to enhance usability and workflow efficiency. This update also lays the foundation for future UI improvements.  
 
-For more information, click [here](/plasticity-essentials/user-interface-overview).
+[Learn more](/plasticity-essentials/user-interface-overview)
 
 ![Plasticity 2025.1 UI](/img/new-ui.png)
 
@@ -129,15 +133,16 @@ For more information, click [here](/plasticity-essentials/user-interface-overvie
 - **Recent Files** - Drag and drop files/items from the Recent Files list into the viewport for quick import.
 - **Sidebar** - Panels on the right side now function as menus.
 - **Sidebar** - A toggle button has been introduced to show or hide the left and right sidebar.
-- **Viewport Cube** - Repeatedly clicking the cube will flip front/back and left/right, etc.
-- **Suggested Commands Menu** - The "..." menu in the command bar can now be accessed using <kbd>Shift + F</kbd>.
+- **Viewport Cube** - Repeatedly clicking on a face of the viewport cube will toggle between opposite views. 
+- **Suggested Commands Menu** - Now accessible using <kbd>Shift + F</kbd>.
 - **Quick Access to Documentation** - Each command dialog now includes an icon that links directly to its dedicated page on the Plasticity documentation website.
 
 ### Visual and Feedback Enhancements     
-- **Focus Point Orbiting** - Displays a focus point indicator (dot) when orbiting in the viewport.
-- **Progress Indicator** - Opening large files will now show a simple progress indicator.
-- **Tooltips** - Added tooltip images to various command options to showcase their functions. This serves as the groundwork for future improvements and more tooltips implementation. Below is a list of tools and their respective options that now feature tooltips:
+- **Focus Point Orbiting** - A visual dot now indicates the focus point when orbiting in the viewport.
+- **Progress Indicator** - Opening large files will now show a progress indicator.
+- **Tooltips** - Added tooltip images to multiple tools for better feature understanding.
 
+Commands with Tooltips:
 | Tool | Options with Tooltips | 
 | ---- | ------ |
 | [Bridge Surface](/solid/bridge-surface) | Tension and Trim Walls|
@@ -155,12 +160,14 @@ For more information, click [here](/plasticity-essentials/user-interface-overvie
 ### Preferences and Customization   
 - **P-Menu** - Now displays a notification when a new version is available for download. This feature can be disabled in Preferences.
 - **Thumbnails** - Thumbnails can now be saved with files.
-- **Grid Color** - Set the grid color in Preferences.
+- **Grid Color** - Customizable in Preferences.
 - **Start-up** - Added a preference to disable loading the previous session on start-up.
 
 ## 8. Assets Menu
 - **Context Menu**  
-A right-click context menu has been added to the Assets Menu, allowing users to quickly select all objects that share the same material using the "Select All with This Material" option. Refer [here](/plasticity-essentials/assets).
+A right-click context menu has been added to the Assets Menu, allowing users to quickly select all objects that share the same material using the "Select All With This Material" option. 
+
+[Learn more]](/plasticity-essentials/assets).
 
 ## 9. Spacemouse Support
 - **Spacemouse** - Spacemouse buttons can now be bound by editing the keymap.json file. To find the JSON file, locate the `.plasticity` directory on your operating system.
