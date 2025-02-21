@@ -31,18 +31,17 @@ Create Edges on the target Solid or Sheet where it projects onto a tool Curve. O
 - <Kst>Command Dialog</Kst>
      - **Method:**
           - **Normal:** Projects using the standard method.
-          - **Vector:** Projects in the direction specified by **Direction**. **Bidirectional** and **X-Ray** will be enabled.
-     - **Direction:**
-          - **Value 1:** Specify the X component of the vector for the projection direction.
-          - **Value 2:** Specify the Y component of the vector for the projection direction.
-          - **Value 3:** Specify the Z component of the vector for the projection direction.
+          - **Vector:** Projects in a linear direction. **Bidirectional** and **Hide occlusion** will be enabled.
+          ![Imprint Curve Body Method Demonstration](/img/imprint-curve-body-method.png)
      - **Bidirectional:** Performs the projection in both directions.
-     - **X-Ray:** 
-          - **Hide occlusion:** When enabled, does not project onto surfaces behind the object.
+          ![Imprint Curve Body Bidirectional Demonstration](/img/imprint-curve-body-bidirectional.png)
+     - **Hide occlusion:** When enabled, does not project onto surfaces behind the object.
+          ![Imprint Curve Body Hide Occlusion Demonstration](/img/imprint-curve-body-hide-occlusion.png)
      - **Completion:** Specify the extension of the projected Edges.
           - **None:** Does not extend the projected Edges.
           - **Edge:** Extends the projected Edges until they intersect with other Edges.
           - **Boundary:** Extends the projected Edges until they intersect with other Edges and connects them.
+          ![Imprint Curve Body Completion Demonstration](/img/imprint-curve-body-completion.png)
 5. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="imprint-curve-body"/>

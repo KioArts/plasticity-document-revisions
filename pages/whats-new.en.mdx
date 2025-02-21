@@ -4,7 +4,7 @@ import { Tabs } from 'nextra/components'
 
 # Update Information Version 2025.1
 
-Release date: February 15, 2025
+Release date: February 25, 2025
 
 # Plasticity 25.1 Release Notes  
 
@@ -76,6 +76,9 @@ For more information, click [here](/plasticity-essentials/snap).
 - **Region Deletion Behavior**  
 Deleting regions now automatically removes the curves that bound them, making manual cleanup easier and faster.  
 
+### Trimming Optimization
+Trimming operations for densely packed 2D sketches, such as hexagonal grids, have been optimized. 
+
 ## 4. Transformation Tools
 
 ### Transform Command Enhancements
@@ -105,9 +108,6 @@ For more information, click [here](/plasticity-essentials/construction-plane#4-c
 - **New "Tension" Option**  
 New **"Tension"** option now available for Bridge Surface command. Refer [here](/solid/bridge-surface).
 
-### Trimming Optimization
-Trimming operations for densely packed 2D sketches, such as hexagonal grids, have been optimized. 
-
 ## 6. Selection Conversion
 
 ### Selection Conversion Enhancement
@@ -119,13 +119,11 @@ For more information, click [here](/plasticity-essentials/selecting-objects#sele
 ## 7. User Interface and Usability Enhancements
 
 ### New User Interface Design
-- Revamped with a modern and streamlined appearance while retaining functional aspects from earlier versions.
-- Improved feature placement and enhanced usability to optimize workflows.
-- This update lays the groundwork for future UI enhancements.  
-
-![Plasticity 2024.3 UI](/img/new-ui.png)
+Plasticity has been updated with a modern, streamlined UI while retaining key functional elements from previous versions. Features are now better positioned and equipped with intuitive new icons to enhance usability and workflow efficiency. This update also lays the foundation for future UI improvements.  
 
 For more information, click [here](/plasticity-essentials/user-interface-overview).
+
+![Plasticity 2025.1 UI](/img/new-ui.png)
 
 ### Navigation and Interaction Enhancements  
 - **Recent Files** - Drag and drop files/items from the Recent Files list into the viewport for quick import.
@@ -133,6 +131,7 @@ For more information, click [here](/plasticity-essentials/user-interface-overvie
 - **Sidebar** - A toggle button has been introduced to show or hide the left and right sidebar.
 - **Viewport Cube** - Repeatedly clicking the cube will flip front/back and left/right, etc.
 - **Suggested Commands Menu** - The "..." menu in the command bar can now be accessed using <kbd>Shift + F</kbd>.
+- **Quick Access to Documentation** - Each command dialog now includes an icon that links directly to its dedicated page on the Plasticity documentation website.
 
 ### Visual and Feedback Enhancements     
 - **Focus Point Orbiting** - Displays a focus point indicator (dot) when orbiting in the viewport.
@@ -141,17 +140,17 @@ For more information, click [here](/plasticity-essentials/user-interface-overvie
 
 | Tool | Options with Tooltips | 
 | ---- | ------ |
-| Bridge Surface | Tension and Trim Walls|
-| Export OBJ | Max Width, Angle Tolerance and Inflect |
-| Extend Sheet | Shape |
-| Extend Curve | Shape |
-| Fillet | Shape and Y-Blend |
-| Imprint Curve | Method, Bidirectional, Hide Occluded and Complete |
-| Project Curve | Method, Bidirectional and Hide Occluded |
-| Offset | Grow |
-| Sweep | Twist, Scale and Alignment |
-| Square | Boundary |
-| XNurbs | Quad-sided and Boundary |
+| [Bridge Surface](/solid/bridge-surface) | Tension and Trim Walls|
+| [Export OBJ](/plasticity-essentials/export-obg) | Max Width, Angle Tolerance and Inflect |
+| [Extend Sheet](/solid/extend-sheet) | Shape |
+| [Extend Curve](sketch/extend-curve) | Shape |
+| [Fillet](/solid/fillet-shell) | Shape and Y-Blend |
+| [Imprint Curve Body](/solid/imprint-curve-body) | Method, Bidirectional, Hide Occluded and Complete |
+| [Project Curve Body](/sketch/project-curve-body) | Method, Bidirectional and Hide Occluded |
+| [Offset Face](solid/offset-face) | Grow |
+| [Sweep](/solid/sweep) | Twist, Scale and Alignment |
+| [Square](/solid/square) | Boundary |
+| [XNurbs](/solid/xnurbs) | Quad-sided and Boundary |
 
 ### Preferences and Customization   
 - **P-Menu** - Now displays a notification when a new version is available for download. This feature can be disabled in Preferences.

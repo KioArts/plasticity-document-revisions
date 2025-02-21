@@ -31,18 +31,17 @@ Erstellen Sie Kanten am Zielsolid oder Sheet, wo es auf eine Werkzeug-Curve proj
      - <Kst>Befehlsdialog</Kst>
           - **Method:**
                - **Normal:** Projiziert mit der Standardmethode.
-               - **Vector:** Projiziert in die von **Direction** angegebene Richtung. **Bidirectional** und **X-Ray** werden aktiviert.
-          - **Direction:**
-               - **Value 1:** Geben Sie die X-Komponente des Vektors für die Projektionsrichtung an.
-               - **Value 2:** Geben Sie die Y-Komponente des Vektors für die Projektionsrichtung an.
-               - **Value 3:** Geben Sie die Z-Komponente des Vektors für die Projektionsrichtung an.
+               - **Vector:** Projiziert in eine lineare Richtung. **Bidirectional** und **Hide occlusion** werden aktiviert.  
+               ![Imprint Curve Body Method Demonstration](/img/imprint-curve-body-method.png)
           - **Bidirectional:** Führt die Projektion in beide Richtungen durch.
-          - **X-Ray:** 
-               - **Hide occlusion:** Wenn aktiviert, wird nicht auf Oberflächen hinter dem Objekt projiziert.
+               ![Imprint Curve Body Bidirectional Demonstration](/img/imprint-curve-body-bidirectional.png)
+          - **Hide occlusion:** Wenn aktiviert, wird nicht auf Oberflächen hinter dem Objekt projiziert.
+               ![Imprint Curve Body Hide Occlusion Demonstration](/img/imprint-curve-body-hide-occlusion.png)
           - **Completion:** Geben Sie die Erweiterung der projizierten Kanten an.
                - **None:** Erweitert die projizierten Kanten nicht.
                - **Edge:** Erweitert die projizierten Kanten bis sie andere Kanten schneiden.
                - **Boundary:** Erweitert die projizierten Kanten bis sie andere Kanten schneiden und verbindet sie.
+               ![Imprint Curve Body Completion Demonstration](/img/imprint-curve-body-completion.png)
 5. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
 
 <VideoPlayer fileName="imprint-curve-body"/>
