@@ -1,157 +1,180 @@
-import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
 
-# Update-Informationen Version 2024.2
+Veröffentlichungsdatum: 25. Februar 2025
 
-Veröffentlichungsdatum: 5. September 2024
+# Plasticity 25.1 Versionshinweise  
 
-## Neue Befehle 
+Plasticity 25.1 führt eine Vielzahl von Verbesserungen und neuen Funktionen ein, die darauf abzielen, die Arbeitsabläufe im Flächenmodellieren zu optimieren, die Benutzerfreundlichkeit zu erhöhen und die Benutzererfahrung zu verbessern. Unten finden Sie eine detaillierte Übersicht über die Aktualisierungen:  
 
-### Square Command 
-Der Quadrat-Befehl basiert auf XNurbs und ermöglicht die Erstellung verschiedener Oberflächen mit expliziter Kontrolle über UV-Grade und Spannweiten. Dieser Befehl ist nur mit einer Studio-Lizenz verfügbar. Weitere Informationen zum Quadrat-Befehl finden Sie [hier](/solid/square).
+## 1. Neue Befehle
 
-<VideoPlayer fileName="square-0"/>
+### Neuer Verschiebe-Befehl  
+- **CV-Verschieben auf Kurven und Solids**  
+Benutzer können Kontrollpunkte (CVs) auf Spline-Kurven und Flächenhüllen entlang der CV-Richtung verschieben, um präzise Anpassungen beim Modellieren vorzunehmen.
 
-### Deform Command
-Der Deformieren-Befehl ermöglicht das Wickeln von bestehenden Festkörpern und Drahtkörpern auf reguläre und unregelmäßige Oberflächen, sodass komplexe und einzigartige Muster und Wicklungen erstellt werden können. Weitere Informationen zum Deformieren-Befehl finden Sie [hier](/solid/deform-solid-and-sheet)für Festkörper und Blech und [hier](/sketch/deform-curve)für Kurven.
+[Mehr erfahren](/sketch/slide)
 
-<VideoPlayer fileName="deform-solid"/>
-<VideoPlayer fileName="deform-curve"/>
+### Neuer Schnittanalyse-Befehl
+- **Schnittanalyse**  
+Die Schnittanalyse ermöglicht es, ein 3D-Modell zu durchschneiden, um seine innere Struktur sichtbar zu machen. Dies hilft zu überprüfen, ob interne Komponenten richtig ausgerichtet sind oder sich gegenseitig stören. Besonders nützlich für Architektur-, Ingenieur- und Designvisualisierungen.
 
-### Reverse Command 
+[Mehr erfahren](/common/section-analysis)
 
-Mit dem Umkehren-Befehl können Sie die Richtung einer Kurve und die normale Richtung eines Blatts umkehren. Dies ist besonders nützlich für das [Rohr-Werkzeug](/solid/pipe) da Sie die Richtung des Rohrs beim Verwenden der Skalierungsoption umkehren können. Weitere Informationen finden Sie [hier](/sketch/reverse-curve)für das Umkehren von Kurven und [hier](/solid/reverse-sheet) für das Umkehren von Blättern.
+## 2. Modellierungsverbesserungen
 
-<VideoPlayer fileName="reverse-curve"/>
+### Square-Befehl Updates
+- **Neue "Frei"-Option**  
+Führt eine neue Stetigkeitsoption ein, die G0-Präzision gegen höhere Flächenqualität eintauscht.
+- **"Angrenzende" Begrenzungsoption**  
+Neue Begrenzungsbedingung, die angrenzende beschnittene Kanten nutzt, um weichere Übergänge zu erzeugen.
+- **"Spannung"-Funktion**  
+Führt eine neue Funktion ein, mit der Benutzer die Krümmungsspannung der Fläche anpassen können, ähnlich wie bei Lofting- und Bridging-Workflows.
+- **Beschnittene Flächen neu anpassen**  
+Der Square-Befehl kann jede vierseitige beschnittene Fläche mit benutzerdefinierten Grad-, Spann- und Stetigkeitseinstellungen neu aufbauen und so die Splines der beschnittenen Fläche an ihre innere Form anpassen.
 
-## Verbesserte Befehlsfunktionen
+[Mehr erfahren](/solid/square)
 
-### Rebuild Command
+### Xnurbs Verbesserungen
+- **"Angrenzende" Begrenzungsoption**  
+Neue Begrenzungsbedingung für weichere Übergänge bei angrenzenden beschnittenen Kanten.
+- **"Spannung"-Funktion**  
+Neue Funktion zur Anpassung der Flächenkrümmungsspannung, ähnlich wie bei Lofting- und Bridging-Werkzeugen.
 
-Beide Befehle "Rebuild Face" und "Rebuild Curve" haben eine neue Funktion namens **"Explizite Steuerung"**, mit der Sie den Wert der Gradanzahl und die Anzahl der Segmente für die UV-Richtung steuern können. Die **"Explizite Steuerung"** bei "Rebuild Curve" ist sowohl mit der Indie- als auch der Studio-Lizenz verfügbar, während sie bei "Rebuild Face" nur mit der Studio-Lizenz verfügbar ist. Für weitere Informationen zum Rebuild-Befehl klicken Sie [hier](/solid/rebuild). 
+[Mehr erfahren](/solid/xnurbs)
 
-### XNurbs Command
+### CV-Bewegungsbearbeitung  
+- **Proportionale und gespiegelte Transformationen**  
+Der Verschieben-Befehl ermöglicht die proportionale Bearbeitung von Flächen-CVs und unterstützt gespiegelte Transformationen.
 
-Ein neues Ausrichtungs-Feature namens **"Next"** wurde eingeführt, mit dem ein senkrechter UV-Fluss erzeugt wird, wenn die Randbedingungen relativ flach sind. Zudem zeigt XNurbs jetzt Warnmeldungen an, wenn widersprüchliche Eingaben erkannt werden. Weitere Informationen finden Sie [hier](/solid/xnurbs). 
+[Mehr erfahren](/common/move#move-control-point)
 
-### Bridge Vertex and Curve Command
+### Erhöhung des Flächengrads
+- Der [**Grad erhöhen**](/solid/raise-surface-degree)-Befehl kann nun ausgeführt werden, wenn ein Flächen-CV ausgewählt ist.
 
-Ein Kontinuitäts-Gizmo wurde implementiert, um die Interaktivität zu verbessern und eine effizientere Arbeitsweise zu ermöglichen. Weitere Informationen zum Brücken-Befehl finden Sie [hier](/sketch/bridge).   
+### Punkte umschalten Verbesserungen
+- Der [**Punkte umschalten**](/sketch/toggle-points)-Befehl kann nun ausgeführt werden, wenn ein Kurven-CV ausgewählt ist.
 
-### Square Command 
+## 3. Skizzieren und Kurvenwerkzeuge
 
-Der Quadrat-Befehl verfügt nun über eine **"Match-CVs"**-Option, mit der Oberflächen von höherer Qualität erstellt werden können. Weitere Informationen finden Sie [hier](/solid/square).
+### Kurvenrekonstruktion Verbesserung  
+- **Gewicht-Option**  
+Der Rekonstruktionsbefehl enthält nun eine neue Option **"Gewicht"**, wenn die Kurve explizit rekonstruiert wird.
 
-### Rectangular and Radial Array
+[Mehr erfahren](/sketch/rebuild-curve)
 
-Die Befehle für rechteckige und radiale Arrays unterstützen jetzt das Arrayen von Flächen, die Teil eines Körpers sind. Dies ist besonders effektiv beim Arrayen von Fasen. Außerdem verfügen beide Befehle über unterschiedliche Distanzmodi - *Rechteckiges Array* [**Erweitern** und **Abstand**] und *Radiales Array* [**Gesamt** und **Abstand**] - mit denen Sie das Abstandsverhalten von duplizierten Objekten steuern können. Weitere Informationen finden Sie [hier](/common/rectangular-array) für rechteckige Arrays und [hier](/common/radial-array) für radiale Arrays.
+### Fang-Verbesserungen  
+- **Neues Tangenten-Fangen**  
+Führt **Tan/Tan**-Fangen für Ellipsen und allgemeine Splines ein.
+- **Neue "Kontrollpunkt"-Fangoption**  
+Eine neue **"Kontrollpunkt"**-Fangoption ist jetzt im Unterpanel **"Objektfänge"** verfügbar.
 
-### Polygon Command
+[Mehr erfahren](/plasticity-essentials/snap)
 
-Der Polygon-Befehl merkt sich nun die zuletzt verwendete Anzahl der Scheitelpunkte.
+### Skizzieren Verbesserung
+- **Verhalten beim Löschen von Regionen**  
+Beim Löschen von Regionen werden die begrenzenden Kurven nun automatisch entfernt.
 
-### Unwrap Command 
+### Trimmen-Optimierung
+Trimmen-Operationen für dicht gepackte 2D-Skizzen, wie z. B. hexagonale Gitter, wurden optimiert.
 
-Der Entfalten-Befehl erzeugt jetzt ein flaches Blatt der ausgewählten Fläche aus einem Festkörper, das in Verbindung mit dem [Deform Command](/solid/deform) für weitere Modifikationen verwendet werden kann.
+## 4. Transformationswerkzeuge
 
-### Draft Command
+### Transformationsbefehl Verbesserungen
+- **Gespeicherte Transformations-Pivots**  
+Transformations-Pivots werden nun mit Objekten gespeichert, wenn die Befehle Verschieben, Drehen und Skalieren verwendet werden.
+- **Anpassbare Transformationsoptionen**  
+Benutzer können die Transformationsausrichtung (**Lokal**, **CPlane**, **Welt**) und den Drehpunkt (**Begrenzungsbox**, **Median**, **Zuletzt ausgewählt**) festlegen.
 
-Ein neues Gizmo-Feature ermöglicht es, die Position der Referenzfläche zu steuern und die Auswahl mehrerer Flächen mithilfe der <kbd>Strg</kbd>-Taste vorzunehmen. Dies kann auf nicht gleichmäßige ebene Flächen angewendet werden, jedoch ohne die Möglichkeit, die Referenzfläche zu versetzen. Weitere Informationen finden Sie [hier](/solid/draft-face).
+Mehr erfahren: [Verschieben](/common/move), [Drehen](/common/rotate), [Skalieren](/common/scale)
 
-### Patch Command
+## 5. Oberflächenwerkzeuge
 
-Mit dem Patch-Befehl können nun Blätter aus einer geschlossenen Kantenauswahl eines Festkörpers erstellt werden. Weitere Informationen finden Sie [hier](/solid/patch).
+### Blechverlängerung Verbesserungen
+- **Neuer "Natürlich"-Modus**  
+Einführung eines neuen **"Natürlich"**-Modus für das Verlängern von Blechen.
+- **Flächenverlängerung**  
+Flächenverlängerungsmodi können nun mit der <kbd>Tab</kbd>-Taste umgeschaltet werden.
 
-## Entfernte Befehle
+[Mehr erfahren](/solid/extend-sheet)
 
-### Rebuild Edge Command 
+### Konstruktions-Ebenen Verbesserung
+Benutzer können nun eine Konstruktionsebene erstellen, die durch zwei ausgewählte Punkte verläuft und sich an der Kameraperspektive ausrichtet.
 
-Er wurde aufgrund unsicherer Implementierung entfernt und durch den Löschbefehl für Kanten ersetzt. Diese Strategie soll das Verbinden von mehr gebrochenen Kanten ermöglichen.
+[Mehr erfahren](/plasticity-essentials/construction-plane#4-creating-a-construction-plane-from-multiple-points)
 
-## Outliner  
+### Brückenfläche
+- **Neue "Spannung"-Option**  
+Neue **"Spannung"**-Option für den Brückenflächenbefehl.
 
-1. **Konstruktions-Ebenen** - Konstruktions-Ebenen können jetzt im Outliner umbenannt werden, was eine bessere Organisation und Verwaltung ermöglicht. Diese Verbesserung eliminiert unnötige Schritte bei der Suche nach der richtigen Konstruktions-Ebene und optimiert die Auswahl und den Arbeitsablauf. Weitere Informationen zu Konstruktions-Ebenen finden Sie [hier](/plasticity-essentials/construction-plane).
-2. **Netze und Bilder** - Der Outliner trennt jetzt Netze und Bilder in eigene Abschnitte anstatt in "Leere".
-3. **Kontextmenü für ausgewählte Elemente im Outliner** - Das Kontextmenü im Outliner verfügt bei einem Rechtsklick jetzt über eine neue Funktion "Ausgewählte Elemente an die Wurzel verschieben", wenn Sie Elemente in einer Gruppe ausgewählt haben.
-4. **Kontextmenü für Gruppen** - Das Kontextmenü im Outliner bietet nun eine neue Gruppenfunktion "Gruppierung hier" und "Gruppierung an der Wurzel".
-5. **Gruppieren von Elementen** - Wenn sich alle Elemente in derselben Gruppe befinden, wird die neue Gruppe im gleichen Verzeichnis erstellt, andernfalls im Stammverzeichnis.
-6. **Gruppenhierarchie** - Beim Löschen einer Gruppe werden deren untergeordnete Elemente in die übergeordnete Gruppe verschoben, nicht in das Stammverzeichnis.
-5. **Materialzuweisung** - Transparente Materialien werden jetzt mit 50 % Transparenz angezeigt, selbst bei Verwendung von Standard- und benutzerdefinierten [matcaps](/plasticity-essentials/view-mode) im Nicht-Render-Modus.
+[Mehr erfahren](/solid/bridge-surface)
 
-## Verbesserungen bei Dateiformaten
+## 6. Auswahlkonvertierung
 
-### OBJ
+### Auswahlkonvertierung Verbesserung
+- **Neue Konvertierungsoptionen**  
+Auswahl eines Drahtkörpers ermöglicht nun die Konvertierung in Punkte (Vertex und Kontroll-Vertex) und umgekehrt.
 
-1. Das Exportieren von OBJ-Dateien mit UVs und einer MTL-Datei ist jetzt in Plasticity möglich.
+[Mehr erfahren](/plasticity-essentials/selecting-objects#select-from-the-currently-selected-objects)
 
-### STEP
+## 7. Benutzeroberfläche und Verbesserungen der Benutzerfreundlichkeit
 
-1. Der Export von STEP-Dateien in Plasticity mit Farben und Baugruppeninformationen wie Gruppen ist jetzt möglich.
-2. Beim Import von STEP-Dateien in Plasticity bleiben die Farben erhalten.
+### Neues Benutzeroberflächendesign
+Plasticity wurde mit einer modernen, optimierten Benutzeroberfläche aktualisiert, wobei zentrale Funktionselemente aus früheren Versionen erhalten blieben. Funktionen sind jetzt besser positioniert und mit intuitiven neuen Symbolen ausgestattet, um die Benutzerfreundlichkeit und den Workflow zu verbessern. Dieses Update legt außerdem die Grundlage für zukünftige UI-Verbesserungen.  
 
-### Netze und Bilder
+[Mehr erfahren](/plasticity-essentials/user-interface-overview)
 
-Das Snapping an Netze und Bilder ist jetzt in Plasticity möglich. 
+![Plasticity 2025.1 UI](/img/new-ui.png)
 
-   | Typ                | Snap-Ziel | Tipp-Hilfe |
-   | ------------------- | ----------- | -------- |
-   | Mesh (OBJ, STL, FBX, 3MF)| Scheitelpunkt/Fläche | Scheitelpunkt/Fläche|
-   | Bild (.PNG, .JPG, .JPEG)| Ecke | Ecke |  
+### Verbesserungen bei Navigation und Interaktion  
+- **Letzte Dateien** – Ziehen und Ablegen von Dateien/Elementen aus der Liste der zuletzt verwendeten Dateien in den Ansichtsbereich für einen schnellen Import.
+- **Seitenleiste** – Die Bedienfelder auf der rechten Seite funktionieren jetzt als Menüs.
+- **Seitenleiste** – Eine neue Umschalttaste wurde eingeführt, um die linke und rechte Seitenleiste ein- oder auszublenden.
+- **Ansichtswürfel** – Durch wiederholtes Klicken auf eine Fläche des Ansichtswürfels wird zwischen den gegenüberliegenden Ansichten umgeschaltet.
+- **Menü für vorgeschlagene Befehle** – Jetzt mit <kbd>Shift + F</kbd> zugänglich.
+- **Schnellzugriff auf die Dokumentation** – Jeder Befehlsdialog enthält jetzt ein Symbol, das direkt zur entsprechenden Seite in der Plasticity-Dokumentation verlinkt.
 
-### Plasticity-Dateien(.plasticity)
+### Verbesserungen bei Visualisierung und Rückmeldungen     
+- **Fokuspunkt beim Umkreisen** – Ein visueller Punkt zeigt jetzt den Fokuspunkt an, wenn im Ansichtsbereich umkreist wird.
+- **Fortschrittsanzeige** – Beim Öffnen großer Dateien wird nun eine Fortschrittsanzeige angezeigt.
+- **Tooltips** – Zu mehreren Werkzeugen wurden Tooltip-Bilder hinzugefügt, um Funktionen besser verständlich zu machen.
 
-Beim Importieren und Anhängen von Plasticity-Dokumenten bleiben Gruppen, Namen und Materialien erhalten.
+Befehle mit Tooltips:
+| Werkzeug | Optionen mit Tooltips | 
+| ---- | ------ |
+| [Fläche überbrücken](/solid/bridge-surface) | Spannung und Wände trimmen |
+| [OBJ exportieren](/plasticity-essentials/export-obg) | Maximale Breite, Winkel-Toleranz und Inflekt |
+| [Fläche erweitern](/solid/extend-sheet) | Form |
+| [Kurve erweitern](sketch/extend-curve) | Form |
+| [Abrunden](/solid/fillet-shell) | Form und Y-Blend |
+| [Kurve auf Körper prägen](/solid/imprint-curve-body) | Methode, Bidirektional, Verdeckte ausblenden und Komplett |
+| [Kurve auf Körper projizieren](/sketch/project-curve-body) | Methode, Bidirektional und Verdeckte ausblenden |
+| [Fläche versetzen](solid/offset-face) | Wachstum |
+| [Sweep](/solid/sweep) | Drehung, Skalierung und Ausrichtung |
+| [Quadrat](/solid/square) | Begrenzung |
+| [XNurbs](/solid/xnurbs) | Vierseitig und Begrenzung |
 
-### Parasolid (.*x_t/x_b)
+## 8. Assets-Menü
+- **Kontextmenü**  
+Ein Rechtsklick-Kontextmenü wurde dem Assets-Menü hinzugefügt.
 
-Das Importieren von Parasolid-Dateien in Plasticity unterstützt jetzt Farben, Namen und Baugruppen, jedoch noch keine Instanzen. 
+[Mehr erfahren](/plasticity-essentials/assets)
 
-### Neue unterstützte Formate
+## 9. Spacemouse-Unterstützung
+- **Spacemouse** - Tasten der Spacemouse können durch Bearbeiten der `keymap.json`-Datei zugewiesen werden.
 
-1. Der Import und Export von 3MF wird unterstützt.
-2. Der Import von SVG wird unterstützt.
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigiere zu `C:/Users/<username>/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigiere zu `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigiere zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
 
-Eine vollständige Liste der unterstützten Import- und Exportformate in Plasticity finden Sie [hier](/plasticity-essentials/import-export).
-
-## Kleinere Änderungen
-
-1. **Offset-Kanten-Gizmo** - Neuer Offset-Kanten-Gizmo, der dem beidseitigen Fasen-Gizmo ähnelt.
-2. **Kopieren und Einfügen** - Der Befehl zum Kopieren und Einfügen übernimmt jetzt Material und Name. 
-3. **Alternative-Duplikat** - Der Alternative-Duplikat-Befehl für Flächen übernimmt jetzt Name und Material.
-4. **Textwerkzeug** - Das Textwerkzeug wurde um einige zusätzliche Schriftarten erweitert.
-5. **Touchpad** - Das Touchpad kann jetzt mit dem Orbit-Punkt des Cursor-Tracks verwendet werden.
-6. **Automatische Speicheroption** - Neue Option zum automatischen Speichern ermöglicht das Speichern der aktuellen Datei alle X Minuten, die in den Einstellungen konfiguriert werden kann.
-7. **Inkrementelles Einrasten** - Wenn *Rastereinrasten* aktiviert ist, werden die X (Rot), Y (Grün) und Z (Blau) Pfeile in den Inkrementeinheiten entlang ihrer jeweiligen Achsen eingerastet, während der weiße Kreis mit seinem aktuellen Mittelpunkt (standardmäßig das Zentrum) auf ein absolutes Rasterinkrement einrastet, anstatt das Objekt um ein Inkrement zu verschieben. Für weitere Informationen zu Raster und Einrasten klicken Sie [hier](/plasticity-essentials/grid-and-snap).
-8. **Mittelflächen-Konstruktion** - Erstellen Sie eine Mittelflächen-Konstruktionsfläche basierend auf der durchschnittlichen Position von mindestens 2 parallel gegenüberliegenden Flächen und Bereichen. Für weitere Informationen zu Konstruktionsflächen klicken Sie [hier](/plasticity-essentials/construction-plane).
-
-### Gruppenbefehl 
-
-Der Gruppenbefehl verfügt nun über ein neues Verhalten, bei dem Elemente unter derselben Elterngruppe automatisch zusammen gruppiert werden. Außerdem werden beim Löschen einer Gruppe in derselben Hierarchie die untergeordneten Elemente in die Elterngruppe verschoben.
-
-### Messungen und Messpanel
-
- 1. **Messungsverbesserung** - Messungen können jetzt im Outliner ausgewählt und zusammen mit dem Verschiebebefehl verwendet werden, um spezifische Werte direkt im Ansichtsfenster einzugeben und präzisere Anpassungen vorzunehmen.
- 2. **Messungsverbesserung** - Messungen können in den bevorzugten Einheiten des Benutzers in die Zwischenablage kopiert werden.
- 3. **Messpanel** - Das Messpanel zeigt nun den Winkel zwischen zwei Ebenen an.
- 4. **Oberflächenklasse** - Das untere rechte Panel im Messpanel führt nun die Oberflächenklasse ein, die eine spezifische Auswahl von Flächen ermöglicht.
-
-### Snaps 
-
-New Snap types in the following: 
-
-   | Typ              | Snap-Ziel | Tipp-Hilfe |
-   | ------------------- | ----------- | -------- |
-   | Regular Polygon     | Closed polygon center point| Center point|
-   | Image (.PNG, .JPG, .JPEG)| Corner                | Corner | 
-   | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face          | Vertex/Face |
-   | Measurements             | Measurement Point    | Measurement |
-   | Freestyle Rotate         | Parallel/Perpendicular | Parallel/Perpendicular | 
-
-## Download und Installation
-
-Plasticity 2024.2 ist jetzt zum Download verfügbar. Weitere Details finden Sie [hier](/getting-started/download-and-install).
-
-## Frühere Update-Informationen
-
-- 5 März 2024 [Version 2024.1](/release-notes/whats-new-2024.1)
+## Frühere Updates
+- 5. September 2024 [Version 2024.2](/release-notes/whats-new-2024.2)
