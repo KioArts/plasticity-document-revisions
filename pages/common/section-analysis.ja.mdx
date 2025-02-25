@@ -1,0 +1,40 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Section Analysis
+
+<Reference shortcut="" command="Section Analysis" button="Top Right Menu" buttonIcon='button-section-analysis' />
+
+3Dモデルに仮想スライスを作成し、内部構造を分析できます。この機能は、モデルの一部を定義された平面に沿って一時的に削除し、ジオメトリを永久に変更せずにクリエイティブおよび技術的な視覚化に役立ちます。 
+
+## 基本的な使い方
+
+1. オブジェクトの面を選択して、セクションプレーンを定義します。
+2. <ButtonIcon type="button-section-analysis"/> ボタンをクリックするか、コマンドパレットに *Section Analysis* と入力します。
+3. コマンドダイアログおよびキーボードショートカットで設定を調整します。
+    - <Kst>コマンドダイアログ</Kst>
+        - **Plane:** セクションプレーンの設定方法を選択します。
+            - **Selection:** 選択したオブジェクトの面をセクションプレーンとして使用。
+            - **Previous:**  以前に配置したセクションプレーンを復元。
+            - **CPlane:** アクティブな作業平面に合わせてセクションプレーンを設定。
+        - **Distance:** セクションプレーンの位置を調整。
+        - **Flip:** セクションプレーンの方向を反転。
+    - <Kst>キーボードショートカット</Kst>
+      - <kbd>D</kbd> **Distance:** セクションプレーンを移動。
+      - <kbd>F</kbd> **Flip:** セクションプレーンの方向を反転。
+5. コマンドダイアログの OK をクリックするか、右クリックで確定します。
+
+<VideoPlayer fileName="section-analysis"/>
+
+<Callout type="info" emoji="🗒️">
+**Note** 
+- コマンドダイアログで確定すると、オブジェクトの仮想スライスが表示されます。プレビューを削除するには、<ButtonIcon type="button-section-analysis"/> ボタンをクリックするか、コマンドパレットに *Section Analysis* と入力してください。
+- セクションプレーンの初期配置は保存されます。元に戻したい場合は、コマンドダイアログで **Previous** オプションを選択してください。
+- セクション分析では、干渉しているオブジェクトを赤く表示できます
+</Callout>
+
+## 関連項目
+- [Construction Plane](/plasticity-essentials/construction-plane)

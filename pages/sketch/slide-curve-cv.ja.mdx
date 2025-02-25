@@ -1,0 +1,37 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Slide Curve CVs
+
+<Reference shortcut="Shift + G" command="Slide" button="" />
+
+スプライン曲線によって定義されたコントロールケージの接線方向に沿って、コントロール頂点（CV）をスライドさせます。
+
+## 基本的な使い方
+
+1. スライドさせたいCVを選択します。  
+2. <kbd>Shift + G</kbd> を押してスライドコマンドを有効にします。  
+3. コマンドダイアログとキーボードショートカットでオプションを設定します。  
+   - <Kst>コマンドダイアログ</Kst>  
+      - **距離:** 移動するCVの距離を指定します。  
+   - <Kst>キーボードショートカット</Kst>  
+      - <kbd>Ctrl + Z</kbd> **Undo:** 最後のコマンド実行を取り消し、元の状態に戻します。  
+      - <kbd>U</kbd> **Positive U:** U方向の正の向きにスライドします。  
+      - <kbd>Shift + U</kbd> **Negative U:** U方向の負の向きにスライドします。  
+      - <kbd>N</kbd> **Normal:** 法線方向にスライドします。  
+3. 特定の方向制御を持つギズモハンドルが表示されます。これを使用してCVを移動し、位置を正確に調整できます。  
+4. コマンドダイアログのOKを押すか、右クリックで確定します。  
+
+<VideoPlayer fileName="slide-curve"/>
+
+<Callout type="info" emoji="💡">
+**ヒント**   
+- スライドコマンドには、<kbd>Ctrl</kbd> を押し続けることでプレビューとアクティブモードを切り替えるトグル機能があります。これにより、コマンド適用前後の結果を比較できます。
+- スプラインカーブのみ操作可能で、通常の直線は編集できません。  
+</Callout>
+
+## 関連項目
+- [コントロールポイントを移動](/common/move#move-control-point)

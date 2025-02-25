@@ -1,12 +1,13 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Square 
 
 <Reference shortcut="" command="Square" button="" />
 
-Square is an XNurbs based command that can create high-quality quad sided surfaces with the parametric feature of explicit control for UV degrees and spans. This command is only available on Studio License. 
+Square is an XNurbs-based command designed to generate high-quality, quad-sided surfaces. It offers precise parametric control over UV degrees and spans, ensuring optimal surface definition. This command is exclusively available with the Studio License.
 
 ## Basic Usage
 
@@ -14,20 +15,53 @@ Square is an XNurbs based command that can create high-quality quad sided surfac
 2. Type **Square** in the Command Palette.
 3. Set the options in the Command Dialog.
    - <Kst>Command Dialog</Kst>
-   - **Continuity:** **G0, G1, G2**
-   - **Flatness:** Similarly to XNurbs, this option affects the flatness and quality of generated surfaces. Specifying higher value will generate high quality surfaces and lower value will generate low quality surfaces. 
+   - **Continuity:** **Free, G0, G1, G2**
+      - **Free:** Ignores boundary continuity for improved surface quality, ideal for creating preliminary surfaces that will be refined later.
+      - **G0, G1, G2:** Specify the [continuity of the Surface](/cad-essentials/continuity-curve-and-surface).
+   - **Flatness:** Similarly to XNurbs, this option affects the flatness and quality of generated surfaces. Specifying higher value will generate high quality surfaces and lower value will generate low quality surfaces.
+   - **Tension:** Adjust the curvature transition of a surface.
    - **Degree:** Specify the UV degree value.
    - **Spans:** Specify the UV spans value.
    - **Boundary condition:** Specify the condition of UV flow.
         - **Natural:** No requirement for UV Flow.
         - **Normal:** Maintain UV isocurve mutually perpendicular.
         - **Next:** Generate a perpendicular flow of UV if boundary conditions are relatively flat.
-   - **Match CVs:** Match CVs of boundary edges.
-   - **Weight:** Specify and match the input constraints for curves and edges of a solid body. A lower value will ignore these constraints, leading to unwanted UV flow connection and a higher value will respect the constraints and produce the desired UV flow connection based on the given **Degree** and **Span** values.
-   - **Scale:** The Scale option allows you to control size of the red lines that appear on the boundary edges. These lines represent the Edge Deviation Plot, which indicates the distance between the boundary edge of the created surface and input you are inserting it.
+        - **Adjacent:** Align V isocurves of the generated surface to adjacent curves. 
+   - **Weight:** Specify and control how strictly the input constraints for curves and edges of a solid body are applied. A lower value loosens these constraints, allowing for better surface quality and improved reflections. A higher value enforces these constraints, ensuring the UV flow aligns with the given *Degree* and *Span* values to produce the desired surface accuracy.
+   - **Scale:** This option allows you to control the size of the red lines that appear on the boundary edges, representing the **"Edge Deviation Plot"**. These lines indicate the distance between the boundary edge of the created surface and the input surface. The color red signifies a deviation greater than 0.01mm (1e-5m), highlighting areas where the surface does not precisely match the input geometry.
 4. Confirm with OK in the Command Dialog or right-click.
 
-<VideoPlayer fileName="square-0"/>
+<VideoPlayer fileName="square"/>
+
+<Callout type="info" emoji="ℹ️">
+**Lofting with Square**    
+Alternatively, the Square command can serve as a lofting approach by selecting two non-touching edges. This method provides greater flexibility and control over surface generation, allowing you to specify parameters such as degree and span values, boundary conditions (if needed), flatness and weight influence. In contrast, using a standard loft results in a fixed surface with limited control options.
+</Callout>
+<VideoPlayer fileName="square-1"/>
+
+<Callout type="info" emoji="ℹ️">
+**Sweeping with Square**     
+Similar to the Sweep command, the Square command can generate comparable results but offers greater flexibility and control over the resulting surfaces. This result can be achieved by selecting two or three touching edges.
+</Callout>
+<VideoPlayer fileName="square-2"/>
+
+<Callout type="info" emoji="ℹ️">
+**Patching with Square**   
+The Square command can fill holes in a surface with quad-sided boundary edges, similar to the Patch command.   
+</Callout>
+<VideoPlayer fileName="square-3"/>
+
+<Callout type="info" emoji="💡">
+**Tip**     
+Similar in XNurbs, you can execute the command in advance and begin selecting boundary edges, curves and surfaces. This speeds up the workflow efficiently and provides a live preview of surface generation. 
+</Callout>
+<VideoPlayer fileName="square-4"/>
+
+<Callout type="info" emoji="💡">
+**Tip**     
+The Square command allows you to selectively refit trimmed surfaces on a face and its adjacent surfaces, aligning the orientation of splines to match the natural flow of the surface. This feature differs significantly from the Rebuild command, which focuses on rebuilding a surface without aligning spline orientation.  
+</Callout>
+<VideoPlayer fileName="square-5"/>
 
 ## See also
 - [XNurbs](xnurbs)

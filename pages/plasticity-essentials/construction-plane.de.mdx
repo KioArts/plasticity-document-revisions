@@ -66,10 +66,13 @@ Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie stattdessen <kbd>Shif
 
 Sie können eine Konstruktionsebene basierend auf drei oder mehr Punkten erstellen.
 
-1. Wählen Sie mindestens drei Punkte aus, die Sie als Konstruktionsebene verwenden möchten.
+1. Wählen Sie mindestens zwei Punkte aus, die Sie als Konstruktionsfläche verwenden möchten.
 2. Drücken Sie <kbd>Leertaste</kbd>.
-3. Wenn Sie drei Punkte ausgewählt haben, wird eine Konstruktionsebene an der genauen Position erstellt. Wenn Sie vier oder mehr Punkte ausgewählt haben, wird die Ebene an ihrer durchschnittlichen Position erstellt.
-4. Ihre Ansicht wird mit der erstellten Konstruktionsebene ausgerichtet.
+3. **Wenn Sie zwei Punkte auswählen**, wird eine Konstruktionsfläche (CPlane) erstellt, die durch die beiden Punkte verläuft und parallel zur Kamera bleibt. Dies ist besonders nützlich, um eine Oberfläche oder einen Rumpf an die aktuelle Blickrichtung auszurichten.
+4. **Wenn Sie drei Punkte auswählen**, wird die Konstruktionsfläche genau an dieser Position erstellt.  
+   **Wenn Sie vier oder mehr Punkte auswählen**, wird die Fläche an deren gemittelter Position erstellt.
+5. Ihre Ansicht richtet sich automatisch an der erstellten Konstruktionsfläche aus.
+
 
 <VideoPlayer fileName="construction-plane-3"/>
 
@@ -103,8 +106,12 @@ Sie können Ihre erstellten Konstruktionsebenen für eine spätere Verwendung sp
 
 #### 6.1 Speichern von Konstruktionsebenen
 
-1. Klicken Sie oben auf dem Bildschirm auf **Temporary construction plane**.
-2. **Custom plane 0** wird auf der rechten Seite des Bildschirms hinzugefügt.
+1. Klicken Sie oben auf dem Bildschirm auf **Temporary construction plane**.  
+2. **Custom plane 0** wird dem Outliner hinzugefügt und unter „Planes“ klassifiziert sowie im Menü „Added Planes“ auf der rechten Seite des Bildschirms angezeigt.  
+
+![Outliner Planes](/img/construction-plane-saved.png)  
+   
+![Added Planes](/img/construction-plane-menu.png)  
 
 #### 6.2 Verwenden von gespeicherten Konstruktionsebenen
 

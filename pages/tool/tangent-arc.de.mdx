@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Tangent Arc
 
@@ -22,6 +23,10 @@ Sie können einen Bogen erstellen, der tangential zu einer Kurve verläuft.
 6. Der Bogen wird erstellt.
 
 <VideoPlayer fileName="tangent-arc"/>
+
+<Callout type="info" emoji="💡">
+**Tipp** Der Tangentenbogen-Algorithmus ist empfindlich bei der Erkennung von Tangentenpunkten auf Kurven. Bewegen Sie den Cursor vorsichtig in die Nähe des gewünschten Punktes, ohne ihn zu überschreiten, da das Überschreiten verhindern kann, dass der Tangentenpunkt angezeigt wird.  
+</Callout>
 
 - [Center Cirvle](center-circle)
 - [Two-Point Circle](two-point-circle)

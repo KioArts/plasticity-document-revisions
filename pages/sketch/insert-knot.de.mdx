@@ -1,0 +1,28 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+
+# Knoten Einfügen
+
+<Reference shortcut="" command="Knoten Einfügen" button="Werkzeugleiste" buttonIcon='button-split-segment' />
+
+Fügt einen Kontrollpunkt (Control-Vertex) in eine Spline-Kurve ein.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-split-segment" /> in der Werkzeugleiste.
+2. Klicken Sie auf den Punkt, an dem Sie einen Kontrollpunkt einfügen möchten.
+3. Ein Kontrollpunkt wird eingefügt, wodurch ein zusätzlicher Punkt zur Spline-Kurve hinzugefügt wird.
+
+<VideoPlayer fileName="insert-knot"/>
+
+<Callout type="info" emoji="🗒️">
+**Hinweis** Das Einfügen eines Kontrollpunktes erfordert, dass die Kurve eine Spline ist; andernfalls hat es bei einer normalen segmentierten Kurve keine Wirkung.
+</Callout>
+
+## Siehe auch
+- [Segment Trennen](split-segment)
+- [Kurve Schneiden](cut-curve)
+- [Trennen](unjoin)
+- [Trimmen](trim)

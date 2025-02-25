@@ -1,9 +1,23 @@
-# コマンドバー
-- コマンドバーはスクリーンの下部にあります。
-![Command Bar](/img/command-bar.png)
-<div class="dl">
-- 左側: 
-   - 移動や回転など使用頻度の高いコマンドが並んでいます。
-- 右側:
-   - 選択したオブジェクトに応じて表示されるコマンドが変わります。
-</div>
+import ButtonIcon from '/components/ButtonIcon'
+
+## コマンドバー
+
+![コマンドバー](/img/command-bar.png)
+- コマンドバーは画面の下部にあり、よく使用するコマンドを含んでいます:
+
+| コマンド                      | ショートカット    |
+| ----------------------------- | ---------------- |
+| [コマンドを検索](/plasticity-essentials/command-palette) | <kbd>F</kbd>    |
+| [移動](/common/move)            | <kbd>G</kbd>    |
+| [回転](/common/rotate)          | <kbd>R</kbd>    |
+| [スケール](/common/scale)        | <kbd>S</kbd>    |
+| [オブジェクトを複製](/common/duplicate) | <kbd>Shift + D</kbd> |
+| [ブール演算](/solid/boolean)     | <kbd>Q</kbd>    |
+| [長方形配列](/common/rectangular-array) | -            |
+| [放射状配列](/common/radial-array) | -            |
+| [提案されたコマンド](/plasticity-essentials/command-bar#suggested-commands)             | <kbd>Shift + F</kbd> |
+
+## 提案されたコマンド
+- コマンドバーには、選択したオブジェクト（ソリッド、シート、カーブ、リージョン、またはポイント）に基づいてコマンドやツールを強調表示する**提案されたコマンド**ウィンドウが含まれています。ウィンドウを展開するには、<ButtonIcon type="button-suggested-commands-dots"/> ボタンをクリックするか、<kbd>Shift + F</kbd> を押してください。
+
+![提案されたコマンド](/img/suggested-commands.png)

@@ -38,9 +38,9 @@ const config: DocsThemeConfig = {
         autoCollapse: true,
     },
     docsRepositoryBase:
-        "https://github.com/shinjiesk/plasticity-unofficial-document",
+        "https://github.com/KioArts/plasticity-document-revisions",
     project: {
-        link: "https://github.com/shinjiesk/plasticity-unofficial-document",
+        link: "https://github.com/KioArts/plasticity-document-revisions",
     },
     editLink: {
         text: <></>,
@@ -82,10 +82,10 @@ const config: DocsThemeConfig = {
         );
     },
     /*     banner: {
-        key: "1.3-release",
+        key: "2024.2-release",
         text: (
             <a href="/whats-new">
-                🎉 Plasticity 1.3 is released → Click here for details
+                🎉 Plasticity 2024.2 is released → Click here for details
             </a>
         ),
     }, */

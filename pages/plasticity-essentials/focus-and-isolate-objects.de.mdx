@@ -2,54 +2,63 @@ import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
 import ButtonIcon from '/components/ButtonIcon'
 
-# Fokusieren und Isolieren von Objekten
+## Objekte fokussieren und isolieren
 
-## Focus Objects
+### Objekte fokussieren
 
 Dieser Befehl vergrößert das ausgewählte Objekt, sodass es den gesamten Ansichtsbereich ausfüllt.
 
-<Reference shortcut="/ (Slash)" command="Viewport: Focus" button="" />
+<Reference shortcut="/ (Schrägstrich)" command="Viewport: Focus" button="" />
 
-##### Anwendung
+##### Verwendung
 
-1. Wählen Sie die Objekte aus, auf die Sie sich konzentrieren möchten.
+1. Wählen Sie die Objekte aus, auf die Sie fokussieren möchten.
 2. Drücken Sie <kbd>/</kbd>, um den Befehl auszuführen.
-3. Alternativ können Sie auf die Schaltfläche <ButtonIcon type="button-focus" /> klicken, die sich unter dem Gliederung befindet.
-4. Die ausgewählten Objekte werden vergrößert, um den gesamten Ansichtsbereich auszufüllen.
+3. Die ausgewählten Objekte werden vergrößert und füllen den gesamten Ansichtsbereich.
 
-## Isolate Objects
+### Objekte isolieren
 
-Mit diesem Befehl können Sie sich auf das ausgewählte Objekt konzentrieren, indem es ausschließlich auf dem Bildschirm angezeigt wird und alle anderen Objekte vorübergehend ausgeblendet werden. Dieser Befehl unterstützt auch hierarchisches Isolieren.
+Dieser Befehl fokussiert das ausgewählte Objekt, indem es es exklusiv auf dem Bildschirm anzeigt und alle anderen Objekte vorübergehend ausblendet. Dieser Befehl unterstützt auch hierarchische Isolierung.
 
-<Reference shortcut=". (Period)" command="Isolate" button="" />
+<Reference shortcut=". (Punkt)" command="Isolate" button="" />
 
-##### Anwendung
+##### Verwendung
 
-1. Wählen Sie die Objekte aus, auf die Sie sich konzentrieren möchten.
-2. Drücken Sie <kbd>.</kbd>, um den Befehl auszuführen.
+1. Wählen Sie die Objekte aus, auf die Sie fokussieren möchten.
+2. Öffnen Sie die Befehlsleiste und geben Sie „Isolate“ ein oder drücken Sie <kbd>.</kbd>, um den Befehl auszuführen.
 3. Nur die ausgewählten Objekte werden auf dem Bildschirm angezeigt.
 
-##### Hierarchisches Isolieren
+##### Hierarchische Isolierung
 
-1. Nachdem Sie den Befehl Isolieren ausgeführt haben, können Sie zusätzliche Objekte auswählen, auf die Sie sich konzentrieren möchten.
-2. Führen Sie den Befehl Isolieren erneut aus, und die Anzeige wird nur auf die neu ausgewählten Objekte beschränkt.
-3. Sie können diesen Vorgang durch mehrere Isolierungsebenen wiederholen.
+1. Nach der Ausführung des Isolate-Befehls können Sie zusätzliche Objekte auswählen, auf die Sie fokussieren möchten.
+2. Führen Sie den Isolate-Befehl erneut aus, und der Bildschirm wird auf die neu ausgewählten Objekte eingegrenzt.
+3. Dieser Prozess kann wiederholt werden, um mehrere Isolationsschichten zu erstellen.
 
-##### Anzeige und Anzahl der Ebenen
+##### Anzeige und Schichtenzähler
 
-Ein Indikator am oberen Bildschirmrand zeigt an, dass der Isoliermodus aktiv ist. Eine Zahl neben dem Indikator zeigt, wie viele Isolierungsebenen angewendet wurden. Wenn beispielsweise "2 isoliert" angezeigt wird, bedeutet dies, dass Sie sich in der zweiten Isolierungsebene befinden.
+Ein Indikator oben auf dem Bildschirm zeigt an, dass der Isoliermodus aktiv ist. Eine Zahl neben dem Indikator zeigt an, wie viele Isolationsschichten angewendet wurden. Wenn beispielsweise „2 Isolated“ angezeigt wird, bedeutet dies, dass Sie sich in der zweiten Schicht der Isolierung befinden.
 
-<br/>
-<VideoPlayer fileName="isolate"/>
+### Objekte entisolieren
 
-## Center Objects
+Dieser Befehl zeigt alle zuvor isolierten Objekte im Ansichtsbereich an. Es wird nicht zur vorherigen hierarchischen Isolierungsschicht zurückgekehrt, sodass alle Objekte sichtbar werden.
 
-Mit diesem Befehl wird ein bestimmtes Objekt in der Mitte des Bildschirms zentriert.
+<Reference shortcut="Alt + . (Punkt)" command="Unisolate" button="" />
 
-<Reference shortcut="Leertaste" command="Viewport: Navigate To selection" button="" />
+##### Verwendung
 
-##### Anwendung
+1. Öffnen Sie die Befehlsleiste und geben Sie „Unisolate“ ein oder drücken Sie <kbd>Alt + .</kbd>, um den Befehl auszuführen.
+2. Nach der Ausführung des Unisolate-Befehls können Sie alle sichtbaren Objekte im Ansichtsbereich sehen.
+
+<VideoPlayer fileName="isolate-unisolate"/>
+
+### Objekte zentrieren
+
+Dieser Befehl zentriert ein bestimmtes Objekt in der Mitte des Bildschirms.
+
+<Reference shortcut="Space" command="Viewport: navigate to selection" button="" />
+
+##### Verwendung
 
 1. Wählen Sie das Objekt aus, das Sie zentrieren möchten.
-2. Drücken Sie <kbd>Leertaste</kbd>, um den Befehl auszuführen.
+2. Drücken Sie <kbd>Space</kbd>, um den Befehl auszuführen.
 3. Das ausgewählte Objekt wird in der Mitte des Bildschirms angezeigt.

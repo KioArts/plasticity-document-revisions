@@ -1,29 +1,43 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
+import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
 # Move
 
-<Reference shortcut="G" command="Move" button="Left of Command Bar"  buttonIcon='button-move'/>
+<Reference shortcut="G" command="Move" button="In Command Bar"  buttonIcon='button-move'/>
 
 Move objects using Move Gizmo. Options for single-axis constraints or [**freestyle movement**](#freestyle-move) are available. The pivot is also adjustable.
 
 ## Basic Usage
 
-1. Select the objects you want to move.
+1. Select the objects you want to move.w
 2. Press <kbd>G</kbd>.
 3. Use the displayed Move Gizmo to move.
 4. Set the options in the Command Dialog and Keyboard Shortcuts.
    - <Kst>Command Dialog</Kst>
       - **XYZ:** Specify the amount of movement of the X, Y, and Z axes.
+      - **Orientation:** Set the orientation of the move gizmo.
+         - <ButtonIcon type="button-normal"/> **Normal:** Sets the orientation to align with the object's surface normal.
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Sets the orientation to match the previously defined pivot orientation.
+         - <ButtonIcon type="button-construction-plane"/> **Construction Plane:** Sets the orientation to align with the active construction plane.
+         - <ButtonIcon type="button-world"/> **World:** Sets the orientation to align with the global (world) axis.
+      - **Pivot:** Set the position of the pivot point.
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positions the pivot at the center of the bounding box enclosing the selected objects.
+         - <ButtonIcon type="button-median"/> **Median:** Positions the pivot at the average location of the pivots of the selected objects.
+         - <ButtonIcon type="button-active"/> **Active:** Positions the pivot at the last selected (active) object's pivot.   
+
+         ![Pivot Demonstration](/img/pivot-move.png)
+
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Constrain to the X, Y, or Z-axis](/tool/sketching-essentials#constrain-to-an-axis).
       - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Constrain to the X, Y, or Z-plane.
       - <kbd>G</kbd> **Screen space:** Limit to the visible plane.
       - <kbd>F</kbd> **Freestyle:** Click to specify the starting point and endpoint, which will determine the direction and distance of movement.
       - <kbd>V</kbd> **Pivot:** Click to specify the position of the Gizmo.
-      - <kbd>W</kbd> **Worldspace:** Change the Gizmo's coordinate axis to world coordinates.
+      - <kbd>Alt + V</kbd> **Remove pivot:** Remove the configured pivots.
+      - <kbd>W</kbd> **Orientation:** Change the Gizmo's coordinate axis to different orientations.
 4. Confirm with OK in the Command Dialog or right-click.
 
 <Callout type="info" emoji="💡">
@@ -44,6 +58,60 @@ This command is equivalent to the <kbd>F</kbd> option of the **Move** command.
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="freestyle-move"/>
+
+
+## Move Control Point
+
+<Reference shortcut="G" command="Move" button="Left of Command Bar"  buttonIcon='button-move'/>
+
+Move Control Points that are laid on a surface using Move Gizmo. Options for single-axis constraints or [**freestyle movement**](#freestyle-move) and Proportional Editing are available. The orientation of the Move Gizmo and Pivot placement is also adjustable.
+
+### Basic Usage
+
+1. Select the objects you want to move.
+2. Press <kbd>G</kbd>.
+3. Use the displayed Move Gizmo to move.
+4. Set the options in the Command Dialog and Keyboard Shortcuts.
+   - <Kst>Command Dialog</Kst>
+      - **XYZ:** Specify the amount of movement of the X, Y, and Z axes.
+      - **Orientation:** Set the orientation of the Move Gizmo.
+         - <ButtonIcon type="button-normal"/> **Normal:** Sets the orientation to align with the object's surface normal.
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Sets the orientation to match the previously defined pivot orientation.
+         - <ButtonIcon type="button-construction-plane"/> **Construction Plane:** Sets the orientation to align with the active construction plane.
+         - <ButtonIcon type="button-world"/> **World:** Sets the orientation to align with the global (world) axis.
+      - **Pivot:** Set the position of the pivot point.
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positions the pivot at the center of the bounding box enclosing the selected objects.
+         - <ButtonIcon type="button-median"/> **Median:** Positions the pivot at the average location of the pivots of the selected objects.
+         - <ButtonIcon type="button-active"/> **Active:** Positions the pivot at the last selected (active) object's pivot.
+
+         ![Pivot Demonstration](/img/pivot-move.png)
+         
+      - **Proportional:** A feature that provides multiple proportional editing options, influencing how CVs (control vertices) are affected when moved.
+         - **None:** No proportional effect; only the selected CVs move.
+         - **All:** Affects all CVs on the surface and their movement. Specify the falloff value of U and V for better proportional falloff control.
+         - **Selected:** Applies proportional editing to the selected CVs, affecting their movement. Specify the falloff value of U and V for better proportional falloff control. 
+      - **Falloff U:** Specify the falloff amount in U direction.
+      - **Falloff V:** Specify the falloff amount in V direction.
+      - **Mirror:** Apply a mirror effect relative to the active [**construction plane**](/plasticity-essentials/construction-plane). The mirroring axes adapt to either the global construction plane or a custom-defined construction plane. 
+         - **None:** No mirror plane is specified. 
+         - **X/Y/Z:** Mirror in either X, Y, and Z axes.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Constrain to the X, Y, or Z-axis](/tool/sketching-essentials#constrain-to-an-axis).
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Constrain to the X, Y, or Z-plane.
+      - <kbd>G</kbd> **Screen space:** Limit to the visible plane.
+      - <kbd>F</kbd> **Freestyle:** Click to specify the starting point and endpoint, which will determine the direction and distance of movement.
+      - <kbd>V</kbd> **Pivot:** Click to specify the position of the Gizmo.
+      - <kbd>Alt + V</kbd> **Remove pivot:** Remove the configured pivots.
+      - <kbd>W</kbd> **Orientation:** Change the Gizmo's coordinate axis to different orientations.
+4. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="move-control-point"/>
+
+<Callout type="info" emoji="🗒️">
+**Note**
+- When proportionally editing surface CVs, the last active CV selection determines the pivot position. Keep this in mind, as it affects how proportional editing behaves.
+- The Proportional Move command moves control vertices based on UV distance along the hull, rather than geometric distance.
+</Callout>
 
 ## See also
 - [Mirror](mirror)

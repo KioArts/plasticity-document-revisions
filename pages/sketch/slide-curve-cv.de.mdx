@@ -1,0 +1,37 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Slide Curve CVs
+
+<Reference shortcut="Shift + G" command="Slide" button="" />
+
+Steuerpunkte (CVs) entlang der Tangentenrichtung des durch die Spline-Kurve definierten Kontrollkäfigs verschieben.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie ein CV oder mehrere CVs aus, die Sie verschieben möchten.
+2. Drücken Sie <kbd>Shift + G</kbd>, um den Verschieben-Befehl zu aktivieren.
+3. Stellen Sie die Optionen im Befehlsdialog und den Tastenkombinationen ein.
+   - <Kst>Befehlsdialog</Kst>
+      - **Entfernung:** Geben Sie die Verschiebungsdistanz der CVs an.
+   - <Kst>Tastenkombinationen</Kst>
+      - <kbd>Ctrl + Z</kbd> **Rückgängig:** Setzt die letzte Befehlsausführung zurück und stellt den vorherigen Zustand wieder her.
+      - <kbd>U</kbd> **Positives U:** Verschieben in eine positive U-Richtung.
+      - <kbd>Shift + U</kbd> **Negatives U:** Verschieben in eine negative U-Richtung.
+      - <kbd>N</kbd> **Normal:** Verschieben in eine normale Richtung.
+4. Gizmo-Steuerelemente erscheinen mit spezifischen Richtungssteuerungen. Verwenden Sie diese, um CVs zu verschieben und ihre Positionen präzise anzupassen.
+5. Bestätigen Sie mit OK im Befehlsdialog oder mit der rechten Maustaste.
+
+<VideoPlayer fileName="slide-curve"/>
+
+<Callout type="info" emoji="💡">
+**Tipp** 
+- Der Verschieben-Befehl enthält eine Umschaltfunktion, mit der Sie zwischen Vorschau- und Aktivmodus wechseln können, indem Sie <kbd>Ctrl</kbd> gedrückt halten. So können Sie die Ergebnisse des Befehls vor und nach der Ausführung vergleichen.
+- Nur Spline-Kurven lassen sich bearbeiten, während normale Linien nicht verändert werden können.
+</Callout>
+
+## Siehe auch
+- [Steuerelementpunkt verschieben](/common/move#move-control-point)

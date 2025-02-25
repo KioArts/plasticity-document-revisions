@@ -1,0 +1,59 @@
+import { Callout } from 'nextra/components'
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Tabs } from 'nextra/components'
+
+# Shader-Modus
+
+## Shader-Modus
+- Sie können zwischen den integrierten Shadern von Plasticity wechseln, indem Sie darauf klicken. Wenn der [Render-Modus](/view-mode) deaktiviert ist, werden die ausgewählten Plasticity-Matcaps auf Objekte angewendet und angezeigt.
+
+- Verfügbare Matcaps:
+
+![Matcaps im Shader-Modus](/img/shader-mode-preview.png)
+
+| Name | Nummer | Anwendbarkeit | Hinweis |
+| ---- | ------ | ------------- | ------- |
+| Standard | 1 | Standard-Erscheinungsbild | - |
+| Rot | 2 | Glänzendes Erscheinungsbild | - |
+| Schwarz | 3 | Glänzendes Erscheinungsbild | - |
+| Weiß | 4 | Umgebungsbeleuchtung | - |
+| Weiß | 5 | Highlight-Checker | - |
+| Matt | 6 | Mattes Erscheinungsbild | - |
+| Silhouette | 7 | Silhouetten-Checker | - |
+| Einzelfarbe | 8 | Keine Schatten | - |
+| Isophote/Iso-Winkel | 9 | Statischer Oberflächen-Kontinuitäts-Checker | Der Shader wird basierend auf dem aktuellen Kamerawinkel auf das Objekt angewendet. Die Streifendichte kann im Menü **"Materialoptionen"** angepasst werden. |
+| Entformungswinkel | 10 | Entformungswinkel-Checker für Spritzgussformen | Der Entformungswinkel wird basierend auf der aktuellen Konstruktionsfläche angezeigt. Der Schwellenwert (blau) kann im Menü **"Materialoptionen"** angepasst werden. |
+| Horizontales Zebra | 11 | Oberflächen-Kontinuitäts-Checker | - |
+| Vertikales Zebra | 12 | Oberflächen-Kontinuitäts-Checker | - |
+
+## Alle Matcaps
+- Benutzerdefinierte Matcaps erscheinen unter der Kategorie "Alle Matcaps".
+
+![Benutzerdefinierte Matcaps](/img/custom-matcaps-preview.png)
+
+### Benutzerdefinierte Matcaps installieren
+
+1. Bereiten Sie Ihre Matcap-Dateien vor (EXR und PNG mit identischen Namen).
+2. Finden Sie das Verzeichnis `.plasticity` und erstellen Sie dort einen Ordner namens "matcaps".
+
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigieren Sie zu `C:/Users/<username>/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigieren Sie zu `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigieren Sie zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
+
+3. Verschieben Sie die Dateien in diesen Ordner und starten Sie Plasticity neu.
+
+![Matcaps installieren](/img/installing-matcaps-preview.png)
+
+<Callout type="info" emoji="💡">
+**Tipp**     
+- EXR- und PNG-Dateien sollten 512x512 Pixel groß sein und einen transparenten Hintergrund haben.
+</Callout>

@@ -10,6 +10,14 @@ The Outliner displays all the objects you've created. Within the Outliner, you c
 
 - The objects you create are classified into different sections: "Solids," "Sheets," "Curves," "Meshes," "Images" and "Measurements."
 
+## Displayed Construction Planes
+
+- Saved [construction planes](/construction-plane) are classified into "Planes" and are listed in the "Added Planes" menu in the right side of the screen. 
+
+![Outliner Planes](/img/construction-plane-saved.png)   
+
+![Added Planes](/img/construction-plane-menu.png)   
+
 ## Organize Objects
 
 - Right-click on a section label ("Solids," "Sheets," "Curves," "Meshes," "Images" and "Measurements") and choose "Select all" to select all objects within that section.
@@ -22,7 +30,6 @@ Grouping allows you to better organize your objects.
 | Operation                                                     | Shortcut                                                         | Command Name     |
 | ------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------- |
 | Create a group and move the selected object to the new group. | <kbd>Ctrl + G</kbd> or <ButtonIcon type="outliner-gruop-icon" /> | Group Selected   |
-| Create a group in the root directory and move the selected object to the new group. | <kbd>Ctrl + G</kbd> | Group Selected at Root |
 | Remove the selected object from the group.                    | <kbd>Alt + G</kbd>                                               | Ungroup Selected |
 
 Right-click on a group folder to access related commands.
@@ -34,10 +41,12 @@ Right-click on a group folder to access related commands.
 | Select all                          | Selects all objects within the group.                                       |
 | New subgroup with current selection | Creates a new subgroup and adds the selected object to it.     |
 | Move selected items to root         | Relocate selected item from a group to the root directory.               |
-| Collapse all                        | Collapses all groups.                                                   |
 | Expand all                          | Expands all groups.                                                     |
+| Collapse all                        | Collapses all groups.                                                   |
 | Add material                        | Assigns material to the group. See [Material Color](#material-color).      |
 | Remove material                     | Removes material from the group. See [Material Color](#material-color). |
+| Dissolve                            | Removes the group folder while keeping the objects inside intact.|
+| Delete recursively                  | Removes the group folder and all objects contained within it.|
 
 Alt-click on folder in outliner to select all objects in that section.
 
@@ -60,7 +69,7 @@ Alt-click on folder in outliner to select all objects in that section.
 ### To bring a selected object to the top of the Outliner
 
 - Select object in the 3D viewport, hover your cursor over the Outliner, and press <kbd>/</kbd>. 
-- Alternatively, select the object and click (2) and choose "Select in Outliner."
+- Alternatively, select the object and click (2) and choose "Scroll to selection."
 
 ### To isolate a selected object in the Outliner
 
@@ -114,4 +123,5 @@ Toggle the visibility of the outliner and window's right sides.
 
 | Operation                          | Shortcut                                                                                            | Command Name    |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------- | --------------- |
-| Toggle the display of the sidebar. | <kbd>Ctrl + B</kbd> or <br/> <ButtonIcon type="button-sidebar-toggle" /> to the right of the P-Menu | Sidebar: toggle |
+| Toggle the display of the left sidebar. | <kbd>Ctrl + B</kbd> or <br/> <ButtonIcon type="button-left-sidebar-toggle" /> to the right of the P-Menu | Sidebar: toggle left |
+| Toggle the display of the right sidebar. | <kbd>Ctrl + Shift + B</kbd> or <br/> <ButtonIcon type="button-right-sidebar-toggle" /> to the left above View Mode | Sidebar: toggle right |

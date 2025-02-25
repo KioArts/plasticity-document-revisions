@@ -1,10 +1,11 @@
 import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
 
 # Unjoin（切り離す）
 
-<Reference shortcut="Alt + J" command="Unjoin" button="" />
+<Reference shortcut="Alt + J" command="Unjoin" button="コマンドバーで " buttonIcon='button-join' />
 
-このコマンドは、選択されたオブジェクトに応じて、以下のコマンドを自動的に呼び出します。
+コマンドは選択されたオブジェクトに基づいて実行されます。
 - カーブが選択されているとき: スケッチコマンドの [**Unjoin Curves**](/sketch/unjoin-curve) を参照してください。
 - フェイスが選択されているとき: [**Unjoin Faces**](unjoin-faces) を参照してください。
 - ソリッド、シートが選択されているとき: [**Unjoin Shells**](unjoin-shells) を参照してください。

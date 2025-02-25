@@ -1,0 +1,29 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+
+# Insert Knot
+
+<Reference shortcut="" command="Insert Knot" button="Toolbar" buttonIcon='button-insert-cv-into-curve' />
+
+Insert a CV (Control-Vertex) in a spline curve.
+
+## Basic Usage
+
+1. Click the button <ButtonIcon type="button-split-segment" /> on the Toolbar.
+2. Click on the point where you want to insert a CV.
+3. A CV is inserted, adding additional point to the spline curve.
+
+<VideoPlayer fileName="insert-knot"/>
+
+
+<Callout type="info" emoji="🗒️">
+**Note** Inserting a Control-Vertex requires the curve to be a spline; otherwise, no effect will occur on a regular segmented curve.     
+</Callout>
+
+## See also
+- [Split Segment](split-segment)
+- [Cut Curve](cut-curve)
+- [Unjoin](unjoin)
+- [Trim](trim)

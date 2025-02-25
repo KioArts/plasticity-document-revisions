@@ -15,9 +15,15 @@ Verlängere eine Curve, indem du die Entfernung angibst. Wähle aus Verlängerun
 3. Drücke <kbd>D</kbd>, bewege den Cursor und klicke auf den Endpunkt.
 4. Stelle die Optionen im Befehlsdialog ein.
    - <Kst>Befehlsdialog</Kst>
-      - **Shape:**
-         - **Natural** / **Liner** /  **Soft** /  **Reflective** / **Arc**
-         - Sieh dir das Video an, um die Unterschiede zwischen jeder Option zu sehen.
+      - **Shape:** Legt die Form der erweiterten Kurve fest. Die Optionen **Natural**, **Linear**, **Soft**, **Reflective** und **Arc** beeinflussen direkt die Form und Krümmung der erweiterten Kurve während der Extrusion.  
+         - **Natural:** Erweitert die Kurve „natürlich“, indem die Form fortgesetzt wird, die die ursprüngliche Kurve unmittelbar vor Beginn der Erweiterung beschreibt.  
+         - **Linear:** Erweitert die Kurve in einer flachen, geraden Linie vom Randpunkt aus, wobei die aktuelle Tangentenrichtung beibehalten wird, ohne die Krümmung zu verändern.  
+         - **Soft:** Blendet die Erweiterung allmählich in die bestehende Kurve ein, um einen weichen Übergang zu gewährleisten, wobei sowohl Tangente als auch Krümmung erhalten bleiben.  
+         - **Reflective:** Spiegelt die Krümmung und Tangente der Kurve für eine symmetrische und nahtlose Fortsetzung, ideal zur Wahrung der Kurvensymmetrie.  
+         - **Arc:** Erweitert die Kurve in einem kreisförmigen Bogen vom Randpunkt aus. 
+
+         ![Extend Curve Shape](/img/extend-curve-shape.png) 
+         
       - **Distance:** Gib die Entfernung an.
 5. Bestätige mit OK im Befehlsdialog oder Rechtsklick.
 

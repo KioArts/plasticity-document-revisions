@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Tangent Arc
 
@@ -22,6 +23,10 @@ import Kst from '/components/KeyboardShortcutsTitle'
 6. 円弧が作成されます。
 
 <VideoPlayer fileName="tangent-arc"/>
+
+<Callout type="info" emoji="💡">
+**ヒント** 接線円弧アルゴリズムは、曲線上の接点を検出する際に敏感です。関心のあるポイントの近くでカーソルを慎重に動かし、超えないようにしてください。超えると接点が表示されない可能性があります。  
+</Callout>
 
 - [Center Cirvle](center-circle)
 - [Two-Point Circle](two-point-circle)

@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Tangent Arc
 
@@ -21,8 +22,11 @@ You can create an arc tangent to a curve.
         - <kbd>B</kbd> **Binormal:** Move the arc perpendicularly along the opposite normal direction constrain.
 6. The arc is created.
 
-
 <VideoPlayer fileName="tangent-arc"/>
+
+<Callout type="info" emoji="💡">
+**Tip** The tangent arc algorithm is sensitive when detecting tangent points on curves. Move your cursor carefully near the point of interest without crossing over it, as crossing may prevent the tangent point from displaying.  
+</Callout>
 
 ## See also
 - [Center Cirvle](center-circle)

@@ -3,7 +3,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 # Project Curve Body（カーブをボディに投影）[#project-curve-body]
 
-<Reference shortcut="I" command="Project Curve Body" button="コマンドバー右"  buttonIcon='button-project'/>
+<Reference shortcut="I" command="Project" button="提案コマンドメニュー内"  buttonIcon='button-project'/>
 
 カーブをソリッドまたはシートに投影して、カーブを作成できます。
 
@@ -15,11 +15,13 @@ import Kst from '/components/KeyboardShortcutsTitle'
 4. コマンドダイアログのオプションを設定します。
    - <Kst>コマンドダイアログ</Kst>
       - **Method:**
-      - **Normal:** 構築平面を基準に Z 軸正方向に投影します。
-      - **Vector:** 投影方向を**Direction**で指定します。
-            - **Direction:** 構築平面を基準に指定ベクトル方向 (**X**,**Y**,**Z**)に投影します。
+            - **Normal:** 構築平面を基準に Z 軸正方向に投影します。
+            - **Vector:** 直線方向に投影します。**Bidirectional** と **Hide occlusion** が有効になります。。
+            ![Project Curve Body Method Demonstration](/img/project-curve-body-method.png)
       - **Bidirectional:** オンにすると指定した軸の負の方向にも投影されます。
-      - **X-Ray:** オンにすると指定した軸の正の方向で、隠れているフェイスには投影されなくなります。
+            ![Project Curve Body Bidirectional Demonstration](/img/project-curve-body-bidirectional.png)
+      - **Hide occluded:** オンにすると指定した軸の正の方向で、隠れているフェイスには投影されなくなります。
+            ![Project Curve Body Hide Occluded Demonstration](/img/project-curve-body-hide-occluded.png)
 5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
 6. 投影されたカーブが作成されます。
 

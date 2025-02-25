@@ -16,11 +16,15 @@ body {
         );
     }
 
+     // **Added Font-Smoothing Properties**
+     -webkit-font-smoothing: antialiased; /* For WebKit-based browsers like Safari */
+     -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+
     &:lang(en),
     &:lang(de) {
         font-family: "Inter", "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
             "Helvetica", "Arial", sans-serif;
-        font-weight: 300 !important;
+        font-weight: 400 !important; /* Changed from 300 to 400*/ 
 
         .md\:nx-w-64 {
             width: 18rem !important;

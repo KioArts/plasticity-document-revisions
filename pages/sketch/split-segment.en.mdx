@@ -1,6 +1,7 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
 
 # Split Segment
 
@@ -16,7 +17,12 @@ Split the curve into two segments at any point along its length.
 
 <VideoPlayer fileName="split-segment"/>
 
+<Callout type="warning" emoji="⚠️">
+Be mindful that the Split Segment and Insert Knot tools share the same icon. When selecting the tool, check the text on the icon or type the correct command directly in the Command Palette.   
+</Callout>
+
 ## See also
+- [Insert Knot](insert-knot)
 - [Cut Curve](cut-curve)
 - [Unjoin](unjoin)
 - [Trim](trim)

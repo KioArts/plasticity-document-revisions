@@ -1,0 +1,38 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Slide Surface CVs
+
+<Reference shortcut="Shift + G" command="Slide" button="" />
+
+CVハルの接線方向に沿ってCVをスライドさせ、点の位置を調整しながら表面のフローを保持します。
+
+## 基本的な使用方法
+
+1. スライドさせたいCVまたは複数のCVを選択します。
+2. <kbd>Shift + G</kbd> を押してスライドコマンドを有効にします。
+3. コマンドダイアログとキーボードショートカットでオプションを設定します。
+   - <Kst>コマンドダイアログ</Kst>
+      - **距離:** 移動するCVの距離を指定します。
+   - <Kst>キーボードショートカット</Kst>
+      - <kbd>Ctrl + Z</kbd> **元に戻す:** 最後のコマンド実行を元に戻し、前の状態を復元します。
+      - <kbd>U</kbd> **正のU:** 正のU方向にスライドします。
+      - <kbd>Shift + U</kbd> **負のU:** 負のU方向にスライドします。
+      - <kbd>N</kbd> **法線方向:** 法線方向にスライドします。
+      - <kbd>V</kbd> **正のV:** 正のV方向にスライドします。
+      - <kbd>Shift + V</kbd> **負のV:** 負のV方向にスライドします。
+4. Gizmoコントロールが特定の方向の制御と共に表示されます。これを使ってCVを移動させ、位置を正確に調整します。
+5. コマンドダイアログでOKを押すか、右クリックして確定します。
+
+<VideoPlayer fileName="slide"/>
+
+<Callout type="info" emoji="💡">
+**ヒント**
+- スライドコマンドには、<kbd>Ctrl</kbd> を押し続けることでプレビューとアクティブモードを切り替える機能があります。これにより、コマンド実行前後の結果を比較することができます。
+</Callout>
+
+## その他
+- [コントロールポイントを移動](/common/move#move-control-point)

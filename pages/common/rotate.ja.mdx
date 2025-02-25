@@ -1,10 +1,11 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
 # Rotate（回転）
 
-<Reference shortcut="R" command="Rotate" button="コマンドバー左" buttonIcon='button-rotate' />
+<Reference shortcut="R" command="Rotate" button="コマンドバーで " buttonIcon='button-rotate' />
 
 オブジェクトをRotate Gizmoを使用して回転させることができます。単一軸の制約や[フリースタイルの回転](#freestyle-rotate)のオプションが利用可能です。また、ピボットも調整できます。
 
@@ -17,6 +18,18 @@ import Kst from '/components/KeyboardShortcutsTitle'
    - <Kst>コマンドダイアログ</Kst>
       - **Angle:** 回転ギズモで最後に指定した角度を数値で指定します。
       - **Axis:** 回転軸をX、Y、Zのベクトルで指定します。
+      - **Orientation:** 回転ギズモの向きを設定します。
+         - <ButtonIcon type="button-normal"/> **法線:** オブジェクトの表面法線に合わせて方向を設定します。
+         - <ButtonIcon type="button-pivot"/> **ピボット:** 事前に定義されたピボットの向きに合わせて方向を設定します。
+         - <ButtonIcon type="button-construction-plane"/> **作業平面:** アクティブな作業平面に方向を合わせます。
+         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）軸に方向を合わせます。
+      - **ピボット:** ピボットポイントの位置を設定します。
+         - <ButtonIcon type="button-bbox"/> **バウンディングボックス:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。
+         - <ButtonIcon type="button-median"/> **中央値:** 選択したオブジェクトのピボットの平均位置にピボットを配置します。
+         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボット位置にピボットを配置します。
+
+         ![Pivot Demonstration](/img/pivot-rotate.png)
+
    - <Kst>キーボードショートカット</Kst>
    - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
    - <kbd>G</kbd> **Screen space:** 見た目の平面に限定します。
