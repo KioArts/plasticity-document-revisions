@@ -1,8 +1,50 @@
+import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
 
 # Duplicate Curve and Project
 
 <Reference shortcut="Alt + D" command="Alternative Duplicate" button="" />
 
-カーブまたはエッジを構築平面に投影したカーブを作成できます。<br/>
-[**Alternative Duplicate**](alternative-duplicate) と同じ機能です。
+カーブまたはエッジから作成したカーブを作業平面に投影します。  
+この機能は [**代替複製**](alternative-duplicate) と同じ動作をします。
+
+## 基本的な使い方
+
+1. 投影するカーブまたはエッジを選択します。
+2. カーブを投影する作業平面を設定します。
+3. <kbd>Alt + D</kbd> を押してコマンドを実行するか、コマンドパレットで *代替複製* と入力します。
+4. カーブが作成されます。表示される移動ギズモを使用して移動できます。
+5. コマンドダイアログとキーボードショートカットでオプションを設定します。
+   - <Kst>コマンドダイアログ</Kst>
+      - **XYZ:** X、Y、Z軸の移動量を指定します。
+      - **方向:** Move Gizmo の方向を設定します。
+         - <ButtonIcon type="button-normal"/> **法線:** オブジェクトの表面法線に合わせて方向を設定します。
+         - <ButtonIcon type="button-pivot"/> **ピボット:** 事前に定義されたピボットの向きに合わせて方向を設定します。
+         - <ButtonIcon type="button-construction-plane"/> **作業平面:** アクティブな作業平面に方向を合わせます。
+         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）軸に方向を合わせます。
+      - **ピボット:** ピボットポイントの位置を設定します。
+         - <ButtonIcon type="button-bbox"/> **バウンディングボックス:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。
+         - <ButtonIcon type="button-median"/> **中央値:** 選択したオブジェクトのピボットの平均位置にピボットを配置します。
+         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボット位置にピボットを配置します。
+   - <Kst>キーボードショートカット</Kst>
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、Z軸に制約](/tool/sketching-essentials#constrain-to-an-axis)。
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z平面:** X、Y、Z平面に制約します。
+      - <kbd>G</kbd> **スクリーンスペース:** 画面上の可視平面に制約します。
+      - <kbd>F</kbd> **フリースタイル:** クリックして開始点と終了点を指定し、移動方向と距離を決定します。
+      - <kbd>V</kbd> **ピボット:** クリックしてGizmoの位置を指定します。
+      - <kbd>Alt + V</kbd> **ピボット削除:** 設定されたピボットを削除します。
+      - <kbd>W</kbd> **方向:** Gizmoの座標軸を異なる方向に変更します。
+6. 右クリックするか、コマンドダイアログの **OK** をクリックして確定します。
+
+<VideoPlayer fileName="duplicate-curve-and-project"/>
+
+## 関連項目
+- [Alternative Duplicate](alternative-duplicate)
+- [Project Outline](project-outline)
+- [Create Outline](create-outline)
+- [Project Curve Body](project-curve-body)
+- [Project Curve Curve](project-curve-curve)
+- [Project Body Body](project-body-body)
+- [Offset Curve](offset-curve)

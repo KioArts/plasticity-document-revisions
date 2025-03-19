@@ -1,4 +1,5 @@
 import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
 # Alternative Duplicate
@@ -11,19 +12,33 @@ Project the Curves onto the current construction plane along the normal directio
 
 1. Set the desired construction plane for projection.
 2. Select the Curves to project onto.
-3. Press <kbd>Alt + D</kbd> to excute the command.
+3. Press <kbd>Alt + D</kbd> to execute the command.
 4. The projected Curves will be created on the current construction plane.
 5. Optionally, you can move the Curves using the Move Gizmo.
     - You can also limit the direction of movement.
+    - <Kst>Command Dialog</Kst>
+        - **XYZ:** Specify the amount of movement of the X, Y, and Z axes.
+        - **Orientation:** Set the orientation of the move gizmo.
+         - <ButtonIcon type="button-normal"/> **Normal:** Sets the orientation to align with the object's surface normal.
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Sets the orientation to match the previously defined pivot orientation.
+         - <ButtonIcon type="button-construction-plane"/> **Construction Plane:** Sets the orientation to align with the active construction plane.
+         - <ButtonIcon type="button-world"/> **World:** Sets the orientation to align with the global (world) axis.
+        - **Pivot:** Set the position of the pivot point.
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positions the pivot at the center of the bounding box enclosing the selected objects.
+         - <ButtonIcon type="button-median"/> **Median:** Positions the pivot at the average location of the pivots of the selected objects.
+         - <ButtonIcon type="button-active"/> **Active:** Positions the pivot at the last selected (active) object's pivot.
     - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Constrain to the X, Y, or Z-axis](/tool/sketching-essentials#constrain-to-an-axis).
         - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Constrain to the X, Y, or Z-plane.
-        - <kbd>G</kbd> **Screen space:** Constrains to the apparent plane.
-        - <kbd>F</kbd> **Freestyle:** Constrains the direction by two points.
-        - <kbd>V</kbd> **Pivot:** Constrains the direction by clicking on the plane.
-        - <kbd>W</kbd> **Worldspace:** Releases the directional constraint.
+        - <kbd>G</kbd> **Screen space:** Limit to the visible plane.
+        - <kbd>F</kbd> **Freestyle:** Click to specify the starting point and endpoint, which will determine the direction and distance of movement.
+        - <kbd>V</kbd> **Pivot:** Click to specify the position of the Gizmo.
+        - <kbd>Alt + V</kbd> **Remove pivot:** Remove the configured pivots.
+        - <kbd>W</kbd> **Orientation:** Change the Gizmo's coordinate axis to different orientations.
 6. Right-click or click OK in the Command Dialog to confirm.
 
 ## See also
+- [Duplicate Curve and Project](duplicate-curve-and-project)
 - [Project Outline](project-outline)
 - [Create Outline](create-outline)
 - [Project Curve Body](project-curve-body)
