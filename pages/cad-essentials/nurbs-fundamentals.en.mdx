@@ -1,0 +1,62 @@
+# NURBS Fundamentals
+
+# Introduction to NURBS
+
+(image here)
+
+## What is NURBS?
+
+Non-Uniform Rational B-Splines (NURBS) are a mathematical model widely used in computer graphics to represent curves and surfaces. They offer significant flexibility and precision in handling both standard geometric shapes and freeform designs. NURBS are integral to various applications, including computer-aided design (CAD), manufacturing (CAM), and engineering (CAE).
+   
+Unlike polygon-based modelling, which relies on a network of flat surfaces (faces) connected by edges, NURBS allows for the creation of continuous, infinitely smooth curves and surfaces without visible faceting.
+
+This makes NURBS an essential tool for industries that require high precision, such as automotive design, aerospace engineering, product manufacturing, and architecture. It is also used in animation and visual effects for creating organic, smooth shapes.
+
+## How does NURBS work?
+
+NURBS models are built using several key components:
+1. Control Points
+    These are points that define the shape of a NURBS curve or surface. Unlike polygons, which have sharp edges, NURBS control points act like magnets that pull the curve toward them, influencing its form without breaking its smoothness.
+    
+2. Degree
+    The degree of a NURBS curve determines how smooth and flexible it is. The number of a degree is a positive whole number and is usually 1, 2, 3 or 5, but can be any positive whole number. NURBS lines and polylines are usually degree 1, NURBS circles are degree 2, and most free-form curves are degree 3 or 5. 
+     
+    Terminology such as linear, quadratic, cubic, and quintic are used to describe the number of degree for a curve. Linear means degree 1, quadratic means degree 2, cubic means degree 3, and quintic means degree 5.
+     
+    A higher degree curve (e.g., cubic or quintic) allows for more complex shapes, while a lower degree curve (e.g., linear) results in straighter forms. Higher degrees create smoother curves but increase computational complexity. 
+    
+    Degree 3 (cubic) is the most commonly used in CAD software due to its balance between flexibility and performance.
+     
+    The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1).
+
+3. Knots and Knot Vector
+    Knots are parameters that define how much influence each control point has on the shape of the curve. They help determine whether a curve bends sharply or remains smooth across different sections.
+
+4. Weight
+    Each control point in a NURBS model has a weight, which affects how strongly it pulls the curve or surface toward itself. By adjusting weights, you can create precise shapes like perfect circles and ellipses. 
+
+## NURBS Surfaces
+
+A NURBS surface extends the concept of NURBS curves into two parametric directions (U and V) and is essentially a network of NURBS curves connected smoothly in two dimensions. A dedicated chapter for UVN is written [here](/cad-essentials/uvn-coordinate-system).
+
+## Advantages and Applications of NURBS
+
+### Advantages of NURBS over Polygonal Modeling 
+
+| Feature | NURBS | Polygon Mesh |
+| ------- | ----- | ------------ |
+| Accuracy | Mathematical precision | Approximate with facets |
+| Editability | Control points, weights, knots | Vertex-based, less intuitive |
+| Scalability | Resolution-independent | More polygons needed for detail |
+| Smoothness | Always smooth | Requires subdivision for smoothness |
+| Compatibility | Used in CAD, CAM, engineering | More common in VFX, gaming |
+
+### Common Applications 
+
+**Automotive and Aerospace Design** - Car exteriors, aircraft fuselages, and aerodynamic surfaces require **precise, smooth curves**.
+
+**Industrial and Product Design** - Consumer products like smartphones, watches, and appliances use NURBS for accurate manufacturing.
+
+**Architectural Modeling** - Complex curved structures and parametric surfaces in modern buildings rely on NURBS modeling. 
+
+**Medical and Biomechanical Engineering** - Prosthetics, dental implants, and bioengineering models often use NURBS due to their accuracy. 
