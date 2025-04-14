@@ -18,7 +18,7 @@ This makes NURBS an essential tool for industries that require high precision, s
 
 NURBS models are built using several key components:
 
-    1. ## Control Points   
+    ## Control Points   
         
         Control Points or Control Vertexes are points that define the shape of a NURBS curve or surface. Unlike polygons, which have sharp edges, NURBS control points act like magnets that pull the curve toward them, influencing its form without breaking its smoothness.
 	   
@@ -26,7 +26,13 @@ NURBS models are built using several key components:
 
         ![Control Points or Control Vertex Image Example](/img/control-vertex-nurbs.png)
 
-    2. ## Degree  
+    ## Spans    
+
+        A span is a section of the NURBS curve or surface between two knot values. You can think of it as a segment where a portion of the curve is mathematically defined using a set of control points and basis functions. In simpler terms, each span is an individual piece of the overall curve. This can be used in stitching together multiple spans in order to smoothly shape a longer or complex curve shape. 
+
+        ![Span Image Example](/img/span-nurbs.png)
+
+    ## Degree  
         
         The degree of a NURBS curve determines how smooth and flexible it is. The number of a degree is a positive whole number and is usually 1, 2, 3 or 5, but can be any positive whole number. NURBS lines and polylines are usually degree 1, NURBS circles are degree 2, and most free-form curves are degree 3 or 5. 
      
@@ -38,10 +44,10 @@ NURBS models are built using several key components:
      
     The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1).
 
-    3. ## Knots and Knot Vector    
+    ## Knots and Knot Vector    
         Knots are parameters that define how much influence each control point has on the shape of the curve. They help determine whether a curve bends sharply or remains smooth across different sections.
 
-    4. ## Weight   
+    ## Weight   
         Each control point in a NURBS model has a weight, which affects how strongly it pulls the curve or surface toward itself. By adjusting weights, you can create precise shapes like perfect circles and ellipses. 
 
 ## NURBS Surfaces
