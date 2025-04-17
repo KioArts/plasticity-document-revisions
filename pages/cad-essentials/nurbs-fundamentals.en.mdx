@@ -32,6 +32,17 @@ NURBS models are built using several key components:
 
         ![Span Image Example](/img/span-nurbs.png)
 
+        Each span also has a starting and ending point. These points are deffined with Vertexes, however, to better diversify these classes and understand them better in context-sensitive situations,  A terminological word can be used in understanding this context can be used with "Edit Points". 
+
+        ![Multi Single-Span Curve Example](/img/single-span-nurbs.png)
+
+
+        ![Multi-Span Curve Example](/img/multi-span-nurbs.png)
+
+
+        
+
+
     ## Degree  
         
         The degree of a NURBS curve determines how smooth and flexible it is. The number of a degree is a positive whole number and is usually 1, 2, 3 or 5, but can be any positive whole number. NURBS lines and polylines are usually degree 1, NURBS circles are degree 2, and most free-form curves are degree 3 or 5. 
@@ -44,6 +55,12 @@ NURBS models are built using several key components:
      
     The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1).
 
+
+    The degree of a NURBS curve or surface tells how smooth or complex its shape is, and it's based on a kind of math formula (a polynomial). This degree is always a positive whole number like 1, 2, or 3 - and never zero or a fraction. It directly affects the smoothness, complexity, and flexibility of a curve and surface.
+
+
+
+
     ## Knots and Knot Vector    
         Knots are parameters that define how much influence each control point has on the shape of the curve. They help determine whether a curve bends sharply or remains smooth across different sections.
 
@@ -53,6 +70,8 @@ NURBS models are built using several key components:
 ## NURBS Surfaces
 
 A NURBS surface extends the concept of NURBS curves into two parametric directions (U and V) and is essentially a network of NURBS curves connected smoothly in two dimensions. A dedicated chapter for UVN is written [here](/cad-essentials/uvn-coordinate-system).
+
+![UVN NURBS Example](/img/uvn-nurbs.png)
 
 ## Advantages and Applications of NURBS
 
