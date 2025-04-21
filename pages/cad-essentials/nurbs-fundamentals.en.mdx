@@ -46,28 +46,32 @@ NURBS models are built using several key components:
         
         The degree of a NURBS curve or surface tells how smooth or complex its shape is, and it's based on a kind of math formula (a polynomial). This degree is always a positive whole number such as 1, 2, or 3 - and never zero or a fraction. It directly affects the smoothness, complexity, and flexibility of a curve and surface.
      
-        Terminology such as linear, quadratic, cubic, and quintic are used to describe the number of degree for a curve. See the table below for its described chareteristics.
-     
         | Degree | Name | Control-Points per Span | Description |
         | ------ | ---- | ---------------------- |----------- | 
         | 1 | Linear | 2 | Straight-line segments connecting control points. | 
         | 2 | Quadratic | 3 | Curves are curves with a single bend between control-points. | 
         | 3 | Cubic | 4 | Smooth curves offering a balance between flexibility and control. | 
         | 4 | Quartic | 5 | Curves with increased smoothness and flexibility compared to cubic curves. | 
-        | 5 | Quintic | 6 | Highly flexible curves capable of achieving very smooth transitions. | 
+        | 5 | Quintic | 6 | Highly flexible curves capable of achieving very smooth transitions. |
 
-        A higher degree curve (e.g., cubic or quintic) allows for more complex shapes, while a lower degree curve (e.g., linear) results in straighter forms. Higher degrees create smoother curves but increase computational complexity. 
-    
-        Degree 3 (cubic) is the most commonly used in CAD software due to its balance between flexibility and performance.
+        Terminology such as linear, quadratic, cubic, and quintic are used to describe the number of degree for a curve. A higher degree curve (e.g., cubic or quintic) allows for more complex shapes, while a lower degree curve (e.g., linear) results in straighter forms. Higher degrees create smoother curves but increase computational complexity. Degree 3 (cubic) is the most commonly used in CAD software due to its balance between flexibility and performance.
      
         The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1). 
 
 
-    #### Knots and Knot Vector    
+    #### Knots and Knot Vector   
+
         Knots are parameters that define how much influence each control point has on the shape of the curve. They help determine whether a curve bends sharply or remains smooth across different sections.
 
-    #### Weight   
+    #### Weight 
+
         Each control point in a NURBS model has a weight, which affects how strongly it pulls the curve or surface toward itself. By adjusting weights, you can create precise shapes like perfect circles and ellipses. 
+
+        The higher the weight of a CV, the sharper the spline around that CV. For large weight values, the spline will almost go through the CV. Similarly, weights smaller than one tend to flatten the spline in the area influenced by that CV.
+
+        The effect of CV weight is shown below.
+
+        ![Weight Example](/img/weight-nurbs.png)
 
 ## NURBS Surfaces
 
