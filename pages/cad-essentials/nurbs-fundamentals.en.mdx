@@ -18,7 +18,7 @@ This makes NURBS an essential tool for industries that require high precision, s
 
 NURBS models are built using several key components:
 
-    ## Control Points   
+    #### Control Points   
         
         Control Points or Control Vertexes are points that define the shape of a NURBS curve or surface. Unlike polygons, which have sharp edges, NURBS control points act like magnets that pull the curve toward them, influencing its form without breaking its smoothness.
 	   
@@ -26,7 +26,7 @@ NURBS models are built using several key components:
 
         ![Control Points or Control Vertex Image Example](/img/control-vertex-nurbs.png)
 
-    ## Spans    
+    #### Spans    
 
         A span is a section of the NURBS curve or surface between two knot values. You can think of it as a segment where a portion of the curve is mathematically defined using a set of control points and basis functions. In simpler terms, each span is an individual piece of the overall curve. This can be used in stitching together multiple spans in order to smoothly shape a longer or complex curve shape. 
 
@@ -42,39 +42,31 @@ NURBS models are built using several key components:
         ![Span Curves Example](/img/span-curves.png)
 
 
+    #### Degree  
         
-
-
-    ## Degree  
-        
-        The degree of a NURBS curve determines how smooth and flexible it is. The number of a degree is a positive whole number and is usually 1, 2, 3 or 5, but can be any positive whole number. NURBS lines and polylines are usually degree 1, NURBS circles are degree 2, and most free-form curves are degree 3 or 5. 
+        The degree of a NURBS curve or surface tells how smooth or complex its shape is, and it's based on a kind of math formula (a polynomial). This degree is always a positive whole number such as 1, 2, or 3 - and never zero or a fraction. It directly affects the smoothness, complexity, and flexibility of a curve and surface.
      
-    Terminology such as linear, quadratic, cubic, and quintic are used to describe the number of degree for a curve. Linear means degree 1, quadratic means degree 2, cubic means degree 3, and quintic means degree 5.
+        Terminology such as linear, quadratic, cubic, and quintic are used to describe the number of degree for a curve. See the table below for its described chareteristics.
      
-    A higher degree curve (e.g., cubic or quintic) allows for more complex shapes, while a lower degree curve (e.g., linear) results in straighter forms. Higher degrees create smoother curves but increase computational complexity. 
+        | Degree | Name | Control-Points per Span | Description |
+        | ------ | ---- | ---------------------- |----------- | 
+        | 1 | Linear | 2 | Straight-line segments connecting control points. | 
+        | 2 | Quadratic | 3 | Curves are curves with a single bend between control-points. | 
+        | 3 | Cubic | 4 | Smooth curves offering a balance between flexibility and control. | 
+        | 4 | Quartic | 5 | Curves with increased smoothness and flexibility compared to cubic curves. | 
+        | 5 | Quintic | 6 | Highly flexible curves capable of achieving very smooth transitions. | 
+
+        A higher degree curve (e.g., cubic or quintic) allows for more complex shapes, while a lower degree curve (e.g., linear) results in straighter forms. Higher degrees create smoother curves but increase computational complexity. 
     
-    Degree 3 (cubic) is the most commonly used in CAD software due to its balance between flexibility and performance.
+        Degree 3 (cubic) is the most commonly used in CAD software due to its balance between flexibility and performance.
      
-    The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1).
+        The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1). 
 
 
-    The degree of a NURBS curve or surface tells how smooth or complex its shape is, and it's based on a kind of math formula (a polynomial). This degree is always a positive whole number such as 1, 2, or 3 - and never zero or a fraction. It directly affects the smoothness, complexity, and flexibility of a curve and surface.
-
-
-| Degree | Name | Description | Example |
-| ------ | ---- | ----------- | -------  |
-| 1 | Linear | Linear degree curves are usually straight-line segments connecting control points often categorized as NURBS line or polyline. | ![Linear Degree](/img/linear-degree.png) ![Linear Degree 02](/img/linear-degree-2.png) |
-| 2 | Quadratic |----------- | -------  |
-| 3 | Cubic |----------- | -------  |
-| 4 | Quartic |----------- | -------  |
-| 5 | Quintic |----------- | -------  |
-
-
-
-    ## Knots and Knot Vector    
+    #### Knots and Knot Vector    
         Knots are parameters that define how much influence each control point has on the shape of the curve. They help determine whether a curve bends sharply or remains smooth across different sections.
 
-    ## Weight   
+    #### Weight   
         Each control point in a NURBS model has a weight, which affects how strongly it pulls the curve or surface toward itself. By adjusting weights, you can create precise shapes like perfect circles and ellipses. 
 
 ## NURBS Surfaces
