@@ -79,6 +79,10 @@ A NURBS surface extends the concept of NURBS curves into two parametric directio
 A NURBS surface has a topology similar to that of a Mesh primitive. In a NURBS surface, each node of the UV coordinate matrix represents a CV connected by rows and columns to form a NURBS hull. This allows modeling of complex smooth surfaces, whose shape is changeable simply by moving the CVs
 ![UVN NURBS Example](/img/uvn-nurbs.png)
 
+NURBS solids are surfaces or polysurfaces that form a closed volume. It defines thickness distribution, which makes volume and strenght calculations seamless, along with other examples such as 3D printing. It is recommended to work with closed volumes and not  open surfaces as that will cause production issues - such as not visuallizing material filling. By joining solid models (sheets), this will constitute as a close single solid. 
+
+![NURBS Solids Example](/img/solids-nurbs.png)
+
 ## Advantages and Applications of NURBS
 
 ### Advantages of NURBS over Polygonal Modeling 
@@ -90,6 +94,8 @@ A NURBS surface has a topology similar to that of a Mesh primitive. In a NURBS s
 | Scalability | Resolution-independent | More polygons needed for detail |
 | Smoothness | Always smooth | Requires subdivision for smoothness |
 | Compatibility | Used in CAD, CAM, engineering | More common in VFX, gaming |
+
+![NURBS and Poly Example](/img/nurbs-vs-poly.png)
 
 ### Common Applications 
 
