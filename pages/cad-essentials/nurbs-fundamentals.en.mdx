@@ -6,11 +6,22 @@
 
 ## What is NURBS?
 
-Non-Uniform Rational B-Splines (NURBS) are a mathematical model widely used in computer graphics to represent curves and surfaces. They offer significant flexibility and precision in handling both standard geometric shapes and freeform designs. NURBS are integral to various applications, including computer-aided design (CAD), manufacturing (CAM), and engineering (CAE).
+Non-Uniform Rational Basis-Splines (NURBS) is a mathematical model widely used in computer graphics to represent curves and surfaces. 
+
+    - **Non-Uniform** - Refers to the parameterization of the curve. Non-Uniform curves allow, among other things, the presence of multi-knots, which are needed to represent Bezier curves.
+    - **Rational** - Refers to the underlying mathematical representation. This property allows NURBS to represent exact conics (Such as parabolic curves, circles, and ellipses) in addition to free-form curves.
+    - **Basis-Splines** - Refers to piecewise polynomial curves (splines) that have a parametric representation.
+
+They offer significant flexibility and precision in handling both standard geometric shapes and freeform designs. NURBS is integral to various applications, including computer-aided design (CAD), manufacturing (CAM), and engineering (CAE).
    
 Unlike polygon-based modelling, which relies on a network of flat surfaces (faces) connected by edges, NURBS allows for the creation of continuous, infinitely smooth curves and surfaces without visible faceting.
 
-This makes NURBS an essential tool for industries that require high precision, such as automotive design, aerospace engineering, product manufacturing, and architecture. It is also used in animation and visual effects for creating organic, smooth shapes.
+This makes NURBS an essential tool for industries that require high precision, such as automotive design, aerospace engineering, product manufacturing, architecture, and industrial design. Not limited to this, NURBS can also be used in other fields such as animation, games, scientific visualization, and others.
+
+The NURBS 3D data type can easily be exported to other CAD software applications by exporting the solid objects using standard file formats such as .STEP, .IGES, .STL, and others. 
+
+![What is NURBS Overview](/img/nurbs-overview-01.png)
+
 
 ## How does NURBS work?
 
@@ -40,6 +51,8 @@ NURBS models are built using several key components:
         
         The degree of a NURBS curve or surface tells how smooth or complex its shape is, and it's based on a kind of math formula (a polynomial). This degree is always a positive whole number such as 1, 2, or 3 - and never zero or a fraction. It directly affects the smoothness, complexity, and flexibility of a curve and surface.
      
+        ![Degree Example](/img/degree-curve-nurbs.png)
+
         | Degree | Name | Control-Points per Span | Description |
         | :------: | ---- | :----------------------: |----------- | 
         | 1 | Linear | 2 | Straight-line segments connecting control points. | 
@@ -51,6 +64,9 @@ NURBS models are built using several key components:
         Terminology such as linear, quadratic, cubic, and quintic are used to describe the number of degree for a curve. A higher degree curve (e.g., cubic or quintic) allows for more complex shapes, while a lower degree curve (e.g., linear) results in straighter forms. Higher degrees create smoother curves but increase computational complexity. Degree 3 (cubic) is the most commonly used in CAD software due to its balance between flexibility and performance.
      
         The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1). 
+
+        ![Order of a NURBS Curve](/img/order-curve-nurbs.png)
+
 
 
     #### Knots and Knot Vector   
