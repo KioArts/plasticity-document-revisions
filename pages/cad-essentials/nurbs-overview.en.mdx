@@ -1,4 +1,4 @@
-# NURBS Fundamentals
+# NURBS Overview
 
 # Introduction to NURBS
 
@@ -13,6 +13,8 @@ Non-Uniform Rational Basis-Splines (NURBS) is a mathematical model widely used i
 They offer significant flexibility and precision in handling both standard geometric shapes and freeform designs. NURBS is integral to various applications, including computer-aided design (CAD), manufacturing (CAM), and engineering (CAE).
    
 Unlike polygon-based modelling, which relies on a network of flat surfaces (faces) connected by edges, NURBS allows for the creation of continuous, infinitely smooth curves and surfaces without visible faceting.
+
+![NURBS and Poly Example](/img/nurbs-vs-poly.png)
 
 This makes NURBS an essential tool for industries that require high precision, such as automotive design, aerospace engineering, product manufacturing, architecture, and industrial design. Not limited to this, NURBS can also be used in other fields such as animation, games, scientific visualization, and others.
 
@@ -41,11 +43,7 @@ NURBS models are built using several key components:
 
         Each span also has a starting and ending point. These points are deffined with Vertexes, however, to better diversify these classes and understand them better in context-sensitive situations,  A terminological word can be used in understanding this context can be used with "Edit Points".
 
-        A sp
-
         ![Span Image Example](/img/span-nurbs.png)
-
-        Below is an image example
 
         ![Span Curves Example](/img/span-curves.png)
 
@@ -71,7 +69,7 @@ NURBS models are built using several key components:
 
 
 
-    #### Knots and Knot Vector   
+    #### Knots  
 
         Knots are parameters that define how much influence each control point has on the shape of the curve. They help determine whether a curve bends sharply or remains smooth across different sections.
 
@@ -90,6 +88,7 @@ NURBS models are built using several key components:
 A NURBS surface extends the concept of NURBS curves into two parametric directions (U and V) and is essentially a network of NURBS curves connected smoothly in two dimensions. A dedicated chapter for UVN is written [here](/cad-essentials/uvn-coordinate-system).
 A NURBS surface has a topology similar to that of a Mesh primitive. In a NURBS surface, each node of the UV coordinate matrix represents a CV connected by rows and columns to form a NURBS hull. This allows modeling of complex smooth surfaces, whose shape is changeable simply by moving the CVs
 ![UVN NURBS Example](/img/uvn-nurbs.png)
+![UVN NURBS Example](/img/uvn-nurbs-2.png)
 
 NURBS solids are surfaces or polysurfaces that form a closed volume. It defines thickness distribution, which makes volume and strenght calculations seamless, along with other examples such as 3D printing. It is recommended to work with closed volumes and not  open surfaces as that will cause production issues - such as not visuallizing material filling. By joining solid models (sheets), this will constitute as a close single solid. 
 
@@ -102,12 +101,10 @@ NURBS solids are surfaces or polysurfaces that form a closed volume. It defines 
 | Feature | NURBS | Polygon Mesh |
 | ------- | ----- | ------------ |
 | Accuracy | Mathematical precision | Approximate with facets |
-| Editability | Control points, weights, knots | Vertex-based, less intuitive |
+| Editability | Control points, weights, knots | Vertex-based |
 | Scalability | Resolution-independent | More polygons needed for detail |
 | Smoothness | Always smooth | Requires subdivision for smoothness |
-| Compatibility | Used in CAD, CAM, engineering | More common in VFX, gaming |
-
-![NURBS and Poly Example](/img/nurbs-vs-poly.png)
+| Compatibility | Used in CAD, CAM, CAE | More common in VFX, gaming, animation |
 
 ### Common Applications 
 
