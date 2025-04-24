@@ -22,7 +22,6 @@ The NURBS 3D data type can easily be exported to other CAD software applications
 
 ![What is NURBS Overview](/img/nurbs-overview-01.png)
 
-
 ## How does NURBS work?
 
 ### NURBS Components
@@ -31,21 +30,20 @@ NURBS models are built using several key components:
 
     #### Control Points   
         
-        Control Points or Control Vertexes are points that define the shape of a NURBS curve or surface. Unlike polygons, which have sharp edges, NURBS control points act like magnets that pull the curve toward them, influencing its form without breaking its smoothness.
-	   
-	    Increasing the number of CVs increases local control, but excessive points can introduce unnecessary complexity.
+        Control Points or Control Vertexes are points that define the shape of a NURBS curve or surface. Unlike polygons, which have sharp edges, NURBS control points act like magnets that pull the curve toward them, influencing its form without breaking its smoothness. Increasing the number of CVs increases local control, but excessive points can introduce unnecessary complexity.
 
         ![Control Points or Control Vertex Image Example](/img/control-vertex-nurbs.png)
 
     #### Spans    
 
-        A span is a section of the NURBS curve or surface between two knot values. You can think of it as a segment where a portion of the curve is mathematically defined using a set of control points and basis functions. In simpler terms, each span is an individual piece of the overall curve. This can be used in stitching together multiple spans in order to smoothly shape a longer or complex curve shape. 
+        A span is a segment of a NURBS curve or surface defined between two knot values. It represents a portion of the curve that is mathematically constructed using a specific set of control points and basis functions. In simpler terms, each span is an individual building block of the overall curve. Multiple spans can be stitched together to form a smooth, continuous, and more complex curve or surface shape. 
 
-        Each span also has a starting and ending point. These points are deffined with Vertexes, however, to better diversify these classes and understand them better in context-sensitive situations,  A terminological word can be used in understanding this context can be used with "Edit Points".
+        ![Span Curves Example](/img/span-curves.png)
+
+        Each span also has a starting and ending point, defined by vertices. However, to better distinguish between these classes and understand them in context-sensitive situations, the term "Edit Points" can be used to provide clearer terminology in this context.
 
         ![Span Image Example](/img/span-nurbs.png)
 
-        ![Span Curves Example](/img/span-curves.png)
 
     #### Degree  
         
@@ -61,13 +59,18 @@ NURBS models are built using several key components:
         | 4 | Quartic | 5 | Curves with increased smoothness and flexibility compared to cubic curves. | 
         | 5 | Quintic | 6 | Highly flexible curves capable of achieving very smooth transitions. |
 
-        Terminology such as linear, quadratic, cubic, and quintic are used to describe the number of degree for a curve. A higher degree curve (e.g., cubic or quintic) allows for more complex shapes, while a lower degree curve (e.g., linear) results in straighter forms. Higher degrees create smoother curves but increase computational complexity. Degree 3 (cubic) is the most commonly used in CAD software due to its balance between flexibility and performance.
-     
-        The order of a NURBS curve is a positive whole number equal to (degree+1). Consequently, the degree is equal to (order-1). 
+        Terminology such as linear, quadratic, cubic, and quintic refers to the degree of a curve. The degree indicates the highest power of the polynomial used to define the curve. Higher-degree curves (e.g., cubic or quintic) allow for more complex and flexible shapes, while lower-degree curves (e.g., linear) produce simpler, straighter forms. Although higher degrees offer smoother transitions and greater control, they also increase computational complexity. In practice, degree 3 (cubic) curves are most commonly used in CAD software, as they provide an ideal balance between shape flexibility and computational efficiency.
+
+    #### Order
+
+        The order of a NURBS curve is defined as one more than its degree (Order = Degree + 1). While the degree determines the curve's mathematical complexity and smoothness, the order reflects how many control points are used to calculate each segment of the curve. This distinction comes from the underlying math: the recursive basis functions that build the curve rely on the order to define how control points influence the shape. In practice, degree shapes the curve; order defines the number of contributing control points at any given time.
+
+        | Term | Description |
+        | :---: | ---------- | 
+        | Degree | The highest exponent in the curve's polynomial. Controls smoothness and curvature complexity. | 
+        | Order | One more than the degree. Mainly used in NURBS terminology and math. | 
 
         ![Order of a NURBS Curve](/img/order-curve-nurbs.png)
-
-
 
     #### Knots  
 
@@ -83,16 +86,18 @@ NURBS models are built using several key components:
 
         ![Weight Example](/img/weight-nurbs.png)
 
-## NURBS Surfaces
+    #### NURBS Surfaces
 
-A NURBS surface extends the concept of NURBS curves into two parametric directions (U and V) and is essentially a network of NURBS curves connected smoothly in two dimensions. A dedicated chapter for UVN is written [here](/cad-essentials/uvn-coordinate-system).
-A NURBS surface has a topology similar to that of a Mesh primitive. In a NURBS surface, each node of the UV coordinate matrix represents a CV connected by rows and columns to form a NURBS hull. This allows modeling of complex smooth surfaces, whose shape is changeable simply by moving the CVs
-![UVN NURBS Example](/img/uvn-nurbs.png)
-![UVN NURBS Example](/img/uvn-nurbs-2.png)
+        A NURBS surface extends the concept of NURBS curves into two parametric directions (U and V) and is essentially a network of NURBS curves connected smoothly in two dimensions. A dedicated chapter for UVN is written [here](/cad-essentials/uvn-coordinate-system).
 
-NURBS solids are surfaces or polysurfaces that form a closed volume. It defines thickness distribution, which makes volume and strenght calculations seamless, along with other examples such as 3D printing. It is recommended to work with closed volumes and not  open surfaces as that will cause production issues - such as not visuallizing material filling. By joining solid models (sheets), this will constitute as a close single solid. 
+        A NURBS surface has a topology similar to that of a Mesh primitive. In a NURBS surface, each node of the UV coordinate matrix represents a CV connected by rows and columns to form a NURBS hull. This allows modeling of complex smooth surfaces, whose shape is changeable simply by moving the CVs
 
-![NURBS Solids Example](/img/solids-nurbs.png)
+        ![UVN NURBS Example](/img/uvn-nurbs.png)
+        ![UVN NURBS Example](/img/uvn-nurbs-2.png)
+
+        NURBS solids are surfaces or polysurfaces that form a closed volume. It defines thickness distribution, which makes volume and strenght calculations seamless, along with other examples such as 3D printing. It is recommended to work with closed volumes and not  open surfaces as that will cause production issues - such as not visuallizing material filling. By joining solid models (sheets), this will constitute as a close single solid. 
+
+        ![NURBS Solids Example](/img/solids-nurbs.png)
 
 ## Advantages and Applications of NURBS
 
