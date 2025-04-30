@@ -74,7 +74,7 @@ NURBS models are built using several key components:
 
     #### Knots  
 
-        Knots are parameters that define how much influence each control point has on the shape of the curve. They help determine whether a curve bends sharply or remains smooth across different sections.
+        A knot is a value in the knot vector that divides the parameter space of a NURBS curve (or surface) into segments. Knots determine how control points influence the curve between them. They are used in the mathematical calculations to define the basis functions that shape the curve, but they do not appear visually in the model. The way knots are spaced and their multiplicity directly impact the continuity and overall shape of the curve.
 
     #### Weight 
 
@@ -94,6 +94,8 @@ NURBS models are built using several key components:
 
         ![UVN NURBS Example](/img/uvn-nurbs.png)
         ![UVN NURBS Example](/img/uvn-nurbs-2.png)
+
+    #### NURBS Solids
 
         NURBS solids are surfaces or polysurfaces that form a closed volume. It defines thickness distribution, which makes volume and strenght calculations seamless, along with other examples such as 3D printing. It is recommended to work with closed volumes and not  open surfaces as that will cause production issues - such as not visuallizing material filling. By joining solid models (sheets), this will constitute as a close single solid. 
 
