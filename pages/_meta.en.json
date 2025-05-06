@@ -27,6 +27,7 @@
         "title": "Integration"
     },
     "blender": "Blender",
+    "release-notes": "Release Notes",
     "---5": {
         "type": "separator",
         "title": "Advanced"
