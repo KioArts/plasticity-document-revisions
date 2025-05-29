@@ -1,3 +1,8 @@
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
 # アセット
 
 アセットセクションには、現在アクティブなPlasticityプロジェクトで使用されているすべてのマテリアルが表示されます。
@@ -16,3 +21,55 @@
 - マテリアルを右クリックすると、「このマテリアルで選択されたすべてのオブジェクトを選択」というオプションが表示され、同じマテリアルを共有するすべてのオブジェクトを迅速に選択できます。
 
 ![共有マテリアルでオブジェクトを選択](/img/assets-select-materials.png)
+
+## 物理マテリアル
+
+Assetsパネルの下部には、Plasticityに付属しているさまざまな物理マテリアルが表示されます。正しく表示するには、[レンダーモード](/plasticity-essentials/view-mode) を有効にして、オブジェクト上にシェーダーが視覚化されるようにしてください。
+
+### 物理マテリアルの編集
+
+各マテリアルには、独自のマテリアルプロパティを含むプリセットが用意されています。これらのプロパティは、キーボードで <kbd>M</kbd> を押すことで編集できます。
+
+- **テクスチャスケール:** テクスチャ全体のスケールを調整します。
+- **ブレンディング:** トライプラナー投影のブレンディングを制御します。値が0の場合は最大ブレンディング、7の場合は境界でのブレンディングが適用されません。明らかな継ぎ目を隠すのに便利です。
+- **回転:** オブジェクトに適用されたマテリアルを回転させます。
+  - **X軸回転:** マテリアル全体をワールド座標系のX軸で回転します。
+  - **Y軸回転:** マテリアル全体をワールド座標系のY軸で回転します。
+  - **Z軸回転:** マテリアル全体をワールド座標系のZ軸で回転します。
+
+![物理マテリアルの編集](/img/physical-materials.png)
+
+<VideoPlayer fileName="physical-material"/>
+
+### 表示されているマテリアル
+
+以下は、プレビュー可能なすべての物理マテリアルの一覧表です：
+
+| 名前   | サムネイルプレビュー | 名前   | サムネイルプレビュー |
+|:------:|:---------------------:|:------:|:----------------------:|
+|Aluminum |![Aluminum](/img/aluminum.png)| Bronze Oxidized   | ![Bronze Oxidized](/img/bronze-oxidized.png)  |
+|Aluminum Brushed|![Aluminum Brushed](/img/aluminum-brushed.png)| Brass  | ![Brass](/img/brass.png)   |
+|Aluminum Matte|![Aluminum Matte](/img/aluminum-matte.png)| Brass Oxidized   | ![Brass Oxidized](/img/brass-oxidized.png) |
+|Gold Foil | ![Gold Foil](/img/gold-foil.png)  | Car Paint     | ![Car Paint](/img/car-paint.png)  |
+|White Plastic | ![White Plastic](/img/white-plastic.png) | Concrete      | ![Concrete](/img/concrete.png)  |
+|Rubber | ![Rubber](/img/rubber.png) | Royal Blue Linen  | ![Royal Blue Linen](/img/royal-blue-linen.png)  |
+|Plastic Rough | ![Plastic Rough](/img/plastic-rough.png)  | Brown Leather     | ![Brown Leather](/img/brown-leather.png)   |
+|Nickel | ![Nickel](/img/nickel.png)  | Milan Polished Marble     | ![Milan Polished Marble](/img/milan-polished-marble.png) |
+|Nickel Oxidized | ![Nickel Oxidized](/img/nickel-oxidized.png)   |  Stainless Steel Brushed     | ![Stainless Steel Brushed](/img/stainless-steel-brushed.png) |
+|Iron | ![Iron](/img/iron.png)  | Simple Plaster    | ![Simple Plaster](/img/simple-plaster.png)  |
+|Gold | ![Gold](/img/gold.png)   |  Sandstone    | ![Sandstone](/img/sandstone.png) |
+|Copper | ![Copper](/img/copper.png)   | Perforated Metal    | ![Perforated Metal](/img/perforated-netal.png) |
+|Copper Oxidized    | ![Copper Oxidized](/img/copper-oxidized.png)  |  Hex Metal    | ![Hex Metal](/img/hex-metal.png) |
+|Copper Brushed   | ![Copper Brushed](/img/copper-brushed.png)  |  Wood Dark Maple    | ![Wood Dark Maple](/img/wood-dark-maple.png)  |
+|Copper Old    | ![Copper Old](/img/copper-old.png)   | Wood Painted Green    | ![Wood Painted Green](/img/wood-painted-green.png)   |
+|Chrome    | ![Chrome](/img/chrome.png)   |  Wood Walnut    | ![Wood Walnut](/img/wood-walnut.png)  |
+|Bronze    | ![Bronze](/img/bronze.png)   |       |       |
+
+<Callout type="info" emoji="🗒️">
+**注意**  
+- オブジェクトをメッシュやCADファイルとしてエクスポートしても、BlenderやMayaなどのDCC（デジタルコンテンツ制作）ソフトウェアにインポートする際に物理マテリアルのプロパティは保持されません。これらのマテリアルはPlasticity内でのビジュアライゼーションを目的としており、マテリアルシェーダーを使ってオブジェクトのコンセプトを表現するためのものです。
+</Callout>
+
+## See also
+- [Set Material](/common/set-material)
+- [View Mode](/plasticity-essentials/view-mode)
