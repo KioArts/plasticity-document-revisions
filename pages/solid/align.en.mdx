@@ -1,0 +1,38 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+# Align
+
+<Reference shortcut="" command="Align" button="" />
+
+This command is based of Xnurb's command. Align is designed to align two surfaces and maintain G0, G1, and G2 continuity. Options for Degree and Span editing of surface is available. This command is exclusively available with the Studio License.
+
+## Basic Usage
+
+1. Select an edge of the surface you wish to align with and an edge to align to.
+2. Type **Align** in the Command Palette.
+3. Set the options in the Command Dialog.
+    - <Kst>Command Dialog</Kst>
+        - Continuity:
+        - Tension 1:
+        - Blend extra rows:
+        - Input shape influence:
+        - Degree:
+        - Spans:
+        - Boundary:
+          - Natural:
+          - Normal:
+         - Next:
+         - Adjacent:
+     - Check continuity:
+        - G0 Scale:
+     - G1 Scale:
+     - G2 Scale:
+    - <Kst>Keyboard Shortcuts</Kst>
+    - <kbd>Tab</kbd> Cycle continuity:
+4. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="align"/>
