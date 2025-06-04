@@ -8,7 +8,13 @@ import { Callout } from 'nextra/components'
 
 <Reference shortcut="" command="Align" button="" />
 
-This command is based of the command XNurb. Align is designed to align two surfaces and maintain G0, G1, and G2 continuity by using two selected edges - one being the edge that you want to align and the other the reference edge which guides the other edge. Options for Degree and Span editing of surface is available. This command is exclusively available with the Studio License.
+This command is based of the command XNurb. Align is designed to match two surfaces and maintain G0, G1, and G2 continuity by using two selected edges - one being the edge that you want to align and the other the reference edge which guides the other edge. Options for Degree and Span editing of surface is available. This command is exclusively available with the Studio License.
+
+<Callout type="Note" emoji="ℹ️">
+Note: This command is available only with the Studio License.
+</Callout>
+
+> **Note:** This command is available only with the Studio License.
 
 ## Basic Usage
 
@@ -16,23 +22,29 @@ This command is based of the command XNurb. Align is designed to align two surfa
 2. Type **Align** in the Command Palette.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
-        - Continuity:
-        - Tension 1:
-        - Blend extra rows:
-        - Input shape influence:
-        - Degree:
-        - Spans:
-        - Boundary:
-          - Natural:
-          - Normal:
-         - Next:
-         - Adjacent:
-     - Check continuity:
-        - G0 Scale:
-     - G1 Scale:
-     - G2 Scale:
+        - **Continuity:** **G0, G1, G2**
+            - Specify the [continuity of the Surface](/cad-essentials/continuity-curve-and-surface).
+            - Continuity can be specified individually by clicking on the black circles on the surface.
+        - **Tension:** Adjust the curvature transition of a surface.
+        - Blend extra rows: Defines how many rows of CVs are blended during the Align operation. A value of 0 applies no blending. Higher values blend more CV rows from the surface, resulting in a smoother and more controlled transition. If the value equals or exceeds the number of CV rows on the surface, the surface becomes fully unrestricted and aligns completely with the target surface.
+        - **Input shape influence:** Controls how strongly the original shape affects the result during the Align operation.
+        - **Degree:** Specify the UV degree value.
+        - **Spans:** Specify the UV spans value.
+        - **Boundary:** Specify the condition of UV flow.
+          - **Natural:** No requirement for UV Flow.
+          - **Normal:** Maintain UV isocurve mutually perpendicular.
+          - **Next:** Generate a perpendicular flow of UV if boundary conditions are relatively flat.
+          - **Adjacent:** Align V isocurves of the generated surface to adjacent curves.
+     - Check continuity: Checks the continuity of edges and surfaces.
+        - G0: Checks for G0 continuity.
+        - G1: Checks for G1 continuity.
+        - G2: Checks for G2 continuity.
+    - G0 Scale: Adjust the scale of tolerance for G0 continuity.
+    - G1 Scale: Adjust the scale of tolerance for G1 continuity.
+    - G2 Scale: Adjust the scale of tolerance for G2 continuity.
     - <Kst>Keyboard Shortcuts</Kst>
-    - <kbd>Tab</kbd> Cycle continuity:
+    - <kbd>Tab</kbd> Cycle continuity: Change the continuity of surface.
+    - <kbd>Ctrl</kbd> Show original: Quasi mode where you can see previous state of object.
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="align"/>
