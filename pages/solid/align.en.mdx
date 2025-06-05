@@ -25,8 +25,8 @@ Align is based on the XNurb command and is used to match two surfaces while main
             - **Blend extra rows:** Choose how many rows of control-points (CVs) to blend when aligning surfaces. Setting it to 0 results to no blending, while higher values blend more rows for a smoother connection. If the value is as high as or higher than the total rows, the surface fully adjusts to match the target.
             - **Input shape influence:** Adjust how much the original shape affects the aligned result.
         - **Partial Alignment:** Controls how the new surface blends at its start and end.
-                - **Partial start:** Adjusts how much of the surface's start blends with the target.
-                - **Partial end:** Adjusts how much of the surface's end blends with the target.
+                    - **Partial start:** Adjusts how much of the surface's start blends with the target.
+                    - **Partial end:** Adjusts how much of the surface's end blends with the target.
             - **Degree:** Specify the UV degree value.
             - **Spans:** Specify the UV spans value.
             - **Boundary:** Specify the condition of UV flow.
@@ -35,12 +35,12 @@ Align is based on the XNurb command and is used to match two surfaces while main
             - **Next:** Generate a perpendicular flow of UV if boundary conditions are relatively flat.
             - **Adjacent:** Align V isocurves of the generated surface to adjacent curves. 
         - **Analysis:** Analyzes the continuity of surface edges
-            - **Continuity:** Verify the continuity of edges:
-                - **G0:** Position continuity check.
-                - **G1:** Tangent continuity check.
-                - **G2:** Curvature continuity check.
-            - **G0 Scale / G1 Scale / G2 Scale:** 
-                - Adjust tolerance scales for respective continuity checks.
+                - **Continuity:** Verify the continuity of edges:
+                    - **G0:** Position continuity check.
+                    - **G1:** Tangent continuity check.
+                    - **G2:** Curvature continuity check.
+                - **G0 Scale / G1 Scale / G2 Scale:** 
+                    - Adjust tolerance scales for respective continuity checks.
     - <Kst>Keyboard Shortcuts</Kst>
         - <kbd>Tab</kbd> **Cycle continuity:** Cycle through continuity options.
         - <kbd>Ctrl</kbd> **Show original:** Show original surface state (quasi mode).
