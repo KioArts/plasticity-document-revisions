@@ -1,0 +1,81 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+# Align
+
+<Reference shortcut="" command="Align" button="" />
+
+Align は XNurb コマンドに基づいており、G0、G1、または G2 の連続性を保ちながら 2 つのサーフェスを一致させるために使用されます。2 つのエッジを選択します — 1 つは整列対象で、もう 1 つは参照エッジです。整列対象のエッジは、参照エッジの形状および連続性に従うように調整されます。より良い遷移結果を得るために、サーフェスの次数とスパンを編集するオプションも用意されています。
+
+> **注:** このコマンドは **スタジオライセンス** でのみ使用できます。
+
+## 基本的な使い方
+
+1. 揃えたいサーフェスのエッジと、揃える先のエッジを選択します。
+2. コマンドパレットに **Align** と入力します。
+3. コマンドダイアログでオプションを設定します。
+    - <Kst>Command Dialog</Kst>
+        - **Align:**
+            - **Continuity:** **G0, G1, G2** [サーフェスの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+                - サーフェス上の黒い円をクリックすることで、連続性を個別に指定できます。
+            - **Tension:** サーフェスの曲率の遷移を調整します。
+            - **Blend extra rows:** サーフェスを整列する際に、何行の制御点（CV）をブレンドするかを選択します。0に設定するとブレンドなし、高い値にするとより滑らかな接続のために多くの行がブレンドされます。全行数以上の値を設定すると、サーフェスは完全にターゲットに合わせて調整されます。
+            - **Input shape influence:** 元の形状が整列結果にどの程度影響するかを調整します。
+        - **Partial Alignment:** 新しいサーフェスが開始点および終点でどのようにブレンドされるかを制御します。
+                - **Partial start:** サーフェスの始端がターゲットとどの程度ブレンドされるかを調整します。
+                - **Partial end:** サーフェスの終端がターゲットとどの程度ブレンドされるかを調整します。
+            
+            - **Degree:** UV次数の値を指定します。
+            - **Spans:** UVスパンの値を指定します。
+            - **Boundary:** UVフローの条件を指定します。
+            - **Natural:** UVフローに制限なし。
+            - **Normal:** UV等曲線が互いに直交するように維持。
+            - **Next:** 境界条件が比較的フラットな場合に直交フローを生成。
+            - **Adjacent:** 生成されたサーフェスのV等曲線を隣接するカーブに揃える。
+        - **Analysis:** サーフェスエッジの連続性を分析します。
+                - **Continuity:** エッジの連続性を確認します：
+                    - **G0:** 位置の連続性チェック
+                    - **G1:** 接線の連続性チェック
+                    - **G2:** 曲率の連続性チェック
+                - **G0 Scale / G1 Scale / G2 Scale:** 
+                    - 各連続性チェックの許容スケールを調整します。
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>Tab</kbd> **Cycle continuity:** 連続性のオプションを順に切り替えます。
+        - <kbd>Ctrl</kbd> **Show original:** 元のサーフェス状態を表示（疑似モード）。
+4. コマンドダイアログの OK を押すか、右クリックで確定します。
+
+<VideoPlayer fileName="align-1"/>
+
+<Callout type="info" emoji="ℹ️">
+**完全に接続されたシート間のエッジを選択する**  
+ターゲットエッジを選択するには、対象となるシートのエッジ付近にカーソルを合わせて左クリックします。その後、参照エッジを選択するには、もう一方のシートの上にカーソルを置き、<kbd>Shift</kbd> + 左クリックでエッジを選択します。どのエッジを選択しているかを示すハイライトが表示されます。
+</Callout>
+
+
+<VideoPlayer fileName="align-0"/>
+
+## Partial Align
+
+新しいサーフェスの開始点と終了点のブレンド量を制御することで、ターゲットサーフェスに部分的に整列させます。これにより、先細りや徐々に変化する遷移が可能になります。
+
+1. 整列したいサーフェスのエッジと、整列先となるエッジを選択します。
+2. コマンドパレットに **Align** と入力します。
+3. コマンドダイアログでオプションを設定します。
+    - <Kst>Command Dialog</Kst>
+        - **Partial Alignment:** 新しいサーフェスが開始点および終点でどのようにブレンドされるかを制御します。
+                - **Partial start:** サーフェスの始端がターゲットとどの程度ブレンドされるかを調整します。
+                - **Partial end:** サーフェスの終端がターゲットとどの程度ブレンドされるかを調整します。
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>Tab</kbd> **Cycle continuity:** 連続性のオプションを順に切り替えます。
+        - <kbd>Ctrl</kbd> **Show original:** 元のサーフェス状態を表示（疑似モード）。
+
+<VideoPlayer fileName="align-2"/>
+
+## Align Multiple Surfaces
+
+複数の隣接するサーフェスを同時に整列させることで、より広範囲なブレンドが可能になります。この機能はまだ実験的な段階にあり、現在も改良中です。ブレンド形状の複雑さや周囲のジオメトリによって結果やサーフェスの品質は変動する可能性があります。
+
+<VideoPlayer fileName="align-3"/>

@@ -25,8 +25,8 @@ Align is based on the XNurb command and is used to match two surfaces while main
             - **Blend extra rows:** Choose how many rows of control-points (CVs) to blend when aligning surfaces. Setting it to 0 results to no blending, while higher values blend more rows for a smoother connection. If the value is as high as or higher than the total rows, the surface fully adjusts to match the target.
             - **Input shape influence:** Adjust how much the original shape affects the aligned result.
         - **Partial Alignment:** Controls how the new surface blends at its start and end. 
-                    - **Partial start:** Adjusts how much of the surface's start blends with the target.
-                    - **Partial end:** Adjusts how much of the surface's end blends with the target.
+                - **Partial start:** Adjusts how much of the surface's start blends with the target.
+                - **Partial end:** Adjusts how much of the surface's end blends with the target.
             - **Degree:** Specify the UV degree value.
             - **Spans:** Specify the UV spans value.
             - **Boundary:** Specify the condition of UV flow.
@@ -49,8 +49,8 @@ Align is based on the XNurb command and is used to match two surfaces while main
 <VideoPlayer fileName="align-1"/>
 
 <Callout type="info" emoji="ℹ️">
-**Selecting Edges Between Perfectly Connected Sheets**   
-To choose the target edge, hover your cursor over the correct sheet near its edge and left-click. Then, to select the reference edge, make sure your cursor is over the other sheet and press <kbd>Shift</kbd> + Left-click on the edge. You'll see highlight indicators to help you identify which edge you're selecting.
+**Selecting Edges Between Connected Sheets**   
+To choose the target edge, hover your cursor over the correct sheet near its edge and left-click. Then, to select the reference edge, make sure your cursor is over the other sheet and press <kbd>Shift</kbd> + Left-Click on the edge. You'll see highlight indicators to help you identify which edge you're selecting.
 </Callout>
 
 <VideoPlayer fileName="align-0"/>
@@ -74,6 +74,6 @@ Partially align a new surface to a target surface by controlling how much of the
 
 ## Align Multiple Surfaces
 
-Align more than two adjacent surfaces at once to enable broader blending across multiple areas. This is still an experimental feature and is currently being improved. The results and surface quality may vary depending on the complexity of the blended shape and its surrounding geometry.
+Align more than two adjacent surfaces at once to enable broader blending across multiple areas. The results and surface quality may vary depending on the complexity of the blended shape and its surrounding geometry.
 
 <VideoPlayer fileName="align-3"/>
