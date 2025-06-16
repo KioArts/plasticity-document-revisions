@@ -20,15 +20,27 @@ import Kst from '/components/KeyboardShortcutsTitle'
          - このボタンがハイライトされているとき、ブーリアンのツールとして使用するソリッドまたはシートを選択できます。
          - ツールを変更するには、このボタンをもう一度クリックして、ソリッドまたはシートを選択します。
 3. コマンドダイアログとキーボードショートカットでオプションを設定します。
-   - <Kst>コマンドダイアログ</Kst>
-      - **Keep Tools:** ブーリアンが実行され、ツールのオブジェクトはそのまま残ります。
+   - <Kst>Command Dialog</Kst>
+      - **Keep Tools:** ツールオブジェクトをそのまま残してブーリアン演算を実行します。
       - **Opetation:**
-         - **Union:** ブーリアンターゲットとツールを結合します。
-         - **Difference:** ブーリアンターゲットからツールを切り取ります。
-         - **Intersect:** ブーリアンターゲットとツールの交点にソリッドを作成します。
-         - **Slice:** ヴーリアンターゲットとツールの交点にソリッドを作成し、余りのソリッドも残ります。
-         - オペレーションによる結果の違いは、[こちら](#operation-outcome-differences)を参照してください。
-   - <Kst>キーボードショートカット</Kst>
+         - **Union:** ターゲットとツールオブジェクトを結合して1つのソリッドにします。
+         - **Difference:** ツールオブジェクトをターゲットから削除します。
+         - **Intersect:** ターゲットとツールの交差部分のみをソリッドとして作成します。
+         - **Slice:** ターゲットとの交差部分を分割してソリッドを作成し、残りの部分も保持します。
+         - **Region:** ソリッドやシートの集合体内で閉じた領域からソリッドを作成します。
+         - 操作による結果の違いについては、[通常のブーリアン演算](#normal-boolean-operations)のセクションを参照してください。
+      - **Advanced:**
+         - **Target Material:** ブーリアン演算中にターゲットオブジェクトをソリッドとして扱うか、シートとして扱うかを定義します。この設定は、特に「差分」や「交差」などの操作で、ツールとの相互作用に影響します。
+            - **Default:** オブジェクトの元の状態（ソリッドまたはシート）を使用します。
+            - **Empty:** オブジェクトを空の殻として扱います。
+            - **Inside:** ツールの法線方向に基づいて、内側からソリッドとして扱います。
+            - **Outside:** ツールの法線方向に基づいて、外側からソリッドとして扱います。
+         - **Tool Material:** Controls how the tool object behaves in the Boolean operation. You can choose to treat it as a solid or a sheet, affecting how it interacts with parts of the target.
+            - **Default:** オブジェクトの元の状態を使用します。
+            - **Empty:** オブジェクトを空の殻として扱います。
+            - **Inside:** ターゲットの法線方向に基づいて、内側からソリッドとして扱います。
+            - **Outside:** Treats the body as a solid object from the outside based on the normal direction of Target object.
+         - 操作による結果の違いについては、[高度なブーリアン演算の違い](#advanced-boolean-operations-differences)のセクションを参照してください。
          - <kbd>Shift + Q</kbd> **Slice:** 上記と同じです。
          - <kbd>Q</kbd> **Union:**  上記と同じです。
          - <kbd>W</kbd> **Difference:**  上記と同じです。
@@ -41,19 +53,37 @@ import Kst from '/components/KeyboardShortcutsTitle'
          - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z-plane:** X, Y, Z平面に拘束します。
 4. コマンドダイアログでOKをクリックするか、右クリックで確定します。
 
-## オペレーションによる結果の違い[#operation-outcome-differences]
+<VideoPlayer fileName="boolean-0"/>
 
-### ターゲット: ソリッド, ツール: ソリッド
-![Boolean 1](/img/boolean-1.png )
+## 演算結果の違い [#operation-outcome-differences]
 
-### ターゲット: ソリッド, ツール: シート
-![Boolean 2](/img/boolean-2.png )
+### 通常のブーリアン演算 [#normal-boolean-operations]
 
-### ターゲット: シート, ツール: ソリッド
-![Boolean 3](/img/boolean-3.png )
+   #### Target: Solid, Tool: Solid
+   ![Boolean 1](/img/boolean-1.png)
 
-### ターゲット: シート, ツール: シート
-![Boolean 4](/img/boolean-4.png )
+   #### Target: Solid, Tool: Sheet
+   ![Boolean 2](/img/boolean-2.png)
+
+   #### Target: Sheet, Tool: Solid
+   ![Boolean 3](/img/boolean-3.png)
+
+   #### Target: Sheet, Tool: Sheet
+   ![Boolean 4](/img/boolean-4.png)
+
+### 高度なブーリアン演算の違い [#advanced-boolean-operations-differences]
+
+   #### Target: Solid, Tool: Solid
+   ![Boolean 1](/img/boolean-5.png)
+
+   > **注意:** **ターゲット: 外側 / ツール: 空** – ターゲットオブジェクトとツールオブジェクトをスライスすると、次の3つの結果が生成されます：両オブジェクトの結合された複製、交差部分が除去されたツールのシート、交差部分が除去されたターゲットのソリッド。
+
+   #### Target: Solid, Tool: Sheet
+   ![Boolean 1](/img/boolean-6.png)
+   #### Target: Sheet, Tool: Solid
+   ![Boolean 1](/img/boolean-7.png)
+   #### Target: Sheet, Tool: Sheet
+   ![Boolean 1](/img/boolean-8.png)
 
 ## 関連項目
 - [Cut](cut)
