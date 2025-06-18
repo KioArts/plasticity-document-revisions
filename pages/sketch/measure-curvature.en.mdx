@@ -1,0 +1,45 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Measure Curvature
+
+<Reference shortcut="" command="Measure Curvature" button="" />
+
+Measure the curvature of surface edges, curves, and isoparms using a curvature comb (displayed in white) to visually evaluate shape quality and smoothness.
+
+![Curvature Comb](/img/curvature-comb.png)
+
+## Basic Usage
+
+1. Select two adjacent and touching surface edges.
+2. Type **"Measure Continuity"** in the Command Palette.
+3. Set the options in the Command Dialog.
+   - <Kst>Command Dialog</Kst>
+         - **Continuity:** Verifies the type of edge continuity:
+            - **G0:** Checks for position continuity. Measures the positional deviation in metric units based on your current unit settings in Plasticity.
+            - **G1:** Checks for tangency continuity. Measures the angular deviation in degrees between adjacent surfaces.
+            - **G2:** Checks for curvature continuity by comparing curvature values between adjacent surfaces.
+        - **G0 Scale / G1 Scale / G2 Scale:** 
+                - Adjusts visual size of combs or deviation plot
+        - **G0 Tolerance/ G1 Tolerance/ G2 Tolerance:** 
+                - Adjusts the numerical threshold for deviation detection.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>Tab</kbd> **Cycle:** Cycle through continuity options.
+4. Confirm with OK in the Command Dialog or right-click.
+
+
+<Callout type="info" emoji="💡">
+**Info**
+Curvature evaluation helps you:
+    - **Ensure surface quality:** Identify and eliminate ripples, dents, or unintended kinks to maintain smooth transitions.
+    - **Verify continuity:** Assess whether surfaces meet with G0 (position), G1 (tangent), or G2 (curvature) continuity.
+    - **Refine reflection flow:** Essential in automotive and industrial design, where surfaces must appear seamless under various lighting conditions.
+    - **Predict manufacturability:** Sharp or abrupt curvature changes can pose challenges in machining, molding, or fabrication.
+</Callout>
+
+<VideoPlayer fileName="measure-curvature-0"/>
+
+## See also
+- [Measure Continuity](/solid/measure-continuity)
