@@ -1,0 +1,33 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Measure Continuity
+
+<Reference shortcut="" command="Measure Continuity" button="" />
+
+Messen Sie die Kontinuität von Flächenkanten, indem Sie prüfen, ob die Verbindung G0, G1 oder G2 ist (G3 wird nicht unterstützt).
+
+## Basic Usage
+
+1. Wählen Sie zwei benachbarte und sich berührende Flächenkanten aus.
+2. Geben Sie **"Measure Continuity"** in die Befehlspalette ein.
+3. Legen Sie die Optionen im Befehlsdialog fest.
+   - <Kst>Befehlsdialog</Kst>
+         - **Continuity:** Überprüft den Typ der Kantenkontinuität:
+            - **G0:** Prüft auf Positionskontinuität. Misst die Positionsabweichung in metrischen Einheiten basierend auf den aktuellen Einheitseinstellungen in Plasticity.
+            - **G1:** Prüft auf Tangentenkontinuität. Misst die Winkelabweichung in Grad zwischen benachbarten Flächen.
+            - **G2:** Prüft auf Krümmungskontinuität durch Vergleich der Krümmungswerte benachbarter Flächen.
+        - **G0 Scale / G1 Scale / G2 Scale:** 
+                - Passt die visuelle Größe der Kämme und der Abweichungsanzeige an.
+        - **G0 Tolerance/ G1 Tolerance/ G2 Tolerance:** 
+                - Legt den numerischen Schwellenwert für die Abweichungserkennung fest.
+   - <Kst>Tastenkombinationen</Kst>
+      - <kbd>Tab</kbd> **Cycle:** Wechselt zwischen den Kontinuitätsoptionen.
+4. Bestätigen Sie mit „OK“ im Befehlsdialog oder durch Rechtsklick im Viewport.
+
+<VideoPlayer fileName="measure-continuity-0"/>
+
+## Siehe auch
+- [Measure Curvature](/sketch/measure-curvature)

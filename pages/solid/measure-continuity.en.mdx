@@ -1,0 +1,33 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Measure Continuity
+
+<Reference shortcut="" command="Measure Continuity" button="" />
+
+Measure the continuity of surface edges by evaluating whether the connection is G0, G1, or G2 (G3 is not supported).
+
+## Basic Usage
+
+1. Select two adjacent and touching surface edges.
+2. Type **"Measure Continuity"** in the Command Palette.
+3. Set the options in the Command Dialog.
+   - <Kst>Command Dialog</Kst>
+         - **Continuity:** Verifies the type of edge continuity:
+            - **G0:** Checks for position continuity. Measures the positional deviation in metric units based on your current unit settings in Plasticity.
+            - **G1:** Checks for tangency continuity. Measures the angular deviation in degrees between adjacent surfaces.
+            - **G2:** Checks for curvature continuity by comparing curvature values between adjacent surfaces.
+        - **G0 Scale / G1 Scale / G2 Scale:** 
+                - Adjusts visual size of combs and deviation plot.
+        - **G0 Tolerance/ G1 Tolerance/ G2 Tolerance:** 
+                - Adjusts the numerical threshold for deviation detection.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>Tab</kbd> **Cycle:** Cycle through continuity options.
+4. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="measure-continuity-0"/>
+
+## See also
+- [Measure Curvature](/sketch/measure-curvature)
