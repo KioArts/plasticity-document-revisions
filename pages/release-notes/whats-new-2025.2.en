@@ -10,15 +10,19 @@ Plasticity 25.1 introduces a wide array of enhancements and new features aimed a
 
 ## 1. New Commands
 
-For Material - Allows you to duplicate and edit the materials for the selected objects. 
+Fork Material - Allows you to duplicate and edit the materials for the selected objects. 
 
 Measure Continuity - Allows you to take pairs of edges and measures G0/G1/G2 continuity while the command is running.
 
-Align Command - A command that allows you to align two surfaces to have G0/G1/G2 continuity. Further reading, check here. (you can now change degree/Spans of surface.)
+Measure Curvature - Allows you to measure and asses the continuity of the curve.
 
-Unlock All - Unlocks all locked objects and groups in the outliner.
+X Align Command - A command that allows you to align two surfaces to have G0/G1/G2 continuity. Further reading, check here. (you can now change degree/Spans of surface.)
 
-Region Command - A command similar to boolean command, identifies fully enclosed regions given a collection of bodies.
+X Unlock All - Unlocks all locked objects and groups in the outliner.
+
+ X Region Command - A command similar to boolean command, identifies fully enclosed regions given a collection of bodies. X
+
+ X Export STEP / SAT Commands - Commands are now accessible from command panel X
 
 ## New features
 
@@ -29,15 +33,13 @@ Extend Sheet, Extend Curve and Vertex, and Push Face Commands - Now have a dialo
 
 ## 2. Improved Commands
 
-Duplicate Command - Is not supported to allow you to duplicate groups in which will duplicate children recursively. Previously, only the external group could've been duplicated, meaning what has been inside the group wouldn't be affected.
+Duplicate Command - Is now supported to allow you to duplicate groups in which will duplicate children recursively. Previously, only the external group could've been duplicated, meaning what has been inside the group wouldn't be affected.
 
 Cut Command - Now has an option to "Extend" the cutting curve in case it is too short to go fully through the object
 
 Square Command - Now allows measuring G1/G2 continuity. Previously this has been supported only for G0 continuity.
 
 Reverse Command - Can now reverse multiple bodies simultaneously
-
-Export STEP / SAT Commands - Commands are now accessible from command panel
 
 Select All Command - Now ignores locked items in the outliner
 
