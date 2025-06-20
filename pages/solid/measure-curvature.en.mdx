@@ -11,7 +11,53 @@ import { Tabs } from 'nextra/components'
 
 Measure the curvature of surface edges, curves, and isoparms using a curvature comb (displayed in white) to visually evaluate shape quality and smoothness.
 
-![Curvature Comb](/img/curvature-comb.png)
+> Note: Available on all licenses.
+
+[image iwth main applicability - curves, surface edges and isoparams, cross sections with curvature.]
+
+
+<details>
+  <summary>What is Curvature Evaluation?</summary>
+  <p>
+    The **Measure Curvature** tool analyzes the curvature of curves or surfaces 
+    to help you evaluate smoothness and continuity. It displays curvature combs that represent 
+    the curvature radius at different points, which is especially helpful for ensuring high-quality 
+    surfaces.
+
+    ![Curvature Comb](/img/curvature-comb.png)
+  </p>
+</details>
+
+<details>
+  <summary>Evaluating Surface Continuity</summary>
+  <p>
+    Use the tool to assess whether the surface or curve has G0, G1, G2 and G3 continuity connection across. 
+    
+    G0 (Position Continuity) - The surfaces and curves meet at the same point, but there may be a visible angle or break.
+    G1 (Tangent Continuity) - The surfaces and curves not only meet, but their tangents (direction of flow) align.
+    G2 (Curvature Continuity) - The curvature (rate of change of the tangent) matches across the connection. This results in a very smooth, flowing transition with no visual or reflective break.
+    G3 (Acceleration Continuity) -  Also known as "rate of curvature continuity", G3 ensures that the change in curvature is smooth across the junction. This eliminates even subtle reflection breaks.
+
+    For more information on Continuity, click [here](/cad-essentials/continuity-curve-and-surfaces). 
+
+    ![Curvature Examples on G0, G1, and G2](/img/curvature-0.png)
+  </p>
+</details>
+
+<details>
+  <summary>Understanding Curvature Combs</summary>
+  <p>
+  The curvature comb plots are interpreted by the change in line lenght as you look along the curve from start to end.
+
+    1. A constant lenght of comb indicates a constant radius, for example an erc.
+    2. A changing comb length indicates acceleration or deceleration of the curve shape.
+    3. Inflections are shown by the combs switching sides and optionally by an additional red arrow indicator.
+    4. Breaks in the red boundary curves indicate curvature discrepancies across edit points or between two curves.
+
+    ![Understanding Curvature Combs](/img/curvature-comb-1.png)
+
+  </p>
+</details>
 
 ## Basic Usage
 
@@ -32,22 +78,6 @@ Curvature evaluation helps you:
     - **Refine reflection flow:** Essential in automotive and industrial design, where surfaces must appear seamless under various lighting conditions.
     - **Predict manufacturability:** Sharp or abrupt curvature changes can pose challenges in machining, molding, or fabrication.
 </Callout>
-
-<details>
-  <summary>What is Curvature Evaluation?</summary>
-  <p>
-    ![Understanding Curvature Combs](/img/curvature-comb-1.png)
-    Curvature evaluation is used to diagnose surface continuity...
-  </p>
-</details>
-
-<details>
-  <summary>Evaluating Surface Continuity</summary>
-  <p>
-  ![Curvature Examples on G0, G1, and G2](/img/curvature-0.png)
-    Use the tool to examine G0, G1, and G2 continuity...
-  </p>
-</details>
 
 ## See also
 - [Measure Continuity](/solid/measure-continuity)
