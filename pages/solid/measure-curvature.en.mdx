@@ -8,7 +8,7 @@ import { Callout } from 'nextra/components'
 
 <Reference shortcut="" command="Measure Curvature" button="" />
 
-Measure the curvature of surface edges, curves, and isoparms using a curvature comb (displayed in white) to visually evaluate shape quality and smoothness.
+Measure the curvature of surface edges, curves, and isoparams using a curvature comb (displayed in white) to visually evaluate shape quality and smoothness.
 
 > **Note:** Available on all licenses.
 
@@ -24,19 +24,27 @@ Measure the curvature of surface edges, curves, and isoparms using a curvature c
     </p>
 
     <img src="/img/curvature-comb.png" alt="Curvature Comb" className="mt-4" />
+
+    <p className="mt-2 space-y-4">
+      **Curvature** is calculated as the inverse of the radius at any given point on the curve. This value is represented graphically at discrete intervals using curvature "combs". The way these combs change along the curve - also known as the **flow** - gives insight into the curve's shape and behavior.
+
+        - The **length** of each curvature line is proportional to the inverse of the radius of the curve at that point. In other words, greater curvature corresponds to a smaller radius, which results in a longer curvature line.
+        - The **direction** of each curvature line is perpendicular (normal) to the curvature at each point.
+        - The **red** outline, in this example, represents the shape and flow of the curve.
+    </p>
   </div>
 </details>
 
 
 <details>
-  <summary>Evaluating Surface Continuity</summary>
+  <summary>Evaluating Continuity</summary>
   <p className="mt-2">
-    Use the tool to assess whether the surface or curve has **G0**, **G1**, **G2** and **G3** continuity connection across. 
+    Use the tool to assess whether a surface or curve maintains **G0**, **G1**, **G2** and **G3** continuity at connection points.
     <ul>
-    - **G0** (Position Continuity) - The surfaces and curves meet at the same point, but there may be a visible angle or break. 
-    - **G1** (Tangent Continuity) - The surfaces and curves not only meet, but their tangents (direction of flow) align.  
-    - **G2** (Curvature Continuity) - The curvature (rate of change of the tangent) matches across the connection. This results in a very smooth, flowing transition with no visual or reflective break.  
-    - **G3** (Acceleration Continuity) -  Also known as "rate of curvature continuity", G3 ensures that the change in curvature is smooth across the junction. This eliminates even subtle reflection breaks. 
+    - **G0** (Position Continuity) - Surfaces and curves meet at the same point but form a visible corner or break in direction. 
+    - **G1** (Tangent Continuity) - Surfaces and curves meet with aligned tangents, however, the radius values differ at the join, resulting in disconnected curvature outlines.
+    - **G2** (Curvature Continuity) - Curvature matches across the connection of surfaces and curves, resulting in a smooth transition with no visual or reflective break. However, the curvature outlines are not tangent.
+    - **G3** (Acceleration Continuity) - Curvature and radius values are matched at the join, and the curvature outlines are tangent. This ensures a smooth change in curvature across the junction, removing very subtle reflection breaks. 
     </ul>
 
     For more information on Continuity, click [here](/cad-essentials/continuity-curve-and-surface). 
@@ -52,10 +60,10 @@ Measure the curvature of surface edges, curves, and isoparms using a curvature c
 
   Below are examples of how to read them:
   <ul>
-    - **1.** - When the comb lines are of equal length, it indicates a uniform radius such as in a circular arc.  
-    - **2.** - Variation in the length of the comb lines signals a change in curvature, representing acceleration or deceleration in the curve's form.  
-    - **3.** - Inflection is shown where the comb lines flip sides and at the exact point, the comb line length becomes zero (no curvature) and the curve is momentarily flat.  
-    - **4.** - Breaks in the comb lines indicate curvature discrepancies across edit points or between two curves.  
+    - **1.** When the comb lines are of equal length, it indicates a uniform radius such as in a circular arc.  
+    - **2.** Variation in the length of the comb lines signals a change in curvature, representing acceleration or deceleration in the curve's form.  
+    - **3.** Inflection is shown where the comb lines flip sides and at the exact point, the comb line length becomes zero (no curvature) and the curve is momentarily flat.  
+    - **4.** Breaks in the comb lines indicate curvature discrepancies across [edit points or between two curves.](/cad-essentials/nurbs-overview#spans)  
   </ul>
 
     ![Understanding Curvature Combs](/img/curvature-comb-1.png)
@@ -65,11 +73,11 @@ Measure the curvature of surface edges, curves, and isoparms using a curvature c
 
 ## Basic Usage
 
-1. Select two adjacent and touching surface edges.
+1. Select two adjacent surface edges.
 2. Type **"Measure Curvature"** in the Command Palette.
 3. Set the options in the Command Dialog.
    - <Kst>Command Dialog</Kst>
-         - **Scale:** Adjusts visual size of combs.
+         - **Scale:** Adjusts the size of combs.
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="measure-curvature-0"/>
@@ -77,10 +85,10 @@ Measure the curvature of surface edges, curves, and isoparms using a curvature c
 <Callout type="info" emoji="💡">
 **Info**    
 Curvature evaluation helps you:
-    - **Ensure surface quality:** Identify and eliminate ripples, dents, or unintended kinks to maintain smooth transitions.
-    - **Verify continuity:** Assess whether surfaces meet with G0 (position), G1 (tangent), or G2 (curvature) continuity.
-    - **Refine reflection flow:** Essential in automotive and industrial design, where surfaces must appear seamless under various lighting conditions.
-    - **Predict manufacturability:** Sharp or abrupt curvature changes can pose challenges in machining, molding, or fabrication.
+    - **Ensure surface quality:** Identify and remove ripples, dents, or unintended kinks to maintain smooth transitions.
+    - **Verify continuity:** Assess whether surfaces meet with G0 (position), G1 (tangent), G2 (curvature), or G3 (acceleration) continuity.
+    - **Refine reflection flow:** Assess whether surfaces appear seamless under various lighting conditions.
+    - **Predict manufacturability:** Sharp curvature changes can pose challenges in machining, molding, or fabrication.
 </Callout>
 
 ## See also
