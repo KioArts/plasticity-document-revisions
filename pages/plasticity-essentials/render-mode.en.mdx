@@ -1,0 +1,92 @@
+import { Callout } from 'nextra/components'
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Tabs } from 'nextra/components'
+
+# Render Mode
+
+## Render Mode
+
+Render Mode is located in the View Mode menu in the top-right corner of the screen. You can enable it by clicking the sphere icon **(1)**. Once turned on, the shading in the viewport will update to show a more rendered look for your objects.
+
+![Render Mode Button](/img/render-mode-button.png)
+
+You can switch between Plasticity's built-in HDRIs by clicking on them. The selected HDRI will be applied to the environment right away and updating the scene immediately - though this won't affect the viewport background.
+
+- Available HDRIs: 
+
+![Render Mode Button](/img/render-mode-preview-1.png)
+
+| Name | Number | Applicability | Note |
+| ---- | ------ | ------------- | ---- |
+| Small Studio | 1 | Default Appearance | 
+| Plasticity Studio 1| 2 | Three-Point light setup| 
+| Plasticity Studio 2| 3 | Highlight Checker | 
+| Plasticity Vertical Stripes | 4 | Highlight Checker | 
+| Outdoor Cloudy | 5 | Ambient Gradient Appearance | 
+| Kloofendal Puresky | 6 | Sky/Outdoor Appearance | 
+| Peppermint Powerplant | 7 | Indoor Appearance | 
+
+## All Environment
+
+- Custom HDRIs appear under the "All Environment" category.
+
+![Custom Environment](/img/custom-hdri-preview.png)
+
+### Installing Custom HDRIs
+
+1. Prepare your custom HDRI files, ensuring that EXR and PNG files have identical names.
+2. Find the `.plasticity` directory on your operating system and create a new folder named "environment".
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigate to `C:/Users/<username>/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
+3. Move your custom HDRI files into this folder, then restart Plasticity to apply the changes.
+
+![Installing HDRI](/img/installing-hdri-preview.png)
+
+<Callout type="info" emoji="💡">
+**Tip**     
+- It's recommended to use a 1K resolution for the EXR file to keep file sizes optimized (though higher resolutions are supported if needed). The PNG file can be any 1:1 ratio, but 512x512 pixels with a transparent background is advised. Both files should be saved with at least a 16-bit color depth.
+</Callout>
+
+<Callout emoji="❗">
+**Note**     
+- Make sure you enable the option to view hidden folders in your operating system to access the `.plasticity` directory.
+</Callout>
+
+### Options
+
+- Under the Options menu can be found "Rotation" and "Intensity".
+
+![Options](/img/options-rotation-intensity.png)
+
+| Option     | Button | Function|
+| -----------| ------ | ------- | 
+| Rotation   |    (8)    |  Adjust the rotation of the selected HDRI around the world Z-axis by dragging left or right, or by entering a specific value between -180 and 180. (Default: 0)      |
+| Intensity  |    (9)    |  Control the exposure of selected HDRI by dragging from left to right or inserting a numeric value. Min. value is 0 while max value is 10. (Default: 1.0)   |
+ 
+![Options](/img/options-rotation-intensity-1.png)
+
+ ### Toggle Show Edges, Curves, and Faces
+
+- Edges, curves, and faces can be shown or hidden using the toggle buttons.
+
+![Toggle Options in Options](/img/option-toggle-edges-curves-faces.png)
+
+| Function                                                      |  Button | Command Name           |
+| ------------------------------------------------------------- |  ------ | ---------------------- |
+| Toggle show Edges <br />(Turning this off will hide the Edges.) | (13)   | Viewport: toggle Edges |
+| Toggle show Curves <br />(Turning this off will hide the Curves.) | (14)   | Viewport: toggle Curves |
+| Toggle show Faces <br />(Turning this off will hide the Faces.) |  (15)   | Viewport: toggle Faces |
+ 
+
+### See Also
+[Shader Mode](/plasticity/essentials/shader-mode)
