@@ -26,10 +26,12 @@ import { Tabs } from 'nextra/components'
 | Draft Angle          |   10    | Draft Angles Checker for Mold Removal       |  Draw angle is displayed on the object based on current construction plane. Adjust the draw angle threshold (blue) relative to the construction plane in the **"Material Options"** menu. |
 | Horizontal Zebra Reflection    |  11     |   Surface Continuity Checker                |  -  |
 | Vertical Zebra Reflection     |  12     |  Surface Continuity Checker                 |  -  |
+| Topology Shader    |  13    |  Surface Checker                 |  Use on imported mesh files to trace or create a wireframe look for reverse engineering purposes. This is useful for analyzing complex organic shapes with intricate curves and deformations, which may not be as easily visible when using highlighters or other shaders. You can adjust the direction and line distribution in the **"Material Options"** panel. |
+| Normal Checker     |  14    |  Normal Surface Checker                 |  Use this shader to check if any surfaces are reversed. Blue indicates that the surface is facing outward, while red indicates it is facing inward. |
 
 ## Ambient Occlusion (AO)
 
-Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius (1) and falloff (2) in the Appearance section in the Preferences menu.
+Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius **(1)** and falloff **(2)** in the Appearance section in the Preferences menu.
 
 ![Ambient Occlusion Settings](/img/ao-settings.png)
 
@@ -75,9 +77,9 @@ Ambient Occlusion is turned off by default. However, you can enable it in the Pe
 
 | Function                                                      | Shortcut | Button | Command Name           |
 | ------------------------------------------------------------- | ------- | ------ | ---------------------- |
-| Toggle show Edges <br />(Turning this off will hide the Edges.) |         | (13)   | Viewport: toggle Edges |
-| Toggle show Curves <br />(Turning this off will hide the Curves.) |         | (14)   | Viewport: toggle Curves |
-| Toggle show Faces <br />(Turning this off will hide the Faces.) |         | (15)   | Viewport: toggle Faces |
+| Toggle show Edges <br />(Turning this off will hide the Edges.) |         | (15)   | Viewport: toggle Edges |
+| Toggle show Curves <br />(Turning this off will hide the Curves.) |         | (16)   | Viewport: toggle Curves |
+| Toggle show Faces <br />(Turning this off will hide the Faces.) |         | (17)   | Viewport: toggle Faces |
  
 
 ### See Also
