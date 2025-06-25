@@ -11,6 +11,12 @@ Render Mode is located in the View Mode menu in the top-right corner of the scre
 
 ![Render Mode Button](/img/render-mode-button.png)
 
+You'll notice that a ground-plane shadow appears beneath your objects. This shadow cannot be disabled at the moment, and it is positioned based on the lowest bounding box of the scene.
+
+However, there's an important detail to note: objects placed above the world origin will not affect the position of the ground shadow **(2)**, meaning it will not follow them. In contrast, if objects are placed below the world origin, as shown in **(1)**, the shadow will respect the lower bounding box and adjust accordingly.
+
+![Ground Shadow](/img/ground-shadow.png)
+
 You can switch between Plasticity's built-in HDRIs by clicking on them. The selected HDRI will be applied to the environment right away and updating the scene immediately - though this won't affect the viewport background.
 
 - Available HDRIs: 
