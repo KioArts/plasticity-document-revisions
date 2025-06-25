@@ -8,13 +8,13 @@ import { Callout } from 'nextra/components'
 
 <Reference shortcut="" command="Align" button="" />
 
-Align is based on the XNurb command and is used to match two surfaces while maintaining G0, G1, or G2 continuity. You select two edges - one to align and one as a reference. The aligned edge is adjusted to follow the shape and continuity of the reference edge. Options are available for editing the surface's degree and span to support better transition results.
+Align is based on the XNurb command and is used to match two surfaces while maintaining G0, G1, or G2 continuity. You select two edges - one to align with and the other as a target. The aligned edge is adjusted to follow the shape and continuity of the reference edge. Options are available for editing the surface's degree and span to support better transition results.
 
 > **Note:** This command is available only with the **Studio License**.
 
 ## Basic Usage
 
-1. Select the edge of the surface you want to align and the edge you want to align to.
+1. Select the edge of the surface you want to match or move and the edge you want to align to.
 2. Type **Align** in the Command Palette.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
@@ -27,20 +27,20 @@ Align is based on the XNurb command and is used to match two surfaces while main
         - **Partial Alignment:** Controls how the new surface blends at its start and end. 
                 - **Partial start:** Adjusts how much of the surface's start blends with the target.
                 - **Partial end:** Adjusts how much of the surface's end blends with the target.
-            - **Degree:** Specify the UV degree value.
+        - **Degree:** Specify the UV degree value.
             - **Spans:** Specify the UV spans value.
             - **Boundary:** Specify the condition of UV flow.
             - **Natural:** No requirement for UV Flow.
             - **Normal:** Maintain UV isocurve mutually perpendicular.
             - **Next:** Generate a perpendicular flow of UV if boundary conditions are relatively flat.
             - **Adjacent:** Align V isocurves of the generated surface to adjacent curves. 
-        - **Analysis:** Analyzes the continuity of surface edges
-                - **Continuity:** Verify the continuity of edges:
-                    - **G0:** Position continuity check.
-                    - **G1:** Tangent continuity check.
-                    - **G2:** Curvature continuity check.
-                - **G0 Scale / G1 Scale / G2 Scale:** 
-                    - Adjust tolerance scales for respective continuity checks.
+        - **Analysis:** Analyzes the continuity of surface edges.
+            - **Continuity:** Verify the continuity of edges:
+                - **G0:** Position continuity check.
+                - **G1:** Tangent continuity check.
+                - **G2:** Curvature continuity check.
+            - **G0 Scale / G1 Scale / G2 Scale:** 
+                - Adjust tolerance scales for respective continuity checks.
     - <Kst>Keyboard Shortcuts</Kst>
         - <kbd>Tab</kbd> **Cycle continuity:** Cycle through continuity options.
         - <kbd>Ctrl</kbd> **Show original:** Show original surface state (quasi mode).
@@ -48,9 +48,33 @@ Align is based on the XNurb command and is used to match two surfaces while main
 
 <VideoPlayer fileName="align-1"/>
 
+<Callout emoji="❗">
+**Note**<br />   
+Surfaces must be B-spline surfaces to use the Align tool effectively. You can use the [Rebuild](/solid/rebuild) command to rebuild the surface, or the [Raise Degree](/solid/raise-degree) command to increase its degree.
+
+> **Note:** This process may introduce slight inaccuracies. 
+
+</Callout>
+
 <Callout type="info" emoji="ℹ️">
-**Selecting Edges Between Connected Sheets**   
-To choose the target edge, hover your cursor over the correct sheet near its edge and left-click. Then, to select the reference edge, make sure your cursor is over the other sheet and press <kbd>Shift</kbd> + Left-Click on the edge. You'll see highlight indicators to help you identify which edge you're selecting.
+**Selecting Edges Between Connected Sheets**
+
+There are 3 methods to achieve this:
+
+    1. **Hover and Click Method** 
+    
+    - Hover your cursor over the target sheet near its edge and left-click to select the **target edge**. Then, while hovering over the other sheet, press <kbd>Shift</kbd> + Left-click to select the **reference edge**.
+
+    > **Note:** Highlight indicators will appear to help identify the selected edges.
+
+    2. **Ctrl + Shift Pop-up Method** 
+
+    - Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> and left-click on the **target edge**. A small pop-up window will appear. While holding the buttons, hover over the entries. Each entry highlights the corresponding face. Left-click on the correct face, then click on the second edge to complete the **reference edge** selection.
+
+    3. **Mouse Scroll Method**
+
+    - Similar to the previous method, left-click and **hold** on an edge, then scroll the mouse wheel up or down.
+
 </Callout>
 
 <VideoPlayer fileName="align-0"/>
@@ -59,7 +83,7 @@ To choose the target edge, hover your cursor over the correct sheet near its edg
 
 Partially align a new surface to a target surface by controlling how much of the start and end is blended. This allows for a tapered or gradual transition.
 
-1. Select the edge of the surface you want to align and the edge you want to align to.
+1. Select the edge of the surface you want to match or move and the edge you want to align to.
 2. Type **Align** in the Command Palette.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>

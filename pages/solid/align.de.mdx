@@ -49,11 +49,34 @@ Align basiert auf dem XNurb-Befehl und wird verwendet, um zwei Flächen mit G0-,
 
 <VideoPlayer fileName="align-1"/>
 
-<Callout type="info" emoji="ℹ️">
-**Auswahl von Kanten zwischen perfekt verbundenen Flächen**  
-Um die Zielkante auszuwählen, fahre mit dem Mauszeiger über die richtige Fläche in der Nähe der Kante und klicke mit der linken Maustaste. Um anschließend die Referenzkante auszuwählen, bewege den Mauszeiger über die andere Fläche und drücke <kbd>Shift</kbd> + Linksklick auf die Kante. Hervorhebungen helfen dir dabei, zu erkennen, welche Kante du gerade auswählst.
+<Callout emoji="❗">
+**Hinweis**<br />   
+Oberflächen müssen B-Spline-Oberflächen sein, um das Ausrichten-Werkzeug effektiv zu verwenden. Sie können den [Neuaufbau](/solid/rebuild)-Befehl verwenden, um die Oberfläche neu zu erstellen, oder den Befehl [Grad erhöhen](/solid/raise-degree), um ihren Grad zu erhöhen.
+
+> **Hinweis:** Dieser Vorgang kann zu leichten Ungenauigkeiten führen.
+
 </Callout>
 
+<Callout type="info" emoji="ℹ️">
+**Kanten zwischen verbundenen Flächen auswählen**
+
+Es gibt 3 Methoden, um dies zu erreichen:
+
+    1. **Hover- und Klick-Methode**
+    
+    - Bewegen Sie den Cursor über das Zielblatt in der Nähe einer Kante und klicken Sie mit der linken Maustaste, um die **Zielkante** auszuwählen. Bewegen Sie dann den Cursor über das andere Blatt und drücken Sie <kbd>Shift</kbd> + Linksklick, um die **Referenzkante** auszuwählen.
+
+    > **Hinweis:** Hervorhebungen helfen Ihnen bei der Identifikation der ausgewählten Kanten.
+
+    2. **Strg + Shift Pop-up-Methode**
+
+    - Drücken Sie <kbd>Strg</kbd> + <kbd>Shift</kbd> und klicken Sie mit der linken Maustaste auf die **Zielkante**. Es erscheint ein kleines Pop-up-Fenster. Halten Sie die Tasten gedrückt und bewegen Sie den Mauszeiger über die Einträge. Jeder Eintrag hebt das entsprechende Flächenelement hervor. Klicken Sie auf die richtige Fläche und dann auf die zweite Kante, um die **Referenzkante** auszuwählen.
+
+    3. **Mausrad-Methode**
+
+    - Ähnlich wie bei der vorherigen Methode: Klicken Sie mit der linken Maustaste auf eine Kante und **halten** Sie sie gedrückt, während Sie das Mausrad nach oben oder unten scrollen.
+
+</Callout>
 
 <VideoPlayer fileName="align-0"/>
 
