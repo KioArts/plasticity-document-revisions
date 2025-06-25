@@ -33,43 +33,46 @@ Square ist ein auf XNurbs basierender Befehl zur Erzeugung hochwertiger, viereck
    - **Gewichtung (Weight):** Bestimmt, wie streng die Eingabebedingungen für Kurven und Kanten eines Volumenkörpers angewendet werden.  
        - Niedriger Wert: Lockert die Einschränkungen, verbessert die Oberflächenqualität und Reflexionen.  
        - Höherer Wert: Erzwingt die Einschränkungen, um sicherzustellen, dass der UV-Fluss mit den angegebenen *Degree*- und *Span*-Werten übereinstimmt und eine präzise Oberflächenkontinuität gewährleistet wird.  
-   - **Skalierung (Scale):**  
-       - Ermöglicht die Anpassung der Größe der roten Linien an den Randkanten.  
-       - Diese Linien repräsentieren die **"Kantenabweichungsdarstellung (Edge Deviation Plot)"**, die den Abstand zwischen der Randkante der erstellten Oberfläche und der Eingabegeometrie zeigt.  
-       - Die rote Farbe weist auf eine Abweichung von mehr als 0,01 mm (1e-5 m) hin und hebt Bereiche hervor, in denen die Oberfläche nicht genau mit der Eingabe übereinstimmt.  
+   - **Analysis:** Analysiert die Stetigkeit von Flächenkanten – [Stetigkeit messen](/solid/measuure-continuity).
+         - **Continuity:** Überprüfen Sie die Stetigkeit der Kanten:
+            - **G0:** Positionsstetigkeit prüfen.
+            - **G1:** Tangentenstetigkeit prüfen.
+            - **G2:** Krümmungsstetigkeit prüfen.
+         - **G0 Scale / G1 Scale / G2 Scale:** 
+            - Toleranzskalen für die jeweiligen Stetigkeitsprüfungen anpassen.
 4. Bestätigen Sie mit **OK** im Befehlsdialog oder durch Rechtsklick.  
 
 <VideoPlayer fileName="square"/>
 
-<Callout type="info" emoji="ℹ️">
-**Lofting mit Square**  
+## Lofting mit Square
+
 Alternativ kann der Square-Befehl als Lofting-Methode verwendet werden, indem zwei nicht miteinander verbundene Kanten ausgewählt werden. Diese Methode bietet eine größere Flexibilität und Kontrolle bei der Oberflächenerzeugung und ermöglicht die Anpassung von Parametern wie Grad- und Spannwerten, Randbedingungen (falls erforderlich), Flachheit und Gewichtseinfluss. Im Gegensatz dazu erzeugt ein Standard-Loft eine feste Oberfläche mit begrenzten Steuerungsoptionen.  
-</Callout>
+
 <VideoPlayer fileName="square-1"/>
 
-<Callout type="info" emoji="ℹ️">
-**Sweeping mit Square**  
+## Sweeping mit Square
+
 Ähnlich wie der Sweep-Befehl kann der Square-Befehl vergleichbare Ergebnisse erzielen, bietet jedoch eine größere Flexibilität und Kontrolle über die resultierenden Oberflächen. Dieses Ergebnis kann durch die Auswahl von zwei oder drei miteinander verbundenen Kanten erreicht werden.  
-</Callout>
+
 <VideoPlayer fileName="square-2"/>
 
-<Callout type="info" emoji="ℹ️">
-**Patching mit Square**  
+## Patching mit Square
+
 Der Square-Befehl kann Löcher in einer Oberfläche mit vierseitigen Begrenzungskanten füllen, ähnlich wie der Patch-Befehl.  
-</Callout>
+
 <VideoPlayer fileName="square-3"/>
+
+## Refit Surfaces 
+
+Der Square-Befehl ermöglicht es, zugeschnittene Flächen auf einer Fläche und ihren angrenzenden Flächen selektiv anzupassen und die Orientierung der Splines an den natürlichen Fluss der Fläche anzupassen. Diese Funktion unterscheidet sich deutlich vom **Rebuild**-Befehl, der sich auf das Wiederaufbauen einer Fläche konzentriert, ohne die Orientierung der Splines auszurichten.  
+
+<VideoPlayer fileName="square-5"/>  
 
 <Callout type="info" emoji="💡">
 **Tipp**  
 Ähnlich wie bei XNurbs können Sie den Befehl im Voraus ausführen und dann Begrenzungskanten, Kurven und Flächen auswählen. Dies beschleunigt den Workflow erheblich und bietet eine Live-Vorschau der Oberflächenerzeugung.  
 </Callout>
 <VideoPlayer fileName="square-4"/>
-
-<Callout type="info" emoji="💡">
-**Tipp**  
-Der Square-Befehl ermöglicht es, zugeschnittene Flächen auf einer Fläche und ihren angrenzenden Flächen selektiv anzupassen und die Orientierung der Splines an den natürlichen Fluss der Fläche anzupassen. Diese Funktion unterscheidet sich deutlich vom **Rebuild**-Befehl, der sich auf das Wiederaufbauen einer Fläche konzentriert, ohne die Orientierung der Splines auszurichten.  
-</Callout>
-<VideoPlayer fileName="square-5"/>  
 
 ## Siehe auch
 - [XNurbs](xnurbs)
