@@ -8,7 +8,7 @@ import { Callout } from 'nextra/components'
 
 <Reference shortcut="" command="Align" button="" />
 
-Align basiert auf dem XNurb-Befehl und wird verwendet, um zwei Flächen mit G0-, G1- oder G2-Stetigkeit aufeinander abzustimmen. Dabei wählt man zwei Kanten aus – eine, die ausgerichtet werden soll, und eine als Referenz. Die ausgerichtete Kante wird so angepasst, dass sie der Form und Stetigkeit der Referenzkante folgt. Es stehen Optionen zur Verfügung, um den Grad und die Spannweiten der Fläche zu bearbeiten, um bessere Übergänge zu erzielen.
+Align ist ein Werkzeug, das auf dem XNurb-Befehl basiert und eine Oberfläche so anpasst, dass eine Kante an eine andere angepasst wird – unter Beibehaltung von positionsbezogener (G0), tangentialer (G1) oder krümmungsbezogener (G2) Kontinuität. Wählen Sie eine Zielkante, die verschoben werden soll, und eine Referenzkante, an die sie ausgerichtet wird. Die Zielkante wird an die Form und Glätte der Referenz angepasst. Über optionale Einstellungen können Sie den Grad und die Spannweite der Oberfläche bearbeiten, um die Übergangsqualität zu verbessern.
 
 > **Hinweis:** Dieser Befehl ist nur mit der **Studio-Lizenz** verfügbar.
 
@@ -24,13 +24,12 @@ Align basiert auf dem XNurb-Befehl und wird verwendet, um zwei Flächen mit G0-,
             - **Tension:** Passt den Krümmungsübergang einer Oberfläche an.
             - **Blend extra rows:** Wählen Sie, wie viele Reihen von Kontrollpunkten (CVs) beim Ausrichten der Oberflächen überblendet werden sollen. Ein Wert von 0 bedeutet keine Überblendung, während höhere Werte mehr Reihen für eine glattere Verbindung überblenden. Wenn der Wert so hoch ist wie die Gesamtanzahl der Reihen, passt sich die Oberfläche vollständig an das Ziel an.
             - **Input shape influence:** Bestimmt, wie stark die ursprüngliche Form das Ausrichtungsergebnis beeinflusst.
-        - **Partial Alignment:** Steuert, wie die neue Oberfläche am Anfang und Ende überblendet.
+        - **Partial Alignment:** Passen Sie an, wie stark die ursprüngliche Form das Ausrichtungsergebnis beeinflusst. Dies wirkt sich aus, wenn **Blend extra rows** aktiviert ist.
                 - **Partial start:** Passt an, wie stark der Anfang der Oberfläche mit dem Ziel überblendet wird.
                 - **Partial end:** Passt an, wie stark das Ende der Oberfläche mit dem Ziel überblendet wird.
-            
-            - **Degree:** Gibt den UV-Grad-Wert an.
-            - **Spans:** Gibt die UV-Spannweiten an.
-            - **Boundary:** Bestimmt die Bedingung des UV-Flusses.
+        - **Degree:** Gibt den UV-Grad-Wert an.
+        - **Spans:** Gibt die UV-Spannweiten an.
+        - **Boundary:** Bestimmt die Bedingung des UV-Flusses.
             - **Natural:** Keine Anforderung an den UV-Fluss.
             - **Normal:** UV-Isokurven bleiben rechtwinklig zueinander.
             - **Next:** Erzeugt einen rechtwinkligen UV-Fluss, wenn die Randbedingungen relativ flach sind.

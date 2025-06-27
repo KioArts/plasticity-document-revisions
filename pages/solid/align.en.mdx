@@ -8,13 +8,13 @@ import { Callout } from 'nextra/components'
 
 <Reference shortcut="" command="Align" button="" />
 
-Align is based on the XNurb command and is used to match two surfaces while maintaining G0, G1, or G2 continuity. You select two edges - one to align with and the other as a target. The aligned edge is adjusted to follow the shape and continuity of the reference edge. Options are available for editing the surface's degree and span to support better transition results.
+Align is a tool based on the XNurb command that adjusts one surface edge to match another, ensuring positional (G0), tangential (G1), or curvature (G2) continuity. You select two edges: a reference edge and a target edge. The target edge is modified to follow the shape and smoothness of the reference. Additional controls let you edit the surface's degree and span to support better transition results.
 
 > **Note:** This command is available only with the **Studio License**.
 
 ## Basic Usage
 
-1. Select the edge of the surface you want to match or move and the edge you want to align to.
+1. Select the target edge to move, then select the reference edge to align to.
 2. Type **Align** in the Command Palette.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
@@ -23,13 +23,13 @@ Align is based on the XNurb command and is used to match two surfaces while main
                 - Continuity can be specified individually by clicking on the black circles on the surface.
             - **Tension:** Adjust the curvature transition of a surface.
             - **Blend extra rows:** Choose how many rows of control-points (CVs) to blend when aligning surfaces. Setting it to 0 results to no blending, while higher values blend more rows for a smoother connection. If the value is as high as or higher than the total rows, the surface fully adjusts to match the target.
-            - **Input shape influence:** Adjust how much the original shape affects the aligned result.
+            - **Input shape influence:** Adjust how much the original shape affects the aligned result. This takes effect when **Blend extra rows** is enabled.
         - **Partial Alignment:** Controls how the new surface blends at its start and end. 
                 - **Partial start:** Adjusts how much of the surface's start blends with the target.
                 - **Partial end:** Adjusts how much of the surface's end blends with the target.
         - **Degree:** Specify the UV degree value.
-            - **Spans:** Specify the UV spans value.
-            - **Boundary:** Specify the condition of UV flow.
+        - **Spans:** Specify the UV spans value.
+        - **Boundary:** Specify the condition of UV flow.
             - **Natural:** No requirement for UV Flow.
             - **Normal:** Maintain UV isocurve mutually perpendicular.
             - **Next:** Generate a perpendicular flow of UV if boundary conditions are relatively flat.
@@ -64,7 +64,6 @@ There are 3 methods to achieve this:
     1. **Hover and Click Method** 
     
     - Hover your cursor over the target sheet near its edge and left-click to select the **target edge**. Then, while hovering over the other sheet, press <kbd>Shift</kbd> + Left-click to select the **reference edge**.
-
     > **Note:** Highlight indicators will appear to help identify the selected edges.
 
     2. **Ctrl + Shift Pop-up Method** 
