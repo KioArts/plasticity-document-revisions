@@ -8,7 +8,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="" command="Bridge Curve" button="ツールバー" buttonIcon='button-bridge-curve'/>
 
-連続性を考慮してふたつのカーブを繋げることができます。また、エッジ上、フェース上、構築平面上の任意の点も繋げることができます。
+2 つのカーブを G0、G1、G2、G3 の連続性でブリッジします。テンション調整が可能です。自動トリムに対応。カーブの測定機能も利用できます。
 
 ## 基本的な使い方
 
@@ -25,13 +25,16 @@ import Kst from '/components/KeyboardShortcutsTitle'
      - <Kst>キーボードショートカット</Kst>
      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
      - <kbd>N</kbd> **Normal:** フェイスの法線方向に限定します。
+     - <kbd>Tab</kbd> **Cycle continuity:** G0、G1、G2、G3 の連続性を切り替えます。
+     - <kbd>D</kbd> **G1 Tension:**  G1 連続性のテンションを調整します。 
+     - <kbd>Q</kbd> **Trim:**  G1 連続性のテンションを調整します。 
 3. 終点をクリックします。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
      - <Kst>コマンドダイアログ</Kst>
-          - **T:**
+          - **Parameter:**
                - **Value 1/2:** 始点/終点のセグメント上の相対位置を指定します。
-          - **Direction:** 
-               - **Direction 1/2**: 始点/終点の方向を反転します。
+          - **Sense:** 
+               - **Sense 1/2**: 始点/終点の方向を反転します。
           - **Tension 1:**
                - **Value 1/2:** 始点/終点の第1制御点(CV)から第3CVに影響するテンション値を指定します。
           - **Tension 2:**
@@ -43,6 +46,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
                - **End curvature:**
                - **G0, G1, G2, G3:** 終点での[曲線の連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
           -  **Trim:** オンにすると、ブリッジからはみ出たカーブはトリムされます。
+          - **Analysis:** メニューを開いているときに、カーブチャーコームのサイズを調整します。[カーブの測定について詳しくはこちら](/sketch/measure-curvature)。
 5. コマンドダイアログでOKを押すか、右クリックで確定します。
 
 <VideoPlayer fileName="bridge-curve"/>
@@ -52,3 +56,4 @@ import Kst from '/components/KeyboardShortcutsTitle'
 - [Bridge Vertex](bridge-vertex)
 - [Bridge Edge](bridge-edge)
 - [Join](join)
+- [Measure Curvature](/sketch/measure-curvature)
