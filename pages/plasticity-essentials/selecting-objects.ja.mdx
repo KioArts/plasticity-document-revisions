@@ -18,6 +18,7 @@ import VideoPlayer from '/components/VideoPlayer';
 
 | Mouse Operation               | Target                     | Selection                                                  |
 | ----------------------------- | -------------------------- | ---------------------------------------------------------- |
+| <kbd>Alt</kbd> + click        | CV Hull                   | CVハルループを選択。                      |
 | <kbd>Alt</kbd> + click        | エッジ                     | エッジループを選択する                                     |
 | <kbd>Ctrl + Alt</kbd> + click | エッジ                     | エッジリングを選択する                                     |
 | <kbd>Alt</kbd> + click        | カーブ                     | 同一平面のすべてのカーブを選択する                         |
@@ -26,6 +27,19 @@ import VideoPlayer from '/components/VideoPlayer';
 | <kbd>Ctrl + Alt</kbd> + click | フェイス                   | すべての平行なフェイスを選択する                           |
 | <kbd>Ctrl + Alt</kbd> + click | 円柱状のフェイス           | すべての平行な円柱状のフェイスを選択する                   |
 | <kbd>Alt</kbd> + click        | ソリッド/シート/エンプティ | グループ内のすべてのソリッド、シート、エンプティを選択する |
+
+### Selection Context Menu
+
+| Mouse Operation               | Target            | Selection                                  |
+| ----------------------------- | ----------------- | ------------------------------------------ |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| CV                | CVを選択。                       |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| CV Hull           | CVハルループを選択。            |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Edge              | エッジを選択。                     |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Curve             | 曲線を選択。                    |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Face             | 面を選択。                      |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Sheet and Solid  | シートとソリッドを選択。           |
+
+<VideoPlayer fileName="selection-context-menu"/>
 
 ## キーボードショートカットで選択する
 
