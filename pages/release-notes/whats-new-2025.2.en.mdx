@@ -1,0 +1,204 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
+
+Release date: February 25, 2025
+
+# Plasticity 25.1 Release Notes  
+
+Plasticity 25.1 introduces a wide array of enhancements and new features aimed at improving surface modeling workflows, enhancing usability, and streamlining the user experience. Below is a detailed overview of the updates:  
+
+## 1. New Commands
+
+### New Align Command
+- **Align Surfaces**
+Align is a tool poewred by XNurb and allows you to align two surfaces (sheets) with consistent G0 (positional), G1 (tangential), or G2 (curvature) continuity. You can select the target surface and adjust its degree, span, and other options to improve the quality of the transition. Note that this tool is available only with a Studio license.
+
+[Learn more](/solid/align)
+
+### New Measure Continuity Command
+- **Measure Continuity**
+Measure Continuity lets you select pairs of edges and evaluates their continuity (G0, G1, or G2) in real time while the command is active. This tool is also integrated into the **Align** tool to help streamline your workflow. 
+
+[Learn more](/solid/align)
+
+### New Measure Curvature Command
+- **Measure Curve and Surface Curvature**
+Measure Curvature allows you to assess the curvature of surface edges and curves using a curvature comb. This tool provides a visual representation of curvature variation, helping you evaluate the shape quality and smoothness of surfaces and curves that may be difficult to judge visually.
+
+[Learn more](/sketch/measure-curvature)
+
+### New Fork Material Command
+- **Fork Existing Material**
+Fork Material is a command that duplicates and allows you to edit the material of selected objects. The new material is created and saved in the [Assets](/plasticity-essentials/assets) menu.
+
+[Learn more](/common/fork-material)
+
+### New Unlock All Command
+- **Unlock All Objects**
+Unlock All is a command that will unlock all locked objects and groups in the outliner. It provides a quick way to unlock multiple items at once, saving time compared to manually selecting each object.
+
+[Learn more](/plasticity-essentials/outliner#toggle-object-states)
+
+### New Export Commands
+- **Export STEP and SAT**
+You can now export to STEP and SAT file formats directly from the [Command Palette](/plasticity-essentials/command-palette) for faster access.
+
+| Command | File Format |
+| ------- | ----------- |
+| Export STEP | STEP (*.stp; *.step) |
+| Export SAT | SAT (*.sat) |
+
+[Learn more](/plasticity-essentials/import-export#file-export)
+
+### New Select All Commands
+- **Select All Measurements, Solids, and Sheets**
+Quickly select all visible Measurements, Solids, and Sheets in the viewport. This is especially useful when objects are spread across multiple groups in the outliner, helping you work more efficiently without manually selecting each item.
+
+| Command | Note |
+| ------- | ----------- |
+| Select All Sheets | Select all sheets in visible viewport. |
+| Select All Solids | Select all solids in visible viewport. |
+| Select All Measruments | Select all measurements in visible viewport. |
+
+[Learn more](/plasticity-essentials/selecting-objects)
+
+
+## 2. Modeling Enhancements
+
+### Boolean Command Enhancement
+- **New Operation: Region**
+A new **Region** option has been added to the Boolean command. It creates individual solids from enclosed regions formed by overlapping bodies.
+- **New Advanced Options Panel**
+An **Advanced** section is now available beneath the main Boolean dialog. It includes options like **Target Material** and **Tool Material**, giving you more control over object assignment during Boolean operations.
+
+[Learn more](/solid/boolean)
+
+### Bridge Curve Enhancement
+- **New Tension Gizmos**
+Tension Gizmos are now available for Bridge Curve and are precise in specifying the tension parametrization during the operation. This is intuitive to work with and streamlines the work.
+- **Move Tension CVs**
+Tension for G1, G2, and G3 continuity can now be adjusted by directly moving the visible control-vertices (CVs) on the screen.
+- **Curvature Combs**
+Curvature measurement is now optionally available during the Bridge Curve command under the **Analysis** menu. When the menu is open, curvature combs can be displayed to help evaluate the curve's shape in real time.
+
+[Learn more](/sketch/bridge-curve)
+
+### Fillet Shell Operation
+- **Tension Parameter**
+When filleting a shell or edge, you can now adjust the Tension parameter to control how pronounced or subtle the fillet appears. This option is available across all shape types but the **FUll** Shape option.
+
+[Learn more](/solid/fillet-shell)
+
+### Loft Enhancement
+- **Simplify Planar Surfaces**
+The Loft command now includes a new **Simplify** option that controls how planar sections of lofted surfaces are created. This option is enabled by default and generates simplified trimmed patches for planar sections where the CV layout would otherwise be inconsistent. When Simplify is disabled, the loft generates intermediate geometry between profiles, resulting in a "tweening" effect that preserves a consistent CV layout across the entire surface.
+
+[Learn more](/solid/loft)
+
+### Isoparam Enhancement
+- **
+
+>>>>>>>>>>>>>>>>>>>>>>>>>
+
+## New features
+
+\\ Isoparam command: new option to subdivide ("detach") any split spline surfaces
+
+
+Physical Materials 34
+
+### Physical Materials
+
+Loft: Loft command now has a "simplify" toggle (on by default) which can avoid simplifying planar surfaces. Can be used for "tweening" curves
+
+Align/Square command can now toggle on/off continuity analysis
+
+\\ CV Hull Selection - Select a row of CVs by selecting the CV hull with Alt button.
+
+Extend Sheet, Extend Curve and Vertex, and Push Face Commands - Now have a dialogie "limit" option for accepting a target.
+    Extend curve/vertex commands now optionally allow specifying a target
+    Extend surface natural now accepts a target
+
+
+Selection panel will now indicate if a selected edge or surface is rational or has a nominal surface
+    Stats/selection panel: show distance of parallel planar faces
+
+
+Untrim command: now has option to keep imprinted edges
+
+
+
+Selection - Invert selection command now supports edges and faces
+    Ctrl-shift-leftclick in the viewport will now bring up a selection context menu, so you can disambiguate overlapping items like edges in the same place
+    Selection "choice": leftclick-wheel and ctrl-shift-leftclick behave more similarly
+
+Dialogues - pi can now be used as a constant in numeric fields in dialogs
+
+## 2. Improved Commands
+
+> Duplicate Command - Is now supported to allow you to duplicate groups in which will duplicate children recursively. Previously, only the external group could've been duplicated, meaning what has been inside the group wouldn't be affected.
+
+Cut Command - Now has an option to "Extend" the cutting curve in case it is too short to go fully through the object
+
+\\ Square command and align command now have individual tension settings for each edge constraint
+   Square Command - Now allows measuring G1/G2 continuity. Previously this has been supported only for G0 continuity.
+
+Reverse Command - Can now reverse multiple bodies simultaneously
+
+Select All Command - Now ignores locked items in the outliner
+
+Imprint Body and Project Body - Now accept multiple tool bodies
+
+Unjoin Command - Can now unjoin faces from multiple bodies simultaneously
+
+\\ Loft Command - Now has better error messages for indicating where guide curves fail to touch profiles with a red dot.
+
+Isoparam Command - Now has a dialogue window, displaying all options.
+
+Rebuild face command: when only raising degree, will give an exact solution,
+
+Dimension command now supports single line segment
+
+## Improved features
+
+\\ Toolbar - Toolbar now remembers which side on viewport on next session or restart.
+
+> Camera - Default perspective camera FOV has changed from 50 to 35. There have been reports of a clipping issues with the camera - mainly due to the units used in the scne, mainly evident in very small tolerance. Changing the FOC of the camera from 50 to 35 should resolve this encounter, however, if it persists this can be lowered even further. 
+
+\\ - Selection Mode - box selecting now remembers order in some cases, so lofting a bunch of curves can be done a bit more quickly
+
+Outliner 
+    Select All Command - Now ignores locked items in the outliner.
+
+Assets - Material catalog in Assets tab now shows previews + filters
+
+## 2. Modeling Enhancements
+
+> Sweep/Pipe/Curve Array - Now have included a feature to further extend and deextend along the path curves that have been instablished with the command dialogue "Distance 1/ Distance 2". 
+
+Click here for Sweep, Pipe, and Curve Array.
+
+
+## Shading Improvement
+
+> Rendermode - Introduces a function that allows you to choose HDRIs and the option to rotate them.
+
+> Ground-Plane Shadow - In Render Mode, a new feature has been introduced to display a shadow on the ground plane. This shows the sillhouette of the overall object, projected downwards on the plane.
+
+> Ambient Occlusion - A new feature has been introduced in rendermode. This allows you to tweak various settings in the render mode panel (however, not saved with the file). 
+
+\\ Assets Panel - Introducing 20 physical materials in the Assets Panel - includes material presets for metal, marble, wood, and more. Physical materials only work when render mode is on. They differ a bit from default materials in Plasticity with the only difference of editing properties.
+
+
+\\ Zebra Shader - Has been slightly improved for visual usability. Now introduces a feature where you can change number of bands in options in the shader panel.
+
+Preferences 
+
+> - Option to increase interface visual zoom level in Appearance section.
+> - Ambient Occlusion - Settings for AO are now located in Plasticity's settings - Appearance. A new option in Preferences to turn on ambient occlusion in shader mode.
+
+
+## Past Update Information
+
+- September 5, 2024 [Version 2024.2](/release-notes/whats-new-2024.2)
