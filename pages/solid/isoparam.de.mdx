@@ -13,10 +13,16 @@ Kanten auf einer Face eines Solid oder Sheet in der U- oder V-Richtung erstellen
 1. Drücken Sie <kbd>Strg + R</kbd>.
 2. Platzieren Sie den Mauszeiger an der Position, an der Sie die Isoparams erstellen möchten.
 3. Legen Sie die Optionen in den Tastenkombinationen fest.
+- <Kst>Befehlsdialog</Kst>
+      - **Direction:** Legen Sie die Richtung der isoparametrischen Linie fest (U oder V).
+      - **Count:** Legen Sie die Anzahl der zu erzeugenden isoparametrischen Linien fest.
+      - **Param:** Geben Sie den Parameterwert an, der die Position der isoparametrischen Linie zwischen Start- und Endpunkt bestimmt, beeinflusst von der U- und V-Richtung.
+      - **Subdivide:** Legen Sie fest, ob das aktuelle CV-Layout der Oberfläche unterteilt werden soll. Wenn deaktiviert, wird die Linie eingefügt, ohne das vorhandene CV-Layout zu verändern. Wenn aktiviert, berücksichtigt die Unterteilung das aktuelle CV-Layout und fügt eine Linie ein, die die Oberfläche teilt, während die CV-Konsistenz über die unterteilten Flächen hinweg erhalten bleibt.
    - <Kst>Tastenkombinationen</Kst>
       - <kbd>Tab</kbd> **U/V direction:** Wechseln Sie die Richtung des zu erstellenden Isoparam.
       - <kbd>Umschalt</kbd> + Mausrad hoch **Add cut:** Erhöht die Anzahl der Isoparams.
       - <kbd>Umschalt</kbd> + Mausrad runter **Subtract cut:** Reduziert die Anzahl der Isoparams.
+      - <kbd>S</kbd> **Subdivide:** CV-Oberflächenlayout unterteilen.
 4. Bestätigen Sie mit einem Rechtsklick.
 
 <VideoPlayer fileName="isoparam"/>
