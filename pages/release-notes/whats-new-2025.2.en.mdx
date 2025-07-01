@@ -6,7 +6,7 @@ Release date: July 7, 2025
 
 # Plasticity 25.2 Release Notes  
 
-Plasticity 25.1 introduces a wide array of enhancements and new features aimed at improving surface modeling workflows, enhancing usability, and streamlining the user experience. Below is a detailed overview of the updates:  
+Plasticity 25.2 introduces a wide array of enhancements and new features aimed at improving surface modeling workflows, enhancing usability, and streamlining the user experience. Below is a detailed overview of the updates:  
 
 ## 1. New Commands
 
@@ -118,14 +118,14 @@ Plasticity now introduces a collection of 34 physical materials accessible from 
 [Learn more](/plasticity-essentials/assets#physical-materials)
 
 ### Selection Context Menu
-- **Disambiguing Selections**   
-A selection context menu is availbe to disambiguiate selections based on selection mode when objects are overllaped each other. This can be achieved by holding <kbd>Ctrl + Shift</kbd> and Left-clicking or Left-clicking and Mouse Wheel Scrool.
+- **Disambiguating Selections**     
+When multiple objects overlap, a selection context menu helps clarify which object to select based on the current selection mode. To access this menu, hold <kbd>Ctrl + Shift</kbd> and left-click, or left-click while scrolling the mouse wheel.
 
 [Learn more](/plasticity-essentials/selecting-objects)
 
 ### Point Selection Mode
-- **CV Hull Selection** 
-Now it's possible to select a row of CVs by selecting the CV hull with <kbd>Alt</kbd>.
+- **CV Hull Selection**     
+You can now select an entire row of CVs by hovering over the CV hull while holding <kbd>Alt</kbd>. The highlighted preview will indicate the direction of the loop selection before you click.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -133,20 +133,49 @@ Extend Sheet, Extend Curve and Vertex, and Push Face Commands - Now have a dialo
     Extend curve/vertex commands now optionally allow specifying a target
     Extend surface natural now accepts a target
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-Selection panel will now indicate if a selected edge or surface is rational or has a nominal surface
-    Stats/selection panel: show distance of parallel planar faces
+### Selection Panel
+- **Rational or Nominal**   
+The Selection panel now shows whether the selected surface is rational or nominal.
+- **Parallel Distance**
+When planar faces are selected, the Selection panel now shows the distance between parallel surfaces.
 
+### Untrim Command
+- **Imprinted Edges**   
+The Untrim command now has an option to retain imprinted edges after untrimming a surface.
 
-Untrim command: now has option to keep imprinted edges
+[Learn more](/solid/untrim)
 
+### Dialogues
+- **Numeric Fields**
+Plasticity has always supported basic arithmetic operations by default. Now, the mathematical constant **π (pi)** is also supported in all numeric fields within dialogs.
 
+| Type | Operation | Example |
+| ----- | -------- | ------- |
+| (+) | Addition | `35 **+** 12` (Result: 47.0) |
+| (-) | Subtraction | `35 **-** 12` (Result: 23.0)|
+| (*) | Multiplication | `35 ** * **` 12 (Result: 420.0) |
+| (/) | Division | `35 **/** 12` (Result: 2.917)|
+| (pi) | Mathematical Constant | `2 * **pi** * 3.15` (Result: 19.792) |
+
+Additionally, numeric fields now support **unit conversion** based on the current settings in Plasticity.
+
+| Unit | Conversion to CM | Example |
+| ----- | -------- | ------- |
+| mm (Milimeter) | 1 mm = 0.1 cm | `5 + 2**mm**` (Result: 5.2 cm) |
+| cm (Centimeter) | 1 cm = 1 cm | `5 + 2**cm**`  (Result: 7.0 cm)|
+| m (Meter) | 1 m = 100 cm | `5 + 2**m**` (Result: 205.0 cm) |
+| in (Inch)| 1 in = 2.54 cm | `5 + 2**in**` (Result: 10.08 cm)|
+| ft (Foot) | 1 ft = 30.48 cm| `5 + 2**ft**` (Result: 65.96 cm) |
+
+<VideoPlayer fileName="numeric-values-dialog"/>
 
 Selection - Invert selection command now supports edges and faces
     Ctrl-shift-leftclick in the viewport will now bring up a selection context menu, so you can disambiguate overlapping items like edges in the same place
     Selection "choice": leftclick-wheel and ctrl-shift-leftclick behave more similarly
 
-Dialogues - pi can now be used as a constant in numeric fields in dialogs
+\\ Dialogues - pi can now be used as a constant in numeric fields in dialogs
 
 ## 2. Improved Commands
 
