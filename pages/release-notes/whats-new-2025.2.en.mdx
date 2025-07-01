@@ -127,9 +127,7 @@ When multiple objects overlap, a selection context menu helps clarify which obje
 - **CV Hull Selection**     
 You can now select an entire row of CVs by hovering over the CV hull while holding <kbd>Alt</kbd>. The highlighted preview will indicate the direction of the loop selection before you click.
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-Extend Sheet, Extend Curve and Vertex, and Push Face Commands - Now have a dialogie "limit" option for accepting a target.
+\\ Extend Sheet, Extend Curve and Vertex, and Push Face Commands - Now have a dialogie "limit" option for accepting a target.
     Extend curve/vertex commands now optionally allow specifying a target
     Extend surface natural now accepts a target
 
@@ -138,6 +136,23 @@ Extend Sheet, Extend Curve and Vertex, and Push Face Commands - Now have a dialo
 The Selection panel now shows whether the selected surface is rational or nominal.
 - **Parallel Distance**
 When planar faces are selected, the Selection panel now shows the distance between parallel surfaces.
+
+### Selection Command
+#### Selection Context Menu
+- **Disambiguating Selections**     
+When multiple objects overlap, a selection context menu helps clarify which object to select based on the current selection mode. To access this menu, hold <kbd>Ctrl + Shift</kbd> and left-click, or left-click while scrolling the mouse wheel.
+#### Point Selection Mode
+- **CV Hull Selection**     
+You can now select an entire row of CVs by hovering over the CV hull while holding <kbd>Alt</kbd>. The highlighted preview will indicate the direction of the loop selection before you click.
+
+
+
+
+Selection - Invert selection command now supports edges and faces
+    Ctrl-shift-leftclick in the viewport will now bring up a selection context menu, so you can disambiguate overlapping items like edges in the same place
+    Selection "choice": leftclick-wheel and ctrl-shift-leftclick behave more similarly
+
+
 
 ### Untrim Command
 - **Imprinted Edges**   
@@ -151,29 +166,23 @@ Plasticity has always supported basic arithmetic operations by default. Now, the
 
 | Type | Operation | Example |
 | ----- | -------- | ------- |
-| (+) | Addition | `35 **+** 12` (Result: 47.0) |
-| (-) | Subtraction | `35 **-** 12` (Result: 23.0)|
-| (*) | Multiplication | `35 ** * **` 12 (Result: 420.0) |
-| (/) | Division | `35 **/** 12` (Result: 2.917)|
-| (pi) | Mathematical Constant | `2 * **pi** * 3.15` (Result: 19.792) |
+| (+) | Addition | `35 + 12` (**Result:** 47.0) |
+| (-) | Subtraction | `35 - 12` (**Result:** 23.0)|
+| (*) | Multiplication | `35 * 12` (**Result:** 420.0) |
+| (/) | Division | `35 / 12` (**Result:** 2.917)|
+| (pi) | Mathematical Constant | `2 * pi * 3.15` (**Result:** 19.792) |
 
-Additionally, numeric fields now support **unit conversion** based on the current settings in Plasticity.
+Additionally, numeric fields also support **unit conversion** based on the current units settings in Plasticity.
 
 | Unit | Conversion to CM | Example |
 | ----- | -------- | ------- |
-| mm (Milimeter) | 1 mm = 0.1 cm | `5 + 2**mm**` (Result: 5.2 cm) |
-| cm (Centimeter) | 1 cm = 1 cm | `5 + 2**cm**`  (Result: 7.0 cm)|
-| m (Meter) | 1 m = 100 cm | `5 + 2**m**` (Result: 205.0 cm) |
-| in (Inch)| 1 in = 2.54 cm | `5 + 2**in**` (Result: 10.08 cm)|
-| ft (Foot) | 1 ft = 30.48 cm| `5 + 2**ft**` (Result: 65.96 cm) |
+| mm (Milimeter) | 1 mm = 0.1 cm | `5 + 2mm` (**Result:** 5.2 cm) |
+| cm (Centimeter) | 1 cm = 1 cm | `5 + 2cm`  (**Result:** 7.0 cm)|
+| m (Meter) | 1 m = 100 cm | `5 + 2m` (**Result:** 205.0 cm) |
+| in (Inch)| 1 in = 2.54 cm | `5 + 2in` (**Result:** 10.08 cm)|
+| ft (Foot) | 1 ft = 30.48 cm| `5 + 2ft` (**Result:** 65.96 cm) |
 
 ![Numeric Values Example](/img/numeric-values-dialog.gif)
-
-Selection - Invert selection command now supports edges and faces
-    Ctrl-shift-leftclick in the viewport will now bring up a selection context menu, so you can disambiguate overlapping items like edges in the same place
-    Selection "choice": leftclick-wheel and ctrl-shift-leftclick behave more similarly
-
-\\ Dialogues - pi can now be used as a constant in numeric fields in dialogs
 
 ## 2. Improved Commands
 
