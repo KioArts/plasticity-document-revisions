@@ -63,11 +63,16 @@ Quickly select all visible Measurements, Solids, and Sheets in the viewport. Thi
 
 [Learn more](/plasticity-essentials/selecting-objects)
 
-
 ## 2. Modeling Enhancements
 
+### Square Command Enhancement
+- **Individual Tension Settings**   
+The Square command now allows setting individual tension values for each edge constraint.
+
+[Learn more](/solid/square)
+
 ### Boolean Command Enhancement
-- **New Operation: Region** 
+- **New Operation: Region**     
 A new **Region** option has been added to the Boolean command. It creates individual solids from enclosed regions formed by overlapping bodies.
 - **New Advanced Options Panel**    
 An **Advanced** section is now available beneath the main Boolean dialog. It includes options like **Target Material** and **Tool Material**, giving you more control over object assignment during Boolean operations.
@@ -77,91 +82,94 @@ An **Advanced** section is now available beneath the main Boolean dialog. It inc
 ### Bridge Curve Enhancement
 - **New Tension Gizmos**    
 Tension Gizmos are now available for Bridge Curve and are precise in specifying the tension parametrization during the operation. This is intuitive to work with and streamlines the work.
-- **Move Tension CVs**  
+- **Move Tension CVs**      
 Tension for G1, G2, and G3 continuity can now be adjusted by directly moving the visible control-vertices (CVs) on the screen.
-- **Curvature Combs**   
+- **Curvature Combs**       
 Curvature measurement is now optionally available during the Bridge Curve command under the **Analysis** menu. When the menu is open, curvature combs can be displayed to help evaluate the curve's shape in real time.
 
 [Learn more](/sketch/bridge-curve)
 
 ### Fillet Shell Operation
-- **Tension Parameter** 
+- **Tension Parameter**     
 When filleting a shell or edge, you can now adjust the Tension parameter to control how pronounced or subtle the fillet appears. This option is available across all shape types but the **FUll** Shape option.
 
 [Learn more](/solid/fillet-shell)
 
 ### Loft Enhancement
-- **Simplify Planar Surfaces**     
+- **Simplify Planar Surfaces**        
 The Loft command now includes a new **Simplify** option that controls how planar sections of lofted surfaces are created. This option is enabled by default and generates simplified trimmed patches for planar sections where the CV layout would otherwise be inconsistent. When Simplify is disabled, the loft generates intermediate geometry between profiles, resulting in a "tweening" effect that preserves a consistent CV layout across the entire surface.
 
 [Learn more](/solid/loft)
 
 ### Isoparam Enhancement
-- **Subdivide Surface**     
+- **Subdivide Surface**       
 The Isoparam command now includes a **Subdivide** option, which allows you to split a surface while preserving its CV layout. When enabled, this option inserts an isoparametric line that divides the surface in half, and the resulting surfaces retain the same underlying CV structure as the original.
 
 [Learn more](/solid/isoparam)
 
-## Improved Commands
+### Reverse Command Enhancement
+The Reverse command can now handle multiple bodies at once, simultaneously reversing their direction (for curves) or normal direction (for sheets).
+
+## 3. Improved Commands
 
 ### Duplicate Command
-- **Duplicate Recursively** 
+- **Duplicate Recursively**     
 In the Outliner, it is now possible to duplicate group hierarchies recursively. Previously, only the parent group could be duplicated, and its child objects were not included in the duplication. With this update, all children within a group are now duplicated along with the parent.
 
 [Learn more](/plasticity-essentials/outliner#group-objects)
 
-## New features
+### Unjoin Command
+- **Unjoin Faces**  
+The Unjoin command can now unjoin faces from multiple bodies simultaneously.
 
-### Physical Materials  
-Plasticity now introduces a collection of 34 physical materials accessible from the Assets panel. These materials become visible when **Render Mode** is enabled.
+### Dimension Command
+- **Line Segment**  
+The Dimension command now supports modifying the dimension properties of individual line segments.
 
-[Learn more](/plasticity-essentials/assets#physical-materials)
+### Loft Command
+- **Error Indicator**   
+The Loft command now provides clearer error feedback by marking guide curves that fail to touch profiles with a red dot.
+
+## 4. New features
+
+### Selection Command
+- **Invert Selection**   
+The Invert Selection command now supports edges and faces.
 
 ### Selection Context Menu
-- **Disambiguating Selections**     
+- **Disambiguating Selections**         
 When multiple objects overlap, a selection context menu helps clarify which object to select based on the current selection mode. To access this menu, hold <kbd>Ctrl + Shift</kbd> and left-click, or left-click while scrolling the mouse wheel.
 
 [Learn more](/plasticity-essentials/selecting-objects)
 
 ### Point Selection Mode
-- **CV Hull Selection**     
+- **CV Hull Selection**      
 You can now select an entire row of CVs by hovering over the CV hull while holding <kbd>Alt</kbd>. The highlighted preview will indicate the direction of the loop selection before you click.
-
-\\ Extend Sheet, Extend Curve and Vertex, and Push Face Commands - Now have a dialogie "limit" option for accepting a target.
-    Extend curve/vertex commands now optionally allow specifying a target
-    Extend surface natural now accepts a target
 
 ### Selection Panel
-- **Rational or Nominal**   
+- **Rational or Nominal**     
 The Selection panel now shows whether the selected surface is rational or nominal.
-- **Parallel Distance**
+- **Parallel Distance**     
 When planar faces are selected, the Selection panel now shows the distance between parallel surfaces.
 
-### Selection Command
-#### Selection Context Menu
-- **Disambiguating Selections**     
-When multiple objects overlap, a selection context menu helps clarify which object to select based on the current selection mode. To access this menu, hold <kbd>Ctrl + Shift</kbd> and left-click, or left-click while scrolling the mouse wheel.
-#### Point Selection Mode
-- **CV Hull Selection**     
-You can now select an entire row of CVs by hovering over the CV hull while holding <kbd>Alt</kbd>. The highlighted preview will indicate the direction of the loop selection before you click.
+### Extend Command
+- **Extend Sheet**       
+The command now has a dialog **Limit** option which will specify the sheet extention untill it reaches the inside or outside of a target body.
 
+[Learn more](/solid/extend-sheet)
 
-
-
-Selection - Invert selection command now supports edges and faces
-    Ctrl-shift-leftclick in the viewport will now bring up a selection context menu, so you can disambiguate overlapping items like edges in the same place
-    Selection "choice": leftclick-wheel and ctrl-shift-leftclick behave more similarly
-
+- **Extend Curve and Vertex**          
+Both commands now optionally allow specifying a target to define the extension length of the curve.
 
 
 ### Untrim Command
-- **Imprinted Edges**   
+- **Imprinted Edges**         
 The Untrim command now has an option to retain imprinted edges after untrimming a surface.
 
 [Learn more](/solid/untrim)
 
 ### Dialogues
-- **Numeric Fields**
+- **Numeric Fields**       
 Plasticity has always supported basic arithmetic operations by default. Now, the mathematical constant **π (pi)** is also supported in all numeric fields within dialogs.
 
 | Type | Operation | Example |
@@ -184,67 +192,67 @@ Additionally, numeric fields also support **unit conversion** based on the curre
 
 ![Numeric Values Example](/img/numeric-values-dialog.gif)
 
-## 2. Improved Commands
+### Cut Command
+- **Extend**       
+The Cut Command now includes an **Extend** option for curve cutters. If the curve is too short to fully cut the target objects, this option will extend its length to ensure a complete cut.
 
-Cut Command - Now has an option to "Extend" the cutting curve in case it is too short to go fully through the object
+[Learn more](/sketch/cut-curve)
 
-\\ Square command and align command now have individual tension settings for each edge constraint
-   Square Command - Now allows measuring G1/G2 continuity. Previously this has been supported only for G0 continuity.
+### Sweep, Pipe, and Curve Array
+- **Extend Methods**       
+Sweep, Pipe, and Curve Array now include new **Extend Methods** - *Sweep: Distance, Pipe: Distance, and Curve Array: Extend and Method* - which allow you to control how much to extend or retract the sweep body, pipe body, or duplicates along the path curves. 
 
-Reverse Command - Can now reverse multiple bodies simultaneously
+Learn More: [Sweep](/solid/sweep), [Pipe](/solid/pipe), [Curve Array](/common/curve-array)
 
-Select All Command - Now ignores locked items in the outliner
+### Imprint and Project Body
+Both commands now support multiple tool bodies simultaneously, instead of handling only tool pairs individually.
 
-Imprint Body and Project Body - Now accept multiple tool bodies
+## 5. Improved features
 
-Unjoin Command - Can now unjoin faces from multiple bodies simultaneously
+### Camera
+- **FOV Change**       
+The default field of view (FOV) for the perspective camera has been changed from **50** to **35**. This adjustment addresses reported clipping issues, which are often caused by unit scale or very small scene tolerances. If clipping still occurs, try lowering the FOV further to improve visibility.
 
-\\ Loft Command - Now has better error messages for indicating where guide curves fail to touch profiles with a red dot.
+### Interface
+- **Visual Zoom**     
+A new **Zoom Factor** option has been added in the Appearance section, allowing you to increase the interface's visual zoom level.
 
-Isoparam Command - Now has a dialogue window, displaying all options.
+### Toolbar
+The toolbar now remembers its viewport side between sessions and after restarting.
 
-Rebuild face command: when only raising degree, will give an exact solution,
+### Select All Command
+Now skips locked items in the Outliner during selection.
 
-Dimension command now supports single line segment
+### Assets
+The Assets menu now displays the material catalog with searchable previews and filters.
 
-## Improved features
+## 6. Shading Improvement
+Plasticity now offers enhanced shading features that make it easier and more effective to visualize your work. Below are the key improvements and details:
 
-\\ Toolbar - Toolbar now remembers which side on viewport on next session or restart.
+### Physical Materials  
+Plasticity now includes a collection of 34 physical materials accessible from the Assets panel. These materials become visible when **Render Mode** is enabled.
 
-> Camera - Default perspective camera FOV has changed from 50 to 35. There have been reports of a clipping issues with the camera - mainly due to the units used in the scne, mainly evident in very small tolerance. Changing the FOC of the camera from 50 to 35 should resolve this encounter, however, if it persists this can be lowered even further. 
+[Learn more](/plasticity-essentials/assets#physical-materials)
 
-\\ - Selection Mode - box selecting now remembers order in some cases, so lofting a bunch of curves can be done a bit more quickly
+#### Render Mode
+- **HDRI**  
+Choose from a selection of HDRIs and rotate them for custom lighting and reflections.
+- **Ground-Plane Shadow**   
+Shadows are now projected onto the ground plane, showing the silhouette of your object for better visual context.
+- **Ambient Occlusion**     
+Ambient Occlusion is always enabled in Render Mode and can be configured under Preferences > Appearance.
 
-Outliner 
-    Select All Command - Now ignores locked items in the outliner.
+[Learn more](/plasticity-essentials/render-mode)
 
-Assets - Material catalog in Assets tab now shows previews + filters
+#### Shader Mode
+- **Ambient Occlusion**        
+You can enable Ambient Occlusion even when Render Mode is off via Preferences > Performance. Note: This is recommended for machines with high-end GPUs (e.g., RTX 3060 or higher).
+- **Topology Shader**    
+A new shader that displays a wireframe look on your model, ideal for imported meshes and reverse engineering. It helps analyze complex organic shapes with intricate curves and deformations that might be hard to see with other shaders.
+- **Normal Checker**    
+This shader shows surface normal direction by coloring surfaces blue if facing outward and red if inward. It works with the Reverse command to help fix normal orientation quickly.
 
-## 2. Modeling Enhancements
-
-> Sweep/Pipe/Curve Array - Now have included a feature to further extend and deextend along the path curves that have been instablished with the command dialogue "Distance 1/ Distance 2". 
-
-Click here for Sweep, Pipe, and Curve Array.
-
-
-## Shading Improvement
-
-> Rendermode - Introduces a function that allows you to choose HDRIs and the option to rotate them.
-
-> Ground-Plane Shadow - In Render Mode, a new feature has been introduced to display a shadow on the ground plane. This shows the sillhouette of the overall object, projected downwards on the plane.
-
-> Ambient Occlusion - A new feature has been introduced in rendermode. This allows you to tweak various settings in the render mode panel (however, not saved with the file). 
-
-\\ Assets Panel - Introducing 20 physical materials in the Assets Panel - includes material presets for metal, marble, wood, and more. Physical materials only work when render mode is on. They differ a bit from default materials in Plasticity with the only difference of editing properties.
-
-
-\\ Zebra Shader - Has been slightly improved for visual usability. Now introduces a feature where you can change number of bands in options in the shader panel.
-
-Preferences 
-
-> - Option to increase interface visual zoom level in Appearance section.
-> - Ambient Occlusion - Settings for AO are now located in Plasticity's settings - Appearance. A new option in Preferences to turn on ambient occlusion in shader mode.
-
+[Learn more](/plasticity-essentials/shader-mode)
 
 ## Past Update Information
 
