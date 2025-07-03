@@ -28,7 +28,6 @@ Wrap existing solid and sheet objects onto a regular and irregular surface.
 6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="deform-solid"/>
-<VideoPlayer fileName="deform-solid-reblend"/>
 
 <Callout type="info" emoji="ℹ️">
 Scale and Offset uses a **UVN** coordinate system instead of **XYZ** coordinate system when adjusting the parametric value, allowing you to define the orientation of the deformed objects at a specific point in relation to the target surface. For more information on the UVN coordiante system, click [here](/cad-essentials/uvn-coordinate-system).
@@ -38,45 +37,13 @@ Scale and Offset uses a **UVN** coordinate system instead of **XYZ** coordinate 
 
 To avoid unwanted deformation or inaccurate placement, use the Unwrap Face command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face. 
 
-This works on open surfaces that are not periodic or closed. If the surface is periodic or closed, refer to the following chapter - [Using Deform on Closed Surfaces](/solid/deform-solid-and-sheet#using-deform-on-closed-surface).
-
-1. Select the face of an object you want to unwrap.
-2. Type **Unwrap Face** in the Command Palette to unwrap.
-3. Select the reference face as a neutral plane.
-4. Select the target face to deform objects with.
-5. Set the options in the Command Dialog.
-      - <Kst>Command Dialog</Kst>
-          - **Scale:** Scale in **U, V, N** Value.  
-          - **Offset:** Offset in **U, V, N** Value.
-          - **Flip:** 
-                - **Mirror:** Mirror horizontally the deformed objects relative to the surface. 
-                - **UV:** Flip the U and V orientation of the deformed objects.
-                - **Normal:** Flip the normal of the deformed objects.
-          - **Reblend:** Reblend the deformed objects. Recalculates the fillets of your objects and translates them again, removing any unwanted deformations.
-          - **Keep Tools:** Performs Deform operation while keeping the tool objects intact.
-6. Confirm with OK in the Command Dialog or right-click.
+> **Note:** This works on open surfaces that are not periodic or closed. If the surface is periodic or closed, refer to the following chapter - [Using Deform on Closed Surfaces](/solid/deform-solid-and-sheet#surface-deformation-on-closed-surfaces).
 
 <VideoPlayer fileName="deform-solid-unwrap"/>
 
 ### Surface Deformation on Closed Surfaces
 
 Deforming objects on closed (periodic) surfaces requires either fragmenting the surface or splitting the object that is being wrapped (if applicable). This is necessary because when wrapping around a closed surface, the geometry intersects itself and leads to joining and continuity issues.
-
-1. Select the face of a closed object.
-2. Type **Unwrap Face** in the Command Palette to unwrap.
-3. Select the reference face as a neutral plane.
-4. Select the target face to deform objects with.
-5. Set the options in the Command Dialog.
-      - <Kst>Command Dialog</Kst>
-          - **Scale:** Scale in **U, V, N** Value.  
-          - **Offset:** Offset in **U, V, N** Value.
-          - **Flip:** 
-                - **Mirror:** Mirror horizontally the deformed objects relative to the surface. 
-                - **UV:** Flip the U and V orientation of the deformed objects.
-                - **Normal:** Flip the normal of the deformed objects.
-          - **Reblend:** Reblend the deformed objects. Recalculates the fillets of your objects and translates them again, removing any unwanted deformations.
-          - **Keep Tools:** Performs Deform operation while keeping the tool objects intact.
-6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="deform-solid-unwrap-closed"/>
 
