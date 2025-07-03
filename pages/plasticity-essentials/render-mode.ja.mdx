@@ -7,13 +7,13 @@ import { Tabs } from 'nextra/components'
 
 ## Render Mode
 
-Render Mode is located in the View Mode menu in the top-right corner of the screen. You can enable it by clicking the sphere icon **(1)**. Once turned on, the shading in the viewport will update to show a more rendered look for your objects.
+レンダーモードは画面右上のビュー モードメニューにあります。球体アイコン **(1)** をクリックすると有効になります。オンにすると、ビューポートのシェーディングが更新され、オブジェクトがよりレンダリングされた見た目になります。
 
-![Render Mode Button](/img/render-mode-button.png)
+![レンダーモードボタン](/img/render-mode-button.png)
 
-You can switch between Plasticity's built-in HDRIs by clicking on them. The selected HDRI will be applied to the environment right away and updating the scene immediately - though this won't affect the viewport background.
+Plasticityの組み込みHDRIはクリックすることで切り替えられます。選択したHDRIはすぐに環境に適用され、シーンが即座に更新されます。ただし、ビューポートの背景には影響しません。
 
-- Available HDRIs: 
+- 利用可能なHDRI：
 
 ![Render Mode Button](/img/render-mode-preview-1.png)
 
@@ -29,20 +29,20 @@ You can switch between Plasticity's built-in HDRIs by clicking on them. The sele
 
 ## Ambient Occlusion (AO)
 
-When Render Mode is enabled, Ambient Occlusion remains always active. You can modify the radius (1) and falloff (2) values in the Appearance section in the [Preferences](/plasticity-essentials/preferences) menu. Changes are applied in real time.
+レンダーモードが有効になると、アンビエントオクルージョンは常にアクティブになります。半径（1）と減衰（2）の値は、[設定](/plasticity-essentials/preferences) メニューの「外観」セクションで変更できます。変更はリアルタイムで適用されます。
 
 ![Ambient Occlusion Settings](/img/ao-settings.png)
 
 ## All Environment
 
-- Custom HDRIs appear under the "All Environment" category.
+- カスタムHDRIは「すべての環境」カテゴリに表示されます。
 
 ![Custom Environment](/img/custom-hdri-preview.png)
 
-### Installing Custom HDRIs
+### カスタムHDRIのインストール
 
-1. Prepare your custom HDRI files, ensuring that EXR and PNG files have identical names.
-2. Find the `.plasticity` directory on your operating system and create a new folder named "environment".
+1. カスタムHDRIファイルを準備し、EXRファイルとPNGファイルの名前が同一であることを確認してください。
+2. お使いのOSで `.plasticity` ディレクトリを見つけ、「environment」という名前の新しいフォルダを作成します。
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
     Navigate to `C:/Users/<username>/.plasticity`.
@@ -54,18 +54,18 @@ When Render Mode is enabled, Ambient Occlusion remains always active. You can mo
     Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
     </Tabs.Tab>
 </Tabs>
-3. Move your custom HDRI files into this folder, then restart Plasticity to apply the changes.
+3. カスタムHDRIファイルをこのフォルダに移動し、Plasticityを再起動して変更を適用します。
 
-![Installing HDRI](/img/installing-hdri-preview.png)
+![HDRIのインストール](/img/installing-hdri-preview.png)
 
 <Callout type="info" emoji="💡">
-**Tip**     
-- It's recommended to use a 1K resolution for the EXR file to keep file sizes optimized (though higher resolutions are supported if needed). The PNG file can be any 1:1 ratio, but 512x512 pixels with a transparent background is advised. Both files should be saved with at least a 16-bit color depth.
+**ヒント**  
+- EXRファイルにはファイルサイズを最適化するために1K解像度を推奨します（必要に応じて高解像度もサポートされています）。PNGファイルは任意の1:1比率で構いませんが、透明背景の512×512ピクセルが推奨されます。両ファイルともに16ビット以上のカラーデプスで保存してください。
 </Callout>
 
 <Callout emoji="❗">
 **Note**     
-- Make sure you enable the option to view hidden folders in your operating system to access the `.plasticity` directory.
+- お使いのOSで隠しフォルダを表示する設定を有効にして、`.plasticity` ディレクトリにアクセスできるようにしてください。
 </Callout>
 
 ### Options
@@ -74,23 +74,23 @@ When Render Mode is enabled, Ambient Occlusion remains always active. You can mo
 
 ![Options](/img/options-rotation-intensity-1.png)
 
-| Option     | Button | Function|
-| -----------| ------ | ------- | 
-| Rotation   |    (8)    |  Adjust the rotation of the selected HDRI around the world Z-axis by dragging left or right, or by entering a specific value between -180 and 180. (Default: 0)      |
-| Intensity  |    (9)    |  Controls the brightness of the selected HDRI. Drag left or right, or enter a value between 0 and 10. (Default: 1.0)    |
+| オプション  | ボタン | 機能                                                                                                    |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| 回転       | (8)    | 選択したHDRIをワールドZ軸周りに回転させます。左または右にドラッグするか、-180から180の範囲で値を入力します。（デフォルト：0）        |
+| 強度       | (9)    | 選択したHDRIの明るさを調整します。左または右にドラッグするか、0から10の範囲で値を入力します。（デフォルト：1.0）                        |
  
  ### Toggle Show Edges, Curves, and Faces
 
-- Edges, curves, and faces can be shown or hidden using the toggle buttons.
+- エッジ、カーブ、および面は、切り替えボタンを使って表示または非表示にできます。
 
 ![Toggle Options in Options](/img/option-toggle-edges-curves-faces.png)
 
-| Function                                                      |  Button | Command Name           |
-| ------------------------------------------------------------- |  ------ | ---------------------- |
-| Toggle show Edges <br />(Turning this off will hide the Edges.) | (10)   | Viewport: toggle Edges |
-| Toggle show Curves <br />(Turning this off will hide the Curves.) | (11)   | Viewport: toggle Curves |
-| Toggle show Faces <br />(Turning this off will hide the Faces.) |  (12)   | Viewport: toggle Faces |
- 
+| 機能                                                        | ボタン | コマンド名                  |
+| ----------------------------------------------------------- | ------ | --------------------------- |
+| Toggle show Edges <br />(オフにするとエッジが非表示になります。) | (10)   | Viewport: toggle Edges    |
+| Toggle show Curves <br />(オフにするとカーブが非表示になります。) | (11)   | Viewport: toggle Curves    |
+| Toggle show Faces <br />(オフにすると面が非表示になります。)         | (12)   | Viewport: toggle Faces  |
+
 
 ### See Also
 [Shader Mode](/plasticity-essentials/shader-mode)

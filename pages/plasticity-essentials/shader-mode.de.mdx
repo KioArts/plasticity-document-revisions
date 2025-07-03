@@ -24,8 +24,16 @@ import { Tabs } from 'nextra/components'
 | Farbige Silhouette | 8 | Silhouetten-Checker mit Farbe | Wenn der [Render-Modus](/plasticity-essentials/view-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
 | Isophoten/Iso-Winkel | 9 | Statischer Oberflächenkontinuitäts-Checker | Shader wird basierend auf dem aktuellen Kamerawinkel auf das Objekt angewendet. Passen Sie die Streifendichte im Menü **"Materialoptionen"** an. |
 | Formschrägen-Checker | 10 | Formschrägen-Checker für Entformung | Der Winkel wird basierend auf der aktuellen Konstruktionsfläche angezeigt. Passen Sie die Schrägwinkel-Schwelle (blau) relativ zur Konstruktionsfläche im Menü **"Materialoptionen"** an. |
-| Horizontale Zebra-Reflexion | 11 | Oberflächenkontinuitäts-Checker | - |
-| Vertikale Zebra-Reflexion | 12 | Oberflächenkontinuitäts-Checker | - |
+| Horizontale Zebra-Reflexion | 11 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
+| Vertikale Zebra-Reflexion | 12 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
+| Topology Shader    |  13    |  Surface Checker                 |  Use on imported mesh files to trace or create a wireframe look for reverse engineering purposes. This is useful for analyzing complex organic shapes with intricate curves and deformations, which may not be as easily visible when using highlighters or other shaders. You can adjust the direction and line distribution in the **"Material Options"** panel. |
+| Normal Checker     |  14    |  Normal Surface Checker                 |  Use this shader to check if any surfaces are reversed. Blue indicates that the surface is facing outward, while red indicates it is facing inward. |
+
+## Ambient Occlusion (AO)
+
+Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius (1) and falloff (2) in the Appearance section in the Preferences menu.
+
+![Ambient Occlusion Settings](/img/ao-settings.png)
 
 ## Alle Matcaps
 - Benutzerdefinierte Matcaps erscheinen unter der Kategorie "Alle Matcaps".
@@ -75,3 +83,5 @@ import { Tabs } from 'nextra/components'
 | Umschalten der Kurven-Sichtbarkeit <br />(Deaktivieren blendet die Kurven aus.) |              | (14)        | Viewport: toggle Curves   |
 | Umschalten der Flächen-Sichtbarkeit <br />(Deaktivieren blendet die Flächen aus.) |              | (15)        | Viewport: toggle Faces    |
 
+### See Also
+[Render Mode](/plasticity/essentials/render-mode)

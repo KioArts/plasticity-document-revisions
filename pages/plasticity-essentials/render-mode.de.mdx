@@ -7,13 +7,13 @@ import { Tabs } from 'nextra/components'
 
 ## Render Mode
 
-Render Mode is located in the View Mode menu in the top-right corner of the screen. You can enable it by clicking the sphere icon **(1)**. Once turned on, the shading in the viewport will update to show a more rendered look for your objects.
+Der Render-Modus befindet sich im Menü „Ansichtsmodus“ oben rechts auf dem Bildschirm. Sie können ihn aktivieren, indem Sie auf das Kugel-Symbol **(1)** klicken. Sobald er eingeschaltet ist, wird die Schattierung im Viewport aktualisiert, um Ihre Objekte mit einem realistischeren Render-Look anzuzeigen.
 
-![Render Mode Button](/img/render-mode-button.png)
+![Render-Modus Button](/img/render-mode-button.png)
 
-You can switch between Plasticity's built-in HDRIs by clicking on them. The selected HDRI will be applied to the environment right away and updating the scene immediately - though this won't affect the viewport background.
+Sie können zwischen den integrierten HDRIs von Plasticity wechseln, indem Sie darauf klicken. Das ausgewählte HDRI wird sofort auf die Umgebung angewendet und die Szene wird umgehend aktualisiert – dies wirkt sich jedoch nicht auf den Viewport-Hintergrund aus.
 
-- Available HDRIs: 
+- Verfügbare HDRIs:
 
 ![Render Mode Button](/img/render-mode-preview-1.png)
 
@@ -29,20 +29,20 @@ You can switch between Plasticity's built-in HDRIs by clicking on them. The sele
 
 ## Ambient Occlusion (AO)
 
-When Render Mode is enabled, Ambient Occlusion remains always active. You can modify the radius (1) and falloff (2) values in the Appearance section in the [Preferences](/plasticity-essentials/preferences) menu. Changes are applied in real time.
+Wenn der Render-Modus aktiviert ist, bleibt Ambient Occlusion immer eingeschaltet. Sie können die Werte für Radius (1) und Abfall (2) im Abschnitt „Aussehen“ im Menü [Einstellungen](/plasticity-essentials/preferences) ändern. Änderungen werden in Echtzeit übernommen.
 
 ![Ambient Occlusion Settings](/img/ao-settings.png)
 
 ## All Environment
 
-- Custom HDRIs appear under the "All Environment" category.
+- Eigene HDRIs erscheinen unter der Kategorie „Alle Umgebungen“.
 
 ![Custom Environment](/img/custom-hdri-preview.png)
 
-### Installing Custom HDRIs
+### Installation benutzerdefinierter HDRIs
 
-1. Prepare your custom HDRI files, ensuring that EXR and PNG files have identical names.
-2. Find the `.plasticity` directory on your operating system and create a new folder named "environment".
+1. Bereiten Sie Ihre benutzerdefinierten HDRI-Dateien vor, und stellen Sie sicher, dass EXR- und PNG-Dateien den gleichen Namen haben.
+2. Finden Sie das `.plasticity`-Verzeichnis auf Ihrem Betriebssystem und erstellen Sie einen neuen Ordner mit dem Namen „environment“.
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
     Navigate to `C:/Users/<username>/.plasticity`.
@@ -54,18 +54,18 @@ When Render Mode is enabled, Ambient Occlusion remains always active. You can mo
     Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
     </Tabs.Tab>
 </Tabs>
-3. Move your custom HDRI files into this folder, then restart Plasticity to apply the changes.
+3. Verschieben Sie Ihre benutzerdefinierten HDRI-Dateien in diesen Ordner und starten Sie Plasticity neu, um die Änderungen anzuwenden.
 
-![Installing HDRI](/img/installing-hdri-preview.png)
+![Installation von HDRI](/img/installing-hdri-preview.png)
 
 <Callout type="info" emoji="💡">
-**Tip**     
-- It's recommended to use a 1K resolution for the EXR file to keep file sizes optimized (though higher resolutions are supported if needed). The PNG file can be any 1:1 ratio, but 512x512 pixels with a transparent background is advised. Both files should be saved with at least a 16-bit color depth.
+**Tipp**  
+- Es wird empfohlen, für die EXR-Datei eine Auflösung von 1K zu verwenden, um die Dateigröße zu optimieren (höhere Auflösungen werden bei Bedarf unterstützt). Die PNG-Datei kann ein beliebiges Seitenverhältnis von 1:1 haben, empfohlen werden jedoch 512×512 Pixel mit transparentem Hintergrund. Beide Dateien sollten mit mindestens 16 Bit Farbtiefe gespeichert werden.
 </Callout>
 
 <Callout emoji="❗">
 **Note**     
-- Make sure you enable the option to view hidden folders in your operating system to access the `.plasticity` directory.
+- Stellen Sie sicher, dass Sie in Ihrem Betriebssystem die Option zum Anzeigen versteckter Ordner aktivieren, um auf das `.plasticity`-Verzeichnis zugreifen zu können.
 </Callout>
 
 ### Options
@@ -74,23 +74,22 @@ When Render Mode is enabled, Ambient Occlusion remains always active. You can mo
 
 ![Options](/img/options-rotation-intensity-1.png)
 
-| Option     | Button | Function|
-| -----------| ------ | ------- | 
-| Rotation   |    (8)    |  Adjust the rotation of the selected HDRI around the world Z-axis by dragging left or right, or by entering a specific value between -180 and 180. (Default: 0)      |
-| Intensity  |    (9)    |  Controls the brightness of the selected HDRI. Drag left or right, or enter a value between 0 and 10. (Default: 1.0)    |
+| Option    | Button | Funktion                                                                                          |
+| --------- | ------ | ------------------------------------------------------------------------------------------------ |
+| Rotation  | (8)    | Passt die Rotation des ausgewählten HDRI um die Welt-Z-Achse an, durch Ziehen nach links oder rechts oder Eingabe eines Wertes zwischen -180 und 180. (Standard: 0) |
+| Intensität| (9)    | Steuert die Helligkeit des ausgewählten HDRI. Ziehen Sie nach links oder rechts oder geben Sie einen Wert zwischen 0 und 10 ein. (Standard: 1,0)                 |
  
  ### Toggle Show Edges, Curves, and Faces
 
-- Edges, curves, and faces can be shown or hidden using the toggle buttons.
+- Kanten, Kurven und Flächen können über die Umschalt-Schaltflächen ein- oder ausgeblendet werden.
 
 ![Toggle Options in Options](/img/option-toggle-edges-curves-faces.png)
-
-| Function                                                      |  Button | Command Name           |
-| ------------------------------------------------------------- |  ------ | ---------------------- |
-| Toggle show Edges <br />(Turning this off will hide the Edges.) | (10)   | Viewport: toggle Edges |
-| Toggle show Curves <br />(Turning this off will hide the Curves.) | (11)   | Viewport: toggle Curves |
-| Toggle show Faces <br />(Turning this off will hide the Faces.) |  (12)   | Viewport: toggle Faces |
  
+| Funktion                                                      | Button | Befehlsname               |
+| -------------------------------------------------------------|--------|---------------------------|
+| Toggle show Edges  <br />(Deaktivieren blendet die Kanten aus.) | (10)   | Viewport: toggle Edges |
+| Toggle show Curves <br />(Deaktivieren blendet die Kurven aus.) | (11)   | Viewport: toggle Curves |
+| Toggle show Faces <br />(Deaktivieren blendet die Flächen aus.) | (12)   | Viewport: toggle Faces |
 
 ### See Also
 [Shader Mode](/plasticity-essentials/shader-mode)
