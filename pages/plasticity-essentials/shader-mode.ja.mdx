@@ -24,8 +24,16 @@ import { Tabs } from 'nextra/components'
 | カラーシルエット | 8 | カラー付きシルエットチェッカー | [レンダーモード](/plasticity-essentials/view-mode)がオフの場合、異なるマテリアルカラーをリアルタイムでビューポートに表示できます。 |
 | アイソフォート/アイソアングル | 9 | 静的な表面連続性チェッカー | 現在のカメラアングルに基づいてシェーダーがオブジェクトに適用されます。**「マテリアルオプション」**メニューでストライプの密度を調整できます。 |
 | 抜き勾配チェッカー | 10 | 成形用抜き勾配チェッカー | 角度は現在の作業平面に基づいてオブジェクトに表示されます。**「マテリアルオプション」**メニューで抜き勾配の閾値（青色）を調整できます。 |
-| 水平ゼブラ反射 | 11 | 表面連続性チェッカー | - |
-| 垂直ゼブラ反射 | 12 | 表面連続性チェッカー | - |
+| Horizontale Zebra-Reflexion | 11 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
+| Vertikale Zebra-Reflexion | 12 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
+| Topology Shader    |  13    |  Surface Checker                 |  Use on imported mesh files to trace or create a wireframe look for reverse engineering purposes. This is useful for analyzing complex organic shapes with intricate curves and deformations, which may not be as easily visible when using highlighters or other shaders. You can adjust the direction and line distribution in the **"Material Options"** panel. |
+| Normal Checker     |  14    |  Normal Surface Checker                 |  Use this shader to check if any surfaces are reversed. Blue indicates that the surface is facing outward, while red indicates it is facing inward. |
+
+## Ambient Occlusion (AO)
+
+Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius (1) and falloff (2) in the Appearance section in the Preferences menu.
+
+![Ambient Occlusion Settings](/img/ao-settings.png)
 
 ## すべてのマットキャップ
 - カスタムマットキャップは「すべてのマットキャップ」カテゴリに表示されます。
@@ -74,3 +82,6 @@ import { Tabs } from 'nextra/components'
 | エッジの表示切り替え <br />(オフにするとエッジが非表示になります) | | (13) | ビューポート: エッジの表示切り替え |
 | カーブの表示切り替え <br />(オフにするとカーブが非表示になります) | | (14) | ビューポート: カーブの表示切り替え |
 | フェイスの表示切り替え <br />(オフにするとフェイスが非表示になります) | | (15) | ビューポート: フェイスの表示切り替え |
+
+### See Also
+[Render Mode](/plasticity-essentials/render-mode)
