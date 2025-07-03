@@ -34,11 +34,51 @@ Wickeln Sie vorhandene Solids- und Sheet-Objekte auf eine regelmäßige oder unr
 Scale und Offset verwenden ein **UVN**-Koordinatensystem anstelle eines **XYZ**-Koordinatensystems, wenn der parametrische Wert angepasst wird. Dies ermöglicht es Ihnen, die Ausrichtung der deformierten Objekte an einem bestimmten Punkt in Bezug auf die Zieloberfläche festzulegen. Für weitere Informationen zum UVN-Koordinatensystem klicken Sie [hier](/cad-essentials/uvn-coordinate-system).
 </Callout>
 
-<Callout type="info" emoji="💡">
-**Tip**
-- Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den **Unwrap Face**-Befehl aus der Befehlsleiste für das Zielobjekt. Dies erzeugt eine korrekt gemappte Oberfläche, die dann als genaue Referenzfläche verwendet werden kann.
+### Verwendung von Deform mit dem Unwrap Face‑Befehl
+
+Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den **Unwrap Face**‑Befehl aus der Befehls‑Palette für das Zielobjekt. Dadurch wird eine korrekt abgebildete Fläche erzeugt, die als präzises Referenz‑Face verwendet werden kann.
+
+Dies funktioniert bei offenen Flächen, die nicht periodisch oder geschlossen sind. Wenn die Fläche periodisch oder geschlossen ist, siehe das folgende Kapitel – [Verwendung von Deform auf geschlossenen Flächen](/solid/deform-solid-and-sheet#using-deform-on-closed-surface).
+
+1. Wählen Sie die Objekte aus, die Sie umhüllen möchten.
+2. Geben Sie **Deform** in die Befehlsleiste ein.
+3. Wählen Sie eine Referenzfläche als Neutralebene aus.
+4. Wählen Sie die Zielfläche aus, auf die die Objekte deformiert werden sollen.
+5. Stellen Sie die Optionen im Befehlsdialog ein.
+    - <Kst>Befehlsdialog</Kst>
+          - **Skalierung:** Skalierung in **Z,Y,X Wert**
+          - **Offset:** Offset in **Z,Y,X Wert**
+          - **Flip:** 
+                - **Spiegeln:** Spiegeln Sie die deformierten Objekte horizontal zur Oberfläche.
+                - **UV:** Drehen Sie die U- und V-Ausrichtung der deformierten Objekte um.
+                - **Normal:** Drehen Sie die Normalen der deformierten Objekte um.
+          - **Neuabmischen:** Mischen Sie die deformierten Objekte neu. Berechnet die Fasen Ihrer Objekte neu und übersetzt sie erneut, um unerwünschte Verformungen zu entfernen.
+          - **Werkzeuge behalten:** Führen Sie die Deform-Operation durch, während die Werkzeugobjekte intakt bleiben.
+6. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+
 <VideoPlayer fileName="deform-solid-unwrap"/>
-</Callout>
+
+### Verwendung von Deform auf geschlossenen Flächen
+
+Das Verformen von Objekten auf geschlossenen (periodischen) Flächen wie z. B. einer Zylinderfläche erfordert entweder das Fragmentieren der Fläche durch Einfügen isoparametrischer Linien oder eine Aufteilung des zu verformenden Objekts in Teile (falls möglich). Dies ist notwendig, da sich das Objekt beim Umwickeln einer geschlossenen Fläche selbst schneiden kann, was zu Verbindungs- und Kontinuitätsproblemen führt.
+
+1. Wählen Sie die Objekte aus, die Sie umhüllen möchten.
+2. Geben Sie **Deform** in die Befehlsleiste ein.
+3. Wählen Sie eine Referenzfläche als Neutralebene aus.
+4. Wählen Sie die Zielfläche aus, auf die die Objekte deformiert werden sollen.
+5. Stellen Sie die Optionen im Befehlsdialog ein.
+    - <Kst>Befehlsdialog</Kst>
+          - **Skalierung:** Skalierung in **Z,Y,X Wert**
+          - **Offset:** Offset in **Z,Y,X Wert**
+          - **Flip:** 
+                - **Spiegeln:** Spiegeln Sie die deformierten Objekte horizontal zur Oberfläche.
+                - **UV:** Drehen Sie die U- und V-Ausrichtung der deformierten Objekte um.
+                - **Normal:** Drehen Sie die Normalen der deformierten Objekte um.
+          - **Neuabmischen:** Mischen Sie die deformierten Objekte neu. Berechnet die Fasen Ihrer Objekte neu und übersetzt sie erneut, um unerwünschte Verformungen zu entfernen.
+          - **Werkzeuge behalten:** Führen Sie die Deform-Operation durch, während die Werkzeugobjekte intakt bleiben.
+6. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+
+<VideoPlayer fileName="deform-solid-unwrap-closed"/>
 
 ## Siehe auch
 - [Copy with Placement](/common/copy-with-placement)
