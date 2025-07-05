@@ -1,0 +1,180 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
+
+Veröffentlichungsdatum: 25. Februar 2025
+
+# Plasticity 25.1 Versionshinweise  
+
+Plasticity 25.1 führt eine Vielzahl von Verbesserungen und neuen Funktionen ein, die darauf abzielen, die Arbeitsabläufe im Flächenmodellieren zu optimieren, die Benutzerfreundlichkeit zu erhöhen und die Benutzererfahrung zu verbessern. Unten finden Sie eine detaillierte Übersicht über die Aktualisierungen:  
+
+## 1. Neue Befehle
+
+### Neuer Verschiebe-Befehl  
+- **CV-Verschieben auf Kurven und Solids**  
+Benutzer können Kontrollpunkte (CVs) auf Spline-Kurven und Flächenhüllen entlang der CV-Richtung verschieben, um präzise Anpassungen beim Modellieren vorzunehmen.
+
+[Mehr erfahren](/sketch/slide)
+
+### Neuer Schnittanalyse-Befehl
+- **Schnittanalyse**  
+Die Schnittanalyse ermöglicht es, ein 3D-Modell zu durchschneiden, um seine innere Struktur sichtbar zu machen. Dies hilft zu überprüfen, ob interne Komponenten richtig ausgerichtet sind oder sich gegenseitig stören. Besonders nützlich für Architektur-, Ingenieur- und Designvisualisierungen.
+
+[Mehr erfahren](/common/section-analysis)
+
+## 2. Modellierungsverbesserungen
+
+### Square-Befehl Updates
+- **Neue "Frei"-Option**  
+Führt eine neue Stetigkeitsoption ein, die G0-Präzision gegen höhere Flächenqualität eintauscht.
+- **"Angrenzende" Begrenzungsoption**  
+Neue Begrenzungsbedingung, die angrenzende beschnittene Kanten nutzt, um weichere Übergänge zu erzeugen.
+- **"Spannung"-Funktion**  
+Führt eine neue Funktion ein, mit der Benutzer die Krümmungsspannung der Fläche anpassen können, ähnlich wie bei Lofting- und Bridging-Workflows.
+- **Beschnittene Flächen neu anpassen**  
+Der Square-Befehl kann jede vierseitige beschnittene Fläche mit benutzerdefinierten Grad-, Spann- und Stetigkeitseinstellungen neu aufbauen und so die Splines der beschnittenen Fläche an ihre innere Form anpassen.
+
+[Mehr erfahren](/solid/square)
+
+### Xnurbs Verbesserungen
+- **"Angrenzende" Begrenzungsoption**  
+Neue Begrenzungsbedingung für weichere Übergänge bei angrenzenden beschnittenen Kanten.
+- **"Spannung"-Funktion**  
+Neue Funktion zur Anpassung der Flächenkrümmungsspannung, ähnlich wie bei Lofting- und Bridging-Werkzeugen.
+
+[Mehr erfahren](/solid/xnurbs)
+
+### CV-Bewegungsbearbeitung  
+- **Proportionale und gespiegelte Transformationen**  
+Der Verschieben-Befehl ermöglicht die proportionale Bearbeitung von Flächen-CVs und unterstützt gespiegelte Transformationen.
+
+[Mehr erfahren](/common/move#move-control-point)
+
+### Erhöhung des Flächengrads
+- Der [**Grad erhöhen**](/solid/raise-surface-degree)-Befehl kann nun ausgeführt werden, wenn ein Flächen-CV ausgewählt ist.
+
+### Punkte umschalten Verbesserungen
+- Der [**Punkte umschalten**](/sketch/toggle-points)-Befehl kann nun ausgeführt werden, wenn ein Kurven-CV ausgewählt ist.
+
+## 3. Skizzieren und Kurvenwerkzeuge
+
+### Kurvenrekonstruktion Verbesserung  
+- **Gewicht-Option**  
+Der Rekonstruktionsbefehl enthält nun eine neue Option **"Gewicht"**, wenn die Kurve explizit rekonstruiert wird.
+
+[Mehr erfahren](/sketch/rebuild-curve)
+
+### Fang-Verbesserungen  
+- **Neues Tangenten-Fangen**  
+Führt **Tan/Tan**-Fangen für Ellipsen und allgemeine Splines ein.
+- **Neue "Kontrollpunkt"-Fangoption**  
+Eine neue **"Kontrollpunkt"**-Fangoption ist jetzt im Unterpanel **"Objektfänge"** verfügbar.
+
+[Mehr erfahren](/plasticity-essentials/snap)
+
+### Skizzieren Verbesserung
+- **Verhalten beim Löschen von Regionen**  
+Beim Löschen von Regionen werden die begrenzenden Kurven nun automatisch entfernt.
+
+### Trimmen-Optimierung
+Die Trimmoperationen für dicht gepackte 2D-Skizzen, bei denen sich überlappende oder störende Linien das Trimmen erschweren oder verlangsamen, wurden optimiert und sind jetzt etwas schneller.
+
+## 4. Transformationswerkzeuge
+
+### Transformationsbefehl Verbesserungen
+- **Gespeicherte Transformations-Pivots**  
+Transformations-Pivots werden nun mit Objekten gespeichert, wenn die Befehle Verschieben, Drehen und Skalieren verwendet werden.
+- **Anpassbare Transformationsoptionen**  
+Benutzer können die Transformationsausrichtung (**Lokal**, **CPlane**, **Welt**) und den Drehpunkt (**Begrenzungsbox**, **Median**, **Zuletzt ausgewählt**) festlegen.
+
+Mehr erfahren: [Verschieben](/common/move), [Drehen](/common/rotate), [Skalieren](/common/scale)
+
+## 5. Oberflächenwerkzeuge
+
+### Blechverlängerung Verbesserungen
+- **Neuer "Natürlich"-Modus**  
+Einführung eines neuen **"Natürlich"**-Modus für das Verlängern von Blechen.
+- **Flächenverlängerung**  
+Flächenverlängerungsmodi können nun mit der <kbd>Tab</kbd>-Taste umgeschaltet werden.
+
+[Mehr erfahren](/solid/extend-sheet)
+
+### Konstruktions-Ebenen Verbesserung
+Benutzer können nun eine Konstruktionsebene erstellen, die durch zwei ausgewählte Punkte verläuft und sich an der Kameraperspektive ausrichtet.
+
+[Mehr erfahren](/plasticity-essentials/construction-plane#4-creating-a-construction-plane-from-multiple-points)
+
+### Brückenfläche
+- **Neue "Spannung"-Option**  
+Neue **"Spannung"**-Option für den Brückenflächenbefehl.
+
+[Mehr erfahren](/solid/bridge-surface)
+
+## 6. Auswahlkonvertierung
+
+### Auswahlkonvertierung Verbesserung
+- **Neue Konvertierungsoptionen**  
+Auswahl eines Drahtkörpers ermöglicht nun die Konvertierung in Punkte (Vertex und Kontroll-Vertex) und umgekehrt.
+
+[Mehr erfahren](/plasticity-essentials/selecting-objects#select-from-the-currently-selected-objects)
+
+## 7. Benutzeroberfläche und Verbesserungen der Benutzerfreundlichkeit
+
+### Neues Benutzeroberflächendesign
+Plasticity wurde mit einer modernen, optimierten Benutzeroberfläche aktualisiert, wobei zentrale Funktionselemente aus früheren Versionen erhalten blieben. Funktionen sind jetzt besser positioniert und mit intuitiven neuen Symbolen ausgestattet, um die Benutzerfreundlichkeit und den Workflow zu verbessern. Dieses Update legt außerdem die Grundlage für zukünftige UI-Verbesserungen.  
+
+[Mehr erfahren](/plasticity-essentials/user-interface-overview)
+
+![Plasticity 2025.1 UI](/img/new-ui.png)
+
+### Verbesserungen bei Navigation und Interaktion  
+- **Letzte Dateien** – Ziehen und Ablegen von Dateien/Elementen aus der Liste der zuletzt verwendeten Dateien in den Ansichtsbereich für einen schnellen Import.
+- **Seitenleiste** – Die Bedienfelder auf der rechten Seite funktionieren jetzt als Menüs.
+- **Seitenleiste** – Eine neue Umschalttaste wurde eingeführt, um die linke und rechte Seitenleiste ein- oder auszublenden.
+- **Ansichtswürfel** – Durch wiederholtes Klicken auf eine Fläche des Ansichtswürfels wird zwischen den gegenüberliegenden Ansichten umgeschaltet.
+- **Menü für vorgeschlagene Befehle** – Jetzt mit <kbd>Shift + F</kbd> zugänglich.
+- **Schnellzugriff auf die Dokumentation** – Jeder Befehlsdialog enthält jetzt ein Symbol, das direkt zur entsprechenden Seite in der Plasticity-Dokumentation verlinkt.
+
+### Verbesserungen bei Visualisierung und Rückmeldungen     
+- **Fokuspunkt beim Umkreisen** – Ein visueller Punkt zeigt jetzt den Fokuspunkt an, wenn im Ansichtsbereich umkreist wird.
+- **Fortschrittsanzeige** – Beim Öffnen großer Dateien wird nun eine Fortschrittsanzeige angezeigt.
+- **Tooltips** – Zu mehreren Werkzeugen wurden Tooltip-Bilder hinzugefügt, um Funktionen besser verständlich zu machen.
+
+Befehle mit Tooltips:
+| Werkzeug | Optionen mit Tooltips | 
+| ---- | ------ |
+| [Fläche überbrücken](/solid/bridge-surface) | Spannung und Wände trimmen |
+| [OBJ exportieren](/plasticity-essentials/export-obg) | Maximale Breite, Winkel-Toleranz und Inflekt |
+| [Fläche erweitern](/solid/extend-sheet) | Form |
+| [Kurve erweitern](sketch/extend-curve) | Form |
+| [Abrunden](/solid/fillet-shell) | Form und Y-Blend |
+| [Kurve auf Körper prägen](/solid/imprint-curve-body) | Methode, Bidirektional, Verdeckte ausblenden und Komplett |
+| [Kurve auf Körper projizieren](/sketch/project-curve-body) | Methode, Bidirektional und Verdeckte ausblenden |
+| [Fläche versetzen](solid/offset-face) | Wachstum |
+| [Sweep](/solid/sweep) | Drehung, Skalierung und Ausrichtung |
+| [Quadrat](/solid/square) | Begrenzung |
+| [XNurbs](/solid/xnurbs) | Vierseitig und Begrenzung |
+
+## 8. Assets-Menü
+- **Kontextmenü**  
+Ein Rechtsklick-Kontextmenü wurde dem Assets-Menü hinzugefügt.
+
+[Mehr erfahren](/plasticity-essentials/assets)
+
+## 9. Spacemouse-Unterstützung
+- **Spacemouse** - Tasten der Spacemouse können durch Bearbeiten der `keymap.json`-Datei zugewiesen werden.
+
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigiere zu `C:/Users/<username>/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigiere zu `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigiere zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
+
+## Frühere Updates
+- 5. September 2024 [Version 2024.2](/release-notes/whats-new-2024.2)
