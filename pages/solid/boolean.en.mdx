@@ -1,3 +1,4 @@
+import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
@@ -27,7 +28,20 @@ Combine, subtract, or intersect multiple objects in any combination of Solids an
          - **Difference:** Removes the tool from the Boolean target.
          - **Intersect:** Creates a Solid at the intersection of the Boolean target and tool.
          - **Slice:** Creates a Solid at the intersections with the Boolean target and preserves the remaining Solids.
-         - For differences in results based on the operation, please refer to the [Operation Outcome Differences](#operation-outcome-differences) section.
+         - **Region:** Creates solids from enclosed regions formed within the collection of bodies (Solids and Sheets).
+         - For differences in results based on the operation, please refer to the [Normal Boolean Operations](#normal-boolean-operations) section.
+      - **Advanced:**
+         - **Target Material:** Defines how the target object is executed during the Boolean operation either as a solid or a sheet. This setting influences how the tool object interacts with the target object, especially in operations like Difference and Intersection.
+            - **Default:** Uses the default state of the body.
+            - **Empty:** Treats the body as an empty shell.
+            - **Inside:** Treats the body as a solid object from the inside based on the normal direction of Tool object.
+            - **Outside:** Treats the body as a solid object from the outside based on the normal direction of Tool object.
+         - **Tool Material:** Controls how the tool object behaves in the Boolean operation. You can choose to treat it as a solid or a sheet, affecting how it interacts with parts of the target.
+            - **Default:** Uses the default state of the body.
+            - **Empty:** Treats the body as an empty shell.
+            - **Inside:** Treats the body as a solid object from the inside based on the normal direction of Target object.
+            - **Outside:** Treats the body as a solid object from the outside based on the normal direction of Target object.
+         - For differences in results based on the operation, please refer to the [Advanced Boolean Operation Differences](#advanced-boolean-operations-differences) section.
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Shift + Q</kbd> **Slice:** Same as above.
       - <kbd>Q</kbd> **Union:**  Same as above.
@@ -41,19 +55,38 @@ Combine, subtract, or intersect multiple objects in any combination of Solids an
       - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Constrain to the X, Y, or Z-plane.
 4. Confirm with OK in the Command Dialog or right-click.
 
+<VideoPlayer fileName="boolean-0"/>
+
 ## Operation Outcome Differences [#operation-outcome-differences]
 
-### Target: Solid, Tool: Solid
-![Boolean 1](/img/boolean-1.png )
+### Normal Boolean Operations [#normal-boolean-operations]
 
-### Target: Solid, Tool: Sheet
-![Boolean 2](/img/boolean-2.png )
+   #### Target: Solid, Tool: Solid
+   ![Boolean 1](/img/boolean-1.png)
 
-### Target: Sheet, Tool: Solid
-![Boolean 3](/img/boolean-3.png )
+   #### Target: Solid, Tool: Sheet
+   ![Boolean 2](/img/boolean-2.png)
 
-### Target: Sheet, Tool: Sheet
-![Boolean 4](/img/boolean-4.png )
+   #### Target: Sheet, Tool: Solid
+   ![Boolean 3](/img/boolean-3.png)
+
+   #### Target: Sheet, Tool: Sheet
+   ![Boolean 4](/img/boolean-4.png)
+
+### Advanced Boolean Operation Differences [#advanced-boolean-operations-differences]
+
+   #### Target: Solid, Tool: Solid
+   ![Boolean 1](/img/boolean-5.png)
+
+   > **Note:** **Target: Outside / Tool: Empty** - Slicing the target and tool objects produces three results: a combined duplicate of both objects, a sheet from the tool with the intersecting area removed and a solid from the target with the intersecting area removed.
+
+   #### Target: Solid, Tool: Sheet
+   ![Boolean 1](/img/boolean-6.png)
+   #### Target: Sheet, Tool: Solid
+   ![Boolean 1](/img/boolean-7.png)
+   #### Target: Sheet, Tool: Sheet
+   ![Boolean 1](/img/boolean-8.png)
+
 
 ## See also
 - [Cut](cut)

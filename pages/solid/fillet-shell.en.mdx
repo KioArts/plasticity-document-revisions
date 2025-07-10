@@ -13,7 +13,7 @@ Fillet or chamfer the Edges which can be conic or G2 continuous. Variable distan
 
 1. Select the Edges to fillet or chamfer.
 2. When one or more Edges are selected, the default command, **Fillet**, is automatically executed.
-3. Alternatively, press the shortcut key <kbd>B</kbd> to excute.
+3. Alternatively, press the shortcut key <kbd>B</kbd> to execute.
 4. Move the yellow dot to specify the distance of the fillet or chamfer. 
     - Positive movement:  results in a fillet.
     - Negative movement: results in a chamfer.
@@ -41,6 +41,10 @@ Fillet or chamfer the Edges which can be conic or G2 continuous. Variable distan
     - **Full:** The full option will create a rounded fillet shape on either side of a face with 2 edges selected. The operation differs from a regular clamping effect when filleting. The round fillet is a surface that is tangential to all 3 neighbouring faces (left, centre, and right faces) and thus will result in generating perfect round fillet depending on the diameter or distance of neighbouring faces and edges.
     
     <VideoPlayer fileName="fillet-shell-shape"/>
+
+**Tension:**
+    - Use the Tension dialog to control the intensity of the fillet's appearance. This setting applies to all shape types, excluding **Full Shape**.
+    <VideoPlayer fileName="fillet-solid-tension"/>
 
 **Y-Blend:** 
     - The “Y-blend” is a special kind of blend or fillet that occurs when three surfaces meet at a common point, forming a “Y” shape. Enabling **Attempt**, you can create better topology  in Y-blend and avoid undesired fillet results.

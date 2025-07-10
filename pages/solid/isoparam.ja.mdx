@@ -1,5 +1,6 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
 # Isoparam (アイソパラムを加える)
@@ -13,13 +14,24 @@ import Kst from '/components/KeyboardShortcutsTitle'
 1. <kbd>Ctrl + R</kbd> を押します。
 2. アイソパラムを作成する位置にマウスカーソルを合わせます。
 3. キーボードショートカットでオプションを設定します。
+- <Kst>コマンドダイアログ</Kst>
+      - **Direction:** アイソパラメトリックラインの方向（U または V）を指定します。
+      - **Count:** 生成するアイソパラメトリックラインの数を指定します。
+      - **Param:** U方向およびV方向に基づいて、開始点と終了点の間にアイソパラメトリックラインを配置するパラメータ値を指定します。
+      - **Subdivide:** サーフェスの現在のCVレイアウトを細分化するかどうかを指定します。オフの場合、既存のCVレイアウトを変更せずにラインが挿入されます。オンの場合、現在のCVレイアウトを考慮してサーフェスを分割し、細分化された面全体でCVの一貫性を維持しながらラインを挿入します。
    - <Kst>キーボードショートカット</Kst>
       - <kbd>Tab</kbd> **U/V direction:** アイソパラムの方向を切り替えます。
       - <kbd>Shift</kbd> + Wheel up **Add cut:** アイソパラムの数を増やします。
       - <kbd>Shift</kbd> + Wheel down **Subtract cut:** アイソパラムの数を減らします。
+      - <kbd>S</kbd> **Subdivide:** CVサーフェスレイアウトを細分化します。
 4. 右クリックで確定します。
 
 <VideoPlayer fileName="isoparam"/>
+
+<Callout type="info" emoji="💡">
+**Info**
+- CVレイアウトを持つサーフェスに対して「Subdivide（細分化）」オプションを使用すると、そのサーフェスが分割され、同じCVレイアウトを共有することになります。フェースを解消したり、元の状態に戻したりしたい場合でも、これは破壊的なプロセスであるため不可能です。
+</Callout>
 
 ## 関連項目
 - [Offset Curve](offset-curve)

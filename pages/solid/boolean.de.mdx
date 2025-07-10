@@ -1,3 +1,4 @@
+import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
@@ -21,15 +22,28 @@ Kombinieren, subtrahieren oder schneiden Sie mehrere Objekte in beliebiger Kombi
       - **Select tool bodies:** 
          - Wenn dieser Button hervorgehoben ist, können Sie den Solid oder Sheet auswählen, der als Boolean-Werkzeug verwendet werden soll.
          - Um das Werkzeug zu ändern, klicken Sie erneut auf diesen Button und wählen den Solid oder Sheet.
-3. Legen Sie die Optionen im Befehlsdialog und die Tastaturkürzel fest.
-   - <Kst>Befehlsdialog</Kst>
-      - **Keep Tools:** Führt Boolean-Operationen durch und behält die Werkzeugobjekte bei.
+3. Stellen Sie die Optionen im Befehlsdialog und bei den Tastenkombinationen ein.
+   - <Kst>Command Dialog</Kst>
+      - **Keep Tools:** Führt Boolesche Operationen durch, ohne die Werkzeugobjekte zu verändern.
       - **Opetation:**
-         - **Union:** Verbindet das Boolean-Ziel und das Werkzeug miteinander.
-         - **Difference:** Entfernt das Werkzeug vom Boolean-Ziel.
-         - **Intersect:** Erstellt einen Solid an der Schnittstelle des Boolean-Ziels und des Werkzeugs.
-         - **Slice:** Erstellt einen Solid an den Schnittstellen mit dem Boolean-Ziel und bewahrt die verbleibenden Solids.
-         - Bei Unterschieden in den Ergebnissen aufgrund der Operation, bitte beziehen Sie sich auf den [Operation Outcome Differences](#operation-outcome-differences) Abschnitt.
+         - **Union:** Verbindet Ziel- und Werkzeugobjekt zu einem gemeinsamen Volumenkörper.
+         - **Difference:** Entfernt das Werkzeugobjekt vom Zielobjekt.
+         - **Intersect:** Erstellt einen Volumenkörper an der Schnittstelle zwischen Ziel- und Werkzeugobjekt.
+         - **Slice:** Erstellt Volumenkörper an den Schnittflächen mit dem Zielobjekt und behält die restlichen Volumen bei.
+         - **Region:** Erstellt Volumenkörper aus geschlossenen Bereichen innerhalb der Sammlung von Körpern (Volumenkörper und Flächen).
+         - Für Unterschiede in den Ergebnissen je nach Operation siehe den Abschnitt [Normal Boolean Operations](#normal-boolean-operations).
+      - **Advanced:**
+         - **Target Material:** Bestimmt, wie das Zielobjekt während der Booleschen Operation behandelt wird – entweder als Volumenkörper oder als Fläche. Diese Einstellung beeinflusst, wie das Werkzeugobjekt mit dem Zielobjekt interagiert, insbesondere bei Operationen wie Differenz und Schnittmenge.
+            - **Default:** Verwendet den Standardtyp des Körpers.
+            - **Empty:** Behandelt den Körper als leere Hülle.
+            - **Inside:** Behandelt den Körper als massives Objekt von innen, basierend auf der Normalrichtung des Werkzeugobjekts.
+            - **Outside:** Behandelt den Körper als massives Objekt von außen, basierend auf der Normalrichtung des Werkzeugobjekts.
+         - **Tool Material:** Bestimmt, wie das Werkzeugobjekt während der Booleschen Operation behandelt wird. Es kann als Volumenkörper oder als Fläche interpretiert werden, was beeinflusst, wie es mit dem Zielobjekt interagiert.
+            - **Default:** Verwendet den Standardtyp des Körpers.
+            - **Empty:** Behandelt den Körper als leere Hülle.
+            - **Inside:** Behandelt den Körper als massives Objekt von innen, basierend auf der Normalrichtung des Zielobjekts.
+            - **Outside:** Behandelt den Körper als massives Objekt von außen, basierend auf der Normalrichtung des Zielobjekts.
+         - Für Unterschiede in den Ergebnissen je nach Operation siehe den Abschnitt [Advanced Boolean Operation Differences](#advanced-boolean-operations-differences).
    - <Kst>Tastenkombinationen</Kst>
       - <kbd>Shift + Q</kbd> **Slice:** Wie oben beschrieben.
       - <kbd>Q</kbd> **Union:** Wie oben beschrieben.
@@ -43,20 +57,37 @@ Kombinieren, subtrahieren oder schneiden Sie mehrere Objekte in beliebiger Kombi
       - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Auf die X-, Y- oder Z-Ebene beschränken.
 4. Bestätigen Sie mit OK im Befehlsdialog oder Rechtsklick.
 
-## Operation Outcome Differences [#operation-outcome-differences]
+<VideoPlayer fileName="boolean-0"/>
 
-### Target: Solid, Tool: Solid
-![Boolean 1](/img/boolean-1.png )
+## Unterschiede in den Operationsergebnissen [#operation-outcome-differences]
 
-### Target: Solid, Tool: Sheet
-![Boolean 2](/img/boolean-2.png )
+### Normal Boolean Operations [#normal-boolean-operations]
 
-### Target: Sheet, Tool: Solid
-![Boolean 3](/img/boolean-3.png )
+   #### Target: Solid, Tool: Solid
+   ![Boolean 1](/img/boolean-1.png)
 
-### Target: Sheet, Tool: Sheet
-![Boolean 4](/img/boolean-4.png )
+   #### Target: Solid, Tool: Sheet
+   ![Boolean 2](/img/boolean-2.png)
 
+   #### Target: Sheet, Tool: Solid
+   ![Boolean 3](/img/boolean-3.png)
+
+   #### Target: Sheet, Tool: Sheet
+   ![Boolean 4](/img/boolean-4.png)
+
+### Advanced Boolean Operation Differences [#advanced-boolean-operations-differences]
+
+   #### Target: Solid, Tool: Solid
+   ![Boolean 1](/img/boolean-5.png)
+
+   > **Hinweis:** **Ziel: Außen / Werkzeug: Leer** – Das Schneiden der Ziel- und Werkzeugobjekte erzeugt drei Ergebnisse: ein kombiniertes Duplikat beider Objekte, ein Blech (Sheet) des Werkzeugs mit entferntem Schnittbereich und ein Volumenkörper (Solid) des Ziels mit entferntem Schnittbereich.
+
+   #### Target: Solid, Tool: Sheet
+   ![Boolean 1](/img/boolean-6.png)
+   #### Target: Sheet, Tool: Solid
+   ![Boolean 1](/img/boolean-7.png)
+   #### Target: Sheet, Tool: Sheet
+   ![Boolean 1](/img/boolean-8.png)
 ## Siehe auch
 - [Cut](cut)
 - [Extrude](extrude)

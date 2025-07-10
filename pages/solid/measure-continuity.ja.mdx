@@ -1,0 +1,34 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+# Measure Continuity
+
+<Reference shortcut="" command="Measure Continuity" button="" />
+
+サーフェスエッジ間の連続性を評価し、接続がG0、G1、またはG2であるかを確認します（G3はサポートされていません）。
+
+## 基本的な使い方
+
+1. 隣接して接している2つのサーフェスエッジを選択します。
+2. コマンドパレットに **"Measure Continuity"** と入力します。
+3. コマンドダイアログでオプションを設定します。
+   - <Kst>コマンドダイアログ</Kst>
+         - **Continuity:** エッジの連続性の種類を検証します:
+            - **G0:** 位置の連続性を確認します。Plasticityの現在の単位設定に基づいて、位置の偏差をメートル単位で測定します。
+            - **G1:** 接線の連続性を確認します。隣接するサーフェス間の角度の偏差を度で測定します。
+            - **G2:** 曲率の連続性を確認します。隣接するサーフェス間の曲率値を比較して評価します。
+        - **G0 Scale / G1 Scale / G2 Scale:** 
+                - コームと偏差グラフの視覚的サイズを調整します。
+        - **G0 Tolerance/ G1 Tolerance/ G2 Tolerance:** 
+                - 偏差検出の数値しきい値を調整します。
+   - <Kst>キーボードショートカット</Kst>
+      - <kbd>Tab</kbd> **Cycle:** 連続性オプションを循環表示します。
+4. コマンドダイアログで「OK」をクリックするか、ビューポート内で右クリックして確定します。
+
+<VideoPlayer fileName="measure-continuity-0"/>
+
+## 関連項目
+- [Measure Curvature](/sketch/measure-curvature)

@@ -15,12 +15,16 @@ Duplizieren Sie Objekte entlang einer Kurve, indem Sie die Anzahl der Duplikate 
 3. Wählen Sie die Kurve aus, die als Pfad verwendet werden soll.
 4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
    - <Kst>Befehlsdialog</Kst>
-   - **Number:** Geben Sie die Anzahl der Duplikationen an.
-   - **Twist:** Geben Sie den Verdrehungswinkel entlang der Kurve in Grad an.
-   - **Scale:** Geben Sie den Skalierungsfaktor entlang der Kurve an.
-   - **Alignment:**
+      - **Number:** Geben Sie die Anzahl der Duplikationen an.
+      - **Twist:** Geben Sie den Verdrehungswinkel entlang der Kurve in Grad an.
+      - **Scale:** Geben Sie den Skalierungsfaktor entlang der Kurve an.
+       - **Alignment:**
          - **Parallel:** Duplizieren Sie die Kurven parallel, unabhängig vom Pfad.
          - **Normal:** Duplizieren Sie die Kurven mit Winkeln, die an den Pfad ausgerichtet sind.
+      - **Extent:** Geben Sie einen Wert an, um den Duplikationsbereich basierend auf der aktuell ausgewählten Methode anzupassen.
+      - **Method:** Legt fest, wie der Duplikationsbereich gesteuert wird.
+         - **Distance:** Passt den Duplikationsbereich mit einem metrischen Wert an, basierend auf den Einstellungen in Plasticity.
+         - **Ratio:** Passt den Duplikationsbereich mit einem Verhältniswert zwischen 0,00 und 1,00 an. (Standard: 1,00)
    - <Kst>Tastenkombinationen</Kst>
       - <kbd>Umschalt + Rad hoch</kbd> **Add copy:** Erhöht die Anzahl der Duplikationen.
       - <kbd>Umschalt + Rad runter</kbd> **Subtract copy:** Verringert die Anzahl der Duplikationen.

@@ -1,0 +1,29 @@
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
+
+# Measure
+
+<Reference shortcut="Ctrl + =" command="Measure" button="Toolbar" buttonIcon='button-measure' />
+
+Messen Sie Dimensionen wie die Größe einer rechteckigen Curve oder den Durchmesser eines Zylinders. 
+Die Maßwerte aktualisieren sich entsprechend der Verformung des gemessenen Objekts.
+
+## Grundlegende Verwendung
+
+1. Drücken Sie <kbd>Strg + =</kbd> oder verwenden Sie den **Measure**-Befehl in der Befehlspalette.
+2. Wählen Sie die Curve, Edge oder den Schnapp-Punkt, den Sie messen möchten.
+3. Bewegen Sie den Cursor zur gewünschten Achse und klicken Sie, um die Platzierung der Dimension zu bestätigen.
+4. Maßwerte werden angezeigt, entsprechend den Koordinatenachsen der Konstruktionsebene. Zusätzlich wird 'Measurements' im Outliner hinzugefügt.
+
+<Callout type="info">
+- Sie können auch Maßwerte basierend auf einer benutzerdefinierten Konstruktionsebene anzeigen. Anweisungen zur Erstellung einer Konstruktionsebene finden Sie [hier](/plasticity-essentials/construction-plane).
+</Callout>
+
+## Messen des geradlinigen Abstands zwischen zwei Punkten
+
+- Durch Rechtsklick beim Bestätigen des Maßwerts können Sie den geradlinigen Abstand zwischen zwei Punkten messen.
+<VideoPlayer fileName="measure-2"/>
+
+## Siehe auch
+- [Dimension](/common/dimension)

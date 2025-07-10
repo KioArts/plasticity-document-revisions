@@ -21,6 +21,10 @@ Verlängern Sie einen oder mehrere äußere Edges des Sheet, indem Sie die Entfe
             - **Soft:** Vermischt die Erweiterung allmählich mit der bestehenden Fläche für einen sanften Übergang und erhält dabei sowohl die Tangente als auch die Krümmung für einen natürlichen Fluss.
             - **Reflective:** Spiegelt die Oberflächenkrümmung und Tangente für eine symmetrische und nahtlose Fortsetzung wider, ideal für die Aufrechterhaltung der Flächensymmetrie.
             ![Extend Sheet Shape Demonstration](/img/extend-sheet-shape.png)
+         **Limit:** Legt das Erweiterungsverhalten eines Flächenkörpers in Bezug auf einen Zielkörper fest.
+            - **Minimal** — Erweitert die Fläche nur so weit, wie nötig, um die nächste Begrenzung des Zielkörpers zu erreichen, egal ob innen oder außen.
+            - **Outside** — Erzwingt die Erweiterung der Fläche bis zur äußeren Begrenzung des Zielkörpers. Bereits vorhandene innere Schnitte werden ignoriert.
+            - **Inside** — Verhindert die Erweiterung über Kanten hinaus, die sich bereits innerhalb des Zielkörpers befinden. Vorhandene innere Schnitte bleiben unverändert.           
         - **Distance:** Geben Sie die Entfernung zur Verlängerung an.
         - **Modify:** Wenn aktiviert, wird das Sheet zu einem einzelnen Sheet.
     - <Kst>Tastenkombinationen</Kst>  

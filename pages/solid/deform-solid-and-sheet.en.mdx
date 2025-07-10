@@ -28,18 +28,22 @@ Wrap existing solid and sheet objects onto a regular and irregular surface.
 6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="deform-solid"/>
-<VideoPlayer fileName="deform-solid-reblend"/>
 
 <Callout type="info" emoji="ℹ️">
 Scale and Offset uses a **UVN** coordinate system instead of **XYZ** coordinate system when adjusting the parametric value, allowing you to define the orientation of the deformed objects at a specific point in relation to the target surface. For more information on the UVN coordiante system, click [here](/cad-essentials/uvn-coordinate-system).
 </Callout>
 
-<Callout type="info" emoji="💡">
-**Tip**
-- To avoid unwanted deformation or inaccurate placement, use the **Unwrap Face** command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
+### Surface Deformation Using the Unwrap Face Command
+
+To avoid unwanted deformation or inaccurate placement, use the Unwrap Face command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face. This works on open surfaces that are not periodic or closed. If the surface is periodic or closed, refer to the following chapter - [Surface Deformation on Closed Surfaces](/solid/deform-solid-and-sheet#surface-deformation-on-closed-surfaces).
 
 <VideoPlayer fileName="deform-solid-unwrap"/>
-</Callout>
+
+### Surface Deformation on Closed Surfaces
+
+Deforming objects on closed (periodic) surfaces requires either fragmenting the surface or splitting the object that is being wrapped (if applicable). This is necessary because when wrapping around a closed surface, the geometry intersects itself and leads to joining and continuity issues.
+
+<VideoPlayer fileName="deform-solid-unwrap-closed"/>
 
 ## See also
 - [Copy with Placement](/common/copy-with-placement)

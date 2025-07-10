@@ -1,5 +1,6 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
 # Isoparam
@@ -13,13 +14,24 @@ Create Edges on a Face of a Solid or Sheet along the U or V direction. Multiple 
 1. Press <kbd>Ctrl + R</kbd>.
 2. Place the mouse cursor on the position where you want to create the isoparams.
 3. Set the options in the Keyboard Shortcuts.
+- <Kst>Command Dialog</Kst>
+      - **Direction:** Specify the direction of the isoparametric line (U or V).
+      - **Count:** Specify the number of isoparametric lines to generate.
+      - **Param:** Specify the parameter value that determines the position of the isoparametric line between the start and end points, influenced by the U and V directions.
+      - **Subdivide:** Specify whether to subdivide the current CV layout of the surface. When turned off, the line is inserted without modifying the existing CV layout. When turned on, the subdivision respects the current CV layout and inserts a line that splits the surface while maintaining CV consistency across the subdivided faces.
 - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Tab</kbd> **U/V direction:** Toggle the direction of the isoparam to create.
       - <kbd>Shift</kbd> + Wheel up **Add cut:** Increases the number of isoparams.
       - <kbd>Shift</kbd> + Wheel down **Subtract cut:** Reduces the number of isoparams.
+      - <kbd>S</kbd> **Subdivide:** Subdivide CV surface layout.
 4. Confirm with right-click.
 
 <VideoPlayer fileName="isoparam"/>
+
+<Callout type="info" emoji="💡">
+**Info**
+- Take into consideration that when using the Subdivide option on a surface with a CV layout, it will split the surface and both parts will share the same CV layout. If you want to dissolve the face or revert to its previous state, you cannot—because this is a destructive process.
+</Callout>
 
 ## See also
 - [Offset Curve](offset-curve)

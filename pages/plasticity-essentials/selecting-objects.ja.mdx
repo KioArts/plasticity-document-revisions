@@ -18,6 +18,7 @@ import VideoPlayer from '/components/VideoPlayer';
 
 | Mouse Operation               | Target                     | Selection                                                  |
 | ----------------------------- | -------------------------- | ---------------------------------------------------------- |
+| <kbd>Alt</kbd> + click        | CV Hull                   | CVハルループを選択。                      |
 | <kbd>Alt</kbd> + click        | エッジ                     | エッジループを選択する                                     |
 | <kbd>Ctrl + Alt</kbd> + click | エッジ                     | エッジリングを選択する                                     |
 | <kbd>Alt</kbd> + click        | カーブ                     | 同一平面のすべてのカーブを選択する                         |
@@ -27,16 +28,35 @@ import VideoPlayer from '/components/VideoPlayer';
 | <kbd>Ctrl + Alt</kbd> + click | 円柱状のフェイス           | すべての平行な円柱状のフェイスを選択する                   |
 | <kbd>Alt</kbd> + click        | ソリッド/シート/エンプティ | グループ内のすべてのソリッド、シート、エンプティを選択する |
 
+### Selection Context Menu
+
+| Mouse Operation               | Target            | Selection                                  |
+| ----------------------------- | ----------------- | ------------------------------------------ |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| CV                | CVを選択。                       |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| CV Hull           | CVハルループを選択。            |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Edge              | エッジを選択。                     |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Curve             | 曲線を選択。                    |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Face             | 面を選択。                      |
+| <kbd>Ctrl + Shift</kbd> + click / Left-click + Mouse Wheel| Sheet and Solid  | シートとソリッドを選択。           |
+
+<VideoPlayer fileName="selection-context-menu"/>
+
 ## キーボードショートカットで選択する
 
 | コマンド名        | ショートカット              | 機能                                                           |
 | ----------------- | --------------------------- | -------------------------------------------------------------- |
 | Select all        | <kbd>A</kbd>                | すべてのオブジェクトを選択する                                 |
-| Select all Curves |                             | すべてのカーブを選択する                                       |
 | Deselect all      | <kbd>Escape</kbd>           | すべての選択を解除する                                         |
 | Invert Selection  | <kbd>Alt + A</kbd>          | 選択を反転する                                                 |
 | Select Adjacent   | <kbd>Ctrl + Shift + =</kbd> | 現在選択されているオブジェクトに隣接するオブジェクトを選択する |
 
+## コマンドによる選択
+| コマンド名      | 説明                                                     |
+| ----------------- | ------------------------------------------------------- |
+| Select All Curves                 | 表示中のビューポート内のすべてのカーブを選択します。  |
+| Select All Sheets                 | 表示中のビューポート内のすべてのシートボディを選択します。  |
+| Select All Solids                 | 表示中のビューポート内のすべてのソリッドボディを選択します。  |
+| Select All Measruments            | 表示中のビューポート内のすべての測定オブジェクトを選択します。  |
 
 ### 選択しているオブジェクトから選択する
 

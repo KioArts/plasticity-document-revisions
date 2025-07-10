@@ -8,7 +8,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="" command="Bridge Curve" button="Werkzeugleiste" buttonIcon='button-bridge-curve' />
 
-Verbindet zwei Curves, die G0/G1/G2/G3-kontinuierlich sein können. Die Spannung ist einstellbar. Automatisches Trimmen ist möglich.
+Verbindet zwei Kurven mit G0-, G1-, G2- oder G3-Kontinuität. Spannung einstellbar. Auto-Trim möglich. Krümmungsmessung verfügbar.
 
 ## Grundlegende Nutzung
 
@@ -24,14 +24,17 @@ Die Start- und Endpunkte können an beliebiger Stelle auf der Curve, Edge, Face 
 2. Klicken Sie auf den Startpunkt.
    - <Kst>Tastenkombinationen</Kst>
    - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Einschränken auf die X-, Y- oder Z-Achse](/tool/sketching-essentials#constrain-to-an-axis).
-   - <kbd>N</kbd> **Normal** Begrenzen Sie in die normale Richtung von Face.  
+   - <kbd>N</kbd> **Normal** Begrenzen Sie in die normale Richtung von Face.
+   - <kbd>Tab</kbd> **Cycle continuity:** Zwischen G0, G1, G2 und G3 umschalten.
+   - <kbd>D</kbd> **G1 Tension:** Spannung für G1-Kontinuität anpassen.  
+   - <kbd>Q</kbd> **Trim:** Trimmen oder Zurücksetzen der ausgewählten Kurven umschalten.  
 3. Klicken Sie auf den Endpunkt.  
 4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
      - <Kst>Befehlsdialog</Kst>
-          - **T:**
+          - **Parameter:**
                - **Value 1/2:** Die relative Position auf dem Segment des Startpunkts/Endpunkts.
-          - **Direction:** 
-               - **Direction 1/2:** Die Richtung des Startpunkts/Endpunkts umkehren.
+          - **Sense:** 
+               - **Sense 1/2:** Die Richtung des Startpunkts/Endpunkts umkehren.
           - **Tension 1:**
                - **Value 1/2:** Der Spannungswert betrifft den 1. Control-Vertex(CV) bis 3. CV des Startpunkts/Endpunkts.
           - **Tension 2:**
@@ -43,6 +46,7 @@ Die Start- und Endpunkte können an beliebiger Stelle auf der Curve, Edge, Face 
           -  **Endkrümmung:**
                - **G0, G1, G2, G3:** Spezifizieren Sie die [Kontinuität der Curve](/cad-essentials/continuity-curve-and-surface) am Endpunkt.      
           - **Trim:** Wenn aktiviert, wird jede Curve, die über die Brücke hinausgeht, getrimmt.
+          - **Analysis:** Passen Sie die Größe des Krümmungskamms an, wenn das Menü geöffnet ist. [Mehr über Krümmung messen erfahren](/sketch/measure-curvature).
 5. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
 
 <VideoPlayer fileName="bridge-curve"/>
@@ -52,3 +56,4 @@ Die Start- und Endpunkte können an beliebiger Stelle auf der Curve, Edge, Face 
 - [Bridge Vertex](bridge-vertex)
 - [Bridge Edge](bridge-edge)
 - [Join](join)
+- [Measure Curvature](/sketch/measure-curvature)

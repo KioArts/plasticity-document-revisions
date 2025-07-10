@@ -1,3 +1,9 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
 # Assets
 
 Der Assets-Bereich zeigt alle Materialien an, die derzeit im aktiven Plasticity-Projekt verwendet werden.
@@ -16,3 +22,55 @@ Der Assets-Bereich zeigt alle Materialien an, die derzeit im aktiven Plasticity-
 - Ein Rechtsklick auf ein Material öffnet die Option „Alle mit diesem Material auswählen“, sodass du schnell alle Objekte auswählen kannst, die dieses Material teilen.
 
 ![Objekte mit gemeinsamen Materialien auswählen](/img/assets-select-materials.png)
+
+## Physikalische Materialien
+
+Im unteren Bereich des Asset-Panels findest du eine große Auswahl an physikalischen Materialien, die mit Plasticity geliefert werden. Um sie korrekt anzuzeigen, stelle sicher, dass der [Render-Modus](/plasticity-essentials/render-mode) aktiviert ist, damit die Shader auf den Objekten visualisiert werden.
+
+### Bearbeiten physikalischer Materialien
+
+Jedes Material verfügt über ein Preset mit einzigartigen Materialeigenschaften. Du kannst diese Eigenschaften bearbeiten, indem du auf deiner Tastatur <kbd>M</kbd> drückst.
+
+- **Texture scale:** Passt die Gesamtskalierung der Textur an.
+- **Blending:** Steuert das Triplanar-Projection-Blending. Ein Wert von 0 sorgt für maximales Blending, während 7 kein Blending an den Rändern anwendet. Nützlich zum Verbergen offensichtlicher Nähte.
+- **Rotate:** Dreht das auf das Objekt angewendete Material.
+  - **Rotate X:** Dreht das gesamte Material um die X-Achse in Weltkoordinaten.
+  - **Rotate Y:** Dreht das gesamte Material um die Y-Achse in Weltkoordinaten.
+  - **Rotate Z:** Dreht das gesamte Material um die Z-Achse in Weltkoordinaten.
+
+![Physikalisches Material – Bearbeiten](/img/physical-materials.png)
+
+<VideoPlayer fileName="physical-material"/>
+
+### Angezeigte Materialien
+
+Unten findest du eine Tabellenübersicht aller verfügbaren physikalischen Materialien zur Vorschau:
+
+| Name   | Vorschaubild        | Name   | Vorschaubild         |
+|:------:|:---------------------:|:------:|:----------------------:|
+|Aluminum |![Aluminum](/img/aluminum.png)| Bronze Oxidized   | ![Bronze Oxidized](/img/bronze-oxidized.png)  |
+|Aluminum Brushed|![Aluminum Brushed](/img/aluminum-brushed.png)| Brass  | ![Brass](/img/brass.png)   |
+|Aluminum Matte|![Aluminum Matte](/img/aluminum-matte.png)| Brass Oxidized   | ![Brass Oxidized](/img/brass-oxidized.png) |
+|Gold Foil | ![Gold Foil](/img/gold-foil.png)  | Car Paint     | ![Car Paint](/img/car-paint.png)  |
+|White Plastic | ![White Plastic](/img/white-plastic.png) | Concrete      | ![Concrete](/img/concrete.png)  |
+|Rubber | ![Rubber](/img/rubber.png) | Royal Blue Linen  | ![Royal Blue Linen](/img/royal-blue-linen.png)  |
+|Plastic Rough | ![Plastic Rough](/img/plastic-rough.png)  |Porcelain Fabric     | ![Porcelain Fabric](/img/porcelain-fabric.png) |
+|Nickel | ![Nickel](/img/nickel.png)  | Brown Leather     | ![Brown Leather](/img/brown-leather.png)   |
+|Nickel Oxidized | ![Nickel Oxidized](/img/nickel-oxidized.png)   | Milan Polished Marble     | ![Milan Polished Marble](/img/milan-polished-marble.png) |
+|Iron | ![Iron](/img/iron.png)  | Stainless Steel Brushed     | ![Stainless Steel Brushed](/img/stainless-steel-brushed.png) |
+|Gold | ![Gold](/img/gold.png)   |  Simple Plaster    | ![Simple Plaster](/img/simple-plaster.png)  |
+|Copper | ![Copper](/img/copper.png)   |Sandstone    | ![Sandstone](/img/sandstone.png) |
+|Copper Oxidized    | ![Copper Oxidized](/img/copper-oxidized.png)  |  Perforated Metal    | ![Perforated Metal](/img/perforated-netal.png) |
+|Copper Brushed   | ![Copper Brushed](/img/copper-brushed.png)  | Hex Metal    | ![Hex Metal](/img/hex-metal.png) |
+|Copper Old    | ![Copper Old](/img/copper-old.png)   | Wood Dark Maple    | ![Wood Dark Maple](/img/wood-dark-maple.png)  |
+|Chrome    | ![Chrome](/img/chrome.png)   | Wood Painted Green    | ![Wood Painted Green](/img/wood-painted-green.png)   |
+|Bronze    | ![Bronze](/img/bronze.png)   | Wood Walnut    | ![Wood Walnut](/img/wood-walnut.png)  |
+
+<Callout type="info" emoji="🗒️">
+**Hinweis**  
+- Beim Exportieren des Objekts als Mesh- oder CAD-Datei bleiben die physikalischen Materialeigenschaften nicht erhalten, wenn die Datei in DCC-Software (Digital Content Creation) wie Blender oder Maya importiert wird. Diese Materialien sind für die Visualisierung innerhalb von Plasticity vorgesehen und ermöglichen es dir, das Konzept eines Objekts mithilfe von Material-Shadern zu präsentieren.
+</Callout>
+
+## See also
+- [Set Material](/common/set-material)
+- [View Mode](/plasticity-essentials/view-mode)

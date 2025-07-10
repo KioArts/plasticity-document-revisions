@@ -1,0 +1,97 @@
+import { Callout } from 'nextra/components'
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Tabs } from 'nextra/components'
+
+# Render Mode
+
+## Render Mode
+
+レンダーモードは画面右上のビュー モードメニューにあります。球体アイコン **(1)** をクリックすると有効になります。オンにすると、ビューポートのシェーディングが更新され、オブジェクトがよりレンダリングされた見た目になります。
+
+![レンダーモードボタン](/img/render-mode-button.png)
+
+Plasticityの組み込みHDRIはクリックすることで切り替えられます。選択したHDRIはすぐに環境に適用され、シーンが即座に更新されます。ただし、ビューポートの背景には影響しません。
+
+- 利用可能なHDRI：
+
+![Render Mode Button](/img/render-mode-preview-1.png)
+
+| Name | Number | Applicability | 
+| ---- | ------ | ------------- | 
+| Small Studio | 1 | Default Appearance | 
+| Plasticity Studio 1| 2 | Three-Point Light Setup| 
+| Plasticity Studio 2| 3 | Highlight Checker | 
+| Plasticity Vertical Stripes | 4 | Highlight Checker | 
+| Outdoor Cloudy | 5 | Ambient Gradient Appearance | 
+| Kloofendal Puresky | 6 | Sky/Outdoor Appearance | 
+| Peppermint Powerplant | 7 | Indoor Appearance | 
+
+## Ambient Occlusion (AO)
+
+レンダーモードが有効になると、アンビエントオクルージョンは常にアクティブになります。半径（1）と減衰（2）の値は、[設定](/plasticity-essentials/preferences) メニューの「外観」セクションで変更できます。変更はリアルタイムで適用されます。
+
+![Ambient Occlusion Settings](/img/ao-settings.png)
+
+## All Environment
+
+- カスタムHDRIは「すべての環境」カテゴリに表示されます。
+
+![Custom Environment](/img/custom-hdri-preview.png)
+
+### カスタムHDRIのインストール
+
+1. カスタムHDRIファイルを準備し、EXRファイルとPNGファイルの名前が同一であることを確認してください。
+2. お使いのOSで `.plasticity` ディレクトリを見つけ、「environment」という名前の新しいフォルダを作成します。
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigate to `C:/Users/<username>/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
+3. カスタムHDRIファイルをこのフォルダに移動し、Plasticityを再起動して変更を適用します。
+
+![HDRIのインストール](/img/installing-hdri-preview.png)
+
+<Callout type="info" emoji="💡">
+**ヒント**  
+- EXRファイルにはファイルサイズを最適化するために1K解像度を推奨します（必要に応じて高解像度もサポートされています）。PNGファイルは任意の1:1比率で構いませんが、透明背景の512×512ピクセルが推奨されます。両ファイルともに16ビット以上のカラーデプスで保存してください。
+</Callout>
+
+<Callout emoji="❗">
+**Note**     
+- お使いのOSで隠しフォルダを表示する設定を有効にして、`.plasticity` ディレクトリにアクセスできるようにしてください。
+</Callout>
+
+### Options
+
+- Under the Options menu can be found "Rotation" and "Intensity".
+
+![Options](/img/options-rotation-intensity-1.png)
+
+| オプション  | ボタン | 機能                                                                                                    |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| 回転       | (8)    | 選択したHDRIをワールドZ軸周りに回転させます。左または右にドラッグするか、-180から180の範囲で値を入力します。（デフォルト：0）        |
+| 強度       | (9)    | 選択したHDRIの明るさを調整します。左または右にドラッグするか、0から10の範囲で値を入力します。（デフォルト：1.0）                        |
+ 
+ ### Toggle Show Edges, Curves, and Faces
+
+- エッジ、カーブ、および面は、切り替えボタンを使って表示または非表示にできます。
+
+![Toggle Options in Options](/img/option-toggle-edges-curves-faces.png)
+
+| 機能                                                        | ボタン | コマンド名                  |
+| ----------------------------------------------------------- | ------ | --------------------------- |
+| Toggle show Edges <br />(オフにするとエッジが非表示になります。) | (10)   | Viewport: toggle Edges    |
+| Toggle show Curves <br />(オフにするとカーブが非表示になります。) | (11)   | Viewport: toggle Curves    |
+| Toggle show Faces <br />(オフにすると面が非表示になります。)         | (12)   | Viewport: toggle Faces  |
+
+
+### See Also
+[Shader Mode](/plasticity-essentials/shader-mode)
+[Set Material](/common/set-material)

@@ -1,0 +1,124 @@
+# NURBS Overview
+
+# Introduction to NURBS
+
+## What is NURBS?
+
+Non-Uniform Rational Basis-Splines (NURBS) are a mathematical model commonly used in computer graphics and CAD software to describe both curves and surfaces with high precision and flexibility. 
+
+    - **Non-Uniform** - This refers to how the curve is parameterized. In non-uniform parameterization, the spacing between knot values can vary. This flexibility enables features like **multi-knots**, which are necessary for accurately representing Bezier curves and controlling continuity.
+    - **Rational** - This aspect allows NURBS to represent curves using **weighted control points**, enabling the exact representation of geometric shapes like **circles**, **ellipses**, and **parabolas**, which non-rational splines cannot do precisely.
+    - **Basis-Splines** - These are **piecewise polynomial functions** used to define smooth curves. B-splines offer local control, meaning a change to one control point affects only a specific region of the curve or surface, not the entire shape.
+
+NURBS offers significant flexibility and precision in handling both standard geometric shapes and freeform designs. They are integral to various applications, including computer-aided design (CAD), manufacturing (CAM), and engineering (CAE).
+   
+Unlike polygon-based modelling, which relies on a network of flat surfaces (faces) connected by edges, NURBS allows for the creation of continuous, infinitely smooth curves and surfaces without visible faceting.
+
+![NURBS and Poly Example](/img/nurbs-vs-poly.png)
+
+This makes NURBS an essential tool for industries that require high precision, such as automotive design, aerospace engineering, product manufacturing, architecture, and industrial design. Not limited to this, NURBS can also be used in other fields such as animation, games, scientific visualization, and others.
+
+The NURBS 3D data type can easily be exported to other CAD software applications by exporting the solid objects using standard file formats such as .STEP, .IGES, .STL, and others. 
+
+![What is NURBS Overview](/img/nurbs-overview-01.png)
+
+## How does NURBS work?
+
+### NURBS Components
+
+NURBS models are built using several key components:
+
+    #### Control Points   
+        
+        **Control Points** (also called **Control-Vertices** or **CVs**) define the shape of a NURBS curve or surface. Unlike polygon modeling, which creates sharp edges, NURBS control points act more like magnets - gently pulling the curve or surface toward them while maintaining smooth continuity. Adding more CVs increases local control over the shape, but using too many can lead to unnecessary complexity and reduced efficiency.
+
+        ![Control Points or Control Vertex Image Example](/img/control-vertex-nurbs.png)
+
+    #### Spans    
+
+        A span is a segment of a NURBS curve or surface defined between two knot values. It represents a portion of the curve that is mathematically constructed using a specific set of control points and basis functions. In simpler terms, each span is an individual building block of the overall curve. Multiple spans can be stitched together to form a smooth, continuous, and more complex curve or surface shape. 
+
+        ![Span Curves Example](/img/span-curves.png)
+
+        Each span also has a starting and ending point, defined by vertices. However, to better distinguish between these classes and understand them in context-sensitive situations, the term "Edit Points" can be used to provide clearer terminology in this context.
+
+        ![Span Image Example](/img/span-nurbs.png)
+
+
+    #### Degree  
+        
+        The degree of a NURBS curve or surface determines how smooth or complex its shape is, and it's based on a mathematical formula (a polynomial). This degree is always a positive whole number such as 1, 2, or 3 - and never zero or a fraction. It directly affects the smoothness, complexity, and flexibility of a curve and surface.
+     
+        ![Degree Example](/img/degree-curve-nurbs.png)
+
+        | Degree | Name | Control-Points per Span | Description |
+        | :------: | ---- | :----------------------: |----------- | 
+        | 1 | Linear | 2 | Straight-line segments connecting control points. | 
+        | 2 | Quadratic | 3 | Curves with a single bend between control-points. | 
+        | 3 | Cubic | 4 | Smooth curves offering a balance between flexibility and control. | 
+        | 4 | Quartic | 5 | Curves with increased smoothness and flexibility compared to cubic curves. | 
+        | 5 | Quintic | 6 | Highly flexible curves capable of achieving very smooth transitions. |
+
+        Terminology such as linear, quadratic, cubic, and quintic refers to the degree of a curve. The degree indicates the highest power of the polynomial used to define the curve. Higher-degree curves (e.g., cubic or quintic) allow for more complex and flexible shapes, while lower-degree curves (e.g., linear) produce simpler, straighter forms. Although higher degrees offer smoother transitions and greater control, they also increase computational complexity. In practice, degree 3 (cubic) curves are most commonly used in CAD software, as they provide an ideal balance between shape flexibility and computational efficiency.
+
+    #### Order
+
+        The order of a NURBS curve is defined as one more than its degree (Order = Degree + 1). While the degree determines the curve's mathematical complexity and smoothness, the order reflects how many control points are used to calculate each segment of the curve. This distinction comes from the underlying math: the recursive basis functions that build the curve rely on the order to define how control points influence the shape. In practice, degree shapes the curve; order defines the number of contributing control points at any given time.
+
+        | Term | Description |
+        | :---: | ---------- | 
+        | Degree | The highest exponent in the curve's polynomial. Controls smoothness and curvature complexity. | 
+        | Order | One more than the degree. Mainly used in NURBS terminology and math. | 
+
+        ![Order of a NURBS Curve](/img/order-curve-nurbs.png)
+
+    #### Knots  
+
+        A knot is a value in the knot vector that divides the parameter space of a NURBS curve (or surface) into segments. Knots determine how control points influence the curve between them. They are used in the mathematical calculations to define the basis functions that shape the curve, but they do not appear visually in the model. The way knots are spaced and their multiplicity directly impact the continuity and overall shape of the curve.
+
+    #### Weight 
+
+        Each control point in a NURBS model has a weight, which affects how strongly it pulls the curve or surface toward itself. By adjusting weights, you can create precise shapes like perfect circles and ellipses. 
+
+        The higher the weight of a CV, the sharper the spline around that CV. For large weight values, the spline will almost go through the CV. Similarly, weights smaller than one tend to flatten the spline in the area influenced by that CV.
+
+        ![Weight Example](/img/weight-nurbs.png)
+
+    #### NURBS Surfaces
+
+        A NURBS surface extends the concept of NURBS curves into two parametric directions (U and V) and is essentially a network of NURBS curves connected smoothly in two dimensions. A dedicated chapter for UVN Coordinate System is written [here](/cad-essentials/uvn-coordinate-system).
+
+        ![UVN NURBS Example](/img/uvn-nurbs.png)
+
+    #### NURBS Solids
+
+        NURBS solids are closed volumes formed by surfaces or joined polysurfaces. Unlike open surfaces, solids define a complete enclosure, allowing for accurate volume calculations, strength analysis, and compatibility with manufacturing processes such as 3D printing. They better represent real-world physical objects because they can be visualized as being filled with material. If a solid is not properly closed, it can cause issues during production - such as errors in simulations, failure in material visualization, or printing defects. Joining individual NURBS surfaces into a watertight enclosure creates a valid solid.
+
+        ![NURBS Solids Example](/img/solids-nurbs.png)
+
+## Advantages and Applications of NURBS
+
+### Advantages of NURBS over Polygonal Modeling 
+
+| Feature | NURBS | Polygon Mesh |
+| ------- | ----- | ------------ |
+| Accuracy | Mathematical precision | Approximate with facets |
+| Editability | Control points, weights, knots | Vertex-based |
+| Scalability | Resolution-independent | More polygons needed for detail |
+| Smoothness | Always smooth | Requires subdivision for smoothness |
+| Compatibility | Used in CAD, CAM, CAE | More common in VFX, gaming, animation |
+
+### Common Applications 
+
+**Automotive and Aerospace Design** - Car exteriors, aircraft fuselages, and aerodynamic surfaces require **precise, smooth curves**.
+
+**Industrial and Product Design** - Consumer products like smartphones, watches, and appliances use NURBS for accurate manufacturing.
+
+**Architectural Modeling** - Complex curved structures and parametric surfaces in modern buildings rely on NURBS modeling. 
+
+**Medical and Biomechanical Engineering** - Prosthetics, dental implants, and bioengineering models often use NURBS due to their accuracy. 
+
+
+## See also
+- [UVN Coordinate System](/cad-essentials/uvn-coordinate-system)
+- [Continuity](/cad-essentials/continuity-curve-and-surface)

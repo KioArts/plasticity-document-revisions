@@ -10,7 +10,7 @@ export default function DownloadPDF() {
                 rel="noopener noreferrer"
             >
                 <div className="nx-text-primary-600">
-                    Plasticity 2025.1 - All Command List and Shortcuts.pdf
+                    Plasticity 2025.2 - All Command List and Shortcuts.pdf
                 </div>
             </a>
         </>

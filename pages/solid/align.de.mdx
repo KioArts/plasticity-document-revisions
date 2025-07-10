@@ -1,0 +1,99 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+# Align
+
+<Reference shortcut="" command="Align" button="" />
+
+Align ist ein Werkzeug, das auf dem XNurb-Befehl basiert und eine Oberfläche so anpasst, dass eine Kante an eine andere angepasst wird – unter Beibehaltung von positionsbezogener (G0), tangentialer (G1) oder krümmungsbezogener (G2) Kontinuität. Wählen Sie eine Zielkante, die verschoben werden soll, und eine Referenzkante, an die sie ausgerichtet wird. Die Zielkante wird an die Form und Glätte der Referenz angepasst. Über optionale Einstellungen können Sie den Grad und die Spannweite der Oberfläche bearbeiten, um die Übergangsqualität zu verbessern.
+
+> **Hinweis:** Dieser Befehl ist nur mit der **Studio-Lizenz** verfügbar.
+
+## Grundlegende Nutzung
+
+1. Wählen Sie die Kante der Oberfläche aus, die Sie ausrichten möchten, sowie die Kante, an der sie ausgerichtet werden soll.
+2. Geben Sie **Align** in die Befehlspalette ein.
+3. Legen Sie die Optionen im Befehlsdialog fest.
+    - <Kst>Command Dialog</Kst>
+        - **Align:**
+            - **Continuity:** **G0, G1, G2** Geben Sie die [Stetigkeit der Oberfläche](/cad-essentials/continuity-curve-and-surface) an.
+                - Die Stetigkeit kann einzeln durch Klicken auf die schwarzen Kreise auf der Oberfläche festgelegt werden.
+            - **Tension:** Passt den Krümmungsübergang einer Oberfläche an.
+            - **Blend extra rows:** Wählen Sie, wie viele Reihen von Kontrollpunkten (CVs) beim Ausrichten der Oberflächen überblendet werden sollen. Ein Wert von 0 bedeutet keine Überblendung, während höhere Werte mehr Reihen für eine glattere Verbindung überblenden. Wenn der Wert so hoch ist wie die Gesamtanzahl der Reihen, passt sich die Oberfläche vollständig an das Ziel an.
+            - **Input shape influence:** Bestimmt, wie stark die ursprüngliche Form das Ausrichtungsergebnis beeinflusst.
+        - **Partial Alignment:** Passen Sie an, wie stark die ursprüngliche Form das Ausrichtungsergebnis beeinflusst. Dies wirkt sich aus, wenn **Blend extra rows** aktiviert ist.
+                - **Partial start:** Passt an, wie stark der Anfang der Oberfläche mit dem Ziel überblendet wird.
+                - **Partial end:** Passt an, wie stark das Ende der Oberfläche mit dem Ziel überblendet wird.
+        - **Degree:** Gibt den UV-Grad-Wert an.
+        - **Spans:** Gibt die UV-Spannweiten an.
+        - **Boundary:** Bestimmt die Bedingung des UV-Flusses.
+            - **Natural:** Keine Anforderung an den UV-Fluss.
+            - **Normal:** UV-Isokurven bleiben rechtwinklig zueinander.
+            - **Next:** Erzeugt einen rechtwinkligen UV-Fluss, wenn die Randbedingungen relativ flach sind.
+            - **Adjacent:** Richtet V-Isokurven der erzeugten Oberfläche an angrenzenden Kurven aus.
+        - **Analysis:** Analysiert die Stetigkeit der Oberflächenkanten
+                - **Continuity:** Analysiert die Stetigkeit der Oberflächenkanten
+                    - **G0:** Positionsstetigkeit
+                    - **G1:** Tangentenstetigkeit
+                    - **G2:** Krümmungsstetigkeit
+                - **G0 Scale / G1 Scale / G2 Scale:** 
+                    - Toleranzskalen für jeweilige Stetigkeitsprüfungen einstellen.
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>Tab</kbd> **Cycle continuity:** Wechselt zwischen den Stetigkeitsoptionen.
+        - <kbd>Ctrl</kbd> **Show original:** den ursprünglichen Zustand der Oberfläche (Quasi-Modus).
+4. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+
+<VideoPlayer fileName="align-1"/>
+
+<Callout emoji="❗">
+**Hinweis**<br />   
+Oberflächen müssen B-Spline-Oberflächen sein, um das Ausrichten-Werkzeug effektiv zu verwenden. Sie können den [Neuaufbau](/solid/rebuild)-Befehl verwenden, um die Oberfläche neu zu erstellen, oder den Befehl [Grad erhöhen](/solid/raise-degree), um ihren Grad zu erhöhen. Beachten Sie, dass dieser Vorgang leichte Ungenauigkeiten verursachen kann.
+
+</Callout>
+
+<Callout type="info" emoji="ℹ️">
+**Kanten zwischen verbundenen Flächen auswählen**
+
+Es gibt 3 Methoden, um dies zu erreichen:
+
+    1. **Hover- und Klick-Methode**
+    
+    - Bewegen Sie den Cursor über das Zielblatt in der Nähe einer Kante und klicken Sie mit der linken Maustaste, um die **Zielkante** auszuwählen. Bewegen Sie dann den Cursor über das andere Blatt und drücken Sie <kbd>Shift</kbd> + Linksklick, um die **Referenzkante** auszuwählen.
+
+    2. **Strg + Shift Pop-up-Methode**
+
+    - Drücken Sie <kbd>Strg</kbd> + <kbd>Shift</kbd> und klicken Sie mit der linken Maustaste auf die **Zielkante**. Es erscheint ein kleines Pop-up-Fenster. Halten Sie die Tasten gedrückt und bewegen Sie den Mauszeiger über die Einträge. Jeder Eintrag hebt das entsprechende Flächenelement hervor. Klicken Sie auf die richtige Fläche und dann auf die zweite Kante, um die **Referenzkante** auszuwählen.
+
+    3. **Mausrad-Methode**
+
+    - Ähnlich wie bei der vorherigen Methode: Klicken Sie mit der linken Maustaste auf eine Kante und **halten** Sie sie gedrückt, während Sie das Mausrad nach oben oder unten scrollen.
+
+</Callout>
+
+<VideoPlayer fileName="align-0"/>
+
+## Partial Align
+
+Richte eine neue Fläche teilweise an einer Zielfläche aus, indem du steuerst, wie stark Anfang und Ende überblendet werden. Dies ermöglicht einen verjüngten oder allmählichen Übergang.
+
+1. Wähle die Kante der Fläche, die ausgerichtet werden soll, und die Kante, zu der ausgerichtet werden soll.
+2. Tippe **Align** in die Befehlspalette ein.
+3. Lege die Optionen im Befehlsdialog fest.
+    - <Kst>Command Dialog</Kst>
+        - **Partial Alignment:** Steuert, wie die neue Oberfläche am Anfang und Ende überblendet.
+                - **Partial start:** Passt an, wie stark der Anfang der Oberfläche mit dem Ziel überblendet wird.
+                - **Partial end:** Passt an, wie stark das Ende der Oberfläche mit dem Ziel überblendet wird.
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>Tab</kbd> **Cycle continuity:** Wechselt zwischen den Stetigkeitsoptionen.
+        - <kbd>Ctrl</kbd> **Show original:** den ursprünglichen Zustand der Oberfläche (Quasi-Modus).
+
+<VideoPlayer fileName="align-2"/>
+
+## Align Multiple Surfaces
+
+Richte mehrere benachbarte Flächen gleichzeitig aus, um ein umfassenderes Blending über mehrere Bereiche hinweg zu ermöglichen. Diese Funktion ist noch experimentell und wird derzeit weiterentwickelt. Die Ergebnisse und die Flächenqualität können je nach Komplexität der Form und angrenzender Geometrie variieren.
+
+<VideoPlayer fileName="align-3"/>
