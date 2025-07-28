@@ -9,6 +9,8 @@ const config: DocsThemeConfig = {
         </>
     ),
 
+    //FOOTER!!!
+
     footer: {
         text: (
             <div
@@ -32,6 +34,9 @@ const config: DocsThemeConfig = {
         ),
     },
     darkMode: true,
+
+    //SIDEBAR!!!
+
     sidebar: {
         toggleButton: true,
         defaultMenuCollapseLevel: 1,
