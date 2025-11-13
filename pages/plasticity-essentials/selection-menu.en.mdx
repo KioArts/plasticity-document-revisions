@@ -1,28 +1,51 @@
-# Detail Display 
+# Selection Menu
 
 ## Selection Menu
-The Detail Display window is located at the bottom right of the screen (1). In order to see the window, an object must be in active selection (2).  
-The Detail Display window displays information such as number indicator of object selections, object type and sub-type, allignment and degree information, dimension property of objects (volume, area, perimeter) and curves (lenght, circumference and radius distance), and world coordinate positioning.
+The **Selection Menu** lives in the right-hand sidebar, on the last row. It offers the following information:
 
-![Detail Display](/img/detail-display.png)
+- **Number Indicator** – Shows how many objects are currently selected in the viewport.  
+- **Object Type** – Displays the type of the selected item(s) according to the active selection mode.  
+- **Sub-type** – Refines the object type, indicating exactly what has been selected.  
+- **Alignment & Degree** – Reports the kind of alignment (e.g., parallel, perpendicular) and the angular degree between two objects.  
+- **Dimension Property** – Provides geometric data such as volume, area, perimeter, length, circumference, and radius.  
+- **World Positioning** – Gives the global coordinates of the entire object.
 
+![Selection Menu](/img/selection-menu.png)
 
-## Number Indicator
-The number indicator is a feature that displays how many object selections you have on the detail display window. The display of objects is corelated with the selection mode - in other words, depending on what selection mode you are, it will display that type of information in the window. This feature displays different object types and their sub-type count.
-![Number Indicator](/img/number-indicator.png) 
+> **Note:** The menu only populates when at least one item is selected; otherwise it remains empty.
 
-## Object Type and Sub-type
-Object type in the detail display window, displays the object type based on the selection and type of selection mode. For example, if face selection mode (1) is activated and you select a few faces on a cube and a simple conic fillet shape (2), it will display you the type of selection you have (3 Faces) (3) and alongside its sub-type selection (2 Planes and 1 Cylinder) (4). 
-![Object Type](/img/object-type.png)
+![No Items Displayed](/img/selection-menu-no-items.png)
 
-Point types: Vertex and Control-Vertex (CV)
-                Point Sub-type: No Information
-Edge types: Edge (solid) and Curve (Sketch)
-                Edge Sub-type: Line (Solid and Sketch) Circle (Solid and Sketch), Surface curve (Solid), Intersection (Solid) and Spline (Sketch)
-Face type: Face
-                Face sub-types: Plane, Cone, Torus, Cylinder, Sphere, and Spline
-4Solid types: Solid, and Sheet
-                Solid Sub-type: No Information
+### Number Indicator
+The **Number Indicator** shows how many objects are currently selected in the selection menu. Its count is driven by the **active selection mode**:
+
+- The indicator always reports the total number of selected items and breaks that total down by object **type** and **sub-type**.  
+- When you switch modes (e.g., from *Edge* selection to *Solid* selection) the new mode **adds** its selections to the existing set instead of replacing them.  
+- Consequently, the Number Indicator updates to reflect the combined selection, showing the cumulative count for each object type/sub-type across all active modes.
+
+![Number Indicator](/img/selection-menu-number-indicator.png.png)
+
+### Object Type and Sub-type
+Object type in the detail display window, displays the object type based on the selection and type of selection mode.
+
+Used on Solid objects:
+| Selection | Object Type | Sub-type |
+| --------- | ----------- | -------- |
+| Point Selection | - | - |
+| Edge Selection | Edge | Line, Circle, Ellipse, Surface Curve, Intersection, and Spline |
+| Face Selection | Face | Plane, Cone, Torus, Cylinder, Sphere, Spline, and Blend |
+| Solid Selection | Solid and Sheet | No Information |
+
+//![Solid Objects Example](/img/selection-menu-object-types.png)
+Used on Sketch objects:
+| Selection | Object Type | Sub-type |
+| --------- | ----------- | -------- |
+| Point Selection | Vertex and Control-Vertex (CV) | No Information |
+| Edge Selection | Edge | Line, Circle, Spline |
+| Face Selection | - | - |
+| Solid Selection | - | - |
+
+//![Sketch Objects Example](/img/selection-menu-object-types.png)
 
 ## Allignment and Degree Information
 - The detail display window can display the degree between two selected objects and the allignment information in colrelation with two selected objects based on selection and type of selection mode. 
