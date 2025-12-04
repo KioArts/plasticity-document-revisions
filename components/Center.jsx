@@ -1,21 +1,25 @@
 import React from "react";
 
 /**
- * Props:
- *   children   – whatever you want to center (usually an <img>)
- *   marginTop  – optional space above the block (default: "1rem")
- *   width      – optional width for the child element (e.g. "300px" or 300)
- *   height     – optional height for the child element
- *   style      – any extra inline styles you want to merge in
+ * Props
+ *   children       – whatever you place inside <Center>
+ *   marginTop      – space above the block (default: "1rem")
+ *   width          – width for the child element (e.g. "400px")
+ *   border         – CSS border string (e.g. "2px solid #ddd")
+ *   borderRadius   – CSS border‑radius (e.g. "8px")
+ *   style          – extra inline styles for the wrapper itself
  */
 export const Center = ({
   children,
   marginTop = "1rem",
   width,
-  height,
+  border,
+  borderRadius,
   style = {},
 }) => {
-  // Wrapper styles (flex centering + top margin)
+  // -----------------------------------------------------------------
+  // 1️⃣ Wrapper – handles centering and optional top margin
+  // -----------------------------------------------------------------
   const wrapperStyle = {
     display: "flex",
     justifyContent: "center",
@@ -23,18 +27,31 @@ export const Center = ({
     ...style,
   };
 
-  // If width/height were given, clone the child and inject those styles.
-  // This works for <img>, <video>, <svg>, etc.
-  const sizedChild =
-    React.isValidElement(children) && (width !== undefined || height !== undefined)
+  // -----------------------------------------------------------------
+  // 2️⃣ Build a style object that we’ll inject into the child
+  // -----------------------------------------------------------------
+  const childExtraStyle = {
+    ...(width !== undefined ? { width } : {}),
+    ...(border !== undefined ? { border } : {}),
+    ...(borderRadius !== undefined ? { borderRadius } : {}),
+  };
+
+  // -----------------------------------------------------------------
+  // 3️⃣ Clone the child and merge our extra styles with any that
+  //    already exist on the child (Markdown turns ![]() into <img>)
+  // -----------------------------------------------------------------
+  const styledChild =
+    React.isValidElement(children)
       ? React.cloneElement(children, {
           style: {
             ...(children.props.style || {}),
-            ...(width !== undefined ? { width } : {}),
-            ...(height !== undefined ? { height } : {}),
+            ...childExtraStyle,
           },
         })
-      : children;
+      : children; // fallback – if you ever pass plain text, just render it
 
-  return <div style={wrapperStyle}>{sizedChild}</div>;
+  // -----------------------------------------------------------------
+  // 4️⃣ Render
+  // -----------------------------------------------------------------
+  return <div style={wrapperStyle}>{styledChild}</div>;
 };

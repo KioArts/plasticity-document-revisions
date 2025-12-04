@@ -19,7 +19,13 @@ The new Instance command creates live instances of Solids, Sheets, Curves, and G
 ![Instance Example GIF](/img/2025.3-instance-example.gif)
 </Center>
 
-<Center width="400px" style={{border: "1px solid #ddd", borderRadius: "8px", padding: "4px" }}>
+- **Instance Solids, Sheets, Curves, and Groups** 
+The new Instance command creates live instances of Solids, Sheets, Curves, and Groups (including mirrored and arrayed copies) by referencing the original geometry. This approach avoids duplicating mesh data, keeps models lightweight, and ensures that any modification to the parent object propagates automatically to all its instances.
+
+<Center 
+width="400px"
+border ="2px solid #ddd"
+borderRadius="8px">
 ![Instance Example GIF](/img/2025.3-instance-example.gif)
 </Center>
 
@@ -29,7 +35,7 @@ Learn more - [Instance Solid and Sheet](/solid/instance-solid-and-sheet) and [In
 - **Conversation from Instance to Real Body** 
 The Realize Instances command converts selected instance objects into editable real bodies, allowing full modification of the resulting geometry in Plasticity.
 
-[Learn more](/solid/align)
+[Learn more](/solid/realize-instances)
 
 ### New Publish to Web Command
 - **Publish to Web**
