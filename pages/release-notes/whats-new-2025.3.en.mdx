@@ -1,0 +1,204 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
+
+Release date: December 11, 2025
+
+# Plasticity 25.2 Release Notes  
+
+Plasticity 25.3 introduces a wide array of enhancements and new features aimed at improving surface modeling, enhancing usability, and streamlining operations. Below is a detailed overview of the updates:  
+
+## 1. New Commands
+
+### New Instance Command
+- **Instance Solids, Sheets, Curves, and Groups**
+The new Instance command creates live instances of Solids, Sheets, Curves, and Groups (including mirrored and arrayed copies) by referencing the original geometry. This approach avoids duplicating mesh data, keeps models lightweight, and ensures that any modification to the parent object propagates automatically to all its instances.
+
+![Instance Example GIF](/img/2025.3-instance-example.gif) ----
+
+Learn more - [Instance Solid and Sheet](/solid/instance-solid-and-sheet) and [Instance Curve](/sketch/instance-curve)
+
+### New Realize instances Command
+- **Conversation from Instance to Real Body**
+The Realize Instances command converts selected instance objects into editable real bodies, allowing full modification of the resulting geometry in Plasticity.
+
+### New Publish to Web Command
+- **Publish to Web**
+Publish to Web is a new command that allows you to share your work via online. This is a feature suitable for users to share their work seamlessly without sharing the original .plasticity file - cutting on the huge file sharing and hassle of owning any CAD application. This feature is only meant to share and view your work online. For more information click here
+
+Improvements to web upload: better thumbnail, settings for shaders like draft is remembered, upload progress indicator, performance should be better for users in asia, etc.
+Publish to web command is disable by default and must be enabled in Preferences. 
+Published documents can be deleted on the web site.
+
+Link here
+
+### New Measurement Command
+- **Radial Measurement**
+Specific measurement command dedicated for objects with radial geometry - applies for cylinder, conic, and more.
+
+Link Here
+
+### New Align Command
+- **Align Surfaces**    
+Align is a tool powered by xNURBS and allows you to align two surfaces (sheets) with consistent **G0** (positional), **G1** (tangential), or **G2** (curvature) continuity. You can select the target surface and adjust its degree, span, and other options to improve the quality of the transition. Note that this tool is available only with a Studio license.
+
+[Learn more](/solid/align)
+
+## 2. Modeling Enhancements
+
+### Scene Optimizations
+- **Curves**
+This version of Plasticity comes with optimizations for scenes with lots of intersecting curves.
+- **Snap to OBJ Files**
+This version of Plasticity comes with optimizations when snapping to imported OBJ files.
+
+### Measurement and Curve Appearance
+- **Changes to the appearance of measurements (before no arrows and now we have arrows) and curves (idk)
+
+### Mouse navigation
+- **Navigation**
+The mousewheel zoom has been tweaked to be a bit faster.
+
+### Snap To Grid
+- **Scale Gizmo**
+Incremental snapping with Grid Snapping turned on on planar surfaces is now supported. 
+Gif Here
+
+### Move Tool
+- **Solid and Sheet Edge Manipulation**
+Moving an edge of a solid and sheet body now supports circular edges with cylindrical and conical faces. it preserves the analytical geometry of conical and cylyndrical faces - similar result to that of scalling inwards and outwrds in a polyginal sofware. Possile to manipulate interior and exterior surface edges. Only possible when adjacent faces are planar, cylindrical or conical and the moving edge is a line or a circle.
+Gif Here
+Learn more here
+
+### Pivot Point
+- **Automatic Pivot Adjustment**
+Applicable for when making a new box, circle, cylinder, polygon, rectangle and spheres. 
+
+TABLE Here
+
+
+
+### Snap Point
+- **Spherical faces**
+Spherical faces now have a "center" snap point. Check out all of the snap points.
+Link here
+
+## 3. Improved Features
+
+### Language Preferences
+- **New Languagees**
+Plasticity now offers the option to set up prefereble languages in the Preferences section.
+
+### Future and Past Compatability
+File Format (.Plasticity)
+This release introduces a compatibility shift - allowing it to be backwards and forwards compatible with prior versions of Plasticity. ???
+
+
+### Export SVG ----
+Export SVG command is now included in the command pallet.
+
+### Render
+New default environment HDRI - name -. 
+Gif Here
+
+
+### Viewport
+Drag and Drop Material
+It's now possible to drag and drop materials from the outliner into the viewport. This is an alternative approach to update materials on new objects - the other approach is to specifically drag and drop the material on the other object while inside the outliner.
+Gif here
+
+### Assets Menu
+- **New PBR Material**
+New PBR Material - A new material named Cathedral Tile has been added to the physical material library in Plasticity.
+
+- **Highlight Indicator**
+Hovering over a material in the Assets tab will highlight items with that material.
+Image here
+Link here
+
+### Export OBJ
+New Ignore Small Features Option - It allows you to ignore smal lfeatures that will simplify radial faces.
+Gif Here
+Link here
+
+- **Export Empty and Instances** -------
+The Export OBJ command now supports exporting empties and instances. Does this work when instances arent realized? Idk 
+
+## 3. Improved Commands
+
+### Array Commands
+- **Array Instances, Meshes and Images**
+It is now possible to array instances, meshes and images in Plasticity.
+Gif Here
+- **Make Instances Option**
+Array commands now have an included option named as "Make Instances".
+Gif Here
+Link here
+
+### Mirror Command
+- **Instances and Empty**
+Mirror command can mirror empties and instances.
+Gif Here
+
+### Scale Command
+- **Mirror Scale on Instances**
+Now supported to mirror scale instances in a negative axis direction with a value of -1.
+Gif Here
+
+### Measure Curvature
+- **Live Feedback**
+It is now possible to manipulate curves and edges when Measure Curvature has been executed, allowing to see direct changes of the curvature.
+- **New Command Name**
+Measure Curvature will be now be named as Toggle Curvature. As the name of the command suggests.
+- **File Compatibility**
+Opening latest file versions 25.3+ on previous versions will be possible and will delete any existing curves instead of displaying an error.
+Gif Here
+
+### Measure Continuity
+- **Live Feedback**
+Continuity measurements are now interactive. See the right side menus to tweak its settings.
+Gif Here.
+
+
+
+### Section Analysis
+- **Empty and Meshe Objects**
+It is now possible to cut empty and mesh objects with the section analysis command.
+Gif here
+Link to command
+
+### Sweep
+Advanced Options
+Sweep now has an advanced options menu for corner types named as Mitre and Round. Sweeping a curve on a guide outwards will produce a natural sharp turn while the round option will turn the corner into round. More information here
+Gif Here
+Link Here
+
+### Duplicate Command
+- **Duplicate Recursively**     
+In the Outliner, it is now possible to duplicate group hierarchies recursively. Previously, only the parent group could be duplicated, and its child objects were not included in the duplication. With this update, all children within a group are now duplicated along with the parent.
+
+[Learn more](/plasticity-essentials/outliner#group-objects)
+
+## 4. New features
+
+### Selection Command
+- **Invert Selection**   
+The Invert Selection command now supports edges and faces.
+
+## 5. Improved features
+
+### Empties
+- **Origin Pivot**
+It is now possible to manipulate Empty pibot points as desired.
+
+Preferences - Improved faceting setting - Change faceting density without restarting Plasticity. Does not refacet existing bodies but new bodies and edits will use the new density.
+
+## Misc.
+
+### Subdivide 
+- **Default Keybinding Removed**
+The keybinding for subdivide "alt + s" has been removed.
+
+## Past Update Information
+
+- February 25, 2025 [Version 2025.1](/release-notes/whats-new-2025.1)
