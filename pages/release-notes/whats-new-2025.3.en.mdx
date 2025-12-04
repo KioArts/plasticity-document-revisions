@@ -1,6 +1,7 @@
 import Kst from '/components/KeyboardShortcutsTitle'
 import Reference from '/components/Reference'
 import { Tabs } from 'nextra/components'
+import { Center } from '/components/Center' 
 
 Release date: December 11, 2025
 
@@ -11,10 +12,12 @@ Plasticity 25.3 introduces a wide array of enhancements and new features aimed a
 ## 1. New Commands
 
 ### New Instance Command
-- **Instance Solids, Sheets, Curves, and Groups**
+- **Instance Solids, Sheets, Curves, and Groups** 
 The new Instance command creates live instances of Solids, Sheets, Curves, and Groups (including mirrored and arrayed copies) by referencing the original geometry. This approach avoids duplicating mesh data, keeps models lightweight, and ensures that any modification to the parent object propagates automatically to all its instances.
 
-![Instance Example GIF](/img/2025.3-instance-example.gif) ----
+<Center>
+![Instance Example GIF](/img/2025.3-instance-example.gif)
+</Center>
 
 Learn more - [Instance Solid and Sheet](/solid/instance-solid-and-sheet) and [Instance Curve](/sketch/instance-curve)
 
