@@ -4,7 +4,7 @@ import React from "react";
  * Props
  *   children       – whatever you place inside <Center>
  *   marginTop      – space above the block (default: "1rem")
- *   width          – width for the child element (e.g. "400px")
+ *   width          – width of the whole centered box (e.g. "400px")
  *   border         – CSS border string (e.g. "2px solid #ddd")
  *   borderRadius   – CSS border‑radius (e.g. "8px")
  *   style          – extra inline styles for the wrapper itself
@@ -17,24 +17,29 @@ export const Center = ({
   borderRadius,
   style = {},
 }) => {
-  // Wrapper – just handles centering and optional top margin
+  /* -------------------------------------------------------------
+   * 1️⃣ Wrapper style – this is the *visible* frame
+   * ----------------------------------------------------------- */
   const wrapperStyle = {
     display: "flex",
     justifyContent: "center",
     marginTop,
+    width,                     // controls the overall box width
+    border,                    // the visible border
+    borderRadius,              // rounded corners
+    overflow: "hidden",        // cuts off anything that exceeds the radius
     ...style,
   };
 
-  // Styles we want to inject into the child (the <img>)
+  /* -------------------------------------------------------------
+   * 2️⃣ Child style – we want the image to fill the wrapper
+   * ----------------------------------------------------------- */
   const childExtraStyle = {
-    ...(width !== undefined ? { width } : {}),
-    ...(border !== undefined ? { border } : {}),
-    ...(borderRadius !== undefined ? { borderRadius } : {}),
-    // Force block layout so the radius isn’t clipped by inline spacing
-    display: "block",
+    width: "100%",   // stretch to wrapper’s width
+    height: "auto",
+    display: "block", // remove any inline‑element gaps
   };
 
-  // Clone the child and merge our extra styles with any that already exist
   const styledChild = React.isValidElement(children)
     ? React.cloneElement(children, {
         style: {
