@@ -1,7 +1,8 @@
 import Kst from '/components/KeyboardShortcutsTitle'
 import Reference from '/components/Reference'
 import { Tabs } from 'nextra/components'
-import { Center } from '/components/Center' 
+import { Center } from '/components/Center'
+import { SideBySide } from '/components/SideBySide'
 
 Release date: December 11, 2025
 
@@ -56,22 +57,20 @@ borderRadius="8px">
 
 [Learn more](/common/measure-radius)
 
-### New Align Command
-- **Align Surfaces**    
-Align is a tool powered by xNURBS and allows you to align two surfaces (sheets) with consistent **G0** (positional), **G1** (tangential), or **G2** (curvature) continuity. You can select the target surface and adjust its degree, span, and other options to improve the quality of the transition. Note that this tool is available only with a Studio license.
-
-[Learn more](/solid/align)
-
 ## 2. Modeling Enhancements
 
-### Scene Optimizations
-- **Curves**
-This version of Plasticity comes with optimizations for scenes with lots of intersecting curves.
-- **Snap to OBJ Files**
-This version of Plasticity comes with optimizations when snapping to imported OBJ files.
+### General Optimizations
+- **Curves** - Optimizations have been made for scenes with lots of intersecting curves. 
+- **Snap to OBJ Files** - Snapping to OBJ files has been optimized and responsive when snapping to face and vertex.
 
-### Measurement and Curve Appearance
-- **Changes to the appearance of measurements (before no arrows and now we have arrows) and curves (idk)
+### Measurement and Curve Appearance Update
+- **Measurements** - Arrows are now displayed at the ends of dimension lines.  
+- **Curves** - Rendered with a thinner stroke, which reduces visual clutter in dense scenes.
+
+<SideBySide gap="2rem" maxWidth="400px">
+  ![Measurement Apperance Change](/img/2025.3-measurement-changes-example.png)
+  ![Curve Apperance Change](/img/2025.3-curve-changes-examples.png)
+</SideBySide>
 
 ### Mouse navigation
 - **Navigation**
