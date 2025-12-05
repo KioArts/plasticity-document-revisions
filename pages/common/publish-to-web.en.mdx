@@ -1,0 +1,53 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Publish To Web
+
+<Reference shortcut="" command="Publish To Web" button=""  buttonIcon=''/>
+
+Uploads a .plasticity file to the cloud and generates a unique private URL that opens in a new browser tab. The link can be shared with anyone for read-only viewing. Once the link is distributed it becomes public. Each uploaded document supports multiple revisions; you can manage and delete these revisions on the [**My Documents**](https://share.plasticity.xyz/me/) page.
+
+- Only the mesh representation of the model is published so no CAD geometry or source files are included and the file cannot be downloaded.
+- The feature is disabled by default. Enable it via **Preferences > Web Publishing**.
+- Publish to Web also exports material information from the Assets menu.
+- Mesh data is **view-only**; direct modeling or modification of the published mesh is not possible.
+- Regardless of license type, every user receives **5 GB** of cloud storage.
+
+## Basic Usage
+
+1. Select the object you want to publish to the web.
+2. Open the Command Palette, type **Publish To Web**, and execute the command.  
+3. A pop-up window appears asking, "Are you sure you want to share to the web?" Click **Yes**.  
+4. A new browser tab opens displaying the published object.  
+5. A unique URL is generated for the shared object.
+
+## Web Viewport Interface
+
+![Web Viewport Breakdown](/img/web-viewport-breakdown.png)
+
+| Number | Element | Description |
+| :----: | ---- | ---- |
+|  1   | See all documents | See all of published documents on the Cloud server.|
+|  2   | View Cube |   [More information](/plasticity-essentials/view-cube)   |
+|  3   |   Sign Out   |   Sign out from the current web session. When signed out, a message will be displayed -> "Not signed in. Share a document from Plasticity and refresh this tab to sign in."   |
+|  4   |  View Mode    |   [More information](/plasticity-essentials/view-mode)   |
+|  5   |   Shader Mode   |   [More information](/plasticity-essentials/shader-mode)   |
+|  6   |   Camera Settings   |  [More information](/plasticity-essentials/camera-settings)  |
+|  7   |   Grid and Units   |   [More information](/plasticity-essentials/grid-and-units)   |
+|  8   |   Selection Mode   |  [More information](/plasticity-essentials/selection-mode)    |
+|  9   |   Mesh Data   |   Selected object from Plasticity has been converted into a mesh data for visualization purposes.    |
+
+## All Documents Interface
+
+<Center>
+![Web Viewport Breakdown](/img/all-documents-breakdown.png)
+</Center>
+
+| Number | Element | Description |
+| :----: | ---- | ---- |
+|  10   | Document Thumbnail | Preview image representing the document's contents.|
+|  11   | Document Location | Local directory path on the PC where the Plasticity document resides.|
+|  12   | Cloud Storage Indicator | Shows remaining cloud storage. |
+|  13   | Revision Indicator | Displays how many revisions have been updated on the web.|
