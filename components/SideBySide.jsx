@@ -1,70 +1,56 @@
-// components/SideBySide.jsx
+// ── components/SideBySide.jsx ───────────────────────────────
 import React from "react";
 
 /**
- * Flex container that puts its children side‑by‑side, centered,
- * and responsive.  No external dependencies.
+ * A simple, responsive container that places its children
+ * side‑by‑side (or wraps them on narrow screens) and keeps the
+ * whole block centred.
  *
  * Props
  *   children   – any React nodes (images, figures, etc.)
- *   gap        – space between items (default "1rem")
- *   maxWidth   – max width of the whole container (default "100%")
- *   childRatio – fraction of the container each child should occupy
- *                (default 0.5 → 50 % of the width, minus half the gap)
+ *   gap        – space between items (default: "1rem")
+ *   maxWidth   – maximum width of the whole container (default: "100%")
  */
 export const SideBySide = ({
   children,
   gap = "1rem",
   maxWidth = "100%",
-  childRatio = 0.5,
 }) => {
-  // ---------- container (wrapper) ----------
+  /* -----------------------------------------------------------
+   * 1️⃣  Container style – CSS Grid
+   * ----------------------------------------------------------- */
   const containerStyle = {
-    display: "flex",
-    flexWrap: "wrap",          // wrap on tiny screens
+    display: "grid",
+    // Two columns, each taking up at least 0px and sharing the space equally.
+    // `auto-fit` + `minmax(0, 1fr)` makes the grid collapse to a single column
+    // when the viewport is too narrow.
+    gridTemplateColumns: "repeat(auto-fit, minmax(0, 1fr))",
     gap,
-    alignItems: "center",
-    justifyContent: "center",  // <‑‑ centre the whole group
     maxWidth,
-    margin: "0 auto",           // centre the container itself
+    margin: "0 auto",          // centre the grid itself
+    justifyItems: "center",    // centre each child inside its grid cell
   };
 
-  // ---------- compute width for each child ----------
-  // Example: childRatio = 0.5, gap = "2rem"
-  // → width = calc(50% - 1rem)
-  const numericGap = parseFloat(gap); // strip the unit (assumes rem)
-  const childWidth = `calc(${childRatio * 100}% - ${numericGap / 2}rem)`;
-
-  // ---------- clone children and inject the width ----------
-  const renderedChildren = React.Children.map(children, child => {
-    if (!React.isValidElement(child)) return child; // safety net
-
-    // Some Markdown parsers wrap the <img> in a <p>.
-    // If the child is a <p>, dive one level deeper.
-    const inner = child.type === "p" && React.Children.only(child.props.children);
-
-    if (inner && React.isValidElement(inner) && inner.type === "img") {
-      // Clone the <img> inside the <p>
-      const newImg = React.cloneElement(inner, {
-        style: {
-          ...(inner.props.style || {}),
-          width: childWidth,
-          height: "auto",
-        },
-      });
-      // Return the <p> with the newly‑styled <img>
-      return React.cloneElement(child, {}, newImg);
+  /* -----------------------------------------------------------
+   * 2️⃣  Strip away the <p> wrapper that Markdown may add.
+   *     We walk the children tree and return the innermost element
+   *     that is NOT a <p>.  This works for:
+   *       • ![alt](src)   → <p><img …/></p>
+   *       • <img …/>      → <img …/>
+   * ----------------------------------------------------------- */
+  const unwrapParagraph = child => {
+    if (!React.isValidElement(child)) return child;
+    // If the element is a <p> and its only child is an <img>, return that <img>.
+    if (child.type === "p") {
+      const inner = React.Children.toArray(child.props.children).find(
+        c => React.isValidElement(c) && c.type === "img"
+      );
+      return inner ? inner : child; // fall back to the <p> if we can’t find an <img>
     }
+    return child;
+  };
 
-    // Normal case – child is already an <img> (or any element you want to size)
-    return React.cloneElement(child, {
-      style: {
-        ...(child.props.style || {}),
-        width: childWidth,
-        height: "auto",
-      },
-    });
-  });
+  const cleanedChildren = React.Children.map(children, unwrapParagraph);
 
-  return <div style={containerStyle}>{renderedChildren}</div>;
+  return <div style={containerStyle}>{cleanedChildren}</div>;
 };
