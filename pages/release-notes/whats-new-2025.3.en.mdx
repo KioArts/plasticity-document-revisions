@@ -66,35 +66,42 @@ borderRadius="8px">
 ### Measurement and Curve Appearance Update
 - **Measurements** - Arrows are now displayed at the ends of dimension lines.  
 
-<Center width="400px">
+<Center width="500px">
 ![Measurement Apperance Change](/img/2025.3-measurement-changes-example.svg)
 </Center>
 
 - **Curves** - Rendered with a thinner stroke, which reduces visual clutter in dense scenes.
 
-<Center width="400px">
+<Center width="500px">
 ![Curve Apperance Change](/img/2025.3-curve-changes-examples.svg)
 </Center>
 
-### Mouse navigation -------
+### Mouse Navigation 
 - **Navigation**
-The mousewheel zoom has been tweaked to be a bit faster.
+ The mousewheel zoom has been tweaked to be faster when navigating through scenes. This adjustment makes it easier to zoom in on details, especially when working with large scenes.
 
 ### Snap To Grid
-- **Scale Gizmo**
-Incremental snapping with Grid Snapping turned on on planar surfaces is now supported.
- 
-Gif Here
+- **Scale Gizmo**   
+ Incremental snapping is now respected when Grid Snapping is enabled while using the Scale tool.
 
 ### Move Tool
-- **Solid and Sheet Edge Manipulation**
-Moving an edge of a solid and sheet body now supports circular edges with cylindrical and conical faces. it preserves the analytical geometry of conical and cylyndrical faces - similar result to that of scalling inwards and outwrds in a polyginal sofware. Possile to manipulate interior and exterior surface edges. Only possible when adjacent faces are planar, cylindrical or conical and the moving edge is a line or a circle.
-Gif Here
-Learn more here
+- **Solid and Sheet Edge Manipulation**   
+ Moving an edge of a solid or sheet body now supports circular edges on cylindrical and conical faces. The operation preserves the analytical geometry of those faces. You can manipulate both interior and exterior surface edges, provided the adjacent faces are planar, cylindrical, or conical and the moving edge is a line or a circle.
+
+<Center 
+width="400px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Edge Manipulation Example GIF](/img/2025.3-edge-manipulation-example.gif)
+</Center>
+
+[Learn more](/common/move)
 
 ### Pivot Point
 - **Automatic Pivot Adjustment**
 Applicable for when making a new box, circle, cylinder, polygon, rectangle and spheres. 
+
+
 
 TABLE Here
 
