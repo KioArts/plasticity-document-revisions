@@ -98,43 +98,71 @@ borderRadius="8px">
 [Learn more](/common/move)
 
 ### Pivot Point
-- **Automatic Pivot Adjustment**
-Applicable for when making a new box, circle, cylinder, polygon, rectangle and spheres. 
+- **Automatic Pivot Adjustment**    
+ Automatically adjusts the pivot point orientation based on the initial point of interest. The tools affected are listed below.
 
-
-
-TABLE Here
-
-
+| Primitive Tools | Sketching Tools |
+| ---- | ---- |
+|[Corner Box](/tool/corner-box) | [Corner Rectangle](/tool/corner-rectangle) |
+|[Center Box](/tool/center-box) | [Center Rectangle](/tool/center-rectangle) |
+|[Cylinder](/tool/cylinder) | [Three Point Rectangle](/tool/three-point-rectangle) |
+| - | [Center Circle](/tool/center-circle) |
+| - | [Two point Circle](/tool/two-point-circle) |
+| - | [Three Point Circle](/tool/three-point-circle) |
+| - | [Regular Polygon](/tool/regular-polygon) |
 
 ### Snap Point
 - **Spherical faces**
-Spherical faces now have a "center" snap point. Check out all of the snap points.
-Link here
+Spherical faces now include a **Center** snap point.
+
+[Learn more](/plasticity-essentials/snap)
 
 ## 3. Improved Features
 
-### Language Preferences
+### Preferences
 - **New Languagees**
-Plasticity now offers the option to set up prefereble languages in the Preferences section.
+ Plasticity now offers the option to set up 9 prefereble languages in the Preferences section.
 
-### Future and Past Compatability
+| Language | Note |
+| -------- | ---- |
+| Deutsch | |
+| English | (Default: Selected) |
+| Español | |
+| Français | |
+| Italiano | |
+| 日本語 | |
+| Português | |
+| Русский | |
+| 中文 | |
+| 繁體中文 | |
+
+### Future and Past Compatability ??????????
 File Format (.Plasticity)
 This release introduces a compatibility shift - allowing it to be backwards and forwards compatible with prior versions of Plasticity. ???
 
+### Export and Import ----
+- **Export SVG**
+ it is now possible to export SVg from Plasticity. This is possible when curves are visible and are placed on flat plane on the Z axis plane. 
 
-### Export SVG ----
-Export SVG command is now included in the command pallet.
+[Learn more](/plasticity-essentials/export-svg)
 
-### Render
-New default environment HDRI - name -. 
-Gif Here
+### Render Mode
+- **New Default HDRI**
+ New default environment HDRI has been added to the collection in [Render Mode](/plasticity-essentials/render-mode) and is available when it is enabled.
 
+<Center>
+![New HDRI Environment](/img/2025.3-new-hdri.png)
+</Center>
 
 ### Viewport
-Drag and Drop Material
-It's now possible to drag and drop materials from the outliner into the viewport. This is an alternative approach to update materials on new objects - the other approach is to specifically drag and drop the material on the other object while inside the outliner.
-Gif here
+- **Drag and Drop Material**
+ You can now drag a material dot from the Outliner straight into the viewport. This provides an alternative to the traditional method of dragging a material dot onto another object while staying inside the Outliner.
+
+<Center>
+![New Approach To Assigning Materials In Outliner](/img/2025.3-outliner-to-viewport-material-update.gif)
+</Center>
+
+[Learn More](/plasticity-essentials/outliner#material-color)
 
 ### Assets Menu
 - **New PBR Material**
