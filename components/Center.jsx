@@ -1,13 +1,16 @@
 import React from "react";
 
 /**
+ * Center – a simple wrapper that always stays horizontally centred.
+ *
  * Props
- *   children       – content placed inside <Center>
- *   marginTop      – space above the whole block (default: "1rem")
- *   width          – width of the centered box (e.g. "400px")
- *   border         – CSS border string (e.g. "2px solid #ddd")
- *   borderRadius   – CSS border‑radius (e.g. "8px")
- *   style          – extra inline styles for the wrapper itself
+ * -----
+ * children       – content placed inside <Center>
+ * marginTop      – space above the whole block (default: "1rem")
+ * width          – optional width of the centred box (e.g. "400px")
+ * border         – CSS border string (e.g. "2px solid #ddd")
+ * borderRadius   – CSS border‑radius (e.g. "8px")
+ * style          – extra inline styles for the wrapper itself
  */
 export const Center = ({
   children,
@@ -18,35 +21,40 @@ export const Center = ({
   style = {},
 }) => {
   /* -------------------------------------------------------------
-   * 1️⃣ Wrapper style – this is the visible frame that we also
-   *    want to be centered on the page.
+   * 1️⃣ Wrapper style – the visible frame that we also want to be
+   *    centred on the page.
    * ----------------------------------------------------------- */
   const wrapperStyle = {
-    display: "flex",                 // keep inner flex centering
+    // When a width is supplied we keep a normal flex container.
+    // When width is omitted we use `inline-flex` so the element
+    // shrinks to fit its content and can still be centred via
+    // margin‑auto.
+    display: width ? "flex" : "inline-flex",
     justifyContent: "center",
-    marginTop,                       // space above the block
-    marginLeft: "auto",              // <-- center the wrapper horizontally
+    alignItems: "center",
+    marginTop,               // space above the block
+    marginLeft: "auto",      // centre horizontally
     marginRight: "auto",
-    width,                           // e.g. "400px"
-    border,                          // e.g. "2px solid #ddd"
-    borderRadius,                    // e.g. "8px"
-    overflow: "hidden",              // clip the image to the radius
+    ...(width && { width }), // only set width when it exists
+    border,
+    borderRadius,
+    overflow: "hidden",      // clip the image to the radius
     ...style,
   };
 
   /* -------------------------------------------------------------
-   * 2️⃣ Child style – make the image fill the wrapper
+   * 2️⃣ Child style – make images (or any block) behave nicely.
    * ----------------------------------------------------------- */
   const childExtraStyle = {
-    width: "100%",
+    maxWidth: "100%", // keep natural size unless it would overflow
     height: "auto",
-    display: "block",                // remove any inline‑element gap
+    display: "block", // removes any inline‑element gap
   };
 
   const styledChild = React.isValidElement(children)
     ? React.cloneElement(children, {
         style: {
-          ...(children.props.style || {}),
+          ...(children.props?.style || {}),
           ...childExtraStyle,
         },
       })
