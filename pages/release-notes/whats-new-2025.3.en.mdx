@@ -150,7 +150,7 @@ borderRadius="8px">
 ![New HDRI Environment](/img/2025.3-new-hdri.png)
 </Center>
 
-### Assets Menu ---
+### Assets Menu
 - **New PBR Material**      
  A new material called *Cathedral Tile* has been added to the Physical Material Library in Plasticity.  
 
@@ -167,6 +167,15 @@ borderRadius="8px">
 ![Assets Tab Highlight Indicator](/img/2025.3-highlight-indicator.gif)
 </Center>
 
+- **Drag and Drop Material**    
+ You can now drag a physical material from the Material Library in the Assets menu directly onto an object in the viewport. It's a feature that wasn't available in earlier versions of Plasticity.  
+
+<Center width="600px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Drag And Drop Matterials From Assets Menu](/img/2025.3-assets-menu-material-update.gif)
+</Center>
+
 [Learn More](/plasticity-essentials/assets)
 
 ### Viewport
@@ -181,15 +190,38 @@ borderRadius="8px">
 
 [Learn More](/plasticity-essentials/outliner#material-color)
 
-### Export OBJ
-- **Ignore Small Features**     
-It allows you to ignore smal lfeatures that will simplify radial faces.
+### Export OBJ ---
+- **Remove Small Features**   
+ This option lets you define a size range that will automatically delete tiny surface details. It's especially handy for high-poly to low-poly workflows, texture baking, topology optimisation, or any general mesh cleanup.
 
-Gif Here
-Link here
+<Center width="600px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Remove Small Features](/img/2025.3-remove-small-features.gif)
+</Center>
 
-- **Export Empty and Instances** -------
-The Export OBJ command now supports exporting empties and instances. Does this work when instances arent realized? Idk 
+- **Simplify Radial Surfaces**  
+When possible, this feature simplifies radial geometry and aligns edge flow so that edges remain continuous rather than broken. It works best on relatively simple shapes; complex geometry may not always achieve perfect results.
+
+<Center width="600px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Simplify Radial Surfaces](/img/2025.3-simplify-radial-surface-export.gif)
+</Center>
+
+- **Ngon optimization**
+If the topology mode is set to *Ngons*, enabling **Convex Ngons Only** prevents the creation of concave ngons. This helps when exporting to applications such as RizomUV, 3ds Max, etc., which struggle with concave ngons and can produce incorrect normals or shading artifacts. While the export may contain slightly more ngons, the resulting shading and overall topology quality are more reliable.
+
+<Center width="400px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Ngon Shading Optimization](/img/2025.3-ngon-shading-optimization-export.svg)
+</Center>
+
+- **Export Empty and Instances**
+The *Export OBJ* command now supports exporting empty meshes (e.g., STL, FBX, OBJ) and instances. Instances that haven't been converted into real bodies are included in the export. If nothing is selected, everything visible in the viewport will be exported.
+
+[Learn More](/plasticity-essentials/export-obj)
 
 ## 3. Improved Commands
 
