@@ -38,11 +38,11 @@ borderRadius="8px">
 
 Learn more - [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) and [Realize Curve Instances](/sketch/realize-curve-instances)
 
-### New Publish to Web Command
+### New Publish to Plasticity Share Command
 - **Upload and Share (.plasticity) Document Online**    
-Publish to Web is a new export command that lets you share a web link to your *.plasticity* work. It uploads only the mesh data (no CAD geometry or source files), so the shared file can be only previewed and cannot be downloaded, keeping cloud storage usage minimal. This feature is ideal for quickly showing visualizations without exposing the original project files.  
+*Publish to Plasticity Share* is a new export command that lets you share a web link to your work. It uploads only the mesh data (no CAD geometry or source files), so the shared file can be only previewed and cannot be downloaded, keeping cloud storage usage minimal. This feature is ideal for quickly showing visualizations without exposing the original project files.  
 
-[Learn more](/common/publish-to-web)
+[Learn more](/common/publish-to-plasticity-share)
 
 ### New Measurement Command
 - **Radial Measurement**    
@@ -149,9 +149,9 @@ borderRadius="8px">
 | 中文 | |
 | 繁體中文 | |
 
-### Export and Import ---
+### Export and Import
 - **Export SVG**    
- it is now possible to export SVg from Plasticity. This is possible when curves are visible and are placed on flat plane on the Z axis plane. 
+ it is now possible to export SVG files from Plasticity.
 
 [Learn more](/plasticity-essentials/export-svg)
 
@@ -239,7 +239,7 @@ The *Export OBJ* command now supports exporting empty meshes (e.g., STL, FBX, OB
 ## 3. Improved Commands
 
 ### Array Commands
-- **Array Instances, Meshes and Images**
+- **Array Instances, Meshes and Images**    
 It is now possible to array instances, meshes and images in Plasticity. Possible array commands are listed below.
 
 | Array Commands | 
@@ -248,18 +248,17 @@ It is now possible to array instances, meshes and images in Plasticity. Possible
 |[Radial Array](/common/radial-array) | 
 |[Rectangular Array](/common/rectangular-array) | 
 
-- **Make Instances Option**
+- **Make Instances Option**   
 Array commands now have an included option named as "Make Instances".
 
 Learn more - [Curve Array](/common/curve-array), [Radial Array](/common/radial-array), [Rectangular Array](/common/rectangular-array)
 
 ### Mirror Command 
-- **Instances and Meshes**
+- **Instances and Meshes**    
 Mirror command can mirror meshes (e.g., STL, FBX, OBJ) and instances.
 
 ### Scale Command
-- **Mirror Scale on Instances**
-
+- **Mirror Scale on Instances**   
 Applying a scale value of -1 on any axis mirrors the instance along that axis and is fully supported for instance objects.
 
 ### Measure Curvature
@@ -288,7 +287,6 @@ Files created in version 25.3 can be opened in earlier versions of Plasticity. A
 [Learn More](/sketch/measure-curvature)
 
 ### Measure Continuity 
-
 - **New Panel Menu**    
 Measure Continuity now features a dedicated panel menu located in the right side panel. You can adjust the comb size for G0/G1/G2 using their respective "Scale" controls and toggle the display of numerical measurement values with "Show maxes".
 
@@ -296,7 +294,7 @@ Measure Continuity now features a dedicated panel menu located in the right side
 ![New Panel Menu](/img/2025.3-curvature-panel.svg)
 </Center>
 
-- **Live Feedback**
+- **Live Feedback**   
 Similar to *Toggle Curvature*, you can now manipulate curves and edges in real time while *Measure Continuity* is active, providing visual feedback as continuity values update.
 
 <Center width="400px"
@@ -307,43 +305,40 @@ borderRadius="8px">
 
 [Learn More](/solid/measure-continuity)
 
-### Section Analysis ----
-- **Empty and Meshe Objects**
-It is now possible to cut empty and mesh objects with the section analysis command.
-Gif here
-Link to command
+### Section Analysis
+- **Mesh Objects**   
+With the Section Analysis command, you can create a virtual slice through meshes (e.g., STL, FBX, OBJ).
 
-### Sweep
-Advanced Options
-Sweep now has an advanced options menu for corner types named as Mitre and Round. Sweeping a curve on a guide outwards will produce a natural sharp turn while the round option will turn the corner into round. More information here
-Gif Here
-Link Here
+[Learn More](/common/section-analysis)
 
-### Duplicate Command
-- **Duplicate Recursively**     
-In the Outliner, it is now possible to duplicate group hierarchies recursively. Previously, only the parent group could be duplicated, and its child objects were not included in the duplication. With this update, all children within a group are now duplicated along with the parent.
+### Sweep 
+- **Advanced Options**    
+Sweep now includes advanced corner type options: Mitre and Round. When sweeping a curve along a guide with outward corners, Mitre produces sharp turns while Round creates rounded external corners. Note that Round works best with 90-degree corners.
 
-[Learn more](/plasticity-essentials/outliner#group-objects)
+[Learn More](/solid/sweep)
 
 ## 4. New features
 
-### Selection Command
-- **Invert Selection**   
-The Invert Selection command now supports edges and faces.
 
 ## 5. Improved features
 
-### Empties
-- **Origin Pivot**
-It is now possible to manipulate Empty pibot points as desired.
+### Mesh Objects
+- **Origin Pivot**    
+You can now manipulate mesh (e.g., STL, FBX, OBJ) objects' pivot points and save their location as desired.
 
-Preferences - Improved faceting setting - Change faceting density without restarting Plasticity. Does not refacet existing bodies but new bodies and edits will use the new density.
+### Preferences
+- **Improved Faceting Setting**   
+Change faceting density without restarting Plasticity. This setting applies to new bodies and edits; existing bodies will not be refaceted.
 
 ## Misc.
 
 ### Subdivide 
-- **Default Keybinding Removed**
-The keybinding for subdivide "alt + s" has been removed.
+- **Default Keybinding Removed**    
+The default keybinding for Subdivide (Alt + S) has been removed.
+
+## Support 
+- **Join Discord**    
+Those who have a license can join the official Discord server for further support. The community is active and growing every day!
 
 ## Past Update Information
 
