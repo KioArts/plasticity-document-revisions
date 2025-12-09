@@ -57,6 +57,19 @@ borderRadius="8px">
 
 [Learn more](/common/measure-radius)
 
+### New Ellipse Tool ---
+- **Ellipse Tool**    
+A new Ellipse tool has been introduce in Plasticity. This gives a more precise control on building an ellipse. Previously, an ellipse could've been made by just making a regular circle and using the Scale tool to scale either one side or using the freestyle option of scale. 
+
+<Center 
+width="400px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Ellipse Tool Example GIF](/img/2025.3-ellipse-tool-example.gif)
+</Center>
+
+[Learn more](/common/ellipse-tool)
+
 ## 2. Modeling Enhancements
 
 ### General Optimizations
@@ -190,9 +203,9 @@ borderRadius="8px">
 
 [Learn More](/plasticity-essentials/outliner#material-color)
 
-### Export OBJ ---
+### Export OBJ
 - **Remove Small Features**   
- This option lets you define a size range that will automatically delete tiny surface details. It's especially handy for high-poly to low-poly workflows, texture baking, topology optimisation, or any general mesh cleanup.
+ This option lets you define a range that will remove surface details based on the numerical value. It's especially handy for high-poly to low-poly workflows, where texture baking and topology optimisation is involved, or any general mesh cleanup.
 
 <Center width="600px"
 border ="1px solid #221458ff"
@@ -200,7 +213,7 @@ borderRadius="8px">
 ![Remove Small Features](/img/2025.3-remove-small-features.gif)
 </Center>
 
-- **Simplify Radial Surfaces**  
+- **Simplify Radial Surfaces**    
 When possible, this feature simplifies radial geometry and aligns edge flow so that edges remain continuous rather than broken. It works best on relatively simple shapes; complex geometry may not always achieve perfect results.
 
 <Center width="600px"
@@ -209,7 +222,7 @@ borderRadius="8px">
 ![Simplify Radial Surfaces](/img/2025.3-simplify-radial-surface-export.gif)
 </Center>
 
-- **Ngon optimization**
+- **Ngon optimization**   
 If the topology mode is set to *Ngons*, enabling **Convex Ngons Only** prevents the creation of concave ngons. This helps when exporting to applications such as RizomUV, 3ds Max, etc., which struggle with concave ngons and can produce incorrect normals or shading artifacts. While the export may contain slightly more ngons, the resulting shading and overall topology quality are more reliable.
 
 <Center width="400px"
@@ -218,7 +231,7 @@ borderRadius="8px">
 ![Ngon Shading Optimization](/img/2025.3-ngon-shading-optimization-export.svg)
 </Center>
 
-- **Export Empty and Instances**
+- **Export Empty and Instances**    
 The *Export OBJ* command now supports exporting empty meshes (e.g., STL, FBX, OBJ) and instances. Instances that haven't been converted into real bodies are included in the export. If nothing is selected, everything visible in the viewport will be exported.
 
 [Learn More](/plasticity-essentials/export-obj)
@@ -227,40 +240,74 @@ The *Export OBJ* command now supports exporting empty meshes (e.g., STL, FBX, OB
 
 ### Array Commands
 - **Array Instances, Meshes and Images**
-It is now possible to array instances, meshes and images in Plasticity.
-Gif Here
+It is now possible to array instances, meshes and images in Plasticity. Possible array commands are listed below.
+
+| Array Commands | 
+| ---- | 
+|[Curve Array](/common/curve-array) | 
+|[Radial Array](/common/radial-array) | 
+|[Rectangular Array](/common/rectangular-array) | 
+
 - **Make Instances Option**
 Array commands now have an included option named as "Make Instances".
-Gif Here
-Link here
 
-### Mirror Command
-- **Instances and Empty**
-Mirror command can mirror empties and instances.
-Gif Here
+Learn more - [Curve Array](/common/curve-array), [Radial Array](/common/radial-array), [Rectangular Array](/common/rectangular-array)
+
+### Mirror Command 
+- **Instances and Meshes**
+Mirror command can mirror meshes (e.g., STL, FBX, OBJ) and instances.
 
 ### Scale Command
 - **Mirror Scale on Instances**
-Now supported to mirror scale instances in a negative axis direction with a value of -1.
-Gif Here
+
+Applying a scale value of -1 on any axis mirrors the instance along that axis and is fully supported for instance objects.
 
 ### Measure Curvature
+- **New Command Name**    
+Measure Curvature has been renamed to *Toggle Curvature*. As the name suggests, this command now allows you to toggle the curvature display on and off directly from the outliner under Measurements -> Curvature.
+
+- **New Panel Menu**    
+*Toggle Curvature* now features a dedicated panel menu located in the right side panel. Here you can directly adjust the comb size and control visibility using the "Comb scale" option.
+
+<Center>
+![New Panel Menu](/img/2025.3-curvature-panel.svg)
+</Center>
+
+- **Live Feedback**   
+You can now manipulate curves and edges in real time while *Toggle Curvature* is active, providing immediate visual feedback as you model. This makes it easier to optimize curvature on a Curve and Solid when working with the [Slide command](/solid/slide).
+
+<Center width="400px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Control Curvature Real Time](/img/2025.3-curvature-manipulation-example.gif)
+</Center>
+
+- **File Compatibility**    
+Files created in version 25.3 can be opened in earlier versions of Plasticity. Any existing curvature measurements will be automatically removed rather than triggering an error.
+
+[Learn More](/sketch/measure-curvature)
+
+### Measure Continuity 
+
+- **New Panel Menu**    
+Measure Continuity now features a dedicated panel menu located in the right side panel. You can adjust the comb size for G0/G1/G2 using their respective "Scale" controls and toggle the display of numerical measurement values with "Show maxes".
+
+<Center width="270px">
+![New Panel Menu](/img/2025.3-curvature-panel.svg)
+</Center>
+
 - **Live Feedback**
-It is now possible to manipulate curves and edges when Measure Curvature has been executed, allowing to see direct changes of the curvature.
-- **New Command Name**
-Measure Curvature will be now be named as Toggle Curvature. As the name of the command suggests.
-- **File Compatibility**
-Opening latest file versions 25.3+ on previous versions will be possible and will delete any existing curves instead of displaying an error.
-Gif Here
+Similar to *Toggle Curvature*, you can now manipulate curves and edges in real time while *Measure Continuity* is active, providing visual feedback as continuity values update.
 
-### Measure Continuity
-- **Live Feedback**
-Continuity measurements are now interactive. See the right side menus to tweak its settings.
-Gif Here.
+<Center width="400px"
+border ="1px solid #221458ff"
+borderRadius="8px">
+![Control Continuity Real Time](/img/2025.3-continuity-manipulation-example.gif)
+</Center>
 
+[Learn More](/solid/measure-continuity)
 
-
-### Section Analysis
+### Section Analysis ----
 - **Empty and Meshe Objects**
 It is now possible to cut empty and mesh objects with the section analysis command.
 Gif here

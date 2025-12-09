@@ -7,7 +7,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="" command="Rectangular Array" button="In Suggested Commands Menu"  buttonIcon='button-rectangular-array'/>
 
-Duplicate objects in a linear pattern by specifying the number of duplicates. Optionally, define another direction to create a rectangular array.
+Duplicate objects in a linear pattern by specifying the number of duplicates. Optionally, define another direction to create a rectangular array. Option to create instances is possible.
+
+- Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for duplication direction, number of copies, and duplication modes. However, instancing is not supported.
 
 ## Basic Usage
 
@@ -23,6 +25,7 @@ Duplicate objects in a linear pattern by specifying the number of duplicates. Op
    - <Kst>Command Dialog</Kst>
       - **Distance 1:** Specify the distance.
       - **Number:** Specify the number of duplications.
+      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instances))
    - <Kst>Keyboard Shortcuts</Kst>
    - <kbd>Shift + Wheel up</kbd> **Add copy:** Increases the number of duplications.
    - <kbd>Shift + Wheel down</kbd> **Subtract copy:** Reduces the number of duplications.
@@ -32,6 +35,7 @@ Duplicate objects in a linear pattern by specifying the number of duplicates. Op
       - <Kst>Command Dialog</Kst>
          - **Distance 2:** Specify the distance.
          - **Repeat:** Specify the number of repetitions.
+         - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instances))
       - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Shift + Wheel up</kbd> **Add copy:** Increases the number of duplications.
       - <kbd>Shift + Wheel down</kbd> **Subtract copy:** Reduces the number of duplications.

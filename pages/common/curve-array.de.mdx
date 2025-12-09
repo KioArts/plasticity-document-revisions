@@ -6,7 +6,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="" command="Curve Array" button="" />
 
-Duplizieren Sie Objekte entlang einer Kurve, indem Sie die Anzahl der Duplikate angeben. Optionen zum Drehen, Skalieren und Ausrichten sind verfügbar.
+Duplizieren Sie Objekte entlang einer Kurve, indem Sie die Anzahl der Kopien festlegen. Optionen für Drehen (Twist), Skalieren, Ausrichtung und das Erstellen von Instanzen stehen zur Verfügung.
+
+- Bilder und Meshes (.OBJ, .STL, .FBX usw.) können entlang der Kurve angeordnet werden, mit Steuerelementen für Drehen, Skalieren, Ausrichtung und Positionierung. Das Erstellen von Instanzen wird jedoch nicht unterstützt.
 
 ## Grundlegende Nutzung
 
@@ -25,6 +27,7 @@ Duplizieren Sie Objekte entlang einer Kurve, indem Sie die Anzahl der Duplikate 
       - **Method:** Legt fest, wie der Duplikationsbereich gesteuert wird.
          - **Distance:** Passt den Duplikationsbereich mit einem metrischen Wert an, basierend auf den Einstellungen in Plasticity.
          - **Ratio:** Passt den Duplikationsbereich mit einem Verhältniswert zwischen 0,00 und 1,00 an. (Standard: 1,00)
+      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instances))
    - <Kst>Tastenkombinationen</Kst>
       - <kbd>Umschalt + Rad hoch</kbd> **Add copy:** Erhöht die Anzahl der Duplikationen.
       - <kbd>Umschalt + Rad runter</kbd> **Subtract copy:** Verringert die Anzahl der Duplikationen.
