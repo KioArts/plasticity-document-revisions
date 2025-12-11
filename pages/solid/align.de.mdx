@@ -34,13 +34,13 @@ Align ist ein Werkzeug, das auf dem XNurb-Befehl basiert und eine Oberfläche so
             - **Normal:** UV-Isokurven bleiben rechtwinklig zueinander.
             - **Next:** Erzeugt einen rechtwinkligen UV-Fluss, wenn die Randbedingungen relativ flach sind.
             - **Adjacent:** Richtet V-Isokurven der erzeugten Oberfläche an angrenzenden Kurven aus.
-        - **Analysis:** Analysiert die Stetigkeit der Oberflächenkanten
-                - **Continuity:** Analysiert die Stetigkeit der Oberflächenkanten
-                    - **G0:** Positionsstetigkeit
-                    - **G1:** Tangentenstetigkeit
-                    - **G2:** Krümmungsstetigkeit
-                - **G0 Scale / G1 Scale / G2 Scale:** 
-                    - Toleranzskalen für jeweilige Stetigkeitsprüfungen einstellen.
+        - **Analyse:** Analysiert vorübergehend die Kontinuität der ausgewählten Oberflächenkanten.
+            - **Kontinuität:** Prüft die Kontinuität der Kanten:
+                - **G0:** Positions‑Kontinuitätsprüfung.
+                - **G1:** Tangential‑Kontinuitätsprüfung.
+                - **G2:** Krümmungs‑Kontinuitätsprüfung.
+            - **G0‑Skala / G1‑Skala / G2‑Skala:** 
+                - Passt die Toleranzskalen für die jeweiligen Kontinuitätsprüfungen an.
     - <Kst>Keyboard Shortcuts</Kst>
         - <kbd>Tab</kbd> **Cycle continuity:** Wechselt zwischen den Stetigkeitsoptionen.
         - <kbd>Ctrl</kbd> **Show original:** den ursprünglichen Zustand der Oberfläche (Quasi-Modus).

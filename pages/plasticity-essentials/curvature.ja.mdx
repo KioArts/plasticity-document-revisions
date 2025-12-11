@@ -1,0 +1,31 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
+import { Center } from '/components/Center'
+
+# 曲率
+
+曲率メニューは右側パネルにあり、[曲率の切り替え](/sketch/toggle-curvature) と [継続性の測定](/solid/measure-continuity) コマンドの曲率および継続性コーム表示を直接制御できます。
+
+<Center 
+width="400px">
+![曲率メニュー](/img/curvature-menu.svg)
+</Center>
+
+## 曲率コームの調整
+
+曲率コームを調整するには、左または右にドラッグするか、**コームスケール** フィールドに手動で数値を入力します（デフォルト: 1.00）。  
+
+<Center 
+width="270px">
+![コームスケール](/img/comb-scale.png)
+</Center>
+
+## 継続性コームの調整
+
+継続性解析用に、G0、G1、G2 のコントロールが **コームスケール** フィールドの下に配置されています。**最大値を表示** オプション（「継続性を測定」コマンドで利用可能）は、曲線やエッジに沿って数値的な偏差値と継続性インジケータを表示します。  
+
+<Center 
+width="270px">
+![継続性スケールと最大値](/img/continuity-scale-and-max.png)
+</Center>
