@@ -19,7 +19,7 @@ Measure the continuity of surface edges by evaluating whether the connection is 
          - **Continuity:** Verifies the type of edge continuity:
             - **G0:** Checks for position continuity. Measures the positional deviation in metric units based on your current unit settings in Plasticity.
             - **G1:** Checks for tangency continuity. Measures the angular deviation in degrees between adjacent surfaces.
-            - **G2:** Checks for curvature continuity by comparing curvature values between adjacent surfaces.
+            - **G2:** Checks for curvature continuity by comparing curvature deviation and displays percentage values (0.0 - 1.0) values between adjacent surfaces.
         - **G0 Scale / G1 Scale / G2 Scale:** 
                 - Adjusts visual size of combs and deviation plot.
         - **G0 Tolerance/ G1 Tolerance/ G2 Tolerance:** 
@@ -29,6 +29,28 @@ Measure the continuity of surface edges by evaluating whether the connection is 
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="measure-continuity-0"/>
+
+## Continuity Markers
+
+The continuity marker icons provide a quick summary of how well two adjoining surfaces satisfy the selected continuity level:
+
+- **G0 (position)** — points meet.
+- **G1 (tangent)** — tangents align.
+- **G2 (curvature)** — curvature values match.
+
+Each icon indicates whether the measured deviation is within tolerance, falls into a defined exception case, or fails the required continuity condition.
+
+| Icon | Meaning |
+| :---: | --- |
+| <ButtonIcon type="button-green-check"/> | **Within tolerance**. The surfaces meet the selected continuity level (G0, G1, or G2), and the measured deviation is inside the allowed range. |
+| <ButtonIcon type="button-yellow-check"/> | **Special case for G2 curvature continuity**. A deviation value of **1.0** is reported as **“flat”**, meaning one surface has an infinite radius of curvature in a given direction. This is treated as an **exception**, not an error. Because this lies between tolerance limits, visual inspection with shaders is recommended. |
+| <ButtonIcon type="button-yellow-warning"/> | **Continuity mismatch across levels**. The current continuity level meets tolerance, but a lower continuity order requirement does not. For example, G1 may be within tolerance while G0 fails, so the overall connection is not considered successful. |
+| <ButtonIcon type="button-red-cross"/> | **Out of tolerance**. The surfaces cannot meet the selected continuity level within the allowed deviation range. |
+
+## Construction Tolerances
+
+
+
 
 ## See also
 - [Measure Curvature](/sketch/measure-curvature)
