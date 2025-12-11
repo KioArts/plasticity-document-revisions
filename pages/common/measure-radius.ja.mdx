@@ -1,0 +1,25 @@
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
+
+# 半径測定
+
+<Reference shortcut="" command="半径測定" button="コマンドパレットで" buttonIcon='button-measure-radius' />
+
+ソリッドの表面エッジまたは曲線（スケッチ）の半径を測定し、半径アノテーションを作成します。
+
+## 基本的な使い方
+
+1. コマンドパレットを開き、**半径測定** と入力してコマンドを実行します。  
+2. 測定したいオブジェクトの種類を選択します:
+    | 種類   | 備考 |
+    | ------ | ---- |
+    | ソリッド | 測定したい表面エッジをクリックします。 |
+    | 曲線   | 測定したいスケッチをクリックします。 |
+3. ビューポート内でマウスを動かし、アノテーションラインの長さを設定し、左または右クリックで確定します。  
+4. 測定値は **R** 記号の横に表示され、半径であることを示します。測定は **Outliner** の **Measurements** にも追加されます。
+
+<VideoPlayer fileName="measure-radius-01"/>
+
+## 関連項目
+- [寸法](/dimension)
