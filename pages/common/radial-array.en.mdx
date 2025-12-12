@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Radial Array
 
@@ -9,7 +10,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 Duplicate objects in a circular pattern by specifying the angle and number. Radial and instance duplication are also possible.
 
-- Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for duplication angle and number of copies. However, instancing is not supported.
+<Callout>
+Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for duplication angle and number of copies. However, instancing them is not supported.
+</Callout>
 
 ## Basic Usage
 

@@ -1,0 +1,59 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center' 
+
+# In Plasticity Share veröffentlichen
+
+<Reference shortcut="" command="In Plasticity Share veröffentlichen" button="Im Befehls-Palette"  buttonIcon='button-publish-to-plasticity-share'/>
+
+Lädt eine *.plasticity*-Datei in die Cloud hoch und erzeugt eine eindeutige private URL, die in einem neuen Browser‑Tab geöffnet wird. Der Link kann mit jedem für reine Leseberechtigung geteilt werden. Sobald der Link verteilt ist, wird er öffentlich. Jede hochgeladene Datei unterstützt mehrere Revisionen; diese Revisionen können Sie auf der Seite **Plasticity Share** (https://share.plasticity.xyz/me/) verwalten und löschen.
+
+<Callout>
+1. Es wird nur die Netz‑Darstellung des Modells veröffentlicht, sodass keine CAD‑Geometrie oder Quelldateien enthalten sind und die Datei nicht heruntergeladen werden kann.  
+2. Die Funktion ist standardmäßig deaktiviert. Aktivieren Sie sie unter **Einstellungen > Web‑Veröffentlichung**.  
+3. Beim Veröffentlichen ins Web werden außerdem Materialinformationen aus dem Menü **Assets** exportiert.  
+4. Netz‑Daten sind **nur lesbar**; ein direktes Modellieren oder Ändern des veröffentlichten Netzes ist nicht möglich.  
+5. Unabhängig vom Lizenztyp erhält jeder Nutzer **5 GB** Cloud‑Speicher.  
+</Callout>
+
+## Grundlegende Verwendung
+
+1. Wählen Sie das Objekt aus, das Sie ins Web veröffentlichen möchten.  
+2. Öffnen Sie die Befehls‑Palette, tippen Sie **In Plasticity Share veröffentlichen** und führen Sie den Befehl aus.  
+3. Ein Popup‑Fenster fragt: „Sind Sie sicher, dass Sie ins Web teilen wollen?“ – klicken Sie **Ja**.  
+4. Ein neuer Browser‑Tab öffnet sich und zeigt das veröffentlichte Objekt.  
+5. Für das geteilte Objekt wird eine eindeutige URL generiert.
+
+## Web‑Viewport‑Interface
+
+<Center width="550px">
+![Web‑Viewport‑Übersicht](/img/web-viewport-breakdown.png)
+</Center>
+
+| Nummer | Element | Beschreibung |
+| :----: | ------- | ------------ |
+| 1 | Alle Dokumente anzeigen | Zeigt alle veröffentlichten Dokumente auf dem Cloud‑Server an. |
+| 2 | Abmelden | Meldet die aktuelle Web‑Sitzung ab. Nach dem Abmelden erscheint die Meldung → „Nicht angemeldet. Teilen Sie ein Dokument aus Plasticity und aktualisieren Sie diesen Tab, um sich anzumelden.“ |
+| 3 | Netz‑Daten | Das ausgewählte Plasticity‑Objekt wurde zur Visualisierung in Netz‑Daten konvertiert. |
+
+<Callout>
+Die Navigation im Web‑Viewport nutzt Plasticties Standard‑Steuerung: **Mittlere Maustaste** zum Rotieren und **Rechte Maustaste** zum Schwenken. Das rechte Seitenpanel bietet Zugriff auf [**Shader‑Modus**](/plasticity-essentials/shader-mode), [**Render‑Modus**](/plasticity-essentials/render-mode), [**Kamera**](/plasticity-essentials/camera-settings) und [**Raster‑ und Einheit‑Einstellungen**](/plasticity-essentials/grid-and-units).  
+</Callout>
+
+## Alle‑Dokumente‑Interface
+
+Dies ist die Plasticity‑Share‑Seite, auf der Sie alle Dokumente sehen können, die Sie auf den Cloud‑Server hochgeladen haben.
+
+<Center width="600px">
+![Alle‑Dokumente‑Übersicht](/img/all-documents-breakdown.png)
+</Center>
+
+| Nummer | Element | Beschreibung |
+| :----: | ------- | ------------ |
+| 4 | Dokument‑Vorschaubild | Vorschau‑Bild, das den Inhalt des Dokuments darstellt. |
+| 5 | Dokument‑Ort | Lokaler Pfad auf dem PC, an dem das Plasticity‑Dokument gespeichert ist. |
+| 6 | Cloud‑Speicher‑Anzeige | Zeigt den verbleibenden Cloud‑Speicher an. |
+| 7 | Revisions‑Anzeige | Gibt an, wie viele Revisionen bereits im Web aktualisiert wurden. |

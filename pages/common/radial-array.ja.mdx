@@ -2,6 +2,7 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Radial Array（円形状配列で複製）
 
@@ -9,7 +10,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 角度と数を指定して、オブジェクトを円形パターンで複製できます。放射状の複製およびインスタンス複製も可能です。
 
-- 画像およびメッシュ（.OBJ、.STL、.FBX など）は、複製角度と複製数を制御して配置できます。ただし、インスタンス化はサポートされていません。
+<Callout>
+画像およびメッシュ（.OBJ、.STL、.FBX など）は、複製角度と複製数を制御して配置できます。ただし、インスタンス化はサポートされていません。
+</Callout>
 
 ## 基本的な使い方
 

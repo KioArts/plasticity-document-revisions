@@ -1,0 +1,59 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center' 
+
+# Plasticity Share に公開
+
+<Reference shortcut="" command="Plasticity Share に公開" button="コマンドパレットで"  buttonIcon='button-publish-to-plasticity-share'/>
+
+.plasticity ファイルをクラウドにアップロードし、プライベートな一意の URL を生成します。この URL は新しいブラウザタブで開かれます。リンクは閲覧のみ可能な形で誰とでも共有できます。リンクが配布されると公開状態になります。各アップロードドキュメントは複数のリビジョンをサポートし、[**Plasticity Share**](https://share.plasticity.xyz/me/) ページでリビジョンの管理・削除が可能です。
+
+<Callout>
+1. 公開されるのはモデルのメッシュ表現だけで、CAD ジオメトリやソースファイルは含まれず、ファイル自体のダウンロードはできません。  
+2. この機能はデフォルトで無効化されています。**設定 > Web 公開** から有効化してください。  
+3. Web へ公開すると、Assets メニューからマテリアル情報もエクスポートされます。  
+4. メッシュデータは **閲覧専用** で、公開されたメッシュの直接モデリングや変更はできません。  
+5. ライセンスタイプに関わらず、すべてのユーザーに **5 GB** のクラウドストレージが付与されます。  
+</Callout>
+
+## 基本的な使い方
+
+1. Web に公開したいオブジェクトを選択します。  
+2. コマンドパレットを開き、**Plasticity Share に公開** と入力してコマンドを実行します。  
+3. 「Web に共有してもよろしいですか？」というポップアップが表示されるので **はい** をクリックします。  
+4. 新しいブラウザタブが開き、公開されたオブジェクトが表示されます。  
+5. 共有オブジェクト用の一意の URL が生成されます。
+
+## Web ビューポート インターフェイス
+
+<Center width="550px">
+![Web ビューポート概要](/img/web-viewport-breakdown.png)
+</Center>
+
+| 番号 | 要素 | 説明 |
+| :----: | ---- | ---- |
+| 1 | すべてのドキュメントを見る | クラウドサーバー上のすべての公開ドキュメントを表示します。 |
+| 2 | サインアウト | 現在の Web セッションからサインアウトします。サインアウト後に表示されるメッセージ → 「サインインしていません。Plasticity からドキュメントを共有し、このタブを更新してサインインしてください。」 |
+| 3 | メッシュ データ | Plasticity で選択されたオブジェクトが可視化用にメッシュデータへ変換されています。 |
+
+<Callout>
+Web 上のビューポート操作は Plasticity の標準コントロールを使用します：**中ボタン**で回転、**右ボタン**でパン。右側パネルから [**シェーダーモード**](/plasticity-essentials/shader-mode)、[**レンダーモード**](/plasticity-essentials/render-mode)、[**カメラ**](/plasticity-essentials/camera-settings)、[**グリッドと単位**](/plasticity-essentials/grid-and-units) 設定にアクセスできます。  
+</Callout>
+
+## すべてのドキュメント インターフェイス
+
+ここは Plasticity Share ページで、クラウドサーバーにアップロードしたすべてのドキュメントを確認できます。
+
+<Center width="600px">
+![すべてのドキュメント概要](/img/all-documents-breakdown.png)
+</Center>
+
+| 番号 | 要素 | 説明 |
+| :----: | ---- | ---- |
+| 4 | ドキュメントサムネイル | ドキュメント内容を示すプレビュー画像です。 |
+| 5 | ドキュメントの場所 | PC 上で Plasticity ドキュメントが保存されているローカルディレクトリパスです。 |
+| 6 | クラウドストレージインジケーター | 残りのクラウドストレージ容量を表示します。 |
+| 7 | リビジョンインジケーター | Web 上で更新されたリビジョン数を示します。 |
