@@ -1,6 +1,7 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Curve Array
 
@@ -8,7 +9,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 Duplizieren Sie Objekte entlang einer Kurve, indem Sie die Anzahl der Kopien festlegen. Optionen für Drehen (Twist), Skalieren, Ausrichtung und das Erstellen von Instanzen stehen zur Verfügung.
 
-- Bilder und Meshes (.OBJ, .STL, .FBX usw.) können entlang der Kurve angeordnet werden, mit Steuerelementen für Drehen, Skalieren, Ausrichtung und Positionierung. Das Erstellen von Instanzen wird jedoch nicht unterstützt.
+<Callout>
+Bilder und Meshes (.OBJ, .STL, .FBX usw.) können entlang der Kurve angeordnet werden, mit Steuerelementen für Drehen, Skalieren, Ausrichtung und Positionierung. Das Erstellen von Instanzen wird jedoch nicht unterstützt.
+</Callout>
 
 ## Grundlegende Nutzung
 
@@ -27,7 +30,7 @@ Duplizieren Sie Objekte entlang einer Kurve, indem Sie die Anzahl der Kopien fes
       - **Method:** Legt fest, wie der Duplikationsbereich gesteuert wird.
          - **Distance:** Passt den Duplikationsbereich mit einem metrischen Wert an, basierend auf den Einstellungen in Plasticity.
          - **Ratio:** Passt den Duplikationsbereich mit einem Verhältniswert zwischen 0,00 und 1,00 an. (Standard: 1,00)
-      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instances))
+      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
    - <Kst>Tastenkombinationen</Kst>
       - <kbd>Umschalt + Rad hoch</kbd> **Add copy:** Erhöht die Anzahl der Duplikationen.
       - <kbd>Umschalt + Rad runter</kbd> **Subtract copy:** Verringert die Anzahl der Duplikationen.

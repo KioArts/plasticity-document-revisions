@@ -1,6 +1,7 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Curve Array（カーブに沿って複製する）
 
@@ -8,7 +9,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 コピー数を指定して、オブジェクトをカーブに沿って複製できます。ねじり（ツイスト）、スケール、整列、インスタンス作成のオプションが利用できます。
 
-- 画像およびメッシュ（.OBJ、.STL、.FBX など）は、ねじり、スケール、整列、カーブ上での配置を制御して並べることができます。ただし、インスタンス化はサポートされていません。
+<Callout>
+画像およびメッシュ（.OBJ、.STL、.FBX など）は、ねじり、スケール、整列、カーブ上での配置を制御して並べることができます。ただし、インスタンス化はサポートされていません。
+</Callout>
 
 ## 基本的な使い方
 
@@ -27,7 +30,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
       - **Method:** 複製の範囲をどのように制御するかを定義します。
          - **Distance:** Plasticityの設定に基づき、メートル値で複製範囲を調整します。
          - **Ratio:** 0.00〜1.00の比率値で複製範囲を調整します。（初期値：1.00）
-      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instances))
+      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
    - <Kst>キーボードショートカット</Kst>
       - <kbd>Shift</kbd> + ホイール上回転 **Add copy:** 複製の数を増やします。
       - <kbd>Shift</kbd> + ホイール下回転 **Subtract copy:** 複製の数を減らします。

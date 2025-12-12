@@ -1,6 +1,7 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Curve Array
 
@@ -8,7 +9,9 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 Duplicate objects along a curve by specifying the number of copies. Twist, scale, alignment, and create instance options are available.
 
-- Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for twist, scale, alignment, and placement along the curve. However, instancing is not supported.
+<Callout>
+Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for twist, scale, alignment, and placement along the curve. However, instancing is not supported.
+</Callout>
 
 ## Basic Usage
 
@@ -27,7 +30,7 @@ Duplicate objects along a curve by specifying the number of copies. Twist, scale
       - **Method:** Defines how the extent of the duplicates is controlled.
          - **Distance:** Adjusts the duplication range using a metric value, based on your preferences in Plasticity.
          - **Ratio:** Adjusts the duplication range using a ratio value between 0.00 and 1.00. (Default: 1.00)
-      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instances))
+      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Shift + Wheel up</kbd> **Add copy:** Increases the number of duplications.
       - <kbd>Shift + Wheel down</kbd> **Subtract copy:** Reduces the number of duplications.
