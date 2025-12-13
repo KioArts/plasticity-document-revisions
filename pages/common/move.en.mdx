@@ -8,7 +8,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="G" command="Move" button="In Command Bar"  buttonIcon='button-move'/>
 
-Move objects using Move Gizmo. Options for single-axis constraints or [**freestyle movement**](#freestyle-move) are available. The pivot is also adjustable.
+Move objects with the **Move Gizmo**. You can constrain motion to a single axis or use **freestyle movement** ([see details](#freestyle-move)). The pivot point is also adjustable. When you insert a new primitive or sketch object at its initial insertion point, the Move Gizmo and pivot automatically re-orient to align with the object's surface normal.
 
 ## Basic Usage
 
@@ -138,16 +138,6 @@ Move planar edges using Move Gizmo. Options for single-axis constraints or [**fr
          - <ButtonIcon type="button-active"/> **Active:** Positions the pivot at the last selected (active) object's pivot.
 
          ![Pivot Demonstration](/img/pivot-move.png)
-         
-      - **Proportional:** A feature that provides multiple proportional editing options, influencing how CVs (control vertices) are affected when moved.
-         - **None:** No proportional effect; only the selected CVs move.
-         - **All:** Affects all CVs on the surface and their movement. Specify the falloff value of U and V for better proportional falloff control.
-         - **Selected:** Applies proportional editing to the selected CVs, affecting their movement. Specify the falloff value of U and V for better proportional falloff control. 
-      - **Falloff U:** Specify the falloff amount in U direction.
-      - **Falloff V:** Specify the falloff amount in V direction.
-      - **Mirror:** Apply a mirror effect relative to the active [**construction plane**](/plasticity-essentials/construction-plane). The mirroring axes adapt to either the global construction plane or a custom-defined construction plane. 
-         - **None:** No mirror plane is specified. 
-         - **X/Y/Z:** Mirror in either X, Y, and Z axes.
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Constrain to the X, Y, or Z-axis](/tool/sketching-essentials#constrain-to-an-axis).
       - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Constrain to the X, Y, or Z-plane.
