@@ -8,14 +8,15 @@ import ButtonIcon from '/components/ButtonIcon'
 
 ## 表示されるオブジェクト
 
-- 作成したオブジェクトは、以下のセクションに分けられます: "ボディ"、"面"、"カーブ"、"メッシュ"、"画像"、"測定"。
+- 作成したオブジェクトは、次のセクションに分類されます：「Solids」「Sheets」「Curves」「Meshes」「Images」「Measurements」「Instances」。
 
-| セクション        | 名前の形式 |
-| :--------------: | ---------- |
+| Section | Name Format |
+| :----: | ---- |
 | Solids | Solid 0, Sphere.000, Box.000, Cylinder.000, Extruded.000,  | 
 | Sheets | Sheet 0, Lofted.000, Revolved.000, Pipe.000, Swept.000, XNurbs.000 (*Studio Version*)  | 
 | Curves | Arc.000, Line.000, Curve.000, Circle.000, Ellipse.000, Polygon.000, Spiral.000, Rectangle.000, Bridge Curve.000,  |
 | Meshes | *Mesh Name*.OBJ/.STL/.FBX  | 
+| Instances | *Solid*/*Sheet*/*Group*/*Curve*.000  | 
 | Images | *Image Name*.PNG/.JPG/.JPEG | 
 | Measurements | Curvature.000, Distance.000, Radius.000, G0/G1/G2 Continuity.000 | 
 
@@ -30,7 +31,7 @@ import ButtonIcon from '/components/ButtonIcon'
 
 ## オブジェクトの整理
 
-- セクションタイトル（"ボディ"、"面"、"カーブ"、"メッシュ"、"画像"、"測定"）を右クリックし、「すべて選択」を選択すると、そのセクション内のすべてのオブジェクトを選択できます。
+- セクションラベル（「Solids」「Sheets」「Curves」「Meshes」「Images」「Instances」「Measurements」）を右クリックし、「すべて選択」を選んで、そのセクション内のすべてのオブジェクトを選択します。
 - オブジェクトをドラッグアンドドロップして、アウトライナー内で再配置できます。
 
 ## オブジェクトのグループ化
