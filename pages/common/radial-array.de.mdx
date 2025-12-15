@@ -2,12 +2,17 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Radial Array
 
 <Reference shortcut="" command="Radial Array" button="Rechts von der Befehlsleiste" buttonIcon='button-radial-array' />
 
-Duplizieren Sie Objekte in einem kreisförmigen Muster, indem Sie den Winkel und die Anzahl angeben. Radiale Duplizierung ist ebenfalls möglich.
+Duplizieren Sie Objekte in einem kreisförmigen Muster, indem Sie Winkel und Anzahl festlegen. Radiale Duplizierung und Instanz-Duplizierung sind ebenfalls möglich.
+
+<Callout>
+Bilder und Meshes (.OBJ, .STL, .FBX usw.) können angeordnet werden, mit Steuerelementen für den Duplizierungswinkel und die Anzahl der Duplikate. Die Instanzierung wird jedoch nicht unterstützt.
+</Callout>
 
 ## Grundlegende Nutzung
 
@@ -21,9 +26,10 @@ Duplizieren Sie Objekte in einem kreisförmigen Muster, indem Sie den Winkel und
          - **Gesamt:** Geben Sie die Gesamtdistanz an, bei der alle Duplikate gleichmäßig auf dem angegebenen Gradwert verteilt werden.
          - **Abstand:** Geben Sie den Abstand für jedes der Duplikate an.
       - **Degrees:** Geben Sie den Winkel für die Duplizierung an.
-      - **Number:** Geben Sie die Anzahl der Duplizierungen an.
-      - **Repeat:** Geben Sie die Anzahl der Wiederholungen in einem radialen Muster an.
-      - **Repeat distance:** Geben Sie den Abstand zwischen jeder Wiederholung in einem radialen Muster an.
+      - **Number 2:** Specify the number of duplications.
+      - **Number 1:** Specify the number of repetitions in a radial pattern.
+      - **Step 1:** Specify the distance between each repetition in a radial pattern.
+      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
    - <Kst>Tastenkombinationen</Kst>
       - <kbd>Umschalt</kbd> + Mausrad hoch **Add copy:** Erhöht die Anzahl der Duplizierungen.
       - <kbd>Umschalt</kbd> + Mausrad runter **Subtract copy:** Verringert die Anzahl der Duplizierungen.   

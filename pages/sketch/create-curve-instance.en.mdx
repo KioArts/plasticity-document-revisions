@@ -1,0 +1,59 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
+
+
+# Create Curve Instance
+
+<Reference shortcut="" command="Create Instance" button="In Command Palette"  buttonIcon="button-instance"/>
+
+Create reusable duplicates of curves. An **instance**, similarly to instancing solid and sheet objects, stores transformation data (position, pivot point, rotation, and scale), color data and references the original curve. Any modification made to the master curve is instantly reflected in all of its instances. Because curve instances are read-only copies of their parent, they cannot be edited independently and they appear without any displayed CV (control-vertex) layout and in order to distinguish them from the original curve.
+
+- Use the **Create Instance** command on curves when you need many identical details.  
+- Instances work with array commands such as **Curve Array**, **Radial Array**, and **Rectangular Array**.  
+- Instances can also be used with the **Mirror** command.
+
+## Basic Usage
+
+1. Select the Curve you want to use as the parent object..
+2. Open the Command Palette, type ** Create Instance**, and execute the command.
+3. Move the newly created instance to the desired location.
+4. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="instance-curve"/>
+
+<Callout type="info" emoji="🗒️">
+**Note:** Once an instance has been created, you can duplicate that instance any number of times, and all of the duplicates will continue to reflect any changes made to the original parent object.    
+</Callout>
+
+## Instance Groups
+
+The process of instancing groups is similar to instancing Curves.
+
+When a group is selected and it contains primary sketches, an instance of the group will be created and placed outside of the group folder under its own dedicated category in the Outliner.
+
+<Center width="600px">
+![!Instancing a Group Part 1](/img/instance-group-curve.png)
+</Center>
+
+| Number | Description |
+| :----: | ----------- |
+| 1 | Main group with components inside. |
+| 2 | Parent objects that will be instanced. |
+| 3 | Instance of main group allocated outside of the main group under the category **"Instances"**. |
+
+### Basic Usage
+
+1. Select a Group in the Outliner to instantiate.
+2. Search for *Create Instance* in the Command Palette and execute it.
+3. Move the instanced group.
+4. Confirm with OK in the Command Dialog or right-click.
+
+
+<VideoPlayer fileName="instance-group-curve"/>
+
+## See also
+- [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance)

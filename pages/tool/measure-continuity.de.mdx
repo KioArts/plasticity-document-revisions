@@ -1,0 +1,54 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+# Kontinuität messen
+
+<Reference shortcut="" command="Measure Continuity" button="Toolbar" buttonIcon='button-measure-continuity'/>
+
+Messen Sie die Kontinuität von Oberflächenkanten, indem Sie bestimmen, ob benachbarte Kanten G0‑, G1‑ oder G2‑Kontinuität aufweisen (G3 wird nicht unterstützt). Der Befehl erzeugt Kontinuitäts‑Kämme, eine interaktive Messung, die im Outliner unter Messungen abgelegt wird.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie zwei angrenzende und berührende Oberflächenkanten aus.  
+2. Geben Sie *Kontinuität messen* in der Befehls‑Palette ein.  
+3. Stellen Sie die Optionen im Befehlsdialog ein.  
+   - <Kst>Befehlsdialog</Kst>  
+         - **Kontinuität:** Prüft die Art der Kantenkontinuität:  
+            - **G0:** Prüft Positionskontinuität und gibt die Positionsabweichung in Ihren aktuellen Plasticity‑Einheiten aus.  
+            - **G1:** Prüft Tangential‑Kontinuität und gibt die Winkelabweichung (Grad) zwischen den angrenzenden Flächen aus.  
+            - **G2:** Prüft Krümmungs‑Kontinuität und gibt die Krümmungsabweichung als normalisierten Prozentsatz (0,0 – 1,0) aus.  
+         - **Kontinuitäts‑Marker:** Bitte hier ansehen [hier](#continuity-markers).
+   - <Kst>Krümmungs‑Dialog</Kst> – Bitte hier ansehen [hier](/plasticity-essentials/curvature).
+        - **G0‑Skala / G1‑Skala / G2‑Skala:**  
+                - Passt die visuelle Skalierung der Kämme und Abweichungs‑Diagramme an.  
+        - **Maxima anzeigen:**  
+                - Zeigt numerische Abweichungswerte und Kontinuitäts‑Marker entlang der ausgewerteten Kante an.  
+   - <Kst>Tastatur‑Kurzbefehle</Kst>  
+      - <kbd>Tab</kbd> **Durchlauf:** Durchläuft die Kontinuitäts‑Optionen.  
+4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.  
+5. Eine G0/G1/G2‑Kontinuitätsmessung wird erstellt und dem **Outliner** unter **Messungen** hinzugefügt.
+
+<VideoPlayer fileName="measure-continuity-0"/>
+
+## Kontinuitäts‑Marker[#continuity-markers]
+
+Die Kontinuitäts‑Marker‑Icons geben einen schnellen Überblick darüber, wie gut zwei angrenzende Flächen das gewählte Kontinuitäts‑Level erfüllen:
+
+- **G0 (Position)** – Punkte treffen sich.  
+- **G1 (Tangente)** – Tangenten sind ausgerichtet.  
+- **G2 (Krümmung)** – Krümmungswerte stimmen überein.
+
+Jedes Icon zeigt an, ob die gemessene Abweichung innerhalb der Toleranz liegt, einen definierten Ausnahmefall darstellt oder die geforderte Kontinuitätsbedingung nicht erfüllt.
+
+| Icon | Bedeutung |
+| :---: | --- |
+| <ButtonIcon type="button-green-check"/> | **Innerhalb der Toleranz**. Die Flächen erfüllen das gewählte Kontinuitäts‑Level (G0, G1 oder G2) und die gemessene Abweichung liegt im zulässigen Bereich. |
+| <ButtonIcon type="button-yellow-check"/> | **Sonderfall für G2‑Krümmungskontinuität**. Ein Abweichungswert von **1,0** wird als **„flach“** angezeigt, d. h. eine Fläche hat in einer Richtung einen unendlichen Krümmungsradius. Das gilt als **Ausnahme**, nicht als Fehler. Da dies zwischen den Toleranzgrenzen liegt, wird eine visuelle Prüfung mit [Shadern](/plasticity-essentials/shader-mode) empfohlen. |
+| <ButtonIcon type="button-yellow-warning"/> | **Kontinuitäts‑Abweichung über Level hinweg**. Das aktuelle Kontinuitäts‑Level liegt innerhalb der Toleranz, aber ein niedrigeres Kontinuitäts‑Order‑Requirement nicht. Beispiel: G1 ist innerhalb der Toleranz, während G0 fehlschlägt, sodass die Gesamtkonnektivität nicht erfolgreich ist. |
+| <ButtonIcon type="button-red-cross"/> | **Außerhalb der Toleranz**. Die Flächen können das gewählte Kontinuitäts‑Level nicht innerhalb des zulässigen Abweichungsbereichs erreichen. |
+
+## Siehe auch
+- [Toggle Curvature](/tool/toggle-curvature)

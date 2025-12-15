@@ -1,0 +1,63 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
+
+# Solid‑ und Sheet‑Instanz erstellen
+
+<Reference shortcut="" command="Instanz erstellen" button="In Befehls‑Palette"  buttonIcon="button-instance"/>
+
+Erstellen Sie wiederverwendbare Duplikate eines Solid‑ oder Sheet‑Objekts, ohne die zugrunde liegende Geometrie zu kopieren. Eine Instanz speichert Transformationsdaten (Position, Pivot‑Punkt, Rotation, Skalierung), Materialdaten und referenziert das ursprüngliche Solid‑Objekt, sodass jede Änderung an der Master‑Geometrie sofort in allen Instanzen reflektiert wird. Instanzen sind schreibgeschützte Kopien des Elternobjekts und können nicht unabhängig bearbeitet werden. Instanzen erscheinen mit einer mittel‑ bis hellgrauen Kantenfarbe, um sie vom Elternobjekt zu unterscheiden.
+
+<Callout>
+Verwenden Sie den Befehl **Instanz erstellen**, wenn Sie viele identische Teile benötigen – z. B. Befestigungselemente, Paneele oder wiederholende Strukturelemente – und dabei das Modell leichtgewichtig und wartungsfreundlich halten möchten.
+
+Instanzen funktionieren mit Array‑Befehlen wie [**Kurven‑Array**](/common/curve-array), [**Radial‑Array**](/common/radial-array) und [**Rechteck‑Array**](/common/rectangular-array).  
+
+Instanzen können zudem mit dem Befehl [**Spiegeln**](/common/mirror) verwendet werden, wodurch Live‑Symmetrie entsteht: Änderungen an der Master‑Geometrie aktualisieren automatisch alle gespiegelten Instanzen.
+</Callout>
+
+## Grundlegende Verwendung
+
+1. Wählen Sie das Solid oder Sheet aus, das Sie als Elternobjekt verwenden möchten.  
+2. Öffnen Sie die Befehls‑Palette, tippen Sie **Instanz erstellen** und führen Sie den Befehl aus.  
+3. Verschieben Sie die neu erstellte Instanz an die gewünschte Position.  
+4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+
+<Center width="600px">
+<VideoPlayer fileName="instance-solid-and-sheet"/>
+</Center>
+
+<Callout type="info" emoji="🗒️">
+**Hinweis:** Sobald eine Instanz erstellt wurde, können Sie diese beliebig oft duplizieren; alle Duplikate spiegeln weiterhin jede Änderung am ursprünglichen Elternobjekt wider.    
+</Callout>
+
+## Instanz‑Gruppen
+
+Das Instanziieren von Gruppen funktioniert analog zum Instanziieren einzelner Objekte.
+
+Wird eine Gruppe ausgewählt, die primäre Geometrie enthält, wird eine Instanz dieser Gruppe erstellt und außerhalb des Gruppenordners in einer eigenen Kategorie im Outliner abgelegt.
+
+<Center width="600px">
+![Instancing a Group Part 1](/img/instance-group-solid.png)
+</Center>
+
+| Nummer | Beschreibung |
+| :----: | ------------ |
+| 1 | Hauptgruppe mit Komponenten darin. |
+| 2 | Elternobjekte, die instanziiert werden. |
+| 3 | Instanz der Hauptgruppe, außerhalb der Hauptgruppe unter der Kategorie **„Instanzen“** platziert. |
+
+### Grundlegende Verwendung
+
+1. Wählen Sie im Outliner eine Gruppe zur Instanzierung aus.  
+2. Suchen Sie nach **Instanz erstellen** in der Befehls‑Palette und führen Sie den Befehl aus.  
+3. Verschieben Sie die instanzierte Gruppe.  
+4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+
+<VideoPlayer fileName="instance-group-solid"/>
+
+## Siehe auch
+- [Kurven‑Instanz erstellen](/sketch/create-curve-instance)

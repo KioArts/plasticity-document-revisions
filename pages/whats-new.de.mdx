@@ -1,259 +1,310 @@
 import Kst from '/components/KeyboardShortcutsTitle'
 import Reference from '/components/Reference'
 import { Tabs } from 'nextra/components'
+import { Center } from '/components/Center'
+import { SideBySide } from '/components/SideBySide'
 
-Veröffentlichungsdatum: 10. Juli 2025
+Veröffentlichungsdatum: 15. Dezember 2025
 
-# Plasticity 25.2 Versionshinweise
+# Plasticity 25.3 Versionshinweise  
 
-Plasticity 25.2 bringt eine Vielzahl von Verbesserungen und neuen Funktionen, die darauf abzielen, die Flächenmodellierung zu verbessern, die Benutzerfreundlichkeit zu erhöhen und Arbeitsabläufe zu optimieren. Nachfolgend finden Sie eine ausführliche Übersicht der Neuerungen:
+Plasticity 25.3 liefert ein umfassendes Set an Updates, die das Surface‑Modelling, präzises Editieren und die gesamte Workflow‑Effizienz vereinfachen. Das Update fügt Live‑Instanz‑Erstellung und -Realisation, radiale Messungen und Ellipsen‑Tools, automatische Pivot‑Anpassungen sowie Echtzeit‑Feedback zu Krümmung und Kontinuität hinzu und verfeinert gleichzeitig Array-, Mirror‑ und Sweep‑Funktionen.  
+
+Nutzer profitieren von Kantemanipulationen auf zylindrischen und konischen Flächen, Drag‑&‑Drop‑Materialhandhabung, schnellerer Navigation, neuen OBJ‑Export‑Optionen für Topologie‑Kontrolle und erweitertem Sprachsupport. Im Folgenden finden Sie eine detaillierte Übersicht der Neuerungen:
 
 ## 1. Neue Befehle
 
-### Neuer Align-Befehl
-- **Flächen ausrichten**  
-Align ist ein Werkzeug, das von xNURBS angetrieben wird und es ermöglicht, zwei Flächen (Sheets) mit konsistenter **G0** (Position), **G1** (Tangente) oder **G2** (Krümmung) Kontinuität auszurichten. Sie können die Zieloberfläche auswählen und deren Grad, Span und weitere Optionen anpassen, um die Qualität des Übergangs zu verbessern. Beachten Sie, dass dieses Werkzeug nur mit einer Studio-Lizenz verfügbar ist.
+### Create Instance‑Befehl
+- **Instanz‑Workflow**  
+Der *Create Instance*‑Befehl erzeugt Live‑Instanzen von Solids, Sheets, Curves und Groups, die auf die Originalgeometrie verweisen. Dadurch wird kein Mesh‑Duplikat erzeugt, Modelle bleiben leichtgewichtig und jede Änderung am Elternobjekt wird automatisch auf alle Instanzen übertragen.
 
-[Mehr erfahren](/solid/align)
+<Center 
+width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Instanz‑Beispiel‑GIF](/img/2025.3-instance-example.gif)
+</Center>
 
-### Neuer Measure Continuity-Befehl
-- **Kontinuität messen**  
-Measure Continuity erlaubt es, Kantenpaare auszuwählen und deren Kontinuität (G0, G1 oder G2) in Echtzeit zu bewerten, während der Befehl aktiv ist. Dieses Werkzeug ist auch in das **Align**-Werkzeug integriert, um Ihren Arbeitsablauf zu optimieren.
+Mehr erfahren – [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance) und [Create Curve Instance](/sketch/create-curve-instance)
 
-[Mehr erfahren](/solid/measure-continuity)
+### Realize Instances‑Befehl
+- **Von Instanz zu realem Körper**  
+Der *Realize Instances*‑Befehl wandelt ausgewählte Instanz‑Objekte in editierbare reale Körper um, sodass Sie die resultierende Geometrie vollständig kontrollieren können.
 
-### Neuer Measure Curvature-Befehl
-- **Krümmung von Kurven und Flächen messen**  
-Measure Curvature ermöglicht die Beurteilung der Krümmung von Flächenkanten und Kurven mittels eines Krümmungskamms. Dieses Werkzeug bietet eine visuelle Darstellung der Krümmungsvariation, was hilft, die Formqualität und Glätte von Flächen und Kurven zu beurteilen, die visuell schwer einzuschätzen sind.
+<Center 
+width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Realize Instances Beispiel‑GIF](/img/2025.3-realize-instances-example.gif)
+</Center>
 
-[Mehr erfahren](/sketch/measure-curvature)
+Mehr erfahren – [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) und [Realize Curve Instances](/sketch/realize-curve-instances)
 
-### Neuer Fork Material-Befehl
-- **Material duplizieren und bearbeiten**  
-Fork Material ist ein Befehl, der das Material ausgewählter Objekte dupliziert und zur Bearbeitung freigibt. Das neue Material wird im Menü [Assets](/plasticity-essentials/assets) erstellt und gespeichert.
+### Publish to Plasticity Share‑Befehl
+- **Online‑Upload & Sharing von *.plasticity‑Dokumenten***  
+*Publish to Plasticity Share* ist ein neuer Export‑Befehl, der Ihnen einen Web‑Link zu Ihrer Arbeit bereitstellt. Es wird ausschließlich das Mesh‑Daten‑Set (keine CAD‑Geometrie oder Quell‑Dateien) hochgeladen, sodass die geteilte Datei nur in der Vorschau angezeigt, aber nicht heruntergeladen werden kann – das spart Cloud‑Speicher. Ideal, um schnell Visualisierungen zu zeigen, ohne Projektdateien preiszugeben.
 
-[Mehr erfahren](/common/fork-material)
+[Mehr erfahren](/common/publish-to-plasticity-share)
 
-### Neuer Unlock All-Befehl
-- **Alle Objekte entsperren**  
-Unlock All entsperrt alle gesperrten Objekte und Gruppen im Outliner. Dies bietet eine schnelle Möglichkeit, mehrere Elemente gleichzeitig zu entsperren, wodurch Zeit gegenüber dem manuellen Auswählen jedes einzelnen Objekts gespart wird.
+### Measure Radius‑Befehl
+- **Radiale Messung**  
+Ein dedizierter *Measure Radius*‑Befehl für Objekte mit radialer Geometrie (Zylinder, Kegel usw.).
 
-[Mehr erfahren](/plasticity-essentials/outliner#toggle-object-states)
+<Center 
+width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Radial‑Mess‑Beispiel‑GIF](/img/2025.3-measure-radial-example.gif)
+</Center>
 
-### Neue Export-Befehle
-- **Export von STEP und SAT**  
-Sie können jetzt STEP- und SAT-Dateiformate direkt aus der [Befehlsübersicht](/plasticity-essentials/command-palette) exportieren, um schnelleren Zugriff zu erhalten.
+[Mehr erfahren](/common/measure-radius)
 
-| Befehl       | Dateiformat               |
-| ------------ | ------------------------ |
-| Export STEP  | STEP (*.stp; *.step)      |
-| Export SAT   | SAT (*.sat)               |
+### Neues Ellipsen‑Tool
+- **Ellipse‑Tool**  
+Das *Ellipse*‑Tool steht jetzt in Plasticity zur Verfügung und ermöglicht präzise Erstellung von Ellipsen.
 
-[Mehr erfahren](/plasticity-essentials/import-export#file-export)
+<Center 
+width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Ellipse‑Tool‑Beispiel‑GIF](/img/2025.3-ellipse-tool-example.gif)
+</Center>
 
-### Neue Select All-Befehle
-- **Alle Messungen, Festkörper und Flächen auswählen**  
-Schnelles Auswählen aller sichtbaren Messungen, Festkörper und Flächen im Viewport. Dies ist besonders nützlich, wenn Objekte auf mehrere Gruppen im Outliner verteilt sind und hilft, effizienter zu arbeiten, ohne jedes Element manuell auszuwählen.
+[Mehr erfahren](/tool/ellipse)
 
-| Befehl                | Hinweis                             |
-| --------------------- | ---------------------------------- |
-| Alle Flächen auswählen | Wählt alle Flächen im sichtbaren Viewport aus. |
-| Alle Festkörper auswählen | Wählt alle Festkörper im sichtbaren Viewport aus. |
-| Alle Messungen auswählen | Wählt alle Messungen im sichtbaren Viewport aus. |
+## 2. Modellierungs‑Verbesserungen
 
-[Mehr erfahren](/plasticity-essentials/selecting-objects)
+### Mess‑ und Kurven‑Darstellungs‑Update
+- **Messungen** – Pfeile werden nun an den Enden der Maßlinien angezeigt.  
 
-## 2. Verbesserungen im Modellieren
+<Center width="500px">
+![Mess‑Darstellungs‑Änderung](/img/2025.3-measurement-changes-example.svg)
+</Center>
 
-### Verbesserung des Square-Befehls
-- **Individuelle Spannungswerte**  
-Der Square-Befehl erlaubt jetzt die Einstellung individueller Spannungswerte für jede Kantenbeschränkung.
+- **Kurven** – Dünnere Strichstärke reduziert visuelles Durcheinander in dichten Szenen.  
 
-[Mehr erfahren](/solid/square)
+<Center width="500px">
+![Kurven‑Darstellungs‑Änderung](/img/2025.3-curve-changes-examples.svg)
+</Center>
 
-### Verbesserung des Boolean-Befehls
-- **Neue Operation: Region**  
-Eine neue **Region**-Option wurde zum Boolean-Befehl hinzugefügt. Sie erzeugt einzelne Festkörper aus eingeschlossenen Bereichen, die durch überlappende Körper gebildet werden.
-- **Neues Advanced-Optionsfeld**  
-Ein **Erweitert**-Bereich ist jetzt unter dem Hauptdialog des Boolean-Befehls verfügbar. Er beinhaltet Optionen wie **Zielmaterial** und **Werkzeugmaterial**, die mehr Kontrolle über die Objektzuweisung während Boolean-Operationen ermöglichen.
+### Snap‑to‑Grid
+- **Skalierungs‑Gizmo** – Inkrementelles Snapping wird jetzt respektiert, wenn Grid‑Snapping beim Skalieren aktiviert ist.
 
-[Mehr erfahren](/solid/boolean)
+### Snap‑Punkt
+- **Kugelflächen** – Kugelflächen erhalten jetzt einen **Center**‑Snap‑Punkt.
 
-### Verbesserung des Bridge Curve-Befehls
-- **Neue Tension-Gizmos**  
-Tension-Gizmos sind jetzt für Bridge Curve verfügbar und erlauben eine präzise Angabe der Spannungsparametrisierung während der Operation. Die Bedienung ist intuitiv und optimiert den Workflow.
-- **Direktes Verschieben der Tension-CVs**  
-Die Spannung für G1, G2 und G3-Kontinuität kann nun durch direktes Verschieben der sichtbaren Kontrollpunkte (CVs) auf dem Bildschirm angepasst werden.
-- **Krümmungskämme**  
-Die Krümmungsmessung ist optional während des Bridge Curve-Befehls im Menü **Analyse** verfügbar. Beim Öffnen des Menüs können Krümmungskämme angezeigt werden, um die Kurvenform in Echtzeit zu beurteilen.
+[Mehr erfahren](/plasticity-essentials/snap)
 
-[Mehr erfahren](/sketch/bridge-curve)
+### Move‑Tool
+- **Solid‑ und Sheet‑Kanten‑Manipulation** – Das Verschieben einer Kante eines Solid‑ oder Sheet‑Körpers unterstützt jetzt kreisförmige Kanten auf zylindrischen und konischen Flächen. Die analytische Geometrie dieser Flächen bleibt erhalten. Sowohl innere als auch äußere Oberflächenkanten können manipuliert werden, sofern die angrenzenden Flächen planar, zylindrisch oder konisch sind und die zu bewegende Kante eine Linie oder ein Kreis ist.
 
-### Fillet Shell Operation
-- **Spannungsparameter**  
-Beim Verrunden von Schalen oder Kanten kann jetzt der Spannungsparameter eingestellt werden, um das Ausmaß der Rundung zu steuern. Diese Option ist für alle Formtypen außer der Option **Voll** verfügbar.
+<Center 
+width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Kanten‑Manipulations‑Beispiel‑GIF](/img/2025.3-edge-manipulation-example.gif)
+</Center>
 
-[Mehr erfahren](/solid/fillet-shell)
+[Mehr erfahren](/common/move)
 
-### Verbesserung des Loft-Befehls
-- **Planare Flächen vereinfachen**  
-Der Loft-Befehl enthält jetzt eine neue **Vereinfachen**-Option, die steuert, wie planare Abschnitte von Loft-Flächen erzeugt werden. Diese Option ist standardmäßig aktiviert und erzeugt vereinfachte, zugeschnittene Patches für planare Bereiche, bei denen das CV-Layout sonst inkonsistent wäre. Wird Vereinfachen deaktiviert, generiert der Loft eine Zwischengeometrie zwischen den Profilen, was einen Tweening-Effekt mit einem konsistenten CV-Layout über die gesamte Fläche erzeugt.
+### Pivot‑Punkt
+- **Automatische Pivot‑Anpassung** – Der Pivot‑Punkt richtet sich automatisch nach der Oberflächennormale an der Stelle, an der ein Primitive‑ oder Sketch‑Objekt zuerst platziert wird. Betroffene Werkzeuge:
 
-[Mehr erfahren](/solid/loft)
+| Primitive‑Werkzeuge | Sketch‑Werkzeuge |
+| ------------------- | ---------------- |
+|[Corner Box](/tool/corner-box) | [Corner Rectangle](/tool/corner-rectangle) |
+|[Center Box](/tool/center-box) | [Center Rectangle](/tool/center-rectangle) |
+|[Cylinder](/tool/cylinder) | [Three Point Rectangle](/tool/three-point-rectangle) |
+| – | [Center Circle](/tool/center-circle) |
+| – | [Two point Circle](/tool/two-point-circle) |
+| – | [Three Point Circle](/tool/three-point-circle) |
+| – | [Regular Polygon](/tool/polygon) |
+| – | [Ellipse](/tool/ellipse) |
 
-### Verbesserung des Isoparam-Befehls
-- **Fläche unterteilen**  
-Der Isoparam-Befehl enthält jetzt eine **Unterteilen**-Option, mit der eine Fläche gesplittet wird, ohne das CV-Layout zu verändern. Wenn aktiviert, wird eine isoparametrische Linie eingefügt, die die Fläche halbiert, und die resultierenden Flächen behalten die gleiche zugrundeliegende CV-Struktur wie die Originalfläche.
+## 3. Allgemeine Verbesserungen
 
-[Mehr erfahren](/solid/isoparam)
+### Maus‑Navigation
+- **Navigation** – Der Mausrad‑Zoom wurde beschleunigt, um schneller in große Szenen hinein‑ bzw. herauszuzoomen.
 
-### Verbesserung des Reverse-Befehls
-Der Reverse-Befehl kann jetzt mehrere Körper gleichzeitig bearbeiten, indem er deren Richtung (bei Kurven) oder Normalenrichtung (bei Flächen) simultan umkehrt.
+### Performance
+- **Kurven** – Optimierungen für Szenen mit vielen sich schneidenden Kurven.  
+- **Snap‑to‑OBJ** – Snapping an OBJ‑Dateien ist jetzt schneller und reagiert bei Face‑ und Vertex‑Snaps sofort.
 
-## 3. Verbesserte Befehle
+### Lokalisierung
+- **Neue Sprachen** – Sie können bis zu 10 bevorzugte Sprachen in den **Einstellungen** konfigurieren.
 
-### Duplizieren-Befehl
-- **Rekursive Duplizierung**  
-Im Outliner ist es jetzt möglich, Gruppenhierarchien rekursiv zu duplizieren. Früher konnte nur die übergeordnete Gruppe dupliziert werden, ohne die enthaltenen Unterobjekte. Mit diesem Update werden nun alle Kinder innerhalb einer Gruppe zusammen mit der Elterngruppe dupliziert.
-
-[Mehr erfahren](/plasticity-essentials/outliner#group-objects)
-
-### Unjoin-Befehl
-- **Flächen trennen**  
-Der Unjoin-Befehl kann jetzt Flächen aus mehreren Körpern gleichzeitig trennen.
-
-### Bemaßungs-Befehl
-- **Liniensegment**  
-Der Bemaßungs-Befehl unterstützt jetzt die Bearbeitung der Bemaßungseigenschaften einzelner Liniensegmente.
-
-### Loft-Befehl
-- **Fehleranzeige**  
-Der Loft-Befehl zeigt jetzt eine klarere Fehleranzeige, indem er Führungskurven, die die Profile nicht berühren, mit einem roten Punkt markiert.
+| Language | Note |
+| -------- | ---- |
+| Deutsch | |
+| English | (Default: Selected) |
+| Español | |
+| Français | |
+| Italiano | |
+| 日本語 | |
+| Português | |
+| Русский | |
+| Svenska | |
+| 中文 | |
+| 繁體中文 | |
 
 ## 4. Neue Funktionen
 
-### Auswahl-Befehl
-- **Auswahl umkehren**  
-Der Befehl „Auswahl umkehren“ unterstützt jetzt auch Kanten und Flächen.
+### Export & Import
+- **Export SVG** – SVG‑Dateien können jetzt aus Plasticity exportiert werden.
 
-### Kontextmenü für Auswahl
-- **Auswahl mehrdeutiger Objekte**  
-Wenn mehrere Objekte sich überlappen, hilft ein Auswahl-Kontextmenü dabei, anhand des aktuellen Auswahlmodus das gewünschte Objekt zu bestimmen. Dieses Menü öffnet sich mit <kbd>Strg + Shift</kbd> + Linksklick oder Linksklick beim Scrollen des Mausrads.
+[Mehr erfahren](/plasticity-essentials/export-svg)
 
-[Mehr erfahren](/plasticity-essentials/selecting-objects)
+### Render‑Mode
+- **Neues Standard‑HDRI** – Ein neues Standard‑Umgebungs‑HDRI wurde zur Sammlung im [Render Mode](/plasticity-essentials/render-mode) hinzugefügt und ist aktivierbar.
 
-### Punkt-Auswahlmodus
-- **CV-Hülle auswählen**  
-Durch Halten von <kbd>Alt</kbd> und Überfahren der CV-Hülle kannst du nun eine ganze Reihe von CVs auswählen. Die hervorgehobene Vorschau zeigt die Richtung der Schleifenauswahl an, bevor du klickst.
+<Center width="230px">
+![Neues HDRI‑Umfeld](/img/2025.3-new-hdri.png)
+</Center>
 
-### Auswahl-Panel
-- **Rational oder Nominal**  
-Das Auswahl-Panel zeigt jetzt an, ob die ausgewählte Fläche rational oder nominal ist.  
-- **Parallele Distanz**  
-Bei Auswahl planarer Flächen zeigt das Auswahl-Panel nun den Abstand zwischen parallelen Flächen.
+### Assets‑Menü
+- **Neues PBR‑Material** – Das Material *Cathedral Tile* wurde zur Physical‑Material‑Library hinzugefügt.  
 
-### Verlängern-Befehl
-- **Blatt verlängern**  
-Der Befehl hat jetzt eine Dialogoption **Limit**, mit der die Verlängerung eines Blattes bis zur Innenseite oder Außenseite eines Zielkörpers begrenzt wird.
+<Center width="230px">
+![Neues Material](/img/2025.3-new-physical-material.png)
+</Center>
 
-[Mehr erfahren](/solid/extend-sheet)
+- **Highlight‑Indikator** – Beim Überfahren eines Materials im *Assets*‑Tab werden alle Objekte, die dieses Material verwenden, im Viewport hervorgehoben.  
 
-- **Kurve und Punkt verlängern**  
-Beide Befehle erlauben jetzt optional ein Ziel, um die Verlängerungslänge der Kurve zu definieren.
+<Center width="600px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Assets‑Tab‑Highlight‑Indikator](/img/2025.3-highlight-indicator.gif)
+</Center>
 
-### Untrim-Befehl
-- **Geprägte Kanten**  
-Der Untrim-Befehl bietet nun die Option, geprägte Kanten nach dem Entfernen des Trimmens einer Fläche beizubehalten.
+- **Drag‑&‑Drop‑Material** – Sie können jetzt ein physikalisches Material aus der **Material‑Library** im *Assets*‑Menü per Drag‑&‑Drop direkt auf ein Objekt im Viewport legen – ein Feature, das in früheren Versionen fehlte.  
 
-[Mehr erfahren](/solid/untrim)
+<Center width="600px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Drag‑And‑Drop‑Material](/img/2025.3-assets-menu-material-update.gif)
+</Center>
 
-### Dialogfelder
-- **Numerische Felder**  
-Plasticity unterstützt jetzt zusätzlich zur Grundrechenarten auch die mathematische Konstante **π (Pi)** in allen numerischen Eingabefeldern in Dialogen.
+[Mehr erfahren](/plasticity-essentials/assets)
 
-| Typ | Operation | Beispiel |
-| ----- | -------- | ------- |
-| (+) | Addition | `35 + 12` (**Ergebnis:** 47.0) |
-| (-) | Subtraktion | `35 - 12` (**Ergebnis:** 23.0) |
-| (*) | Multiplikation | `35 * 12` (**Ergebnis:** 420.0) |
-| (/) | Division | `35 / 12` (**Ergebnis:** 2.917) |
-| (pi) | Mathematische Konstante | `2 * pi * 3.15` (**Ergebnis:** 19.792) |
+### Export OBJ
+- **Kleine Details entfernen** – Definieren Sie einen Schwellenwert, um Oberflächendetails anhand numerischer Werte zu entfernen – praktisch für High‑Poly‑zu‑Low‑Poly‑Workflows, Textur‑Baking und allgemeine Mesh‑Bereinigung.
 
-Numerische Felder unterstützen außerdem **Einheitenumrechnung** basierend auf den aktuellen Einheiten in Plasticity.
+<Center width="600px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Kleine Details entfernen](/img/2025.3-remove-small-features.gif)
+</Center>
 
-| Einheit | Umrechnung zu cm | Beispiel |
-| ------- | ---------------- | -------- |
-| mm (Millimeter) | 1 mm = 0.1 cm | `5 + 2mm` (**Ergebnis:** 5.2 cm) |
-| cm (Zentimeter) | 1 cm = 1 cm | `5 + 2cm` (**Ergebnis:** 7.0 cm) |
-| m (Meter) | 1 m = 100 cm | `5 + 2m` (**Ergebnis:** 205.0 cm) |
-| in (Zoll) | 1 in = 2.54 cm | `5 + 2in` (**Ergebnis:** 10.08 cm) |
-| ft (Fuß) | 1 ft = 30.48 cm | `5 + 2ft` (**Ergebnis:** 65.96 cm) |
+- **Radiale Flächen vereinfachen** – Wenn möglich, wird radiale Geometrie vereinfacht und die Kantenausrichtung so angepasst, dass Kanten kontinuierlich bleiben. Am besten geeignet für relativ einfache Formen.
 
-![Beispiel numerische Werte](/img/numeric-values-dialog.gif)
+<Center width="600px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Radiale Flächen vereinfachen](/img/2025.3-simplify-radial-surface-export.gif)
+</Center>
 
-### Schneide-Befehl
-- **Verlängern**  
-Der Schneide-Befehl enthält jetzt eine Option **Verlängern** für Kurvenschneider. Wenn die Kurve zu kurz ist, um das Zielobjekt vollständig zu schneiden, wird die Kurve verlängert, um einen vollständigen Schnitt zu gewährleisten.
+- **Ngon‑Optimierung** – Ist der Topologie‑Modus auf **Ngons** gesetzt, verhindert die Option *Convex Ngons Only* die Erzeugung konkaver Ngons – wichtig für Exporte nach RizomUV, 3ds Max usw., wo konkave Ngons zu falschen Normalen oder Schattierungsartefakten führen können.  
 
-[Mehr erfahren](/sketch/cut-curve)
+<Center width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Ngon‑Shading‑Optimierung](/img/2025.3-ngon-shading-optimization-export.svg)
+</Center>
 
-### Sweep, Pipe und Kurven-Array
-- **Verlängerungsmethoden**  
-Sweep, Pipe und Kurven-Array bieten nun neue **Verlängerungsmethoden** – *Sweep: Abstand, Pipe: Abstand, Kurven-Array: Verlängern und Methode* – mit denen die Verlängerung oder Rücknahme des Sweep-Körpers, Pipe-Körpers oder der Duplikate entlang der Pfadkurven gesteuert werden kann.
+- **Leere und Instanz‑Objekte exportieren** – Der *Export OBJ*‑Befehl unterstützt jetzt leere Meshes (STL, FBX, OBJ) und Instanzen. Nicht‑konvertierte Instanzen werden ebenfalls exportiert. Ohne Auswahl wird alles Sichtbare im Viewport exportiert.
 
-Mehr erfahren: [Sweep](/solid/sweep), [Pipe](/solid/pipe), [Kurven-Array](/common/curve-array)
+[Mehr erfahren](/plasticity-essentials/export-obj)
 
-### Prägen und Projekt-Körper
-Beide Befehle unterstützen jetzt mehrere Werkzeugkörper gleichzeitig, statt nur einzelne Werkzeugpaare zu verarbeiten.
+## 5. Verbesserte Features
 
-## 5. Verbesserte Funktionen
+### Viewport
+- **Drag‑&‑Drop‑Material** – Sie können jetzt einen Material‑Punkt aus dem Outliner direkt in den Viewport ziehen – eine Alternative zum klassischen Drag‑&‑Drop von Materialpunkten zwischen Objekten innerhalb des Outliners.
 
-### Kamera
-- **FOV-Änderung**  
-Das Standard-Sichtfeld (FOV) der Perspektivkamera wurde von **50** auf **35** reduziert. Diese Anpassung behebt häufig gemeldete Clipping-Probleme, die oft durch die Einheitenskalierung oder sehr kleine Szenentoleranzen verursacht werden. Falls weiterhin Clipping auftritt, empfiehlt es sich, das FOV weiter zu verringern, um die Sichtbarkeit zu verbessern.
+<Center width="600px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Neuer Ansatz zum Zuweisen von Materialien](/img/2025.3-outliner-to-viewport-material-update.gif)
+</Center>
 
-### Benutzeroberfläche
-- **Visueller Zoom**  
-Im Bereich „Erscheinungsbild“ wurde eine neue Option **Zoomfaktor** hinzugefügt, mit der du den visuellen Zoom der Benutzeroberfläche erhöhen kannst.
+[Mehr erfahren](/plasticity-essentials/outliner#material-color)
 
-### Werkzeugleiste
-Die Werkzeugleiste merkt sich nun die Position an der Viewport-Seite zwischen Sitzungen und nach Neustarts.
+### Mesh‑Objekte
+- **Origin‑Pivot** – Sie können jetzt den Pivot‑Punkt von Mesh‑Objekten (STL, FBX, OBJ) manipulieren und dessen Position nach Wunsch speichern.
 
-### „Alles auswählen“-Befehl
-Beim Ausführen werden nun gesperrte Objekte im Outliner übersprungen.
+### Einstellungen
+- **Verbesserte Facettierungs‑Einstellung** – Ändern Sie die Facettierungs‑Dichte, ohne Plasticity neu zu starten. Diese Einstellung gilt für neue Körper und Bearbeitungen; bestehende Körper werden nicht neu facettiert.
 
-### Assets
-Das Assets-Menü zeigt jetzt den Materialkatalog mit durchsuchbaren Vorschaubildern und Filtern an.
+## 6. Verbesserte Befehle
 
+### Array‑Befehle
+- **Instanzen, Meshes und Bilder arrayen** – Jetzt können Instanzen, Meshes und Bilder in Plasticity ge‑arrayt werden. Mögliche Array‑Befehle:
 
-## 6. Verbesserungen beim Shading  
-Plasticity bietet jetzt erweiterte Shading-Funktionen, die das Visualisieren deiner Arbeit einfacher und effektiver machen. Im Folgenden findest du die wichtigsten Neuerungen und Details:
+| Array‑Befehle |
+| -------------- |
+|[Curve Array](/common/curve-array) |
+|[Radial Array](/common/radial-array) |
+|[Rectangular Array](/common/rectangular-array) |
 
-### Physikalische Materialien  
-Plasticity beinhaltet nun eine Sammlung von 34 physikalischen Materialien, die im Assets-Panel zugänglich sind. Diese Materialien werden sichtbar, wenn der **Render-Modus** aktiviert ist.
+- **Make Instances‑Option** – Array‑Befehle besitzen jetzt die Option *Make Instances*.
 
-[Mehr erfahren](/plasticity-essentials/assets#physical-materials)
+Mehr erfahren – [Curve Array](/common/curve-array), [Radial Array](/common/radial-array), [Rectangular Array](/common/rectangular-array)
 
-### Render-Modus  
-- **HDRI**  
-Wähle aus einer Auswahl von HDRIs und rotiere sie für individuelles Licht und Reflexionen.  
-- **Boden-Schatten**  
-Schatten werden jetzt auf die Bodenebene projiziert, wodurch die Silhouette deines Objekts für besseren visuellen Kontext angezeigt wird.  
-- **Ambient Occlusion**  
-Ambient Occlusion ist im Render-Modus immer aktiviert und kann unter Einstellungen > Erscheinungsbild konfiguriert werden.
+### Transform
+- **Instanzen und Meshes** – Der *Mirror*‑Befehl kann jetzt Meshes (STL, FBX, OBJ) und Instanzen spiegeln.  
+- **Mirror‑Scale bei Instanzen** – Ein Skalierungswert von ‑1 auf einer Achse spiegelt die Instanz entlang dieser Achse und wird vollständig unterstützt.
 
-[Mehr erfahren](/plasticity-essentials/render-mode)
+### Measure Curvature
+- **Neuer Befehlsname** – *Measure Curvature* heißt jetzt *Toggle Curvature*. Der Befehl lässt die Krümmungsanzeige im Outliner unter **Measurements → Curvature** ein‑ und ausschalten.  
+- **Neues Panel‑Menü** – *Toggle Curvature* hat jetzt ein eigenes Panel‑Menü im rechten Seitenpanel, wo Sie die Kamm‑Größe anpassen und die Sichtbarkeit über „Comb scale“ steuern können.
 
-### Shader-Modus  
-- **Ambient Occlusion**  
-Ambient Occlusion kann auch bei deaktiviertem Render-Modus über Einstellungen > Leistung eingeschaltet werden. Hinweis: Dies wird für Systeme mit leistungsfähigen GPUs (z. B. RTX 3060 oder höher) empfohlen.  
-- **Topology Shader**  
-Ein neuer Shader, der ein Drahtgitter-Look auf deinem Modell anzeigt. Ideal für importierte Meshes und Reverse Engineering. Hilft bei der Analyse komplexer organischer Formen mit feinen Kurven und Deformationen, die mit anderen Shadern schwer zu erkennen sind.  
-- **Normal Checker**  
-Dieser Shader zeigt die Richtung der Oberflächennormalen, indem Flächen blau gefärbt werden, wenn sie nach außen zeigen, und rot, wenn sie nach innen zeigen. Funktioniert mit dem Reverse-Befehl, um die Normalenorientierung schnell zu korrigieren.
+<Center width="270px">
+![Neues Panel‑Menü](/img/2025.3-curvature-panel.svg)
+</Center>
 
-[Mehr erfahren](/plasticity-essentials/shader-mode)
+- **Live‑Feedback** – Während *Toggle Curvature* aktiv ist, können Sie Kurven und Kanten in Echtzeit manipulieren und erhalten sofortiges visuelles Feedback – besonders nützlich beim Optimieren der Krümmung zusammen mit dem [Slide](/solid/slide)‑Befehl.
 
-## Frühere Update-Informationen
+<Center width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Krümmung in Echtzeit](/img/2025.3-curvature-manipulation-example.gif)
+</Center>
 
-- 25. Februar 2025 [Version 2025.2](/release-notes/whats-new-2025.1)
+- **Dateikompatibilität** – Dateien, die in Version 25.3 erstellt wurden, öffnen sich in älteren Plasticity‑Versionen; vorhandene Krümmungsmessungen werden dabei automatisch entfernt, statt einen Fehler zu werfen.
+
+[Mehr erfahren](/tool/toggle-curvature)
+
+### Measure Continuity
+- **Neues Panel‑Menü** – *Measure Continuity* besitzt jetzt ein eigenes Panel‑Menü im rechten Seitenpanel. Dort können Sie die Kombigröße für G0/G1/G2 über die jeweiligen *Scale*‑Regler einstellen und die Anzeige von Max‑Werten mit *Show maxes* umschalten.
+
+<Center width="270px">
+![Neues Panel‑Menü](/img/2025.3-curvature-panel.svg)
+</Center>
+
+- **Live‑Feedback** – Wie bei *Toggle Curvature* erhalten Sie sofortige visuelle Rückmeldung, während Sie Kurven/Kanten bearbeiten.
+
+<Center width="400px"
+border="1px solid #221458ff"
+borderRadius="8px">
+![Kontinuität in Echtzeit](/img/2025.3-continuity-manipulation-example.gif)
+</Center>
+
+[Mehr erfahren](/tool/measure-continuity)
+
+### Section Analysis
+- **Mesh‑Objekte** – Der *Section Analysis*‑Befehl erzeugt einen virtuellen Schnitt durch Meshes (STL, FBX, OBJ).
+
+[Mehr erfahren](/common/section-analysis)
+
+### Sweep
+- **Erweiterte Optionen** – *Sweep* enthält jetzt die Ecktypen **Mitre** und **Round**. Bei äußeren Ecken erzeugt *Mitre* scharfe Winkel, *Round* rundet sie ab (am besten bei 90°‑Ecken).
+
+[Mehr erfahren](/solid/sweep)
+
+## 7. Sonstiges
+
+### Tastenkürzel
+- **Standard‑Tastenkombination entfernt** – Die Standard‑Belegung für *Subdivide* (Alt + S) wurde entfernt.
+
+## Frühere Updates
+
+- 10. Juli 2025 – [Version 2025.2](/release-notes/whats-new-2025.2)

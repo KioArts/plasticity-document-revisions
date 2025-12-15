@@ -1,0 +1,101 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+# Toggle Surface Curvature
+
+<Reference shortcut="" command="Toggle Curvature" button="Toolbar" buttonIcon='button-toggle-curvature' />
+
+Measure the curvature of surface edges, curves, and isoparams using a curvature comb (displayed in white) to visually evaluate shape quality and smoothness.
+
+![Measure Curve and Surface Curvature](/img/measure-curve-surface-curvature.png)
+
+<details>
+  <summary>What is Curvature Evaluation?</summary>
+  <div className="px-4">
+    <p className="mt-2">
+      The <strong>Toggle Curvature</strong> tool analyzes the curvature of curves or surfaces to help you evaluate smoothness and continuity.
+      It displays curvature combs that represent the curvature radius at different points, which is especially helpful for ensuring high-quality surfaces.
+    </p>
+
+    <img src="/img/curvature-comb.png" alt="Curvature Comb" className="mt-4" />
+
+    <p className="mt-2">
+      **Curvature** is calculated as the inverse of the radius at any given point on the curve. This value is represented graphically at discrete intervals using curvature "combs". The way these combs change along the curve - also known as the **flow** - gives insight into the curve's shape and behavior.
+
+      1. The **length** of each curvature line is proportional to the inverse of the radius of the curve at that point. In other words, greater curvature corresponds to a smaller radius, which results in a longer curvature line. 
+      2. The **direction** of each curvature line is perpendicular (normal) to the curvature at each point.  
+      3. The **red** outline, in this example, represents the shape and flow of the curve. 
+
+      > **Note:** If the edge of a surface or curve is flat, the tool will show no result because there is no curvature to display.
+    </p>
+  </div>
+</details>
+
+
+<details>
+  <summary>Evaluating Continuity</summary>
+  <div className="px-4">
+  <p className="mt-2">
+    Use the tool to assess whether a surface or curve maintains **G0**, **G1**, **G2** and **G3** continuity at connection points.
+
+    <ul>
+    **G0** (Position Continuity) - Surfaces and curves meet at the same point but form a visible corner or break in direction.
+
+    **G1** (Tangent Continuity) - Surfaces and curves meet with aligned tangents, however, the radius values differ at the join, resulting in disconnected curvature outlines.
+
+    **G2** (Curvature Continuity) - Curvature matches across the connection of surfaces and curves, resulting in a smooth transition with no visual or reflective break. However, the curvature outlines are not tangent.
+
+    **G3** (Acceleration Continuity) - Curvature and radius values are matched at the join, and the curvature outlines are tangent. This ensures a smooth change in curvature across the junction, removing very subtle reflection breaks. 
+    </ul>
+    For more information on Continuity, click [here](/cad-essentials/continuity-curve-and-surface). 
+
+    ![Curvature Examples on G0, G1, and G2](/img/curvature-0.png)
+  </p>
+  </div>
+</details>
+
+<details>
+  <summary>Understanding Curvature Combs</summary>
+  <div className="px-4">
+  <p className="mt-2">
+  The curvature comb plots are read by observing how the lengths of the comb lines vary along the curve from beginning to end.
+
+  Below are examples of how to read them:
+  <ul>
+    - **1.** When the comb lines are of equal length, it indicates a uniform radius such as in a circular arc.  
+    - **2.** Variation in the length of the comb lines signals a change in curvature, representing acceleration or deceleration in the curve's form.  
+    - **3.** Inflection is shown where the comb lines flip sides and at the exact point, the comb line length becomes zero (no curvature) and the curve is momentarily flat.  
+    - **4.** Breaks in the comb lines indicate curvature discrepancies across [edit points](/cad-essentials/nurbs-overview#spans) or between two curves.  
+  </ul>
+
+    ![Understanding Curvature Combs](/img/curvature-comb-1.png)
+
+  </p>
+  </div>
+</details>
+
+## Basic Usage
+
+1. Select the surface edge you want to measure.
+2. Open the Command Palette, type "Toggle Curvature", and run the command.
+3. Adjust the curvature comb scale in the Curvature panel on the right:
+   - <Kst>[Curvature Dialog](/plasticity-essentials/curvature)</Kst>
+     - **Comb Scale:** Adjusts the size of combs.
+4. A new curvature measurement appears in the Outliner under Measurements.
+
+<VideoPlayer fileName="measure-curvature-0"/>
+
+<Callout type="info" emoji="💡">
+**Info**    
+Curvature evaluation helps you:
+    - **Ensure surface quality:** Identify and remove ripples, dents, or unintended kinks to maintain smooth transitions.
+    - **Verify continuity:** Assess whether surfaces meet with G0 (position), G1 (tangent), G2 (curvature), or G3 (acceleration) continuity.
+    - **Refine reflection flow:** Assess whether surfaces appear seamless under various lighting conditions.
+    - **Predict manufacturability:** Sharp curvature changes can pose challenges in machining, molding, or fabrication.
+</Callout>
+
+## See also
+- [Measure Continuity](/tool/measure-continuity)

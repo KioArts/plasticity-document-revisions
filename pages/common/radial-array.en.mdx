@@ -2,12 +2,17 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Radial Array
 
 <Reference shortcut="" command="Radial Array" button="Right of Command Bar"  buttonIcon='button-radial-array'/>
 
-Duplicate objects in a circular pattern by specifying the angle and number. Radial duplication is also possible.
+Duplicate objects in a circular pattern by specifying the angle and number. Radial and instance duplication are also possible.
+
+<Callout>
+Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for duplication angle and number of copies. However, instancing them is not supported.
+</Callout>
 
 ## Basic Usage
 
@@ -21,9 +26,10 @@ Duplicate objects in a circular pattern by specifying the angle and number. Radi
          - **Total:** Specify the total distance at which all duplications will be evenly arranged at the given degree value. 
          - **Spacing:** Specify the spacing distance for each of the duplications.
    - **Degrees:** Specify the angle for duplication.
-   - **Number:** Specify the number of duplications.
-   - **Repeat:** Specify the number of repetitions in a radial pattern.
-   - **Repeat distance:** Specify the distance between each repetition in a radial pattern.
+   - **Number 2:** Specify the number of duplications.
+   - **Number 1:** Specify the number of repetitions in a radial pattern.
+   - **Step 1:** Specify the distance between each repetition in a radial pattern.
+   - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
    - <Kst>Keyboard Shortcuts</Kst>
    - <kbd>Shift + Wheel up</kbd> **Add copy:** Increases the number of duplications.
    - <kbd>Shift + Wheel down</kbd> **Subtract copy:** Reduces the number of duplications.   

@@ -1,0 +1,30 @@
+
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+
+# Realize Solid and Sheet Instances
+
+<Reference shortcut="" command="Realize Instances" button="In Command Palette"  buttonIcon="button-realize-instances"/>
+
+Convert selected Solid and Sheet instances into editable solid objects; this creates true geometry that can be modified, but it also raises computational usage, so converting many objects may noticeably increase the scene's computational load.
+
+## Basic Usage
+
+1. Select the Solid or Sheet instances you want to convert.
+2. Open the Command Palette, type **Realize Instances**, and execute the command.
+3. The instances have been converted into editable objects.
+
+<VideoPlayer fileName="realize-instance-solid"/>
+
+## Realize Instanced Groups
+
+The workflow is identical to the basic usage described above.
+
+<VideoPlayer fileName="realize-instance-group-solid"/>
+
+## See also
+- [Realize Curve Instances](/sketch/realize-curve-instances)

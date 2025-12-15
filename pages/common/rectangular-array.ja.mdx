@@ -1,12 +1,17 @@
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Rectangular Array（長方形配列で複製）
 
 <Reference shortcut="" command="Rectangular Array" button="推奨コマンドメニューで" buttonIcon='button-rectangular-array' />
 
-指定した数に応じて、線形のパターンでオブジェクトを複製できます。オプションで別の方向を定義して、矩形の配列を作成することもできます。
+複製数を指定して、オブジェクトを直線状に複製できます。必要に応じて別の方向を指定することで、長方形配列を作成できます。インスタンスを作成するオプションも利用可能です。
+
+<Callout>
+画像およびメッシュ（.OBJ、.STL、.FBX など）は、複製方向、コピー数、複製モードを制御して並べることができます。ただし、インスタンス化はサポートされていません。
+</Callout>
 
 ## 基本的な使い方
 
@@ -22,6 +27,8 @@ import Kst from '/components/KeyboardShortcutsTitle'
    - <Kst>コマンドダイアログ</Kst>
       - **距離 1:** 距離を指定します。
       - **数:** 複製の数を指定します。
+      - **インスタンスを作成:** 独立したコピーの代わりにインスタンスを作成します。（インスタンスの作成
+ を参照） (See [Create Instances](/solid/create-instance))
    - <Kst>キーボードショートカット</Kst>
    - <kbd>Shift + ホイールアップ</kbd> コピー追加: 複製の数を増やします。
    - <kbd>Shift + ホイールダウン</kbd> コピー削除: 複製の数を減らします。
@@ -31,6 +38,8 @@ import Kst from '/components/KeyboardShortcutsTitle'
       - <Kst>コマンドダイアログ</Kst>
          - **Distance 2:** 距離を指定します。
          - **Repeat:** 複製する回数を指定します。
+         - **インスタンスを作成:** 独立したコピーの代わりにインスタンスを作成します。（インスタンスの作成
+ を参照） (See [Create Instances](/solid/create-instance))
       - <Kst>キーボードショートカット</Kst>
       - <kbd>Shift</kbd> + ホイール上回転 **Add copy:** 複製の数を増やします。
       - <kbd>Shift</kbd> + ホイール下回転 **Subtract copy:** 複製の数を減らします。

@@ -1,0 +1,116 @@
+# Selection Menu
+
+## Selection Menu
+The **Selection Menu** lives in the right-hand sidebar, on the last row. It offers the following information:
+
+- **Number Indicator** – Shows how many objects are currently selected in the viewport.  
+- **Object Type** – Displays the type of the selected item(s) according to the active selection mode.  
+- **Sub-type** – Refines the object type, indicating exactly what has been selected.  
+- **Alignment & Degree** – Reports the kind of alignment (e.g., parallel, perpendicular) and the angular degree between two objects.  
+- **Dimension Property** – Provides geometric data such as volume, area, perimeter, length, circumference, and radius.  
+- **World Positioning** – Gives the global coordinates of the entire object.
+
+![Selection Menu](/img/selection-menu.png)
+
+> **Note:** The menu only populates when at least one item is selected; otherwise it remains empty.
+
+![No Items Displayed](/img/selection-menu-no-items.png)
+
+### Number Indicator
+The **Number Indicator** shows how many objects are currently selected in the selection menu. Its count is driven by the **active selection mode**:
+
+- The indicator always reports the total number of selected items and breaks that total down by object **type** and **sub-type**.  
+- When you switch modes (e.g., from *Edge* selection to *Solid* selection) the new mode **adds** its selections to the existing set instead of replacing them.  
+- Consequently, the Number Indicator updates to reflect the combined selection, showing the cumulative count for each object type/sub-type across all active modes.
+
+![Number Indicator](/img/selection-menu-number-indicator.png.png)
+
+### Object Type and Sub-type
+Object type in the detail display window, displays the object type based on the selection and type of selection mode.
+
+Used on Solid objects:
+| Selection | Object Type | Sub-type |
+| --------- | ----------- | -------- |
+| Point Selection | - | - |
+| Edge Selection | Edge | Line, Circle, Ellipse, Surface Curve, Intersection, and Spline |
+| Face Selection | Face | Plane, Cone, Torus, Cylinder, Sphere, Spline, Blend, Offset |
+| Solid Selection | Solid and Sheet | No Information |
+
+//![Solid Objects Example](/img/selection-menu-object-types.png)
+Used on Sketch objects:
+| Selection | Object Type | Sub-type |
+| --------- | ----------- | -------- |
+| Point Selection | Vertex and Control-Vertex (CV) | No Information |
+| Edge Selection | Edge | Line, Circle, Spline |
+| Face Selection | - | - |
+| Solid Selection | - | - |
+
+//![Sketch Objects Example](/img/selection-menu-object-types.png)
+
+## Allignment and Degree Information
+- The detail display window can display the degree between two selected objects and the allignment information in colrelation with two selected objects based on selection and type of selection mode. 
+
+Alignment and Degree information: 
+1. Point - Coincident (Point Sketch)
+2. Edge - Parallel (Solid and Sketch), Degree Information (Solid and Sketch)
+3. Face - Parallel (Solid), Degree Information (Solid)
+4. Solid - No Information
+
+### Allignment Information 
+- If objects are alligned ... 
+![Allignment Information](/img/Allignment-information.png)
+### Degree Information
+- It 
+![Degree Information](/img/degree-information.png)
+
+## Dimension Property
+- In the detail display window, there is a section where you can find dimension information based on object selections and the type of selection. 
+### Solid Dimension Property
+- For solid objects, this category contains the following properties: 
+        - volume
+        - area
+        - perimeter
+
+### Curve Dimension Property
+- For curve objects, this category contains the following properties: 
+        - lenght
+        - circumference
+        - radius
+
+## World Coordinate Information
+![XYZ](/img/xyz.png)
+
+## Selection Mode Context
+
+- With Selection Mode: Body (<kbd> Number 4 </kbd>) activated, you can see the following display information:
+
+| Solid | Sheet | Image | Mesh | 
+| ----- | ----- | ----- | ----- | 
+| Object Type, Object Dimensions and World Coordinate Positioning | Object Type, Object Dimensions and World Coordinate Positioning | No Information | No Information | 
+
+- With Selection Mode: Face (<kbd> Number 3 </kbd>) activated, you can see the following display information:
+
+| Solid | Sheet | Sketch (Region) |  
+| ----- | ----- | ----- |
+| Object Type, Object Dimensions, Object Sub-Type (Plane and Cylinder), Plane Degree, and World Coordinate Positioning | Object Type, Object Dimensions, Object Sub-Type (Plane and Cylinder), Plane Degree, and World Coordinate Positioning | No Information | 
+
+- With Selection Mode: Edge (<kbd> Number 2 </kbd>) activated, you can see the following display information:
+
+| Solid | Sheet | Sketch (Curve, Vertex, Control-Vertex, and Region) |
+| ----- | ----- | ----- |  
+| Object Type, Object Dimensions, Object Sub-Type (Circle and Line), Line Degree, and World Coordinate Positioning | Object Type, Object Dimensions, Object Sub-Type (Circle and Line), Line Degree, and World Coordinate Positioning | Object Type, Object Dimensions, Object Sub-Type (Circle, Line, and Spline) Line Degree (Applicable on Lines and not Splines), and World Coordinate Positioning | 
+
+- With Selection Mode: Point (<kbd> Number 1 </kbd>) activated, you can see the following display information:
+
+| Solid | Sheet | Sketch (Curve, Vertex, Control-Vertex, and Region) |  
+| ----- | ----- | ----- | 
+
+
+# How To Use 
+## Use Cases 
+1. Selection Extrapulation.  
+2. Altering Dimensions 
+    1. Altering a lenght 
+    2. Altering a radius 
+    3. Altering a circumference 
+3. Copying Dimensions 

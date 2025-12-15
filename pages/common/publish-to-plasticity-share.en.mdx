@@ -1,0 +1,59 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center' 
+
+# Publish To Plasticity Share
+
+<Reference shortcut="" command="Publish To Plasticity Share" button="In Command Palette"  buttonIcon='button-publish-to-plasticity-share'/>
+
+Uploads a .plasticity file to the cloud and generates a unique private URL that opens in a new browser tab. The link can be shared with anyone for read-only viewing. Once the link is distributed it becomes public. Each uploaded document supports multiple revisions; you can manage and delete these revisions on the [**Plasticity Share**](https://share.plasticity.xyz/me/) page.
+
+<Callout>
+1. Only the mesh representation of the model is published so no CAD geometry or source files are included and the file cannot be downloaded.
+2. The feature is disabled by default. Enable it via **Preferences > Web Publishing**.
+3. Publish to Web also exports material information from the Assets menu.
+4. Mesh data is **view-only**; direct modeling or modification of the published mesh is not possible.
+5. Regardless of license type, every user receives **5 GB** of cloud storage.
+</Callout>
+
+## Basic Usage
+
+1. Select the object you want to publish to the web.
+2. Open the Command Palette, type **Publish To Plasticity Share**, and execute the command.  
+3. A pop-up window appears asking, "Are you sure you want to share to the web?" Click **Yes**.  
+4. A new browser tab opens displaying the published object.  
+5. A unique URL is generated for the shared object.
+
+## Web Viewport Interface
+
+<Center width="550px">
+![Web Viewport Breakdown](/img/web-viewport-breakdown.png)
+</Center>
+
+| Number | Element | Description |
+| :----: | ---- | ---- |
+|  1   | See all documents | See all of published documents on the Cloud server.|
+|  2   |   Sign Out   |   Sign out from the current web session. When signed out, a message will be displayed -> "Not signed in. Share a document from Plasticity and refresh this tab to sign in."   |
+|  3   |   Mesh Data   |   Selected object from Plasticity has been converted into a mesh data for visualization purposes.    |
+
+<Callout> 
+Viewport navigation on the web uses Plasticity's default controls: **Middle Mouse Button** to orbit and **Right Mouse Button** to pan. The right-side panel provides access to [**Shader Mode**](/plasticity-essentials/shader-mode), [**Render Mode**](/plasticity-essentials/render-mode), [**Camera**](/plasticity-essentials/camera-settings), [**Grid and Unit**](/plasticity-essentials/grid-and-units) settings. 
+</Callout>
+
+## All Documents Interface
+
+This is the Plasticity Share page, where you can view all documents you have uploaded to the cloud server.
+
+<Center width="600px">
+![Web Viewport Breakdown](/img/all-documents-breakdown.png)
+</Center>
+
+| Number | Element | Description |
+| :----: | ---- | ---- |
+|  4   | Document Thumbnail | Preview image representing the document's contents.|
+|  5   | Document Location | Local directory path on the PC where the Plasticity document resides.|
+|  6   | Cloud Storage Indicator | Shows remaining cloud storage. |
+|  7   | Revision Indicator | Displays how many revisions have been updated on the web.|

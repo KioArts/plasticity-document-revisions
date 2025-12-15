@@ -1,0 +1,32 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Ellipse
+
+<Reference shortcut="" command="Ellipse" button="ツールバー" buttonIcon='button-ellipse' />
+
+中心と長軸または短軸の半径を指定して楕円を作成できます。
+
+## 基本的な使い方
+
+1. ツールバーの <ButtonIcon type="button-ellipse" /> ボタンをクリックします。  
+2. 中心点を決めて、長軸または短軸の半径の描画を開始します。  
+3. カーソルを動かして楕円のサイズを調整し、クリックして確定します。  
+   - <Kst>キーボードショートカット</Kst>  
+      - <kbd>Tab</kbd>: 寸法を直接入力できます。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)をご覧ください。  
+      - <kbd>K</kbd> **Knife**: [ナイフモードの使用方法](/tool/sketching-essentials#use-knife-mode)をご参照ください。  
+      - <kbd>X</kbd>/<kbd>Y</kbd> **X/Y 軸**: [X 軸または Y 軸に制約](/tool/sketching-essentials#constrain-to-an-axis)をご確認ください。  
+4. コマンドダイアログで **OK** をクリックするか、右クリックで確定します。  
+5. 楕円が作成されます。
+
+<VideoPlayer fileName="ellipse"/>
+
+## 関連項目
+- [中心円](/center-circle)
+- [二点円](/two-point-circle)
+- [三点円](/three-point-circle)
+- [接線円](/tangent-circle)
+- [中心点円弧](/center-point-arc)
+- [三点円

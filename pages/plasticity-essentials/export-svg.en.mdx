@@ -1,0 +1,26 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+# Export SVG
+
+The Export SVG command exports only 2D sketches from the Plasticity document. It works with or without an active selection of curves. If flat sketches lie on different planes or axes, each will be exported as a separate file. However, rotated or tilted 2D sketches will be exported but sometimes will result in unreliable results.
+
+<Callout>
+If the Plasticity document is untitilted, it will export the SVG file into your Documents. However, if the file is named and has been saved somewhere in your directory, the SVG file will be saved there if you execute *Export Svg* from the Command Palette. 
+</Callout>
+
+## Basic Usage
+
+1. Select the sketch you wish to export.
+2. Go to P-Menu -> Export, or press Ctrl + Shift + E
+    - <Kst>Command Palette</Kst>
+        - **Export Svg** - Exports the SVG where you've saved your Plasticity document automatically.
+3. Select where you want to save your SVG file and confirm.
+3. The SVG file now has been exported.
+
+### Technical Drawings
+
+To create technical drawings, you can set up a specific view using [Construction Planes](/plasticity-essentials/construction-plane), then use [Alternative Duplicate](/sketch/alternative-duplicate) on solid edges to project curves onto the current construction plane.
+
+<VideoPlayer fileName="export-svg-alternative-duplicate"/>

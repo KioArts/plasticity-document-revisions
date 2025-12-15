@@ -22,5 +22,8 @@
    |**Curve max length** | Maximum Allowable Length of Curve (Edge) Segment |         |
    |**Plane angle** | Maximum Allowable Ratio between Plane Tolerance and Max Width | Useful for obtaining more quadrangles or polygons. |
    |**Inflect** | Preserve surface quality | Add additional detail in areas where curved surfaces transition from convex to concave. | 
+   | **Simplify radial surfaces** | Simplify radius geometry to improve overall edge flow. | Orient all surfaces - spheres, cylinders, tori, and cones - along a common axial direction. When the edge flow lines are aligned during faceting, simple radial geometry and blends line up more predictably. |
+   | **Remove small features**    | Strip tiny surface details when exporting. | The option defines a bounding box threshold in the dialog. Any detail smaller than the specified size is omitted, making it ideal for high poly to low poly workflows. |
+   | **Convex ngons only**        | Prevent creation of concave ngons for cleaner topology. | Available only when exporting ngons. It forces all exported ngons to be convex, inserting extra faces where necessary. This results in reliable topology and consistent normal shading in applications that don't support concave ngons, at the slight cost of a higher ngon count. |
 1. Click OK.
 2. The OBJ file is exported.

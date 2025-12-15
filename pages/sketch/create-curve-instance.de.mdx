@@ -1,0 +1,57 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
+
+# Kurve instanziieren
+
+<Reference shortcut="" command="Instanz erstellen" button="In Befehls‑Palette"  buttonIcon="button-instance"/>
+
+Erstellen Sie wiederverwendbare Duplikate von Kurven. Eine **Instanz**, ähnlich wie bei Solid‑ und Sheet‑Objekten, speichert Transformationsdaten (Position, Pivot‑Punkt, Rotation und Skalierung), Farbdaten und referenziert die Originalkurve. Jede Änderung an der Master‑Kurve wird sofort in allen Instanzen widergespiegelt. Da Kurven‑Instanzen schreibgeschützte Kopien ihres Elternteils sind, können sie nicht eigenständig bearbeitet werden und zeigen keine CV‑(Control‑Vertex‑)Darstellung; sie erhalten ein abweichendes Aussehen, um sie vom Original zu unterscheiden.
+
+- Verwenden Sie den **Instanz erstellen**‑Befehl bei Kurven, wenn Sie viele identische Details benötigen.  
+- Instanzen funktionieren mit Array‑Befehlen wie **Kurven‑Array**, **Radial‑Array** und **Rechteck‑Array**.  
+- Instanzen können ebenfalls mit dem **Spiegeln**‑Befehl genutzt werden.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Kurve aus, die Sie als Elternobjekt nutzen möchten.  
+2. Öffnen Sie die Befehls‑Palette, tippen Sie **Instanz erstellen** und führen Sie den Befehl aus.  
+3. Verschieben Sie die neu erstellte Instanz an die gewünschte Position.  
+4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+
+<VideoPlayer fileName="instance-curve"/>
+
+<Callout type="info" emoji="🗒️">
+**Hinweis:** Nachdem eine Instanz erstellt wurde, können Sie diese beliebig oft duplizieren; alle Duplikate spiegeln weiterhin jede Änderung am ursprünglichen Elternobjekt wider.    
+</Callout>
+
+## Instanz‑Gruppen
+
+Das Instanziieren von Gruppen funktioniert analog zum Instanziieren von Kurven.
+
+Wird eine Gruppe ausgewählt, die primäre Skizzen enthält, wird eine Instanz der Gruppe erstellt und außerhalb des Gruppenordners in einer eigenen Kategorie im Outliner abgelegt.
+
+<Center width="600px">
+![!Instancing a Group Part 1](/img/instance-group-curve.png)
+</Center>
+
+| Nummer | Beschreibung |
+| :----: | ------------ |
+| 1 | Hauptgruppe mit enthaltenen Komponenten. |
+| 2 | Elternobjekte, die instanziiert werden. |
+| 3 | Instanz der Hauptgruppe, außerhalb der Hauptgruppe unter der Kategorie **„Instanzen“** platziert. |
+
+### Grundlegende Verwendung
+
+1. Wählen Sie im Outliner eine Gruppe zur Instanzierung aus.  
+2. Suchen Sie nach *Create Instance* in der Befehls‑Palette und führen Sie den Befehl aus.  
+3. Verschieben Sie die instanzierte Gruppe.  
+4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+
+<VideoPlayer fileName="instance-group-curve"/>
+
+## Siehe auch
+- [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance)

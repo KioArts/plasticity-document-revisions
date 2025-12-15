@@ -2,12 +2,17 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
 # Radial Array（円形状配列で複製）
 
 <Reference shortcut="" command="Radial Array" button="コマンドバー右"  buttonIcon='button-radial-array'/>
 
-角度と数を指定して、円状のパターンでオブジェクトを複製できます。放射状の複製も可能です。
+角度と数を指定して、オブジェクトを円形パターンで複製できます。放射状の複製およびインスタンス複製も可能です。
+
+<Callout>
+画像およびメッシュ（.OBJ、.STL、.FBX など）は、複製角度と複製数を制御して配置できます。ただし、インスタンス化はサポートされていません。
+</Callout>
 
 ## 基本的な使い方
 
@@ -21,9 +26,10 @@ import Kst from '/components/KeyboardShortcutsTitle'
          - **合計:** 指定した次数値で、すべての複製が均等に配置される合計距離を指定します。 
          - **間隔:** 各複製の間隔距離を指定します。
       - **Degrees:** 複製する角度を指定します。
-      - **Number:** 複製する数を指定します。
-      - **Repeat:** 放射状に繰り返す回数を指定します。
-      - **Repeat distance:** 放射状に繰り返す間隔を指定します。
+      - **Number 2:** Specify the number of duplications.
+      - **Number 1:** Specify the number of repetitions in a radial pattern.
+      - **Step 1:** Specify the distance between each repetition in a radial pattern.
+      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
    - <Kst>キーボードショートカット</Kst>
    - <kbd>Shift</kbd> + ホイール上回転 **Add copy:** 複製の数を増やします。
    - <kbd>Shift</kbd> + ホイール下回転 **Subtract copy:** 複製の数を減らします。

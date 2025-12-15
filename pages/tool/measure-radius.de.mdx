@@ -1,0 +1,25 @@
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
+
+# Radius messen
+
+<Reference shortcut="" command="Radius messen" button="In Befehls‑Palette" buttonIcon='button-measure-radius' />
+
+Misst den Radius einer Solid‑Oberflächenkante oder einer Kurve (Skizze) und erzeugt eine Radius‑Annotation.
+
+## Grundlegende Verwendung
+
+1. Öffnen Sie die Befehls‑Palette, tippen Sie **Radius messen** und führen Sie den Befehl aus.  
+2. Wählen Sie den Objekttyp, den Sie messen möchten:
+    | Typ   | Hinweis |
+    | ----- | ------- |
+    | Solid | Klicken Sie auf die Oberflächenkante, deren Radius Sie messen wollen. |
+    | Kurve | Klicken Sie auf die Skizze, deren Radius Sie messen wollen. |
+3. Bewegen Sie die Maus im Viewport, um die Länge der Annotationslinie festzulegen, und klicken Sie dann mit der linken oder rechten Maustaste, um zu bestätigen.  
+4. Der gemessene Wert erscheint neben dem **R**‑Symbol und zeigt damit einen Radius an. Die Messung wird außerdem im **Outliner** unter **Messungen** abgelegt.
+
+<VideoPlayer fileName="measure-radius-01"/>
+
+## Siehe auch
+- [Dimension](/dimension)

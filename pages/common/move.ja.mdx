@@ -8,7 +8,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 <Reference shortcut="G" command="Move" button="コマンドバーで " buttonIcon='button-move' />
 
-Move Gizmoを使用してオブジェクトを移動できます。単一軸の制約や[フリースタイルの移動](#freestyle-move)のオプションが利用できます。ピボットも調整可能です。
+**Move Gizmo** を使ってオブジェクトを移動します。単一軸への制約や **フリースタイル移動**（[詳細はこちら](#freestyle-move)）が利用可能です。ピボットポイントも調整できます。新しいプリミティブやスケッチオブジェクトを挿入点に配置すると、Move Gizmo とピボットは自動的にオブジェクトの法線方向へ向けて再配置されます。
 
 ## 基本的な使い方
 
@@ -113,8 +113,74 @@ Move Gizmoを使用してオブジェクトを移動できます。単一軸の�
 - サーフェスのCVをプロポーショナル編集する際、最後にアクティブになったCVの選択がピボット位置を決定します。これによりプロポーショナル編集の動作が変わるため注意してください。
 </Callout>
 
+## 平面エッジを移動する
+
+<Reference shortcut="G" command="Move" button="コマンドバー左側"  buttonIcon='button-move'/>
+
+**Move Gizmo** を使用して平面エッジを移動します。単一軸制限、**[フリースタイル移動](#freestyle-move)**、および比例編集のオプションが利用可能です。Move Gizmo の向きとピボット位置も調整できます。
+
+### 基本的な使い方
+
+1. 移動したいオブジェクトを選択します。  
+2. <kbd>G</kbd> を押します。  
+3. 表示された Move Gizmo を使って移動します。  
+4. コマンドダイアログとキーボードショートカットでオプションを設定します。  
+   - <Kst>コマンドダイアログ</Kst>  
+      - **XYZ:** X、Y、Z 軸それぞれの移動量を指定します。  
+      - **Orientation（向き）:** Move Gizmo の向きを設定します。  
+         - <ButtonIcon type="button-normal"/> **Normal（法線）:** オブジェクト表面の法線に合わせて向きを設定します。  
+         - <ButtonIcon type="button-pivot"/> **Pivot（ピボット）:** 事前に定義したピボットの向きに合わせます。  
+         - <ButtonIcon type="button-construction-plane"/> **Construction Plane（作業平面）:** アクティブな作業平面に合わせて向きを設定します。  
+         - <ButtonIcon type="button-world"/> **World（ワールド）:** グローバル（ワールド）座標軸に合わせて向きを設定します。  
+      - **Pivot（ピボット）:** ピボットポイントの位置を設定します。  
+         - <ButtonIcon type="button-bbox"/> **Bbox（バウンディングボックス）:** 選択オブジェクトを囲むバウンディングボックスの中心にピボットを配置します。  
+         - <ButtonIcon type="button-median"/> **Median（中央値）:** 選択オブジェクト全体のピボット位置の平均にピボットを配置します。  
+         - <ButtonIcon type="button-active"/> **Active（アクティブ）:** 最後に選択した（アクティブな）オブジェクトのピボットに配置します。  
+
+         ![Pivot デモンストレーション](/img/pivot-move.png)  
+   - <Kst>キーボードショートカット</Kst>  
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [X、Y、または Z 軸に制限](/tool/sketching-essentials#constrain-to-an-axis)。  
+      - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z 平面:** 各平面に制限します。  
+      - <kbd>G</kbd> **スクリーンスペース:** 可視平面に限定します。  
+      - <kbd>F</kbd> **フリースタイル:** 開始点と終了点をクリックして、移動方向と距離を決定します。  
+      - <kbd>V</kbd> **ピボット:** Gizmo の位置をクリックで指定します。  
+      - <kbd>Alt + V</kbd> **ピボット削除:** 設定したピボットを削除します。  
+      - <kbd>W</kbd> **向き:** Gizmo の座標軸をさまざまな向きに変更します。  
+5. コマンドダイアログの **OK** をクリックするか、右クリックで確定します。
+
+<VideoPlayer fileName="move-planar-edges"/>
+
+## 円形エッジを移動する
+
+<Reference shortcut="G" command="Move" button="コマンドバー左側"  buttonIcon='button-move'/>
+
+円形の **Solid** および **Sheet** エッジを個別に移動し、オフセット時に解析ジオメトリを保持します。単一軸に制限するか、**[フリースタイル移動](#freestyle-move)** を使用できます。Move Gizmo の向きとピボット位置はどちらも調整可能です。
+
+### 基本的な使い方
+
+1. 円形エッジを選択します。  
+2. <kbd>G</kbd> を押します。  
+3. 表示された Move Gizmo をドラッグしてエッジの位置を変更します。  
+4. コマンドダイアログまたはキーボードショートカットでオプションを調整します。  
+   - <Kst>コマンドダイアログ</Kst>  
+      - **XYZ:** X、Y、Z 軸それぞれの移動量を指定します。  
+      - **Orientation（向き）:** Move Gizmo の向きを設定します（上記と同様）。  
+      - **Pivot（ピボット）:** ピボット位置を設定します（上記と同様）。  
+
+         ![Pivot デモンストレーション](/img/pivot-move.png)  
+   - <Kst>キーボードショートカット</Kst>  
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [X、Y、または Z 軸に制限](/tool/sketching-essentials#constrain-to-an-axis)。  
+      - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z 平面:** 各平面に制限します。  
+      - <kbd>G</kbd> **スクリーンスペース:** 可視平面に限定します。  
+      - <kbd>F</kbd> **フリースタイル:** 開始点と終了点をクリックして、移動方向と距離を決定します。  
+      - <kbd>V</kbd> **ピボット:** Gizmo の位置をクリックで指定します。  
+      - <kbd>Alt + V</kbd> **ピボット削除:** 設定したピボットを削除します。  
+      - <kbd>W</kbd> **向き:** Gizmo の座標軸をさまざまな向きに変更します。  
+5. コマンドダイアログの **OK** をクリックするか、右クリックで確定します。
+
+<VideoPlayer fileName="move-circular-edges"/>
 
 ## 関連項目
-- [Mirror](mirror)
-- [Rotate](rotate)
-- [Scale](scale)
+- [ミラー](mirror)  
+- [回転](rotate)  
+- [スケール](scale)  

@@ -8,7 +8,17 @@ The Outliner displays all the objects you've created. Within the Outliner, you c
 
 ## Displayed Objects
 
-- The objects you create are classified into different sections: "Solids," "Sheets," "Curves," "Meshes," "Images" and "Measurements."
+- The objects you create are classified into different sections: "Solids," "Sheets," "Curves," "Meshes," "Images", "Measurements", and "Instances."
+
+| Section | Name Format |
+| :----: | ---- |
+| Solids | Solid 0, Sphere.000, Box.000, Cylinder.000, Extruded.000,  | 
+| Sheets | Sheet 0, Lofted.000, Revolved.000, Pipe.000, Swept.000, XNurbs.000 (*Studio Version*)  | 
+| Curves | Arc.000, Line.000, Curve.000, Circle.000, Ellipse.000, Polygon.000, Spiral.000, Rectangle.000, Bridge Curve.000,  |
+| Meshes | *Mesh Name*.OBJ/.STL/.FBX  | 
+| Instances | *Solid*/*Sheet*/*Group*/*Curve*.000  | 
+| Images | *Image Name*.PNG/.JPG/.JPEG | 
+| Measurements | Curvature.000, Distance.000, Radius.000, G0/G1/G2 Continuity.000 | 
 
 ## Displayed Construction Planes
 
@@ -20,7 +30,7 @@ The Outliner displays all the objects you've created. Within the Outliner, you c
 
 ## Organize Objects
 
-- Right-click on a section label ("Solids," "Sheets," "Curves," "Meshes," "Images" and "Measurements") and choose "Select all" to select all objects within that section.
+- Right-click on a section label ("Solids," "Sheets," "Curves," "Meshes," "Images", "Instances", and "Measurements") and choose "Select all" to select all objects within that section.
 - You can reorganize the Outliner by dragging and dropping objects.
 
 ## Group Objects
@@ -114,17 +124,19 @@ You can also use commands to change the states of objects or groups.
 
 ## Material Color
 
-You can assign materials to Solids, Sheets, and Curves. Materials set for a group will also be applied to objects within that group.
-For more information on materials, see [**Set Material**](/common/set-material) and [**Remove Material**](/common/remove-material).
+You can assign materials to Solids, Sheets, and Curves. Any material set on a group is automatically applied to every object within that group.  
+
+For more details on working with materials, see **[Set Material](/common/set-material)** and **[Remove Material](/common/remove-material)**.  
 ![Outliner 4](/img/outliner-04.png)
 
-In the Outliner, you can:
+In the Outliner you can:
 
-- The object's material color is displayed as color dots.
-- The color can be copied by dragging and dropping the color dots.
-- Material colors can also be set for groups. The color can be copied in the same way.
-- Right-click on an object to access a menu where you can set or remove materials.
-- You can also select multiple objects and set or remove materials in bulk.
+- View each object's material color as a colored dot.  
+- Copy a material's color by dragging its dot onto another dot.  
+- Set material colors for entire groups, with the same drag and drop copying method.  
+- Right click an object to open a menu for setting, removing, or forking its material.  
+- Select multiple objects and apply or clear materials in bulk.  
+- Assign a material directly by dragging a color dot onto the object in the 3D viewport.
 
 ## Toggle Sidebar Visibility
 
