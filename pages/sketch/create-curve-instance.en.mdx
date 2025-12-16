@@ -10,11 +10,16 @@ import { Center } from '/components/Center'
 
 <Reference shortcut="" command="Create Instance" button="In Command Palette"  buttonIcon="button-instance"/>
 
-Create reusable duplicates of curves. An **instance**, similarly to instancing solid and sheet objects, stores transformation data (position, pivot point, rotation, and scale), color data and references the original curve. Any modification made to the master curve is instantly reflected in all of its instances. Because curve instances are read-only copies of their parent, they cannot be edited independently and they appear without any displayed CV (control-vertex) layout and in order to distinguish them from the original curve.
+Create reusable duplicates of curves. An **instance**, similarly to instancing solid and sheet objects, stores transformation data (position, pivot point, rotation, and scale), color data and references the original curve. Any modification made to the master curve is instantly reflected in all of its instances.
 
-- Use the **Create Instance** command on curves when you need many identical details.  
-- Instances work with array commands such as **Curve Array**, **Radial Array**, and **Rectangular Array**.  
-- Instances can also be used with the **Mirror** command.
+Because curve instances are read-only copies of their source, they can't be edited independently. They also hide the CV (control-vertex) layout, which makes them visually distinct from the original curve.
+
+<Callout>
+1. Use the **Create Instance** command on curves when you need many identical details such as consistent, symmetrical sketches for building a vehicle's construction framework or related products.
+2. Instances work with array commands such as [**Curve Array**](/common/curve-array), [**Radial Array**](/common/radial-array), and [**Rectangular Array**](/common/rectangular-array).  
+3. Instances can also be used with the [**Mirror**](/common/mirror) command, enabling live symmetry where changes to the master geometry updates all mirrored instances automatically.
+4. Cannot use [**Place**](/common/place) and [**Copy with Placement**](/common/copy-with-placement) commands on created instances for now.
+</Callout>
 
 ## Basic Usage
 
