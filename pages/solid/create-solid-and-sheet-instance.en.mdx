@@ -9,12 +9,15 @@ import { Center } from '/components/Center'
 
 <Reference shortcut="" command="Create Instance" button="In Command Palette"  buttonIcon="button-instance"/>
 
-Create reusable duplicates of a Solid or Sheet object without copying the underlying geometry. An instance stores transformation data (position, pivot point, rotation, scale), material data and references the original Solid object, so any change to the master geometry is reflected instantly in all its instances. Istances are read-only copies of the parent and cannot be edited independently. Instances aprear with medium to light gray surface edge color in order to differentiate with the parrent object.
+Create reusable duplicates of a Solid or Sheet object without copying the underlying geometry. An instance stores transformation data (position, pivot point, rotation, scale), material data and references the original Solid object, so any change to the master geometry is reflected instantly in all its instances. 
+
+Instances are read-only copies of their parent and cannot be edited independently. They appear with a medium to light gray surface edge color to clearly differentiate them from the original object.
 
 <Callout>
-Use the **Create Instance** command when you need many identical parts such as fasteners, panels, or repetitive structural elements while keeping the model lightweight and easy to maintain.
-Instances work with array commands such as [**Curve Array**](/common/curve-array), [**Radial Array**](/common/radial-array), and [**Rectangular Array**](/common/rectangular-array).  
-Instances can also be used with the [**Mirror**](/common/mirror) command, enabling live symmetry where changes to the master geometry updates all mirrored instances automatically.
+1. Use the **Create Instance** command when you need many identical parts such as fasteners, panels, or repetitive structural elements while keeping the model lightweight and easy to maintain. 
+2. Instances work with array commands such as [**Curve Array**](/common/curve-array), [**Radial Array**](/common/radial-array), and [**Rectangular Array**](/common/rectangular-array).  
+3. Instances can also be used with the [**Mirror**](/common/mirror) command, enabling live symmetry where changes to the master geometry updates all mirrored instances automatically.
+4. Cannot use [**Place**](/common/place) and [**Copy with Placement**](/common/copy-with-placement) commands on created instances for now.
 </Callout>
 ## Basic Usage
 

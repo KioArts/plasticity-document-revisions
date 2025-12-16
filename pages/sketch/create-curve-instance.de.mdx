@@ -9,11 +9,16 @@ import { Center } from '/components/Center'
 
 <Reference shortcut="" command="Instanz erstellen" button="In Befehls‑Palette"  buttonIcon="button-instance"/>
 
-Erstellen Sie wiederverwendbare Duplikate von Kurven. Eine **Instanz**, ähnlich wie bei Solid‑ und Sheet‑Objekten, speichert Transformationsdaten (Position, Pivot‑Punkt, Rotation und Skalierung), Farbdaten und referenziert die Originalkurve. Jede Änderung an der Master‑Kurve wird sofort in allen Instanzen widergespiegelt. Da Kurven‑Instanzen schreibgeschützte Kopien ihres Elternteils sind, können sie nicht eigenständig bearbeitet werden und zeigen keine CV‑(Control‑Vertex‑)Darstellung; sie erhalten ein abweichendes Aussehen, um sie vom Original zu unterscheiden.
+Erstellen Sie wiederverwendbare Duplikate von Kurven. Eine **Instanz**, ähnlich wie bei Solid‑ und Sheet‑Objekten, speichert Transformationsdaten (Position, Drehpunkt, Rotation und Skalierung), Farbinformationen und verweist auf die Originalkurve. Jede Änderung an der Master‑Kurve wird sofort in allen Instanzen widergespiegelt.
 
-- Verwenden Sie den **Instanz erstellen**‑Befehl bei Kurven, wenn Sie viele identische Details benötigen.  
-- Instanzen funktionieren mit Array‑Befehlen wie **Kurven‑Array**, **Radial‑Array** und **Rechteck‑Array**.  
-- Instanzen können ebenfalls mit dem **Spiegeln**‑Befehl genutzt werden.
+Da Kurven‑Instanzen schreibgeschützte Kopien ihres Elternteils sind, können sie nicht unabhängig bearbeitet werden und werden ohne sichtbares CV‑ (Control‑Vertex‑) Layout angezeigt, um sie von der Originalkurve zu unterscheiden.
+
+<Callout>
+1. Verwenden Sie den Befehl **Create Instance** für Kurven, wenn Sie viele identische Details benötigen – etwa konsistente, symmetrische Skizzen zum Aufbau eines Fahrzeug‑Konstruktionsrahmens oder verwandter Produkte.  
+2. Instanzen funktionieren mit Array‑Befehlen wie **[Curve Array](/common/curve-array)**, **[Radial Array](/common/radial-array)** und **[Rectangular Array](/common/rectangular-array)**.  
+3. Instanzen können auch mit dem Befehl **[Mirror](/common/mirror)** verwendet werden, wodurch Live‑Symmetrie entsteht: Änderungen an der Master‑Geometrie aktualisieren automatisch alle gespiegelten Instanzen.  
+4. Die Befehle **[Place](/common/place)** und **[Copy with Placement](/common/copy-with-placement)** können derzeit nicht auf erstellte Instanzen angewendet werden.
+</Callout>
 
 ## Grundlegende Verwendung
 

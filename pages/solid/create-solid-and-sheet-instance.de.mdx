@@ -9,14 +9,15 @@ import { Center } from '/components/Center'
 
 <Reference shortcut="" command="Instanz erstellen" button="In Befehls‑Palette"  buttonIcon="button-instance"/>
 
-Erstellen Sie wiederverwendbare Duplikate eines Solid‑ oder Sheet‑Objekts, ohne die zugrunde liegende Geometrie zu kopieren. Eine Instanz speichert Transformationsdaten (Position, Pivot‑Punkt, Rotation, Skalierung), Materialdaten und referenziert das ursprüngliche Solid‑Objekt, sodass jede Änderung an der Master‑Geometrie sofort in allen Instanzen reflektiert wird. Instanzen sind schreibgeschützte Kopien des Elternobjekts und können nicht unabhängig bearbeitet werden. Instanzen erscheinen mit einer mittel‑ bis hellgrauen Kantenfarbe, um sie vom Elternobjekt zu unterscheiden.
+Erstellen Sie wiederverwendbare Duplikate eines Solid‑ oder Sheet‑Objekts, ohne die zugrunde liegende Geometrie zu kopieren. Eine Instanz speichert Transformationsdaten (Position, Drehpunkt, Rotation, Skalierung), Materialinformationen und verweist auf das ursprüngliche Solid‑Objekt, sodass jede Änderung an der Master‑Geometrie sofort in allen Instanzen widergespiegelt wird.
+
+Instanzen sind schreibgeschützte Kopien ihres Elternteils und können nicht unabhängig bearbeitet werden. Sie werden mit einer mittel‑ bis hellgrauen Kantenfarbe dargestellt, um sie klar vom Originalobjekt zu unterscheiden.
 
 <Callout>
-Verwenden Sie den Befehl **Instanz erstellen**, wenn Sie viele identische Teile benötigen – z. B. Befestigungselemente, Paneele oder wiederholende Strukturelemente – und dabei das Modell leichtgewichtig und wartungsfreundlich halten möchten.
-
-Instanzen funktionieren mit Array‑Befehlen wie [**Kurven‑Array**](/common/curve-array), [**Radial‑Array**](/common/radial-array) und [**Rechteck‑Array**](/common/rectangular-array).  
-
-Instanzen können zudem mit dem Befehl [**Spiegeln**](/common/mirror) verwendet werden, wodurch Live‑Symmetrie entsteht: Änderungen an der Master‑Geometrie aktualisieren automatisch alle gespiegelten Instanzen.
+1. Verwenden Sie den Befehl **Create Instance**, wenn Sie viele identische Bauteile benötigen – z. B. Befestigungselemente, Paneele oder wiederholende Strukturelemente – und dabei das Modell leichtgewichtig und wartungsfreundlich halten wollen.  
+2. Instanzen funktionieren mit Array‑Befehlen wie **[Curve Array](/common/curve-array)**, **[Radial Array](/common/radial-array)** und **[Rectangular Array](/common/rectangular-array)**.  
+3. Instanzen können ebenfalls mit dem Befehl **[Mirror](/common/mirror)** verwendet werden, wodurch Live‑Symmetrie entsteht: Änderungen an der Master‑Geometrie aktualisieren automatisch alle gespiegelten Instanzen.  
+4. Die Befehle **[Place](/common/place)** und **[Copy with Placement](/common/copy-with-placement)** können derzeit nicht auf erstellte Instanzen angewendet werden.
 </Callout>
 
 ## Grundlegende Verwendung
