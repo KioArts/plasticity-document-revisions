@@ -43,35 +43,51 @@ XNurbs is a tool that can generate N-sided and quad-sided surfaces with high-qua
 - While XNurbs can bridge gaps even with bad inputs, high-quality surfaces still require proper constraints.   
 </Callout>
 
+## Additional Information
+- [Quad sided](#quad-sided)
+- [Flatness](#flatness)
+- [Tension](#tension)
+- [Quality](#quality)
+- [Profile Guides](#profile-guides)
+
+<section className="additional-info">
+
+### Quad Sided    
 <Callout type="info" emoji="ℹ️">
 **Quad sided**    
-*Quad sided* allows you to create an untrimmed quad-sided spline surface. This is particularly useful when constructing a surface with only 4 boundary edges as this will create high-quality results with correct spline orientation.
+*Quad sided* - allows you to create an untrimmed quad-sided spline surface. This is particularly useful when constructing a surface with only 4 boundary edges as this will create high-quality results with correct spline orientation.
 </Callout>
 <VideoPlayer fileName="xnurbs-quad-sided"/>
 
+### Flatness      
 <Callout type="info" emoji="ℹ️"> 
 **Flatness**      
-*Flatness* determines the output quality of a surface by increasing and decreasing the input value in the Command Dialog. When using the **Quad sided** option on a quad-sided surface, the value of flatness needs to be between **0.95 - 1.00** for optimum results.
+*Flatness* - determines the output quality of a surface by increasing and decreasing the input value in the Command Dialog. When using the **Quad sided** option on a quad-sided surface, the value of flatness needs to be between **0.95 - 1.00** for optimum results.
 </Callout>
 <VideoPlayer fileName="xnurbs-flatness"/>
 
+### Tension       
 <Callout type="info" emoji="ℹ️"> 
 **Tension**      
 *Tension* controls the curvature strength of a surface. A lower value of **0.1** results in a more relaxed surface, while a higher value **1.0** tightens up the transition, focusing towards the centre of the blend. By default, the value is set **0.5**. This feature is similar to Loft and Bridge Surface commands. 
 </Callout>
 <VideoPlayer fileName="xnurbs-tension"/>
 
+### Quality       
 <Callout type="info" emoji="ℹ️">
 **Quality**       
 **Auto, High, and Max** options determine the quality of the generated surface. By default, it is on **Auto** but you can select either **High** or **Max** for higher quality. However, this will generate more splines.
 </Callout>
 <VideoPlayer fileName="xnurbs-quality"/>
 
+### Profile Guides      
 <Callout type="info" emoji="ℹ️">
 **Profile Guides**      
 Unlike with the Loft and Patch Command, Xnurbs is capable of generating surfaces using open profile guides that don't intersect with boundary guides, this gives the flexibility to generate surfaces easily and have the creative opportunity to explore surfaces.
 </Callout>
 <VideoPlayer fileName="xnurbs-profile-guides"/>
+
+</section>
 
 ## See also
 - [Square](square)
