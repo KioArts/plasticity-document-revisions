@@ -6,7 +6,7 @@ import { Callout } from 'nextra/components'
 
 # XNurbs
 
-<Reference shortcut="" command="XNurbs" button=""/>
+<Reference shortcut="" command="XNurbs" button="In Command Palette" buttonicon='button-xnurbs'/>
 
 XNurbs ist ein Werkzeug zur Erzeugung von N-seitigen und viereckigen Flächen mit hochwertiger Qualität. Es ermöglicht das Überbrücken von Lücken und das Schließen komplexer Löcher auf einer Fläche.
 
@@ -39,45 +39,41 @@ XNurbs ist ein Werkzeug zur Erzeugung von N-seitigen und viereckigen Flächen mi
 
 <VideoPlayer fileName="xnurbs"/>
 
-<Callout type="warning" emoji="ℹ️">
-**Hinweis**    
-- Werkzeuge wie Patch können Schwierigkeiten mit komplexen Flächen haben. Verwenden Sie **XNurbs**, um komplexe Flächen zu erzeugen oder als Ausgangspunkt für eine spätere Verfeinerung.  
-- **XNurbs** kann Lücken auch bei schlechten Eingaben überbrücken, doch hochwertige Flächen erfordern dennoch präzise Einschränkungen.   
+<Callout type="warning">  
+1. Werkzeuge wie **Patch** haben bei komplexen Oberflächen häufig Schwierigkeiten. Verwenden Sie **XNurbs**, um komplexe Oberflächen zu erzeugen oder als Ausgangspunkt für eine spätere Verfeinerung.  
+2. Auch wenn **XNurbs** Lücken selbst bei schlechten Eingaben schließen kann, benötigen hochwertige Oberflächen immer noch geeignete Einschränkungen.   
 </Callout>
 
-<Callout type="info" emoji="ℹ️">
-**Viereckig (Quad sided)**    
-*Quad sided* ermöglicht die Erstellung einer unbeschnittenen, viereckigen Splines-Fläche.  
-Dies ist besonders nützlich, wenn eine Fläche mit genau vier Begrenzungskanten konstruiert wird, da dies qualitativ hochwertige Ergebnisse mit korrekter Spline-Ausrichtung erzeugt.
-</Callout>
+## Zusätzliche Informationen
+
+### Quad‑seitig
+
+*Quad‑seitig* ermöglicht das Erstellen einer unbeschnittenen, quad‑seitigen Spline‑Oberfläche. Das ist besonders nützlich, wenn nur **vier** Begrenzungskanten vorhanden sind – dadurch entstehen qualitativ hochwertige Ergebnisse mit korrekter Spline‑Orientierung.
+
 <VideoPlayer fileName="xnurbs-quad-sided"/>
 
-<Callout type="info" emoji="ℹ️"> 
-**Flachheit (Flatness)**      
-*Flatness* bestimmt die Ausgabequalität einer Fläche, indem der Eingabewert im Befehlsdialog erhöht oder verringert wird.  
-Wenn die **Quad sided**-Option auf eine viereckige Fläche angewendet wird, sollte der Wert für optimale Ergebnisse zwischen **0,95 - 1,00** liegen.
-</Callout>
+### Flachheit
+
+*Flachheit* bestimmt die Ausgabequalität einer Oberfläche, indem der Eingabewert im Befehlsdialog erhöht oder verringert wird. Wird die Option **Quad‑seitig** verwendet, sollte der Flachheitswert zwischen **0,95 – 1,00** liegen, um optimale Resultate zu erzielen.
+
 <VideoPlayer fileName="xnurbs-flatness"/>
 
-<Callout type="info" emoji="ℹ️"> 
-**Spannung (Tension)**      
-*Spannung* steuert die Krümmungsstärke einer Oberfläche. Ein niedriger Wert von **0,1** führt zu einer entspannteren Oberfläche, während ein höherer Wert von **1,0** den Übergang strafft und sich auf die Mitte der Verbindung konzentriert. Standardmäßig ist der Wert auf **0,5** gesetzt. Diese Funktion ähnelt den Befehlen Loft und Brückenoberfläche. 
-</Callout>
-<VideoPlayer fileName="xnurbs-tension"/> 
+### Spannung
 
-<Callout type="info" emoji="ℹ️">
-**Qualität (Quality)**       
-Die Optionen **Auto, High und Max** bestimmen die Qualität der erzeugten Fläche.  
-Standardmäßig ist **Auto** aktiviert, aber Sie können **High** oder **Max** wählen, um eine höhere Qualität zu erzielen.  
-Dies erzeugt jedoch mehr Splines.
-</Callout>
+*Spannung* steuert die Krümmungsstärke einer Oberfläche. Ein niedriger Wert von **0,1** ergibt eine entspannte Oberfläche, während ein höherer Wert von **1,0** die Übergänge strafft und den Fokus zur Mitte des Blends verlagert. Der Vorgabewert ist **0,5**. Diese Funktion ähnelt den Befehlen **Loft** und **Bridge Surface**.
+
+<VideoPlayer fileName="xnurbs-tension"/>
+
+### Qualität
+
+Die Optionen **Auto**, **High** und **Max** bestimmen die Qualität der erzeugten Oberfläche. Standardmäßig ist **Auto** aktiv; Sie können **High** oder **Max** wählen, um höhere Qualität zu erhalten. Beachten Sie, dass höhere Qualitätsstufen mehr Splines erzeugen.
+
 <VideoPlayer fileName="xnurbs-quality"/>
 
-<Callout type="info" emoji="ℹ️">
-**Profilführungen (Profile Guides)**      
-Im Gegensatz zu den Loft- und Patch-Befehlen kann **XNurbs** Flächen mit offenen Profilführungen erzeugen, die sich nicht mit Begrenzungsführungen schneiden.  
-Dies bietet mehr Flexibilität bei der Flächenerzeugung und eröffnet kreative Möglichkeiten zur Flächengestaltung.
-</Callout>
+### Profil‑Leitfäden
+
+Im Gegensatz zu den Befehlen **Loft** und **Patch** kann **XNurbs** Oberflächen mithilfe offener Profil‑Leitfäden erzeugen, die nicht mit den Begrenzungs‑Leitfäden schneiden. Das bietet große Flexibilität und kreative Möglichkeiten, Oberflächen einfach zu erstellen und zu erkunden.
+
 <VideoPlayer fileName="xnurbs-profile-guides"/>
 
 ## Siehe auch

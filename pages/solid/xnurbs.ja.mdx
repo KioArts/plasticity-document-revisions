@@ -6,7 +6,7 @@ import { Callout } from 'nextra/components'
 
 # XNurbs
 
-<Reference shortcut="" command="XNurbs" button=""/>
+<Reference shortcut="" command="XNurbs" button="In Command Palette" buttonicon='button-xnurbs'/>
 
 XNurbs は、高品質な N 辺形および四辺形サーフェスを生成できるツールです。サーフェスの隙間を埋めたり、複雑な穴を閉じたりすることができます。
 
@@ -37,43 +37,41 @@ XNurbs は、高品質な N 辺形および四辺形サーフェスを生成で�
 
 <VideoPlayer fileName="xnurbs"/>
 
-<Callout type="warning" emoji="ℹ️">
-**注意**    
-- Patchのようなツールは複雑なサーフェスに対応しにくい場合があります。複雑なサーフェスを生成する場合や、後の調整の出発点として **XNurbs** を使用してください。  
-- **XNurbs** は不適切な入力でもギャップを埋めることができますが、高品質なサーフェスを得るには適切な制約が必要です。   
+<Callout type="warning">  
+1. Patch のようなツールは複雑なサーフェスで苦労することがあります。複雑なサーフェスを生成する場合や、後で微調整する出発点として **XNurbs** を使用してください。  
+2. **XNurbs** は不良入力でもギャップを埋められますが、高品質なサーフェスには適切な制約が依然として必要です。   
 </Callout>
 
-<Callout type="info" emoji="ℹ️">
-**四辺形 (Quad sided)**    
-*Quad sided* を使用すると、トリムされていない四辺形のスプラインサーフェスを作成できます。これは、4つの境界エッジのみを使用してサーフェスを構築する際に特に有用であり、スプラインの方向を正しく維持しながら高品質な結果を得ることができます。
-</Callout>
+## 追加情報
+
+### Quad‑sided（クアッドサイド）
+
+*Quad‑sided* は、トリミングされていないクアッドサイドのスプラインサーフェスを作成できます。境界エッジが **4 本** だけの場合に特に有用で、正しいスプライン方向を保ちつつ高品質な結果が得られます。
+
 <VideoPlayer fileName="xnurbs-quad-sided"/>
 
-<Callout type="info" emoji="ℹ️"> 
-**平坦度 (Flatness)**      
-*Flatness* は、コマンドダイアログ内の入力値を増減することでサーフェスの出力品質を決定します。  
-**Quad sided** オプションを四辺形サーフェスに使用する場合、最適な結果を得るために **0.95 - 1.00** の範囲の値を設定してください。
-</Callout>
+### Flatness（フラットネス）
+
+*Flatness* は、コマンドダイアログ内の入力値を増減させることでサーフェスの出力品質を決定します。**Quad‑sided** オプションを使用する場合、最適な結果を得るためにフラットネスの値は **0.95 〜 1.00** の範囲に設定してください。
+
 <VideoPlayer fileName="xnurbs-flatness"/>
 
-<Callout type="info" emoji="ℹ️"> 
-**テンション (Tension)**      
-*Tension* は、サーフェスの曲率の強さを制御します。低い値 **0.1** はより緩やかなサーフェスを作り、高い値 **1.0** は遷移を引き締め、ブレンドの中心に焦点を当てます。デフォルトでは **0.5** に設定されています。この機能は Loft や Bridge Surface コマンドと類似しています。 
-</Callout>
-<VideoPlayer fileName="xnurbs-tension"/> 
+### Tension（テンション）
 
-<Callout type="info" emoji="ℹ️">
-**品質 (Quality)**       
-**Auto、High、Max** のオプションは、生成されるサーフェスの品質を決定します。  
-デフォルトでは **Auto** ですが、**High** または **Max** を選択することでより高品質なサーフェスを生成できます。ただし、これによりスプラインの数が増加します。
-</Callout>
+*Tension* はサーフェスの曲率強度を制御します。低い値 **0.1** は緩やかなサーフェスを、 高い値 **1.0** は遷移を引き締め、ブレンドの中心に焦点を合わせます。デフォルトは **0.5** です。この機能は **Loft** および **Bridge Surface** コマンドに似ています。
+
+<VideoPlayer fileName="xnurbs-tension"/>
+
+### Quality（クオリティ）
+
+**Auto**、**High**、**Max** のオプションで生成されるサーフェスの品質を決めます。既定では **Auto** が選択されていますが、**High** または **Max** を選ぶとより高品質になります。ただし、品質が上がるほどスプラインの数も増えます。
+
 <VideoPlayer fileName="xnurbs-quality"/>
 
-<Callout type="info" emoji="ℹ️">
-**プロファイルガイド (Profile Guides)**      
-Loft や Patch コマンドとは異なり、**XNurbs** は境界ガイドと交差しない開いたプロファイルガイドを使用してサーフェスを生成できます。  
-これにより、簡単にサーフェスを生成できるだけでなく、クリエイティブな可能性を広げることができます。
-</Callout>
+### Profile Guides（プロファイルガイド）
+
+**Loft** や **Patch** コマンドとは異なり、**XNurbs** は境界ガイドと交差しないオープンなプロファイルガイドを使用してサーフェスを生成できます。これにより、サーフェスを簡単に作成でき、創造的に探索する柔軟性が得られます。
+
 <VideoPlayer fileName="xnurbs-profile-guides"/>
 
 ## 関連項目

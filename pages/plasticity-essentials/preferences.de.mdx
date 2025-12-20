@@ -54,9 +54,21 @@ Verfügbare Sprachen:
 
 ![Ambient Occlusion Settings](/img/ao-settings.png)
 
-## Backup  
+## Sicherung
 
-- Sie können Sicherungen für Notfälle erstellen.  
+- Sie können Sicherungen anlegen, um für Notfälle gerüstet zu sein.  
+- Wenn ungespeicherte Dateien zu fehlen scheinen, prüfen Sie die folgenden Verzeichnisse:
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigate to `C:\Users\<UserName>\AppData\Local\Temp\plasticity` or `C:\Users\<UserName>\AppData\Local\Temp\plasticity-backup`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `/var/folders/<random>/T/plasticity` or `/var/folders/<random>/T/plasticity-backup`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigate to `/tmp/plasticity` or `/tmp/plasticity-backup`.
+    </Tabs.Tab>
+</Tabs>
 
 ## Server  
 

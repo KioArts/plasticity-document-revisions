@@ -5,7 +5,7 @@ import { Callout } from 'nextra/components'
 
 # Square 
 
-<Reference shortcut="" command="Square" button="" />
+<Reference shortcut="" command="Square" button="In Command Palette" buttonIcon='button-square' />
 
 Square は XNurbs に基づいたコマンドで、高品質な四辺形サーフェスを生成します。UV の次数やスパンを正確にパラメトリック制御でき、最適なサーフェス定義が可能です。
 
@@ -42,34 +42,35 @@ Square は XNurbs に基づいたコマンドで、高品質な四辺形サー�
 
 <VideoPlayer fileName="square"/>
 
-<Callout type="info" emoji="ℹ️">
-**Square でのロフト**  
-代替として、Square コマンドはロフト手法として使用することができ、2 つの接触していないエッジを選択することで適用できます。この方法では、度数やスパン値、境界条件（必要に応じて）、平坦度、ウェイト影響などのパラメータを指定することができ、より柔軟な制御が可能です。一方、標準的なロフトを使用すると、制御オプションが限られた固定されたサーフェスが生成されます。  
-</Callout>
-<VideoPlayer fileName="square-1"/>
-
-<Callout type="info" emoji="ℹ️">
-**Square でのスイープ**  
-Sweep コマンドと同様に、Square コマンドは同等の結果を生成できますが、より柔軟で詳細な制御が可能です。この結果は、2 つまたは 3 つの接触しているエッジを選択することで達成できます。  
-</Callout>
-<VideoPlayer fileName="square-2"/>
-
-<Callout type="info" emoji="ℹ️">
-**Square でのパッチング**  
-Square コマンドは、Patch コマンドと同様に、四辺の境界エッジを持つ穴をサーフェスで埋めることができます。  
-</Callout>
-<VideoPlayer fileName="square-3"/>
-
-<Callout type="info" emoji="💡">
-**ヒント**  
-XNurbs と同様に、コマンドを事前に実行し、境界エッジ、カーブ、サーフェスを選択できます。これにより、ワークフローを効率的に進めることができ、サーフェス生成のライブプレビューを提供します。  
+<Callout type="info" emoji="💡">   
+XNurbs と同様に、コマンドを事前に実行し、境界エッジ、曲線、サーフェスの選択を開始できます。これによりワークフローが効率的に高速化され、サーフェス生成のライブプレビューが提供されます。 
 </Callout>
 <VideoPlayer fileName="square-4"/>
 
-<Callout type="info" emoji="💡">
-**ヒント**  
-Square コマンドは、顔とその隣接する面上のトリムされたサーフェスを選択的に再調整し、サーフェスの自然なフローに一致するようにスプラインの向きを整列させます。この機能は、スプラインの向きを調整せずにサーフェスを再構築することに焦点を当てた **Rebuild** コマンドとは大きく異なります。  
-</Callout>
+## 追加情報
+
+### Square を使ったロフト
+
+あるいは、**Square** コマンドを使用して、接触していない 2 本のエッジを選択することでロフト手法として利用できます。この方法はサーフェス生成に対してより高い柔軟性と制御を提供し、次数やスパン値、必要に応じた境界条件、平坦度、ウェイト影響などのパラメータを指定できます。標準のロフトは制御オプションが限られた固定サーフェスを生成します。
+
+<VideoPlayer fileName="square-1"/>
+
+### Square を使ったスイープ
+
+**Sweep** コマンドと同様に、**Square** コマンドでも類似した結果を得られますが、生成されるサーフェスに対してより大きな柔軟性とコントロールが可能です。この結果は、2 本または 3 本の接触エッジを選択することで実現できます。
+
+<VideoPlayer fileName="square-2"/>
+
+### Square を使ったパッチ
+
+**Square** コマンドは、**Patch** コマンドと同様に、四辺境界エッジでサーフェスの穴を埋めることができます。
+
+<VideoPlayer fileName="square-3"/>
+
+### サーフェスのリフィット
+
+**Square** コマンドは、フェイス上および隣接するサーフェス上のトリムされたサーフェスを選択的にリフィットでき、スプラインの向きをサーフェスの自然な流れに合わせて整列させます。この機能は、スプラインの向きを合わせずにサーフェスを再構築する **Rebuild** コマンドとは大きく異なります。
+
 <VideoPlayer fileName="square-5"/>
 
 ## 関連項目
