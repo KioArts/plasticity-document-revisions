@@ -1,6 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { DocsThemeConfig, useConfig  } from "nextra-theme-docs";
+import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
+
+// Import your custom components here
+import Hero from "./components/Hero.jsx";
+import FeatureGrid from "./components/FeatureGrid.jsx";
+import ResourceSection from "./components/ResourceSection.jsx";
 
 const config: DocsThemeConfig = {
     logo: (
@@ -9,7 +14,12 @@ const config: DocsThemeConfig = {
         </>
     ),
 
-    //FOOTER!!!
+    // REGISTER CUSTOM MDX COMPONENTS HERE
+    components: {
+        Hero,
+        FeatureGrid,
+        ResourceSection
+    },
 
     footer: {
         text: (
@@ -33,28 +43,29 @@ const config: DocsThemeConfig = {
             </div>
         ),
     },
-    darkMode: true,
 
-    //SIDEBAR!!!
+    darkMode: true,
 
     sidebar: {
         toggleButton: true,
         defaultMenuCollapseLevel: 1,
         autoCollapse: true,
     },
+
     docsRepositoryBase:
         "https://github.com/KioArts/plasticity-document-revisions",
+
     project: {
         link: "https://github.com/KioArts/plasticity-document-revisions",
     },
+
     editLink: {
         text: <></>,
     },
+
     gitTimestamp: ({ timestamp }) => (
         <span>Last updated on {timestamp.toLocaleDateString()}</span>
     ),
-
-    // SEARCHBAR!!!
 
     search: {
         placeholder: () => {
@@ -89,10 +100,7 @@ const config: DocsThemeConfig = {
 
         return (
             <>
-                <meta
-                    property="og:site_name"
-                    content="Plasticity Manual"
-                ></meta>
+                <meta property="og:site_name" content="Plasticity Manual" />
                 <meta property="og:url" content={url} />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@getPlasticity" />
@@ -103,14 +111,6 @@ const config: DocsThemeConfig = {
             </>
         );
     },
-    /*     banner: {
-        key: "2024.2-release",
-        text: (
-            <a href="/whats-new">
-                🎉 Plasticity 2024.2 is released → Click here for details
-            </a>
-        ),
-    }, */
 };
 
 export default config;
