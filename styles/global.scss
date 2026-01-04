@@ -16,15 +16,15 @@ body {
         );
     }
 
-     // **Added Font-Smoothing Properties**
-     -webkit-font-smoothing: antialiased; /* For WebKit-based browsers like Safari */
-     -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+    // **Added Font-Smoothing Properties**
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     &:lang(en),
     &:lang(de) {
         font-family: "Inter", "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
             "Helvetica", "Arial", sans-serif;
-        font-weight: 400 !important; /* Changed from 300 to 400*/ 
+        font-weight: 400 !important;
 
         .md\:nx-w-64 {
             width: 18rem !important;
@@ -49,7 +49,6 @@ body {
         line-height: 1.3rem !important;
     }
 }
-
 
 .nx-font-bold {
     font-weight: 900 !important;
@@ -79,9 +78,8 @@ th.nx-border {
     border-left-width: 0 !important;
 }
 
-/* Keyboard styles  */
+/* Keyboard styles */
 kbd {
-    // background-color: #8881;
     padding: 0px 5px 0px;
     border-radius: 0.3rem;
     border: 1px solid #888;
@@ -116,4 +114,109 @@ h1 {
 
 h2 {
     margin-bottom: 1em !important;
+}
+
+/* -------------------------------------------------- */
+/* HOMEPAGE STYLING (SAFE FOR NEXTRA + VERCEL)        */
+/* -------------------------------------------------- */
+
+/* Light mode gradient */
+html.light .homepage {
+    background: linear-gradient(
+        180deg,
+        #f8fafc 0%,
+        #ffffff 40%,
+        #f1f5f9 100%
+    );
+}
+
+/* Dark mode gradient */
+html.dark .homepage {
+    background: linear-gradient(
+        180deg,
+        #0f1115 0%,
+        #111318 40%,
+        #0d0f12 100%
+    );
+}
+
+/* Remove Nextra white article box */
+.nextra-content article {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Make homepage content full width */
+.nextra-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+/* Remove default top padding */
+.nextra-container main {
+    padding-top: 0 !important;
+}
+
+/* Section spacing */
+.homepage > * {
+    display: block;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+}
+
+/* -------------------------------------------------- */
+/* CARD HOVER ANIMATIONS                              */
+/* -------------------------------------------------- */
+
+.homepage .card,
+.homepage .resource-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 12px;
+}
+
+/* Light mode hover */
+html.light .homepage .card:hover,
+html.light .homepage .resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Dark mode hover */
+html.dark .homepage .card:hover,
+html.dark .homepage .resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Card backgrounds */
+html.light .homepage .card,
+html.light .homepage .resource-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+html.dark .homepage .card,
+html.dark .homepage .resource-card {
+    background: #1a1c1f;
+    border: 1px solid #2a2d31;
+}
+
+/* Section title underline */
+.homepage h2 {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.homepage h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #4f8cff, transparent);
 }
