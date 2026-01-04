@@ -1,0 +1,32 @@
+/* Remove the white article box */
+.nextra-content article {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Make the content area wider */
+.nextra-content {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Remove default top padding */
+.nextra-container main {
+  padding-top: 0 !important;
+}
+
+/* Give homepage sections breathing room */
+.homepage > * {
+  display: block;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+}
+
+/* Optional: give the hero full width */
+.homepage > :first-child {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
