@@ -1,44 +1,74 @@
 ---
-title: Plasticity マニュアル
-description: Plasticity 3D の公式マニュアル。全キーボードショートカット掲載。日々更新中！
+title: Plasticity Manual
+description: The official manual for Plasticity 3D. All keyboard shortcuts. Updated daily!
 ---
-import styles from '/styles/index.module.scss'
+// import styles from '/styles/index.module.scss'
+import Hero from "../components/Hero.jsx"
+import FeatureGrid from "../components/FeatureGrid.jsx"
+import ResourceSection from "../components/ResourceSection.jsx"
+
+<Hero
+  title="Plasticity Documentation"
+  subtitle="Your complete guide to modeling, sculpting, and designing with precision."
+  ctaText="Start Learning"
+  ctaLink="/docs/getting-started"
+/>
+
+<FeatureGrid
+  features={[
+    { title: "Precision Modeling", description: "Accurate CAD tools.", icon: "/icons/precision.svg" },
+    { title: "Sculpting Tools", description: "Organic workflows.", icon: "/icons/sculpt.svg" },
+    { title: "Rendering", description: "Beautiful visuals.", icon: "/icons/render.svg" }
+  ]}
+/>
+
+<ResourceSection
+  title="Explore Resources"
+  items={[
+    { title: "Tutorials", description: "Learn step-by-step.", image: "/images/tutorials.jpg", link: "/docs/tutorials" },
+    { title: "Advanced Guides", description: "Deep technical knowledge.", image: "/images/advanced.jpg", link: "/docs/advanced" },
+    { title: "API Reference", description: "Extend Plasticity.", image: "/images/api.jpg", link: "/docs/api" }
+  ]}
+/>
+
+
+{/* // Code ->
 
 <div style={{margin: '2em 0'}}>
-    <span style={{fontSize: '2em'}}><span style={{fontWeight: 800}}>Plasticity&nbsp;</span>マニュアル</span>
+    <span style={{fontSize: '2em'}}><span style={{fontWeight: 800}}>Plasticity&nbsp;</span>Manual</span>
 </div>
 
 <div className={styles.container}>
     <div>
-    - 全コマンド & キーボードショートカット
-    - [Plasticityの基本](/all-commands/plasticity-essentials)
-    - [スケッチ＆プリミティブツール](/all-commands/tool-commands)
-    - [共通のコマンド](/all-commands/common-commands)
-    - [スケッチコマンド](/all-commands/sketch-commands)
-    - [ソリッドコマンド](/all-commands/solid-commands)
-    - [ショートカットキー一覧 (PDF)](/all-commands/download-pdf)
+    - Command List & Shortcut Keys
+    - [Plasticity Essentials](/all-commands/plasticity-essentials)
+    - [Sketching & Primitive Tools](/all-commands/tool-commands)
+    - [Common Commands](/all-commands/common-commands)
+    - [Sketch Commands](/all-commands/sketch-commands)
+    - [Solid Commands](/all-commands/solid-commands)
+    - [Shortcut Key List (PDF)](/all-commands/download-pdf)
     </div>
     <div>
-    - [はじめに](/getting-started)
-    - [3Dビューポート](/plasticity-essentials)
+    - [Getting Started](/getting-started)
+    - [3D Viewport](/plasticity-essentials)
     </div>
     <div>
-    **ツール**
-    - [スケッチ & プリミティブ ツール](/tool)
+    **Tools**
+    - [Sketch & Primitive Tools](/tool)
     </div>
     <div>
-    **コマンド**
-    - [スケッチとソリッド共通](/common)
-    - [スケッチ](/sketch)
-    - [ソリッド](/solid)
+    **Commands**
+    - [Common: Sketch & Solid](/common)
+    - [Sketch](/sketch)
+    - [Solid](/solid)
     </div>
     <div>
-    **連携**
+    **Integration**
     - [Blender](/blender/introduction-blender-bridge)
     </div>
     <div>
-    **応用**
-    - [CADエッセンシャル](/cad-essentials)
-    - [リリースノート](/release-notes)
+    **Advanced**
+    - [CAD Essentials](/cad-essentials)
+    - [Release Notes](/release-notes)
     </div>
-</div>
+</div> */}
