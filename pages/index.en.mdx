@@ -2,7 +2,37 @@
 title: Plasticity Manual
 description: The official manual for Plasticity 3D. All keyboard shortcuts. Updated daily!
 ---
-import styles from '/styles/index.module.scss'
+// import styles from '/styles/index.module.scss'
+import Hero from "../components/Hero.jsx"
+import FeatureGrid from "../components/FeatureGrid.jsx"
+import ResourceSection from "../components/ResourceSection.jsx"
+
+<Hero
+  title="Plasticity Documentation"
+  subtitle="Your complete guide to modeling, sculpting, and designing with precision."
+  ctaText="Start Learning"
+  ctaLink="/docs/getting-started"
+/>
+
+<FeatureGrid
+  features={[
+    { title: "Precision Modeling", description: "Accurate CAD tools.", icon: "/icons/precision.svg" },
+    { title: "Sculpting Tools", description: "Organic workflows.", icon: "/icons/sculpt.svg" },
+    { title: "Rendering", description: "Beautiful visuals.", icon: "/icons/render.svg" }
+  ]}
+/>
+
+<ResourceSection
+  title="Explore Resources"
+  items={[
+    { title: "Tutorials", description: "Learn step-by-step.", image: "/images/tutorials.jpg", link: "/docs/tutorials" },
+    { title: "Advanced Guides", description: "Deep technical knowledge.", image: "/images/advanced.jpg", link: "/docs/advanced" },
+    { title: "API Reference", description: "Extend Plasticity.", image: "/images/api.jpg", link: "/docs/api" }
+  ]}
+/>
+
+
+{/* // Code ->
 
 <div style={{margin: '2em 0'}}>
     <span style={{fontSize: '2em'}}><span style={{fontWeight: 800}}>Plasticity&nbsp;</span>Manual</span>
@@ -41,4 +71,4 @@ import styles from '/styles/index.module.scss'
     - [CAD Essentials](/cad-essentials)
     - [Release Notes](/release-notes)
     </div>
-</div>
+</div> */}
