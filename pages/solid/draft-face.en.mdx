@@ -13,12 +13,18 @@ Apply a draft angle to the selected Face.
 ## Basic Usage
 
 1. Select the face to use as a reference plane.
-2. Click the button <ButtonIcon type="button-draft-face" /> in the [Suggested Commands](/plasticity-essentials/command-bar#suggested-commands) menu.
-3. Select Face or Faces with <kbd>Ctrl</kbd> button to draft.
+2. Select Face or Faces with <kbd>Shift</kbd> button to draft.
+3. Click the button <ButtonIcon type="button-draft-face" /> in the [Suggested Commands](/plasticity-essentials/command-bar#suggested-commands) menu.
 4. Drag the white circle to specify the angle of draft or Gizmo to adjust the position of the reference plane.
 5. Set the options in the Command Dialog and Keyboard Shortcuts.
     - <Kst>Command Dialog</Kst>
         - **Degrees:** Specify the angle of draft.
+        - **Taper Method:**
+            - **Isocline:** Maintains a constant angle along a specific pull direction, ensuring the entire face has a uniform draft regardless of surface curvature.
+            - **Curve:** Uses a selected curve as the pivot or anchor point for the taper.
+            - **Surface:** Tilts the selected faces relative to the orientation of a secondary reference surface.
+            - **Offset:** Shifts the pivot point of the taper away from the reference plane using the yellow handle.
+            - **Normal:** Applies the draft angle perpendicular to the starting surface of the reference face.
         - **Grow:**
             - When the concave inner Face is drafted.
             - **Moving:** Extend the outer wall when the drafted Face gets to the outer wall.
