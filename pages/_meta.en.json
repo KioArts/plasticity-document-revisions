@@ -26,6 +26,7 @@
 
   "---integration": { "type": "separator", "title": "Integration" },
   "blender": "Blender",
+  "cinema-4d": "Cinema 4D",
 
   "---support": { "type": "separator", "title": "Changelog" },
   "release-notes": "Release Notes",

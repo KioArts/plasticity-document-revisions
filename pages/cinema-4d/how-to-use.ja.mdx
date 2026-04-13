@@ -1,0 +1,139 @@
+import VideoPlayer from '/components/VideoPlayer';
+
+# 使い方
+
+## Cinema 4D Bridgeのセットアップ
+
+Cinema 4D Bridgeプラグインがインストールされ、Plasticityで機能が有効になっていることを確認してください。セットアップ手順は[こちら](install-c4d-plugin)を参照してください。
+
+## 基本的な使い方
+
+PlasticityでのオブジェクトをCinema 4Dに転送するには、Cinema 4DのPlasticity Bridgeダイアログにある「Refresh」ボタンをクリックします。
+
+1. **Plasticity内:**
+    1. Plasticityを開きます。
+    2. Cinema 4Dに転送したいオブジェクトを作成します。
+2. **Cinema 4D内:**
+    1. **拡張 > Plasticity Bridge** からPlasticity Bridgeダイアログを開きます。ダイアログは **Server**、**Basic**、**Utilities** の3つのタブで構成されています。
+    2. **Server** タブでサーバーアドレス(デフォルト: `localhost:8980`)を入力し、「Connect」ボタンをクリックします。接続が確立されると、追加のオプションが利用可能になります。
+        ![CB C4D Connect](/img/cb-c4d-connect.png)
+    3. 「Refresh」ボタンをクリックして、PlasticityからCinema 4Dにオブジェクトを転送します。
+        ![CB C4D Refresh](/img/cb-c4d-refresh.png)
+    4. 転送されたオブジェクトは、Plasticityドキュメント名が付けられたルートヌルの下にオブジェクトマネージャーに表示されます。
+        - Plasticityのすべてのソリッドおよびシートは、Cinema 4Dではポリゴンオブジェクトとして転送されます。
+        - 「Only visible」が無効(デフォルト)の場合、Plasticityの非表示オブジェクトはCinema 4Dにも非表示オブジェクトとして転送されます。「Only visible」が有効の場合、非表示オブジェクトは転送されません。
+        - 「Unit Scale」スライダーでサイズのスケールを調整できます。スケールはルートヌルのトランスフォームに適用されるため、変更は即座に反映され、いつでも調整可能です。
+3. **Plasticity内:**
+    1. 必要に応じてオブジェクトを編集します。
+4. **Cinema 4D内:**
+    1. Plasticityでの変更を反映するには、Plasticity Bridgeダイアログの「Refresh」ボタンをクリックします。
+
+## ライブリンク
+
+ライブリンクを有効にすると、Plasticityでオブジェクトに加えた変更が自動的にCinema 4Dに転送されます。
+
+1. **Plasticity内:**
+    1. Plasticityを開きます。
+    2. Cinema 4Dに転送したいオブジェクトを作成します。
+2. **Cinema 4D内:**
+    1. Cinema 4D Bridgeプラグインがインストールされ、有効になっていることを確認します。
+    2. Plasticity Bridgeダイアログの **Server** タブにある「Live Link」チェックボックスを有効にします。
+        ![CB C4D Live Link](/img/cb-c4d-live-link.png)
+3. **Plasticity内:**
+    1. 必要に応じてオブジェクトを編集します。
+4. **Cinema 4D内:**
+    1. 変更内容が自動的にCinema 4Dに転送されます。
+
+## メッシュの再フェイセット(Refacet)
+
+「Refacet Mesh」オプションは、転送されたオブジェクトのメッシュを自動的にリトポロジーします。これによりポリゴン数を削減し、Cinema 4Dでのパフォーマンスを向上させることができます。
+
+1. **Cinema 4D内:**
+    1. リトポロジーする転送済みオブジェクトを選択します。
+    2. Plasticity Bridgeダイアログの **Basic** タブに切り替え、「Refacet」ボタンをクリックします。
+        ![CB C4D Refacet](/img/cb-c4d-refacet.png)
+        - **Basic** タブでRefacetの設定を指定できます。
+            - **Tris/Ngons:** 生成するメッシュの種類。「Tris」は三角形のみのメッシュを生成し、「Ngons」は5辺以上のポリゴンを含むメッシュを生成します。
+            - **Tolerance:** 元のメッシュとリトポロジー後のメッシュ間の最大距離。値が小さいほど元のメッシュに近くなりますが、ポリゴン数が増加します。
+            - **Angle:** 元のメッシュとリトポロジー後のメッシュ間の最大角度。値が小さいほど元のメッシュに近くなりますが、ポリゴン数が増加します。
+        - Refacet Optionsトグルを **Advanced** に切り替えると詳細オプションが表示されます。
+            - **Tris/Ngons:** 生成するメッシュの種類。
+            - **Min Width:** リトポロジー後のメッシュの最小幅。
+            - **Max Width:** リトポロジー後のメッシュの最大幅。
+            - **Edge Chord Tol:** 元のエッジコードとリトポロジー後のメッシュ間の最大距離。
+            - **Edge Chord Angle:** 元のエッジ角度とリトポロジー後のメッシュ間の最大角度。
+            - **Face Plane Tol:** 元の面の平面とリトポロジー後のメッシュ間の最大距離。
+            - **Face Angle Tol:** 元の面角度とリトポロジー後のメッシュ間の最大角度。
+
+### Auto-Refacet タグ
+
+Cinema 4D Bridgeは、カスタム **Plasticity Auto-Refacet** タグを介して **オブジェクトごとの** Refacet設定もサポートしています。**Basic** タブの「Auto Refacet」チェックボックスが有効になっている状態でRefacetをクリックすると、現在の設定が書き込まれたこのタグが選択されたオブジェクトに付加されます。以降のリフレッシュやライブリンクの更新のたびに、Bridgeはタグに保存された設定を使用して各タグ付きオブジェクトのテッセレーションを自動的に再要求するため、Plasticity側で編集を続けても各オブジェクトは独自のポリゴン密度を保持します。
+
+タグのパラメーターはBasicタブと同じ構成です — トポロジー(Tris/Ngons)、ToleranceとAngleを持つSimpleモード、およびMin/Max WidthとEdge Chord / Face Planeのパラメーターごとの許容誤差と角度を公開するAdvancedモード。これらの値はタグ上でいつでも直接編集できます。
+
+## ユーティリティ
+
+![CB C4D Utilities](/img/cb-c4d-utilities.png)
+
+**Utilities** タブは、転送された各メッシュに格納されているPlasticityの面グループ情報を活用するヘルパー機能を提供します。すべての操作は、オブジェクトマネージャーで現在選択されているオブジェクトに対して実行されます。
+
+### 面を選択タグとして保存
+
+- Plasticityの面グループごとに1つの **ポリゴン選択タグ** を作成します。タグ名は `Plasticity Face 0`、`Plasticity Face 1` のように付けられます。これにより、標準のポリゴン選択ワークフローを使ってCinema 4Dで面ごとにマテリアルを割り当てることができます。
+
+### エッジを選択タグとして保存
+
+- `__plasticity_edges__` という名前の単一の **エッジ選択タグ** を作成します。これにはPlasticityの面グループの境界にあるすべてのエッジが含まれます。これはCinema 4Dにおける「シャープのマーク」に相当し、ベベルなどのモディファイアーに渡したり、フォン角のブレークエッジとして使用したりできます。
+
+### 鋭いエッジを選択
+
+- 上記の境界エッジを選択し、Cinema 4Dをエッジモードに切り替えます。オプションの **角度** フィールドで、二面角による選択フィルタリングが可能です。`0` に設定するとすべての境界エッジを選択し、ゼロ以外の値に設定すると、隣接する面がしきい値より鋭い角度で交わるエッジのみを選択します。
+
+### Plasticityの面を選択
+
+- 現在のポリゴン選択を拡張し、同じPlasticity面グループに属するすべてのポリゴンを選択します。これを使うと、単一のポリゴンから素早くCADの面全体まで選択範囲を拡大できます。
+
+### Plasticityのエッジを選択
+
+- 1つ以上のポリゴンを選択した後、このコマンドを実行すると、それらのポリゴンが属するPlasticity面グループの境界エッジが選択されます。
+
+## PolySplines を使用した作業
+
+Cinema 4Dでジオメトリをモデリングし、Plasticityに転送すると、PolySplines が自動的に適用されます。[PolySplines](/solid/polyspline) を使用するには Studio ライセンスが必要です。
+
+Cinema 4D Bridgeでは、このワークフローは **Subdivision Surface** オブジェクトを中心に構築されています。**Outbox** ヌル内のSubdivision Surfaceの下に配置されたオブジェクトのみがアップロードの対象となります。Outboxに直接配置された通常のポリゴンオブジェクトはスキップされます。
+
+### 基本的な使い方
+
+1. **Plasticity内:**
+    1. シーンが空で、モデリングされたオブジェクトが含まれていないことを確認し、Cinema 4Dシーンへの意図しない転送を防ぎます。
+
+2. **Cinema 4D内:**
+    1. Plasticity Bridgeダイアログを開き、**Server** タブの「Connect」ボタンをクリックします。
+    2. 「Only Visible」オプションを有効にして、PlasticityからCinema 4Dにオブジェクトが転送されないようにします。
+    3. 「Refresh」ボタンをクリックします。オブジェクトマネージャーにルートヌルが表示され、その中に **Outbox** と **Inbox** の2つの子ヌルが含まれます。
+
+        ![Outliner C4D](/img/c4d-outliner-polysplines.png)
+
+    4. **Subdivision Surface** オブジェクトを作成し、**Outbox** ヌルの中に配置します。ジオメトリをそのSubdivision Surfaceの子として配置します。**注意:** 現在、パラメトリックはサポートされていません。オブジェクトを正しく渡すには、事前にポリゴンメッシュに変換（「編集可能にする」 / "Make Editable"）する必要があります
+        - *プロシージャルおよびパラメトリックセットアップのサポートは、将来のアップデートで予定されています。*
+        - Outbox内のオブジェクトはPlasticityからの更新から保護されます — リフレッシュの際にケージが上書きされることはありません。
+
+        ![SDSケージ](/img/c4d-outliner-polysplines-02.png)
+    5. 「Refresh」ボタンをクリックして、Cinema 4DからPlasticityにオブジェクトを転送します。
+
+3. **Plasticity内:**
+    1. 転送されたオブジェクトがPlasticityの3Dビューポートに表示されます。
+        - スケール、位置、回転などのトランスフォームデータは自動的に適用されます。
+        - 各Subdivision Surfaceの下にあるジェネレータースタック全体が転送時にベイクされます。
+        - オブジェクトは自動的にPolySplineサーフェスに変換されます。
+
+### Subdivision Surfaceのオプション
+
+追加のPolySplineオプションは、Subdivision Surfaceオブジェクトに **ユーザーデータ** のブール型フィールドを追加することで、SDSごとに設定できます:
+
+- `pns_merge_patches` *(デフォルト: true)* — 可能な場合、隣接するパッチを単一のサーフェスにマージします。
+- `pns_interpolate_boundary` *(デフォルト: false)* — 境界をクリースとして残すのではなく、補間します。
+- `pns_rounded_corners` *(デフォルト: false)* — 生成されるサーフェスのコーナーを丸めます。
+
+<VideoPlayer fileName="c4d-using-polysplines"/>

@@ -1,0 +1,139 @@
+import VideoPlayer from '/components/VideoPlayer';
+
+# Verwendung
+
+## Cinema 4D Bridge einrichten
+
+Stellen Sie sicher, dass das Cinema 4D Bridge Plugin installiert und die Funktion in Plasticity aktiviert ist. Die Einrichtungsanleitung finden Sie [hier](install-c4d-plugin).
+
+## Grundlegende Verwendung
+
+Um in Plasticity erstellte Objekte nach Cinema 4D zu übertragen, klicken Sie auf die Schaltfläche „Refresh" im Plasticity Bridge-Dialog in Cinema 4D.
+
+1. **In Plasticity:**
+    1. Öffnen Sie Plasticity.
+    2. Erstellen Sie die Objekte, die Sie nach Cinema 4D übertragen möchten.
+2. **In Cinema 4D:**
+    1. Öffnen Sie den Plasticity Bridge-Dialog über **Erweitern > Plasticity Bridge**. Der Dialog ist in drei Tabs unterteilt — **Server**, **Basic** und **Utilities**.
+    2. Geben Sie auf dem **Server**-Tab die Serveradresse ein (Standard: `localhost:8980`) und klicken Sie auf die Schaltfläche „Connect". Sobald eine Verbindung hergestellt wurde, stehen zusätzliche Optionen zur Verfügung.
+        ![CB C4D Connect](/img/cb-c4d-connect.png)
+    3. Klicken Sie auf die Schaltfläche „Refresh", um Objekte von Plasticity nach Cinema 4D zu übertragen.
+        ![CB C4D Refresh](/img/cb-c4d-refresh.png)
+    4. Die übertragenen Objekte erscheinen im Objekt-Manager unter einem Root-Null, das nach dem Plasticity-Dokument benannt ist.
+        - Alle Solids und Sheets in Plasticity werden in Cinema 4D als Polygon-Objekte übertragen.
+        - Wenn „Only visible" deaktiviert ist (Standard), werden unsichtbare Objekte in Plasticity als unsichtbare Objekte nach Cinema 4D übertragen. Wenn „Only visible" aktiviert ist, werden unsichtbare Objekte nicht übertragen.
+        - Ein „Unit Scale"-Schieberegler ermöglicht eine Skalierung der Größe. Die Skalierung wird auf die Transformation des Root-Nulls angewendet, sodass Änderungen sofort wirksam werden und jederzeit angepasst werden können.
+3. **In Plasticity:**
+    1. Bearbeiten Sie die Objekte nach Bedarf.
+4. **In Cinema 4D:**
+    1. Um Änderungen aus Plasticity zu aktualisieren, klicken Sie auf die Schaltfläche „Refresh" im Plasticity Bridge-Dialog.
+
+## Live Link
+
+Wenn Live Link aktiviert ist, werden alle Änderungen an Objekten in Plasticity automatisch nach Cinema 4D übertragen.
+
+1. **In Plasticity:**
+    1. Öffnen Sie Plasticity.
+    2. Erstellen Sie die Objekte, die Sie nach Cinema 4D übertragen möchten.
+2. **In Cinema 4D:**
+    1. Stellen Sie sicher, dass das Cinema 4D Bridge Plugin installiert und aktiviert ist.
+    2. Aktivieren Sie das Kontrollkästchen „Live Link" auf dem **Server**-Tab des Plasticity Bridge-Dialogs.
+        ![CB C4D Live Link](/img/cb-c4d-live-link.png)
+3. **In Plasticity:**
+    1. Bearbeiten Sie die Objekte nach Bedarf.
+4. **In Cinema 4D:**
+    1. Die Änderungen werden automatisch nach Cinema 4D übertragen.
+
+## Mesh neu vernetzen (Refacet)
+
+Die Option „Refacet Mesh" retopologisiert das Mesh des übertragenen Objekts automatisch. Dies ist nützlich, um die Anzahl der Polygone zu reduzieren und die Performance in Cinema 4D zu verbessern.
+
+1. **In Cinema 4D:**
+    1. Wählen Sie die zu retopologisierenden übertragenen Objekte aus.
+    2. Wechseln Sie zum **Basic**-Tab des Plasticity Bridge-Dialogs und klicken Sie auf die Schaltfläche „Refacet".
+        ![CB C4D Refacet](/img/cb-c4d-refacet.png)
+        - Die Refacet-Konfiguration kann auf dem **Basic**-Tab angepasst werden.
+            - **Tris/Ngons:** Der zu generierende Mesh-Typ. „Tris" erzeugt ein Mesh ausschließlich mit Dreiecken, während „Ngons" ein Mesh mit Polygonen mit fünf oder mehr Seiten erzeugt.
+            - **Tolerance:** Der maximale Abstand zwischen dem ursprünglichen Mesh und dem retopologisierten Mesh. Eine geringere Toleranz erzeugt ein Mesh, das dem Original stärker ähnelt, jedoch mehr Polygone enthält.
+            - **Angle:** Der maximale Winkel zwischen dem ursprünglichen und dem retopologisierten Mesh. Ein kleinerer Winkel erzeugt ein genaueres Mesh mit mehr Polygonen.
+        - Schalten Sie den Refacet-Options-Umschalter auf **Advanced**, um erweiterte Optionen anzuzeigen.
+            - **Tris/Ngons:** Der zu generierende Mesh-Typ.
+            - **Min Width:** Die Mindestbreite des retopologisierten Meshes.
+            - **Max Width:** Die Maximalbreite des retopologisierten Meshes.
+            - **Edge Chord Tol:** Der maximale Abstand zwischen dem ursprünglichen Kantenzug und dem retopologisierten Mesh.
+            - **Edge Chord Angle:** Der maximale Winkel zwischen dem ursprünglichen Kantenwinkel und dem retopologisierten Mesh.
+            - **Face Plane Tol:** Der maximale Abstand zwischen der ursprünglichen Flächenebene und dem retopologisierten Mesh.
+            - **Face Angle Tol:** Der maximale Winkel zwischen dem ursprünglichen Flächenwinkel und dem retopologisierten Mesh.
+
+### Auto-Refacet-Tag
+
+Cinema 4D Bridge unterstützt auch **objektspezifische** Refacet-Einstellungen über ein benutzerdefiniertes **Plasticity Auto-Refacet**-Tag. Wenn das Kontrollkästchen „Auto Refacet" auf dem **Basic**-Tab aktiviert ist, wird beim Klicken auf Refacet dieses Tag mit den aktuellen Einstellungen an die ausgewählten Objekte angehängt. Nach jeder folgenden Aktualisierung oder Live-Link-Aktualisierung fordert die Bridge für jedes getaggte Objekt automatisch eine erneute Tessellation mit den im Tag gespeicherten Einstellungen an. So behält jedes Objekt seine eigene Polygondichte, während Sie in Plasticity weiterarbeiten.
+
+Die Tag-Parameter spiegeln den Basic-Tab wider — Topologie (Tris/Ngons), einen Simple-Modus mit Tolerance und Angle sowie einen Advanced-Modus mit Min/Max Width und den parameterbezogenen Edge Chord / Face Plane Toleranzen und Winkeln. Diese Werte können jederzeit direkt am Tag bearbeitet werden.
+
+## Dienstprogramme
+
+![CB C4D Utilities](/img/cb-c4d-utilities.png)
+
+Der **Utilities**-Tab bietet Hilfsmittel, die die auf jedem übertragenen Mesh gespeicherten Plasticity-Flächengruppen-Informationen nutzen. Alle Aktionen arbeiten mit den aktuell im Objekt-Manager ausgewählten Objekten.
+
+### Flächen als Auswahl-Tags speichern
+
+- Erzeugt ein **Polygon-Auswahl-Tag** pro Plasticity-Flächengruppe mit den Namen `Plasticity Face 0`, `Plasticity Face 1` und so weiter. Dadurch können Sie Materialien flächenweise direkt in Cinema 4D über den standardmäßigen Polygon-Auswahl-Workflow zuweisen.
+
+### Kanten als Auswahl-Tag speichern
+
+- Erzeugt ein einzelnes **Kanten-Auswahl-Tag** mit dem Namen `__plasticity_edges__`, das alle Kanten enthält, die auf einer Plasticity-Flächengruppengrenze liegen. Dies ist das Cinema 4D-Äquivalent zum „Markieren als scharf" und kann an Modifier wie Bevel übergeben oder mit Phong-Bruchkanten verwendet werden.
+
+### Scharfe Kanten auswählen
+
+- Wählt die oben beschriebenen Randkanten aus und versetzt Cinema 4D in den Kanten-Modus. Ein optionales **Winkel**-Feld erlaubt das Filtern der Auswahl nach Diederwinkel — setzen Sie es auf `0`, um alle Randkanten auszuwählen, oder auf einen Wert ungleich Null, um nur Kanten auszuwählen, deren angrenzende Flächen einen schärferen Winkel als den Schwellenwert bilden.
+
+### Plasticity-Fläche(n) auswählen
+
+- Erweitert die aktuelle Polygonauswahl so, dass alle Polygone, die zur selben Plasticity-Flächengruppe gehören, ausgewählt werden. Nutzen Sie dies, um eine Auswahl ausgehend von einem einzelnen Polygon schnell auf eine ganze CAD-Fläche auszudehnen.
+
+### Plasticity-Kanten auswählen
+
+- Nach dem Auswählen eines oder mehrerer Polygone führt dieser Befehl die Auswahl der Plasticity-Randkanten der Flächengruppe(n) aus, zu denen diese Polygone gehören.
+
+## Arbeiten mit PolySplines
+
+Modellieren Sie Ihre Geometrie in Cinema 4D und übertragen Sie sie nach Plasticity, wo PolySplines automatisch angewendet wird. Eine Studio-Lizenz ist erforderlich, um [PolySplines](/solid/polyspline) zu verwenden.
+
+In Cinema 4D Bridge basiert dieser Workflow auf **Subdivision Surface**-Objekten. Nur Objekte, die unter einem Subdivision Surface im **Outbox**-Null platziert sind, sind für den Upload geeignet — einfache Polygon-Objekte, die direkt in das Outbox-Null gelegt werden, werden übersprungen.
+
+### Grundlegende Verwendung
+
+1. **In Plasticity:**
+    1. Stellen Sie sicher, dass die Szene leer ist und keine modellierten Objekte enthält, um eine ungewollte Übertragung nach Cinema 4D zu verhindern.
+
+2. **In Cinema 4D:**
+    1. Öffnen Sie den Plasticity Bridge-Dialog und klicken Sie auf die Schaltfläche „Connect" auf dem **Server**-Tab.
+    2. Aktivieren Sie die Option „Only Visible", um sicherzustellen, dass keine Objekte von Plasticity nach Cinema 4D übertragen werden.
+    3. Klicken Sie auf die Schaltfläche „Refresh". Ein Root-Null erscheint im Objekt-Manager und enthält zwei Kind-Nulls: **Outbox** und **Inbox**.
+
+        ![Outliner C4D](/img/c4d-outliner-polysplines.png)
+
+    4. Erstellen Sie ein **Subdivision Surface**-Objekt und platzieren Sie es innerhalb des **Outbox**-Nulls. Ordnen Sie Ihre Geometrie diesem Subdivision Surface unter. **Bitte beachten Sie:** Aktuell wird Parametrik nicht unterstützt. Um das Objekt korrekt zu übergeben, muss es zunächst in ein Polygon-Objekt umgewandelt werden ("Grundobjekt konvertieren" / "Make Editable").
+        - *Die Unterstützung für prozedurale und parametrische Setups ist für zukünftige Updates geplant.*
+        - Objekte im Outbox sind vor eingehenden Plasticity-Updates geschützt — Ihr Käfig wird beim Refresh nicht überschrieben.
+
+        ![SDS-Käfig](/img/c4d-outliner-polysplines-02.png)
+    5. Klicken Sie auf die Schaltfläche „Refresh", um die Objekte von Cinema 4D nach Plasticity zu übertragen.
+
+3. **In Plasticity:**
+    1. Die übertragenen Objekte erscheinen im 3D-Viewport von Plasticity.
+        - Transformationsdaten wie Skalierung, Position und Rotation werden automatisch übernommen.
+        - Der gesamte Generator-Stack unter jedem Subdivision Surface wird bei der Übertragung gebacken.
+        - Das Objekt wird automatisch in eine PolySpline-Fläche konvertiert.
+
+### Subdivision Surface-Optionen
+
+Zusätzliche PolySpline-Optionen können pro SDS gesetzt werden, indem **User Data**-Boolean-Felder am Subdivision Surface-Objekt hinzugefügt werden:
+
+- `pns_merge_patches` *(Standard: true)* — benachbarte Patches nach Möglichkeit zu einer einzigen Fläche zusammenführen.
+- `pns_interpolate_boundary` *(Standard: false)* — den Rand interpolieren, anstatt ihn als Knick zu belassen.
+- `pns_rounded_corners` *(Standard: false)* — die Ecken der erzeugten Fläche abrunden.
+
+<VideoPlayer fileName="c4d-using-polysplines"/>
