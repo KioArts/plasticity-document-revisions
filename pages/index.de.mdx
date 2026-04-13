@@ -1,36 +1,83 @@
 ---
-title: Plasticity Manual
-description: The official manual for Plasticity 3D. All keyboard shortcuts. Updated daily!
+title: Plasticity Handbuch
+description: Das offizielle Handbuch für Plasticity 3D. Alle Tastenkombinationen. Täglich aktualisiert!
 ---
+import ResourceSection from "../components/ResourceSection.jsx";
 
-import Hero from "../components/Hero.jsx"
-import FeatureGrid from "../components/FeatureGrid.jsx"
-import ResourceSection from "../components/ResourceSection.jsx"
+<div style={{margin: '2em 0'}}>
+    <span style={{fontSize: '2em'}}><span style={{fontWeight: 800}}>Plasticity&nbsp;</span>Handbuch</span>
+</div>
 
-<div className="homepage">
-
-<Hero
-  title="Plasticity Documentation"
-  subtitle="Your complete guide to modeling, sculpting, and designing with precision."
-  ctaText="Start Learning"
-  ctaLink="/docs/getting-started"
-/>
-
-<FeatureGrid
-  features={[
-    { title: "Precision Modeling", description: "Accurate CAD tools.", icon: "/icons/precision.svg" },
-    { title: "Sculpting Tools", description: "Organic workflows.", icon: "/icons/sculpt.svg" },
-    { title: "Rendering", description: "Beautiful visuals.", icon: "/icons/render.svg" }
+<ResourceSection
+  title="Einführung"
+  items={[
+    {
+      title: "Versionshinweise",
+      description: "Eine Seite, auf der Versionshinweise geteilt werden und neue Funktionen sowie Änderungen dokumentiert sind.",
+      link: "/release-notes"
+    },
+    {
+      title: "Erste Schritte",
+      description: "Beginnen Sie mit Plasticity: Überblick über Lizenzierung, Hauptfunktionen, Installation und Support.",
+      link: "/getting-started"
+    },
+    {
+      title: "Plasticity Grundlagen",
+      description: "Grundlagen von Plasticity – lernen und verstehen, wie Plasticity funktioniert.",
+      link: "/plasticity-essentials"
+    },
+    {
+      title: "CAD Grundlagen",
+      description: "Zentrale CAD‑Konzepte und Techniken für fortgeschrittene Anwender.",
+      link: "/cad-essentials"
+    },
+    {
+      title: "Befehlsliste und Tastenkürzel",
+      description: "Eine vollständige Liste aller Befehle mit ihren Tastenkürzeln, inklusive herunterladbarer PDF.",
+      link: "/all-commands"
+    }
   ]}
 />
 
 <ResourceSection
-  title="Explore Resources"
+  title="Werkzeuge"
   items={[
-    { title: "Tutorials", description: "Learn step-by-step.", image: "/images/tutorials.jpg", link: "/docs/tutorials" },
-    { title: "Advanced Guides", description: "Deep technical knowledge.", image: "/images/advanced.jpg", link: "/docs/advanced" },
-    { title: "API Reference", description: "Extend Plasticity.", image: "/images/api.jpg", link: "/docs/api" }
+    {
+      title: "Skizzen- & Primitive‑Werkzeuge",
+      description: "Erlernen Sie die Werkzeuge zum Skizzieren von Formen und Erstellen grundlegender Primitiven.",
+      link: "/tool"
+    },
   ]}
 />
 
-</div>
+<ResourceSection
+  title="Befehle"
+  items={[
+    {
+      title: "Allgemeine Befehle",
+      description: "Eine kombinierte Übersicht über wichtige Skizzen‑ und Volumenbefehle.",
+      link: "/common"
+    },
+    {
+      title: "Skizze",
+      description: "Befehle zum Zeichnen und Bearbeiten von 2D‑Skizzen.",
+      link: "/sketch"
+    },
+    {
+      title: "Volumen",
+      description: "Befehle zum Erstellen und Bearbeiten von 3D‑Volumenkörpern.",
+      link: "/solid"
+    },
+  ]}
+/>
+
+<ResourceSection
+  title="Integration"
+  items={[
+    {
+      title: "Blender",
+      description: "Erfahren Sie, wie Sie Plasticity in Blender‑Workflows integrieren.",
+      link: "/blender"
+    }
+  ]}
+/>
