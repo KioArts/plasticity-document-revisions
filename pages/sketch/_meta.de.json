@@ -1,0 +1,78 @@
+{
+  "---bridge": { "type": "separator", "title": "Überbrücken und Verbinden" },
+  "bridge": "Bridge",
+  "bridge-curve": "Kurve überbrücken",
+  "bridge-edge": "Kante überbrücken",
+  "bridge-vertex": "Vertex überbrücken",
+
+  "---cut": { "type": "separator", "title": "Schneiden und Trimmen" },
+  "cut-curve": "Kurve schneiden",
+  "trim": "Trimmen",
+  "split-segment": "Segment teilen",
+
+  "---deform": { "type": "separator", "title": "Verformen und Schieben" },
+  "deform": "Verformen",
+  "deform-curve": "Kurve verformen",
+  "slide": "Schieben",
+  "slide-curve-cv": "Kurven‑CV schieben",
+
+  "---align": { "type": "separator", "title": "Ausrichten" },
+  "align": "Ausrichten",
+  "align-vertex": "Vertex ausrichten",
+
+  "---extend": { "type": "separator", "title": "Erweitern" },
+  "extend": "Erweitern",
+  "extend-curve": "Kurve erweitern",
+
+  "---fillet": { "type": "separator", "title": "Fase" },
+  "fillet": "Fase",
+  "fillet-curve": "Kurvenfase",
+  "fillet-vertex": "Vertexfase",
+
+  "---join": { "type": "separator", "title": "Verbinden und Trennen" },
+  "join": "Verbinden",
+  "join-curves": "Kurven verbinden",
+  "unjoin": "Trennen",
+  "unjoin-curve": "Kurve trennen",
+
+  "---offset": { "type": "separator", "title": "Versatz" },
+  "offset-curve": "Kurve versetzen",
+  "offset-planar-curve": "Planare Kurve versetzen",
+  "offset-region": "Region versetzen",
+  "offset-vertex": "Vertex versetzen",
+  "slot": "Nut",
+
+  "---project": { "type": "separator", "title": "Projizieren" },
+  "project": "Projizieren",
+  "project-body-body": "Körper auf Körper projizieren",
+  "project-curve-body": "Kurve auf Körper projizieren",
+  "project-curve-curve": "Kurve auf Kurve projizieren",
+  "project-outline": "Umriss projizieren",
+  "alternative-duplicate": "Alternatives Duplizieren",
+  "duplicate-curve-and-project": "Kurve duplizieren und projizieren",
+  "create-outline": "Umriss erstellen",
+
+  "---rebuild": { "type": "separator", "title": "Neuaufbau und Verfeinerung" },
+  "convert-vertex": "Vertex konvertieren",
+  "delete-redundant-topology": "Redundante Topologie löschen",
+  "insert-knot": "Knoten einfügen",
+  "raise-curve-degree": "Kurvengrad erhöhen",
+  "raise-degree": "Grad erhöhen",
+  "rebuild": "Neuaufbau",
+  "rebuild-curve": "Kurve neu aufbauen",
+  "reverse": "Umkehren",
+  "reverse-curve": "Kurve umkehren",
+
+  "---instances": { "type": "separator", "title": "Instanzen" },
+  "create-instance": "Instanz erstellen",
+  "create-curve-instance": "Kurveninstanz erstellen",
+  "realize-instances": "Instanzen realisieren",
+  "realize-curve-instances": "Kurveninstanzen realisieren",
+
+  "---text": { "type": "separator", "title": "Text" },
+  "text": "Text",
+
+  "---display": { "type": "separator", "title": "Anzeige und Analyse" },
+  "toggle-curve-curvature": "Kurvenkrümmung umschalten",
+  "toggle-points": "Punkte umschalten"
+}

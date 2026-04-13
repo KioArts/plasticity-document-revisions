@@ -3,7 +3,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 import { Center } from '/components/Center'
 
-# PolySplines
+## PolySplines
 
 <CommandReference
   command="PolySplines"
@@ -15,11 +15,11 @@ import { Center } from '/components/Center'
 
 ## Description
 
-**PolySplines** converts a mesh object (.OBJ, .STL) into a smooth untrimmed spline surface with **G2** continuity, producing fewer and cleaner patches than traditional subdivision workflows. 
+**PolySplines** converts a mesh object into a smooth untrimmed spline surface with **G2** continuity, producing fewer and cleaner patches than traditional subdivision workflows. 
 
 Unlike Catmull-Clark subdivision, which refines a mesh through repeated approximating passes, PolySplines outputs B-Spline patches suitable for manufacturing and engineering use. Best results come from quad dominant meshes, though the algorithm handles triangles and n-gons as well.
 
-<Center width="580px">
+<Center width="550px">
 ![PolySpline Example](/img/polyspline-example.svg)
 </Center>
 
@@ -28,7 +28,9 @@ PolySplines can be used in conjunction with the [Blender Bridge](/blender/how-to
 </Callout>
 
 <Callout>
-**Note:** PolySplines currently doesn't support **Vertex** and **Edge** Creasing and Bevelling applied in a DCC modeller. The current workaround is to manually insert edge loops to strengthen a corner or edge.
+**Note:** 
+- PolySplines currently doesn't support **Vertex** and **Edge** Creasing and Bevelling applied in a DCC modeller. The current workaround is to manually insert edge loops to strengthen a corner or edge.
+- Mesh formats such as **.OBJ** and **.FBX** are supported with PolySplines at the moment.
 </Callout>
 
 ## Basic Usage

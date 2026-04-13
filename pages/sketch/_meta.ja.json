@@ -1,0 +1,78 @@
+{
+  "---bridge": { "type": "separator", "title": "ブリッジと接続" },
+  "bridge": "ブリッジ",
+  "bridge-curve": "カーブブリッジ",
+  "bridge-edge": "エッジブリッジ",
+  "bridge-vertex": "頂点ブリッジ",
+
+  "---cut": { "type": "separator", "title": "カットとトリム" },
+  "cut-curve": "カーブカット",
+  "trim": "トリム",
+  "split-segment": "セグメント分割",
+
+  "---deform": { "type": "separator", "title": "変形とスライド" },
+  "deform": "変形",
+  "deform-curve": "カーブ変形",
+  "slide": "スライド",
+  "slide-curve-cv": "カーブCVスライド",
+
+  "---align": { "type": "separator", "title": "整列" },
+  "align": "整列",
+  "align-vertex": "頂点整列",
+
+  "---extend": { "type": "separator", "title": "延長" },
+  "extend": "延長",
+  "extend-curve": "カーブ延長",
+
+  "---fillet": { "type": "separator", "title": "フィレット" },
+  "fillet": "フィレット",
+  "fillet-curve": "カーブフィレット",
+  "fillet-vertex": "頂点フィレット",
+
+  "---join": { "type": "separator", "title": "結合と分離" },
+  "join": "結合",
+  "join-curves": "カーブ結合",
+  "unjoin": "分離",
+  "unjoin-curve": "カーブ分離",
+
+  "---offset": { "type": "separator", "title": "オフセット" },
+  "offset-curve": "カーブオフセット",
+  "offset-planar-curve": "平面カーブオフセット",
+  "offset-region": "領域オフセット",
+  "offset-vertex": "頂点オフセット",
+  "slot": "スロット",
+
+  "---project": { "type": "separator", "title": "プロジェクト" },
+  "project": "プロジェクト",
+  "project-body-body": "ボディ同士を投影",
+  "project-curve-body": "カーブをボディへ投影",
+  "project-curve-curve": "カーブをカーブへ投影",
+  "project-outline": "アウトライン投影",
+  "alternative-duplicate": "代替複製",
+  "duplicate-curve-and-project": "カーブ複製と投影",
+  "create-outline": "アウトライン作成",
+
+  "---rebuild": { "type": "separator", "title": "再構築と調整" },
+  "convert-vertex": "頂点変換",
+  "delete-redundant-topology": "冗長トポロジー削除",
+  "insert-knot": "ノット挿入",
+  "raise-curve-degree": "カーブ次数上げ",
+  "raise-degree": "次数上げ",
+  "rebuild": "再構築",
+  "rebuild-curve": "カーブ再構築",
+  "reverse": "反転",
+  "reverse-curve": "カーブ反転",
+
+  "---instances": { "type": "separator", "title": "インスタンス" },
+  "create-instance": "インスタンス作成",
+  "create-curve-instance": "カーブインスタンス作成",
+  "realize-instances": "インスタンス実体化",
+  "realize-curve-instances": "カーブインスタンス実体化",
+
+  "---text": { "type": "separator", "title": "テキスト" },
+  "text": "テキスト",
+
+  "---display": { "type": "separator", "title": "表示と解析" },
+  "toggle-curve-curvature": "カーブ曲率の切り替え",
+  "toggle-points": "ポイントの切り替え"
+}

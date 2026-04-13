@@ -3,32 +3,34 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 import { Center } from '/components/Center'
 
-# PolySplines
+## PolySplines
 
 <CommandReference
   command="PolySplines"
   shortcut=""
-  button="In Command Palette"
+  button="In der Befehlspalette"
   buttonIcon=""
   tier="studio"
 />
 
 ## Beschreibung
 
-**PolySplines** konvertiert ein Mesh-Objekt (.OBJ, .STL) in eine glatte, unbeschnittene Spline-Fläche mit G2-Stetigkeit und erzeugt dabei weniger und sauberere Patches als herkömmliche Subdivisions-Workflows.
+**PolySplines** konvertiert ein Mesh‑Objekt in eine glatte, ungetrimmte Splinesurface mit **G2**‑Stetigkeit und erzeugt dabei weniger und sauberere Patches als herkömmliche Subdivision‑Workflows.
 
-Im Gegensatz zur Catmull-Clark-Subdivision, die ein Mesh durch wiederholte Annäherungsdurchläufe verfeinert, gibt PolySplines B-Spline-Patches aus, die für Fertigung und Ingenieurwesen geeignet sind. Die besten Ergebnisse werden mit quad-dominanten Meshes erzielt, obwohl der Algorithmus auch Dreiecke und N-Ecke verarbeitet.
+Im Gegensatz zur Catmull‑Clark‑Subdivision, die ein Mesh durch wiederholte approximierende Schritte verfeinert, erzeugt PolySplines B‑Spline‑Patches, die für Fertigung und Engineering geeignet sind. Die besten Ergebnisse entstehen aus quad‑dominierten Meshes, jedoch verarbeitet der Algorithmus auch Dreiecke und N‑Gons.
 
-<Center width="580px">
-![PolySpline Beispiel](/img/polyspline-example.svg)
+<Center width="550px">
+![PolySpline Example](/img/polyspline-example.svg)
 </Center>
 
 <Callout type="info">
-PolySplines kann in Verbindung mit dem [Blender Bridge](/blender/how-to-use)-Addon verwendet werden, das Live-Ausgabe-Updates beinhaltet und Ergebnisse automatisch in Ihre Szene importiert.
+PolySplines kann zusammen mit dem [Blender Bridge](/blender/how-to-use#working-with-polysplines) Add‑on verwendet werden, das Live‑Ausgabeaktualisierungen bietet und Ergebnisse automatisch in Ihre Szene importiert.
 </Callout>
 
 <Callout>
-**Hinweis:** PolySplines unterstützt derzeit kein **Vertex**- und **Kanten**-Creasing sowie Bevelling, das in einem DCC-Modeller angewendet wurde. Als vorläufige Lösung können manuell Edge Loops eingefügt werden, um eine Ecke oder Kante zu verstärken.
+**Hinweis:** 
+- PolySplines unterstützt derzeit keine **Vertex‑** und **Edge‑Creases** oder Bevels, die in einem DCC‑Modeller angewendet wurden. Der aktuelle Workaround besteht darin, manuell Edge‑Loops einzufügen, um eine Ecke oder Kante zu verstärken.
+- Mesh‑Formate wie **.OBJ** und **.FBX** werden derzeit unterstützt.
 </Callout>
 
 ## Grundlegende Verwendung
@@ -36,14 +38,11 @@ PolySplines kann in Verbindung mit dem [Blender Bridge](/blender/how-to-use)-Add
 1. Importieren Sie das Mesh oder wählen Sie es in der Szene aus.
 2. Öffnen Sie die Befehlspalette, suchen Sie nach **PolySplines** und führen Sie den Befehl aus.
 3. Passen Sie die Optionen im Befehlsdialog an:
-   - <Kst>Command Dialog</Kst>
-         - **Abgerundete Ecken:** Rundet die Ecken eines offenen Körpers ab, unabhängig davon, ob eine Wandstärke angewendet wurde.
-            {/* <Center width="500px">
-            ![PolySpline Beispiel](/img/polyspline-rounded-corners.svg)
-            </Center> */}
-         - **Patches zusammenführen:** Wenn aktiviert, werden benachbarte Patches zu einer einzelnen Fläche mit einem sauberen CV-Layout zusammengeführt, was für nachgelagerte Modellierungs-Workflows empfohlen wird. Wenn deaktiviert, bleiben die Flächen als einzelne Bezier-Patches mit jeweils eigener unabhängiger CV-Struktur erhalten.
-         - **Rand exakt interpolieren:** Zwingt die Flächengrenze, genau durch jeden Punkt auf der Mesh-Grenze zu verlaufen, anstatt sie anzunähern. Dies ist nützlich beim Verbinden zweier offener Körper, da so sichergestellt wird, dass die Grenzen exakt übereinstimmen und eine saubere Verbindung entsteht.
+   - <Kst>Befehlsdialog</Kst>
+         - **Abgerundete Ecken:** Rundet die Ecken eines offenen Körpers ab, unabhängig davon, ob eine Dicke angewendet wurde.
+         - **Patches zusammenführen:** Wenn aktiviert, werden benachbarte Patches zu einer einzigen Fläche mit sauberem CV‑Layout zusammengeführt – empfohlen für nachgelagerte Modellierungs‑Workflows. Wenn deaktiviert, bleiben die Flächen als einzelne Bézier‑Patches mit eigener CV‑Struktur bestehen.
+         - **Rand exakt interpolieren:** Erzwingt, dass der Flächenrand exakt durch jeden Punkt des Mesh‑Rands verläuft, anstatt ihn nur zu approximieren. Dies ist nützlich, wenn zwei offene Körper zusammengefügt werden sollen, da die Ränder exakt ausgerichtet werden.
 
-4. Ein Spline-Objekt wurde erstellt.
+4. Ein Spline‑Objekt wurde erstellt.
 
 <VideoPlayer fileName="polyspline"/>
