@@ -19,6 +19,7 @@
 
   "---integration": { "type": "separator", "title": "Integration" },
   "blender": "Blender",
+  "cinema-4d": "Cinema 4D",
 
   "---advanced": { "type": "separator", "title": "Advanced" },
 
