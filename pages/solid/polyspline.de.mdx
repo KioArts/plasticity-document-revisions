@@ -41,7 +41,7 @@ PolySplines kann zusammen mit dem [Blender Bridge](/blender/how-to-use#working-w
    - <Kst>Befehlsdialog</Kst>
          - **Abgerundete Ecken:** Rundet die Ecken eines offenen Körpers ab, unabhängig davon, ob eine Dicke angewendet wurde.
          - **Patches zusammenführen:** Wenn aktiviert, werden benachbarte Patches zu einer einzigen Fläche mit sauberem CV‑Layout zusammengeführt – empfohlen für nachgelagerte Modellierungs‑Workflows. Wenn deaktiviert, bleiben die Flächen als einzelne Bézier‑Patches mit eigener CV‑Struktur bestehen.
-         - **Rand exakt interpolieren:** Erzwingt, dass der Flächenrand exakt durch jeden Punkt des Mesh‑Rands verläuft, anstatt ihn nur zu approximieren. Dies ist nützlich, wenn zwei offene Körper zusammengefügt werden sollen, da die Ränder exakt ausgerichtet werden.
+         - **Rand exakt interpolieren:** Erzwingt, dass der Flächenrand exakt der durch die Mesh‑Grenze definierten Spline‑Kurve folgt, anstatt sie nur zu approximieren. Dies ist besonders nützlich beim Verbinden zweier offener Körper, da so eine perfekte Ausrichtung der Ränder für einen sauberen Übergang gewährleistet wird.
 
 4. Ein Spline‑Objekt wurde erstellt.
 

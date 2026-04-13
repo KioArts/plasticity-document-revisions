@@ -44,7 +44,7 @@ PolySplines can be used in conjunction with the [Blender Bridge](/blender/how-to
             ![PolySpline Example](/img/polyspline-rounded-corners.svg)
             </Center> */}
          - **Merge Patches:** When enabled, adjacent patches are merged into a single surface with a clean CV layout, which is recommended for downstream modelling workflows. When disabled, surfaces remain as individual Bezier patches, each with their own independent CV structure. 
-         - **Interpolate Boundary Exactly:** Forces the surface boundary to pass precisely through every point on the mesh boundary, rather than approximating it. This is useful when joining two open bodies together, as it ensures the boundaries align exactly for a clean merge.
+         - **Interpolate Boundary Exactly:** Forces the surface boundary to match the spline curve defined by the mesh boundary exactly, rather than approximating it. This is especially useful when joining two open bodies, ensuring their boundaries align perfectly for a clean merge.
 
 4. A spline object has been created.
 
