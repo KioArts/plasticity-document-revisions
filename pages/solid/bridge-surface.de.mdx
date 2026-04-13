@@ -2,48 +2,59 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Surface
+## Oberfläche überbrücken
 
-<Reference shortcut="" command="Bridge Surface" button="" />
+{/* <Reference shortcut="" command="Bridge Surface" button="" /> */}
 
-Verbinden Sie zwei getrennte Oberflächen mit verfügbaren Formoptionen G2 oder Fase. Überflüssige Oberflächen können beschnitten werden.
+<CommandReference
+  command="Bridge Surface"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-### Verbindung getrennter Oberflächen
+Überblendung zwischen zwei getrennten oder verbundenen Oberflächen mit Formoptionen wie G2 oder Fase. Redundante Oberflächen können getrimmt werden. Die Spannung der Oberflächenüberblendung kann ebenfalls gesteuert werden.
 
-1. Verwenden Sie den **Bridge Surface** Befehl in der Befehlspalette.
-2. Wählen Sie zwei Blätter aus, die verbunden werden sollen.
+## Grundlegende Verwendung
+
+### Getrennte Oberflächen überbrücken
+
+1. Verwenden Sie den Befehl **Oberfläche überbrücken** in der Befehlspalette.
+2. Wählen Sie zwei Sheets aus, die verbunden werden sollen.
 3. Legen Sie die Optionen im Befehlsdialog fest.
-    - <Kst>Befehlsdialog</Kst>
-        - **Width:** Geben Sie die Breite der Brücke an.
-        - **Tension:** Passt den Krümmungsübergang einer Oberfläche an. 
-        - **Shape:** 
-            - **G2:** Die Brückenoberfläche ist G2-kontinuierlich.
-            - **Chamfer:** Die Brückenoberfläche ist gefast.
-        - **Trim walls:** Wenn aktiviert, schneiden Sie die Oberflächen hinter der Brücke ab.
-        - **Trim blend:** 
-            - **Both:** Schneiden Sie beide Seiten der Brückenoberfläche ab.
-            - **Short:** Schneiden Sie die kürzere Seite der Oberfläche ab.
-            - **Long:** Schneiden Sie die längere Seite der Brückenoberfläche ab.
-            - **None:** Schneiden Sie die Brückenoberfläche nicht ab.
+    - <Kst>Command Dialog</Kst>
+        - **Breite:** Gibt die Breite der Brücke an.
+        - **Spannung:** Passt den Krümmungsübergang einer Oberfläche an.
+        - **Form:** 
+            - **G2:** Die Brückenoberfläche ist G2-stetig.
+            - **Fase:** Die Brückenoberfläche ist gefast.
+        - **Wände trimmen:** Wenn aktiviert, werden die Oberflächen hinter der Brücke getrimmt.
+            - **Beide:** Beide Seiten der Brückenoberfläche trimmen.
+            - **Kurz:** Die kürzere Seite der Oberfläche trimmen.
+            - **Lang:** Die längere Seite der Brückenoberfläche trimmen.
+            - **Keine:** Die Brückenoberfläche nicht trimmen.
             ![Trim Blend Demonstration](/img/bridge-surface-trim.png)
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>A</kbd> **Linkes und rechtes Wandpaar hinzufügen:** Fügt eine zusätzliche Überblendung basierend auf der aktuellen Wandauswahl hinzu.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="bridge-surface-1"/>
 
-### Verbindung sich kreuzender Oberflächen
+### Sich schneidende Oberflächen überbrücken
 
-1. Verwenden Sie den **Bridge Surface** Befehl in der Befehlspalette.
-2. Wählen Sie die erste Oberfläche und die zweite Oberfläche aus.
+1. Verwenden Sie den Befehl **Oberfläche überbrücken** in der Befehlspalette.
+2. Wählen Sie die erste und die zweite Oberfläche aus.
 3. Legen Sie die Optionen im Befehlsdialog fest.
-    - **Sense:** 
-        - **Sense 1/Sense 2:** Kehren Sie die Richtung der Brückenoberfläche um.
-    - Andere Optionen sind wie oben beschrieben.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+    - **Richtung:** 
+        - **Richtung 1/Richtung 2:** Kehrt die Richtung der Brückenoberfläche um.
+    - Alle weiteren Optionen sind identisch mit den oben beschriebenen.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="bridge-surface-2"/>
 
 ## Siehe auch
-- [Join](join)
-- [Unjoin](unjoin)
+- [Verbinden](join)
+- [Trennen](unjoin)

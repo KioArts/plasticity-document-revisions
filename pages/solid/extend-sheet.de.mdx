@@ -2,34 +2,45 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Extend Sheet [#extend-sheet]
+## Extend Sheet [#extend-sheet]
 
-<Reference shortcut="" command="Extend" button="" />
+{/* <Reference shortcut="" command="Extend" button="" /> */}
 
-Verlängern Sie einen oder mehrere äußere Edges des Sheet, indem Sie die Entfernung angeben. Wählen Sie aus Verlängerungsformen wie Liner, Soft und Reflective.
+<CommandReference
+  command="Extend"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie einen oder mehrere äußere Edges des Sheet aus, den Sie verlängern möchten.
-2. Wenn die äußeren Edges ausgewählt sind, wird der Standardbefehl **Extend** automatisch ausgeführt.
-3. Bewegen Sie den gelben Punkt, um die Entfernung anzugeben.
-4. Legen Sie die Optionen im Befehlsdialog fest.
+Erweitert eine oder mehrere Randkanten des Sheets, indem eine Distanz angegeben wird. Wähle aus Erweiterungsformen wie Linear, Soft und Reflective.
+
+## Grundlegende Verwendung
+
+1. Wähle eine oder mehrere äußere Kanten des Sheets aus, die du erweitern möchtest.
+2. Wenn die äußeren Kanten ausgewählt sind, wird der Standardbefehl **Extend** automatisch ausgeführt.
+3. Bewege den gelben Punkt, um die Distanz festzulegen.
+4. Lege die Optionen im Befehlsdialog fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Shape:** Geben Sie die Form der erweiterten Fläche an. Die Optionen **"Linear"**, **"Soft"** und **"Reflective"** beeinflussen direkt die Form und Krümmung der erweiterten Fläche während der Extrusion.
-            - **Natural:** Erweitert die Oberfläche „natürlich“, indem die Form fortgesetzt wird, die die ursprüngliche Oberfläche unmittelbar vor Beginn der Erweiterung beschreibt. 
-            - **Linear:** Erweitert die Fläche in einer flachen, geraden Linie vom Rand aus und behält dabei die aktuelle Tangentenrichtung bei, ohne die Krümmung zu verändern.
-            - **Soft:** Vermischt die Erweiterung allmählich mit der bestehenden Fläche für einen sanften Übergang und erhält dabei sowohl die Tangente als auch die Krümmung für einen natürlichen Fluss.
-            - **Reflective:** Spiegelt die Oberflächenkrümmung und Tangente für eine symmetrische und nahtlose Fortsetzung wider, ideal für die Aufrechterhaltung der Flächensymmetrie.
+        - **Form:** Bestimmt die Form der erweiterten Oberfläche. Die Optionen **Natural**, **Linear**, **Soft** und **Reflective** beeinflussen direkt die Form und Krümmung der erweiterten Oberfläche während der Extrusion.
+            - **Natural:** Erweitert die Oberfläche, indem die Krümmung der ursprünglichen Oberfläche nahe der Randkante fortgeführt wird.
+            - **Linear:** Erweitert die Oberfläche in einer geraden Linie von der Randkante aus, wobei die Tangentenrichtung beibehalten wird.
+            - **Soft:** Blendet die Erweiterung weich in die bestehende Oberfläche ein und erhält sowohl Tangenten- als auch Krümmungskontinuität (G2).
+            - **Reflective:** Spiegelt die Oberflächenkrümmung und Tangente über die Randkante hinweg – ideal zur Erhaltung von Symmetrie.
             ![Extend Sheet Shape Demonstration](/img/extend-sheet-shape.png)
-         **Limit:** Legt das Erweiterungsverhalten eines Flächenkörpers in Bezug auf einen Zielkörper fest.
-            - **Minimal** — Erweitert die Fläche nur so weit, wie nötig, um die nächste Begrenzung des Zielkörpers zu erreichen, egal ob innen oder außen.
-            - **Outside** — Erzwingt die Erweiterung der Fläche bis zur äußeren Begrenzung des Zielkörpers. Bereits vorhandene innere Schnitte werden ignoriert.
-            - **Inside** — Verhindert die Erweiterung über Kanten hinaus, die sich bereits innerhalb des Zielkörpers befinden. Vorhandene innere Schnitte bleiben unverändert.           
-        - **Distance:** Geben Sie die Entfernung zur Verlängerung an.
-        - **Modify:** Wenn aktiviert, wird das Sheet zu einem einzelnen Sheet.
-    - <Kst>Tastenkombinationen</Kst>  
-        - <kbd>Tab</kbd> **Cycle:** Wechselt zwischen den verschiedenen **Shape**-Optionen.  
-5. Bestätigen Sie mit OK im Befehlsdialog oder Rechtsklick.
+        - **Limit:** Steuert, wie weit das Sheet in Richtung eines Zielkörpers erweitert wird, wenn es mit einer anderen Oberfläche geschnitten wird.
+            - **Minimal:** Erweitert das Sheet bis zur äußeren Begrenzung des Ziels.
+            - **Outside:** Erweitert das Sheet bis zur inneren Begrenzung des Ziels.
+            - **Inside:** Erweitert das Sheet bis zur äußeren Begrenzung des Ziels, ignoriert jedoch innere Schnittpunkte, wenn das Objekt teilweise innen liegt.
+        - **Distanz:** Gibt die Erweiterungsdistanz an.
+        - **Modifizieren:** Wenn aktiviert, wird das Sheet zu einem einzigen Sheet zusammengeführt.
+    - <Kst>Tastenkombinationen</Kst>
+        - <kbd>D</kbd> **Distanz:** Gibt die Versatzdistanz an.
+        - <kbd>Tab</kbd> **Wechseln:** Wechselt zwischen den verschiedenen **Form**-Optionen.
+5. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="extend-sheet"/>
 

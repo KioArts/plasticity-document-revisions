@@ -3,11 +3,21 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Fillet Shell
+## Fillet Shell
 
-<Reference shortcut="B" command="Fillet" button="In Suggested Commands Menu"  buttonIcon='button-fillet' />
+{/* <Reference shortcut="B" command="Fillet" button="In Suggested Commands Menu"  buttonIcon='button-fillet' /> */}
 
-Fillet or chamfer the Edges which can be conic or G2 continuous. Variable distance, limit range are adjustable.
+<CommandReference
+  command="Fillet"
+  shortcut="B"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-fillet.png"
+  tier="both"
+/>
+
+## Description
+
+Fillet or chamfer surface edges with options for conic, G2 continuous, or constant width profiles. Supports variable distance and range limiting.
 
 ## Basic Usage
 
@@ -28,17 +38,16 @@ Fillet or chamfer the Edges which can be conic or G2 continuous. Variable distan
 
 **Distance:** 
     - To fillet an Edge, enter a positive value. To chamfer an Edge, enter a negative value
-<Callout type="info" emoji="💡">
-    **Tip**
-    To copy a fillet radius, click on the source fillet, but only if the two Distance values are the same and the shape is a Conic.
-<VideoPlayer fileName="fillet-solid-copyfillet"/>
+<Callout type="info">
+**Tip:**    To copy a fillet radius, click on the source fillet, but only if the two Distance values are the same and the shape is a Conic.
 </Callout>
+<VideoPlayer fileName="fillet-solid-copyfillet"/>
 
 **Shape:**
-    - **Conic:** The Conic fillet option is known for producing a more natural and smooth transition compared to traditional round fillets. This makes it especially useful in applications where aerodynamics or aesthetics are crucial.
-    - **Chordal:** The hallmark of a Chordal fillet is that it maintains a constant length for the chord of the fillet, regardless of the angles being filleted. This uniformity can be particularly beneficial when aiming for visual consistency across different parts of a model.
-    - **G2:** The G2 option generates curves that are smoothly continuous with the surfaces at both ends of the fillet. This setting is optimal for intricate designs and complex surface handling that require an extremely smooth and natural shape transition. See [Surface Continuity](/cad-essentials/continuity-curve-and-surface).
-    - **Full:** The full option will create a rounded fillet shape on either side of a face with 2 edges selected. The operation differs from a regular clamping effect when filleting. The round fillet is a surface that is tangential to all 3 neighbouring faces (left, centre, and right faces) and thus will result in generating perfect round fillet depending on the diameter or distance of neighbouring faces and edges.
+    - **Conic:** Produces a natural, smooth transition using a conic section curve.
+    - **Chordal:** Maintains a constant chord length across the fillet, ensuring visual consistency regardless of the angles being filleted.
+    - **G2:** Generates a fillet that is curvature continuous with both adjacent surfaces, ideal for complex or high-quality surface work. See [Surface Continuity](/cad-essentials/continuity-curve-and-surface).
+    - **Full:** Creates a fillet that is tangent to all three neighboring faces (left, center, and right), resulting in a fully rounded shape across the selected face.
     
     <VideoPlayer fileName="fillet-shell-shape"/>
 
@@ -57,26 +66,13 @@ Fillet or chamfer the Edges which can be conic or G2 continuous. Variable distan
 
 ### Shortcuts
 
-<kbd>A</kbd> **: Chamfer angle** 
-    - Specify fillet angle by moving the cursor.
-<Callout type="info" emoji="💡">
-    Also, changing the two values of distance changes the angle.
-    <VideoPlayer fileName="fillet-solid-two-value"/>
-</Callout>
-
-<kbd>D</kbd> **: Fillet distance** 
-    - Specify Fillet distance by moving the cursor.<br />
-
-<kbd>C</kbd> **: Chamfer distance** 
-    - Specify Chamfer distance by moving the cursor.<br />
-
-<kbd>V</kbd> **: Add variable point** <br />
-    - Add a variable point to the fillet.<br />
-    <VideoPlayer fileName="fillet-solid-variable"/>
-
-<kbd>L</kbd> **: Add limit (stop) point** <br />
-    - Specify the range to fillet. Make sure that [**Object Snaps**](/plasticity-essentials/grid-and-snap#object-snap) are enabled, Click on the center line of fillet to add a limit point. To reverse the direction, click on the limit point again. Up to two limit points can be set.
-    <VideoPlayer fileName="fillet-solid-limit"/>
+    - <kbd>A</kbd> **Chamfer angle:** Specify the chamfer angle by moving the cursor, or adjust the two distance values directly.
+    - <kbd>D</kbd> **Fillet distance:** Specify the fillet distance by moving the cursor.
+    - <kbd>C</kbd> **Chamfer distance:** Specify the chamfer distance by moving the cursor.
+    - <kbd>V</kbd> **Add variable point:** Add a variable point to the fillet.
+    - <kbd>L</kbd> **Add limit point:** Click on the fillet centerline to set a range limit. Click again to reverse direction. Up to two limit points can be set. Requires [**Object Snaps**](/plasticity-essentials/plasticity-interface/snap) to be enabled.
+    - <kbd>T</kbd> **Toggle tangent edges:** Limit fillets to selected edges only.
+    - <kbd>Ctrl</kbd> **Modify selection:** Add or remove edges from the fillet selection.
 
 ## Chamfer options
 - **Shape:**

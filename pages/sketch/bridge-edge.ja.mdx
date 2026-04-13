@@ -2,42 +2,63 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Edge（エッジをなめらかに繋げる）[#bridge-edge]
+{/* # Bridge Edge[#bridge-edge]
 
-<Reference shortcut="" command="Bridge" button="" />
+<Reference shortcut="" command="Bridge" button="" /> */}
 
-連続性を考慮してふたつのエッジを繋げることができます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/bridge-edge.mp4"
+  alt="Bridge Edge Preview"
+  title="Bridge Edge"
+  command="Bridge"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-bridge-curve.png" alt="Bridge Curve Icon" />}
+/> */}
+
+## エッジのブリッジ
+
+<CommandReference
+  command="Bridge"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+2つのサーフェスエッジをG0、G1、G2、またはG3連続性でブリッジします。各エッジのブリッジする端を指定でき、テンションは調整可能で、曲率の測定もサポートされています。
 
 ## 基本的な使い方
 
-1. 繋げたいふたつのエッジを選択します。
-2. コマンドパレットで **Bridge** を実行します。
+1. ブリッジしたい2つのエッジを選択します。
+2. コマンドパレットで **ブリッジ** コマンドを使用します。
 3. コマンドダイアログとキーボードショートカットでオプションを設定します。
-     - <Kst>コマンドダイアログ</Kst>
-          - **Side** 
-               - **Side 1**: 最初に選択したエッジの端点のどちら側にブリッジするかを指定します。
-               - **Side 2**: 次に選択したエッジの端点のどちら側にブリッジするかを指定する。
-          - **T:**
-               - **Value 1/2:** 始点/終点のセグメント上の相対位置を指定します。
-          - **Direction:** 
-               - **Direction 1/2**: 始点/終点の方向を反転します。
-          - **Tension 1:**
-               - **Value 1/2:** 始点/終点の第1制御点(CV)から第3CVに影響するテンション値を指定します。
-          - **Tension 2:**
-               - **Value 1/2:** 始点/終点の第2CVと第3CVに影響するテンション値を指定します。
-          - **Tension 3:**
-               - **Value 1/2:** 始点/終点の第3CVに影響するテンション値を指定します。
-          - **Start curvature:**
-               - **G0, G1, G2, G3:** 始点での[曲線の連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-               - **End curvature:**
-               - **G0, G1, G2, G3:** 終点での[曲線の連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-          -  **Trim:** オンにすると、ブリッジからはみ出たカーブはトリムされます。
-4. コマンドダイアログでOKを押すか、右クリックで確定します。
+     - <Kst>Command Dialog</Kst>
+          - **サイド:**
+          - **サイド 1:** 最初に選択したエッジの端点のどちら側にブリッジするかを指定します。
+          - **サイド 2:** 次に選択したエッジの端点のどちら側にブリッジするかを指定します。
+          - **テンション 1:**
+               - **値 1/2:** 開始点/終了点の第1コントロール頂点（CV）から第3CVに影響するテンション値。
+          - **テンション 2:**
+               - **値 1/2:** 開始点/終了点の第2CVと第3CVに影響するテンション値。
+          - **テンション 3:**
+               - **値 1/2:** 開始点/終了点の第3CVに影響するテンション値。
+          - **開始曲率:**
+               - **G0, G1, G2, G3:** 開始点における[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+          - **終了曲率:**
+               - **G0, G1, G2, G3:** 終了点における[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+          - **曲率を表示:** カーブの曲率の視覚化を切り替えます。詳細は[曲率の切り替え](/tool/toggle-curvature)をご覧ください。
+     - <Kst>Keyboard Shortcuts</Kst>
+          - <kbd>Tab</kbd> **連続性の切り替え:** G0、G1、G2、G3連続性を切り替えます。
+          - <kbd>D</kbd> **G1テンション:** G1連続性のテンションを調整します。
+4. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="bridge-edge"/>
 
 ## 関連項目
-- [Bridge](bridge)
-- [Bridge Curve](bridge-curve)
-- [Bridge Vertex](bridge-vertex)
-- [Join](join)
+- [ブリッジ](bridge)
+- [カーブのブリッジ](bridge-curve)
+- [頂点のブリッジ](bridge-vertex)
+- [結合](join)

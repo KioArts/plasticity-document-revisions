@@ -3,39 +3,49 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Corner Box
+## Eckkasten (Corner Box)
 
-<Reference shortcut='Umschalt + B' command='Corner Box' button='Werkzeugleiste' buttonIcon='button-corner-box'/>
+{/* <Reference shortcut='Shift + B' command='Corner Box' button='Toolbar' buttonIcon='button-corner-box'/> */}
 
-Sie können ein rechteckiges Feld erstellen, indem Sie die Diagonale seiner Basis und seine Höhe angeben.
+<CommandReference
+  command="Corner Box"
+  shortcut=""
+  button="In der Werkzeugleiste"
+  buttonIcon="/img/button-corner-box.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-corner-box" /> Knopf in der Werkzeugleiste.
-2. Klicken Sie, um eine Ecke der Basis festzulegen.
-3. Bewegen Sie den Cursor, um die Größe der Basis anzupassen, und klicken Sie zur Bestätigung.
+Sie können einen rechteckigen Kasten erstellen, indem Sie die Diagonale seiner Grundfläche und anschließend die Höhe festlegen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-corner-box" /> in der Werkzeugleiste.
+2. Klicken Sie, um eine Ecke der Grundfläche festzulegen.
+3. Bewegen Sie den Cursor, um die Größe der Grundfläche anzupassen, und klicken Sie zur Bestätigung.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Ermöglicht direkte Eingabe von Abmessungen. Weitere Details finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
-      - <kbd>C</kbd> **Center/Corner:** Wechselt zu Corner Box.
-      - <kbd>S</kbd> **Square:** Beschränkt auf quadratische Basis.
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Maßen. Details finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
+      - <kbd>C</kbd> **Center/Corner:** Wechselt zum Eckkasten.
+      - <kbd>S</kbd> **Square:** Beschränkt die Grundfläche auf ein Quadrat.
 4. Bewegen Sie den Cursor, um die Höhe anzupassen, und klicken Sie zur Bestätigung.
    - <Kst>Befehlsdialog</Kst>
-      - **Select target bodies**:
-         - Funktioniert wie der Befehl Boolean. Weitere Informationen finden Sie unter dem [**Boolean**](/solid/boolean) Befehl.
-      - **Width:** Breite angeben.
-      - **Length:** Länge angeben.
-      - **Height:** Höhe angeben.
+      - **Zielkörper auswählen**:
+         - Funktioniert wie der Boolean-Befehl. Siehe [**Boolean**](/solid/boolean) für Details.
+      - **Breite:** Breite festlegen.
+      - **Länge:** Länge festlegen.
+      - **Höhe:** Höhe festlegen.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Umschalt + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>, <kbd>Umschalt + E</kbd>, <kbd>B</kbd>, <kbd>T</kbd>
-         - Funktioniert wie der Befehl Boolean. Weitere Informationen finden Sie unter dem [**Boolean**](/solid/boolean) Befehl.
+      - <kbd>Shift + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>, <kbd>Shift + E</kbd>, <kbd>B</kbd>, <kbd>T</kbd>
+         - Funktioniert wie der Boolean-Befehl. Siehe [**Boolean**](/solid/boolean) für Details.
       - <kbd>H</kbd> **Height:** Höhe durch Bewegen des Cursors anpassen.
-5. Sie können auch die Form anpassen, indem Sie die gelben Punkte bewegen.
-6. Klicken Sie im Befehlsdialog auf OK oder rechtsklick zur Bestätigung.
-7. Das rechteckige Feld wird erstellt.
-
+5. Sie können die Form auch durch Ziehen der gelben Punkte anpassen.
+6. Klicken Sie im Befehlsdialog auf OK oder klicken Sie mit der rechten Maustaste zur Bestätigung.
+7. Der rechteckige Kasten wird erstellt.
 
 <VideoPlayer fileName="corner-box"/>
 
 ## Siehe auch
+
 - [Center Box](center-box)
 - [Three-Point Box](three-point-box)

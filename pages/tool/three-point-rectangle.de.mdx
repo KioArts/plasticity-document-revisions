@@ -3,28 +3,38 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Three Point Rectangle
+## Drei-Punkt-Rechteck
 
-<Reference shortcut='' command='Three Point Rectangle' button='Werkzeugleiste' buttonIcon='button-three-point-rectangle' />
+{/* <Reference shortcut='' command='Three Point Rectangle' button='Toolbar'  buttonIcon='button-three-point-rectangle'/> */}
 
-Sie können ein Rechteck erstellen, indem Sie drei Punkte angeben.
+<CommandReference
+  command="Drei-Punkt-Rechteck"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-three-point-rectangle.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-three-point-rectangle" /> Knopf in der Werkzeugleiste.
+Sie können ein Rechteck erstellen, indem Sie drei Punkte festlegen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-three-point-rectangle" /> in der Symbolleiste.
 2. Klicken Sie auf eine Ecke des Rechtecks.
 3. Klicken Sie auf einen weiteren Punkt des Rechtecks.
 4. Bewegen Sie den Cursor, um die Größe anzupassen, und klicken Sie zur Bestätigung.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Ermöglicht direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
-      - <kbd>K</kbd> **Knife:** Siehe [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Axis:** [Beschränkt auf X, Y, Z Achse](/tool/sketching-essentials#constrain-to-an-axis).
-3. Rechtsklick zur Bestätigung.
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
+      - <kbd>K</kbd> **Messer:** Weitere Informationen finden Sie unter [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y-, Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+3. Rechtsklicken Sie zur Bestätigung.
 5. Das Rechteck wird erstellt.
-
 
 <VideoPlayer fileName="three-point-rectangle"/>
 
 ## Siehe auch
-- [Center Rectangle](center-rectangle)
-- [Corner Rectangle](corner-rectangle)
+
+- [Mittelpunktrechteck](center-rectangle)
+- [Eckrechteck](corner-rectangle)

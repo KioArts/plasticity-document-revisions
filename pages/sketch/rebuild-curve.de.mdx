@@ -3,32 +3,53 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Rebuild Curve [#rebuild-curve]
+{/* # Rebuild Curve [#rebuild-curve]
 
-<Reference shortcut="" command="Rebuild" button="Im vorgeschlagenen Befehlsmenü" buttonIcon='button-rebuild' />
+<Reference shortcut="" command="Rebuild" button="In Suggested Commands Menu" buttonIcon='button-rebuild'/> */}
 
-Durch Optimieren der Positionen der Control Vertices(CVs) neu aufgebaut, ohne die Form des Curve zu ändern.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/rebuild-curve.mp4"
+  alt="Rebuild Curve Preview"
+  title="Rebuild Curve"
+  command="Rebuild"
+  shortcut="-"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-rebuild.png" alt="Rebuild Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Kurve neu aufbauen
 
-1. Wählen Sie die Kurve aus, die Sie neu erstellen möchten.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-rebuild" />.
-3. Stellen Sie die Optionen im Befehlsdialog ein.
-  - <Kst>Befehlsdialog</Kst>
+<CommandReference
+  command="Rebuild Curve"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-rebuild.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Baut die Kurve neu auf, indem die Kontrollscheitelpunkte (CVs) neu positioniert werden, um ein optimiertes Layout zu erzielen und dabei die ursprüngliche Form so genau wie möglich beizubehalten.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Kurve(n) aus, die Sie neu aufbauen möchten.
+2. Öffnen Sie die Befehlspalette, geben Sie **Rebuild** ein und führen Sie den Befehl aus.
+3. Legen Sie die Optionen im Befehlsdialog fest.
+  - <Kst>Command Dialog</Kst>
     - **Methode:**
-      - **Anpassen:** Neu erstellen innerhalb der Toleranzen.
-        - **Toleranz:** Geben Sie die Toleranzen an.
-        - **Ecken behalten:** Wenn aktiviert, werden die Ecken der Kurve nicht verändert.
-      - **Punkte** Neu erstellen innerhalb der angegebenen Anzahl von CVs.
-        - **Punkte:** Geben Sie die Anzahl der CVs an.
-      - **Explizite Kontrolle:** Neu erstellen innerhalb der angegebenen Anzahl von Graden und Spannen. *(Verfügbar mit Indie- und Studio-Lizenz)*
-        - **Grad & Spannen:** Geben Sie den Wert für Grad und Anzahl der Spannen an.
-        - **Weight:** Abhängig von *Degree und Spans* können Sie das **Weight** anpassen, um die Position der CVs zu steuern. Ein niedrigerer Wert lockert die Form der Kurve und verbessert die Qualität für Oberflächen-Arbeitsabläufe. Ein höherer Wert hält die Kurve näher an ihrer ursprünglichen Form und bewahrt Genauigkeit und Struktur. (Standard: 0,5)  
-
+      - **Neu anpassen:** Neu aufbauen innerhalb von Toleranzen.
+        - **Toleranz:** Gibt die Toleranzen an.
+        - **Ecken beibehalten:** Wenn aktiviert, werden die Ecken der Kurve nicht verändert.
+      - **Punkte:** Neu aufbauen mit der angegebenen Anzahl von CVs.
+        - **Punkte:** Gibt die Anzahl der CVs an.
+      - **Explizite Steuerung:** Neu aufbauen mit dem angegebenen Grad und der Anzahl der Spannweiten.
+        - **Grad & Spannweiten:** Gibt den Wert des Grades und die Anzahl der Spannweiten an.
+        - **Gewichtung:** Basierend auf den angegebenen Einstellungen für *Grad und Spannweiten* können Sie die **Gewichtung** anpassen, um die Position der CVs zu steuern. Ein niedrigerer Wert lockert die Form der Kurve und verbessert die Qualität für Flächenworkflows. Ein höherer Wert hält die Kurve näher an ihrer ursprünglichen Form und bewahrt Genauigkeit und Struktur. (Standard: **0.5**)
 4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="rebuild-curve"/>
 
-## See also
-- [Rebuild](/solid/rebuild)
-- [Delete Redundant Topology](delete-redundant-topology)
+## Siehe auch
+- [Neu aufbauen](/solid/rebuild)
+- [Redundante Topologie löschen](delete-redundant-topology)

@@ -1,8 +1,30 @@
 import Reference from '/components/Reference'
+import VideoPlayer from '/components/VideoPlayer';
 
-# Project Body Body [#project-body-body]
+{/* # Project Body Body [#project-body-body]
 
-<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/>
+<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-body-body-sketch.mp4"
+  alt="Project Body Body Preview"
+  title="Project Body Body"
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-project.png" alt="Project Body Body Icon" />}
+/> */}
+
+## Project Body Body
+
+<CommandReference
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-project.png"
+  tier="both"
+/>
+## Description
 
 Create a new Curve representing the intersection line between two Solids or Sheets.
 
@@ -11,6 +33,8 @@ Create a new Curve representing the intersection line between two Solids or Shee
 1. Select two Solids or Sheets.
 2. Press <kbd>I</kbd> or click the button.
 3. A Curve representing the intersection line will be created.
+
+<VideoPlayer fileName="project-body-body"/>
 
 ## See also
 - [Alternative Duplicate](alternative-duplicate)

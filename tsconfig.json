@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Youtube.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Youtube.tsx", "components/ChapterOverview.jsx", "components/ResourceSection.jsx"],
   "exclude": ["node_modules"]
 }

@@ -1,33 +1,60 @@
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import VideoPlayer from '/components/VideoPlayer';
 
-# Project Curve Body（カーブをボディに投影）[#project-curve-body]
+{/* # Project Curve Body [#project-curve-body]
 
-<Reference shortcut="I" command="Project" button="提案コマンドメニュー内"  buttonIcon='button-project'/>
+<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/> */}
 
-カーブをソリッドまたはシートに投影して、カーブを作成できます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-curve-body-sketch.mp4"
+  alt="Project Curve Body Preview"
+  title="Project Curve Body"
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-project.png" alt="Project Curve Body Icon" />}
+/> */}
+
+## カーブボディの投影
+
+<CommandReference
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-project.png"
+  tier="both"
+/>
+
+## 説明
+
+カーブをソリッドまたはシートに投影して新しいカーブを作成します。投影方法として法線または方向ベクトルを選択できます。双方向投影も利用できます。
 
 ## 基本的な使い方
 
-1. 投影したいソリッドまたはシートを選択します。
-2. キーボードショートカット<kbd>I</kbd>またはボタンを押します。
+1. 投影先のソリッドまたはシートを選択します。
+2. <kbd>I</kbd> を押すか、ボタンをクリックします。
 3. 投影するカーブを選択します。
-4. コマンドダイアログのオプションを設定します。
-   - <Kst>コマンドダイアログ</Kst>
-      - **Method:**
-            - **Normal:** 構築平面を基準に Z 軸正方向に投影します。
-            - **Vector:** 直線方向に投影します。**Bidirectional** と **Hide occlusion** が有効になります。。
-            ![Project Curve Body Method Demonstration](/img/project-curve-body-method.png)
-      - **Bidirectional:** オンにすると指定した軸の負の方向にも投影されます。
-            ![Project Curve Body Bidirectional Demonstration](/img/project-curve-body-bidirectional.png)
-      - **Hide occluded:** オンにすると指定した軸の正の方向で、隠れているフェイスには投影されなくなります。
-            ![Project Curve Body Hide Occluded Demonstration](/img/project-curve-body-hide-occluded.png)
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+4. コマンドダイアログとキーボードショートカットでオプションを設定します。
+   - <Kst>Command Dialog</Kst>
+      - **方法:**
+            - **法線:** 構築平面を基準にZ軸の正方向に投影します。
+            - **ベクトル:** 線形方向に投影します。**双方向** と **オクルージョンを非表示** が有効になります。
+            <img src="/img/project-curve-body-method.svg" width="500" />
+      - **双方向:** 有効にすると、指定した軸の負の方向にも投影が行われます。
+      <img src ="/img/project-curve-body-bidirectional.svg" width="500" />
+      - **オクルージョンを非表示:** 有効にすると、指定した軸の正の方向で非表示になっているフェースには投影が行われません。
+      <img src ="/img/project-curve-body-hide-occluded.svg" width="500" />
+   - <Kst>Command Dialog</Kst>
+      - <kbd>S</kbd> **スクリーンスペース:** 現在のカメラビューを投影方法として使用して新しいカーブを投影します。
+5. 右クリックするか、コマンドダイアログのOKをクリックして確定します。
 6. 投影されたカーブが作成されます。
 
+<VideoPlayer fileName="project-curve-body"/>
+
 ## 関連項目
-- [Alternative Duplicate](alternative-duplicate)
-- [Project Outline](project-outline)
-- [Create Outline](create-outline)
-- [Project Curve Curve](project-curve-curve)
-- [Project Body Body](project-body-body)
+- [代替複製](alternative-duplicate)
+- [輪郭の投影](project-outline)
+- [輪郭の作成](create-outline)
+- [カーブとカーブの投影](project-curve-curve)
+- [ボディとボディの投影](project-body-body)

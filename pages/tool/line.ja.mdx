@@ -3,25 +3,33 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Line
+## Line
 
-<Reference shortcut="Shift + A" command="Line" button="ツールバー"   buttonIcon='button-line'/>
+{/* <Reference shortcut="Shift + A" command="Line" button="Toolbar"   buttonIcon='button-line'/> */}
+
+<CommandReference
+  command="Line"
+  shortcut="Shift + A"
+  button="ツールバー内"
+  buttonIcon="/img/button-line.png"
+  tier="both"
+/>
+
+## 説明
 
 連続した線分を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-line" /> をクリックします。
-2. 線分の始点でクリックします。
-3. 線分の角でクリックして、一連の線分を作成します。
-    - <Kst>キーボードショートカット</Kst>
-        - <kbd>Tab</kbd> 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-        - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-        - <kbd>Ctrl + Z</kbd> **Undo:** 直前のクリックを取り消します。
-        - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+1. ツールバーの <ButtonIcon type="button-line" /> ボタンをクリックします。
+2. 線分の開始点をクリックします。
+3. 線分の角度方向をクリックして、連続した線分を作成します。
+   - <Kst>キーボードショートカット</Kst>
+      - <kbd>Tab</kbd>: 寸法を直接入力できます。詳細は [こちら](/tool/sketching-essentials#specify-dimensions-numerically)。
+      - <kbd>K</kbd> **Knife:** [ナイフモードの使用](/tool/sketching-essentials#use-knife-mode) を参照。
+      - <kbd>Ctrl + Z</kbd> **元に戻す:** 最後のクリックを取り消します。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [軸に制限する](/tool/sketching-essentials#constrain-to-an-axis)。
 4. 最後の点をクリックしたら、右クリックで確定します。
 5. 線分が作成されます。
 
 <VideoPlayer fileName="line"/>
-
-

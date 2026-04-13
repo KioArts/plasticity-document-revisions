@@ -1,10 +1,34 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
 
-# Offset Planar Curve
+{/* # Offset Planar Curve
 
-<Reference shortcut="O" command="Offset Curve" button="In Suggested Commands Menu"  buttonIcon='button-offset-curve'/>
+<Reference shortcut="O" command="Offset Curve" button="In Suggested Commands Menu"  buttonIcon='button-offset-curve'/> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/offset-planar-curve.mp4"
+  alt="Offset Planar Curve Preview"
+  title="Offset Planar Curve"
+  command="Offset Curve"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-offset-curve.png" alt="Offset Curve Icon" />}
+/> */}
+
+## Offset Planar Curve
+
+<CommandReference
+  command="Offset Curve"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-offset-curve.png"
+  tier="both"
+/>
+
+## Description
 
 Offset a planar Curve by specifying the distance to create new Curves. The option for symmetrical offsetting on both sides is available.
 
@@ -16,14 +40,16 @@ Offset a planar Curve by specifying the distance to create new Curves. The optio
 4. Set the options in the Command Dialog and Keyboard Shortcuts.
    - <Kst>Command Dialog</Kst>
    - **Distance:** Specify the Distance.
-   - **Gap fill:** 
-        - **Round:** Rounds convex corners. 
-        - **Linear:** Connects convex corners with straight lines. 
-        - **Natural:** Natural
+   - **Gap fill:** Specify how the empty space is filled.
+         - **Round:** Rounds convex corners. 
+         - **Linear:** Connects convex corners with straight lines, adding extra vertices. 
+         - **Natural:** Preserves the original shape without adding extra vertices. 
+         <img src="/img/offset-gap-fill.svg" width="450" />
    - <Kst>Keyboard Shortcuts</Kst>
-      - <kbd>Tab</kbd> **Lock distances:** Offset with equal distance on both sides.
+      - <kbd>S</kbd> **Lock distances:** Offset with equal distance on both sides.
       - <kbd>F</kbd> **Freestyle:** It functions similarly to the [**Freestyle Offset Planar Curve**](#freestyle-offset-planar-curve) described below.
-      - <kbd>V</kbd> **Gap fill:**
+      - <kbd>O</kbd> **Slot:** Invoke the [Slot](/sketch/slot) command. 
+      - <kbd>V</kbd> **Gap fill:** Cycle through the gap fill options.
       - <kbd>D</kbd> **Distance:** Specify the distance with mouse movement.
 5. Confirm with OK in the Command Dialog or right-click.
 
@@ -33,7 +59,12 @@ Offset a planar Curve by specifying the distance to create new Curves. The optio
 
 Offset a planar Curve by specifying the distance using cursor movement to create new Curves. The option for symmetrical offsetting on both sides is available.
 
+<Callout type="info">
+**Note:**
 This command can be executed not only through the **Freestyle** option in the **Offset Curve** command but also by using the **Freestyle Offset Planar Curve** in the Command Palette.
+</Callout>
+
+### Basic Usage   
 
 1. Select the Curves you want to offset.
 2. Press <kbd>O</kbd>.
@@ -43,13 +74,16 @@ This command can be executed not only through the **Freestyle** option in the **
    - If Object Snaps are enabled, the offset point snaps to the object.
    - <Kst>Command Dialog</Kst>
       - **Distance:** Specify the Distance.
-      - **Gap fill:** 
+      - **Gap fill:** Specify how the empty space is filled.
          - **Round:** Rounds convex corners. 
-         - **Linear:** Connects convex corners with straight lines. 
-         - **Natural:** Natural    
+         - **Linear:** Connects convex corners with straight lines, adding extra vertices. 
+         - **Natural:** Preserves the original shape without adding extra vertices.    
    - <Kst>Keyboard Shortcuts</Kst>
-      - <kbd>Tab</kbd> **Lock distances:** Offset with equal distance on both sides.
+      - <kbd>S</kbd> **Lock distances:** Offset with equal distance on both sides.
+      - <kbd>V</kbd> **Gap fill:** Cycle through the gap fill options.
 5. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="freestyle-offset-planar-curve"/>
 
 ## See also
 - [Offset Curve](offset-curve)

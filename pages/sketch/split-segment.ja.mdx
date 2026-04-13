@@ -3,26 +3,48 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 
-# Split Segment（カーブをセグメントに分割）
+{/* # Split Segment
 
-<Reference shortcut="" command="split-segment" button="ツールバー" buttonIcon='button-split-segment'/>
+<Reference shortcut="" command="Split Segment" button="Toolbar" buttonIcon='button-split-segment' /> */}
 
-カーブをふたつのセグメントに分割することができます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/split-segment.mp4"
+  alt="Split Segment Preview"
+  title="Split Segment"
+  command="Split Segment"
+  shortcut="Shift + G"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-split-segment.png" alt="Split Segment Icon" />}
+/> */}
+
+## セグメントの分割
+
+<CommandReference
+  command="Split Segment"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-split-segment.png"
+  tier="both"
+/>
+
+## 説明
+
+カーブをその長さに沿った任意の点で2つ以上のセグメントに分割します。
+
+{/* <Callout type="warning" emoji="⚠️">
+Be mindful that the [Split Segment](/sketch/split-segment) and [Insert Knot](/sketch/insert-knot) tools share the same icon. When selecting the tool, check the text on the icon or type the correct command directly in the Command Palette.   
+</Callout> */}
 
 ## 基本的な使い方
 
 1. ツールバーの <ButtonIcon type="button-split-segment" /> ボタンをクリックします。
-2. 分割したい点をクリックします。
-3. 頂点が挿入され、カーブは二つのセグメントに分かれます。
+2. カーブを分割したいポイントをクリックします。
+3. 頂点が挿入され、カーブが2つ以上のセグメントに分割されます。
 
 <VideoPlayer fileName="split-segment"/>
 
-<Callout type="warning" emoji="⚠️">
-スプリットセグメントとノット挿入ツールは同じアイコンを使用しています。ツールを選択する際は、アイコンのテキストを確認するか、コマンドパレットに正しいコマンドを直接入力してください。
-</Callout>
-
 ## 関連項目
-- [Insert Knot](insert-knot)
-- [Cut Curve](cut-curve)
-- [Unjoin](unjoin)
-- [Trim](trim)
+- [ノットの挿入](insert-knot)
+- [カーブのカット](cut-curve)
+- [分離](unjoin)
+- [トリム](trim)

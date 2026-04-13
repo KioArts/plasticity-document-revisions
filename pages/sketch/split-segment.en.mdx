@@ -3,23 +3,46 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 
-# Split Segment
+{/* # Split Segment
 
-<Reference shortcut="" command="Split Segment" button="Toolbar" buttonIcon='button-split-segment' />
+<Reference shortcut="" command="Split Segment" button="Toolbar" buttonIcon='button-split-segment' /> */}
 
-Split the curve into two segments at any point along its length.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/split-segment.mp4"
+  alt="Split Segment Preview"
+  title="Split Segment"
+  command="Split Segment"
+  shortcut="Shift + G"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-split-segment.png" alt="Split Segment Icon" />}
+/> */}
+
+## Split Segment
+
+<CommandReference
+  command="Split Segment"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-split-segment.png"
+  tier="both"
+/>
+
+## Description
+
+Split the Curve into two segments or more at any point along its length.
+
+{/* <Callout type="warning" emoji="⚠️">
+Be mindful that the [Split Segment](/sketch/split-segment) and [Insert Knot](/sketch/insert-knot) tools share the same icon. When selecting the tool, check the text on the icon or type the correct command directly in the Command Palette.   
+</Callout> */}
 
 ## Basic Usage
 
 1. Click the button <ButtonIcon type="button-split-segment" /> on the Toolbar.
 2. Click on the point where you want to split the Curve.
-3. A Vertex is inserted, dividing the Curve into two segments.
+3. A Vertex is inserted, dividing the Curve into two segments or more.
 
 <VideoPlayer fileName="split-segment"/>
 
-<Callout type="warning" emoji="⚠️">
-Be mindful that the Split Segment and Insert Knot tools share the same icon. When selecting the tool, check the text on the icon or type the correct command directly in the Command Palette.   
-</Callout>
 
 ## See also
 - [Insert Knot](insert-knot)

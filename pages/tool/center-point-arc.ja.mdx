@@ -3,34 +3,41 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Center Point Arc
+## 中心点弧
 
-<Reference shortcut='' command='Center Point Arc' button='ツールバー' buttonIcon='button-center-point-arc'/>
+{/* <Reference shortcut='' command='Center Point Arc' button='Toolbar' buttonIcon='button-center-point-arc'/> */}
 
-中心と円周上の2点を指定して円弧を作成できます。
+<CommandReference
+  command="中心点弧"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-center-point-arc.png"
+  tier="both"
+/>
+
+## 説明
+
+中心と円周上の2点を指定して弧を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-center-point-arc" /> をクリックします。
-2. 円弧の中心でクリックします。
-3. カーソルを動かして円弧の最初の位置でクリックします。
+1. ツールバーの <ButtonIcon type="button-center-point-arc" /> ボタンをクリックします。
+2. 弧の中心をクリックします。
+3. カーソルを移動し、弧の最初の位置をクリックします。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> : 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-4. カーソルを動かして円弧の大きさを調整し、クリックして確定します。
+      - <kbd>Tab</kbd>: 寸法の直接入力が可能になります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)をご覧ください。
+4. カーソルを移動して弧のサイズを調整し、クリックして確定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-5. 円弧が作成されます。
+      - <kbd>K</kbd> **ナイフ:** [ナイフモードの使用](/tool/sketching-essentials#use-knife-mode)を参照してください。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+5. 弧が作成されます。
 
 <VideoPlayer fileName="center-point-arc"/>
 
 ## 関連項目
-- [Center Circle](center-circle)
-- [Two-Point Circle](two-point-circle)
-- [Three-Point Circle](three-point-circle)
-- [Tangent Circle](tangent-circle)
-- [Three-Point Arc](three-point-arc)
-- [Tangent Arc](tangent-arc)
-
-
-
+- [中心円](center-circle)
+- [2点円](two-point-circle)
+- [3点円](three-point-circle)
+- [接線円](tangent-circle)
+- [3点弧](three-point-arc)
+- [接線弧](tangent-arc)

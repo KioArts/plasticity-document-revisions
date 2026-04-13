@@ -3,27 +3,48 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Join Curves（一致した点でカーブをつなぐ）[#join-Curves]
+{/* # Join Curves
 
-<Reference shortcut="J" command="Join" button="コマンドバーで " buttonIcon='button-join' />
+<Reference shortcut="J" command="Join" button="In Command Bar" buttonIcon='button-join' /> */}
 
-一致した点でカーブをつなぐことができます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/join-curves.mp4"
+  alt="Join Curves Preview"
+  title="Join Curves"
+  command="Join"
+  shortcut="J"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-join.png" alt="Join Curves Icon" />}
+/> */}
+
+## カーブの結合
+
+<CommandReference
+  command="Join"
+  shortcut="J"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-join.png"
+  tier="both"
+/>
+
+## 説明
+
+接続点でカーブを結合します。
 
 ## 基本的な使い方
 
-1. つなげたいカーブを選択します。
-2. <kbd>J</kbd>を押します。
-3. カーブがつながります。
+1. 結合したいカーブを選択します。
+2. <kbd>J</kbd> を押します。
+3. カーブが結合されます。
 
 <Callout emoji="❗">
-**注意** <br/ >
-つなげたいふたつのカーブは、端点が完全に一致している必要があります。
-完全に一致すると、頂点は緑色になります。紫色のときは一致していません。
-ふたつの頂点を確実に一致させるには、[**Object snaps**](/plasticity-essentials/snap#object-snap) を参照してください。
+**注意**<br />
+2つのカーブを結合するには、それぞれの端点が完全に揃っている必要があります。
+完全に揃っている場合、ポイントは青緑色に変わります。紫色に見える場合は揃っていません。正確な位置合わせを確保するには、[オブジェクトスナップ](/plasticity-essentials/plasticity-interface/snap)を参照してください。
 </Callout>
 
 <VideoPlayer fileName="join-curves"/>
 
 ## 関連項目
-- [Join](join)
-- [Bridge](bridge)
+- [結合](join)
+- [ブリッジ](bridge)

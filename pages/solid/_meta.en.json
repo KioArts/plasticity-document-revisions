@@ -1,7 +1,91 @@
 {
-  "solid-command-essentials": {
-    "title": "Solid Command Essentials",
-    "display": "hidden"
-  }
-}
+  "---boolean": { "type": "separator", "title": "Boolean and Cut" },
+  "boolean": "Boolean",
+  "cut": "Cut",
 
+  "---create": { "type": "separator", "title": "Create and Duplicate" },
+  "alternative-duplicate": "Alternative Duplicate",
+  "create-instance": "Create Instance",
+  "create-solid-and-sheet-instance": "Create Solid and Sheet Instance",
+   "realize-instances": "Realize Instances",
+  "realize-solid-and-sheet-instances": "Realize Solid and Sheet Instances",
+
+  "---surface-creation": { "type": "separator", "title": "Surface Creation" },
+  "bridge-surface": "Bridge Surface",
+  "constrained-surface": "Constrained Surface",
+  "extrude": "Extrude",
+  "loft": "Loft",
+  "patch": "Patch",
+  "pipe": "Pipe",
+  "polyspline": "Polyspline",
+  "revolve": "Revolve",
+  "square": "Square",
+  "sweep": "Sweep",
+  "xnurbs": "Xnurbs",
+
+  "---deform": { "type": "separator", "title": "Deform and Slide" },
+  "deform": "Deform",
+  "deform-solid-and-sheet": "Deform Solid and Sheet",
+  "slide": "Slide",
+  "slide-surface-cv": "Slide Surface CV",
+
+  "---delete": { "type": "separator", "title": "Delete and Remove" },
+  "delete-face": "Delete Face",
+  "delete-redundant-topology": "Delete Redundant Topology",
+  "remove-fillets-from-shell": "Remove Fillets from Shell",
+  "remove-nominal-surface": "Remove Nominal Surface",
+
+  "---draft": { "type": "separator", "title": "Draft and Align" },
+  "align": "Align",
+  "align-surface": "Align Surface",
+  "draft-face": "Draft Face",
+
+  "---extend": { "type": "separator", "title": "Extend" },
+  "extend": "Extend",
+  "extend-sheet": "Extend Sheet",
+
+  "---fillet": { "type": "separator", "title": "Fillet" },
+  "fillet": "Fillet",
+  "fillet-shell": "Fillet Shell",
+
+  "---hollow": { "type": "separator", "title": "Hollow and Thicken" },
+  "hollow": "Hollow",
+  "thicken": "Thicken",
+  "thicken-face": "Thicken Face",
+
+  "---imprint": { "type": "separator", "title": "Imprint" },
+  "imprint": "Imprint",
+  "imprint-body-body": "Imprint Body Body",
+  "imprint-curve-body": "Imprint Curve Body",
+
+  "---join": { "type": "separator", "title": "Join and Unjoin" },
+  "join": "Join",
+  "join-sheets": "Join Sheets",
+  "unjoin": "Unjoin",
+  "unjoin-faces": "Unjoin Faces",
+  "unjoin-shells": "Unjoin Shells",
+
+  "---offset": { "type": "separator", "title": "Offset" },
+  "offset-curve": "Offset Curve",
+  "offset-edge": "Offset Edge",
+  "offset-face": "Offset Face",
+  "offset-face-loop": "Offset Face Loop",
+
+  "---rebuild": { "type": "separator", "title": "Rebuild and Refine" },
+  "isoparam": "Isoparam",
+  "match-face": "Match Face",
+  "raise-degree": "Raise Degree",
+  "raise-surface-degree": "Raise Surface Degree",
+  "rebuild": "Rebuild",
+  "rebuild-face": "Rebuild Face",
+  "reverse": "Reverse",
+  "reverse-sheet": "Reverse Sheet",
+
+  "---trim": { "type": "separator", "title": "Trim and Unwrap" },
+  "untrim": "Untrim",
+  "unwrap-face": "Unwrap Face",
+
+  "---display": { "type": "separator", "title": "Display and Analysis" },
+  "find-boundary-edges": "Find Boundary Edges",
+  "toggle-surface-curvature": "Toggle Surface Curvature"
+}

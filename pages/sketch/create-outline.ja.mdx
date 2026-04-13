@@ -1,25 +1,46 @@
 import Reference from '/components/Reference'
 
-# Create Outline
+{/* # Create Outline
 
-<Reference shortcut="" command="Create Outline" button="" />
+<Reference shortcut="" command="Create Outline" button="" license="Indie and Studio" /> */}
 
-ソリッドまたはシートの輪郭を現在の作業平面に法線方向に投影し、カーブを生成します。
-「プロジェクトアウトライン」 コマンドが2Dの投影カーブを生成するのに対し、このコマンドは3Dカーブを作成します。カーブはオブジェクトの元の境界に正確に配置されます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/create-outline.mp4"
+  alt="Create Outline Preview" 
+  title="Create Outline"
+  command="Create Outline"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-create-outline.png" alt="Create Instance Icon" />}
+/> */}
+
+## 輪郭の作成
+
+<CommandReference
+  command="Create Outline"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-create-outline.png"
+  tier="both"
+/>
+
+## 説明
+
+ソリッドまたはシートの輪郭を法線方向に沿って現在の構築平面に投影し、カーブを生成します。**[輪郭を投影](/sketch/project-outline)** コマンドが2Dの投影カーブを生成するのに対し、このコマンドは3Dカーブを作成します。カーブはオブジェクトの元の境界に正確に配置されます。
 
 ## 基本的な使い方
 
-1. 投影したい構築平面をセットします。
+1. 投影に使用する構築平面を設定します。
 2. 投影するソリッドまたはシートを選択します。
-3. コマンドパレットで **Create Outline** コマンドを実行します。
+3. コマンドパレットで **輪郭を作成** コマンドを使用します。
 4. 投影されたカーブが作成されます。
-5. 移動ギズモを使用してカーブを移動することもできます。
-6. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+5. 必要に応じて、移動ギズモを使用してカーブを移動できます。
+6. 右クリックするか、コマンドダイアログのOKをクリックして確定します。
 
 ## 関連項目
-- [Alternative Duplicate](alternative-duplicate)
-- [Project Outline](project-outline)
-- [Project Curve Body](project-curve-body)
-- [Project Curve Curve](project-curve-curve)
-- [Project Body Body](project-body-body)
-- [Offset Curve](offset-curve)
+- [代替複製](alternative-duplicate)
+- [輪郭の投影](project-outline)
+- [カーブボディの投影](project-curve-body)
+- [カーブとカーブの投影](project-curve-curve)
+- [ボディとボディの投影](project-body-body)
+- [カーブのオフセット](offset-curve)

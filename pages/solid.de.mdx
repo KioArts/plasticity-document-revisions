@@ -1,63 +1,164 @@
-# Befehle für Festkörper
+### Boolesche Operationen und Schneiden
 
-| Befehlsname                                                 | Tastenkombination                     | Anmerkung                                                                                      |
-| ------------------------------------------------------------ | ---------------------------- | ---------------------------------------------------------------------------------------- |
-| [Boolean](/solid/boolean)                                     | <kbd>Q</kbd>                 | Boolesche Körper und/oder Flächen.                                                       |
-| [Cut](/solid/cut)                                             | <kbd>C</kbd>                 | Körper und Fläche schneiden.                                                              |
-| **Solid and Sheet Commands**                                 |                              |                                                                                          |
-| [Alternative Duplicate](/solid/alternative-duplicate)         | <kbd>Alt+D</kbd>           | Alternative Duplikat.                                                                     |
-| [Constrained Surface](/solid/constrained-surface)             |                              | Eine eingeschränkte Fläche erstellen.                                                    |
-| [Deform](/solid/deform)                                      |                               | Vereinheitlichter Befehl für Kurve verformen, Körper und Fläche verformen.                |
-| [Deform Solid and Sheet](/solid/deform-solid-and-sheet)       |                               | Objekte auf unregelmäßigen und regelmäßigen Oberflächen wickeln.                         |
-| [Extrude](/solid/extrude)                                     | <kbd>E</kbd>                 | Flächen, Regionen und Kurven extrudieren.                                                |
-| [Fillet](/solid/fillet)                                       | <kbd>B</kbd>                 | Vereinheitlichter Befehl für Kante abrunden, Eckpunkt abrunden, Schale abrunden.         |
-| [Fillet Shell](/solid/fillet-shell)                           | <kbd>B</kbd>                 | Kanten abrunden oder fasen.                                                              |
-| [Hollow](/solid/hollow)                                       |                              | Einen Körper hohl machen.                                                                 |
-| [Loft](/solid/loft)                                           | <kbd>L</kbd>                 | Fläche, Kante und Kurve loften.                                                          |
-| [Measure Continuity](/tool/measure-continuity)               |                            | Kontinuität entlang von Flächenkanten messen.                                                  |
-| [Toggle Surface Curvature](/solid/toggle-surface-curvature) |                            | Measure curvature across surface edges.                                                  |
-| [Patch](/solid/patch)                                         |                              | Löcher in der Fläche / geschlossene Kurven zu einer Fläche füllen.                       |
-| [Pipe](/solid/pipe)                                           | <kbd>P</kbd>                 | Ein Rohr aus Kante und Kurve erstellen.                                                  |
-| [Raise Degree](/solid/raise-degree)                           | <kbd>Shift+S</kbd>         | Vereinheitlichter Befehl für Grad der Kurve erhöhen, Grad der Fläche erhöhen.            |
-| [Raise Surface Degree](/solid/raise-surface-degree)           | <kbd>Shift+S</kbd>         | Kontrollelemente der Fläche erhöhen.                                                      |
-| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) |                              | Fasen von Körpern und Flächen entfernen.                                                 |
-| [Revolve](/solid/revolve)                                     |                              | Region oder Kurve drehen.                                                                |
-| [Sweep](/solid/sweep)                                         | <kbd>Shift+P</kbd>         | Region oder Kurve fegen.                                                                  |
-| [Square](/solid/square)                                       |                               | Flächen mit expliziter Kontrolle über Grade und Spannweiten erstellen.                  |
-| [Slide](/solid/slide)                                        |                               | Vereinheitlichter Befehl für Slide Curve CV, Slide Surface CV.                           |
-| [Slide Surface CV](/solid/slide-surface-cv)                   | <kbd>Shift+G</kbd>           | Verschieben Sie ein CV auf einer Oberfläche entlang des CV-Hulls.                        |
-| [Thicken](/solid/thicken)                                     |                              | Dicke zu einer ausgewählten Fläche hinzufügen.                                           |
-| [Thicken Face](/solid/thicken-face)                           |                              | Dicke zu einer ausgewählten Fläche hinzufügen.                                           |
-| [XNurbs](/solid/xnurbs)                                       |                               | Hochwertige und komplexe Oberflächen erstellen.                                          |
-| **Sheet Commands**                                           |                              |                                                                                          |
-| [Align](/solid/align)                                         |                              | Flächen ausrichten  
-| [Bridge Surface](/solid/bridge-surface)                       |                              | Zwei Flächen verbinden.                                                                    |
-| [Extend](/solid/extend)                                       |                              | Vereinheitlichter Befehl für Kurve erweitern, Fläche erweitern.                          |
-| [Extend Sheet](/solid/extend-sheet)                           |                              | Eine oder mehrere Außenkanten der Fläche erweitern.                                      |
-| [Find Boundary Edges](/solid/find-boundary-edges)             |                              | Kanten einer Öffnung in der Fläche auswählen.                                            |
-| [Join](/solid/join)                                           | <kbd>J</kbd>                 | Vereinheitlichter Befehl für Kurven verbinden, Flächen verbinden.                       |
-| [Join Sheets](/solid/join-sheets)                             | <kbd>J</kbd>                 | Flächen mit passenden Kanten verbinden.                                                  |
-| [Reverse](/solid/reverse)                                     |                              | Vereinheitlichter Befehl für Umkehren von Kurven und Flächen.                            |
-| [Reverse Sheet](/solid/reverse-sheet)                         |                              | Die Richtung der Normalen auf einer Fläche umkehren.                                    |
-| [Unjoin](/solid/unjoin)                                       | <kbd>Alt+J</kbd>           | Vereinheitlichter Befehl für Kurven trennen, Flächen trennen, Schalen trennen.          |
-| [Unjoin Faces](/solid/unjoin-faces)                           | <kbd>Alt+J</kbd>           | Ausgewählte Flächen von Körper oder Fläche trennen.                                      |
-| [Unjoin Shells](/solid/unjoin-shells)                         | <kbd>Alt+J</kbd>           | Alle Flächen von ausgewählten Körpern oder Flächen in einzelne Flächen trennen.         |
-| [Untrim](/solid/untrim)                                       | <kbd>Alt+T</kbd>           | Eine Fläche basierend auf der ursprünglichen Form erstellen.                            |
-| **Face Commands**                                            |                              |                                                                                          |
-| [Delete Face](/solid/delete-face)                             |<kbd>Shift+Backspace</kbd> oder <kbd>Shift+Delete</kbd> oder <kbd>Shift+X</kbd> | Fläche löschen.                                                                        |
-| [Draft Face](/solid/draft-face)                               |                              | Fläche neigen.                                                                           |
-| [Match Face](/solid/match-face)                               |                              | Flächen an eine andere Fläche anpassen.                                                  |
-| [Offset Face](/solid/offset-face)                             |                              | Ausgewählte Flächen versetzen.                                                           |
-| [Rebuild](/solid/rebuild)                                     |                              | Vereinheitlichter Befehl für Kurve neu aufbauen, Fläche neu aufbauen.                   |
-| [Rebuild Face](/solid/rebuild-face)                           |                              | Fläche neu aufbauen.                                                                     |
-| [Unwrap Face](/solid/unwrap-face)                             |                              | Fläche entfalten.                                                                        |
-| **Edge Commands**                                            |                              |                                                                                          |
-| [Delete Redundant Topology](/solid/delete-redundant-topology) |                              | Überflüssige Kanten entfernen.                                                            |
-| [Complete Edge](/common/complete-edge)                        |                              | Kanten erweitern.                                                                         |
-| [Imprint](/solid/imprint)                                     | <kbd>Shift+I</kbd>         | Vereinheitlichter Befehl für Körper abdrucken, Kurve Körper abdrucken.                   |
-| [Imprint Body Body](/solid/imprint-body-body)                 | <kbd>Shift+I</kbd>         | Kanten auf dem Zielkörper oder der Fläche erstellen, wo sie mit einem Werkzeugkörper oder einer Fläche schneiden. |
-| [Imprint Curve Body](/solid/imprint-curve-body)               | <kbd>Shift+I</kbd>         | Kanten auf dem Zielkörper oder der Fläche erstellen, wo sie auf eine Werkzeugkurve projizieren. |
-| [Isoparam](/solid/isoparam)                                   | <kbd>Ctrl+R</kbd>          | Isoparametern hinzufügen.                                                                 |
-| [Offset Curve](/solid/offset-curve)                           | <kbd>O</kbd>                 | Vereinheitlichter Befehl für versetzte ebene Kurve, versetzte Region, versetzte Flächenumrandung, versetzte Kante. |
-| [Offset Edge](/solid/offset-edge)                             | <kbd>O</kbd>                 | Ausgewählte Kanten versetzen.                                                             |
-| [Offset Face Loop](/solid/offset-face-loop)                   | <kbd>O</kbd>                 | Die Umrisskanten ausgewählter Flächen versetzen.                                         |
+- Werkzeuge zum Kombinieren und Subtrahieren von Volumenkörpern.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Boolean](/solid/boolean) | Kombiniere, subtrahiere oder schneide zwei Volumenkörper miteinander. |
+| [Cut](/solid/cut) | Schneide einen Volumenkörper mithilfe eines anderen Körpers als Schneidwerkzeug. |
+
+### Instanzen
+
+- Werkzeuge zum Erstellen und Realisieren von Volumen- und Flächeninstanzen.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Create Instance](/solid/create-instance) | Erstelle eine wiederverwendbare Instanz der ausgewählten Geometrie. |
+| [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance) | Erstelle eine wiederverwendbare Instanz eines Volumenkörpers und eines Flächenkörpers. |
+| [Realize Instances](/solid/realize-instances) | Wandle alle Instanzen in unabhängige, bearbeitbare Geometrie um. |
+| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) | Wandle Volumen- und Flächeninstanzen in bearbeitbare Geometrie um. |
+
+### Flächenerstellung
+
+- Werkzeuge zum Erstellen von Flächen und Volumenkörpern.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Alternative Duplicate](/solid/alternative-duplicate) | Erzeuge einen Volumenkörper aus ausgewählten Flächenfragmenten mit einer alternativen Methode. |
+| [Bridge Surface](/solid/bridge-surface) | Erzeuge eine glatte Übergangsfläche zwischen zwei bestehenden Flächen. |
+| [Constrained Surface](/solid/constrained-surface) | Erzeuge eine Fläche, die an bestehende Geometrie gebunden ist. |
+| [Extrude](/solid/extrude) | Extrudiere eine Kurve oder Fläche entlang einer definierten Richtung zu einem Volumen- oder Flächenkörper. |
+| [Loft](/solid/loft) | Erzeuge eine Fläche durch Lofting über mehrere Kurven oder Profile. |
+| [Patch](/solid/patch) | Fülle eine offene Begrenzung mit einer neuen Flächenpatch. |
+| [Pipe](/solid/pipe) | Erzeuge einen Rohrkörper entlang eines Kurvenpfads. |
+| [PolySpline](/solid/polyspline) | Erzeuge eine Polysurface durch Konvertieren eines Mesh-Objekts. |
+| [Revolve](/solid/revolve) | Rotier eine Kurve um eine Achse, um einen Volumen- oder Flächenkörper zu erzeugen. |
+| [Square](/solid/square) | Erzeuge eine ungetrimmte Fläche zwischen Begrenzungskurven mithilfe von XNurbs. |
+| [Sweep](/solid/sweep) | Führe ein Profil entlang eines Pfads, um einen Volumen- oder Flächenkörper zu erzeugen. |
+| [Xnurbs](/solid/xnurbs) | Erzeuge eine hochwertige Fläche aus Begrenzungskurven mit XNurbs. |
+
+### Verformen und Schieben
+
+- Werkzeuge zum Verformen und Verschieben von Volumen- und Flächenkörpern.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Deform](/solid/deform) | Verforme ausgewählte Geometrie. |
+| [Deform Solid and Sheet](/solid/deform-solid-and-sheet) | Verforme Volumen- und Flächenkörper. |
+| [Slide](/solid/slide) | Schiebe ausgewählte Geometrie entlang einer Fläche oder Kante. |
+| [Slide Surface CV](/solid/slide-surface-cv) | Schiebe einen Flächenkontrollpunkt entlang seiner Fläche. |
+
+### Löschen und Entfernen
+
+- Werkzeuge zum Löschen von Flächen und Entfernen von Topologie.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Delete Face](/solid/delete-face) | Lösche eine ausgewählte Fläche aus einem Volumen- oder Flächenkörper. |
+| [Delete Redundant Topology](/solid/delete-redundant-topology) | Entferne unnötige Topologie aus Volumen- oder Flächengeometrie. |
+| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) | Entferne Verrundungsflächen aus einem Schalenkörper. |
+| [Remove Nominal Surface](/solid/remove-nominal-surface) | Entferne die nominale Flächenreferenz eines Körpers. |
+
+### Schrägzug und Ausrichten
+
+- Werkzeuge zum Anwenden von Schrägzügen und zum Ausrichten von Geometrie.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Align](/solid/align) | Richte ausgewählte Geometrie an einer Referenzkantenfläche aus. |
+| [Align Surface](/solid/align) | Richte einen Flächenkörper an einer Referenzfläche aus. |
+| [Draft Face](/solid/draft-face) | Wende einen Schrägzug auf eine Fläche an, z. B. für Guss- und Formprozesse. |
+
+### Verlängern
+
+- Werkzeuge zum Verlängern von Flächen und Flächenkörpern.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Extend](/solid/extend) | Verlängere eine offene Kante oder Flächenbegrenzung. |
+| [Extend Sheet](/solid/extend-sheet) | Verlängere einen Flächenkörper an einer seiner Begrenzungskanten. |
+
+### Verrunden
+
+- Werkzeuge zum Erstellen von Verrundungen und Fasen an Volumenkanten.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Fillet](/solid/fillet) | Füge ausgewählten Kanten eines Volumenkörpers eine Verrundung oder Fase hinzu. |
+| [Fillet Shell](/solid/fillet-shell) | Füge den Kanten eines Schalenkörpers eine Verrundung oder Fase hinzu. |
+
+### Aushöhlen und Verstärken
+
+- Werkzeuge zum Aushöhlen von Volumenkörpern und Verstärken von Flächen.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Hollow](/solid/hollow) | Höhle einen Volumenkörper aus, indem inneres Material entfernt wird. |
+| [Thicken](/solid/thicken) | Verstärke einen Flächenkörper zu einem Volumenkörper durch Hinzufügen von Dicke. |
+| [Thicken Face](/solid/thicken-face) | Verstärke eine ausgewählte Fläche um einen definierten Betrag. |
+
+### Prägen
+
+- Werkzeuge zum Prägen von Kurven und Körpern auf Flächen.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Imprint](/solid/imprint) | Präge Geometrie auf eine Fläche, um neue Kanten zu erzeugen. |
+| [Imprint Body Body](/solid/imprint-body-body) | Präge die Schnittkurve zweier Körper auf deren Flächen. |
+| [Imprint Curve Body](/solid/imprint-curve-body) | Präge eine Kurve auf einen Volumen- oder Flächenkörper. |
+
+### Verbinden und Trennen
+
+- Werkzeuge zum Verbinden und Auftrennen von Volumen- und Flächenkörpern.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Join](/solid/join) | Verbinde ausgewählte Flächen oder Körper zu einem einzigen Körper. |
+| [Join Sheets](/solid/join-sheets) | Verbinde mehrere Flächenkörper zu einem einzigen. |
+| [Unjoin](/solid/unjoin) | Trenne einen verbundenen Körper wieder in einzelne Teile. |
+| [Unjoin Faces](/solid/unjoin-faces) | Trenne ausgewählte Flächen von einem Körper. |
+| [Unjoin Shells](/solid/unjoin-shells) | Trenne Schalenkörper in einzelne Flächen. |
+
+### Offset
+
+- Werkzeuge zum Versetzen von Kurven, Kanten und Flächen.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Offset Curve](/solid/offset-curve) | Versetze eine Kurve um einen definierten Abstand. |
+| [Offset Edge](/solid/offset-edge) | Versetze eine ausgewählte Kante entlang einer Fläche. |
+| [Offset Face](/solid/offset-face) | Versetze eine Fläche nach innen oder außen. |
+| [Offset Face Loop](/solid/offset-face-loop) | Versetze eine zusammenhängende Flächenschleife eines Körpers. |
+
+### Neuaufbau und Verfeinerung
+
+- Werkzeuge zum Neuaufbau, Umkehren und Verfeinern von Volumen- und Flächengeometrie.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Isoparam](/solid/isoparam) | Füge Isoparameterlinien hinzu oder passe sie an. |
+| [Match Face](/solid/match-face) | Passe die Flächenkontinuität einer Fläche an eine andere an. |
+| [Raise Degree](/solid/raise-degree) | Erhöhe den Grad der ausgewählten Geometrie. |
+| [Raise Surface Degree](/solid/raise-surface-degree) | Erhöhe den Grad einer Fläche für mehr Kontrollpunkte. |
+| [Rebuild](/solid/rebuild) | Baue ausgewählte Geometrie mit neuer Punktanzahl oder neuem Grad neu auf. |
+| [Rebuild Face](/solid/rebuild-face) | Baue eine ausgewählte Fläche mit neuer Kontrollstruktur neu auf. |
+| [Reverse](/solid/reverse) | Kehre die Normalenrichtung der ausgewählten Geometrie um. |
+| [Reverse Sheet](/solid/reverse-sheet) | Kehre die Normalenrichtung eines Flächenkörpers um. |
+
+### Zuschneiden und Abwickeln
+
+- Werkzeuge zum Entfernen von Trimmgrenzen und zum Abwickeln von Flächen.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Untrim](/solid/untrim) | Entferne Trimmgrenzen einer Fläche, um ihre volle Ausdehnung wiederherzustellen. |
+| [Unwrap Face](/solid/unwrap-face) | Wickle eine Fläche in eine flache 2D‑Darstellung ab. |
+
+### Anzeige und Analyse
+
+- Werkzeuge zur Analyse und Visualisierung der Qualität von Volumen- und Flächenkörpern.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Find Boundary Edges](/solid/find-boundary-edges) | Hebe offene Begrenzungskanten einer Fläche oder eines Körpers hervor. |
+| [Toggle Surface Curvature](/solid/toggle-surface-curvature) | Zeige eine Krümmungsanalyse auf Flächen an, um die Qualität zu beurteilen. |

@@ -1,39 +1,44 @@
 import VideoPlayer from '/components/VideoPlayer';
 
-# Skizzier-Grundlagen
+# Sketching Essentials
 
-## Exaktes Einrasten[#accurate-snap]
+## Präzises Snapping[#accurate-snap]
 
-- Beim Verwenden von Curves für die Oberflächenmodellierung müssen Curves genau eingerastet werden.
-- Wenn ein Vertex an eine Curve oder einen anderen Vertex einrastet, wechselt er von lila zu blau-grün.
+Kurven müssen beim Flächenmodellieren präzise snappen.
 
-![Tipps zum Skizzieren 1](/img/sketching-tips-1.png)
+Wenn ein Vertex auf eine Kurve oder einen anderen Vertex snappt:
+- Die Vertex‑Farbe wechselt von **Lila** zu **Blau‑Grün**. Diese Farbe kann unter **Preferences > Appearance > Supporting Color** angepasst werden.
+- Ein kleiner Punkt erscheint subtil am Schnittpunkt.
 
-- Um genau zu rasten:
-    - Halten Sie beim Verschieben eines Vertex <kbd>Strg</kbd> gedrückt, um das Einrasten zu aktivieren.
-    - Beim Zeichnen in einer Skizze können Sie einrasten, ohne <kbd>Strg</kbd> zu halten, wenn **Object snapping** aktiviert ist.
-    - Weitere Informationen finden Sie unter [Gitter und Fang](/plasticity-essentials/snap).
+Diese visuellen Hinweise bestätigen, dass die Geometrie korrekt verbunden ist.
 
-## Einrastlinien als Referenz verwenden[#snap-reference-lines]
+![Sketching Tips 1](/img/sketching-tips-1.png)
 
-- Beim Zeichnen können Sie temporäre Referenzlinien erstellen, um das Einrasten zu unterstützen. Zeigen Sie mit dem Cursor auf ein Objekt und tippen Sie auf <kbd>Umschalt</kbd>. Einrastbare Referenzlinien werden angezeigt.
+- Für präzises Snapping:
+  - Beim Bewegen eines Vertex <kbd>Ctrl</kbd> gedrückt halten, um Snapping zu aktivieren.
+  - Beim Skizzieren funktioniert Snapping automatisch, wenn **Object Snapping** aktiviert ist (kein <kbd>Ctrl</kbd> nötig).
+- Weitere Details findest du unter [Snap](/plasticity-essentials/plasticity-interface/snap).
+
+## Referenzlinien zum Snappen[#snap-reference-lines]
+
+- Beim Zeichnen kannst du temporäre Referenzlinien erzeugen, um das Snappen zu erleichtern. Zeige mit dem Cursor auf ein Objekt und tippe <kbd>Shift</kbd>. Snappbare Referenzlinien erscheinen.
 
 <VideoPlayer fileName="sketching-tips-2"/>
 
-## Maße numerisch angeben[#specify-dimensions-numerically]
+## Maße numerisch eingeben[#specify-dimensions-numerically]
 
-- Sie können die Maße und Winkel einer Skizze numerisch angeben: Drücken Sie die <kbd>Tab</kbd>-Taste, und ein numerisches Eingabefeld wird bei den Maßen angezeigt.
+- Du kannst Maße und Winkel einer Skizze numerisch eingeben: Drücke <kbd>Tab</kbd>, und ein numerisches Eingabefeld erscheint an den Bemaßungen.
 
 <VideoPlayer fileName="sketching-tips-3"/>
 
 ## Auf eine Achse beschränken[#constrain-to-an-axis]
 
-- Drücken Sie die <kbd>X</kbd>/<kbd>Y</kbd> oder <kbd>Z</kbd>-Taste, um die Bewegung des Cursors auf eine einzelne Achse zu beschränken.
+- Drücke <kbd>X</kbd>/<kbd>Y</kbd> oder <kbd>Z</kbd>, um die Cursorbewegung auf eine einzelne Achse zu beschränken.
 
 <VideoPlayer fileName="sketching-tips-4"/>
 
-## Verwenden Sie den Knife-Modus[#use-knife-mode]
+## Knife‑Modus verwenden[#use-knife-mode]
 
-- Verwenden Sie den Knife-Modus, um eine oder mehrere Faces zu schneiden, während Sie eine Curve zeichnen. Sie müssen beim Zeichnen an Punkten auf den Ziel-Faces einrasten.
+- Verwende den Knife‑Modus, um eine oder mehrere Flächen zu schneiden, während du eine Kurve zeichnest. Du musst beim Zeichnen auf Punkte der Zielflächen snappen.
 
 <VideoPlayer fileName="sketching-tips-5"/>

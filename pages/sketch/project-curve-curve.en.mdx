@@ -1,16 +1,52 @@
 import Reference from '/components/Reference'
+import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
 
-# Project Curve Curve [#project-curve-curve]
+{/* # Project Curve Curve [#project-curve-curve]
 
-<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/>
+<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/> */}
 
-Create a new Curve by projecting the intersection points of surfaces generated from two independent Curves.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-curve-curve-sketch.mp4"
+  alt="Project Curve Curve Preview"
+  title="Project Curve Curve"
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-project.png" alt="Project Curve Curve Icon" />}
+/> */}
+
+## Project Curve Curve
+
+<CommandReference
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-project.png"
+  tier="both"
+/>
+
+## Description
+
+Create a new curve by projecting the intersection points of the surfaces generated from two independent curves. The projection algorithm follows the normal behavior of each input curve, ultimately producing the intersecting curve. Because the resulting line inherits the characteristics of both original curves, it enables advanced construction of lines in 3D space.
+
+<Center width="500px">
+![Example](/img/project-curve-curve.svg)
+</Center>
+
+<Callout type="default">  
+**Note:** Projecting curves can occasionally produce unexpected results or errors, often because the normal direction isn't set correctly.  If this happens, try manually extruding each curve along its intended direction and then imprinting a line - [Imprint Body Body](/solid/imprint-body-body). This approach usually yields more reliable results in complex situations. 
+</Callout>
 
 ## Basic Usage
 
 1. Select the two Curves to be projected.
 2. Press <kbd>I</kbd> or click the button.
 3. The projected intersection Curve will be created.
+
+<VideoPlayer fileName="project-curve-curve"/>
+
 
 ## See also
 - [Alternative Duplicate](alternative-duplicate)

@@ -3,33 +3,42 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Spiral
+## Spirale
 
-<Reference shortcut='' command='Spiral' button='Werkzeugleiste' buttonIcon='button-spiral'/>
+{/* <Reference shortcut='' command='Spiral' button='Toolbar'  buttonIcon='button-spiral'/> */}
 
-Sie können eine Spirale erstellen, indem Sie ihren Durchmesser und die Anzahl der Umdrehungen angeben.
+<CommandReference
+  command="Spirale"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-spiral.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-spiral" /> Knopf in der Werkzeugleiste.
-2. Klicken Sie, um den Startpunkt der Spiralenachse festzulegen.
-3. Bewegen Sie den Cursor und klicken Sie, um den Endpunkt der Spiralenachse festzulegen.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Axis:** [Beschränkt auf X, Y, Z Achse](/tool/sketching-essentials#constrain-to-an-axis).
+Sie können eine Spirale erstellen, indem Sie ihren Durchmesser und die Anzahl der Windungen festlegen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-spiral" /> in der Symbolleiste.
+2. Klicken Sie, um den Startpunkt der Spiralachse festzulegen.
+3. Bewegen Sie den Cursor und klicken Sie, um den Endpunkt der Spiralachse festzulegen.
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y-, Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
 4. Bewegen Sie den Cursor, um den Durchmesser der Spirale anzupassen, und klicken Sie zur Bestätigung.
-5. Legen Sie Optionen über den Befehlsdialog und Tastenkombinationen fest.
+5. Legen Sie Optionen über den Befehlsdialog und Tastaturkürzel fest.
    - <Kst>Befehlsdialog</Kst>
-      - **Turns:** Anzahl der Umdrehungen angeben.
-      - **Radius:** Durchmesser angeben.
-      - **Angle OR Pitch:** Winkel oder Steigung angeben. Die Werte stehen in Beziehung zueinander.
-      - **Handedness:** Drehrichtung umkehren.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>A</kbd> **Angle:** Winkel durch Bewegen der Maus angeben.
-      - <kbd>D</kbd> **Length:** Länge der Achse durch Bewegen der Maus angeben.
-      - <kbd>R</kbd> **Radius:** Durchmesser durch Bewegen der Maus angeben. Die Werte stehen in Beziehung zueinander.
-4. Sie können auch die Form anpassen, indem Sie die gelben Punkte und den weißen Kreis bewegen.
-6. Klicken Sie im Befehlsdialog auf OK oder rechtsklick zur Bestätigung.
+      - **Windungen:** Geben Sie die Anzahl der Umdrehungen an.
+      - **Radius:** Geben Sie den Durchmesser an.
+      - **Winkel ODER Steigung:** Geben Sie den Winkel oder die Steigung an. Die Werte sind miteinander verknüpft.
+      - **Händigkeit:** Kehrt die Drehrichtung um.
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>A</kbd> **Winkel:** Geben Sie den Winkel durch Bewegen der Maus an.
+      - <kbd>D</kbd> **Länge:** Geben Sie die Länge der Achse durch Bewegen der Maus an.
+      - <kbd>R</kbd> **Radius:** Geben Sie den Durchmesser durch Bewegen der Maus an. Die Werte sind miteinander verknüpft.
+4. Sie können die Form auch anpassen, indem Sie die gelben Punkte und den weißen Kreis verschieben.
+6. Klicken Sie im Befehlsdialog auf OK oder rechtsklicken Sie zur Bestätigung.
 7. Die Spirale wird erstellt.
-
 
 <VideoPlayer fileName="spiral"/>

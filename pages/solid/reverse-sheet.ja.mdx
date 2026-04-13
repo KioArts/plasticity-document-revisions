@@ -4,26 +4,35 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Reverse Sheet
+## Reverse Sheet
 
-<Reference shortcut="" command="Reverse" button=""/>
+{/* <Reference shortcut="" command="Reverse" button=""/> */}
 
-シートの法線方向を反転させます 
+<CommandReference
+  command="Reverse"
+  shortcut=""
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-reverse.png"
+  tier="both"
+/>
+
+## 説明
+
+シートの法線方向を反転します。
 
 ## 基本的な使い方
 
-1. 法線方向を反転させたいシートを選択します。
-2. コマンドパレットに **Reverse** と入力します。
-3. これでシートの法線方向が反転しました。
+1. 法線方向を反転したいシートを選択します。
+2. コマンドパレットで **Reverse** と入力します。
+3. シートの法線方向が反転されます。
+
 <VideoPlayer fileName="reverse-sheet"/>
 
-<Callout type="info" emoji="💡">
-**Tip** 
-Reverse コマンドの効果を確認するには、ライブリンク接続とインタラクションが可能な Plasticity-Blender Bridge アドオンを使用できます。詳細については、[こちら](/blender/install-blender-addon)をクリックしてください。
-
+<Callout type="info">
+**注意:**  
+**Reverse** コマンドの効果を確認するには、Plasticity‑Blender Bridge アドオンを使用すると、ライブリンクでの連携が可能です。  
+詳細は [こちら](/blender/install-blender-addon) を参照してください。
 </Callout>
 
 ## 関連項目
 - [Reverse Curve](/sketch/reverse-curve)
-
-

@@ -1,0 +1,39 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+
+## Solid- und Sheet-Instanzen realisieren
+
+{/* <Reference shortcut="" command="Realize Instances" button="In Command Palette"  buttonIcon="button-realize-instances"/> */}
+
+<CommandReference
+  command="Realize Instances"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-realize-instances.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Wandelt ausgewählte Solid- und Sheet-Instanzen in bearbeitbare Solid-Objekte um. Dabei wird echte Geometrie erzeugt, die modifiziert werden kann. Dies erhöht jedoch den Rechenaufwand – das Konvertieren vieler Objekte kann die Rechenleistung der Szene spürbar belasten.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Solid- oder Sheet-Instanzen aus, die Sie konvertieren möchten.
+2. Öffnen Sie die Befehlspalette, geben Sie **Instanzen realisieren** ein und führen Sie den Befehl aus.
+3. Die Instanzen wurden in bearbeitbare Objekte umgewandelt.
+
+<VideoPlayer fileName="realize-instance-solid"/>
+
+## Instanzierte Gruppen realisieren
+
+Der Ablauf ist identisch mit der oben beschriebenen grundlegenden Verwendung.
+
+<VideoPlayer fileName="realize-instance-group-solid"/>
+
+## Siehe auch
+- [Kurveninstanzen realisieren](/sketch/realize-curve-instances)

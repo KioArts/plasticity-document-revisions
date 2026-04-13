@@ -1,0 +1,39 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+
+## ソリッドおよびシートのインスタンスを実体化
+
+{/* <Reference shortcut="" command="Realize Instances" button="In Command Palette"  buttonIcon="button-realize-instances"/> */}
+
+<CommandReference
+  command="Realize Instances"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-realize-instances.png"
+  tier="both"
+/>
+
+## 説明
+
+選択したソリッドおよびシートのインスタンスを編集可能なソリッドオブジェクトに変換します。これにより編集可能な真のジオメトリが生成されますが、計算負荷も増加します。多数のオブジェクトを変換すると、シーンの計算負荷が顕著に増加する場合があります。
+
+## 基本的な使い方
+
+1. 変換するソリッドまたはシートのインスタンスを選択します。
+2. コマンドパレットを開き、**インスタンスを実体化**と入力してコマンドを実行します。
+3. インスタンスが編集可能なオブジェクトに変換されます。
+
+<VideoPlayer fileName="realize-instance-solid"/>
+
+## インスタンス化されたグループを実体化
+
+手順は上記の基本的な使い方と同じです。
+
+<VideoPlayer fileName="realize-instance-group-solid"/>
+
+## 関連項目
+- [カーブインスタンスを実体化](/sketch/realize-curve-instances)

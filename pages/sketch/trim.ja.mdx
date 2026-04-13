@@ -1,15 +1,27 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 
-# Trim（カーブをトリムする）
+{/* # Trim
 
-<Reference shortcut="T" command="Trim" button="Toolbar"  buttonIcon='button-trim'/>
+<Reference shortcut="T" command="Trim" button="Toolbar"  buttonIcon='button-trim'/> */}
 
-平面上や3次元的なカーブをセグメントごとにトリムすることができます。
+## Trim
+
+<CommandReference
+  command="Trim"
+  shortcut="T"
+  button="In Toolbar"
+  buttonIcon="/img/button-trim.png"
+  tier="both"
+/>
+
+## 説明
+
+平面または3Dカーブから指定したセグメントを削除します。セグメントは、カーブを個別のセクションに分割する交差点、端点、またはコントロールポイントによって定義されます。
 
 ## 基本的な使い方
 
-1. <kbd>T</kbd>を押します。
+1. <kbd>T</kbd> を押します。
 2. トリムしたいセグメントをクリックします。
 3. セグメントが削除されます。
 

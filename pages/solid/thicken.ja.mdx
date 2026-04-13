@@ -2,23 +2,33 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Thicken（シートに厚みをつける）
+## Thicken
 
-<Reference shortcut="" command="Thicken" button="推奨コマンドメニューで" buttonIcon="button-thicken"/>
+{/* <Reference shortcut="" command="Thicken" button="推奨コマンドメニュー内" buttonIcon="button-thicken" /> */}
 
-シートに厚みをつけることができます。
-フェイスを選択している場合は、[**Thicken Face**](thicken-face)を参照してください。
+<CommandReference
+  command="Thicken"
+  shortcut=""
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-thicken.png"
+  tier="both"
+/>
+
+## 説明
+
+選択したシートに厚みを追加します。両側の厚みを個別に指定できます。  
+面が選択されている場合は [**Thicken Face**](thicken-face) を参照してください。
 
 ## 基本的な使い方
 
-1. 厚みをつけたいシートを選択します。
-2. コマンドバーの右側にある <ButtonIcon type="button-thicken" /> ボタンをクリックします。
+1. 厚みを追加したいシートを選択します。
+2. コマンドパレットから **Thicken** を実行します。
 3. コマンドダイアログとキーボードショートカットでオプションを設定します。
     - <Kst>コマンドダイアログ</Kst>
-        - **Thickness:** 両側のそれぞれの厚みを指定します。
+        - **Thickness（厚み）：** 両側の厚みを指定します。
     - <Kst>キーボードショートカット</Kst>
-        - <kbd>Tab</kbd> **Lock Distances** 両側の厚みを等しくします。
-        - <kbd>D</kbd> **Thickness** カーソルを動かして厚みを指定します。
+        - <kbd>Tab</kbd> **厚みをロック：** 両側の厚みを同じ値にします。
+        - <kbd>D</kbd> **厚み：** カーソル移動で厚みを指定します。
 4. コマンドダイアログの OK または右クリックで確定します。
 
 ## 関連項目

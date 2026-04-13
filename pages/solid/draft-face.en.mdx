@@ -4,21 +4,37 @@ import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Draft Face
+## Draft Face
 
-<Reference shortcut="" command="Draft Face" button="In Suggested Commands Menu"   buttonIcon='button-draft-face' />
+{/* <Reference shortcut="" command="Draft Face" button="In Suggested Commands Menu"   buttonIcon='button-draft-face' /> */}
+
+<CommandReference
+  command="Draft Face"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-draft-face.png"
+  tier="both"
+/>
+
+## Description
 
 Apply a draft angle to the selected Face.
 
 ## Basic Usage
 
 1. Select the face to use as a reference plane.
-2. Click the button <ButtonIcon type="button-draft-face" /> in the [Suggested Commands](/plasticity-essentials/command-bar#suggested-commands) menu.
-3. Select Face or Faces with <kbd>Ctrl</kbd> button to draft.
+3. Select Face or Faces with <kbd>Shift</kbd> button to draft and <kbd>Ctrl</kbd> to deselect them.
+2. Search for **Draft Face** in the Command Palette menu, and execute it.
 4. Drag the white circle to specify the angle of draft or Gizmo to adjust the position of the reference plane.
 5. Set the options in the Command Dialog and Keyboard Shortcuts.
     - <Kst>Command Dialog</Kst>
         - **Degrees:** Specify the angle of draft.
+        {/* - **Taper method:**
+            - **Isocline:** 
+            - **Curve:** 
+            - **Surface:** 
+            - **Offset:** 
+            - **Normal:**  */}
         - **Grow:**
             - When the concave inner Face is drafted.
             - **Moving:** Extend the outer wall when the drafted Face gets to the outer wall.
@@ -26,13 +42,14 @@ Apply a draft angle to the selected Face.
             - **None:** Keep going by itself neither affecting or affected by the outer wall.
     - <Kst>Keyboard Shortcuts</Kst>
         - <kbd>A</kbd> **Angle adjacent:** Specify the angle by moving the cursor.
+        - <kbd>D</kbd> **Offset:** Reposition the neutral face.
+        - <kbd>Ctrl</kbd> **Modify selection:** Add or remove draft faces.
 6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="draft-face"/>
 
-<Callout type="info" emoji="🗒️">
-**Note**
-Applying Draft Command on a non-uniform surface is possible, however, with certain limitations. You can specify the draft angle but cannot move the reference plane.
+<Callout type="info">
+**Note:**   Applying Draft Command on a non-uniform surface is possible, however, with certain limitations. You can specify the draft angle but cannot move the reference plane.
 </Callout>
 
 ## See also

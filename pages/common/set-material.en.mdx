@@ -2,9 +2,19 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Set Material
+## Set Material
 
-<Reference shortcut="M" command="Set Material" button="" />
+{/* <Reference shortcut="M" command="Set Material" button="" /> */}
+
+<CommandReference
+  command="Set Material"
+  shortcut="M"
+  button="In Command Palette"
+  buttonIcon="/img/button-set-material.png"
+  tier="both"
+/>
+
+## Description
 
 Assign material to selected Solids and Sheets. Group material influences contained objects. Curves are affected by color and opacity. Image depth and opacity can be adjusted through material.
 
@@ -15,23 +25,27 @@ Assign material to selected Solids and Sheets. Group material influences contain
 3. Set the options in the commnad dialog.
     - <Kst>Command Dialog</Kst>
         - **Color:** Specify the base color of the material.
-        - **Metalness:** Controls how metallic the material appears. A value of 0 means the material is non-metallic, while a value of 1 means the material is fully metallic.
-        - **Roughness:** Specify the roughness of the material's surface. A value of 0 means the surface is perfectly smooth, while a value of 1 means the surface is very rough.
+        - **Roughness:** Specify the roughness of the material's surface. A value of `0` means the surface is perfectly smooth, while a value of `1` means the surface is very rough.
+        - **Metalness:** Controls how metallic the material appears. A value of `0` means the material is non-metallic, while a value of `1` means the material is fully metallic.
+        - **IOR:** Specify the Index of Refraction, which controls how light bends as it passes through the material. A value of `1.0` represents air, while higher values represent denser materials like glass (`1.5`) or diamond (`2.4`).
+        - **Opacity:** Specify the degree to which the material is transparent or opaque.
+    - <Kst>Advanced Menu</Kst>
         - **Clearcoat:** Adds an extra layer of specular reflection on top of the base material. Useful for materials like car paint.
         - **Clearcoat roughness:** Specify the roughness of the clearcoat layer.
+        - **Sheen color:** Specify the color of the sheen layer.
         - **Sheen:** Adds a soft velvet-like reflection near the Edges of the material, simulating materials such as cloth.
         - **Sheen roughness:** Specify the roughness of the sheen layer.
-        - **Sheen color:** Specify the color of the sheen layer.
-        - **Specular intensity:** Controls the intensity of the specular reflection.
         - **Specular color:** Specify the color of the specular reflection.
-        - **Transmission:** Controls the degree to which the material allows light to pass through it.
+        - **Specular intensity:** Controls the intensity of the specular reflection.
+        - **Iridescence:** Controls the strength of an iridescent effect, simulating thin-film interference as seen on soap bubbles or oil slicks. 
+        - **Iridescence IOR:** Specify the Index of Refraction of the iridescent thin-film layer.
         - **Thickness:** Specify the thickness of the material.
-        - **Opacity:** Specify the degree to which the material is transparent or opaque.
+        - **Transmission:** Controls the degree to which the material allows light to pass through it.
+        - **Density:** Specify the material density using the units defined in the [Units](/plasticity-essentials/plasticity-interface/grid-and-units) menu. The calculated mass will be displayed per object in the bottom right Selection Menu.
 4. Confirm with OK in the Command Dialog or right-click.
 
-<Callout type="info" emoji="🗒️">
-**Note** 
-Transparent materials are now displayed with 50% transparency, even when using default and custom [matcaps](/plasticity-essentials/shader-mode) in non-render mode.
+<Callout type="info">
+**Note**: Transparent materials are now displayed with 50% transparency, even when using default and custom matcaps in non-render mode.
 </Callout>
 
 ## Set a Material for Groups
@@ -51,5 +65,4 @@ See ["How to Import Reference Images"](/plasticity-essentials/importing-referenc
 ## See also
 - [Fork Material](fork-material)
 - [Remove Material](remove-material)
-- [Outliner/Material color](/plasticity-essentials/outliner#material-color)
-- [View Mode/Toggle View Mode](/plasticity-essentials/view-mode#toggle-view-mode)
+- [Outliner/Material color](/plasticity-essentials/plasticity-interface/outliner#material-color)

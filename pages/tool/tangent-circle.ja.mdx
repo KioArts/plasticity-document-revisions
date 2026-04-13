@@ -3,38 +3,43 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Tangent Circle 
+# 接線円
 
-<Reference shortcut="" command="Tangent Circle" button="Toolbar"  buttonIcon='button-tangent-circle'/>
+{/* <Reference shortcut="" command="Tangent Circle" button="Toolbar"  buttonIcon='button-tangent-circle'/> */}
 
-2つのカーブに接する円を作成できます。
+<CommandReference
+  command="接線円"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-tangent-circle.png"
+  tier="both"
+/>
+
+## 説明
+
+3つの曲線に接する円を作成できます。
 
 ## 基本的な使い方
 
 1. ツールバーの <ButtonIcon type="button-tangent-circle" /> ボタンをクリックします。
-2. 円が接する最初と2番目の曲線をクリックし、必要に応じて3番目のエッジへの接線を見つけることができます。
-3. カーソルを動かして円の大きさを調整します。
+2. 円が接する1番目と2番目の曲線をクリックします。オプションで、3番目のエッジへの接線を求めることもできます。
+3. カーソルを移動して円のサイズを調整します。
     - <Kst>コマンドダイアログ</Kst>
-        - **Select first curve segment** : ハイライトされているとき、クリックして最初の曲線セグメントを選択します。
-        - **Select second curve segment** : ハイライトされているとき、クリックしてふたつめの曲線セグメントを選択します。
-        - **Radius** : 円の半径を指定します。
-    - <Kst>キーボードショートカット</Kst>
-  - <kbd>F</kbd> **Freeze** – タンジェントサークルの移動を防ぎ、マウスカーソルを再配置してより正確に配置できるようにします。タンジェントサークルをドラッグ中にリーディング方向を反転させたいときに便利です。
-  - <kbd>Tab</kbd> **Radius** – 半径フィールドへ移動し、半径の値を入力できるようにします。
-4. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+        - **最初の曲線セグメントを選択:** ハイライトされたときにクリックして最初の曲線セグメントを選択します。
+        - **2番目の曲線セグメントを選択:** ハイライトされたときにクリックして2番目の曲線セグメントを選択します。
+        - **半径:** 直径を指定します。
+- <Kst>キーボードショートカット</Kst>
+  - <kbd>F</kbd> **固定** - 接線円が動かないようにし、より正確な配置のためにマウスカーソルを再配置できます。接線円をドラッグ中に先行方向を反転させる必要がある場合に便利です。
+  - <kbd>Tab</kbd> **半径** - 半径フィールドに移動して半径の値を入力できます。
+4. コマンドダイアログのOKをクリックするか、右クリックして確定します。
 5. 円が作成されます。
 
 <VideoPlayer fileName="tangent-circle"/>
 
-## See also
-- [Center Circle](center-circle)
-- [Two-Point Circle](two-point-circle)
-- [Three-Point Circle](three-point-circle)
-- [Center Point Arc](center-point-arc)
-- [Three-Point Arc](three-point-arc)
-- [Tangent Arc](tangent-arc)
-
-
-
-
-
+## 関連項目
+- [中心円](center-circle)
+- [2点円](two-point-circle)
+- [3点円](three-point-circle)
+- [中心点弧](center-point-arc)
+- [3点弧](three-point-arc)
+- [接線弧](tangent-arc)

@@ -3,26 +3,48 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Text
+{/* # Text
 
-<Reference shortcut="" command="Text" button="" />
+<Reference shortcut="" command="Text" button="" /> */}
 
-Erstellt Curves aus dem eingegebenen Text. Eingebaute Schriftarten und Größen können angegeben werden.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/text.mp4"
+  alt="Text Preview"
+  title="Text"
+  command="Text"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-text.png" alt="Text Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Text
 
-1. Verwenden Sie den **Text** Befehl in der Befehlspalette.
-2. Legen Sie die Optionen im Command Dialog fest.
-   - <Kst>Befehlsdialog</Kst>
-      - **Text box:** Geben Sie den Text ein, den Sie erstellen möchten.
-      - **Font:** Wählen Sie die gewünschte Schriftart aus.
-      - **Size:** Geben Sie die Schriftgröße an.
-3. Bestätigen Sie mit OK im Command Dialog oder Rechtsklick.
-4. Die Text Curves werden erstellt.
+<CommandReference
+  command="Text"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-text.png"
+  tier="both"
+/>
 
-<Callout emoji="❗">
-**Hinweis**<br />
-Die Standard-Schriftgröße beträgt 1cm in der Höhe und der Text wird am Ursprung der XY-Ebene positioniert.
+## Beschreibung
+
+Erstellt Kurven aus dem eingegebenen Text. Integrierte Schriften und Größen können angegeben werden, jedoch ist die Installation benutzerdefinierter Schriften derzeit nicht verfügbar.
+
+<Callout type="default">
+**Hinweis**<br/>
+Die Standard-Schriftgröße beträgt 1 cm in der Höhe und der Text wird am Ursprung der XY-Ebene positioniert.
 </Callout>
+
+## Grundlegende Verwendung
+
+1. Verwenden Sie den Befehl **Text** in der Befehlspalette.
+2. Legen Sie die Optionen im Befehlsdialog fest.
+   - <Kst>Command Dialog</Kst>
+      - **Textfeld:** Geben Sie den Text ein, den Sie erstellen möchten.
+      - **Schrift:** Wählen Sie die gewünschte Schrift aus.
+      - **Größe:** Gibt die Schriftgröße an.
+3. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+4. Die Textkurven werden erstellt.
 
 <VideoPlayer fileName="text"/>

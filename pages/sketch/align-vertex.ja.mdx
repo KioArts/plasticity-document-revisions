@@ -1,0 +1,85 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## 頂点を揃える（Align Vertex）
+
+{/* <Reference shortcut="" command="Align" button="In Command Palette" buttonIcon='button-align' /> */}
+
+<CommandReference
+  command="Align"
+  shortcut=""
+  button="コマンドパレット内"
+  buttonIcon="/img/button-align.png"
+  tier="studio"
+/>
+
+## 説明
+
+2つの頂点またはカーブを整列し、連続性を一致させます。スプライン、ポリライン、ジオメトリカーブに対応し、パラメータ位置を制御できます。
+
+### 基本的な使い方
+
+1. 移動したい**ターゲット頂点**を選択し、次に整列先となる**参照頂点**を選択します。  
+    - 整列順序については [選択方法](/sketch/align-vertex#selection-methods) を参照してください。
+2. コマンドパレットで **Align** と入力します。
+3. コマンドダイアログでオプションを設定します。
+    - <Kst>コマンドダイアログ</Kst>
+        - **Parameter:** ジオメトリのパラメータ空間における整列位置を指定します。`0.5` が必ずしも中間点を意味するわけではありません。
+        - **Continuity:** **G0, G1, G2**  
+          [サーフェスの連続性](/cad-essentials/continuity-curve-and-surface) を指定します。  
+            - サーフェス上の黒い円をクリックして個別に指定できます。
+        - **G1 / G2 / G3:** CV 連続距離を指定します。
+        - **曲率表示（Show Curvature）:** 曲率可視化を有効にします。曲率コームのサイズは [Curvature](/plasticity-essentials/plasticity-interface/curvature) メニューで調整できます。
+    - <Kst>キーボードショートカット</Kst>
+        - <kbd>Tab</kbd> **連続性の切り替え:** 連続性オプションを順に切り替えます。
+4. コマンドダイアログの OK を押すか、右クリックで確定します。
+
+<VideoPlayer fileName="align-vertex-1"/>
+
+## カーブを揃える（Align Curve）
+
+### 基本的な使い方
+
+1. 移動したい**ターゲットカーブ**を選択し、次に整列先となる**参照カーブ**を選択します。  
+   - 整列順序については [選択方法](/sketch/align-vertex#selection-methods) を参照してください。
+2. コマンドパレットで **Align** と入力します。
+3. コマンドダイアログでオプションを調整します。  
+    - 設定内容は **Align Vertex** と同じです。
+4. コマンドダイアログの OK を押すか、右クリックで確定します。
+
+<Callout type='info'>
+**注意:** ポリラインを整列する場合、参照点に合わせて剛体的に移動し、長さは保持されます。**G0** と **G1** の連続性を切り替えることができますが、CAD の拘束システムほどの制御は提供しません。
+</Callout>
+
+<VideoPlayer fileName="align-curve-1"/>
+
+## 選択方法（Selection Methods）
+
+複数の頂点が重なっている場合や、多くのカーブが存在する複雑なシーンで、どのように整列対象を選ぶかを制御できます。
+
+[基本的な使い方](/sketch/align-vertex#basic-usage) と同じ手順で整列できますが、3つの選択方法から選択できます。
+
+<br/>
+
+### **頂点を揃える（Align Vertex）**
+- **Ctrl + Shift ポップアップ方式**
+    - <kbd>Ctrl + Shift</kbd> を押しながら **ターゲット頂点** を左クリックすると、その頂点に接続するカーブの一覧がポップアップ表示されます。  
+      各項目にカーソルを合わせると対応するカーブがハイライトされ、クリックでターゲット頂点を確定します。  
+      **参照頂点** を選択するには、同じ操作を行い、メニュークリック時に <kbd>Shift</kbd> を押します。
+
+- **マウスホイール方式**
+    - 頂点を左クリックしたままホイールを回すと、その頂点を共有するカーブを切り替えられます。
+
+<VideoPlayer fileName="align-vertex-selection-0"/>
+
+### **カーブを揃える（Align Curve）**
+- **エッジ選択モード**
+    - エッジ選択モードでは、クリック位置に最も近い頂点またはセグメントに基づいて、どちらの端点を整列するかが自動的に判断されます。参照カーブの選択も同様です。
+
+<VideoPlayer fileName="align-curve-selection-0"/>
+
+## 関連項目
+- [サーフェスを揃える（Align Surface）](/solid/align-surface)

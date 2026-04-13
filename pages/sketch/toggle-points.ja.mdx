@@ -4,27 +4,51 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# ポイント切り替え
+{/* # Toggle Points
 
-<Reference shortcut="" command="Toggle Points" button="" />
+<Reference shortcut="" command="Toggle Points" button='button-toggle-points' /> */}
 
-面、曲線、ボディのポイントを非表示または表示します。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/toggle-points.mp4"
+  alt="Toggle Points Preview"
+  title="Toggle Points"
+  command="Toggle Points"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-toggle-points.png" alt="button-toggle-points Icon" />}
+/> */}
+
+## ポイントの切り替え
+
+<CommandReference
+  command="Toggle Points"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-toggle-points.png"
+  tier="both"
+/>
+
+## 説明
+
+カーブ上のコントロール頂点（CV）と頂点ポイント、およびフェース（シート）とボディ（ソリッド）上のCVポイントの表示を切り替えます。
 
 ## 基本的な使い方
 
-1. CVポイントを非表示または表示したい面、曲線、またはボディを選択します。
-2. コマンドパレットに **Toggle Points** と入力し、それを左クリックします。
+1. ジオメトリを選択します：
+    - **カーブ**: カーブまたはCVポイントを選択してCVレイアウトを非表示にします。表示を復元するには、カーブを選択してコマンドを再度実行します。
+    - **シート**: フェースまたはCVポイントを選択して表示を切り替えます。デフォルト状態に戻すには、フェースを選択してコマンドを再度実行します。
+    - **ソリッド**: フェースまたはCVポイントを選択して個別のフェースを切り替えるか、ソリッドを選択してすべてのフェースに影響を与えます。デフォルト状態に戻すには、目的のフェースまたはソリッドを選択してコマンドを再度実行します。
+2. コマンドパレットに **Toggle Points** と入力し、左クリックします。
+3. ポイントが非表示または表示になります。
+
+<Callout type="default">
+**ヒント:** すばやくアクセスするには、このコマンドにキーボードショートカットを割り当てます。コマンドパレットで右クリックし、「ショートカットを割り当て」を選択して、希望のキーの組み合わせを押します。
+</Callout>
 
 <VideoPlayer fileName="toggle-points"/>
 
-<Callout type="info" emoji="💡">
-    **Tip**
-    簡単に使用およびアクセスするためのキーボードショートカットを作成します。コマンドパレットでコマンドを右クリックし、「ショートカットを割り当て」を左クリックして、キー割り当てを指定します。
-<VideoPlayer fileName="assign-shortcut"/>
-</Callout>
-
 ## 関連項目
-- [Rebuild Curve](rebuild-curve)
-- [Rebuild Face](/solid/rebuild-face)
-- [Raise Curve Degree](raise-curve-degree)
-- [Raise Surface Degree](/solid/raise-surface-degree)
+- [カーブの再構築](rebuild-curve)
+- [フェースの再構築](/solid/rebuild-face)
+- [カーブの次数を上げる](raise-curve-degree)
+- [サーフェスの次数を上げる](/solid/raise-surface-degree)

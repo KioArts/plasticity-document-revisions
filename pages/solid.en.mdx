@@ -1,67 +1,164 @@
-# Solid Commands
+### Boolean and Cut
 
-| Command Name                                                 | Shortcut                     | Note                                                                                     |
-| ------------------------------------------------------------ | ---------------------------- | ---------------------------------------------------------------------------------------- |
-| [Boolean](/solid/boolean)                                     | <kbd>Q</kbd>                 | Boolean Solids and/or Sheets.                                                           |
-| [Cut](/solid/cut)                                             | <kbd>C</kbd>                 | Cut Solid and Sheet.                                                                    |
-| **Solid and Sheet Commands**                                 |                              |                                                                                          |
-| [Alternative Duplicate](/solid/alternative-duplicate)         | <kbd>Alt+D</kbd>           | Alternative Duplicate.                                                                    |
-| [Constrained Surface](/solid/constrained-surface)             |                              | Create a constrained surface.                                                           |
-| [Deform](/solid/deform)                                      |                               | Unified command for Deform Curve, Deform Solid and Sheet.                               |
-| [Deform Solid and Sheet](/solid/deform-solid-and-sheet)       |                               | Wrap objects on irregular and regular surfaces.                                        |
-| [Extrude](/solid/extrude)                                     | <kbd>E</kbd>                 | Extrude Faces, Regions and Curves.                                                      |
-| [Fillet](/solid/fillet)                                       | <kbd>B</kbd>                 | Unified command for Fillet Curve, Fillet Vertex, Fillet Shell.                          |
-| [Fillet Shell](/solid/fillet-shell)                           | <kbd>B</kbd>                 | Fillet or chamfer the Edges.                                                            |
-| [Hollow](/solid/hollow)                                       |                              | Hollow out a Solid.                                                                     |
-| [Loft](/solid/loft)                                           | <kbd>L</kbd>                 | Loft Face, Edge and Curve.                                                              |
-| [Measure Continuity](/tool/measure-continuity)               |                            | Measure continuity across surface edges.                                                  |
-| [Toggle Surface Curvature](/solid/toggle-surface-curvature) |                            | Measure curvature across surface edges.                                                  |
-| [Patch](/solid/patch)                                         |                              | Fill Sheet holes / Closed Curves to a Sheet.                                            |
-| [Pipe](/solid/pipe)                                           | <kbd>P</kbd>                 | Create a Pipe from Edge and Curve.                                                      |
-| [Create Instance](/solid/create-instance)                                     | | Unified command for Create Solid and Sheet Instance, Create Curve Instance.                                |
-| [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance)                                     | | Duplicate multiple uneditable objects.                                |
-| [Realize Instances](/solid/realize-instances)                 | | Unified command for Realize Solid and Sheet Instances, Realize Curve Instances.                                |
-| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances)     | | Convert Solid and Sheet instances to real solid geometry.                                |
-| [Raise Degree](/solid/raise-degree)                           | <kbd>Shift+S</kbd>         | Unified command for Raise Curve Degree, Raise Surface Degree.                           |
-| [Raise Surface Degree](/solid/raise-surface-degree)           | <kbd>Shift+S</kbd>         | Increase surface Control-Vertices.                                                      |
-| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) |                              | Remove Solid and Sheet fillets.                                                         |
-| [Revolve](/solid/revolve)                                     |                              | Revolve Region or Curve.                                                                |
-| [Sweep](/solid/sweep)                                         | <kbd>Shift+P</kbd>         | Sweep Region or Curve.                                                                  |
-| [Square](/solid/square)                                       |                               | Create surfaces with explicit control of degrees and spans.                            |
-| [Slide](/solid/slide)                                        |                              | Unified command for Slide Curve CV, Slide Surface CV.                                   |
-| [Slide Surface CV](/solid/slide-surface-cv)                   | <kbd>Shift+G</kbd>           | Slide a CV on a Surface along the CV Hull.                                              |
-| [Thicken](/solid/thicken)                                     |                              | Add thickness to a selected Sheet.                                                      |
-| [Thicken Face](/solid/thicken-face)                           |                              | Add thickness to a selected Face.                                                       |
-| [XNurbs](/solid/xnurbs)                                       |                               | Create high-quality and complex surfaces.                                              |
-| **Sheet Commands**                                           |                              |                                                                                          |
-| [Align](/solid/align)                                         |                              | Align two Sheets.                                                                    |
-| [Bridge Surface](/solid/bridge-surface)                       |                              | Bridge two Sheets.                                                                      |
-| [Extend](/solid/extend)                                       |                              | Unified command for Extend Curve, Extend Sheet.                                         |
-| [Extend Sheet](/solid/extend-sheet)                           |                              | Extend one or more outside Edges of the Sheet.                                          |
-| [Find Boundary Edges](/solid/find-boundary-edges)             |                              | Select Edges of a Sheet opening.                                                        |
-| [Join](/solid/join)                                           | <kbd>J</kbd>                 | Unified command for Join Curves, Join Sheets.                                           |
-| [Join Sheets](/solid/join-sheets)                             | <kbd>J</kbd>                 | Join Sheets with matching Edges.                                                        |
-| [Reverse](/solid/reverse)                                     |                              | Unified command for Reverse Curve, Reverse Sheet.                                       |
-| [Reverse Sheet](/solid/reverse-sheet)                         |                              | Reverse the direction of normal on a sheet.                                             |
-| [Unjoin](/solid/unjoin)                                       | <kbd>Alt+J</kbd>           | Unified command for Unjoin Curves, Unjoin Faces, Unjoin Shells.                         |
-| [Unjoin Faces](/solid/unjoin-faces)                           | <kbd>Alt+J</kbd>           | Separate selected Faces from Solid or Sheet.                                            |
-| [Unjoin Shells](/solid/unjoin-shells)                         | <kbd>Alt+J</kbd>           | Separate all Faces from selected Solids or Sheets into individual Faces.                |
-| [Untrim](/solid/untrim)                                       | <kbd>Alt+T</kbd>           | Create a Sheet based on the original shape.                                             |
-| **Face Commands**                                            |                              |                                                                                          |
-| [Delete Face](/solid/delete-face)                             |<kbd>Shift+Backspace</kbd> or <kbd>Shift+Delete</kbd> or <kbd>Shift+X</kbd> | Delete Face.                              |
-| [Draft Face](/solid/draft-face)                               |                              | Tilt Face.                                                                              |
-| [Match Face](/solid/match-face)                               |                              | Match Faces to another Face.                                                            |
-| [Offset Face](/solid/offset-face)                             |                              | Offset the selected Faces.                                                               |
-| [Rebuild](/solid/rebuild)                                     |                              | Unified command for Rebuild Curve, Rebuild Face.                                        |
-| [Rebuild Face](/solid/rebuild-face)                           |                              | Rebuild Face.                                                                           |
-| [Unwrap Face](/solid/unwrap-face)                             |                              | Unwrap Face.                                                                            |
-| **Edge Commands**                                            |                              |                                                                                          |
-| [Delete Redundant Topology](/solid/delete-redundant-topology) |                              | Remove excess Edges.                                                                      |
-| [Complete Edge](/common/complete-edge)                        |                              | Extend Edges.                                                                             |
-| [Imprint](/solid/imprint)                                     | <kbd>Shift+I</kbd>         | Unified command for Imprint Body Body, Imprint Curve Body.                                |
-| [Imprint Body Body](/solid/imprint-body-body)                 | <kbd>Shift+I</kbd>         | Create Edges on the target Solid or Sheet where it intersects with a tool Solid or Sheet. |
-| [Imprint Curve Body](/solid/imprint-curve-body)               | <kbd>Shift+I</kbd>         | Create Edges on the target Solid or Sheet where it projects onto a tool Curve.            |
-| [Isoparam](/solid/isoparam)                                   | <kbd>Ctrl+R</kbd>          | Add isoparams.                                                                            |
-| [Offset Curve](/solid/offset-curve)                           | <kbd>O</kbd>                 | Unified command for Offset Planar Curve, Offset Region, Offset Face Loop, Offset Edge.   |
-| [Offset Edge](/solid/offset-edge)                             | <kbd>O</kbd>                 | Offset the selected Edges.                                                               |
-| [Offset Face Loop](/solid/offset-face-loop)                   | <kbd>O</kbd>                 | Offset the outline edges of selected Faces.                                              |
+- Tools to combine and subtract solid bodies.
+
+| Name | Description |
+| :--- | :--- |
+| [Boolean](/solid/boolean) | Combine, subtract, or intersect two solid bodies. |
+| [Cut](/solid/cut) | Cut one solid body using another as a cutting tool. |
+
+### Instances
+
+- Tools to create and realize solid instances.
+
+| Name | Description |
+| :--- | :--- |
+| [Create Instance](/solid/create-instance) | Create a reusable instance of selected geometry. |
+| [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance) | Create a reusable instance of a solid and a sheet. |
+| [Realize Instances](/solid/realize-instances) | Convert all instances into independent editable geometry. |
+| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) | Convert solid and sheet instances into editable geometry. |
+
+### Surface Creation
+
+- Tools to create surfaces and solids.
+
+| Name | Description |
+| :--- | :--- |
+| [Alternative Duplicate](/solid/alternative-duplicate) | Create a solid from selected surface fragments using an alternative method. |
+| [Bridge Surface](/solid/bridge-surface) | Create a smooth bridging surface between two existing surfaces. |
+| [Constrained Surface](/solid/constrained-surface) | Create a surface constrained to existing geometry. |
+| [Extrude](/solid/extrude) | Extrude a curve or face along a defined direction to create a solid or sheet. |
+| [Loft](/solid/loft) | Create a surface by lofting through a series of curves or profiles. |
+| [Patch](/solid/patch) | Fill an open boundary with a new surface patch. |
+| [Pipe](/solid/pipe) | Create a pipe solid along a curve path. |
+| [PolySpline](/solid/polyspline) | Create a polysurface by converting a mesh object. |
+| [Revolve](/solid/revolve) | Revolve a curve around an axis to create a solid or sheet. |
+| [Square](/solid/square) | Create an untrimmed surface between boundary curves using XNurbs. |
+| [Sweep](/solid/sweep) | Sweep a profile curve along a path to create a solid or sheet. |
+| [Xnurbs](/solid/xnurbs) | Create a high‑quality surface from boundary curves using XNurbs. |
+
+### Deform and Slide
+
+- Tools to deform and slide solid and sheet geometry.
+
+| Name | Description |
+| :--- | :--- |
+| [Deform](/solid/deform) | Deform selected geometry. |
+| [Deform Solid and Sheet](/solid/deform-solid-and-sheet) | Deform solid and sheet bodies. |
+| [Slide](/solid/slide) | Slide selected geometry along a surface or edge. |
+| [Slide Surface CV](/solid/slide-surface-cv) | Slide a surface control vertex along its surface. |
+
+### Delete and Remove
+
+- Tools to delete faces and remove topology from solids.
+
+| Name | Description |
+| :--- | :--- |
+| [Delete Face](/solid/delete-face) | Delete a selected face from a solid or sheet body. |
+| [Delete Redundant Topology](/solid/delete-redundant-topology) | Remove unnecessary topology from solid or sheet geometry. |
+| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) | Remove fillet faces from a shell body. |
+| [Remove Nominal Surface](/solid/remove-nominal-surface) | Remove the nominal surface reference from a body. |
+
+### Draft and Align
+
+- Tools to apply draft angles and align geometry.
+
+| Name | Description |
+| :--- | :--- |
+| [Align](/solid/align) | Align selected geometry to a reference surface edge. |
+| [Align Surface](/solid/align) | Align a sheet body to a reference sheet edge. |
+| [Draft Face](/solid/draft-face) | Apply a draft angle to a face for mold and casting workflows. |
+
+### Extend
+
+- Tools to extend surfaces and sheet boundaries.
+
+| Name | Description |
+| :--- | :--- |
+| [Extend](/solid/extend) | Extend an open edge or surface boundary. |
+| [Extend Sheet](/solid/extend-sheet) | Extend a sheet body from one of its boundary edges. |
+
+### Fillet
+
+- Tools to add fillets and chamfers to solid edges.
+
+| Name | Description |
+| :--- | :--- |
+| [Fillet](/solid/fillet) | Add a fillet or chamfer to selected edges of a solid body. |
+| [Fillet Shell](/solid/fillet-shell) | Add a fillet or chamfer to the edges of a shell body. |
+
+### Hollow and Thicken
+
+- Tools to hollow out solids and thicken surfaces.
+
+| Name | Description |
+| :--- | :--- |
+| [Hollow](/solid/hollow) | Hollow out a solid body by removing interior material. |
+| [Thicken](/solid/thicken) | Thicken a sheet body into a solid by adding thickness. |
+| [Thicken Face](/solid/thicken-face) | Thicken a selected face by a defined amount. |
+
+### Imprint
+
+- Tools to imprint curves and bodies onto surfaces.
+
+| Name | Description |
+| :--- | :--- |
+| [Imprint](/solid/imprint) | Imprint geometry onto a surface to create new edges. |
+| [Imprint Body Body](/solid/imprint-body-body) | Imprint the intersection of two bodies onto their surfaces. |
+| [Imprint Curve Body](/solid/imprint-curve-body) | Imprint a curve onto a solid or sheet body. |
+
+### Join and Unjoin
+
+- Tools to join and separate solid and sheet bodies.
+
+| Name | Description |
+| :--- | :--- |
+| [Join](/solid/join) | Join selected surfaces or bodies into a single body. |
+| [Join Sheets](/solid/join-sheets) | Join multiple sheet bodies into one. |
+| [Unjoin](/solid/unjoin) | Separate a joined body back into individual parts. |
+| [Unjoin Faces](/solid/unjoin-faces) | Separate selected faces from a body. |
+| [Unjoin Shells](/solid/unjoin-shells) | Separate shell bodies into individual surfaces. |
+
+### Offset
+
+- Tools to offset curves, edges, and faces.
+
+| Name | Description |
+| :--- | :--- |
+| [Offset Curve](/solid/offset-curve) | Offset a curve by a defined distance. |
+| [Offset Edge](/solid/offset-edge) | Offset a selected edge along a surface. |
+| [Offset Face](/solid/offset-face) | Offset a face inward or outward by a defined distance. |
+| [Offset Face Loop](/solid/offset-face-loop) | Offset a loop of faces on a solid body. |
+
+### Rebuild and Refine
+
+- Tools to rebuild, reverse, and refine solid and surface geometry.
+
+| Name | Description |
+| :--- | :--- |
+| [Isoparam](/solid/isoparam) | Add or adjust isoparameter lines on a surface. |
+| [Match Face](/solid/match-face) | Match the continuity of one surface face to another. |
+| [Raise Degree](/solid/raise-degree) | Increase the degree of selected geometry. |
+| [Raise Surface Degree](/solid/raise-surface-degree) | Increase the degree of a surface for more control points. |
+| [Rebuild](/solid/rebuild) | Rebuild selected geometry with a new point count or degree. |
+| [Rebuild Face](/solid/rebuild-face) | Rebuild a selected face with a new control structure. |
+| [Reverse](/solid/reverse) | Reverse the normal direction of selected geometry. |
+| [Reverse Sheet](/solid/reverse-sheet) | Reverse the normal direction of a sheet body. |
+
+### Trim and Unwrap
+
+- Tools to untrim and unwrap surfaces.
+
+| Name | Description |
+| :--- | :--- |
+| [Untrim](/solid/untrim) | Remove trim boundaries from a surface to restore its full extent. |
+| [Unwrap Face](/solid/unwrap-face) | Unwrap a face into a flat 2D surface. |
+
+### Display and Analysis
+
+- Tools to analyze and visualize solid and surface quality.
+
+| Name | Description |
+| :--- | :--- |
+| [Find Boundary Edges](/solid/find-boundary-edges) | Highlight open boundary edges on a surface or solid. |
+| [Toggle Surface Curvature](/solid/toggle-surface-curvature) | Display curvature analysis on surfaces to evaluate quality. |

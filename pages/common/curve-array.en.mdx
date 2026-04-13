@@ -3,14 +3,24 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Curve Array
+## Curve Array
 
-<Reference shortcut="" command="Curve Array" button="" />
+{/* <Reference shortcut="" command="Curve Array" button="" /> */}
+
+<CommandReference
+  command="Curve Array"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-curve-array.png"
+  tier="both"
+/>
+
+## Description
 
 Duplicate objects along a curve by specifying the number of copies. Twist, scale, alignment, and create instance options are available.
 
-<Callout>
-Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for twist, scale, alignment, and placement along the curve. However, instancing them is not supported.
+<Callout type='info'>
+**Note:** Images and mesh files (.OBJ, .STL, and similar formats) can be arrayed along a curve, with adjustable parameters for twist, scale, alignment, and positional distribution. Arraying instance objects is also supported.
 </Callout>
 
 ## Basic Usage
@@ -24,16 +34,18 @@ Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for twi
       - **Twist:** Specify the angle of twist along the  Curve in degrees.
       - **Scale:** Specify the scaling factor along the  Curve.
       - **Alignment:**
-         - **Parallel:** Duplicate the Curves in parallel, regardless of the path. 
-         - **Normal:** Duplicate the Curves with angles aligned to the path.
+         - **Normal:** Duplicate the curves with orientation aligned to the curve's local normal frame. Good for simple paths but may twist on complex curvature.
+         - **Parallel:** Duplicate the curves while keeping their original orientation fixed, ignoring the curve's rotation. Best when you want no rotation along the path. 
+         - **Transport:** Duplicate the curves follows the curve without twisting or flipping. Ideal for complex or organic paths where Normal and Parallel fail.
       - **Extent:** Specify a value to adjust the range of duplicates, depending on the currently selected method.
       - **Method:** Defines how the extent of the duplicates is controlled.
          - **Distance:** Adjusts the duplication range using a metric value, based on your preferences in Plasticity.
-         - **Ratio:** Adjusts the duplication range using a ratio value between 0.00 and 1.00. (Default: 1.00)
+         - **Ratio:** Adjusts the duplication range using a ratio value between `0.00` and `1.00`. (Default: `1.00`)
       - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Shift + Wheel up</kbd> **Add copy:** Increases the number of duplications.
       - <kbd>Shift + Wheel down</kbd> **Subtract copy:** Reduces the number of duplications.
+      - <kbd>I</kbd> **Toggle make instances:** Toggles whether the mirrored half is created as an instance or an independent copy.
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="curve-array"/>

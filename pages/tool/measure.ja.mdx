@@ -2,29 +2,38 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import VideoPlayer from '/components/VideoPlayer';
 
-# Measure Distance
+## 距離測定（Measure Distance）
 
-<Reference shortcut="Ctrl + =" command="Measure Distance" button="Toolbar" buttonIcon='button-measure' />
+{/* <Reference shortcut="Ctrl + =" command="Measure Distance" button="Toolbar" buttonIcon='button-measure' /> */}
 
-四角形の大きさや円柱の直径など、寸法値を計測することができます。
-計測したオブジェクトの変形に合わせて寸法値が更新されます。
+<CommandReference
+  command="Measure Distance"
+  shortcut="Ctrl + ="
+  button="ツールバー内"
+  buttonIcon="/img/button-measure.png"
+  tier="both"
+/>
+
+## 説明
+
+長方形カーブのサイズやシリンダーの直径など、さまざまな寸法値を測定できます。  
+測定対象が変形すると、寸法値も自動的に更新されます。
 
 ## 基本的な使い方
 
-1. <kbd>Ctrl + =</kbd>を押すか、コマンドパレットから**Measure Distance**コマンドを選択します。
-2. 計測したいカーブやエッジ、スナップポイントを選択します。
-3. Move the cursor to the desired axis and click to place the dimension. 
-3. カーソルを移動させて、寸法値を表示したい軸を選択し、クリックで確定します。
-4. 構築平面の座標軸を基準にした寸法値が表示され、アウトライナーにMeasurementsが追加されます。
-<VideoPlayer fileName="measure-1"/>
-
+1. <kbd>Ctrl + =</kbd> を押すか、コマンドパレットで **Measure Distance** を使用します。
+2. 測定したいカーブ、エッジ、またはスナップポイントを選択します。
+3. カーソルを目的の軸方向へ動かし、クリックして寸法の配置を確定します。
+4. 寸法値は作業平面の座標軸に基づいて表示されます。また、Outliner に **Measurements** が追加されます。
+5. Measurementの位置を調整するには、アウトライナーで選択し、<kbd>G</kbd>を押して軸に沿って移動します。
 <Callout type="info">
-- ユーザが定義した構築平面を基準に寸法値を表示することもできます。構築平面の作り方は[こちら](/plasticity-essentials/construction-plane)を参照してください。
-</Callout> 
+**注意:** ユーザー定義の作業平面に基づいて寸法値を表示することもできます。作業平面の作成方法は[こちら](/plasticity-essentials/construction-plane)を参照してください。
+</Callout>
 
-## 2点間の直線距離を計測する
+## 2 点間の直線距離を測定する
 
-- 寸法値を確定するときに右クリックすると、2点間の直線距離を計測することができます。
+- 寸法値を確定する際に右クリックすると、2 点間の直線距離を測定できます。
+
 <VideoPlayer fileName="measure-2"/>
 
 ## 関連項目

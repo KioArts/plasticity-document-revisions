@@ -1,10 +1,21 @@
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
+import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Unwrap Face
+## Unwrap Face
 
-<Reference shortcut='' command='Unwrap' button=''/>
+{/* <Reference shortcut='' command='Unwrap' button=''/> */}
+
+<CommandReference
+  command="Unwrap"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-unwrap-face.png"
+  tier="both"
+/>
+
+## Description
 
 Unwrap the surface of a selected face.
 
@@ -12,6 +23,10 @@ Unwrap the surface of a selected face.
 
 1. Select a face you want to unwrap.
 2. Type **Unwrap** in the Command Palette.
+
+<Callout type='info'>
+  **Note:** When unwrapping a surface, the result is positioned at the center of the world XYZ origin.
+</Callout>
 
 ## See also
 - [Deform Solid and Sheet](deform-solid-and-sheet)

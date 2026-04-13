@@ -3,9 +3,19 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Rotate
+## Rotate
 
-<Reference shortcut="R" command="Rotate" button="In Command Bar"  buttonIcon='button-rotate'/>
+{/* <Reference shortcut="R" command="Rotate" button="In Command Bar"  buttonIcon='button-rotate'/> */}
+
+<CommandReference
+  command="Rotate"
+  shortcut="R"
+  button="In Command Bar"
+  buttonIcon="/img/button-rotate.png"
+  tier="both"
+/>
+
+## Description
 
 Rotate objects using Rotate Gizmo. Options for single-axis constraints or [**freestyle rotation**](#freestyle-rotate) are available. The pivot point is also adjustable. When you insert a new primitive or sketch object at its initial insertion point, the Rotate Gizmo and pivot automatically re-orient to align with the object's surface normal.
 
@@ -29,7 +39,8 @@ Rotate objects using Rotate Gizmo. Options for single-axis constraints or [**fre
          - <ButtonIcon type="button-active"/> **Active:** Positions the pivot at the last selected (active) object's pivot.
 
          ![Pivot Demonstration](/img/pivot-rotate.png)
-
+      - Advanced:
+         - **Transform instances inversely**: Rotates only the parent object while keeping any attached instances in place, by automatically applying the inverse transformation to each instance.
    - <Kst>Keyboard Shortcuts</Kst>
    - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Constrain to the X, Y, or Z-axis](/tool/sketching-essentials#constrain-to-an-axis).
    - <kbd>G</kbd> **Screen space:** Limit to the visible plane.
@@ -47,7 +58,10 @@ This command is equivalent to the <kbd>F</kbd> option of the **Rotate** command.
 3. Click the starting point and endpoint of the rotation axis, and then click the reference point.
 4. Move the cursor to rotate the object, and then click to set the desired angle. 
 5. Set the options in the Command Dialog and Keyboard Shortcuts.
-   - The option is the same as the **Rotate** command.
+   - <Kst>Command Dialog</Kst>
+      - Same options as above in [Rotate](/common/rotate#basic-usage).
+   - <Kst>Keyboard Shortcuts</Kst>
+      - Same options as above in [Rotate](/common/rotate#basic-usage).
 6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="freestyle-rotate"/>

@@ -1,21 +1,30 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 
-# Delete Redundant Topology
+## Redundante Topologie löschen
 
-<Reference shortcut="" command="Delete Redundant Topology" button="" />
+{/* <Reference shortcut="" command="Redundante Topologie löschen" button="" /> */}
 
+<CommandReference
+  command="Redundante Topologie löschen"
+  shortcut=""
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-delete-redundant-topology.png"
+  tier="both"
+/>
 
-Dieser Befehl ruft automatisch den folgenden Befehl auf, je nachdem welches Objekt ausgewählt ist.
-    - Wenn Curves ausgewählt sind: siehe [**Delete Redundant Topology (Curve)**](/sketch/delete-redundant-topology#delete-redundant-topology-curve) im Abschnitt Sketch-Befehle.
-    - Wenn Solids oder Sheets ausgewählt sind: siehe **Delete Redundant Topology (Solid)** wie unten beschrieben.
+## Beschreibung
 
-## Delete Redundant Topology (Solid)[#delete-redundant-Topology-solid]
+Dieser Befehl ruft automatisch den folgenden Befehl auf, abhängig vom ausgewählten Objekt.
+    - Wenn Kurven ausgewählt sind: siehe [**Redundante Topologie löschen (Kurve)**](/sketch/delete-redundant-topology#delete-redundant-topology-curve) im Abschnitt „Skizzenbefehle“.
+    - Wenn Volumenkörper oder Flächen ausgewählt sind: siehe **Redundante Topologie löschen (Volumenkörper)** unten.
 
-Sie können redundante Topologie von Solids oder Sheets löschen.
+## Redundante Topologie löschen (Volumenkörper)[#delete-redundant-Topology-solid]
 
-1. Wählen Sie die Solids oder Sheets aus, von denen Sie redundante Topologie löschen möchten.
-2. Verwenden Sie den **Delete Redundant Topology**-Befehl in der Befehlspalette.
+Sie können redundante Topologie aus Volumenkörpern oder Flächen löschen.
+
+1. Wählen Sie die Volumenkörper oder Flächen aus, aus denen redundante Topologie gelöscht werden soll.
+2. Verwenden Sie den Befehl **Redundante Topologie löschen** in der Befehlspalette.
 3. Redundante Topologien werden gelöscht.
 
 <VideoPlayer fileName="delete-redundant-topology-solid"/>

@@ -1,0 +1,83 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## Align Vertex
+
+{/* <Reference shortcut="" command="Align" button="In Command Palette" buttonIcon='button-align' /> */}
+
+<CommandReference
+  command="Align"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-align.png"
+  tier="studio"
+/>
+
+## Description
+
+Align two Vertices or Curves to match their continuity. Supports spline, polyline, and geometric curves, with control over their parameter position.
+
+### Basic Usage
+
+1. Select the target Vertex to move, then select the reference Vertex to align to.
+    - See [Selection Methods](/sketch/align-vertex#selection-methods) for details on choosing alignment order.
+2. Type **Align** in the Command Palette.
+3. Set the options in the Command Dialog.
+    - <Kst>Command Dialog</Kst>
+        - **Parameter:** Defines the position of the aligned object within the geometry's parameter space. Note that `0.5` does not always correspond to the halfway point.
+        - **Continuity:** **G0, G1, G2** Specify the [continuity of the Surface](/cad-essentials/continuity-curve-and-surface).
+            - Continuity can be specified individually by clicking on the black circles on the surface.
+        - **G1** / **G2** / **G3:** Specify the CV continuity distance.
+        - **Show Curvature:** Enables curvature visualization. You can adjust the curvature comb size in the [Curvature](/plasticity-essentials/plasticity-interface/curvature) menu.
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>Tab</kbd> **Cycle continuity:** Cycle through continuity options.
+4. Confirm with OK in the Command Dialog or right-click.
+
+<VideoPlayer fileName="align-vertex-1"/>
+
+## Align Curve
+
+### Basic Usage
+
+1. Select the target Curve you want to move, then select the reference Curve you want to align to.  
+   - See [Selection Methods](/sketch/align-vertex#selection-methods) for details on choosing alignment order.
+2. Type **Align** in the Command Palette.
+3. Adjust the options in the Command Dialog.  
+    - These settings work the same way as in **Align Vertex**.
+4. Confirm with OK in the Command Dialog or right-click.
+
+<Callout type='info'>
+**Note:** When aligning polylines, they move as a rigid shape to match the reference point while keeping their length. You can toggle between **G0** and **G1** continuity, but this does not provide the full control of a CAD style constrained system.
+
+</Callout>
+
+<VideoPlayer fileName="align-curve-1"/>
+
+## Selection Methods
+
+Selection methods let you control how objects are aligned when things get more complex, such as when multiple vertices overlap or when many curves are present in the scene. 
+
+The alignment process works the same as in [Basic Usage](/sketch/align-vertex#basic-usage), but you can choose from three methods to decide how objects are selected and aligned.
+
+<br/>
+### **Align Vertex**
+    - **Ctrl + Shift Pop-up Method**
+        - Hold <kbd>Ctrl + Shift</kbd> and left-click on the **target vertex**. A pop-up menu will appear listing all curves connected to that vertex. Hover over each entry to highlight its curve, then click to confirm the **target vertex**.  
+          To select the **reference vertex**, repeat the process but hold <kbd>Shift</kbd> when clicking in the menu to finalize the selection.
+
+    - **Mouse Scroll Method**
+        - Left-click and **hold** on a vertex, then scroll the mouse wheel to cycle through the curves sharing that vertex.
+
+<VideoPlayer fileName="align-vertex-selection-0"/>
+
+### **Align Curve**
+    - **Edge Selection Mode**
+        - In Edge selection mode, Plasticity automatically determines which end of the curve to align based on the nearest vertex or segment to your click. The same logic applies when selecting the reference curve.
+
+<VideoPlayer fileName="align-curve-selection-0"/>
+
+## See also
+- [Align Surface](/solid/align-surface)

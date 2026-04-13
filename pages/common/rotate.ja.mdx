@@ -3,11 +3,21 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Rotate（回転）
+## 回転
 
-<Reference shortcut="R" command="Rotate" button="コマンドバーで " buttonIcon='button-rotate' />
+{/* <Reference shortcut="R" command="回転" button="In Command Bar"  buttonIcon='button-rotate'/> */}
 
-- **Rotate Gizmo** を使ってオブジェクトを回転させます。単一軸への制限や **[フリースタイル回転](#freestyle-rotate)** が利用可能です。ピボットポイントも調整できます。新しいプリミティブやスケッチオブジェクトを初期挿入点に配置すると、Rotate Gizmo とピボットは自動的にオブジェクトの表面法線に合わせて再配置されます。
+<CommandReference
+  command="回転"
+  shortcut="R"
+  button="In Command Bar"
+  buttonIcon="/img/button-rotate.png"
+  tier="both"
+/>
+
+## 説明
+
+回転ギズモを使用してオブジェクトを回転します。単一軸の制限または[**フリースタイル回転**](#freestyle-rotate)のオプションが使用できます。ピボットポイントも調整可能です。新しいプリミティブまたはスケッチオブジェクトを初期挿入ポイントに挿入すると、回転ギズモとピボットは自動的にオブジェクトのサーフェス法線に合わせて再配置されます。
 
 ## 基本的な使い方
 
@@ -16,43 +26,44 @@ import Kst from '/components/KeyboardShortcutsTitle'
 3. 表示された回転ギズモを使用して回転します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
    - <Kst>コマンドダイアログ</Kst>
-      - **Angle:** 回転ギズモで最後に指定した角度を数値で指定します。
-      - **Axis:** 回転軸をX、Y、Zのベクトルで指定します。
-      - **Orientation:** 回転ギズモの向きを設定します。
-         - <ButtonIcon type="button-normal"/> **法線:** オブジェクトの表面法線に合わせて方向を設定します。
-         - <ButtonIcon type="button-pivot"/> **ピボット:** 事前に定義されたピボットの向きに合わせて方向を設定します。
-         - <ButtonIcon type="button-construction-plane"/> **作業平面:** アクティブな作業平面に方向を合わせます。
-         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）軸に方向を合わせます。
+      - **角度:** 回転ギズモを使用して最後に指定した角度を数値で指定します。
+      - **軸:** X、Y、またはZベクトルを使用して回転軸を指定します。
+      - **オリエンテーション:** 回転ギズモの向きを設定します。
+         - <ButtonIcon type="button-normal"/> **ノーマル:** オブジェクトのサーフェス法線に合わせて向きを設定します。
+         - <ButtonIcon type="button-pivot"/> **ピボット:** 以前に定義したピボットの向きに合わせて向きを設定します。
+         - <ButtonIcon type="button-construction-plane"/> **コンストラクションプレーン:** アクティブなコンストラクションプレーンに合わせて向きを設定します。
+         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）軸に合わせて向きを設定します。
       - **ピボット:** ピボットポイントの位置を設定します。
-         - <ButtonIcon type="button-bbox"/> **バウンディングボックス:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。
-         - <ButtonIcon type="button-median"/> **中央値:** 選択したオブジェクトのピボットの平均位置にピボットを配置します。
-         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボット位置にピボットを配置します。
+         - <ButtonIcon type="button-bbox"/> **Bbox:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。
+         - <ButtonIcon type="button-median"/> **メジアン:** 選択したオブジェクトのピボットの平均位置にピボットを配置します。
+         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボットにピボットを配置します。
 
-         ![Pivot Demonstration](/img/pivot-rotate.png)
-
+         ![ピボットのデモンストレーション](/img/pivot-rotate.png)
+      - 詳細設定:
+         - **インスタンスを逆変換する**: 各インスタンスに自動的に逆変換を適用することで、親オブジェクトのみを回転させ、関連するインスタンスはそのままの位置に保ちます。
    - <Kst>キーボードショートカット</Kst>
-   - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-   - <kbd>G</kbd> **Screen space:** 見た目の平面に限定します。
-   - <kbd>F</kbd> **Freestyle:** 回転軸の始点と終点をクリックし、参照点をクリックします。カーソルを動かして回転し、希望の角度でクリックします。
-   - <kbd>V</kbd> **Pivot:** クリックしてギズモの位置を指定します。
-   - <kbd>W</kbd> **Worldspace:** ギズモの座標軸をワールド座標にします。
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+   - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、またはZ軸に制限](/tool/sketching-essentials#constrain-to-an-axis)します。
+   - <kbd>G</kbd> **スクリーンスペース:** 見える平面に制限します。
+   - <kbd>F</kbd> **フリースタイル:** 回転軸の開始点と終了点をクリックし、次に参照点をクリックします。カーソルを動かしてオブジェクトを回転させ、クリックして希望の角度を設定します。
+   - <kbd>V</kbd> **ピボット:** クリックしてギズモの位置を指定します。
+   - <kbd>W</kbd> **ワールド座標:** ギズモの座標軸をワールド座標に変更します。
+5. コマンドダイアログのOKまたは右クリックで確定します。
 
-## Freestyle Rotate（自由な軸で回転）[#freestyle-rotate]
+## フリースタイル回転 [#freestyle-rotate]
 
-このコマンドは **Rotate** コマンドの<kbd>F</kbd>オプションと同じです。
+このコマンドは**回転**コマンドの<kbd>F</kbd>オプションと同等です。
 
 1. 回転したいオブジェクトを選択します。
-2. コマンドパレットで **Freestyle Rotate** を実行します。
-3. 回転軸の始点と終点をクリックし、参照点をクリックします。
-4. カーソルを動かして回転し、希望の角度でクリックします。
+2. コマンドパレットで**フリースタイル回転**コマンドを使用します。
+3. 回転軸の開始点と終了点をクリックし、次に参照点をクリックします。
+4. カーソルを動かしてオブジェクトを回転させ、クリックして希望の角度を設定します。
 5. コマンドダイアログとキーボードショートカットでオプションを設定します。
-   - オプションは **Rotate** コマンドと同じです。
-6. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+   - オプションは**回転**コマンドと同じです。
+6. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="freestyle-rotate"/>
 
 ## 関連項目
-- [Mirror](mirror)
-- [Move](move)
-- [Scale](scale)
+- [ミラー](mirror)
+- [移動](move)
+- [スケール](scale)

@@ -1,20 +1,45 @@
 import Reference from '/components/Reference'
+import VideoPlayer from '/components/VideoPlayer';
 
-# Project Body Body（ソリッドの交線のカーブを作成）[#project-body-body]
+{/* # Project Body Body [#project-body-body]
 
-<Reference shortcut="I" command="Project" button="推奨コマンドメニューで" buttonIcon='button-project' />
+<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/> */}
 
-2つのソリッドまたはシートの交差線からカーブを作成できます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-body-body-sketch.mp4"
+  alt="Project Body Body Preview"
+  title="Project Body Body"
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-project.png" alt="Project Body Body Icon" />}
+/> */}
+
+## ボディとボディの投影
+
+<CommandReference
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-project.png"
+  tier="both"
+/>
+
+## 説明
+
+2つのソリッドまたはシート間の交差線を表す新しいカーブを作成します。
 
 ## 基本的な使い方
 
-1. ソリッドまたはシートをふたつ選択します。
-2. キーボードショートカット<kbd>I</kbd>またはボタンを押します。
-3. 交線のカーブが作成されます。
+1. 2つのソリッドまたはシートを選択します。
+2. <kbd>I</kbd> を押すか、ボタンをクリックします。
+3. 交差線を表すカーブが作成されます。
+
+<VideoPlayer fileName="project-body-body"/>
 
 ## 関連項目
-- [Alternative Duplicate](alternative-duplicate)
-- [Project Outline](project-outline)
-- [Create Outline](create-outline)
-- [Project Curve Body](project-curve-body)
-- [Project Curve Curve](project-curve-curve)
+- [代替複製](alternative-duplicate)
+- [輪郭の投影](project-outline)
+- [輪郭の作成](create-outline)
+- [カーブボディの投影](project-curve-body)
+- [カーブとカーブの投影](project-curve-curve)

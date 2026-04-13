@@ -3,26 +3,48 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Text（テキスト）
+{/* # Text
 
-<Reference shortcut="" command="Text" button="" />
+<Reference shortcut="" command="Text" button="" /> */}
 
-入力したテキストでカーブを作成できます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/text.mp4"
+  alt="Text Preview"
+  title="Text"
+  command="Text"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-text.png" alt="Text Icon" />}
+/> */}
+
+## テキスト
+
+<CommandReference
+  command="Text"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-text.png"
+  tier="both"
+/>
+
+## 説明
+
+入力したテキストからカーブを作成します。組み込みフォントとサイズを指定できますが、カスタムフォントのインストールは現在利用できません。
+
+<Callout type="default">
+**注意**<br/>
+デフォルトのフォントサイズは高さ1cmで、テキストはXY平面の原点に配置されます。
+</Callout>
 
 ## 基本的な使い方
 
-1. コマンドパレットで **Text** を実行します。
+1. コマンドパレットで **テキスト** コマンドを使用します。
 2. コマンドダイアログでオプションを設定します。
-   - <Kst>コマンドダイアログ</Kst>
-      - **Text box:** スケッチしたいテキストを入力します。
-      - **Font:**  好みのフォントを選択します。
-      - **Size:** フォントのサイズを指定します。
-3. コマンドダイアログのOKをクリックするか、右クリックで確定します。
-4. テキストのカーブが作成されます。
+   - <Kst>Command Dialog</Kst>
+      - **テキストボックス:** 作成したいテキストを入力します。
+      - **フォント:** 使用するフォントを選択します。
+      - **サイズ:** フォントサイズを指定します。
+3. コマンドダイアログのOKまたは右クリックで確定します。
+4. テキストカーブが作成されます。
 
-<Callout emoji="❗">
- **注意**<br /> 
- デフォルトのフォントサイズは高さ1cmで、テキストはXY平面の原点に配置されます。
- </Callout>
-
- <VideoPlayer fileName="text"/>
+<VideoPlayer fileName="text"/>

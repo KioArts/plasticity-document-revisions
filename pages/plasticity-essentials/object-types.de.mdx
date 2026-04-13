@@ -1,92 +1,90 @@
 # Objekttypen
 
-Objekte werden in Skizze, Solid, Bild und Mesh kategorisiert, jeweils mit weiteren Unterteilungen.
+Objekte werden in Skizze, Festkörper, Bild und Netz unterteilt, jeweils mit weiteren Unterteilungen.
 
-
-1. [Sketch](#sketch)
-    1. [Curve](#curve)
+1. [Skizze](#sketch)
+    1. [Kurve](#curve)
     2. [Vertex](#vertex)
-    3. [Control Vertex](#control-vertex)
+    3. [Kontrollpunkt](#control-vertex)
     4. [Region](#region)
-2. [Solid](#solid)
-    1. [Solid](#solid-1)
-    2. [Sheet](#sheet)
-    3. [Face](#face)
-    4. [Edge](#edge)
-3. [Image and Mesh](#empty)
-    1. [Image](#image)
-    2. [Mesh](#mesh)
+2. [Festkörper](#solid)
+    1. [Festkörper](#solid-1)
+    2. [Fläche](#sheet)
+    3. [Seite](#face)
+    4. [Kante](#edge)
+3. [Bild und Netz](#image-and-mesh)
+    1. [Bild](#image)
+    2. [Netz](#mesh)
 
-## 1. Sketch[#sketch]
+## 1. Skizze[#sketch]
 
 ![curve-vertex-controlvertex](/img/curve-vertex-controlvertex.png)
 
-### 1. Curve [#curve]
-- Eine aus Vertices und Steuerungspunkten bestehende Linie oder Kurve wird als Curve bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Kanten-Auswahlmodus**](selection-mode).
-- Mehrere Kurven können verbunden und als eine einzige Kurve behandelt werden.
-- Angezeigt in Blau und wird gelb, wenn sie ausgewählt ist.
+### 1. Kurve [#curve]
+- Eine Linie oder Kurve, die aus Vertices und Kontrollpunkten besteht, wird als Kurve bezeichnet.
+- Zum Auswählen in den [**Kanten-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Mehrere Kurven können verbunden und als eine einzelne Kurve behandelt werden.
+- Wird in Blau angezeigt und wird gelb, wenn sie ausgewählt ist.
 
 ### 2. Vertex [#vertex]
-- Die Punkte an beiden Enden einer Curve werden als Vertices bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Steuerungspunkt-Auswahlmodus**](selection-mode).
-- Angezeigt als lila Punkte, die weiß werden, wenn sie ausgewählt sind.
-- Wenn sich mehrere Vertices überlappen, wird der Punkt türkis.
+- Die Punkte an beiden Enden einer Kurve werden als Vertices bezeichnet.
+- Zum Auswählen in den [**Kontrollpunkt-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Werden als violette Punkte angezeigt und werden weiß, wenn sie ausgewählt sind.
+- Wenn mehrere Vertices überlappen, wird der Punkt türkis.
     ![overlapped-vertices](/img/overlapped-vertices.png)
 
-### 3. Control Vertex [#control-vertex]
-- Punkte, die die Form einer Curve definieren, werden als Control Vertices bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Steuerungspunkt-Auswahlmodus**](selection-mode).
-- Kleiner als Vertices, angezeigt als lila Punkte, die weiß werden, wenn sie ausgewählt sind.
-- Vertices und Steuerungsvertices sind durch weiße Linien verbunden.
-- Das Hinzufügen von Steuerungsvertices ermöglicht komplexere Kurven.
+### 3. Kontrollpunkt [#control-vertex]
+- Punkte, die die Form einer Kurve definieren, werden als Kontrollpunkte bezeichnet.
+- Zum Auswählen in den [**Kontrollpunkt-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Kleiner als Vertices, werden als violette Punkte angezeigt und werden weiß, wenn sie ausgewählt sind.
+- Vertices und Kontrollpunkte sind durch weiße Linien verbunden.
+- Das Hinzufügen von Kontrollpunkten ermöglicht komplexere Kurven.
 
 ### 4. Region [#region]
-- Ein von Curves umschlossener Bereich wird als Region bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Flächen-Auswahlmodus**](selection-mode).
-- In dunklem Blau angezeigt und wechselt zu Hellblau, wenn ausgewählt. Das Auftreten von Regionen hört nach etwa 700 Kurven pro Ebene auf, weil das Rendern rechnerisch sehr aufwendig ist.
-- Das Auswählen einer Region aktiviert automatisch den [**Extrudieren**](/solid/extrude) Befehl.
-- Das Löschen von Regionen löscht die Kurven, die die Region begrenzen.  
+- Ein von Kurven eingeschlossener Bereich wird als Region bezeichnet.
+- Zum Auswählen in den [**Flächen-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Wird in Dunkelblau angezeigt und wird hellblau, wenn sie ausgewählt ist. Regionen werden nach etwa 700 Kurven pro Ebene nicht mehr angezeigt, da das Rendering rechenintensiv wird.
+- Das Auswählen einer Region aktiviert automatisch den Befehl [**Extrudieren**](/solid/extrude).
+- Das Löschen von Regionen löscht die Kurven, die die Region begrenzen.
 ![region](/img/region.png)
 
-## 2. Solid [#solid]
+## 2. Festkörper[#solid]
 
-### 1. Solid [#solid-1]
-- Ein geschlossener fester Körper, der aus mehreren Flächen ohne Löcher besteht, wird als Solid bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Körper-Auswahlmodus**](selection-mode).
-- Angezeigt als grau, mit Konturen, die gelb werden, wenn sie ausgewählt sind.
+### 1. Festkörper [#solid-1]
+- Ein geschlossener Volumenkörper aus mehreren Flächen ohne Löcher wird als Festkörper bezeichnet.
+- Zum Auswählen in den [**Körper-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Wird in Grau angezeigt, mit Umrissen die gelb werden, wenn er ausgewählt ist.
 ![Solid](/img/solid.png)
 
-### 2. Shhet [#sheet]
-- Ein offener Körper, der aus Flächen mit Löchern besteht, wird als Sheet bezeichnet.
-- Das Entfernen eines Teils einer Festkörperfläche verwandelt ihn in einen offenen Körper, ein Blatt.
-- Zum Auswählen wechseln Sie in den [**Körper-Auswahlmodus**](selection-mode).
-- Angezeigt als grau, mit Konturen, die gelb werden, wenn sie ausgewählt sind.
+### 2. Fläche [#sheet]
+- Ein offener Körper aus Flächen mit Löchern wird als Fläche bezeichnet.
+- Das Entfernen eines Teils der Oberfläche eines Festkörpers verwandelt ihn in einen offenen Körper, eine Fläche.
+- Zum Auswählen in den [**Körper-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Wird in Grau angezeigt, mit Umrissen die gelb werden, wenn sie ausgewählt ist.
 ![Sheet](/img/sheet.png)
 
-### 3. Face [#face]
-- Jede ebene oder gekrümmte Oberfläche, die Solids und Sheets bildet, wird als Face bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Flächen-Auswahlmodus**](selection-mode).
-- Angezeigt als grau, wird hellgelb, wenn sie ausgewählt ist.
-- Das Auswählen einer Fläche aktiviert automatisch den [**Offset Face**](/solid/offset-face) Befehl.
+### 3. Seite [#face]
+- Jede ebene oder gekrümmte Oberfläche, die Festkörper und Flächen bildet, wird als Seite bezeichnet.
+- Zum Auswählen in den [**Flächen-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Wird in Grau angezeigt und wird hellgelb, wenn sie ausgewählt ist.
+- Das Auswählen einer Seite aktiviert automatisch den Befehl [**Seite versetzen**](/solid/offset-face).
 ![Face](/img/face.png)
 
-### 4. Edge [#edge]
-- Die Randlinien, die Faces umgeben, werden als Edges bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Kanten-Auswahlmodus**](selection-mode).
-- Angezeigt als schwarze Linien, die gelb werden, wenn sie ausgewählt sind.
-- Das Auswählen einer Kante, an der zwei Flächen zusammentreffen, aktiviert automatisch den Befehl [**Fillet**](/solid/fillet). Das Auswählen einer offenen Kante an einem Blatt aktiviert automatisch den Befehl [**Extend Sheet**](/solid/extend-sheet).
+### 4. Kante [#edge]
+- Die Grenzlinien, die Seiten umgeben, werden als Kanten bezeichnet.
+- Zum Auswählen in den [**Kanten-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
+- Wird als schwarze Linien angezeigt und wird gelb, wenn sie ausgewählt ist.
+- Das Auswählen einer Kante, an der zwei Seiten aufeinandertreffen, aktiviert automatisch den Befehl [**Verrundung**](/solid/fillet). Das Auswählen einer offenen Kante auf einer Fläche aktiviert automatisch den Befehl [**Fläche erweitern**](/solid/extend-sheet).
 ![Edge](/img/edge.png)
 
-## 3. Image and Mesh [#image-and-mesh]
+## 3. Bild und Netz[#image-and-mesh]
 
-### 1. Image [#image]
-- Bilder, die mit der Import-Funktion importiert wurden, werden als Images bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Körper-Auswahlmodus**](selection-mode).
+### 1. Bild [#image]
+- Bilder, die mit der Importfunktion importiert wurden, werden als Bilder bezeichnet.
+- Zum Auswählen in den [**Körper-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
 - Umrisse werden gelb, wenn sie ausgewählt sind.
 
-### 2. Mesh [#mesh]
-- 3D-Daten wie STL und FBX, die mit der Import-Funktion importiert wurden, werden als Meshes bezeichnet.
-- Zum Auswählen wechseln Sie in den [**Körper-Auswahlmodus**](selection-mode).
+### 2. Netz [#mesh]
+- 3D-Daten wie STL und FBX, die mit der Importfunktion importiert wurden, werden als Netze bezeichnet.
+- Zum Auswählen in den [**Körper-Auswahlmodus**](/plasticity-essentials/plasticity-interface/selection-mode) wechseln.
 - Umrisse werden gelb, wenn sie ausgewählt sind.
-

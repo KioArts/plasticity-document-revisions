@@ -2,43 +2,52 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Offset Face（フェイスをオフセットする）
+## Offset Face
 
-<Reference shortcut="" command="Push Face" button="" />
+{/* <Reference shortcut="" command="Push Face" button="" /> */}
 
-フェイスをオフセットすることができます。
+<CommandReference
+  command="Push Face"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-push-face.png"
+  tier="both"
+/>
+
+## 説明
+
+選択した面を指定した距離だけオフセットします。隣接角度を指定するオプションも利用できます。
 
 ## 基本的な使い方
 
-1. オフセットしたいフェイスを選択します。
-2. フェイスが選択されると、デフォルトのコマンドであるPush Faceが自動的に実行されます。
-3. 距離を指定するために黄色い点を動かします。
+1. オフセットしたい面を選択します。
+2. 面が選択されると、デフォルトコマンド **Push Face** が自動的に実行されます。
+3. 黄色い点を動かして距離を指定します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
-    - <Kst>コマンドダイアログ</Kst>
-        - **Distance:** 距離を指定します。
-        - **Angle Adjacent:** 角度を指定します。
-        - **Grow:**
-            - 凹んだ内側のフェイスをオフセットするとき:
-            - **Moving:** オフセットが外壁に到達したら、壁全体を移動します。
-            - **Fixed:** 外壁で停止します。
-            - **None:** 外壁の影響を受けず、オフセットが進み続けます。
-    - <Kst>キーボードショートカット</Kst>
-        - <kbd>D</kbd> **Distance** カーソルを動かして距離を指定します。
-        - <kbd>A</kbd> **Angle adjacent** カーソルを動かして角度を指定します。
-        - <kbd>Tab</kbd> **Grow mode** Grow modeを切り替えます。
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+     - <Kst>コマンドダイアログ</Kst>
+          - **Distance（距離）：** オフセット距離を指定します。
+          - **Angle Adjacent（隣接角度）：** 角度を指定します。
+          - **Grow（成長モード）：**
+               - 凹面の内側をオフセットする場合に使用します。
+               - **Moving：** オフセットが外側の壁に到達したとき、壁全体を移動します。
+               - **Fixed：** 外側の壁で停止します。
+               - **None：** 外側の壁に影響されず、また影響を与えずにそのまま進みます。
+     - <Kst>キーボードショートカット</Kst>
+          - <kbd>D</kbd> **距離：** カーソル移動で距離を指定します。
+          - <kbd>A</kbd> **隣接角度：** カーソル移動で角度を指定します。
+          - <kbd>Tab</kbd> **成長モード切替：** Grow モードを切り替えます。
+5. コマンドダイアログの OK または右クリックで確定します。
 
 <VideoPlayer fileName="offset-face"/>
 
 ## 依存オフセット
 
-選択された面を他の面に合わせ、オフセットを1回の操作で行う。
+別の面と一致させたり交差させたりするために、面の距離と形状を調整します。
 
-1. オフセットしたい面を選択してください。
-2. 面が選択されると、デフォルトコマンドである **Push Face** が自動的に実行されます。
-3. 面をオフセットし始め、その後オフセットギズモを解除してください。
-4. マッチさせたい面を選択してください。必要に応じて、オフセットギズモをクリックしてドラッグするか、オフセット値を入力して面をオフセットしてください。
-5. コマンドダイアログで OK をクリックするか、右クリックで確認してください。
+1. オフセットしたい面を選択します。
+2. 面が選択されると、デフォルトコマンド **Push Face** が自動的に実行されます。
+3. オフセット中に、合わせたい二つ目の面を選択します。
+4. コマンドダイアログの OK または右クリックで確定します。
 
 <VideoPlayer fileName="dependant-offset-face"/>
 

@@ -24,7 +24,6 @@
     "@types/react-dom": "^18.2.18",
     "@vercel/analytics": "^1.1.1",
     "gray-matter": "^4.0.3",
-    "mdx-bundler": "^10.0.1",
     "next": "14.2.35",
     "nextjs-google-analytics": "^2.3.3",
     "nextra": "^2.13.2",

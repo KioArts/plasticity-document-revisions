@@ -1,46 +1,47 @@
+import styles from "./ResourceSection.module.css";
+
 export default function ResourceSection({ title, items }) {
+  const isSingle = items.length === 1;
+
   return (
-    <section className="resources">
-      <h2>{title}</h2>
-      <div className="items">
+    <div className={styles.section}>
+      {title && <h2 className={styles.title}>{title}</h2>}
+
+      <div className={isSingle ? styles.singleGrid : styles.grid}>
         {items.map((item) => (
-          <a className="resource-card" href={item.link} key={item.title}>
-            <img src={item.image} alt="" />
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+          <a
+            key={item.title}
+            className={styles.card}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.image && (
+              <img className={styles.image} src={item.image} alt="" />
+            )}
+
+            <div className={styles.body}>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+
+              {item.description && (
+                <p className={styles.description}>{item.description}</p>
+              )}
+
+              {item.subItems && (
+                <ul className={styles.subList}>
+                  {item.subItems.map((sub) => (
+                    <li key={sub.title}>
+                      <a href={sub.link} className={styles.subLink}>
+                        {sub.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </a>
         ))}
       </div>
-
-      <style jsx>{`
-        .resources {
-          padding: 4rem 2rem;
-        }
-        .items {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-        }
-        .resource-card {
-          background: #fafafa;
-          border-radius: 12px;
-          overflow: hidden;
-          text-decoration: none;
-          color: inherit;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-        .resource-card img {
-          width: 100%;
-          height: 180px;
-          object-fit: cover;
-        }
-        .resource-card h3 {
-          margin: 1rem;
-        }
-        .resource-card p {
-          margin: 0 1rem 1.5rem;
-        }
-      `}</style>
-    </section>
+    </div>
   );
 }

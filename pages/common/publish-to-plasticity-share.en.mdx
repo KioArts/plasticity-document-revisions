@@ -5,11 +5,21 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 import { Center } from '/components/Center' 
 
-# Publish To Plasticity Share
+## Publish To Plasticity Share
 
-<Reference shortcut="" command="Publish To Plasticity Share" button="In Command Palette"  buttonIcon='button-publish-to-plasticity-share'/>
+{/* <Reference shortcut="" command="Publish To Plasticity Share" button="In Command Palette"  buttonIcon='button-publish-to-plasticity-share'/> */}
 
-Uploads a .plasticity file to the cloud and generates a unique private URL that opens in a new browser tab. The link can be shared with anyone for read-only viewing. Once the link is distributed it becomes public. Each uploaded document supports multiple revisions; you can manage and delete these revisions on the [**Plasticity Share**](https://share.plasticity.xyz/me/) page.
+<CommandReference
+  command="Publish To Plasticity Share"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-publish-to-plasticity-share.png"
+  tier="both"
+/>
+
+## Description
+
+Uploads a (.plasticity) file to the cloud and generates a unique private URL that opens in a new browser tab. The link can be shared with anyone for read-only viewing. Once the link is shared, it becomes public. Each uploaded document supports multiple revisions; you can manage and delete these revisions on the [**Plasticity Share**](https://share.plasticity.xyz/me/) page.
 
 <Callout>
 1. Only the mesh representation of the model is published so no CAD geometry or source files are included and the file cannot be downloaded.

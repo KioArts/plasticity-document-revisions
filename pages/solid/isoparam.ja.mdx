@@ -3,37 +3,49 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Isoparam (アイソパラムを加える)
+## Isoparam
 
-<Reference shortcut="Ctrl + R" command="Isoparam" button="" />
+{/* <Reference shortcut="Ctrl + R" command="Isoparam" button="" /> */}
 
-ソリッドとシートのフェイスにアイソパラム（エッジ）を加えることができます。
+<CommandReference
+  command="Cut Curve"
+  shortcut="Ctrl + R"
+  button="In Command Palette"
+  buttonIcon="/img/button-isoparam.png"
+  tier="both"
+/>
+
+## 説明
+
+ソリッドまたはシートの面上に、U または V 方向に沿ってエッジ（等パラメトリックライン）を作成します。複数のエッジを同時に生成できます。
 
 ## 基本的な使い方
 
 1. <kbd>Ctrl + R</kbd> を押します。
-2. アイソパラムを作成する位置にマウスカーソルを合わせます。
+2. 作成したい位置にマウスカーソルを置きます。
 3. キーボードショートカットでオプションを設定します。
 - <Kst>コマンドダイアログ</Kst>
-      - **Direction:** アイソパラメトリックラインの方向（U または V）を指定します。
-      - **Count:** 生成するアイソパラメトリックラインの数を指定します。
-      - **Param:** U方向およびV方向に基づいて、開始点と終了点の間にアイソパラメトリックラインを配置するパラメータ値を指定します。
-      - **Subdivide:** サーフェスの現在のCVレイアウトを細分化するかどうかを指定します。オフの場合、既存のCVレイアウトを変更せずにラインが挿入されます。オンの場合、現在のCVレイアウトを考慮してサーフェスを分割し、細分化された面全体でCVの一貫性を維持しながらラインを挿入します。
-   - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> **U/V direction:** アイソパラムの方向を切り替えます。
-      - <kbd>Shift</kbd> + Wheel up **Add cut:** アイソパラムの数を増やします。
-      - <kbd>Shift</kbd> + Wheel down **Subtract cut:** アイソパラムの数を減らします。
-      - <kbd>S</kbd> **Subdivide:** CVサーフェスレイアウトを細分化します。
+      - **Direction（方向）：** U または V のどちらの方向に等パラメ線を作成するか指定します。
+      - **Count（数）：** 作成する等パラメ線の本数を指定します。
+      - **Param（パラメータ）：** U/V 方向に基づき、開始点と終点の間で等パラメ線の位置を決定する値を指定します。
+      - **Subdivide（分割）：** 現在の CV レイアウトを分割するかどうかを指定します。  
+        オフの場合：既存の CV レイアウトを変更せずに線を挿入します。  
+        オンの場合：CV レイアウトを維持しながら面を分割し、分割後の面同士で CV の整合性を保ちます。
+- <Kst>キーボードショートカット</Kst>
+      - <kbd>Tab</kbd> **U/V 方向切替：** 作成する等パラメ線の方向を切り替えます。
+      - <kbd>Shift</kbd> + ホイール上 **カット追加：** 等パラメ線の本数を増やします。
+      - <kbd>Shift</kbd> + ホイール下 **カット削減：** 等パラメ線の本数を減らします。
+      - <kbd>S</kbd> **分割：** CV レイアウトを分割します。
 4. 右クリックで確定します。
 
 <VideoPlayer fileName="isoparam"/>
 
-<Callout type="info" emoji="💡">
-**Info**
-- CVレイアウトを持つサーフェスに対して「Subdivide（細分化）」オプションを使用すると、そのサーフェスが分割され、同じCVレイアウトを共有することになります。フェースを解消したり、元の状態に戻したりしたい場合でも、これは破壊的なプロセスであるため不可能です。
+<Callout type="info">
+**注意:**  
+CV レイアウトを持つ面で *Subdivide* を使用すると、面が分割され、両方の面が同じ CV レイアウトを共有します。  
+この操作は破壊的であり、元の状態に戻したり面を解消したりすることはできません。
 </Callout>
 
 ## 関連項目
 - [Offset Curve](offset-curve)
 - [Imprint](imprint)
-- [Extend Edge](extend-edge)

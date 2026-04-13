@@ -1,19 +1,28 @@
 import Reference from '/components/Reference'
 
-# Delete Face（フェイスを削除する）
+## フェースの削除
 
-<Reference shortcut="Shift + Backspace" command="Delete" button="" />
+{/* <Reference shortcut="Shift + Backspace" command="削除" button="" /> */}
 
-フェイスを削除できます。
+<CommandReference
+  command="削除"
+  shortcut="Shift + X / Delete / Backspace"
+  button="コマンドパレット内"
+  buttonIcon="/img/button-delete.png"
+  tier="both"
+/>
+
+## 説明
+
+フェースを削除できます。
 
 ## 基本的な使い方
 
-1. Select the Faces you want to delete.
-1. 削除したいフェイスを選択します。フェイスは複数選択可能です。
-2. <kbd>Shift + Delete</kbd>を押します。
-3. フェイスが削除されます。
+1. 削除したいフェースを選択します。
+2. <kbd>Shift + X / Delete / Backspace</kbd> を押します。
+3. フェースが削除されます。
 
 ## 関連項目
-- [Offset Face](offset-face)
-- [Draft Face](draft-face)
-- [Match Face](match-face)
+- [オフセットフェース](offset-face)
+- [ドラフトフェース](draft-face)
+- [マッチフェース](match-face)

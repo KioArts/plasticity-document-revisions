@@ -1,0 +1,33 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## サブディバイド
+
+{/* <Reference shortcut="" command="サブディバイド" button="" /> */}
+
+<CommandReference
+  command="サブディバイド"
+  shortcut=""
+  button="コマンドパレット内"
+  buttonIcon="/img/button-subdivide.png"
+  tier="both"
+/>
+
+## 説明
+
+選択したカーブのコントロールポイント（CV）の数、また選択したサーフェスの次数とスパンの数を、コマンドを実行するたびに**倍増**させます。
+
+## 基本的な使い方
+
+1. **1つ以上のカーブまたはサーフェスを選択**します。  
+2. コマンドパレットで **サブディバイド** と入力します。  
+3. 操作は次のように実行されます：  
+   - **サーフェス:** 次数とスパンがそれぞれ 1 つ増加し、サーフェスは選択状態のままになります。これはサーフェスの構成方法やスパン・次数の数に大きく依存します。  
+   - **カーブ:** CV が倍増し、新しく作成された CV が選択されます。
+
+<VideoPlayer fileName="subdivide"/>
+
+## 関連項目
+- [次数を上げる](/sketch/raise-degree)
+- [リビルド](/sketch/rebuild)

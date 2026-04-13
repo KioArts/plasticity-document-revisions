@@ -1,12 +1,28 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
-# Copy with Placement
 
-<Reference shortcut="Ctrl + Shift + C" command="Copy With Placement" button="" />
+## Copy with Placement
 
-Copy objects with a reference point. Use it alongside the [**Paste with Placement**](paste-with-placement) command for similar functionality to the [**Place**](place) command. This is particularly useful for placing objects in different [windows](/plasticity-essentials/file-menu).
+{/* <Reference shortcut="Ctrl + Shift + C" command="Copy With Placement" button="" /> */}
+
+<CommandReference
+  command="Copy With Placement"
+  shortcut="Ctrl + Shift + C"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-copy-with-placement.png"
+  tier="both"
+/>
+
+## Description
+
+Copy objects with a reference point. Use it alongside the [**Paste with Placement**](paste-with-placement) command for similar functionality to the [**Place**](place) command. This is particularly useful for placing objects in different Plasticity windows.
+
+<Callout type='info'>
+Note: Using Copy With Placement command does not work with Mesh and Instances.
+</Callout>
 
 ## Basic Usage
 
@@ -34,3 +50,6 @@ Copy objects with a reference point. Use it alongside the [**Paste with Placemen
     5. Press <kbd>Esc</kbd> to exit the command.
 
 <VideoPlayer fileName="copy-with-placement"/>
+
+## See also
+- [Paste with Placement](/common/paste-with-placement)

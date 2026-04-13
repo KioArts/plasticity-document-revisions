@@ -3,15 +3,25 @@ import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Cut
+## Cut
 
-<Reference shortcut="C" command="Cut" button="In Suggested Commands Menu"   buttonIcon="button-cut"/>
+{/* <Reference shortcut="C" command="Cut" button="In Suggested Commands Menu"   buttonIcon="button-cut"/> */}
+
+<CommandReference
+  command="Cut"
+  shortcut="C"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-cut.png"
+  tier="both"
+/>
+
+## Description
 
 Cut the target Solid or Sheet using a cutter Curve or Face. When a Curve is the cutter, the cut is made based on a surface generated from that Curve.
 
 ## Basic Usage
 
-3. Press <kbd>C</kbd> to excute the command.
+3. Press <kbd>C</kbd> to execute the command.
 2. Specify the target and cutter.
    - <Kst>Command Dialog</Kst>
       - **Select target bodies:** 
@@ -24,7 +34,7 @@ Cut the target Solid or Sheet using a cutter Curve or Face. When a Curve is the 
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>C</kbd> **Cut Curves:** Switch to **Cut Curve** command. see [**Cut Curve**](/sketch/cut-curve)
       - <kbd>S</kbd> **Screen space:** Sets the cutting direction to align with the visible direction.
-      - <kbd>Tab</kbd> **Extend:** Extend the Curve cutter.
+      - <kbd>E</kbd> **Extend:** Extend the Curve cutter.
 3. Confirm with OK in the Command Dialog or right-click.
 
 ## See also

@@ -1,0 +1,51 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+
+{/* # Realize Curve Instances
+
+<Reference shortcut="" command="Realize Instances" button="In Command Palette"  buttonIcon="button-realize-instances"/> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/realize-curve-instances.mp4"
+  alt="Realize Curve Instances Preview"
+  title="Realize Curve Instances"
+  command="Realize Instances"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-realize-instances.png" alt="Realize Instances Icon" />}
+/> */}
+
+## Kurveninstanzen realisieren
+
+<CommandReference
+  command="Realize Instances"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-realize-instances.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Konvertiert ausgewählte Kurveninstanzen in bearbeitbare Skizzenobjekte und wandelt sie in echte Kurven um, die nach Bedarf geändert werden können.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Kurveninstanzen aus, die Sie konvertieren möchten.
+2. Öffnen Sie die Befehlspalette, geben Sie **Realize Instances** ein und führen Sie den Befehl aus.
+3. Die Instanzen wurden in bearbeitbare Objekte konvertiert.
+
+<VideoPlayer fileName="realize-instance-curve"/>
+
+## Instanzierte Gruppen realisieren
+
+Der Arbeitsablauf ist identisch mit der oben beschriebenen grundlegenden Verwendung.
+
+<VideoPlayer fileName="realize-instance-group-curve"/>
+
+## Siehe auch
+- [Volumenkörper- und Flächeninstanzen realisieren](/solid/realize-solid-and-sheet-instances)

@@ -3,32 +3,30 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Sphere（球）
+## Kugel
 
-<Reference shortcut='' command='Sphere' button='ツールバー' buttonIcon='button-sphere'/>
+{/* <Reference shortcut='' command='Sphere' button='Toolbar' buttonIcon='button-sphere'/> */}
 
-中心と直径を指定して球を作成できます。
+<CommandReference
+  command="Kugel"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-sphere.png"
+  tier="both"
+/>
 
-## 基本的な使い方
+## Beschreibung
 
-1. ツールバーのボタン <ButtonIcon type="button-sphere" /> をクリックします。
-2. 球の中心でクリックします。
-3. カーソルを動かして球の大きさを調整し、クリックして確定します。
-   - <Kst>コマンドダイアログ</Kst>
-      - **Select target bodies :**
-            - Booleanコマンドと同じ機能です。詳細は[**Boolean**](/solid/boolean)コマンドを参照してください。
-      - **Radius :** 直径を指定します。
-   - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> : 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-      - <kbd>Shift + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>, <kbd>Shift + E</kbd>, <kbd>B</kbd>, <kbd>T</kbd> :
-         - Booleanコマンドと同じ機能です。詳細は[**Boolean**](/solid/boolean)コマンドを参照してください。
-      - <kbd>D</kbd> **Radius :** 直径をマウス移動で指定します。
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis :** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-4. 黄色のドットを動かして形状を調整することもできます。
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
-6. 球が作成されます。
+Sie können eine Kugel erstellen, indem Sie ihren Mittelpunkt und Durchmesser festlegen.
 
-<VideoPlayer fileName="sphere"/>
+## Grundlegende Verwendung
 
-
-
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-sphere" /> in der Symbolleiste.
+2. Klicken Sie, um den Mittelpunkt der Kugel festzulegen.
+3. Bewegen Sie den Cursor, um die Größe der Kugel anzupassen, und klicken Sie zur Bestätigung.
+   - <Kst>Befehlsdialog</Kst>
+      - **Zielkörper auswählen:**
+            - Funktioniert genauso wie der Boolean-Befehl. Weitere Informationen finden Sie im [**Boolean**](/solid/boolean)-Befehl.
+      - **Radius:** Geben Sie den Durchmesser an.
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-num

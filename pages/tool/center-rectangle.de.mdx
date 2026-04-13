@@ -3,28 +3,38 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Center Rectangle
+## Mittelpunktrechteck
 
-<Reference shortcut='' command='Center Rectangle' button='Werkzeugleiste' buttonIcon='button-center-rectangle' />
+{/* <Reference shortcut='' command='Center Rectangle' button='Toolbar' buttonIcon='button-center-rectangle'/> */}
 
-Sie können ein Rechteck erstellen, indem Sie dessen Mittelpunkt angeben.
+<CommandReference
+  command="Mittelpunktrechteck"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-center-rectangle.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-center-rectangle" /> Knopf in der Werkzeugleiste.
+Sie können ein Rechteck erstellen, indem Sie seinen Mittelpunkt festlegen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-center-rectangle" /> in der Symbolleiste.
 2. Klicken Sie, um den Mittelpunkt des Rechtecks festzulegen.
 3. Bewegen Sie den Cursor, um die Größe anzupassen, und klicken Sie zur Bestätigung.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Ermöglicht direkte Eingabe von Abmessungen. Weitere Details finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
-      - <kbd>K</kbd> **Knife:** Siehe [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
-      - <kbd>C</kbd> **Center / Corner:** Wechselt zu Eckrechteck.
-      - <kbd>S</kbd> **Square:** Beschränkt auf quadratische Form.
-3. Rechtsklick zur Bestätigung.
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
+      - <kbd>K</kbd> **Messer:** Weitere Informationen finden Sie unter [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
+      - <kbd>C</kbd> **Mitte / Ecke:** Wechselt zum Eckrechteck.
+      - <kbd>S</kbd> **Quadrat:** Beschränkt auf eine quadratische Form.
+3. Rechtsklicken Sie zur Bestätigung.
 5. Das Rechteck wird erstellt.
-
 
 <VideoPlayer fileName="center-rectangle"/>
 
 ## Siehe auch
-- [Corner Rectangle](corner-rectangle)
-- [Three Point Rectangle](three-point-rectangle)
+
+- [Eckrechteck](corner-rectangle)
+- [Drei-Punkt-Rechteck](three-point-rectangle)

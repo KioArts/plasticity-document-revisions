@@ -1,26 +1,36 @@
 # OBJ exportieren
 
-1. Wählen Sie den Festkörper oder das Blatt aus, den/das Sie exportieren möchten.
-   - Wenn nichts ausgewählt ist, werden alle angezeigten Festkörper und Blätter exportiert.
-2. Klicken Sie auf **P-Menü** > **Export/Save as...**.
-3. Ein Dialogfeld "Speichern unter" wird angezeigt.
+1. Wählen Sie den Solid- oder Sheet-Körper aus, den Sie exportieren möchten.
+   - Wenn nichts ausgewählt ist, werden alle angezeigten Solids und Sheets exportiert.
+2. Klicken Sie auf **P-Menü** > **Exportieren/Speichern unter...**.
+3. Ein Speichern-unter-Dialog erscheint.
    - Geben Sie den Dateinamen ein.
    - Wählen Sie **Wavefront OBJ (*.obj)** als Dateityp.
-4. Das Dialogfeld "OBJ exportieren" wird angezeigt.
-   - Konfigurieren Sie die Optionen.
+4. Der Dialog **OBJ exportieren** erscheint. Konfigurieren Sie die Optionen.
 
-   | Option | Übersicht | Detail | Empfohlener Wert |
-   | ------- | ------- |------- |------- |
-   | **Topology** |  | **Die Form der umzuwandelnden Polygone** <br /> Tris (nur dreieckige Polygone) <br /> Quads (viereckige und dreieckige Polygone) <br /> Ngons (Polygone mit mehreren Seiten, viereckige, dreieckige Polygone)||
-   |**Density** |  | **Dieser Wert legt automatisch andere Werte fest, sodass mit diesem Wert allein gute Ergebnisse erzielt werden können.** <br /> Wert verringern: weniger Polygone, grobe Formumwandlung.<br /> Wert erhöhen: mehr Polygone, detaillierte Formumwandlung.||
-   |**Min width** | Minimale Größe | **Geben Sie die Mindestgröße der Polygone an.** <br /> Um eine Überlastung von kleinen Polygonen, wie z.B. kleinen Rundungen, zu vermeiden, erhöhen Sie diesen Wert. |
-   |**Max width** | Maximale Größe | **Geben Sie die maximale Größe der Polygone an.** <br /> Um extrem lange oder große Polygone zu vermeiden, verringern Sie diesen Wert. <br /> Um die Größe der Polygone einheitlicher zu gestalten, verringern Sie diesen Wert. |
-   |**Surface plane tolerance** | Maximale zulässige Abweichung <br /> (in cm) | **Geben Sie die Genauigkeit der Umwandlung an.** <br /> Wert verringern: mehr Polygone, detaillierte Formumwandlung.<br /> Wert erhöhen: weniger Polygone, grobe Formumwandlung. <br /> Dies ist weniger intuitiv als "Max width", aber es ist eine der häufigsten Methoden, um die Anzahl der Polygone zu erhöhen oder zu verringern. | Ein geeigneter Wert für Low-Poly ist 0,01 und für High-Poly 0,0001. <br /> Wenn Sie einen Wert kleiner als 0,001 verwenden möchten, könnte es besser sein, den Wert "Max width" zu verringern. |
-   |**Surface angle tolerance** | Maximale zulässige Winkelabweichung <br /> (in Rad) | **Geben Sie die Genauigkeit der Oberflächenumwandlung an.** <br /> Wert verringern: die gekrümmte Oberfläche wird genau umgewandelt, und die Anzahl der Polygone nimmt zu.<br /> Wert erhöhen: die gekrümmte Oberfläche wird grob umgewandelt, und die Anzahl der Polygone nimmt ab.<br /> Dies kann als die Mindestanzahl von Segmenten oder Elementen pro Kreis oder Zylinder betrachtet werden. | Ein geeigneter Wert liegt zwischen 0,35 (für Low-Poly) und 0,15 (für High-Poly). |
-   |**Curve plane tolerance** | Maximale zulässige Abweichung der Kante <br /> (in cm) | **Geben Sie die Genauigkeit der Umwandlung der Kanten und Gesichtsgrenzen an.** <br /> Dies ähnelt der "Surface plane tolerance", betrifft aber die Umwandlung von Kanten und Gesichtsgrenzen mehr als die Mitte des Gesichts. ||
-   |**Curve angle tolerance** | Maximale zulässige Winkelabweichung der Kante <br /> (in Rad) | **Geben Sie die Genauigkeit der Umwandlung der Kanten von gekrümmten Oberflächen (Gesichtsgrenzen) an.** <br /> Dies ähnelt der "Surface angle tolerance", betrifft aber die Umwandlung von Kanten (Gesichtsgrenzen) mehr als die Mitte des Gesichts. | Ein geeigneter Wert liegt zwischen 0,35 (für Low-Poly) und 0,15 (für High-Poly). |
-   |**Curve max length** | Maximale zulässige Länge des Kurvensegments | |
-   |**Plane angle** | Maximales zulässiges Verhältnis zwischen Plane Tolerance und Max Width | Nützlich, um mehr Vierecke oder Polygone zu erhalten. |
-   |**Inflect** | Oberflächenqualität bewahren | Zusätzliche Details in Bereichen hinzufügen, in denen gekrümmte Oberflächen von konvex zu konkav übergehen. |
+   | Option | Übersicht | Details | Empfohlener Wert |
+   |---|---|---|---|
+   | **Topologie** | Form der exportierten Polygone | **Tris** – nur Dreiecke. <br /> **Quads** – Vierecke und Dreiecke. <br /> **Ngons** – Polygone mit mehreren Seiten, einschließlich Quads und Tris. | |
+   | **Drahtgitter anzeigen** | Zeigt das Drahtgitter des exportierten Meshes an | Nützlich zur Vorschau von Topologie und Dichte, um die Oberflächenqualität vor dem Export einzuschätzen. | |
+   | **Dichte** | Gesamte Polygonanzahl | Der einzige Wert, der andere Einstellungen automatisch anpasst. <br /> Niedriger Wert: weniger Polygone, gröbere Form. <br /> Hoher Wert: mehr Polygone, mehr Details. | |
+   | **Minimale Breite** | Minimale Polygongröße | Erhöhen, um eine Überfüllung kleiner Polygone in Bereichen wie kleinen Fasen zu vermeiden. | |
+   | **Maximale Breite** | Maximale Polygongröße | Verringern, um extrem große Polygone zu vermeiden oder die Polygongröße gleichmäßiger zu machen. | |
+   | **Kanten-Ebenentoleranz** | Maximal zulässige Abweichung von Kanten (in cm) | Ähnlich wie Flächen-Ebenentoleranz, betrifft jedoch Kanten und Flächenränder stärker als die Flächenmitte. | |
+   | **Flächen-Ebenentoleranz** | Maximal zulässige Abweichung (in cm) | Niedriger Wert: mehr Polygone, mehr Details. <br /> Höherer Wert: weniger Polygone, gröbere Form. <br /> Eine der effektivsten Methoden zur Kontrolle der Polygonanzahl. | Low poly: `0.01` – High poly: `0.0001` <br /> Wenn ein Wert kleiner als `0.001` benötigt wird, erwägen Sie stattdessen die Reduzierung der maximalen Breite. |
+   | **Kanten-Winkeltoleranz** | Maximal zulässige Winkelabweichung von Kanten (in Radiant) | Ähnlich wie Flächen-Winkeltoleranz, betrifft jedoch Kanten und Flächenränder stärker. | Low poly: `0.35` – High poly: `0.15` |
+   | **Flächen-Winkeltoleranz** | Maximal zulässige Winkelabweichung (in Radiant) | Niedriger Wert: gekrümmte Flächen werden detailgetreu konvertiert, mehr Polygone. <br /> Höherer Wert: grobere Konvertierung, weniger Polygone. | Low poly: `0.35` – High poly: `0.15` |
+
+   **Erweitert**
+
+   | Option | Übersicht | Details | Empfohlener Wert |
+   |---|---|---|---|
+   | **Maximale Kurvenlänge** | Maximal zulässige Länge eines Kurvensegments | | |
+   | **Ebenenwinkel** | Maximal zulässiges Verhältnis zwischen Ebenentoleranz und maximaler Breite | Nützlich, um mehr Vierecke oder Polygone zu erhalten. | |
+   | **Kleine Features entfernen** | Entfernt winzige Oberflächendetails beim Export | Definiert eine Bounding-Box-Schwelle — Details kleiner als dieser Wert werden ausgelassen. Ideal für High‑Poly‑zu‑Low‑Poly‑Workflows. | |
+   | **Inflect** | Erhält die Oberflächenqualität | Fügt Details in Bereichen hinzu, in denen gekrümmte Flächen von konvex zu konkav übergehen. | |
+   | **Radiale Flächen vereinfachen** | Vereinfacht Radiengeometrie für besseren Edge‑Flow | Richtet Kugeln, Zylinder, Tori und Kegel entlang einer gemeinsamen Achse aus, sodass Edge‑Flow‑Linien vorhersehbarer verlaufen. | |
+   | **Nur konvexe Ngons** | Verhindert konkave Ngons für sauberere Topologie | Nur verfügbar beim Export von Ngons. Erzwingt konvexe Ngons und fügt bei Bedarf zusätzliche Flächen ein. Liefert zuverlässige Topologie und konsistente Normalen bei leicht erhöhtem Ngon‑Count. | |
+   | **Skalierung** | Export-Skalierungsfaktor | Wendet einen Multiplikator auf alle exportierten Koordinaten an, um die Einheit des Zielprogramms zu berücksichtigen. | |
+   | **Up-Achse** | Orientierung der exportierten Geometrie | Legt die Up-Achse fest, um die Konventionen der Zielanwendung zu erfüllen. | |
 5. Klicken Sie auf OK.
 6. Die OBJ-Datei wird exportiert.

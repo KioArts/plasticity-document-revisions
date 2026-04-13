@@ -1,36 +1,54 @@
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
+import VideoPlayer from '/components/VideoPlayer';
 
-# Extrude
+## Extrudieren
 
-<Reference shortcut="E" command="Extrude" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon="button-extrude"/>
+{/* <Reference shortcut="E" command="Extrude" button="In Suggested Commands Menu"  buttonIcon="button-extrude" /> */}
 
-Das Herausziehen von Faces oder Regions erzeugt Solids, während das Herausziehen von Curves Sheets produziert. Geben Sie die Entfernung an, setzen Sie den Extrusionswinkel und definieren Sie die Wandstärke. Boolean-Optionen verfügbar.
+<CommandReference
+  command="Extrude"
+  shortcut="E"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-extrude.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Drücken Sie <kbd>E</kbd> oder klicken Sie auf den Button <ButtonIcon type="button-extrude" />.
-2. Wählen Sie die Faces, Regions oder Curves aus, die Sie extrudieren möchten.
-3. Bewegen Sie den gelben Punkt, um die Entfernung anzugeben.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
-   - <Kst>Befehlsdialog</Kst>
-      - **Select target bodies:**, <kbd>Umschalt + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>, <kbd>B</kbd>, <kbd>T</kbd>
-         - Diese Boolean-Optionen funktionieren genauso wie der **Boolean** Befehl. Beziehen Sie sich auf den **Boolean** Befehl.
-      - **Distance:** Geben Sie die Entfernung und die gegenüberliegende Entfernung an.
-      - **Degrees:** Geben Sie den Extrusionswinkel an.
-      - **Thickness:** Geben Sie die Wandstärke an.
-      - **Keep tools:** Gleich wie <kbd>T</kbd>
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>F</kbd> **Freestyle** Geben Sie den Startpunkt und den Endpunkt an, um die Richtung und Entfernung von **Extrude** zu bestimmen.
-      - <kbd>V</kbd> **Pivot** Geben Sie die Position des Gizmo an. 
-      - <kbd>D</kbd> **Distance 1** Geben Sie die Entfernung mit dem Cursor an.
-      - <kbd>A</kbd> **Angle 1** Geben Sie den Extrusionswinkel mit dem Cursor an.
-      - <kbd>Umschalt + T</kbd> **Thickness** Geben Sie die Wandstärke mit dem Cursor an.
-      - <kbd>Tab</kbd> **Lock distances** Extrudieren Sie mit gleichem Abstand auf beiden Seiten.
-5. Bestätigen Sie mit OK im Befehlsdialog oder Rechtsklick.
+Das Extrudieren von Flächen, Oberflächenkanten oder Regionen erzeugt Solids, während das Extrudieren von Kurven Sheets erzeugt. Abstand, Extrusionswinkel und Wandstärke können festgelegt werden. Boolesche Optionen sind verfügbar.
+
+## Grundlegende Verwendung
+
+1. Drücken Sie <kbd>E</kbd>.
+2. Wählen Sie die zu extrudierenden Flächen, Oberflächenkanten, Regionen oder Kurven aus.
+3. Bewegen Sie den gelben Punkt, um den Abstand festzulegen.
+4. Legen Sie die Optionen im Befehlsdialog und über Tastaturkürzel fest.
+   - <Kst>Command Dialog</Kst>
+      - **Zielkörper auswählen:** <kbd>Shift + Q</kbd> **Schneiden**, <kbd>Q</kbd> **Vereinigung**, <kbd>W</kbd> **Differenz**, <kbd>Shift + E</kbd> **Schnittmenge**, <kbd>B</kbd> **Neuer Körper**, <kbd>T</kbd> **Werkzeuge behalten**
+         - Diese booleschen Optionen funktionieren genauso wie der Boolesche Befehl. Weitere Details finden Sie unter [Boolesch](/solid/boolean).
+      - **Abstand:** Gibt den Extrusionsabstand und den Abstand in entgegengesetzter Richtung an.
+      - **Grad:** Gibt den Extrusionswinkel an.
+      - **Stärke:** Gibt die Wandstärke an.
+      - **Individuell:** Wechselt die Extrusionsrichtung von **Direkt** zu **Individuell** und extrudiert jede ausgewählte Fläche entlang ihrer eigenen Oberflächennormalen.
+      - **Werkzeuge behalten:** Behält die Werkzeugkörper nach einer booleschen Operation unverändert bei.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>F</kbd> **Freestyle:** Gibt den Start- und Endpunkt an und bestimmt damit Richtung und Abstand der Extrusion.
+      - <kbd>V</kbd> **Pivot:** Legt die Position des Gizmos fest.
+      - <kbd>D</kbd> **Abstand 1:** Gibt den Abstand durch Bewegen des Cursors an.
+      - <kbd>A</kbd> **Winkel 1:** Gibt den Extrusionswinkel durch Bewegen des Cursors an.
+      - <kbd>Shift + T</kbd> **Stärke:** Gibt die Wandstärke durch Bewegen des Cursors an.
+      - <kbd>S</kbd> **Abstände sperren:** Extrudiert mit gleichem Abstand auf beiden Seiten.
+      - <kbd>Ctrl</kbd> **Auswahl ändern:** Fügt der aktuellen Auswahl Objekte hinzu oder entfernt sie, relativ zum aktiven Auswahlmodus.
+      - <kbd>I</kbd> **Individuell:** Wechselt die Extrusionsrichtung zwischen **Direkt** und **Individuell**. **Direkt** extrudiert alle ausgewählten Objekte in einer einheitlichen Richtung, während **Individuell** jedes Objekt entlang seiner eigenen Oberflächennormalen extrudiert.
+
+5. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
+
+<VideoPlayer fileName="extrude"/>
 
 ## Siehe auch
-- [Boolean](boolean)
-- [Cut](cut)
-- [Pipe](pipe)
+- [Boolesch](boolean)
+- [Schneiden](cut)
+- [Rohr](pipe)

@@ -3,73 +3,74 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Square 
+## Square 
 
-<Reference shortcut="" command="Square" button="In Command Palette" buttonIcon='button-square' />
+<CommandReference
+  command="Square"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-square.png"
+  tier="studio"
+/>
 
-Square ist ein auf XNurbs basierender Befehl zur Erzeugung hochwertiger, viereckiger Flächen. Er bietet präzise parametrische Kontrolle über UV-Grad und -Spans und sorgt so für eine optimale Flächendefinition.
+## Beschreibung
 
-> **Hinweis:** Dieser Befehl ist nur mit der **Studio-Lizenz** verfügbar.
+Square ist ein auf XNurbs basierendes Werkzeug zur Erzeugung hochwertiger, vierseitiger Flächen. Es bietet präzise parametrische Kontrolle über UV-Grad und Spans und gewährleistet eine optimale Flächendefinition.
 
+## Grundlegende Verwendung
 
-## Grundlegende Nutzung
-
-1. Wählen Sie die Randkanten aus, die Sie für den **Square-Befehl** verwenden möchten.  
-2. Geben Sie **Square** in die Befehls-Palette ein.  
-3. Legen Sie die Optionen im Befehlsdialog fest.  
-   - <Kst>Befehlsdialog</Kst>  
-   - **Kontinuität (Continuity):** **Frei (Free), G0, G1, G2**  
-      - **Frei (Free):** Ignoriert die Randkontinuität, um die Oberflächenqualität zu verbessern. Ideal für erste Oberflächen, die später weiter verfeinert werden.  
-      - **G0, G1, G2:** Geben Sie die [Oberflächenkontinuität](/cad-essentials/continuity-curve-and-surface) an.  
-   - **Flachheit (Flatness):** Ähnlich wie bei XNurbs beeinflusst diese Option die Flachheit und Qualität der erzeugten Oberfläche. Ein höherer Wert erzeugt eine hochwertigere Oberfläche, ein niedrigerer Wert reduziert die Qualität.  
-   - **Spannung (Tension):** Passt den Krümmungsübergang einer Oberfläche an.  
-   - **Grad (Degree):** Legt den UV-Grad fest.  
-   - **Spannen (Spans):** Legt den UV-Span-Wert fest.  
-   - **Randbedingung (Boundary condition):** Bestimmt die UV-Flussbedingungen.  
-        - **Natürlich (Natural):** Keine Anforderungen an den UV-Fluss.  
-        - **Normal:** Hält die UV-Isokurven gegenseitig senkrecht.  
-        - **Nächste (Next):** Erstellt einen senkrechten UV-Fluss, wenn die Randbedingungen relativ flach sind.  
-        - **Angrenzend (Adjacent):** Richtet die V-Isokurven der erzeugten Oberfläche an angrenzenden Kurven aus.  
-   - **Gewichtung (Weight):** Bestimmt, wie streng die Eingabebedingungen für Kurven und Kanten eines Volumenkörpers angewendet werden.  
-       - Niedriger Wert: Lockert die Einschränkungen, verbessert die Oberflächenqualität und Reflexionen.  
-       - Höherer Wert: Erzwingt die Einschränkungen, um sicherzustellen, dass der UV-Fluss mit den angegebenen *Degree*- und *Span*-Werten übereinstimmt und eine präzise Oberflächenkontinuität gewährleistet wird.  
-   - **Analysis:** Analysiert die Stetigkeit von Flächenkanten – [Stetigkeit messen](/tool/measure-continuity).
-         - **Continuity:** Überprüfen Sie die Stetigkeit der Kanten:
-            - **G0:** Positionsstetigkeit prüfen.
-            - **G1:** Tangentenstetigkeit prüfen.
-            - **G2:** Krümmungsstetigkeit prüfen.
-4. Bestätigen Sie mit **OK** im Befehlsdialog oder durch Rechtsklick.  
+1. Wählen Sie die Randkanten aus, die Sie mit dem Square-Befehl verwenden möchten.
+2. Geben Sie **Square** in der Befehlspalette ein.
+3. Legen Sie die Optionen im Befehlsdialog fest.
+   - <Kst>Befehlsdialog</Kst>
+   - **Kontinuität:** **Free, G0, G1, G2**
+      - **Free:** Ignoriert die Randkontinuität für verbesserte Flächenqualität – ideal für vorläufige Flächen, die später verfeinert werden.
+      - **G0, G1, G2:** Gibt die [Kontinuität der Fläche](/cad-essentials/continuity-curve-and-surface) an.
+   - **Flachheit:** Ähnlich wie bei [**XNurbs**](/solid/xnurbs) beeinflusst diese Option die Flachheit und Qualität der erzeugten Flächen. Ein höherer Wert erzeugt qualitativ hochwertigere Flächen, ein niedrigerer Wert führt zu geringerer Qualität.
+   - **Spannung:** Passt den Krümmungsübergang einer Fläche an.
+   - **Grad:** Gibt den UV-Gradwert an.
+   - **Spans:** Gibt den UV-Spans-Wert an.
+   - **Randbedingung:** Gibt die Bedingung des UV-Flusses an.
+        - **Natural:** Keine Anforderung an den UV-Fluss.
+        - **Normal:** UV-Isokurven bleiben gegenseitig senkrecht.
+        - **Next:** Erzeugt einen senkrechten UV-Fluss, wenn die Randbedingungen relativ flach sind.
+        - **Adjacent:** Richtet V-Isokurven der erzeugten Fläche an benachbarten Kurven aus.
+   - **Gewichtung:** Gibt an und steuert, wie streng die Eingabebeschränkungen für Kurven und Kanten eines Volumenkörpers angewendet werden. Ein niedrigerer Wert lockert diese Beschränkungen und ermöglicht eine bessere Flächenqualität und verbesserte Reflexionen. Ein höherer Wert erzwingt diese Beschränkungen und stellt sicher, dass der UV-Fluss mit den angegebenen *Grad*- und *Span*-Werten übereinstimmt, um die gewünschte Flächengenauigkeit zu erzielen.
+   - **Analyse:** Analysiert die Kontinuität von Flächenkanten – [Kontinuität messen](/tool/measure-continuity).
+         - **Kontinuität:** Überprüft die Kontinuität der Kanten:
+            - **G0:** Positionskontinuitätsprüfung.
+            - **G1:** Tangentenkontinuitätsprüfung.
+            - **G2:** Krümmungskontinuitätsprüfung.
 
 <VideoPlayer fileName="square"/>
 
-<Callout type="info" emoji="💡">   
-Ähnlich wie bei XNurbs können Sie den Befehl im Voraus ausführen und sofort mit der Auswahl von Begrenzungskanten, Kurven und Flächen beginnen. Das beschleunigt den Arbeitsablauf effizient und liefert eine Live‑Vorschau der Oberflächenerzeugung. 
+<Callout type="info">   
+Ähnlich wie bei [**XNurbs**](/solid/xnurbs) können Sie den Befehl im Voraus ausführen und dann Randkanten, Kurven und Flächen auswählen. Dies beschleunigt den Arbeitsablauf und bietet eine Live-Vorschau der Flächenerzeugung.
 </Callout>
-<VideoPlayer fileName="square-4"/>
 
 ## Zusätzliche Informationen
 
-### Loften mit Square
-  
-Alternativ kann der Befehl **Square** als Loft‑Methode verwendet werden, indem zwei nicht benachbarte Kanten ausgewählt werden. Diese Vorgehensweise bietet mehr Flexibilität und Kontrolle über die Oberflächenerzeugung, sodass Sie Parameter wie Grad‑ und Spannweite‑Werte, Randbedingungen (falls nötig), Flachheit und Gewichtseinfluss festlegen können. Im Gegensatz dazu erzeugt ein Standard‑Loft eine feste Oberfläche mit eingeschränkten Steuerungsoptionen.
+### Lofting mit Square
+
+Der Square-Befehl kann alternativ als Lofting-Methode verwendet werden, indem zwei nicht berührende Kanten ausgewählt werden. Diese Methode bietet größere Flexibilität und Kontrolle über die Flächenerzeugung und ermöglicht die Angabe von Parametern wie Grad- und Span-Werten, Randbedingungen (falls erforderlich), Flachheit und Gewichtungseinfluss. Im Gegensatz dazu ergibt die Verwendung eines Standard-Lofts eine feste Fläche mit begrenzten Steuerungsmöglichkeiten.
 
 <VideoPlayer fileName="square-1"/>
 
-### Sweepen mit Square
+### Sweeping mit Square
 
-Wie beim **Sweep**‑Befehl kann auch der **Square**‑Befehl vergleichbare Ergebnisse erzielen, jedoch mit größerer Flexibilität und Kontrolle über die entstehenden Flächen. Dieses Ergebnis lässt sich erreichen, indem man zwei oder drei benachbarte Kanten auswählt.
+Ähnlich wie der [Sweep](/solid/sweep)-Befehl kann der Square-Befehl vergleichbare Ergebnisse erzielen, bietet jedoch größere Flexibilität und Kontrolle über die resultierenden Flächen. Dieses Ergebnis wird durch Auswahl von zwei oder drei berührenden Kanten erreicht.
 
 <VideoPlayer fileName="square-2"/>
 
-### Patchen mit Square
+### Patching mit Square
 
-Der **Square**‑Befehl kann Löcher in einer Fläche mit quadratisch‑seitigen Begrenzungskanten füllen, ähnlich dem **Patch**‑Befehl.
+Der Square-Befehl kann Löcher in einer Fläche mit vierseitigen Randkanten füllen, ähnlich wie der [**Patch**](/solid/patch)-Befehl.
 
 <VideoPlayer fileName="square-3"/>
 
-### Flächen neu anpassen (Refit)
+### Flächen neu anpassen
 
-Mit dem **Square**‑Befehl können Sie selektiv beschnittene Flächen auf einer Fläche und deren angrenzenden Flächen neu anpassen und dabei die Orientierung der Splines an den natürlichen Fluss der Oberfläche angleichen. Diese Funktion unterscheidet sich deutlich vom **Rebuild**‑Befehl, der sich ausschließlich auf das Neuaufbauen einer Fläche konzentriert, ohne die Spline‑Orientierung auszurichten.
+Der Square-Befehl ermöglicht es, beschnittene Flächen auf einer Seite und deren benachbarten Flächen selektiv neu anzupassen, wobei die Ausrichtung der Splines an den natürlichen Fluss der Fläche angepasst wird. Diese Funktion unterscheidet sich wesentlich vom [**Rebuild**](/solid/rebuild-face)-Befehl, der sich auf den Wiederaufbau einer Fläche konzentriert, ohne die Spline-Ausrichtung anzupassen.
 
 <VideoPlayer fileName="square-5"/>
 

@@ -6,9 +6,19 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
 
-# Realize Solid and Sheet Instances
+## Realize Solid and Sheet Instances
 
-<Reference shortcut="" command="Realize Instances" button="In Command Palette"  buttonIcon="button-realize-instances"/>
+{/* <Reference shortcut="" command="Realize Instances" button="In Command Palette"  buttonIcon="button-realize-instances"/> */}
+
+<CommandReference
+  command="Realize Instances"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-realize-instances.png"
+  tier="both"
+/>
+
+## Description
 
 Convert selected Solid and Sheet instances into editable solid objects; this creates true geometry that can be modified, but it also raises computational usage, so converting many objects may noticeably increase the scene's computational load.
 

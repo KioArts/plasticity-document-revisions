@@ -1,3 +1,6 @@
+import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
+
 # How to use
 
 ## Setup Blender Bridge
@@ -17,9 +20,9 @@ To transfer the Objects created in Plasticity to Blender, click the "Refresh" bu
     2. Click the "Refresh" button in the "Plasticity" sidebar panel to transfer objects from Plasticity to Blender.
         ![BB Blender Connet](/img/bb-blender-refresh.png)
     3. The transferred objects will appear in the 3D viewport of Blender.
-        - All solids and Sheets in Plasticity will be transferred as Meshes in Blender.
-        - When 'Only visible' is disabled(default), invisible objects in Plasticity will be transferred to Blender as invisible objects. When 'Only visible' is enabled, invivible objects in Plasticity will not be transferred. 
-        - 'Scale' option is abailable to scale the size. 
+        - All Solids and Sheets in Plasticity will be transferred as Meshes in Blender.
+        - When 'Only visible' is disabled (default), invisible objects in Plasticity will be transferred to Blender as invisible objects. When 'Only visible' is enabled, invivible objects in Plasticity will not be transferred. 
+        - 'Scale' option is available to scale the size. 
 3. **Within Plasticity:**
     1. Edit the objects as needed.
 4. **Within Blender:**
@@ -86,3 +89,37 @@ The Refacet Mesh option will automatically retopologize the mesh of the transfer
 ### Paint Plasticity Faces
 
 - Paint random vertex colors based on the Faces from Plasticity.
+
+## Working with PolySplines
+
+Model your geometry in Blender and transfer it to Plasticity, where PolySplines is applied automatically. A Studio license is required in order to use [PolySplines](/solid/polyspline).
+
+### Basic Usage
+
+1. **Within Plasticity:**
+    1. Ensure the scene is empty and contains no modelled objects to prevent them from being transferred to the Blender scene.
+
+2. **Within Blender:**
+    1. Click the "Connect" button in the "Plasticity" sidebar panel.
+    2. Enable the "Only Visible" option in the "Plasticity" sidebar panel to ensure no objects are transferred from Plasticity to Blender.
+    3. Click the "Refresh" button to display additional options in the Blender outliner.
+
+        ![Outliner Blender](/img/blender-outliner-polysplines.png)
+
+    4. Place the Blender object in the "Outbox" group and add a **Subdivision** modifier with a level of at least **1**.
+        - Any geometry modifying modifiers should be placed **after** the Subdivision modifier, as all modifiers are automatically applied when the object is transferred to Plasticity.
+
+        ![Modifiers](/img/blender-outliner-polysplines-02.png)
+    5. Click the "Refresh" button in the "Plasticity" sidebar panel to transfer the objects from Blender to Plasticity.
+
+3. **Within Plasticity:**
+    1. The transferred objects will appear in the Plasticity 3D viewport.
+        - Transform data such as scale, position, and rotation is applied automatically.
+        - All modifiers are applied automatically on transfer.
+        - The object is automatically converted to a PolySpline surface.
+
+<Callout type="info">
+**Mirror Modifier:** Ensure the source object is touching or intersecting the mirror plane. This is required for the mirror to produce a successful result.
+</Callout>
+
+<VideoPlayer fileName="blender-using-polysplines"/>

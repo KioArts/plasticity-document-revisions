@@ -1,23 +1,61 @@
-# スケッチとソリッド 共通のコマンド
+### トランスフォーム
 
-| コマンド名                                            | ショートカット              | 機能                                   |
-| ----------------------------------------------------- | --------------------------- | -------------------------------------- |
-| [Complete Edge](/common/complete-edge)               |                             | 選択したエッジを延長し、他のエッジと交差するまで伸ばします。       |
-| [Copy with Placement](/common/copy-with-placement)   | <kbd>Ctrl+Shift+C</kbd>     | オブジェクトを参照点付きでコピーします。           |
-| [Curve Array](/common/curve-array)                   |                             | カーブに沿ってオブジェクトを複製します。           |
-| [Dimension](/common/dimension)                       | <kbd>=</kbd>                | 寸法値を変更します。                               |
-| [Duplicate](/common/duplicate)                       | <kbd>Shift+D</kbd>          | オブジェクトを複製します。                         |
-| [Fork Material](/common/fork-material)               | <kbd>Shift+M</kbd>          | 選択したオブジェクトのマテリアルを複製して編集します。                         |
-| [Measure](/common/measure)                           | <kbd>Ctrl+=</kbd>           | 寸法値を測定します。                  |
-| [Measure Radius](/common/measure-radius)               |                              | 半径の値を測定します。                |
-| [Mirror](/common/mirror)                             | <kbd>Alt+X</kbd>            | オブジェクトを反転します。                         |
-| [Move](/common/move)                                 | <kbd>G</kbd>                | オブジェクトを移動します。                         |
-| [Publish to Plasticity Share](/common/publish-to-plasticity-share) |                |  Plasticity ドキュメントをウェブ経由でアップロードし、共有します。     |
-| [Place](/common/place)                               | <kbd>Ctrl+D</kbd>           | 指定された軸に沿ってオブジェクトを複製します。     |
-| [Radial Array](/common/radial-array)                 |                             | 放射状のパターンでオブジェクトを複製します。       |
-| [Rectangular Array](/common/rectangular-array)       |                             | 長方形のパターンでオブジェクトを複製します。       |
-| [Remove Material](/common/remove-material)           | <kbd>Alt+M</kbd>            | 材料を削除します。                                 |
-| [Rotate](/common/rotate)                             | <kbd>R</kbd>                | オブジェクトを回転します。                         |
-| [Scale](/common/scale)                               | <kbd>S</kbd>                | オブジェクトを拡大縮小します。                     |
-| [Section Analysis](/common/section-analysis)         |                             | オブジェクトを通して仮想のスライスを作成する。            | 
-| [Set Material](/common/set-material)                 | <kbd>M</kbd>                | 材料を設定します。                                 |
+- シーン内のオブジェクトを移動・回転・スケール・ミラーするためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Move](/common/move) | オブジェクトをシーン内の新しい位置へ移動します。 |
+| [Rotate](/common/rotate) | オブジェクトを指定した軸または点の周りで回転させます。 |
+| [Scale](/common/scale) | オブジェクトを均一または特定の軸方向にスケールします。 |
+| [Mirror](/common/mirror) | オブジェクトを指定した平面または軸でミラーします。 |
+
+### 配列と複製
+
+- オブジェクトを複製し、シーン内に配置するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Duplicate](/common/duplicate) | 選択したオブジェクトをその場で複製します。 |
+| [Curve Array](/common/curve-array) | オブジェクトの複製をカーブに沿って配置します。 |
+| [Radial Array](/common/radial-array) | オブジェクトの複製を中心点の周囲に円形に配置します。 |
+| [Rectangular Array](/common/rectangular-array) | オブジェクトの複製をグリッド状に配置します。 |
+| [Copy with Placement](/common/copy-with-placement) | オブジェクトをコピーし、指定した位置に配置します。 |
+| [Paste with Placement](/common/paste-with-placement) | コピーしたオブジェクトを指定した位置に貼り付けます。 |
+| [Place](/common/place) | オブジェクトの複製を作成し、基準点に配置します。 |
+
+### マテリアル
+
+- オブジェクトにマテリアルを割り当て、管理するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Set Material](/common/set-material) | 選択したオブジェクトにマテリアルを割り当てます。 |
+| [Fork Material](/common/fork-material) | マテリアルを複製し、独立して編集できるようにします。 |
+| [Remove Material](/common/remove-material) | 選択したオブジェクトからマテリアルを削除します。 |
+
+### 計測と解析
+
+- シーン内のジオメトリを計測・解析するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Measure Distance](/tool/measure) | シーン内の2点間の距離を測定します。 |
+| [Dimension](/common/dimension) | 選択したジオメトリに寸法注記を表示し、そのサイズを編集します。 |
+| [Section Analysis](/common/section-analysis) | ソリッドの断面を解析し、その形状を評価します。 |
+
+### ジオメトリ
+
+- 既存のジオメトリを編集・調整するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Complete Edge](/common/complete-edge) | サーフェスまたはソリッド上の開いたエッジを延長または補完します。 |
+| [Subdivide](/common/subdivide) | 選択したジオメトリを細かいセグメントに分割します。 |
+
+### シーンと共有
+
+- 作業内容を共有します。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Publish to Plasticity Share](/common/publish-to-plasticity-share) | Plasticity Share を通じてモデルを公開します。 |

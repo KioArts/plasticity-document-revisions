@@ -1,0 +1,50 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
+
+# PolySplines
+
+<CommandReference
+  command="PolySplines"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon=""
+  tier="studio"
+/>
+
+## Description
+
+**PolySplines** converts a mesh object (.OBJ, .STL) into a smooth untrimmed spline surface with **G2** continuity, producing fewer and cleaner patches than traditional subdivision workflows. 
+
+Unlike Catmull-Clark subdivision, which refines a mesh through repeated approximating passes, PolySplines outputs B-Spline patches suitable for manufacturing and engineering use. Best results come from quad dominant meshes, though the algorithm handles triangles and n-gons as well.
+
+<Center width="580px">
+![PolySpline Example](/img/polyspline-example.svg)
+</Center>
+
+<Callout type="info">
+PolySplines can be used in conjunction with the [Blender Bridge](/blender/how-to-use#working-with-polysplines) addon, which includes live output updates and automatically imports results into your scene.
+</Callout>
+
+<Callout>
+**Note:** PolySplines currently doesn't support **Vertex** and **Edge** Creasing and Bevelling applied in a DCC modeller. The current workaround is to manually insert edge loops to strengthen a corner or edge.
+</Callout>
+
+## Basic Usage
+
+1. Import the mesh or select it in the scene.
+2. Open the Command Palette, search for **PolySplines**, and execute the command.
+3. Adjust the options inside the command dialogue:
+   - <Kst>Command Dialog</Kst>
+         - **Rounded Corners:** Rounds off the corners of an open body, whether or not thickness has been applied.
+            {/* <Center width="500px">
+            ![PolySpline Example](/img/polyspline-rounded-corners.svg)
+            </Center> */}
+         - **Merge Patches:** When enabled, adjacent patches are merged into a single surface with a clean CV layout, which is recommended for downstream modelling workflows. When disabled, surfaces remain as individual Bezier patches, each with their own independent CV structure. 
+         - **Interpolate Boundary Exactly:** Forces the surface boundary to pass precisely through every point on the mesh boundary, rather than approximating it. This is useful when joining two open bodies together, as it ensures the boundaries align exactly for a clean merge.
+
+4. A spline object has been created.
+
+<VideoPlayer fileName="polyspline"/>
+

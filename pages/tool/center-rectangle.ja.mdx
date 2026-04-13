@@ -3,30 +3,38 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Center Rectangle
+## 中心長方形
 
-<Reference shortcut='' command='Center Rectangle' button='ツールバー' buttonIcon='button-center-rectangle'/>
+{/* <Reference shortcut='' command='Center Rectangle' button='Toolbar' buttonIcon='button-center-rectangle'/> */}
+
+<CommandReference
+  command="中心長方形"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-center-rectangle.png"
+  tier="both"
+/>
+
+## 説明
 
 中心点を指定して長方形を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-center-rectangle" /> をクリックします。
-2. 四角形の中心点をクリックします。
-3. カーソルを動かして大きさを調整し、クリックして確定します。
+1. ツールバーの <ButtonIcon type="button-center-rectangle" /> ボタンをクリックします。
+2. 長方形の中心点を指定するためにクリックします。
+3. カーソルを移動してサイズを調整し、クリックして確定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> : 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。 
-      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-      - <kbd>C</kbd> **Center / Corner:** Corner Rectangleに切り替えます。
-      - <kbd>S</kbd> **Square:** 正方形に限定します。
-3. 右クリックで確定します。
-5. 四角形が作成されます。
+      - <kbd>Tab</kbd>: 寸法の直接入力が可能になります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)をご覧ください。
+      - <kbd>K</kbd> **ナイフ:** [ナイフモードの使用](/tool/sketching-essentials#use-knife-mode)を参照してください。
+      - <kbd>C</kbd> **中心 / 角:** コーナー長方形に切り替えます。
+      - <kbd>S</kbd> **正方形:** 正方形の形状に制限します。
+3. 右クリックして確定します。
+5. 長方形が作成されます。
 
 <VideoPlayer fileName="center-rectangle"/>
 
 ## 関連項目
 
-- [Corner Rectangle](corner-rectangle)
-- [Three Point Rectangle](three-point-rectangle)
-
-
+- [コーナー長方形](corner-rectangle)
+- [3点長方形](three-point-rectangle)

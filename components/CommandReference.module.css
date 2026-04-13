@@ -1,0 +1,175 @@
+.wrapper {
+  margin-bottom: 2rem;
+}
+
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 340px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem 0.75rem 1.25rem;
+  transition: background 0.15s ease;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.valueMuted {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.22);
+}
+
+/* Keyboard shortcut */
+.kbdRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 0.15rem 0.45rem;
+  line-height: 1.4;
+}
+
+.plus {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.28);
+  margin: 0 0.1rem;
+}
+
+/* Button row */
+.buttonVal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btnIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.btnIcon img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* Available In — tier section */
+.tierSection {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1.25rem 0.7rem;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.tierLabel {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: hsla(0, 0%, 100%, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  width: 90px;
+}
+
+.tierBadges {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.badgeIndie {
+  background: rgba(186, 117, 23, 0.22);
+  border: 1px solid rgba(186, 117, 23, 0.45);
+  color: #FAC775;
+}
+
+.badgeIndie .dot {
+  background: #FAC775;
+}
+
+.badgeStudio {
+  background: rgba(83, 74, 183, 0.22);
+  border: 1px solid rgba(83, 74, 183, 0.45);
+  color: #AFA9EC;
+}
+
+.badgeStudio .dot {
+  background: #AFA9EC;
+}
+
+.badgeDim {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.badgeDim .dot {
+  background: rgba(255, 255, 255, 0.15);
+}

@@ -3,13 +3,35 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Join Curves
+{/* # Join Curves
 
-<Reference shortcut="J" command="Join" button="In der Befehlsleiste" buttonIcon='button-join' />
+<Reference shortcut="J" command="Join" button="In Command Bar" buttonIcon='button-join' /> */}
 
-Kurven an Verbindungspunkten verbinden.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/join-curves.mp4"
+  alt="Join Curves Preview"
+  title="Join Curves"
+  command="Join"
+  shortcut="J"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-join.png" alt="Join Curves Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Kurven verbinden
+
+<CommandReference
+  command="Join"
+  shortcut="J"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-join.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Verbindet Kurven an ihren Verbindungspunkten.
+
+## Grundlegende Verwendung
 
 1. Wählen Sie die Kurven aus, die Sie verbinden möchten.
 2. Drücken Sie <kbd>J</kbd>.
@@ -17,12 +39,12 @@ Kurven an Verbindungspunkten verbinden.
 
 <Callout emoji="❗">
 **Hinweis**<br />
-Um zwei Kurven zu verbinden, müssen ihre Endpunkte perfekt ausgerichtet sein.
-Wenn sie perfekt ausgerichtet sind, werden die Punkte blau-grün. Erscheinen sie lila, sind sie nicht ausgerichtet. Um eine genaue Ausrichtung zu gewährleisten, sehen Sie [Object Snaps](/plasticity-essentials/snap#object-snap).
+Um zwei Kurven zu verbinden, müssen ihre Endpunkte exakt ausgerichtet sein.
+Wenn sie exakt ausgerichtet sind, werden die Punkte blaugrün angezeigt. Wenn sie lila erscheinen, sind sie nicht ausgerichtet. Für eine präzise Ausrichtung siehe [Objektfangen](/plasticity-essentials/plasticity-interface/snap).
 </Callout>
 
 <VideoPlayer fileName="join-curves"/>
 
 ## Siehe auch
-- [Join](join)
-- [Bridge](bridge)
+- [Verbinden](join)
+- [Brücke](bridge)

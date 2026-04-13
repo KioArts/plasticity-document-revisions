@@ -3,31 +3,38 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Three Point Rectangle（3点指定の四角形）
+## 3点長方形
 
-<Reference shortcut='' command='Three Point Rectangle' button='ツールバー'  buttonIcon='button-three-point-rectangle'/>
+{/* <Reference shortcut='' command='Three Point Rectangle' button='Toolbar'  buttonIcon='button-three-point-rectangle'/> */}
 
-3点を指定して長方形を作成できます。
+<CommandReference
+  command="3点長方形"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-three-point-rectangle.png"
+  tier="both"
+/>
+
+## 説明
+
+3つの点を指定して長方形を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-three-point-rectangle" /> をクリックします。
-2. 四角形の角でクリックします。
-3. 四角形のもう1点をクリックします。
-4. カーソルを動かして大きさを調整し、クリックして確定します。
+1. ツールバーの <ButtonIcon type="button-three-point-rectangle" /> ボタンをクリックします。
+2. 長方形の角をクリックします。
+3. 長方形の別の点をクリックします。
+4. カーソルを移動してサイズを調整し、クリックして確定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> : 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-3. 右クリックで確定します。
-5. 四角形が作成されます。
+      - <kbd>Tab</kbd>: 寸法の直接入力が可能になります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)をご覧ください。
+      - <kbd>K</kbd> **ナイフ:** [ナイフモードの使用](/tool/sketching-essentials#use-knife-mode)を参照してください。
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+3. 右クリックして確定します。
+5. 長方形が作成されます。
 
 <VideoPlayer fileName="three-point-rectangle"/>
 
 ## 関連項目
 
-- [Center Rectangle](center-rectangle)
-- [Corner Rectangle](corner-rectangle)
-
-
-
+- [中心長方形](center-rectangle)
+- [コーナー長方形](corner-rectangle)

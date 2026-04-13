@@ -1,0 +1,136 @@
+---
+title: Konstruktions­ebenen
+description: Eine Anleitung zur Verwendung von Konstruktionsebenen. Wie man sie erstellt, speichert, umbenennt und wiederverwendet.
+---
+import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# Konstruktionsebenen
+
+Kurven werden auf der aktiven Konstruktionsebene erstellt.
+Konstruktionsebenen können die XY-, YZ- oder XZ-Ebene sein, und es können auch neue erstellt werden.
+
+### Verwendung der XY-, YZ- und XZ-Ebenen
+
+- <kbd>Numpad 7</kbd>: XY-Ebene verwenden. Dies zeigt eine Draufsicht.
+- <kbd>Numpad 3</kbd>: YZ-Ebene verwenden. Dies zeigt eine Ansicht von rechts.
+- <kbd>Numpad 1</kbd>: XZ-Ebene verwenden. Dies zeigt eine Vorderansicht.
+
+### Verwendung des 2D-Snappings
+
+Wenn aktiviert, projiziert 2D-Snapping alle ausgewählten Punkte auf die aktive Konstruktionsebene und beschränkt Bewegungen und Interaktionen auf deren Orientierung statt auf den 3D-Raum. Diese Option befindet sich im Ebenen-Menü auf der rechten Seite.
+
+![2D Snapping](/img/planes-2d-snapping.png)
+
+<Callout type="info">
+ **Hinweis:** 2D-Snapping erfordert eine **aktive** Konstruktionsebene. Wenn keine CPlane gesetzt ist, hat diese Option keine Wirkung.
+</Callout>
+
+<VideoPlayer fileName="construction-plane-0"/>
+
+### 1. Erstellen einer Konstruktionsebene, die an einer Fläche ausgerichtet ist
+
+Sie können eine Konstruktionsebene erstellen, die an der Fläche eines Körpers oder Blechs ausgerichtet ist.
+
+1. Wählen Sie die Fläche oder Region aus, die Sie als Konstruktionsebene verwenden möchten.
+2. Drücken Sie <kbd>Space</kbd>.
+3. Die Konstruktionsebene wird erstellt.
+4. Ihre Ansicht richtet sich an der erstellten Konstruktionsebene aus.
+
+- Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie <kbd>Shift + Space</kbd> statt <kbd>Space</kbd>.
+
+<VideoPlayer fileName="construction-plane-1"/>
+
+### 2. Erstellen einer senkrechten Konstruktionsebene über Flächen- und Kantenauswahl
+
+Sie können eine Konstruktionsebene erstellen, die senkrecht zu einer Fläche ausgerichtet ist, indem Sie eine Fläche und eine Kante auswählen.
+
+1. Wählen Sie die Fläche und die Kante aus, die Sie verwenden möchten.
+2. Drücken Sie <kbd>Space</kbd>.
+3. Die Konstruktionsebene wird erstellt.
+4. Ihre Ansicht richtet sich an der erstellten Konstruktionsebene aus.
+
+- Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie <kbd>Shift + Space</kbd> statt <kbd>Space</kbd>.
+
+<VideoPlayer fileName="construction-plane-6"/>
+
+<Callout type="info" emoji="💡">
+**Tipp**  
+   Die Auswahl einer Fläche dient als Referenz zur Ausrichtung der Ansicht, während die Auswahl einer Kante eine Richtung zur Orientierung vorgibt.
+</Callout>
+
+### 3. Erstellen einer Mittellinien-Konstruktionsebene aus gegenüberliegenden parallelen Flächen
+
+Sie können eine Konstruktionsebene basierend auf der durchschnittlichen Position gegenüberliegender paralleler Flächen oder Regionen erstellen, was zu einer Mittellinien-Konstruktionsebene führt.
+
+1. Wählen Sie mindestens zwei gegenüberliegende Flächen oder Regionen aus.
+2. Drücken Sie <kbd>Space</kbd>.
+3. Die Mittellinien-Konstruktionsebene wird erstellt.
+4. Ihre Ansicht richtet sich an der erstellten Konstruktionsebene aus.
+
+- Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie <kbd>Shift + Space</kbd> statt <kbd>Space</kbd>.
+
+<VideoPlayer fileName="construction-plane-2"/> 
+
+### 4. Erstellen einer Konstruktionsebene aus mehreren Punkten
+
+Sie können eine Konstruktionsebene basierend auf zwei oder mehr Punkten erstellen.
+
+1. Wählen Sie mindestens zwei Punkte aus.
+2. Drücken Sie <kbd>Space</kbd>.
+3. Wenn Sie zwei Punkte ausgewählt haben, wird eine Konstruktionsebene erstellt, die durch diese Punkte verläuft und parallel zur Kamera bleibt. Dies ist besonders nützlich, um eine Fläche oder Hülle an die aktuelle Blickrichtung auszurichten.
+3. Wenn Sie drei Punkte ausgewählt haben, wird die Ebene exakt an deren Position erstellt. Bei vier oder mehr Punkten wird die Ebene an deren Durchschnittsposition erstellt.
+4. Ihre Ansicht richtet sich an der erstellten Konstruktionsebene aus.
+
+- Wenn Sie Ihre Ansicht nicht ändern möchten, drücken Sie <kbd>Shift + Space</kbd>.
+- Sie können auch eine Region einer Skizze auswählen, um eine daran ausgerichtete Konstruktionsebene zu erstellen.
+
+<VideoPlayer fileName="construction-plane-3"/>
+
+### 5. Erstellen einer Konstruktionsebene, die an der aktuellen Ansicht ausgerichtet ist
+
+Sie können eine Konstruktionsebene erstellen, die an Ihrer aktuellen Ansicht ausgerichtet ist:
+
+#### 5.1 Konstruktionsebene durch den Weltursprung
+
+1. Positionieren Sie Ihre Ansicht in die gewünschte Richtung.
+2. Drücken Sie <kbd>Ctrl + Space</kbd>.
+3. Die Konstruktionsebene wird erstellt.
+
+<VideoPlayer fileName="construction-plane-4"/> 
+
+#### 5.2 Konstruktionsebene durch einen ausgewählten Punkt
+
+1. Positionieren Sie Ihre Ansicht in die gewünschte Richtung.
+2. Drücken Sie <kbd>Ctrl + Shift + Space</kbd>.
+3. Klicken Sie auf den Ursprung der gewünschten Konstruktionsebene.
+4. Die Konstruktionsebene wird erstellt.
+
+<VideoPlayer fileName="construction-plane-5"/> 
+
+### 6. Speichern und Verwenden von Konstruktionsebenen
+
+Sie können erstellte Konstruktionsebenen für später speichern.
+
+#### 6.1 Konstruktionsebenen speichern
+
+1. Klicken Sie oben auf **Temporary construction plane**.
+2. **Custom plane 0** wird im Outliner unter „Planes“ und im Menü „Added Planes“ auf der rechten Seite hinzugefügt.
+
+![Outliner Planes](/img/construction-plane-saved.png) 
+
+![Added Planes](/img/planes-added-planes.png)  
+
+#### 6.2 Gespeicherte Konstruktionsebenen verwenden
+
+1. Klicken Sie auf **Custom plane 0** auf der rechten Seite.
+2. Die gespeicherte Konstruktionsebene wird aktiv.
+
+- Durch Doppelklick auf **Custom plane 0** wird die Ebene aktiviert und die Ansicht daran ausgerichtet.
+
+#### 6.3 Konstruktionsebenen umbenennen
+
+1. Doppelklicken Sie auf die gespeicherte Konstruktionsebene im Outliner.
+2. Benennen Sie die Ebene um und drücken Sie Enter oder klicken Sie mit der linken Maustaste in den 3D‑Viewport.

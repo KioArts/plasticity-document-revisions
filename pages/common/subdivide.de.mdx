@@ -1,0 +1,33 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## Unterteilen
+
+{/* <Reference shortcut="" command="Unterteilen" button="" /> */}
+
+<CommandReference
+  command="Unterteilen"
+  shortcut=""
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-subdivide.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Erhöht die Anzahl der Kontrollpunkte (CVs) auf ausgewählten Kurven sowie die Anzahl der Grade und Spans auf ausgewählten Flächen, indem ihre Werte bei jedem Ausführen des Befehls **verdoppelt** werden.
+
+## Grundlegende Verwendung
+
+1. **Wähle** eine oder mehrere Kurven oder Flächen aus.  
+2. Öffne die Befehlspalette und gib **Unterteilen** ein.  
+3. Die Operation wird wie folgt ausgeführt:  
+   - **Flächen:** Grade und Spans werden jeweils um einen Wert erhöht, und die Fläche bleibt ausgewählt. Dies hängt stark davon ab, wie die Fläche konstruiert ist und wie viele Spans und Grade vorhanden sind.  
+   - **Kurven:** CVs werden verdoppelt, und die neu erzeugten CVs werden ausgewählt.
+
+<VideoPlayer fileName="subdivide"/>
+
+## Siehe auch
+- [Grad erhöhen](/sketch/raise-degree)
+- [Neu aufbauen](/sketch/rebuild)

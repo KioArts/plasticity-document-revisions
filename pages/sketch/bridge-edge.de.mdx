@@ -2,42 +2,63 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Edge[#bridge-edge]
+{/* # Bridge Edge[#bridge-edge]
 
-<Reference shortcut="" command="Bridge" button="" />
+<Reference shortcut="" command="Bridge" button="" /> */}
 
-Verbindet zwei Edges, die G0/G1/G2/G3-kontinuierlich sein können. Geben Sie an, welches Ende der Edges Sie verbinden möchten. Die Spannung ist einstellbar.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/bridge-edge.mp4"
+  alt="Bridge Edge Preview"
+  title="Bridge Edge"
+  command="Bridge"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-bridge-curve.png" alt="Bridge Curve Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Kante verbinden
 
-1. Wählen Sie zwei Edges aus, die Sie verbinden möchten.
-2. Verwenden Sie den **Bridge** Befehl in der Command Palette.
-3. Legen Sie die Optionen im Command Dialog und den Tastaturkürzeln fest.
-     - <Kst>Befehlsdialog</Kst>
-          - **Side:** 
-               - **Side 1:** Geben Sie an, welche Seite des Endpunkts des zuerst ausgewählten Edge verbunden werden soll.
-               - **Side 2:** Geben Sie an, welche Seite des Endpunkts des anschließend ausgewählten Edge verbunden werden soll.
-          - **T:**
-               - **Value 1/2:** Die relative Position auf dem Segment des Startpunkts/Endpunkts.
-          - **Direction:** 
-               - **Direction 1/2:** Die Richtung des Startpunkts/Endpunkts umkehren.
-          - **Tension 1:**
-               - **Value 1/2:** Der Spannungswert betrifft den 1. Control-Vertex(CV) bis 3. CV des Startpunkts/Endpunkts.
-          - **Tension 2:**
-               - **Value 1/2:** Der Spannungswert betrifft den 2. CV und 3. CV des Startpunkts/Endpunkts.
-          - **Tension 3:**
-               - **Value 1/2:** Der Spannungswert betrifft den 3. CV des Startpunkts/Endpunkts.
-          - **Start curvature:**
-               - **G0, G1, G2, G3:** Spezifizieren Sie die [continuity of the  Curve](/cad-essentials/continuity-curve-and-surface) am Startpunkt.
-          -  **End curvature:**
-               - **G0, G1, G2, G3:** Spezifizieren Sie die [continuity of the  Curve](/cad-essentials/continuity-curve-and-surface) am Endpunkt.      
-          - **Trim:** Wenn aktiviert, wird jede Curve, die über die Brücke hinausgeht, getrimmt.
-4. Bestätigen Sie mit OK im Command Dialog oder mit einem Rechtsklick.
+<CommandReference
+  command="Bridge"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Verbindet zwei Oberflächenkanten mit G0-, G1-, G2- oder G3-Kontinuität. Das zu verbindende Ende jeder Kante kann angegeben werden, die Spannung ist einstellbar und die Krümmungsmessung wird unterstützt.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie zwei Kanten aus, die Sie verbinden möchten.
+2. Verwenden Sie den Befehl **Verbinden** in der Befehlspalette.
+3. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+     - <Kst>Command Dialog</Kst>
+          - **Seite:**
+          - **Seite 1:** Gibt an, mit welcher Seite des Endpunkts der zuerst ausgewählten Kante verbunden werden soll.
+          - **Seite 2:** Gibt an, mit welcher Seite des Endpunkts der anschließend ausgewählten Kante verbunden werden soll.
+          - **Spannung 1:**
+               - **Wert 1/2:** Der Spannungswert beeinflusst den 1. Kontrollscheitelpunkt (CV) bis zum 3. CV des Start-/Endpunkts.
+          - **Spannung 2:**
+               - **Wert 1/2:** Der Spannungswert beeinflusst den 2. CV und 3. CV des Start-/Endpunkts.
+          - **Spannung 3:**
+               - **Wert 1/2:** Der Spannungswert beeinflusst den 3. CV des Start-/Endpunkts.
+          - **Startkrümmung:**
+               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Startpunkt an.
+          - **Endkrümmung:**
+               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Endpunkt an.
+          - **Krümmung anzeigen:** Schaltet die Krümmungsvisualisierung auf der Kurve um. Weitere Informationen unter [Krümmung umschalten](/tool/toggle-curvature).
+     - <Kst>Keyboard Shortcuts</Kst>
+          - <kbd>Tab</kbd> **Kontinuität wechseln:** Wechselt zwischen G0-, G1-, G2- und G3-Kontinuität.
+          - <kbd>D</kbd> **G1-Spannung:** Passt die Spannung für G1-Kontinuität an.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="bridge-edge"/>
 
 ## Siehe auch
-- [Bridge](bridge)
-- [Bridge Curve](bridge-curve)
-- [Bridge Vertex](bridge-vertex)
-- [Join](join)
+- [Verbinden](bridge)
+- [Kurve verbinden](bridge-curve)
+- [Scheitelpunkt verbinden](bridge-vertex)
+- [Zusammenfügen](join)

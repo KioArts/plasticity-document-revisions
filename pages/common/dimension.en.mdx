@@ -1,9 +1,19 @@
 import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
 
-# Dimension
+## Dimension
 
-<Reference shortcut="= (Equals Sign)" command="Dimension" button="" />
+{/* <Reference shortcut="= (Equals Sign)" command="Dimension" button="" /> */}
+
+<CommandReference
+  command="Dimension"
+  shortcut="="
+  button="In Command Palette"
+  buttonIcon="/img/button-dimension.png"
+  tier="both"
+/>
+
+## Description
 
 Modify dimension values such as the size of a rectangular curve or the diameter of a cylinder.
 
@@ -29,4 +39,4 @@ Modify dimension values such as the size of a rectangular curve or the diameter 
 <VideoPlayer fileName="dimension"/>
 
 ## See also
-- [Measure](measure)
+- [Measure](/tool/measure)

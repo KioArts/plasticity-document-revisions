@@ -1,57 +1,91 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
 
-# Offset Planar Curve（カーブをオフセットする）
+{/* # Offset Planar Curve
 
-<Reference shortcut="O" command="Offset Curve" button="推奨コマンドメニューで"  buttonIcon='button-offset-curve'/>
+<Reference shortcut="O" command="Offset Curve" button="In Suggested Commands Menu"  buttonIcon='button-offset-curve'/> */}
 
-平面カーブを指定した距離でオフセットして新しいカーブを作成できます。両側での対称的なオフセットのオプションも利用可能です。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/offset-planar-curve.mp4"
+  alt="Offset Planar Curve Preview"
+  title="Offset Planar Curve"
+  command="Offset Curve"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-offset-curve.png" alt="Offset Curve Icon" />}
+/> */}
+
+## 平面カーブのオフセット
+
+<CommandReference
+  command="Offset Curve"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-offset-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+距離を指定して平面カーブをオフセットし、新しいカーブを作成します。両側への対称オフセットのオプションも利用できます。
 
 ## 基本的な使い方
 
 1. オフセットしたいカーブを選択します。
-2. <kbd>O</kbd>を押します。
-3. 黄色い矢印を動かして距離を指定します。   
+2. <kbd>O</kbd> を押します。
+3. 黄色い矢印を移動して距離を指定します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
-   - <Kst>コマンドダイアログ</Kst>
-      - **Distance:** 距離を指定します。
-      - **Gap fill:** 
-         - **Round:** 出っ張った角を丸めます。
-         - **Linear:** 出っ張った角を直線でつなぎます。 
-         - **Natural** ナチュラル
-   - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> **Lock distances:** 両側に等しい距離でオフセットします。
-      - <kbd>F</kbd> **Freestyle:** 下記の[**Freestyle Offset Planar Curve**](#freestyle-offset-planar-curve)と同様の機能です。
-      - <kbd>V</kbd> **Gap fill:**
-      - <kbd>D</kbd> **Distance:** マウスの動きで距離を指定します。
-5. コマンドダイアログのOKか右クリックで確定します。
+   - <Kst>Command Dialog</Kst>
+   - **距離:** 距離を指定します。
+   - **ギャップ埋め:** 空きスペースの埋め方を指定します。
+         - **ラウンド:** 凸角を丸めます。
+         - **リニア:** 凸角を直線で結び、追加の頂点を加えます。
+         - **ナチュラル:** 追加の頂点を加えずに元の形状を保持します。
+         <img src="/img/offset-gap-fill.svg" width="450" />
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>S</kbd> **距離をロック:** 両側に等しい距離でオフセットします。
+      - <kbd>F</kbd> **フリースタイル:** 以下で説明する[**フリースタイル平面カーブのオフセット**](#freestyle-offset-planar-curve)と同様に機能します。
+      - <kbd>O</kbd> **スロット:** [スロット](/sketch/slot)コマンドを呼び出します。
+      - <kbd>V</kbd> **ギャップ埋め:** ギャップ埋めオプションを切り替えます。
+      - <kbd>D</kbd> **距離:** マウスの移動で距離を指定します。
+5. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="offset-planar-curve"/>
 
-## Freestyle Offset Planar Curve
+## フリースタイル平面カーブのオフセット
 
-カーソルの動きを使用して距離を指定し、平面カーブをオフセットして新しいカーブを作成できます。両側での対称的なオフセットのオプションも利用可能です。
+カーソルの移動で距離を指定して平面カーブをオフセットし、新しいカーブを作成します。両側への対称オフセットのオプションも利用できます。
 
-- このコマンドは、**Offset Curve **コマンドの**Freestyle**オプションだけでなく、コマンドパレットの**Freestyle Offset Planar Curve **を使っても実行できます。
+<Callout type="info">
+**注意:**
+このコマンドは、**カーブをオフセット** コマンドの **フリースタイル** オプションからだけでなく、コマンドパレットの **フリースタイル平面カーブをオフセット** を使用して実行することもできます。
+</Callout>
+
+### 基本的な使い方
 
 1. オフセットしたいカーブを選択します。
-2. <kbd>O</kbd>を押します。
-3. <kbd>F</kbd>を押してフリースタイルモードに入ります。
-4. カーソルをオフセットする位置に移動してクリックします。
-   - グリッドスナップが有効な場合、グリッドにスナップされます。
-   - オブジェクトスナップが有効な場合、オブジェクトにスナップされます。
-   - <Kst>コマンドダイアログ</Kst>
-      - **Distance:** 距離を指定します。
-      - **Gap fill:**
-         - **Round:** 出っ張った角を丸めます。
-         - **Linear:** 出っ張った角を直線でつなぎます。 
-         - **Natural** ナチュラル
-   - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> **Lock distances:** 両側に等しい距離でオフセットします。
-5. コマンドダイアログのOKか右クリックで確定します。
+2. <kbd>O</kbd> を押します。
+3. <kbd>F</kbd> を押してフリースタイルモードに入ります。
+4. カーソルをオフセットポイントに移動してクリックします。
+   - グリッドスナップが有効な場合、オフセットポイントはグリッドにスナップします。
+   - オブジェクトスナップが有効な場合、オフセットポイントはオブジェクトにスナップします。
+   - <Kst>Command Dialog</Kst>
+      - **距離:** 距離を指定します。
+      - **ギャップ埋め:** 空きスペースの埋め方を指定します。
+         - **ラウンド:** 凸角を丸めます。
+         - **リニア:** 凸角を直線で結び、追加の頂点を加えます。
+         - **ナチュラル:** 追加の頂点を加えずに元の形状を保持します。
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>S</kbd> **距離をロック:** 両側に等しい距離でオフセットします。
+      - <kbd>V</kbd> **ギャップ埋め:** ギャップ埋めオプションを切り替えます。
+5. コマンドダイアログのOKまたは右クリックで確定します。
+
+<VideoPlayer fileName="freestyle-offset-planar-curve"/>
 
 ## 関連項目
-- [Offset Curve](offset-curve)
-- [Offset Vertex](offset-vertex)
-- [Offset Region](offset-region)
+- [カーブのオフセット](offset-curve)
+- [頂点のオフセット](offset-vertex)
+- [リージョンのオフセット](offset-region)

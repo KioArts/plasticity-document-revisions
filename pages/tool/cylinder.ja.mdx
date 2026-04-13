@@ -3,39 +3,41 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Cylinder
+## シリンダー（Cylinder）
 
-<Reference shortcut='Shift + C' command='Cylinder' button='ツールバー'  buttonIcon='button-cylinder'/>
+{/* <Reference shortcut='Shift + C' command='Cylinder' button='Toolbar'  buttonIcon='button-cylinder'/> */}
 
+<CommandReference
+  command="Cylinder"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-cylinder.png"
+  tier="both"
+/>
 
-円と高さを指定して円柱を作成できます。
+## 説明
+
+底面の円と高さを指定して、シリンダー（円柱）を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-cylinder" /> をクリックします。
-2. 円の中心位置でクリックします。
-3. カーソルを動かして底面の大きさを調整し、クリックして確定します。
+1. ツールバーの <ButtonIcon type="button-cylinder" /> ボタンをクリックします。
+2. 円の中心位置をクリックして指定します。
+3. カーソルを動かして底面円の大きさを調整し、クリックして確定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> : 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-      - <kbd>V</kbd> **Vertical/ Horizontal:** 構築平面に対する傾きを変更します。
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+      - <kbd>Tab</kbd>: 寸法を直接入力できます。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)。
+      - <kbd>V</kbd> **Vertical/Horizontal:** 作業平面に対する傾きを変更します。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [X/Y/Z 軸に拘束](/tool/sketching-essentials#constrain-to-an-axis)。
 4. カーソルを動かして高さを調整し、クリックして確定します。
    - <Kst>コマンドダイアログ</Kst>
-      - **Select target bodies**
-         - Booleanコマンドと同じ機能です。詳細は[**Boolean**](/solid/boolean)コマンドを参照してください。
-      - **Radius:** 直径を指定します。
-      - **Height:** 高さを指定します。
+      - **対象ボディを選択**
+         - Boolean コマンドと同じ動作です。詳細は [**Boolean**](/solid/boolean) を参照してください。
+      - **半径:** 半径を指定します。
+      - **高さ:** 高さを指定します。
    - <Kst>キーボードショートカット</Kst>
       - <kbd>Shift + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>, <kbd>Shift + E</kbd>, <kbd>B</kbd>, <kbd>T</kbd>
-         - Booleanコマンドと同じ機能です。詳細は[**Boolean**](/solid/boolean)コマンドを参照してください。
-      - <kbd>F</kbd> **Radius:** カーソルを動かして直径を指定します。
-      - <kbd>D</kbd> **Height:** カーソルを動かして高さを指定します。
-5. 黄色のドットを動かして形状を調整することもできます。
-6. コマンドダイアログのOKをクリックするか、右クリックで確定します。
-7. 円柱が作成されます。
-
-<VideoPlayer fileName="cylinder"/>
-
-
-
-
+         - Boolean コマンドと同じ動作です。詳細は [**Boolean**](/solid/boolean) を参照してください。
+      - <kbd>F</kbd> **Radius:** カーソル移動で半径を調整します。
+      - <kbd>D</kbd> **Height:** カーソル移動で高さを調整します。
+5. 黄色いドットを動かして形状を調整することもできます。
+6. コマンドダイアログの OK をクリックするか、右クリックして確定します。

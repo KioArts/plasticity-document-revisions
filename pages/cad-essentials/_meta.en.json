@@ -1,7 +1,11 @@
 {
+  "---theory": { "type": "separator", "title": "Theory Builder" },
   "nurbs-overview": "NURBS Overview",
   "uvn-coordinate-system": "UVN Coordinate System",
   "continuity-curve-and-surface": "Continuity of Curves and Surfaces",
+
+  "---rules": { "type": "separator", "title": "Alias Golden Rules" },
   "how-to-use-splines-to-create-class-a-Surfaces": "How to use Splines to create Class-A Surfaces",
   "fillet-order-of-operations": "Fillet Order of Operations"
+  
 }

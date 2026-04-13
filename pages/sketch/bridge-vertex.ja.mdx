@@ -1,35 +1,61 @@
 import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Vertex（頂点をなめらかに繋げる）[#bridge-vertex]
+{/* # Bridge Vertex[#bridge-vertex]
 
-<Reference shortcut="" command="Bridge" button="" />
+<Reference shortcut="" command="Bridge" button="" /> */}
 
-連続性を考慮してふたつの頂点を繋げることができます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/bridge-vertex.mp4"
+  alt="Bridge Edge Preview"
+  title="Bridge Vertex"
+  command="Bridge"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-bridge-curve.png" alt="Bridge Curve Icon" />}
+/> */}
+
+## 頂点のブリッジ
+
+<CommandReference
+  command="Bridge"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+2つの頂点をG0、G1、G2、またはG3連続性でブリッジします。テンションは調整可能で、曲率の測定もサポートされています。
 
 ## 基本的な使い方
 
-1. 繋げたいふたつの頂点を選択します。
-2. コマンドパレットで **Bridge** を実行します。
+1. ブリッジしたい2つの頂点を選択します。
+2. コマンドパレットで **ブリッジ** コマンドを使用するか、代わりに <kbd>L</kbd> を押します。
 3. コマンドダイアログとキーボードショートカットでオプションを設定します。
-     - <Kst>コマンドダイアログ</Kst>
-          - **Tension 1:**
-               - **Value 1/2:** 始点/終点の第1制御点(CV)から第3CVに影響するテンション値を指定します。
-          - **Tension 2:**
-               - **Value 1/2:** 始点/終点の第2CVと第3CVに影響するテンション値を指定します。
-          - **Tension 3:**
-               - **Value 1/2:** 始点/終点の第3CVに影響するテンション値を指定します。
-          - **Start curvature:**
-               - **G0, G1, G2, G3:** 始点での[曲線の連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-               - **End curvature:**
-               - **G0, G1, G2, G3:** 終点での[曲線の連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-4. コマンドダイアログでOKを押すか、右クリックで確定します。
+     - <Kst>Command Dialog</Kst>
+          - **テンション 1:**
+               - **値 1/2:** 開始点/終了点の第1コントロール頂点（CV）から第3CVに影響するテンション値。
+          - **テンション 2:**
+               - **値 1/2:** 開始点/終了点の第2CVと第3CVに影響するテンション値。
+          - **テンション 3:**
+               - **値 1/2:** 開始点/終了点の第3CVに影響するテンション値。
+          - **開始曲率:**
+               - **G0, G1, G2, G3:** 開始点における[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+          - **終了曲率:**
+               - **G0, G1, G2, G3:** 終了点における[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+     - <Kst>Keyboard Shortcuts</Kst>
+          - <kbd>Tab</kbd> **連続性の切り替え:** G0、G1、G2、G3連続性を切り替えます。
+          - <kbd>D</kbd> **G1テンション:** G1連続性のテンションを調整します。
+4. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="bridge-vertex"/>
 
 ## 関連項目
-- [Bridge](bridge)
-- [Bridge Curve](bridge-curve)
-- [Bridge Edge](bridge-edge)
-- [Join](join)
+- [ブリッジ](bridge)
+- [カーブのブリッジ](bridge-curve)
+- [エッジのブリッジ](bridge-edge)
+- [結合](join)

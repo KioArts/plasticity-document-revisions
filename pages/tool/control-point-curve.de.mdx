@@ -4,31 +4,40 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Control Point Curve
+## Control Point Curve
 
-<Reference shortcut="" command="Control Point Curve" button="Werkzeugleiste" buttonIcon='button-control-point-curve' />
+{/* <Reference shortcut="" command="Control Point Curve" button="Toolbar" buttonIcon='button-control-point-curve'/> */}
 
-Klicken Sie auf Kontrollpunkte, um eine Kurve zu erstellen.
+<CommandReference
+  command="Control Point Curve"
+  shortcut=""
+  button="In der Toolbar"
+  buttonIcon="/img/button-control-point-curve.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-control-point-curve" /> Knopf in der Werkzeugleiste.
-2. Klicken Sie, um den Startpunkt der Kurve festzulegen.
-3. Klicken Sie auf Kontrollpunkte, um die Kurve zu erstellen.
+Klicke auf Kontrollpunkte, um eine Kurve zu erstellen.
+
+## Grundlegende Verwendung
+
+1. Klicke auf den <ButtonIcon type="button-control-point-curve" />‑Button in der Toolbar.
+2. Klicke, um den Startpunkt der Kurve festzulegen.
+3. Klicke auf Kontrollpunkte, um die Kurve zu erstellen.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>K</kbd> **Knife:** Siehe [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
-      - <kbd>Tab</kbd> **Control / Through-point:** Wechselt zu Spline-Kurve.
-      - <kbd>Strg + Z</kbd> **Undo:** Hebt den letzten Klick auf.
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Axis:** [Beschränkt auf X, Y, Z Achse](/tool/sketching-essentials#constrain-to-an-axis).
-4. Nach dem Klicken auf den letzten Kontrollpunkt, rechtsklick zur Bestätigung.
+      - <kbd>K</kbd> **Knife:** Siehe [Knife‑Modus verwenden](/tool/sketching-essentials#use-knife-mode).
+      - <kbd>Tab</kbd> **Kontrollpunkt / Durch‑Punkt:** Wechselt zur Spline Curve.
+      - <kbd>Ctrl + Z</kbd> **Rückgängig:** Macht den letzten Klick rückgängig.
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z‑Achse:** [Bewegung auf Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+4. Nach dem letzten Kontrollpunkt Rechtsklick zum Bestätigen.
 5. Die Kurve wird erstellt.
 
-<Callout type="info" emoji="💡">
-**Unterschied zwischen zwei Kurventypen**
-- Spline Curve: Klicken Sie auf Punkte, durch die die Kurve verlaufen soll, um sie zu erstellen.
-- Control Point Curve: Klicken Sie auf die Kontrollpunkte der Kurve, um sie zu erstellen.
+<Callout type="info">
+**Unterschied zwischen den beiden Kurventypen**  
+   - **Spline Curve:** Die Kurve verläuft durch jeden angeklickten Punkt.  
+   - **Control Point Curve:** Die angeklickten Punkte werden zu Kontrollpunkten und liegen nicht unbedingt auf der Kurve.
 </Callout>
-
 
 <VideoPlayer fileName="spline-and-control-point-curve"/>
 

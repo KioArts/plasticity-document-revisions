@@ -4,35 +4,46 @@ import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Draft Face（フェイスを傾ける）
+## Draft Face
 
-<Reference shortcut="" command="Draft Face"  button="推奨コマンドメニューで"   buttonIcon='button-draft-face'/>
+{/* <Reference shortcut="" command="Draft Face" button="推奨コマンドメニュー内"   buttonIcon='button-draft-face' /> */}
 
-フェイスを傾けることができます。
+<CommandReference
+  command="Draft Face"
+  shortcut=""
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-draft-face.png"
+  tier="both"
+/>
+
+## 説明
+
+選択した面にドラフト角度を適用します。
 
 ## 基本的な使い方
 
-1. リファレンス面となるフェイスを選択します。
-2. 推奨コマンドメニュー ([Suggested Commands](/plasticity-essentials/command-bar#suggested-commands)) 内の <ButtonIcon type="button-draft-face" /> ボタンをクリックしてください。
-3. <kbd>Ctrl</kbd> ボタンを押しながら、ドラフトする面を選択します。
-4. 白い円をドラッグしてドラフトの角度を指定するか、ギズモを使って参照平面の位置を調整します。
+1. 参照平面として使用する面を選択します。
+3. <kbd>Shift</kbd> でドラフトする面を選択し、<kbd>Ctrl</kbd> で選択解除します。
+2. コマンドパレットで **Draft Face** を検索して実行します。
+4. 白い円をドラッグしてドラフト角度を指定するか、Gizmo を使用して参照平面の位置を調整します。
 5. コマンドダイアログとキーボードショートカットでオプションを設定します。
     - <Kst>コマンドダイアログ</Kst>
-        - **Degrees:** 傾ける角度を指定します。
-        - **Grow:**
-            - 凹んだ内側のフェイスを傾けるとき:
-            - **Moving:** 傾斜面が外壁に到達したら、外壁を延長します。
-            - **Fixed:** 外壁で停止します。
-            - **None:** 外壁の影響を受けず、傾斜面が進み続けます。
+        - **角度（Degrees）：** ドラフト角度を指定します。
+        - **成長（Grow）：**
+            - 凹面の内側をドラフトする場合。
+            - **移動（Moving）：** ドラフト面が外側の壁に到達したとき、外側の壁を延長します。
+            - **固定（Fixed）：** 外側の壁で停止します。
+            - **なし（None）：** 外側の壁に影響されず、また影響を与えずにそのまま進みます。
     - <Kst>キーボードショートカット</Kst>
-        - <kbd>A</kbd> **Angle adjacent** カーソルを動かして角度を指定します。
-6. コマンドダイアログのOKボタンをクリックするか、右クリックして確定します。
+        - <kbd>A</kbd> **隣接角度：** カーソルの移動で角度を指定します。
+        - <kbd>D</kbd> **オフセット：** ニュートラル面を再配置します。
+        - <kbd>Ctrl</kbd> **選択の変更：** ドラフト面を追加または削除します。
+6. コマンドダイアログの OK または右クリックで確定します。
 
 <VideoPlayer fileName="draft-face"/>
 
-<Callout type="info" emoji="🗒️">
-**Note**
-非均一な面にドラフトコマンドを適用することは可能ですが、いくつかの制限があります。ドラフト角度を指定することはできますが、参照平面を移動することはできません。
+<Callout type="info">
+**注意:** 非均一なサーフェスにドラフトコマンドを適用することは可能ですが、いくつか制限があります。ドラフト角度は指定できますが、参照平面を移動することはできません。
 </Callout>
 
 ## 関連項目

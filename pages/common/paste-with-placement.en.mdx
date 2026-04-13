@@ -1,9 +1,20 @@
 import Reference from '/components/Reference'
+import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Paste with Placement
+## Paste with Placement
 
-<Reference shortcut="Ctrl + Shift + V" command="Paste With Placement" button="" />
+{/* <Reference shortcut="Ctrl + Shift + V" command="Paste With Placement" button="" /> */}
+
+<CommandReference
+  command="Paste With Placement"
+  shortcut="Ctrl + Shift + V"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-paste-with-placement.png"
+  tier="both"
+/>
+
+## Description
 
 Paste objects with a reference point. Use it alongside the [**Copy with Placement**](copy-with-placement) command for similar functionality to the [**Place**](place) command. This is particularly useful for placing objects in different windows.
 
@@ -31,3 +42,8 @@ Paste objects with a reference point. Use it alongside the [**Copy with Placemen
     3. Right-click to confirm.
     4. To copy additional objects, repeat steps 3-2 and 3-3.
     5. Press <kbd>Esc</kbd> to exit the command.
+
+    <VideoPlayer fileName="copy-with-placement"/>
+
+## See also
+- [Copy with Placement](/common/copy-with-placement)

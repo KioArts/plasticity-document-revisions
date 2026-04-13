@@ -1,40 +1,42 @@
 import VideoPlayer from '/components/VideoPlayer';
-import  Reference from '/components/Reference'
-import ButtonIcon from '/components/ButtonIcon';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Spline Curve
+## Spline Curve
 
-<Reference shortcut="" command="Spline Curve" button="ツールバー"  buttonIcon='button-spline-curve'/>
+{/* <Reference shortcut="" command="Spline Curve" button="Toolbar"  buttonIcon='button-spline-curve'/> */}
 
-カーブが通過する点をクリックしてカーブを作成します。
+<CommandReference
+  command="Spline Curve"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-spline-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+クリックしたポイントを通過するカーブを作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-spline-curve" /> をクリックします。
-2. カーブの始点でクリックします。
-3. カーブが通過する点をクリックしてカーブを作成します。
+1. ツールバーの <ButtonIcon type="button-spline-curve" /> ボタンをクリックします。
+2. カーブの開始点をクリックします。
+3. カーブが通過するポイントをクリックしてカーブを作成します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-      - <kbd>Tab</kbd> **Control /  Through-point:** Control Point Curveに切り替えます。
-      - <kbd>Ctrl + Z</kbd> **Undo:** 直前のクリックを取り消します。
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-4. 最後の点をクリックしたら、右クリックで確定します。
+      - <kbd>K</kbd> **Knife:** [ナイフモードの使用](/tool/sketching-essentials#use-knife-mode) を参照。
+      - <kbd>Tab</kbd> **コントロール / 通過点:** コントロールポイントカーブに切り替えます。
+      - <kbd>Ctrl + Z</kbd> **元に戻す:** 最後のクリックを取り消します。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [軸に制限する](/tool/sketching-essentials#constrain-to-an-axis)。
+4. 最後のポイントをクリックしたら、右クリックで確定します。
 5. カーブが作成されます。
 
-<VideoPlayer fileName="spline-and-control-point-curve"/>
-
-<Callout type="info" emoji="💡">
-**２つのカーブの違い**
-- Spline Curve: カーブが通過する点をクリックして、カーブを作成します。
-- Control Point Curve: カーブの制御点をクリックして、カーブを作成します。
+<Callout type="info">
+**2 種類のカーブの違い**  
+   - **Spline Curve:** カーブはクリックしたすべての点を通過します。  
+   - **Control Point Curve:** クリックした点はコントロールポイントとなり、カーブ上に位置しない場合があります。
 </Callout>
 
-<VideoPlayer fileName="spline-curve"/>
-
-## 関連項目
-- [Control Point Curve](control-point-curve)
-
-
-
+<VideoPlayer fileName="spline-and-control-point-curve"/>

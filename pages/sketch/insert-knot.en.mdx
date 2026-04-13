@@ -3,15 +3,37 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 
-# Insert Knot
+{/* # Insert Knot
 
-<Reference shortcut="" command="Insert Knot" button="Toolbar" buttonIcon='button-insert-cv-into-curve' />
+<Reference shortcut="" command="Insert Knot" button="Toolbar" buttonIcon='button-insert-cv-into-curve' /> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/insert-knot.mp4"
+  alt="Insert Knot Preview"
+  title="Insert Knot"
+  command="Insert CV into curve"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-insert-cv-into-curve.png" alt="Insert CV Into Curve icon" />}
+/> */}
+
+## Insert Knot
+
+<CommandReference
+  command="Insert CV into curve"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-insert-cv-into-curve.png"
+  tier="both"
+/>
+
+## Description
 
 Insert a CV (Control-Vertex) in a spline curve.
 
 ## Basic Usage
 
-1. Click the button <ButtonIcon type="button-split-segment" /> on the Toolbar.
+1. Click the button <ButtonIcon type="button-insert-cv-into-curve" /> on the Toolbar.
 2. Click on the point where you want to insert a CV.
 3. A CV is inserted, adding additional point to the spline curve.
 

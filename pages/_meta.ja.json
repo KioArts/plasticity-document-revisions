@@ -1,41 +1,32 @@
 {
-    "index": { 
-        "display": "hidden" 
-    },
-    "whats-new": "更新情報", 
-    "all-commands": "コマンドリスト & ショートカットキー",
-    "---1": {
-        "type": "separator",
-        "title": ""
-    },
-    "getting-started": "はじめに",
-    "plasticity-essentials": "Plasticityの基本",
-    "---2": {
-        "type": "separator",
-        "title": "ツール"
-    },
-    "tool": "スケッチ & プリミティブ ツール",
-    "---3": {
-        "type": "separator",
-        "title": "コマンド"
-    },
-    "common": "共通",
-    "sketch": "スケッチ",
-    "solid": "ソリッド",
-    "---4": {
-        "type": "separator",
-        "title": "連携"
-    },
-    "blender": "Blender",
-    "---5": {
-        "type": "separator",
-        "title": "応用"
-    },
-    "cad-essentials": "CADの基本",
-    "release-notes": "Release Notes",
-    "contact": {
-        "title": "ユーザーサポート",
-        "type": "page",
-        "href": "/getting-started/user-support"
-    }
+  "index": { "display": "hidden" },
+
+  "whats-new": "What's New",
+  "all-commands": "Command List & Shortcut Keys",
+
+  "---intro": { "type": "separator", "title": "Introduction" },
+  "getting-started": "Getting Started",
+  "plasticity-essentials": "Plasticity Essentials",
+  "cad-essentials": "CAD Essentials",
+
+  "---tools": { "type": "separator", "title": "Tools" },
+  "tool": "Sketching & Primitive Tools",
+
+  "---commands": { "type": "separator", "title": "Commands" },
+  "common": "Common",
+  "sketch": "Sketch",
+  "solid": "Solid",
+
+  "---integration": { "type": "separator", "title": "Integration" },
+  "blender": "Blender",
+
+  "---advanced": { "type": "separator", "title": "Advanced" },
+
+  "---support": { "type": "separator", "title": "Support" },
+  "release-notes": "Release Notes",
+  "contact": {
+    "title": "User Support",
+    "type": "page",
+    "href": "/getting-started/user-support"
+  }
 }

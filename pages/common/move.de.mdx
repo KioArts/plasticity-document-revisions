@@ -4,181 +4,149 @@ import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Move
+## Verschieben
 
-<Reference shortcut="G" command="Move" button="In der Befehlsleiste"  buttonIcon='button-move'/>
+{/* <Reference shortcut="G" command="Verschieben" button="In Command Bar"  buttonIcon='button-move'/> */}
 
-Bewegen Sie Objekte mit dem **Move‑Gizmo**. Sie können die Bewegung auf eine einzelne Achse beschränken oder **Freistil‑Bewegung** verwenden ([Details siehe](#freestyle-move)). Der Pivot‑Punkt ist ebenfalls anpassbar. Wenn Sie ein neues Primitive‑ oder Skizzenobjekt an dessen Anfangseinfügepunkt einfügen, richten sich das Move‑Gizmo und der Pivot automatisch nach der Normalen der Objektoberfläche aus.
+<CommandReference
+  command="Verschieben"
+  shortcut="G"
+  button="In Command Bar"
+  buttonIcon="/img/button-move.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Objekte aus, die Sie verschieben möchten.  
-2. Drücken Sie <kbd>G</kbd>.  
-3. Verwenden Sie das angezeigte Verschiebe-Gizmo, um die Objekte zu bewegen.  
-4. Legen Sie die Optionen im Befehlsdialog und in den Tastenkombinationen fest.  
-   - <Kst>Befehlsdialog</Kst>  
-      - **XYZ:** Geben Sie die Verschiebung der X-, Y- und Z-Achsen an.  
-      - **Ausrichtung:** Legen Sie die Ausrichtung des Verschiebe-Gizmos fest.  
-         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Oberflächennormalen des Objekts aus.  
-         - <ButtonIcon type="button-pivot"/> **Pivot:** Setzt die Ausrichtung auf die zuvor definierte Pivot-Ausrichtung.  
-         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet die Ausrichtung an der aktiven Konstruktions-Ebene aus.  
-         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an den globalen (Welt-) Achsen aus.  
-      - **Pivot:** Legen Sie die Position des Pivot-Punkts fest.  
-         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.  
-         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.  
-         - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts.   
+Objekte mit dem **Verschieben-Gizmo** bewegen. Die Bewegung kann auf eine einzelne Achse beschränkt oder **freies Bewegen** verwendet werden ([Details ansehen](#freestyle-move)). Der Pivotpunkt ist ebenfalls einstellbar. Wenn ein neues Grundkörper- oder Skizzenobjekt an seinem anfänglichen Einfügepunkt eingefügt wird, richten sich der Verschieben-Gizmo und der Pivot automatisch an der Flächennormalen des Objekts aus.
 
-         ![Pivot Demonstration](/img/pivot-move.png)
-
-   - <Kst>Tastenkombinationen</Kst>  
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).  
-      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.  
-      - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.  
-      - <kbd>F</kbd> **Freistil:** Klicken Sie, um den Start- und Endpunkt festzulegen, um Richtung und Distanz der Bewegung zu bestimmen.  
-      - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmos festzulegen.  
-      - <kbd>Alt + V</kbd> **Pivot entfernen:** Entfernt die konfigurierten Pivots.  
-      - <kbd>W</kbd> **Ausrichtung:** Ändert die Koordinatenachsen des Gizmos auf verschiedene Ausrichtungen.  
-5. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick. 
-
-<Callout type="info" emoji="💡">
-**Tipps**
-- Um ausgewählte Objekte zum Ursprung zu verschieben, drücken Sie: <kbd>G</kbd> (Move) > <kbd>F</kbd> > Rechtsklick > Rechtsklick.
-- Um ein Objekt basierend auf einem ausgewählten Punkt zum Ursprung zu verschieben, drücken Sie: <kbd>G</kbd> (Move) > <kbd>F</kbd> > Klicken Sie auf den Punkt des Objekts > Rechtsklick.
-</Callout>
-
-## Freestyle Move[#freestyle-move]
-
-Dieser Befehl entspricht der <kbd>F</kbd> Option des **Move** Befehls.
-
-1. Wählen Sie die Objekte aus, die Sie verschieben möchten.
-2. Verwenden Sie den **Freestyle Move** Befehl in der Befehlspalette.
-3. Klicken Sie auf den Start- und Endpunkt, um die Richtung und Entfernung der Bewegung zu bestimmen.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-   - Die Option ist dieselbe wie beim **Move** Befehl.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
-
-<VideoPlayer fileName="freestyle-move"/>
-
-## Move Control Point
-
-<Reference shortcut="G" command="Move" button="Left of Command Bar"  buttonIcon='button-move'/>
-
-Bewegen Sie Kontrollpunkte, die auf einer Oberfläche liegen, mithilfe des Verschiebungs-Gizmos. Optionen für Einzelachsenbeschränkungen oder [**Freistilbewegung**](#freestyle-move) sowie Proportionale Bearbeitung sind verfügbar. Die Ausrichtung des Verschiebungs-Gizmos und die Platzierung des Drehpunkts sind ebenfalls anpassbar.
-
-### Grundlegende Nutzung
+## Grundlegende Verwendung
 
 1. Wählen Sie die Objekte aus, die Sie verschieben möchten.
 2. Drücken Sie <kbd>G</kbd>.
-3. Verwenden Sie das angezeigte Verschiebungs-Gizmo, um die Objekte zu bewegen.
-4. Legen Sie die Optionen im Befehlsdialog und in den Tastenkürzeln fest.
+3. Verwenden Sie den angezeigten Verschieben-Gizmo zum Bewegen.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
    - <Kst>Befehlsdialog</Kst>
-      - **XYZ:** Geben Sie die Verschiebungswerte für die X-, Y- und Z-Achse an.
-      - **Ausrichtung:** Legen Sie die Ausrichtung des Verschiebungs-Gizmos fest.
-         - <ButtonIcon type="button-normal"/> **Normal:** Richtet sich nach der Oberflächennormalen des Objekts aus.
-         - <ButtonIcon type="button-pivot"/> **Pivot:** Entspricht der zuvor definierten Pivot-Ausrichtung.
-         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet sich an der aktiven Konstruktions-Ebene aus.
-         - <ButtonIcon type="button-world"/> **Welt:** Richtet sich an den globalen (Welt-)Achsen aus.
-      - **Pivot:** Legen Sie die Position des Drehpunkts fest.
-         - <ButtonIcon type="button-bbox"/> **Bbox:** Platziert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.
-         - <ButtonIcon type="button-median"/> **Median:** Platziert den Pivot an der durchschnittlichen Position der Drehpunkte der ausgewählten Objekte.
-         - <ButtonIcon type="button-active"/> **Aktiv:** Platziert den Pivot am Drehpunkt des zuletzt ausgewählten (aktiven) Objekts.
+      - **XYZ:** Geben Sie den Verschiebebetrag der X-, Y- und Z-Achse an.
+      - **Ausrichtung:** Legen Sie die Ausrichtung des Verschieben-Gizmos fest.
+         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Flächennormalen des Objekts aus.
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Richtet die Ausrichtung an der zuvor definierten Pivot-Ausrichtung aus.
+         - <ButtonIcon type="button-construction-plane"/> **Konstruktionsebene:** Richtet die Ausrichtung an der aktiven Konstruktionsebene aus.
+         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an der globalen (Welt-)Achse aus.
+      - **Pivot:** Legen Sie die Position des Pivotpunkts fest.
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot im Zentrum des Begrenzungsrahmens um die ausgewählten Objekte.
+         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.
+         - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts.
 
-         ![Pivot Demonstration](/img/pivot-move.png)
-
-      - **Proportional:** Eine Funktion, die verschiedene proportionale Bearbeitungsoptionen bietet, die beeinflussen, wie CVs (Steuerpunkte) bewegt werden.
-         - **Keine:** Keine proportionale Wirkung; nur die ausgewählten CVs werden bewegt.
-         - **Alle:** Beeinflusst alle CVs auf der Oberfläche und ihre Bewegung. Geben Sie den Abfallwert für U und V an, um die proportionale Steuerung zu verbessern.
-         - **Ausgewählt:** Wendet die proportionale Bearbeitung auf die ausgewählten CVs an und beeinflusst deren Bewegung. Geben Sie den Abfallwert für U und V an, um die proportionale Steuerung zu verbessern. 
-      - **Abfall U:** Geben Sie die Abfallmenge in U-Richtung an.
-      - **Abfall V:** Geben Sie die Abfallmenge in V-Richtung an.
-      - **Spiegeln:** Wenden Sie einen Spiegelungseffekt relativ zur aktiven [**Konstruktions-Ebene**](/plasticity-essentials/construction-plane) an. Die Spiegelachsen passen sich entweder der globalen Konstruktions-Ebene oder einer benutzerdefinierten Ebene an.
-         - **Keine:** Keine Spiegelungsebene definiert.
-         - **X/Y/Z:** Spiegelung entlang der X-, Y- oder Z-Achse.
-   - <Kst>Tastenkürzel</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+         ![Pivot-Demonstration](/img/pivot-move.png)
+      - Erweitert:
+         - **Instanzen invers transformieren**: Verschiebt nur das übergeordnete Objekt, während alle zugehörigen Instanzen an ihrer Position bleiben, indem automatisch die entgegengesetzte Transformation auf jede Instanz angewendet wird.
+   - <Kst>Tastenkombinationen</Kst>
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
       - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.
       - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.
-      - <kbd>F</kbd> **Freistil:** Klicken, um den Start- und Endpunkt zu bestimmen, der Richtung und Distanz der Bewegung festlegt.
-      - <kbd>V</kbd> **Pivot:** Klicken, um die Position des Gizmos festzulegen.
-      - <kbd>Alt + V</kbd> **Pivot entfernen:** Entfernt die konfigurierten Drehpunkte.
-      - <kbd>W</kbd> **Ausrichtung:** Ändert die Koordinatenachse des Gizmos auf verschiedene Ausrichtungen.
-4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+      - <kbd>F</kbd> **Freihand:** Klicken, um den Start- und Endpunkt anzugeben, der Richtung und Abstand der Bewegung bestimmt.
+      - <kbd>V</kbd> **Pivot:** Klicken, um die Position des Gizmos anzugeben.
+      - <kbd>Alt + V</kbd> **Pivot entfernen:** Die konfigurierten Pivots entfernen.
+      - <kbd>W</kbd> **Ausrichtung:** Die Koordinatenachse des Gizmos auf verschiedene Ausrichtungen ändern.
+5. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
+
+<Callout type="info">
+**Hinweis:**
+- Um ausgewählte Objekte zum Ursprung zu verschieben, drücken Sie: <kbd>G</kbd> (Verschieben) > <kbd>F</kbd> > Rechtsklick > Rechtsklick.
+- Um ein Objekt basierend auf einem ausgewählten Punkt zum Ursprung zu verschieben, drücken Sie: <kbd>G</kbd> (Verschieben) > <kbd>F</kbd> > Auf den Punkt des Objekts klicken > Rechtsklick.
+</Callout>
+
+## Freihand-Verschieben[#freestyle-move]
+
+Dieser Befehl entspricht der <kbd>F</kbd>-Option des **Verschieben**-Befehls.
+
+1. Wählen Sie die Objekte aus, die Sie verschieben möchten.
+2. Verwenden Sie den Befehl **Freihand-Verschieben** in der Befehlspalette.
+3. Klicken Sie auf Start- und Endpunkt, um Richtung und Abstand der Bewegung festzulegen.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
+   - Die Option ist dieselbe wie beim **Verschieben**-Befehl.
+5. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
+
+<VideoPlayer fileName="freestyle-move"/>
+
+
+## Kontrollpunkt verschieben
+
+### Beschreibung
+
+Kontrollpunkte, die auf einer Fläche liegen, mit dem Verschieben-Gizmo bewegen. Optionen für Einzelachsenbeschränkungen oder [**Freihand-Bewegung**](#freestyle-move) und proportionale Bearbeitung sind verfügbar. Die Ausrichtung des Verschieben-Gizmos und die Pivotplatzierung sind ebenfalls anpassbar.
+
+### Grundlegende Verwendung
+
+1. Wählen Sie die Objekte aus, die Sie verschieben möchten.
+2. Drücken Sie <kbd>G</kbd>.
+3. Verwenden Sie den angezeigten Verschieben-Gizmo zum Bewegen.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
+   - Dieselben Standardoptionen wie oben unter [Verschieben](/common/move#basic-usage).
+   - <Kst>Befehlsdialog</Kst>
+      - **Proportional:** Eine Funktion, die mehrere Optionen zur proportionalen Bearbeitung bietet und beeinflusst, wie CVs (Kontrollscheitelpunkte) beim Verschieben beeinflusst werden.
+         - **Keine:** Kein proportionaler Effekt; nur die ausgewählten CVs werden verschoben.
+         - **Alle:** Betrifft alle CVs auf der Fläche und deren Bewegung. Geben Sie den Abfallwert von U und V für eine bessere proportionale Abfallkontrolle an.
+         - **Ausgewählt:** Wendet proportionale Bearbeitung auf die ausgewählten CVs an und beeinflusst deren Bewegung. Geben Sie den Abfallwert von U und V für eine bessere proportionale Abfallkontrolle an.
+      - **Abfall U:** Geben Sie den Abfallbetrag in U-Richtung an.
+      - **Abfall V:** Geben Sie den Abfallbetrag in V-Richtung an.
+      - **Spiegeln:** Wendet einen Spiegeleffekt relativ zur aktiven Konstruktionsebene an. Die Spiegelungsachsen passen sich entweder an die globale Konstruktionsebene oder eine benutzerdefinierte Konstruktionsebene an.
+         - **Keine:** Es ist keine Spiegelebene angegeben.
+         - **X/Y/Z:** Spiegeln in der X-, Y- oder Z-Achse.
+   - <Kst>Tastenkombinationen</Kst>
+      - Dieselben Standardoptionen wie oben unter [Verschieben](/common/move#basic-usage).
+5. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
 
 <VideoPlayer fileName="move-control-point"/>
 
-<Callout type="info" emoji="🗒️">
-**Hinweis**  
-- Beim proportionalen Bearbeiten von Oberflächen-CVs bestimmt die zuletzt aktive CV-Auswahl die Pivot-Position. Beachten Sie dies, da es das Verhalten der proportionalen Bearbeitung beeinflusst.
+<Callout type="info">
+**Hinweis:**
+- Bei der proportionalen Bearbeitung von Flächen-CVs bestimmt die zuletzt aktive CV-Auswahl die Pivotposition. Beachten Sie dies, da es das Verhalten der proportionalen Bearbeitung beeinflusst.
+- Der Befehl „Proportional verschieben" verschiebt Kontrollscheitelpunkte basierend auf dem UV-Abstand entlang des Rumpfes, nicht auf dem geometrischen Abstand.
 </Callout>
 
 ## Planare Kanten verschieben
 
-<Reference shortcut="G" command="Move" button="Links in der Befehlsleiste"  buttonIcon='button-move'/>
+### Beschreibung
 
-Planare Kanten mit dem **Move‑Gizmo** verschieben. Optionen für Einzelachsen‑Einschränkungen, **[Freistil‑Bewegung](#freestyle-move)** und proportionale Bearbeitung stehen zur Verfügung. Die Ausrichtung des Move‑Gizmo und die Platzierung des Pivot‑Points sind ebenfalls anpassbar.
+Planare Kanten mit dem Verschieben-Gizmo bewegen. Optionen für Einzelachsenbeschränkungen oder [**Freihand-Bewegung**](#freestyle-move) und proportionale Bearbeitung sind verfügbar. Die Ausrichtung des Verschieben-Gizmos und die Pivotplatzierung sind ebenfalls anpassbar.
 
 ### Grundlegende Verwendung
 
-1. Wählen Sie die Objekte aus, die Sie verschieben möchten.  
-2. Drücken Sie <kbd>G</kbd>.  
-3. Verwenden Sie den angezeigten Move‑Gizmo zum Verschieben.  
-4. Stellen Sie die Optionen im Befehlsdialog und über Tastenkürzel ein.  
-   - <Kst>Befehlsdialog</Kst>  
-      - **XYZ:** Geben Sie die Verschiebungsmenge entlang der X‑, Y‑ und Z‑Achsen an.  
-      - **Ausrichtung:** Legen Sie die Orientierung des Move‑Gizmo fest.  
-         - <ButtonIcon type="button-normal"/> **Normal:** Richten Sie das Gizmo an der Oberflächennormale des Objekts aus.  
-         - <ButtonIcon type="button-pivot"/> **Pivot:** Verwenden Sie die zuvor definierte Pivot‑Orientierung.  
-         - <ButtonIcon type="button-construction-plane"/> **Konstruktions‑Ebene:** Richten Sie das Gizmo an der aktiven Konstruktions‑Ebene aus.  
-         - <ButtonIcon type="button-world"/> **Welt:** Richten Sie das Gizmo an den globalen (Welt‑)Achsen aus.  
-      - **Pivot:** Positionieren Sie den Pivot‑Punkt.  
-         - <ButtonIcon type="button-bbox"/> **Bounding‑Box:** Setzt den Pivot in die Mitte der Begrenzungs­box der ausgewählten Objekte.  
-         - <ButtonIcon type="button-median"/> **Median:** Setzt den Pivot auf den Durchschnitt aller Pivot‑Positionen der ausgewählten Objekte.  
-         - <ButtonIcon type="button-active"/> **Aktiv:** Setzt den Pivot auf den Pivot des zuletzt ausgewählten (aktiven) Objekts.  
-
-         ![Pivot‑Demonstration](/img/pivot-move.png)  
-   - <Kst>Tastenkürzel</Kst>  
-      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z‑Achse:** [Auf die X‑, Y‑ oder Z‑Achse einschränken](/tool/sketching-essentials#constrain-to-an-axis).  
-      - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X‑, Y‑, Z‑Ebene:** Auf die jeweilige Ebene einschränken.  
-      - <kbd>G</kbd> **Bildschirm‑Raum:** Auf die sichtbare Ebene beschränken.  
-      - <kbd>F</kbd> **Freistil:** Start‑ und Endpunkt klicken, um Richtung und Abstand der Bewegung zu bestimmen.  
-      - <kbd>V</kbd> **Pivot:** Position des Gizmos per Klick festlegen.  
-      - <kbd>Alt + V</kbd> **Pivot entfernen:** Konfigurierte Pivot‑Punkte löschen.  
-      - <kbd>W</kbd> **Ausrichtung:** Koordinatenachse des Gizmos ändern.  
-5. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+1. Wählen Sie die Objekte aus, die Sie verschieben möchten.
+2. Drücken Sie <kbd>G</kbd>.
+3. Verwenden Sie den angezeigten Verschieben-Gizmo zum Bewegen.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
+   - <Kst>Befehlsdialog</Kst>
+      - Dieselben Optionen wie oben unter [Verschieben](/common/move#basic-usage).
+   - <Kst>Tastenkombinationen</Kst>
+      - Dieselben Optionen wie oben unter [Verschieben](/common/move#basic-usage).
+5. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
 
 <VideoPlayer fileName="move-planar-edges"/>
 
 ## Kreisförmige Kanten verschieben
 
-<Reference shortcut="G" command="Move" button="Links in der Befehlsleiste"  buttonIcon='button-move'/>
+### Beschreibung
 
-Einzelne **Solid**‑ und **Sheet**‑Kanten, die kreisförmig sind, verschieben und dabei ihre analytische Geometrie beim Versetzen erhalten. Die Bewegung kann auf eine einzelne Achse eingeschränkt oder mittels **[Freistil‑Bewegung](#freestyle-move)** durchgeführt werden. Sowohl die Ausrichtung des Move‑Gizmo als auch die Pivot‑Platzierung sind anpassbar.
+Einzelne kreisförmige Kanten von Festkörper- und Flächenkörpern verschieben, dabei ihre analytische Geometrie beim Versetzen erhalten. Die Bewegung kann auf eine einzelne Achse beschränkt oder **[Freihand-Bewegung](#freestyle-move)** verwendet werden. Sowohl die Ausrichtung des Verschieben-Gizmos als auch die Pivotplatzierung sind anpassbar.
 
 ### Grundlegende Verwendung
 
-1. Wählen Sie eine kreisförmige Kante aus.  
-2. Drücken Sie <kbd>G</kbd>.  
-3. Ziehen Sie den angezeigten Move‑Gizmo, um die Kante neu zu positionieren.  
-4. Passen Sie die Optionen im Befehlsdialog oder über Tastenkürzel an.  
-   - <Kst>Befehlsdialog</Kst>  
-      - **XYZ:** Verschiebungsbetrag entlang X, Y und Z angeben.  
-      - **Ausrichtung:** Orientierung des Move‑Gizmo festlegen (wie oben beschrieben).  
-      - **Pivot:** Position des Pivot‑Points festlegen (wie oben beschrieben).  
-
-         ![Pivot‑Demonstration](/img/pivot-move.png)  
-   - <Kst>Tastenkürzel</Kst>  
-      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z‑Achse:** [Auf die X‑, Y‑ oder Z‑Achse einschränken](/tool/sketching-essentials#constrain-to-an-axis).  
-      - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X‑, Y‑, Z‑Ebene:** Auf die jeweilige Ebene einschränken.  
-      - <kbd>G</kbd> **Bildschirm‑Raum:** Auf die sichtbare Ebene beschränken.  
-      - <kbd>F</kbd> **Freistil:** Start‑ und Endpunkt klicken, um Richtung und Abstand zu bestimmen.  
-      - <kbd>V</kbd> **Pivot:** Position des Gizmos per Klick festlegen.  
-      - <kbd>Alt + V</kbd> **Pivot entfernen:** Konfigurierte Pivot‑Punkte löschen.  
-      - <kbd>W</kbd> **Ausrichtung:** Koordinatenachse des Gizmos ändern.  
-5. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+1. Wählen Sie eine kreisförmige Kante aus.
+2. Drücken Sie <kbd>G</kbd>.
+3. Ziehen Sie den angezeigten Verschieben-Gizmo, um die Kante neu zu positionieren.
+4. Passen Sie die Optionen im Befehlsdialog oder über Tastenkombinationen an.
+   - <Kst>Befehlsdialog</Kst>
+      - Dieselben Optionen wie oben unter [Verschieben](/common/move#basic-usage).
+   - <Kst>Tastenkombinationen</Kst>
+      - Dieselben Optionen wie oben unter [Verschieben](/common/move#basic-usage).
+5. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
 
 <VideoPlayer fileName="move-circular-edges"/>
 
 ## Siehe auch
-- [Spiegeln](mirror)  
-- [Rotieren](rotate)  
-- [Skalieren](scale)  
+- [Spiegeln](mirror)
+- [Drehen](rotate)
+- [Skalieren](scale)

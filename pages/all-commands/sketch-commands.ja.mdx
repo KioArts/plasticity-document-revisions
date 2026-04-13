@@ -1,3 +1,57 @@
-import Sketch_Commands from '/pages/sketch.ja.mdx'
+# スケッチコマンド
 
-<Sketch_Commands />
+| コマンド名 | ショートカット | 説明 |
+| --- | --- | --- |
+| [整列](/sketch/align) | | 頂点整列、サーフェス整列の統合コマンド。 |
+| [頂点を整列](/sketch/align-vertex) | | 頂点の選択に基づいてカーブを整列する。 |
+| [変形](/sketch/deform) | | カーブ変形、ソリッドおよびシート変形の統合コマンド。 |
+| [カーブを変形](/sketch/deform-curve) | | 既存のカーブを別のサーフェスにラップする。 |
+| [延長](/sketch/extend) | | カーブ延長、シート延長の統合コマンド。 |
+| [カーブを延長](/sketch/extend-curve) | | カーブを延長する。 |
+| [フィレット](/sketch/fillet) | <kbd>B</kbd> | カーブフィレット、頂点フィレット、シェルフィレットの統合コマンド。 |
+| [カーブをフィレット](/sketch/fillet-curve) | <kbd>B</kbd> | 2つのカーブセグメント間のフィレットまたは面取り。 |
+| [頂点をフィレット](/sketch/fillet-vertex) | <kbd>B</kbd> | 接続された頂点のフィレットまたは面取り。 |
+| [カーブをオフセット](/sketch/offset-curve) | <kbd>O</kbd> | 平面カーブオフセット、領域オフセット、フェースループオフセット、エッジオフセットの統合コマンド。 |
+| [平面カーブをオフセット](/sketch/offset-planar-curve) | <kbd>O</kbd> | 平面カーブをオフセットする。 |
+| [領域をオフセット](/sketch/offset-region) | <kbd>O</kbd> | 領域のアウトラインカーブをオフセットする。 |
+| [頂点をオフセット](/sketch/offset-vertex) | <kbd>O</kbd> | 頂点の両側のカーブに沿って新しい頂点を挿入する。 |
+| [インスタンスを作成](/sketch/create-instance) | | カーブインスタンス作成、ソリッドおよびシートインスタンス作成の統合コマンド。 |
+| [カーブインスタンスを作成](/sketch/create-curve-instance) | | 複数の編集不可オブジェクトを複製する。 |
+| [インスタンスを実体化](/sketch/realize-instances) | | ソリッドおよびシートインスタンスの実体化、カーブインスタンスの実体化の統合コマンド。 |
+| [カーブインスタンスを実体化](/sketch/realize-curve-instances) | | カーブインスタンスを実際のカーブに変換する。 |
+| [次数を上げる](/sketch/raise-degree) | <kbd>Shift+S</kbd> | カーブ次数上昇、サーフェス次数上昇の統合コマンド。 |
+| [カーブの次数を上げる](/sketch/raise-curve-degree) | <kbd>Shift+S</kbd> | カーブのコントロール頂点と次数を増加する。 |
+| [再構築](/sketch/rebuild) | | カーブ再構築、フェース再構築の統合コマンド。 |
+| [カーブを再構築](/sketch/rebuild-curve) | | コントロール頂点の位置を最適化して再構築する。 |
+| [反転](/sketch/reverse) | | カーブ反転、シート反転の統合コマンド。 |
+| [カーブを反転](/sketch/reverse-curve) | | カーブの方向を逆にする。 |
+| [スライド](/sketch/slide) | | カーブCVスライド、サーフェスCVスライドの統合コマンド。 |
+| [カーブCVをスライド](/sketch/slide-curve-cv) | <kbd>Shift+G</kbd> | CVハル上でカーブのCVをスライドする。 |
+| [テキスト](/sketch/text) | | テキストからカーブを作成する。 |
+| [ポイントの表示切替](/sketch/toggle-points) | | コントロール頂点ポイントの表示・非表示を切り替える。 |
+| [カーブ曲率の表示切替](/sketch/toggle-curve-curvature) | | カーブ全体の曲率を測定する。 |
+| **プロジェクションコマンド** | | |
+| [代替複製](/sketch/alternative-duplicate) | <kbd>Alt+D</kbd> | カーブを現在の作図平面に投影する。 |
+| [アウトラインを作成](/sketch/create-outline) | | オブジェクトのアウトラインを投影して3Dカーブを作成する。 |
+| [カーブを複製して投影](/sketch/duplicate-curve-and-project) | | カーブを複製して投影する。 |
+| [投影](/sketch/project) | <kbd>I</kbd> | ボディ-ボディ投影、カーブ-ボディ投影、カーブ-カーブ投影の統合コマンド。 |
+| [ボディ-ボディ投影](/sketch/project-body-body) | <kbd>I</kbd> | 2つのソリッドまたはシートの交差線を表す新しいカーブを作成する。 |
+| [カーブ-ボディ投影](/sketch/project-curve-body) | <kbd>I</kbd> | カーブをソリッドまたはシートに投影して新しいカーブを作成する。 |
+| [カーブ-カーブ投影](/sketch/project-curve-curve) | <kbd>I</kbd> | 2つの独立したカーブから生成されたサーフェスの交点を投影して新しいカーブを作成する。 |
+| [アウトラインを投影](/sketch/project-outline) | <kbd>Alt+D</kbd> | ソリッドまたはシートのアウトラインを投影する。 |
+| **結合と分割コマンド** | | |
+| [ブリッジ](/sketch/bridge) | | カーブブリッジ、頂点ブリッジ、エッジブリッジの統合コマンド。 |
+| [カーブをブリッジ](/sketch/bridge-curve) | | 2つのカーブをブリッジする。 |
+| [エッジをブリッジ](/sketch/bridge-edge) | | 2つのエッジをブリッジする。 |
+| [頂点をブリッジ](/sketch/bridge-vertex) | | 2つの頂点をブリッジする。 |
+| [カーブを切断](/sketch/cut-curve) | | カーブを切断する。 |
+| [結合](/sketch/join) | <kbd>J</kbd> | カーブ結合、シート結合の統合コマンド。 |
+| [カーブを結合](/sketch/join-curves) | <kbd>J</kbd> | 接続点でカーブを結合する。 |
+| [セグメントを分割](/sketch/split-segment) | | カーブを2つのセグメントに分割する。 |
+| [トリム](/sketch/trim) | <kbd>T</kbd> | カーブをトリムする。 |
+| [結合解除](/sketch/unjoin) | <kbd>Alt+J</kbd> | カーブ結合解除、フェース結合解除、シェル結合解除の統合コマンド。 |
+| [カーブの結合を解除](/sketch/unjoin-curve) | <kbd>Alt+J</kbd> | 結合されたカーブを分離する。 |
+| [ノットを挿入](/sketch/insert-knot) | | スプラインカーブにCVを挿入する。 |
+| **頂点コマンド** | | |
+| [頂点を変換](/sketch/convert-vertex) | | 頂点をコントロール頂点に変換する。 |
+| [冗長なトポロジーを削除](/sketch/delete-redundant-topology) | | 余分なポイントを削除する。 |

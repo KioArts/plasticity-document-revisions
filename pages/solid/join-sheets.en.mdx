@@ -3,9 +3,19 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Join Sheets
+## Join Sheets
 
-<Reference shortcut="J" command="Join" button="In Suggested Commands Menu" buttonIcon='button-join' />
+{/* <Reference shortcut="J" command="Join" button="In Suggested Commands Menu" buttonIcon='button-join' /> */}
+
+<CommandReference
+  command="Join"
+  shortcut="J"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-join.png"
+  tier="both"
+/>
+
+## Description
 
 Join Sheets with matching Edges.
 
@@ -15,14 +25,11 @@ Join Sheets with matching Edges.
 2. Press <kbd>J</kbd>.
 3. Sheets are joined.
 
-<Callout emoji="❗">
-**Note**<br />
-To join two Sheets, their Edges must be perfectly aligned.
+<Callout type="info">
+**Note:** To join two Sheets, their Edges must be perfectly aligned.
 </Callout>
-<br />
 <VideoPlayer fileName="join-sheets"/>
 
 ## See also
-- [Join Sheets](join-sheets)
 - [Bridge Surface](bridge-surface)
 - [Unjoin](unjoin)

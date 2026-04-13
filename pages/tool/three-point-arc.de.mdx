@@ -3,24 +3,33 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Three-Point Arc
+## Drei-Punkt-Bogen (Three-Point Arc)
 
-<Reference shortcut='' command='Three-Point Arc' button='Werkzeugleiste' buttonIcon='button-three-point-arc' />
+{/* <Reference shortcut='' command='Three-Point Arc' button='Toolbar'  buttonIcon='button-three-point-arc'/> */}
 
-Sie können einen Bogen erstellen, indem Sie drei Punkte auf seinem Umfang angeben.
+<CommandReference
+  command="Three-Point Arc"
+  shortcut=""
+  button="In der Werkzeugleiste"
+  buttonIcon="/img/button-three-point-arc.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-three-point-arc" /> Knopf in der Werkzeugleiste.
+Sie können einen Bogen erstellen, indem Sie drei Punkte auf seinem Umfang festlegen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-three-point-arc" /> in der Werkzeugleiste.
 2. Klicken Sie auf die erste Position auf dem Umfang des Bogens.
 3. Bewegen Sie den Cursor und klicken Sie auf den zweiten Punkt auf dem Umfang.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Axis:** [Beschränkt auf X, Y, Z Achse](/tool/sketching-essentials#constrain-to-an-axis).
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
 4. Bewegen Sie den Cursor und klicken Sie auf den dritten Punkt auf dem Umfang.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Ermöglicht direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Maßen. Details finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
 5. Der Bogen wird erstellt.
-
 
 <VideoPlayer fileName="three-point-arc"/>
 

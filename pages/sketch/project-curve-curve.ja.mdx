@@ -1,20 +1,55 @@
 import Reference from '/components/Reference'
+import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
 
-# Project Curve Curve（ふたつのカーブを投影）[#project-curve-curve]
+{/* # Project Curve Curve [#project-curve-curve]
 
-<Reference shortcut="I" command="Project" button="推奨コマンドメニューで"  buttonIcon='button-project'/>
+<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/> */}
 
-ふたつのカーブを投影した交線のカーブを作成できます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-curve-curve-sketch.mp4"
+  alt="Project Curve Curve Preview"
+  title="Project Curve Curve"
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-project.png" alt="Project Curve Curve Icon" />}
+/> */}
+
+## カーブとカーブの投影
+
+<CommandReference
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-project.png"
+  tier="both"
+/>
+
+## 説明
+
+2つの独立したカーブから生成されたサーフェスの交差点を投影して新しいカーブを作成します。投影アルゴリズムは各入力カーブの法線方向に従い、最終的に交差カーブを生成します。結果の線は両方の元のカーブの特性を継承するため、3D空間での高度な線の構築が可能になります。
+
+<Center width="500px">
+![例](/img/project-curve-curve.svg)
+</Center>
+
+<Callout type="default">
+**注意:** カーブの投影は、法線方向が正しく設定されていないことが原因で、予期しない結果やエラーが発生することがあります。この場合は、各カーブを意図した方向に手動で押し出してから線をインプリントしてみてください – [ボディとボディのインプリント](/solid/imprint-body-body)。このアプローチは複雑な状況でより信頼性の高い結果をもたらします。
+</Callout>
 
 ## 基本的な使い方
 
-1. 投影したいカーブをふたつ選択します。
-2. キーボードショートカット<kbd>I</kbd>またはボタンを押します。
-3. 投影した交線のカーブが作成されます。
+1. 投影する2つのカーブを選択します。
+2. <kbd>I</kbd> を押すか、ボタンをクリックします。
+3. 投影された交差カーブが作成されます。
+
+<VideoPlayer fileName="project-curve-curve"/>
 
 ## 関連項目
-- [Alternative Duplicate](alternative-duplicate)
-- [Project Outline](project-outline)
-- [Create Outline](create-outline)
-- [Project Curve Body](project-curve-body)
-- [Project Body Body](project-body-body)
+- [代替複製](alternative-duplicate)
+- [輪郭の投影](project-outline)
+- [輪郭の作成](create-outline)
+- [カーブボディの投影](project-curve-body)
+- [ボディとボディの投影](project-body-body)

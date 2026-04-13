@@ -2,19 +2,29 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# Find Boundary Edges
+## Find Boundary Edges
 
-<Reference shortcut="" command="Find Boundary Edges" button=""/>
+{/* <Reference shortcut="" command="Find Boundary Edges" button="" /> */}
 
+<CommandReference
+  command="Find Boundary Edges"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-find-boundary-edges.png"
+  tier="both"
+/>
 
-Wählen Sie die Grenzkanten eines offenen Bereichs auf einem ausgewählten Blatt aus.
+## Beschreibung
 
-## Grundlegende Nutzung
+Wählt die Begrenzungskanten eines offenen Bereichs auf einem ausgewählten Sheet aus.
 
-1. Wählen Sie ein Blatt aus, auf dem Sie Grenzkanten finden möchten.
-2. Geben Sie **"Find Boundary Edges"** in die Befehlspalette ein und klicken Sie darauf.
-3. Kanten der Blattöffnung werden ausgewählt.
+## Grundlegende Verwendung
 
-<Callout type="info" emoji="💡">
-Nicht verbundene Kanten sind eine der Ursachen dafür, dass etwas nicht wie erwartet fest ist. Mit diesem Befehl können Sie nicht verbundene Kanten finden.
+1. Wähle das Sheet aus, dessen Begrenzungskanten du finden möchtest.
+2. Gib **Find Boundary Edges** in der Command Palette ein und klicke darauf.
+3. Die Kanten der Öffnung des Sheets werden ausgewählt.
+
+<Callout type="info">
+**Hinweis:**  
+Nicht verbundene Kanten sind eine der Ursachen dafür, dass ein Objekt nicht wie erwartet ein Volumenkörper wird. Mit diesem Befehl kannst du solche unverbundenen Kanten finden.
 </Callout>

@@ -2,22 +2,31 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Fork Material
+## Material verzweigen
 
-<Reference shortcut="Shift + M" command="Fork Material" button="" />
+{/* <Reference shortcut="Shift + M" command="Material verzweigen" button="" /> */}
+
+<CommandReference
+  command="Material verzweigen"
+  shortcut="Shift + M"
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-set-material.png"
+  tier="both"
+/>
+
+## Beschreibung
 
 Ermöglicht das Duplizieren und Bearbeiten der Materialien für die ausgewählten Objekte.
 
 ## Grundlegende Verwendung
 
-1. Wähle das Objekt aus, dessen Material du abspalten möchtest.
+1. Wähle das Objekt aus, dessen Material du verzweigen möchtest.
 2. Drücke <kbd>Shift + M</kbd>.
-3. Das Material wird dupliziert und ist nun bearbeitbar.
+3. Das Material wird dupliziert und ist anschließend bearbeitbar.
 
 <VideoPlayer fileName="fork-material"/>
 
 ## Siehe auch
-- [Remove Material](remove-material)
-- [Set Material](set-material)
-- [Outliner/Material color](/plasticity-essentials/outliner#material-color)
-- [View Mode/Toggle View Mode](/plasticity-essentials/view-mode#toggle-view-mode)
+- [Material entfernen](remove-material)
+- [Material festlegen](set-material)
+- [Outliner/Materialfarbe](/plasticity-essentials/plasticity-interface/outliner#material-color)

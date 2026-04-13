@@ -1,17 +1,27 @@
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 
-## Unjoin Shells（ソリッド、シートを切り離す）
+## Unjoin Shells
 
-<Reference shortcut="Alt + J" command="Unjoin" button="推奨コマンドメニューで"  buttonIcon='button-unjoin' />
+{/* <Reference shortcut="Alt + J" command="Unjoin" button="推奨コマンドメニュー内"  buttonIcon='button-unjoin' /> */}
 
-選択したソリッド、シートからすべてのフェイスを切り離すことができます。
+<CommandReference
+  command="Unjoin"
+  shortcut="Alt + J"
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-unjoin.png"
+  tier="both"
+/>
+
+## 説明
+
+選択したソリッドまたはシートのすべての面を、個別の面として分離します。
 
 ## 基本的な使い方
 
-1. 切り離したいソリッド、シートを選択します。
+1. 分離したいソリッドまたはシートを選択します。
 2. <kbd>Alt + J</kbd> を押します。
-3. すべてのフェイスが切り離されます。
+3. オブジェクトが個々の面に分離されます。
 
 ## 関連項目
 - [Unjoin](unjoin)

@@ -1,29 +1,39 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
-# Alternative Duplicate
+## Alternative Duplicate
 
-<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" />
+{/* <Reference shortcut="Alt + D" command="Alternative Duplicate" button="" /> */}
 
-Erstellen Sie einen Solid aus den ausgewählten Faces und manipulieren Sie dann seine Position.
+<CommandReference
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button="In Command Palette"
+  buttonIcon="/img/button-alternative-duplicate.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie das Face der Basis aus, auf dem Sie einen Solid erstellen möchten.
+Erstellt einen Solid aus ausgewählten Flächen und ermöglicht anschließend dessen Neupositionierung. Dies ist nützlich, um fehlende oder beschädigte Oberflächenfragmente zu rekonstruieren. Die Wahrscheinlichkeit eines erfolgreichen Ergebnisses hängt von der Komplexität der ausgewählten Geometrie ab. Einfachere Flächenauswahlen führen in der Regel zu zuverlässigeren Ergebnissen.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Fläche der Basis aus, auf der Sie einen Solid erstellen möchten.
 2. Drücken Sie <kbd>Alt + D</kbd>, um den Befehl auszuführen.
-3. Der Solid wird erstellt. Verwenden Sie das angezeigte Move Gizmo zum Verschieben.
-4. Legen Sie die Optionen im Befehlsdialog und die Tastaturkürzel fest.
+3. Der Solid wird erstellt. Verwenden Sie den angezeigten Move Gizmo zum Verschieben.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzel fest.
     - <Kst>Befehlsdialog</Kst>
-        - **XYZ:** Geben Sie die Bewegungsmenge der X-, Y- und Z-Achsen an.
+        - **XYZ:** Gibt den Bewegungsbetrag der X-, Y- und Z-Achse an.
+    - <Kst>Tastaturkürzel</Kst>
+        - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+        - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.
+        - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.
+        - <kbd>F</kbd> **Freestyle:** Klicken Sie, um den Start- und Endpunkt festzulegen, der die Richtung und Distanz der Bewegung bestimmt.
+        - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmos festzulegen.
+        - <kbd>W</kbd> **Weltkoordinaten:** Ändert die Koordinatenachse des Gizmos auf Weltkoordinaten.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch einen Rechtsklick.
 
-        - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Auf X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
-    - <Kst>Tastenkombinationen</Kst>
-        - <kbd>Umschalt + X</kbd>/<kbd>Umschalt + Y</kbd>/<kbd>Umschalt + Z</kbd> **X, Y, Z plane:** Auf die X-, Y- oder Z-Ebene beschränken.
-        - <kbd>G</kbd> **Screen space:** Beschränkung auf die sichtbare Ebene.
-        - <kbd>F</kbd> **Freestyle:** Klicken Sie, um den Start- und Endpunkt anzugeben, die die Richtung und Entfernung der Bewegung bestimmen.
-        - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmo anzugeben.
-        - <kbd>W</kbd> **Worldspace:** Ändern Sie die Koordinatenachse des Gizmo zu Weltkoordinaten.
-4. Bestätigen Sie mit OK im Befehlsdialog oder Rechtsklick.
-
-<VideoPlayer fileName="alternative-duplicate"/>
+<VideoPlayer fileName="alternative-duplicate-solid"/>

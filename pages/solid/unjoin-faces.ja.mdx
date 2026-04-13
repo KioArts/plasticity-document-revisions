@@ -1,17 +1,27 @@
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Unjoin Faces（フェイスを切り離す） [#unjoin-faces]
+## Unjoin Faces [#unjoin-faces]
 
-<Reference shortcut="Alt + J" command="Unjoin" button="推奨コマンドメニューで"  buttonIcon='button-unjoin' />
+{/* <Reference shortcut="Alt + J" command="Unjoin" button="推奨コマンドメニュー内"  buttonIcon='button-unjoin' /> */}
 
-選択したフェイスをソリッド、シートから切り離すことができます。
+<CommandReference
+  command="Unjoin"
+  shortcut="Alt + J"
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-unjoin.png"
+  tier="both"
+/>
+
+## 説明
+
+選択した面をソリッドまたはシートから分離します。
 
 ## 基本的な使い方
 
-1. 切り離したいフェイスを選択します。
+1. 分離したい面を選択します。
 2. <kbd>Alt + J</kbd> を押します。
-3. 選択したフェイスが切り離されます。
+3. 面が分離されます。
 
 ## 関連項目
 - [Unjoin](unjoin)

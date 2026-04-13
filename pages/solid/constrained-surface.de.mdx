@@ -2,25 +2,35 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Constrained Surface
+## Eingeschränkte Oberfläche
 
-<Reference shortcut="" command="Constrained Surface" button="" />
+{/* <Reference shortcut="" command="Constrained Surface" button="" /> */}
 
-Erzeugen Sie eine Oberfläche, die durch einen Satz von Punkten verläuft, indem Sie auf sie klicken.
+<CommandReference
+  command="Constrained Surface"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-constrained-surface.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Verwenden Sie den **Constrained Surface**-Befehl in der Befehlspalette.
-2. Klicken Sie auf die Punkte, durch die Sie verlaufen möchten.
-3. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-    - <Kst>Befehlsdialog</Kst>
-        - **Tolerance:** Geben Sie die Toleranz der Oberfläche an.
-        - **Angular tolerance:** Geben Sie die Winkeltoleranz der Oberfläche an.
-        - **Optimize:**
-            - **Performance:** Die Oberfläche wird schnell generiert.
-            - **Smoothness:** Die Oberfläche wird glatt generiert.
-    - <Kst>Tastenkombinationen</Kst>        
-        - <kbd>Cmd-Z</kbd>: Letzten Punkt rückgängig machen.
-4. Bestätigen Sie mit OK im Befehlsdialog oder Rechtsklick.
+Erzeugt eine Oberfläche, die durch eine Reihe von Punkten verläuft, die durch Anklicken definiert werden.
+
+## Grundlegende Verwendung
+
+1. Verwenden Sie den Befehl **Eingeschränkte Oberfläche** in der Befehlspalette.
+2. Klicken Sie auf die Punkte, durch die die Oberfläche verlaufen soll.
+3. Legen Sie die Optionen im Befehlsdialog und über Tastaturkürzel fest.
+    - <Kst>Command Dialog</Kst>
+        - **Toleranz:** Gibt die Toleranz der Oberfläche an.
+        - **Winkeltolerantz:** Steuert die Winkeltoleranz der Oberfläche. Höhere Werte erzeugen eine entspanntere Oberfläche, niedrigere Werte ein strafferes Ergebnis.
+        - **Optimieren:**
+            - **Leistung:** Die Oberfläche wird schnell generiert.
+            - **Glätte:** Die Oberfläche wird gleichmäßig generiert.
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>Ctrl + Z</kbd>: Letzten Punkt rückgängig machen.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="constrained-surface"/>

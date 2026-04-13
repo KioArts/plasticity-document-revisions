@@ -1,35 +1,81 @@
-# Sketching & Primitive Tools
+### Sketching Fundamentals
 
-[Sketching Essentials](/tool/sketching-essentials)
+- Learn the essentials of sketching accurate curves, snapping to points, and using temporary construction guides. See [Sketching Essentials](/tool/sketching-essentials) for a full overview.
 
-| Command Name                                        | Shortcut             | Note                                      |
-| --------------------------------------------------- | -------------------- | ----------------------------------------- |
-| [Line](/tool/line)                                   | <kbd>Shift + A</kbd> | Line segments.                            |
-| [Spline Curve](/tool/spline-curve)                   |                      | Spline Curve.                             |
-| [Control Point Curve](/tool/control-point-curve)     |                      | Control Point Curve.                      |
-| [Center Circle](/tool/center-circle)                 |                      | Circle by center and the diameter.        |
-| [Two Point Circle](/tool/two-point-circle)           |                      | Circle by the diameter.                   |
-| [Three Point Circle](/tool/three-point-circle)       |                      | Circle by three points.                   |
-| [Tangent Circle](/tool/tangent-circle)              |                      | Circle by tangent to two Curves.          |
-| [Center Point Arc](/tool/center-point-arc)           |                      | Arc by center and two points.             |
-| [Three Point Arc](/tool/three-point-arc)             |                      | Arc by three points.                      |
-| [Tangent Arc](/tool/tangent-arc)                     |                      | Arc tangent to a Curve.                                   |
-| [Regular Polygon](/tool/polygon)                     |                      | Regular polygon.                          |
-| [Ellipse](/tool/ellipse)                             |                      | Ellipse by minor and major axis.                        |
-| [Spiral](/tool/spiral)                               |                      | Spiral.                                   |
-| [Corner Rectangle](/tool/corner-rectangle)           |                      | Rectangle by diagonal.                    |
-| [Center Rectangle](/tool/center-rectangle)           |                      | Rectangle by center and point.            |
-| [Three Point Rectangle](/tool/three-point-rectangle) |                      | Rectangle by three points.                |
-| [Bridge Curve](/sketch/bridge-curve)          |                      | Join Curves.                              |
-| [Trim](/sketch/trim)                                 |                      | Trim Curve.                               |
-| [Split Curve At Point](/sketch/split-segment)        |                      | Split a Curve into two segments.          |
-| [Insert CV At Point](/sketch/insert-knot)            |                      | Insert a CV on a spline curve.            |
-| [Sphere](/tool/sphere)                               |                      | Sphere.                                   |
-| [Corner Box](/tool/corner-box)                       | <kbd>Shift + B</kbd> | Box by diagonal corner points and height. |
-| [Center Box](/tool/center-box)                       |                      | Box by center, corner point and height.   |
-| [Three Point Box](/tool/three-point-box)             |                      | Box by three points and height.           |
-| [Cylinder](/tool/cylinder)                           | <kbd>Shift + C</kbd> | Cylinder.                                 |
-| [Measure Distance](/tool/measure-distance)                    | <kbd>Ctrl + =</kbd>  | Measure Distance.                         |
-| [Measure Radius](/tool/measure-radius)               |                      | Measure radial values.                      |
-| [Measure Continuity](/tool/measure-continuity)       |                      | Measure surface G0/G1/G2 continuity.      |
-| [Toggle Curvature](/tool/toggle-curvature)           |                      | Measure curvature on surface and sketch objects. |
+### Curves and Lines
+
+- Tools to create, bridge, and manipulate curves.
+
+| Name | Description |
+| :--- | :--- |
+| [Line](/tool/line) | Draw straight lines between two points. |
+| [Spline Curve](/tool/spline-curve) | Draw a smooth curve by placing points that the curve passes through. |
+| [Control Point Curve](/tool/control-point-curve) | Draw a curve using control points that influence its shape without lying on it. |
+| [Bridge Curve](/sketch/bridge-curve) | Connect two existing curves with a smooth bridging curve. |
+| [Split Curve At Point](/sketch/split-segment) | Split a curve into two separate curves at a specified point. |
+| [Insert CV At Point](/sketch/insert-knot) | Add a control vertex to an existing curve for finer shape control. |
+| [Trim](/sketch/trim) | Trim curves at their intersections to clean up geometry. |
+
+### Circle Tools
+
+- Tools to create circles using different construction methods.
+
+| Name | Description |
+| :--- | :--- |
+| [Center Circle](/tool/center-circle) | Draw a circle by defining its center point and radius. |
+| [Two Point Circle](/tool/two-point-circle) | Draw a circle by defining two points on its diameter. |
+| [Three Point Circle](/tool/three-point-circle) | Draw a circle passing through three specified points. |
+| [Tangent Circle](/tool/tangent-circle) | Draw a circle tangent to existing curves or edges. |
+| [Ellipse](/tool/ellipse) | Create an ellipse by defining its center and two radii. |
+
+### Arc Tools
+
+- Tools to create arcs using different construction methods.
+
+| Name | Description |
+| :--- | :--- |
+| [Center Point Arc](/tool/center-point-arc) | Draw an arc by defining a center point, radius, and angle. |
+| [Three Point Arc](/tool/three-point-arc) | Draw an arc passing through three specified points. |
+| [Tangent Arc](/tool/tangent-arc) | Draw an arc that begins tangent to an existing curve or edge. |
+
+### Polygons and Spirals
+
+- Tools to create regular polygons and spiral curves.
+
+| Name | Description |
+| :--- | :--- |
+| [Regular Polygon](/tool/polygon) | Draw a polygon with a defined number of sides. |
+| [Spiral](/tool/spiral) | Draw a spiral curve with a defined pitch and number of turns. |
+
+### Rectangle Tools
+
+- Tools to create rectangles using different construction methods.
+
+| Name | Description |
+| :--- | :--- |
+| [Corner Rectangle](/tool/corner-rectangle) | Draw a rectangle by defining two opposite corner points. |
+| [Center Rectangle](/tool/center-rectangle) | Draw a rectangle from its center point outward. |
+| [Three Point Rectangle](/tool/three-point-rectangle) | Draw a rotated rectangle using three points to define its orientation and size. |
+
+### 3D Primitives
+
+- Tools to create basic 3D solid shapes as a starting point for modeling.
+
+| Name | Description |
+| :--- | :--- |
+| [Sphere](/tool/sphere) | Create a sphere by defining its center and radius. |
+| [Corner Box](/tool/corner-box) | Create a box by defining two opposite corner points. |
+| [Center Box](/tool/center-box) | Create a box from its center point outward. |
+| [Three Point Box](/tool/three-point-box) | Create a rotated box using three points to define its orientation and size. |
+| [Cylinder](/tool/cylinder) | Create a cylinder by defining its base center, radius, and height. |
+
+### Measurement and Analysis
+
+- Tools to evaluate curve and surface quality.
+
+| Name | Description |
+| :--- | :--- |
+| [Measure Continuity](/tool/measure-continuity) | Analyze the continuity between two curves or surfaces. |
+| [Measure Distance](/tool/measure) | Measure the distance between two points. |
+| [Measure Radius](/tool/measure-radius) | Measure the radius of a curve or circular edge. |
+| [Toggle Curvature](/tool/toggle-curvature) | Display curvature combs on curves to visualize and evaluate their smoothness. |

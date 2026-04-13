@@ -2,24 +2,34 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Thicken
+## Thicken
 
-<Reference shortcut="" command="Thicken" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon="button-thicken"/>
+{/* <Reference shortcut="" command="Thicken" button="Im Menü „Vorgeschlagene Befehle“" buttonIcon="button-thicken" /> */}
 
-Fügen Sie einer ausgewählten Sheet eine Dicke hinzu. Die Dicke für jede Seite kann angegeben werden.<br />
-Wenn Faces ausgewählt sind: siehe [**Thicken Face**](thicken-face).
+<CommandReference
+  command="Thicken"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-thicken.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie das Sheet aus, das Sie verdicken möchten.
-2. Klicken Sie auf den Knopf <ButtonIcon type="button-thicken" /> rechts von Command Bar.
-3. Legen Sie die Optionen im Command Dialog und den Tastaturkürzeln fest.
+Fügt einem ausgewählten Sheet eine Dicke hinzu. Die Dicke kann für jede Seite separat festgelegt werden.  
+Wenn Flächen ausgewählt sind: siehe [**Thicken Face**](thicken-face).
+
+## Grundlegende Verwendung
+
+1. Wähle das Sheet aus, das du verdicken möchtest.
+2. Führe den Befehl **Thicken** über die Command Palette aus.
+3. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Thickness:** Geben Sie die Dicke für beide Seiten an.
+        - **Dicke:** Bestimmt die Dicke für beide Seiten.
     - <Kst>Tastenkombinationen</Kst>
-        - <kbd>Tab</kbd> **Lock Distances** Gleichmäßige Dicke auf beiden Seiten.
-        - <kbd>D</kbd> **Thickness** Bestimmen Sie die Dicke durch Bewegen des Cursors.
-4. Bestätigen Sie mit OK im Command Dialog oder Rechtsklick.
+        - <kbd>Tab</kbd> **Dicken sperren:** Gleiche Dicke auf beiden Seiten.
+        - <kbd>D</kbd> **Dicke:** Dicke durch Bewegen des Cursors festlegen.
+4. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 ## Siehe auch
 - [Thicken Face](thicken-face)

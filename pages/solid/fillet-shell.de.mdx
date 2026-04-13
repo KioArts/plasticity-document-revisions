@@ -3,85 +3,82 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Fillet Shell
+## Fillet Shell
 
-<Reference shortcut="B" command="Fillet" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon='button-fillet' />
+{/* <Reference shortcut="B" command="Fillet" button="Im Menü „Vorgeschlagene Befehle“"  buttonIcon='button-fillet' /> */}
 
-Kanten verrunden oder abschrägen, die konisch oder G2-kontinuierlich sein können. Variable Distanz, Begrenzungsbereich sind einstellbar.
+<CommandReference
+  command="Fillet"
+  shortcut="B"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-fillet.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Verrundet oder fasst Oberflächenkanten mit Optionen für konische, G2‑kontinuierliche oder konstant breite Profile. Unterstützt variable Distanz und Bereichsbegrenzung.
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie die Kanten aus, die Sie verrunden oder abschrägen möchten.
+1. Wähle die Kanten aus, die verrundet oder gefast werden sollen.
 2. Wenn eine oder mehrere Kanten ausgewählt sind, wird der Standardbefehl **Fillet** automatisch ausgeführt.
-3. Alternativ können Sie die Verknüpfung <kbd>B</kbd> verwenden.
-4. Bewegen Sie den gelben Punkt, um die Entfernung der Rundung oder Abschrägung anzugeben.
-    - Positive Bewegung: ergibt eine Rundung.
-    - Negative Bewegung: ergibt eine Abschrägung.
+3. Alternativ kann die Tastenkombination <kbd>B</kbd> verwendet werden.
+4. Bewege den gelben Punkt, um die Distanz der Verrundung oder Fase festzulegen.
+    - Positive Bewegung: erzeugt eine Verrundung.
+    - Negative Bewegung: erzeugt eine Fase.
     <VideoPlayer fileName="fillet-solid-0"/>
-5. Optional können Sie mit <kbd>Strg</kbd> + Klick weitere Kanten auswählen. Um die Auswahl aufzuheben, klicken Sie erneut mit <kbd>Strg</kbd> + Klick.
-6. Legen Sie die Optionen im Command Dialog und den Tastenkombinationen fest. Siehe [**Fillet options**](#fillet-options) und [**Chamfer options**](#chamfer-options) unten.
-7. Bestätigen Sie mit OK im Command Dialog oder Rechtsklick.
+5. Um weitere Kanten auszuwählen, <kbd>Ctrl</kbd> + Klick. Zum Abwählen erneut <kbd>Ctrl</kbd> + Klick.
+6. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest. Siehe [**Verrundungsoptionen**](#fillet-options) und [**Fasenoptionen**](#chamfer-options) unten.
+7. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
-## Fillet-Optionen
+## Verrundungsoptionen
 
-### Command Dialog
+### Befehlsdialog
 
-**Distance:** 
-    - Um eine Kante zu verrunden, geben Sie einen positiven Wert ein. Um eine Kante abzuschrägen, geben Sie einen negativen Wert ein.
-<Callout type="info" emoji="💡">
-    **Tipp**
-    Um einen Rundungsradius zu kopieren, klicken Sie auf die Quellrundung, jedoch nur, wenn die beiden Distance-Werte gleich sind und die Form konisch ist.
-<VideoPlayer fileName="fillet-solid-copyfillet"/>
+**Distanz:**  
+    - Für eine Verrundung gib einen positiven Wert ein. Für eine Fase einen negativen Wert.
+<Callout type="info">
+**Tipp:** Um einen Verrundungsradius zu kopieren, klicke auf die Quellverrundung – jedoch nur, wenn beide Distanzwerte gleich sind und die Form „Conic“ ist.
 </Callout>
+<VideoPlayer fileName="fillet-solid-copyfillet"/>
 
-**Shape:**
-    - **Conic:** Die konische Rundungsoption ist bekannt dafür, einen natürlicheren und glatteren Übergang im Vergleich zu traditionellen Rundungen zu erzeugen. Dies macht sie besonders nützlich in Anwendungen, wo Aerodynamik oder Ästhetik entscheidend sind.
-    - **Chordal:** Ein Merkmal der Chordal-Rundung ist, dass sie eine konstante Länge für die Saite der Rundung beibehält, unabhängig von den Winkeln, die gerundet werden. Diese Einheitlichkeit kann besonders nützlich sein, wenn man eine visuelle Konsistenz über verschiedene Teile eines Modells anstrebt.
-    - **G2:** Die G2-Option erzeugt Kurven, die an beiden Enden der Rundung reibungslos mit den Flächen kontinuierlich sind. Diese Einstellung ist optimal für komplexe Entwürfe und komplexe Oberflächenbehandlung, die einen extrem glatten und natürlichen Formübergang erfordern. Siehe [Surface Continuity](/cad-essentials/continuity-curve-and-surface).
-    - **Full:** Die Option „Voll“ erstellt eine abgerundete Fase auf beiden Seiten einer Fläche, bei der 2 Kanten ausgewählt sind. Diese Methode unterscheidet sich von einem normalen Klemm-Effekt beim Abrunden. Die Rundfaser ist eine Fläche, die tangential zu allen 3 benachbarten Flächen (links, Mitte und rechts) verläuft, und erzeugt daher eine perfekte Rundfaser, abhängig vom Durchmesser oder Abstand der benachbarten Flächen und Kanten
+**Form:**
+    - **Conic:** Erzeugt einen natürlichen, weichen Übergang mittels Kegelschnitt.
+    - **Chordal:** Hält eine konstante Sehnenlänge über die Verrundung hinweg und sorgt für ein einheitliches Erscheinungsbild.
+    - **G2:** Erzeugt eine Verrundung mit Krümmungskontinuität zu beiden angrenzenden Flächen – ideal für hochwertige Oberflächen.
+    - **Full:** Erstellt eine Verrundung, die zu allen drei angrenzenden Flächen (links, Mitte, rechts) tangential ist und eine vollständig abgerundete Form erzeugt.
+    
     <VideoPlayer fileName="fillet-shell-shape"/>
 
-**Tension:**
-    - Verwenden Sie den Spannungsdialog, um die Intensität des Fillet-Effekts zu steuern. Diese Einstellung gilt für alle Formtypen mit Ausnahme von **Vollform**.
+**Tension:**  
+    - Steuert die Intensität des Erscheinungsbilds der Verrundung. Gilt für alle Formen außer **Full Shape**.
     <VideoPlayer fileName="fillet-solid-tension"/>
 
-**Y-Blend:** 
-    - Der "Y-Blend" ist eine besondere Art von Mischung oder Rundung, die auftritt, wenn drei Flächen an einem gemeinsamen Punkt zusammentreffen und eine "Y"-Form bilden. Mit **Attempt** können Sie eine bessere Topologie im Y-Blend erstellen und unerwünschte Rundungsergebnisse vermeiden.
+**Y-Blend:**  
+    - Ein spezieller Blend, der entsteht, wenn drei Flächen an einem Punkt zusammentreffen und eine „Y“-Form bilden. Mit **Attempt** kann eine bessere Topologie erzeugt und unerwünschte Ergebnisse vermieden werden.
     <VideoPlayer fileName="fillet-solid-yblend"/>
 
-**Selection:** 
-    - Deaktivieren Sie **Add tangent Edges**, um Rundungen nur auf ausgewählte Kanten zu beschränken.
-    - Verknüpfung <kbd>T</kbd> ist akzeptabel.
+**Auswahl:**  
+    - Deaktiviere **Tangentenkanten hinzufügen**, um Verrundungen nur auf die ausgewählten Kanten zu beschränken.
+    - Shortcut <kbd>T</kbd> ist möglich.
     <VideoPlayer fileName="fillet-sold-selection"/>
 
-### Shortcuts
+### Tastenkombinationen
 
-<kbd>A</kbd> **: Chamfer angle** 
-    - Winkel der Rundung durch Bewegen des Cursors angeben.
-<Callout type="info" emoji="💡">
-    Das Ändern der beiden Distance-Werte ändert auch den Winkel.
-    <VideoPlayer fileName="fillet-solid-two-value"/>
-</Callout>
+- <kbd>A</kbd> **Fasenwinkel:** Winkel durch Cursorbewegung festlegen oder beide Distanzwerte direkt anpassen.
+- <kbd>D</kbd> **Verrundungsdistanz:** Distanz durch Cursorbewegung festlegen.
+- <kbd>C</kbd> **Fasendistanz:** Distanz durch Cursorbewegung festlegen.
+- <kbd>V</kbd> **Variablenpunkt hinzufügen:** Fügt der Verrundung einen variablen Punkt hinzu.
+- <kbd>L</kbd> **Grenzpunkt hinzufügen:** Auf die Mittellinie klicken, um eine Bereichsgrenze zu setzen. Erneut klicken, um die Richtung umzudrehen. Bis zu zwei Grenzpunkte möglich. Erfordert aktivierte [**Objektfänge**](/plasticity-essentials/plasticity-interface/snap).
+- <kbd>T</kbd> **Tangentiale Kanten umschalten:** Beschränkt Verrundungen auf ausgewählte Kanten.
+- <kbd>Ctrl</kbd> **Auswahl ändern:** Kanten zur Verrundung hinzufügen oder entfernen.
 
-<kbd>D</kbd> **: Fillet distance** 
-    - Rundungsdistanz durch Bewegen des Cursors angeben.
-
-<kbd>C</kbd> **: Chamfer distance** 
-    - Abschrägungsdistanz durch Bewegen des Cursors angeben.
-
-<kbd>V</kbd> **: Add variable point** 
-    - Einen variablen Punkt zur Rundung hinzufügen.
-    <VideoPlayer fileName="fillet-solid-variable"/>
-
-<kbd>L</kbd> **: Add limit (stop) point** 
-    - Den Bereich für die Rundung angeben. Stellen Sie sicher, dass [**Object Snaps**](/plasticity-essentials/grid-and-snap#object-snap) aktiviert sind, klicken Sie auf die Mittellinie der Rundung, um einen Grenzpunkt hinzuzufügen. Um die Richtung umzukehren, klicken Sie erneut auf den Grenzpunkt. Es können bis zu zwei Grenzpunkte festgelegt werden.
-    <VideoPlayer fileName="fillet-solid-limit"/>
-
-## Chamfer Options
-- **Shape:**
-    - **Offset:** Standard Abschrägung.
-    - **Apex:** Verschiebung der Grenze der Abschrägungsfläche reduzieren.
-- Andere Optionen sind die gleichen wie bei den Fillet-Optionen.
+## Fasenoptionen
+- **Form:**
+    - **Offset:** Standardfase.
+    - **Apex:** Reduziert die Verschiebung des Randes der Fasenoberfläche.
+- Weitere Optionen entsprechen denen der Verrundung.
 
 ## Siehe auch
 - [Fillet](fillet)

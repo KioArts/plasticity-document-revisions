@@ -3,34 +3,43 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Tangent Circle 
+# Tangentenkreis
 
-<Reference shortcut="" command="Tangent Circle" button="Toolbar" buttonIcon='button-tangent-circle' />
+{/* <Reference shortcut="" command="Tangent Circle" button="Toolbar"  buttonIcon='button-tangent-circle'/> */}
 
-Sie können einen Kreis erstellen, der tangential zu zwei Kurven verläuft.
+<CommandReference
+  command="Tangentenkreis"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-tangent-circle.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-tangent-circle" /> Knopf in der Werkzeugleiste.
-2. Klicken Sie auf die erste und zweite Kurve, an denen der Kreis tangential verlaufen soll. Optional können Sie die Tangente zu Ihrer dritten Kante finden.
+Sie können einen Kreis erstellen, der an drei Kurven tangential ist.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-tangent-circle" /> in der Symbolleiste.
+2. Klicken Sie auf die erste und zweite Kurve, an die der Kreis tangential sein soll. Optional können Sie auch die Tangente zur dritten Kante bestimmen.
 3. Bewegen Sie den Cursor, um die Größe des Kreises anzupassen.
     - <Kst>Befehlsdialog</Kst>
-        - **Select first curve segment:** Klicken Sie, um das erste Kurvensegment auszuwählen, wenn es hervorgehoben ist.
-        - **Select second curve segment:** Klicken Sie, um das zweite Kurvensegment auszuwählen, wenn es hervorgehoben ist.
-        - **Radius:** Durchmesser angeben.
-    - <Kst>Tastaturkürzel</Kst>
-  - <kbd>F</kbd> **Freeze** – Verhindert, dass sich der Tangenten‑Kreis bewegt, sodass Sie den Mauszeiger für eine präzisere Platzierung neu positionieren können. Nützlich, wenn Sie die Führungsrichtung beim Ziehen des Tangenten‑Kreises umkehren müssen.
-  - <kbd>Tab</kbd> **Radius** – Öffnet das Radiuseingabefeld, damit Sie einen Radiuswert eingeben können.
-4. Klicken Sie im Befehlsdialog auf OK oder rechtsklick zur Bestätigung.
+        - **Erstes Kurvensegment auswählen:** Klicken Sie, um das erste Kurvensegment auszuwählen, wenn es hervorgehoben ist.
+        - **Zweites Kurvensegment auswählen:** Klicken Sie, um das zweite Kurvensegment auszuwählen, wenn es hervorgehoben ist.
+        - **Radius:** Geben Sie den Durchmesser an.
+- <Kst>Tastaturkürzel</Kst>
+  - <kbd>F</kbd> **Einfrieren** - Verhindert, dass sich der Tangentenkreis bewegt, sodass Sie den Mauszeiger für eine präzisere Platzierung neu positionieren können. Nützlich, wenn Sie die Führungsrichtung beim Ziehen des Tangentenkreises umkehren möchten.
+  - <kbd>Tab</kbd> **Radius** - Führt Sie zum Radiusfeld, damit Sie einen Radiuswert eingeben können.
+4. Klicken Sie im Befehlsdialog auf OK oder rechtsklicken Sie zur Bestätigung.
 5. Der Kreis wird erstellt.
-
 
 <VideoPlayer fileName="tangent-circle"/>
 
 ## Siehe auch
-- [Center Circle](center-circle)
-- [Two-Point Circle](two-point-circle)
-- [Three-Point Circle](three-point-circle)
-- [Center Point Arc](center-point-arc)
-- [Three-Point Arc](three-point-arc)
-- [Tangent Arc](tangent-arc)
+- [Mittelpunktkreis](center-circle)
+- [Zwei-Punkt-Kreis](two-point-circle)
+- [Drei-Punkt-Kreis](three-point-circle)
+- [Mittelpunktbogen](center-point-arc)
+- [Drei-Punkt-Bogen](three-point-arc)
+- [Tangentenbogen](tangent-arc)

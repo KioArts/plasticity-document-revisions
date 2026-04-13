@@ -1,13 +1,25 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 
-# Trim
+{/* # Trim
 
-<Reference shortcut="T" command="Trim" button="Werkzeugleiste"  buttonIcon='button-trim'/>
+<Reference shortcut="T" command="Trim" button="Toolbar"  buttonIcon='button-trim'/> */}
 
-Entfernt spezifizierte Segmente von planaren oder 3D Curves.
+## Trim
 
-## Grundlegende Nutzung
+<CommandReference
+  command="Trim"
+  shortcut="T"
+  button="In Toolbar"
+  buttonIcon="/img/button-trim.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Entfernt bestimmte Segmente aus planaren oder 3D-Kurven. Segmente werden durch Schnittpunkte, Endpunkte oder Kontrollpunkte definiert, die eine Kurve in einzelne Abschnitte unterteilen.
+
+## Grundlegende Verwendung
 
 1. Drücken Sie <kbd>T</kbd>.
 2. Klicken Sie auf das Segment, das Sie trimmen möchten.
@@ -15,7 +27,7 @@ Entfernt spezifizierte Segmente von planaren oder 3D Curves.
 
 <VideoPlayer fileName="trim"/>
 
-## See also
+## Siehe auch
 - [Cut Curve](cut-curve)
 - [Unjoin](unjoin)
 - [Split Segment](split-segment)

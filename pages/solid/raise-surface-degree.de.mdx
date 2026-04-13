@@ -3,25 +3,38 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Raise Surface Degree
+## Raise Surface Degree
 
-<Reference shortcut="Shift + S" command="Raise Degree" button="" />
+{/* <Reference shortcut="Shift + S" command="Raise Degree" button="" /> */}
 
-Bearbeiten Sie die Oberfläche einer Fläche oder eines Körpers, indem Sie die Kontrollpunkte (CV) der Oberfläche erhöhen.
+<CommandReference
+  command="Raise Degree"
+  shortcut="Shift + S"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-raise-degree.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie eine Fläche oder einen Körper aus.
-2. Erhöhen Sie den Grad der Fläche oder des Körpers, indem Sie <kbd> Shift + S </kbd> drücken.
-3. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+Bearbeitet die Oberfläche einer Fläche oder eines Volumenkörpers, indem die Anzahl der Kontrollpunkte (CVs) erhöht wird.
+
+## Grundlegende Verwendung
+
+1. Wähle eine Fläche oder einen Volumenkörper aus.
+2. Drücke <kbd>Shift + S</kbd>, um den Grad der ausgewählten Fläche oder des Volumenkörpers zu erhöhen.
+3. Die Anzahl der Oberflächen‑CVs wird erhöht.
+
+<Callout type="info">
+**Hinweis:**
+  - Um Oberflächen‑CVs auszublenden, verwende den Befehl [Toggle Points](/sketch/toggle-points) aus der Command Palette.
+  - Um eine CV‑Reihe auszuwählen, drücke <kbd>Alt</kbd>.
+  - Wenn die Oberfläche zu viele CVs besitzt, verwende den Befehl [Rebuild](/solid/rebuild), um sie zu vereinfachen.
+</Callout>
 
 <VideoPlayer fileName="raise-surface-degree"/>
 
-<Callout type="info" emoji="💡">
-    **Tip**
-    Um die CVs der Fläche auszublenden, können Sie die Option „Punkte umschalten“ in der Befehls-Palette verwenden.
-<VideoPlayer fileName="raise-surface-degree-hidepoints"/>
-</Callout>
-
 ## Siehe auch
+- [Toggle Points](/sketch/toggle-points)
+- [Rebuild](/solid/rebuild)
 - [Raise Curve Degree](/sketch/raise-curve-degree)

@@ -1,20 +1,55 @@
 import Reference from '/components/Reference'
+import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
 
-# Project Curve Curve [#project-curve-curve]
+{/* # Project Curve Curve [#project-curve-curve]
 
-<Reference shortcut="I" command="Project" button="Im vorgeschlagenen Befehlsmenü" buttonIcon='button-project' />
+<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/> */}
 
-Erstellen Sie eine neue Kurve, indem Sie die Schnittpunkte von Oberflächen projizieren, die aus zwei unabhängigen Kurven erzeugt wurden.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-curve-curve-sketch.mp4"
+  alt="Project Curve Curve Preview"
+  title="Project Curve Curve"
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-project.png" alt="Project Curve Curve Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Kurve-Kurve projizieren
 
-1. Wählen Sie die beiden Kurven aus, die projiziert werden sollen.
+<CommandReference
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-project.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Erstellt eine neue Kurve durch Projektion der Schnittpunkte der aus zwei unabhängigen Kurven erzeugten Flächen. Der Projektionsalgorithmus folgt dem normalen Verhalten jeder Eingabekurve und erzeugt letztendlich die Schnittkurve. Da die resultierende Linie die Eigenschaften beider Originalkurven erbt, ermöglicht sie eine erweiterte Konstruktion von Linien im 3D-Raum.
+
+<Center width="500px">
+![Beispiel](/img/project-curve-curve.svg)
+</Center>
+
+<Callout type="default">
+**Hinweis:** Das Projizieren von Kurven kann gelegentlich unerwartete Ergebnisse oder Fehler erzeugen, häufig weil die Normalenrichtung nicht korrekt eingestellt ist. Wenn dies passiert, versuchen Sie, jede Kurve manuell entlang ihrer beabsichtigten Richtung zu extrudieren und dann eine Linie einzuprägen – [Körper-Körper einprägen](/solid/imprint-body-body). Dieser Ansatz liefert in komplexen Situationen in der Regel zuverlässigere Ergebnisse.
+</Callout>
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die zwei zu projizierenden Kurven aus.
 2. Drücken Sie <kbd>I</kbd> oder klicken Sie auf die Schaltfläche.
 3. Die projizierte Schnittkurve wird erstellt.
 
-## See also
-- [Alternative Duplicate](alternative-duplicate)
-- [Project Outline](project-outline)
-- [Create Outline](create-outline)
-- [Project Curve Body](project-curve-body)
-- [Project Body Body](project-body-body)
+<VideoPlayer fileName="project-curve-curve"/>
+
+## Siehe auch
+- [Alternatives Duplizieren](alternative-duplicate)
+- [Umriss projizieren](project-outline)
+- [Umriss erstellen](create-outline)
+- [Kurvenkörper projizieren](project-curve-body)
+- [Körper-Körper projizieren](project-body-body)

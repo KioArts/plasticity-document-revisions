@@ -2,13 +2,23 @@ import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
 import ButtonIcon from '/components/ButtonIcon'
 
-# Focus and Isolate Objects
+## Focus and Isolate Objects
 
 ## Focus Objects
 
 This command enlarges the selected object to fill the entire viewport.
 
-<Reference shortcut="/ (Slash)" command="Viewport: Focus" button="" />
+{/* <Reference shortcut="/ (Slash)" command="Viewport: Focus" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Viewport: focus"
+  shortcut="/"
+  button="In Command Palette"
+  buttonIcon="/img/button-viewport-focus.png"
+  tier="both"
+/>
 
 ##### How to Use
 
@@ -20,7 +30,17 @@ This command enlarges the selected object to fill the entire viewport.
 
 This command focuses on the selected object by displaying it exclusively on the screen, while temporarily hiding all other objects. This command also supports hierarchical isolation.
 
-<Reference shortcut=". (Period)" command="Isolate" button="" />
+{/* <Reference shortcut=". (Period)" command="Isolate" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Isolate"
+  shortcut="."
+  button="In Command Palette"
+  buttonIcon="/img/button-isolate.png"
+  tier="both"
+/>
 
 ##### How to Use
 
@@ -43,7 +63,17 @@ An indicator at the top of the screen signifies that the Isolate mode is active.
 
 This command will reveal all previously isolated objects in the viewport. It will not return to the previous hierarchical isolation layer, so all objects will be visible instead.
 
-<Reference shortcut="Alt + . (Period)" command="Unisolate" button="" />
+{/* <Reference shortcut="Alt + . (Period)" command="Unisolate" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Unisolate"
+  shortcut="Alt + ."
+  button="In Command Palette"
+  buttonIcon="/img/button-unisolate.png"
+  tier="both"
+/>
 
 ##### How to Use
 
@@ -56,7 +86,17 @@ This command will reveal all previously isolated objects in the viewport. It wil
 
 This command centers a specific object in the middle of the screen.
 
-<Reference shortcut="Space" command="Viewport: navigate to selection" button="" />
+{/* <Reference shortcut="Space" command="Viewport: navigate to selection" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Viewport: navigate to selection"
+  shortcut="Space"
+  button="In Command Palette"
+  buttonIcon="/img/button-navigate-to-selection.png"
+  tier="both"
+/>
 
 ##### How to Use
 

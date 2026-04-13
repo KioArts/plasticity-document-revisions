@@ -4,9 +4,19 @@ import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Tangent Arc
+## Tangent Arc
 
-<Reference shortcut="" command="Tangent Arc" button="Toolbar"  buttonIcon='button-tangent-ark'/>
+{/* <Reference shortcut="" command="Tangent Arc" button="Toolbar"  buttonIcon='button-tangent-ark'/> */}
+
+<CommandReference
+  command="Tangent Arc"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-tangent-ark.png"
+  tier="both"
+/>
+
+## Description
 
 You can create an arc tangent to a curve.
 
@@ -22,11 +32,11 @@ You can create an arc tangent to a curve.
         - <kbd>B</kbd> **Binormal:** Move the arc perpendicularly along the opposite normal direction constrain.
 6. The arc is created.
 
-<VideoPlayer fileName="tangent-arc"/>
-
-<Callout type="info" emoji="💡">
-**Tip** The tangent arc algorithm is sensitive when detecting tangent points on curves. Move your cursor carefully near the point of interest without crossing over it, as crossing may prevent the tangent point from displaying.  
+<Callout type="info">
+**Note:** The tangent arc algorithm is sensitive when detecting tangent points on curves. Move your cursor carefully near the point of interest without crossing over it, as crossing may prevent the tangent point from displaying.  
 </Callout>
+
+<VideoPlayer fileName="tangent-arc"/>
 
 ## See also
 - [Center Circle](center-circle)

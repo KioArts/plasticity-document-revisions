@@ -2,35 +2,82 @@
 title: Plasticity Manual
 description: The official manual for Plasticity 3D. All keyboard shortcuts. Updated daily!
 ---
+import ResourceSection from "../components/ResourceSection.jsx";
 
-import Hero from "../components/Hero.jsx"
-import FeatureGrid from "../components/FeatureGrid.jsx"
-import ResourceSection from "../components/ResourceSection.jsx"
+<div style={{margin: '2em 0'}}>
+    <span style={{fontSize: '2em'}}><span style={{fontWeight: 800}}>Plasticity&nbsp;</span>Manual</span>
+</div>
 
-<div className="homepage">
 
-<Hero
-  title="Plasticity Documentation"
-  subtitle="Your complete guide to modeling, sculpting, and designing with precision."
-  ctaText="Start Learning"
-  ctaLink="/docs/getting-started"
+<ResourceSection
+  title="Introduction"
+  items={[
+    {
+      title: "Release Notes",
+      description: "A page where release notes are shared, documenting new features and changes as the software evolves.",
+      link: "/release-notes"
+    },
+    {
+      title: "Getting Started",
+      description: "Start using Plasticity with an overview of licensing, key features, installation steps, and support options.",
+      link: "/getting-started"
+    },
+    {
+      title: "Plasticity Essentials",
+      description: "Essentials of Plasticity, learn and understand how Plasticity functions.",
+      link: "/plasticity-essentials"
+    },
+    {
+      title: "CAD Essentials",
+      description: "Core CAD concepts and techniques for advanced users.",
+      link: "/cad-essentials"
+    },
+    {
+      title: "Command List & Shortcut Keys",
+      description: "A complete list of commands with their shortcut keys, including a downloadable PDF.",
+      link: "/all-commands"
+    }
+  ]}
 />
-
-<FeatureGrid
-  features={[
-    { title: "Precision Modeling", description: "Accurate CAD tools.", icon: "/icons/precision.svg" },
-    { title: "Sculpting Tools", description: "Organic workflows.", icon: "/icons/sculpt.svg" },
-    { title: "Rendering", description: "Beautiful visuals.", icon: "/icons/render.svg" }
+<ResourceSection
+  title="Tools"
+  items={[
+    {
+      title: "Sketch & Primitive Tools",
+      description: "Learn the tools used to sketch shapes and create basic primitives.",
+      link: "/tool"
+    },
   ]}
 />
 
 <ResourceSection
-  title="Explore Resources"
+  title="Commands"
   items={[
-    { title: "Tutorials", description: "Learn step-by-step.", image: "/img/tutorials.png", link: "/docs/tutorials" },
-    { title: "Advanced Guides", description: "Deep technical knowledge.", image: "/img/guides.png", link: "/docs/advanced" },
-    { title: "API Reference", description: "Extend Plasticity.", image: "/img/reference.png", link: "/docs/api" }
+    {
+      title: "Common Commands",
+      description: "A combined overview of essential sketch and solid commands.",
+      link: "/common"
+    },
+    {
+      title: "Sketch",
+      description: "Commands focused on drawing and editing 2D sketches.",
+      link: "/sketch"
+    },
+    {
+      title: "Solid",
+      description: "Commands used to build and modify solid 3D forms.",
+      link: "/solid"
+    },
   ]}
 />
 
-</div>
+<ResourceSection
+  title="Integration"
+  items={[
+    {
+      title: "Blender",
+      description: "Learn how to integrate Plasticity with Blender workflows.",
+      link: "/blender"
+    }
+  ]}
+/>

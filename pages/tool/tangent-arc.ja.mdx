@@ -4,36 +4,44 @@ import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Tangent Arc
+## 接線弧
 
-<Reference shortcut="" command="Tangent Arc" button="Toolbar"  buttonIcon='button-tangent-ark'/>
+{/* <Reference shortcut="" command="Tangent Arc" button="Toolbar"  buttonIcon='button-tangent-ark'/> */}
 
-カーブに接する円弧を作成できます。
+<CommandReference
+  command="接線弧"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-tangent-ark.png"
+  tier="both"
+/>
+
+## 説明
+
+曲線に接する弧を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-tangent-ark" /> をクリックします。
-2. 円弧に接するカーブをクリックします。
-3. カーソルを動かして円弧の大きさを調整し、クリックして確定します。
+1. ツールバーの <ButtonIcon type="button-tangent-ark" /> ボタンをクリックします。
+2. 弧が接する曲線をクリックします。オプションで、接線スナップを使用して2番目の曲線をクリックすることもできます。
+3. カーソルを移動して弧のサイズを調整し、クリックして確定します。
     - <Kst>キーボードショートカット</Kst>
-        - <kbd>D</kbd> **Flip direction:** 円弧の方向を反転します。d
-        - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-        - <kbd>N</kbd> **Normal:** 弧を法線方向の制約に沿って垂直に移動させます。
-        - <kbd>B</kbd> **Binormal:** 弧を反対方向の法線に沿って垂直に移動させます。
-6. 円弧が作成されます。
+        - <kbd>D</kbd> **方向を反転:** 弧の方向を逆にします。
+        - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+        - <kbd>N</kbd> **法線:** 法線方向の拘束に沿って弧を垂直に移動します。
+        - <kbd>B</kbd> **従法線:** 反対の法線方向の拘束に沿って弧を垂直に移動します。
+6. 弧が作成されます。
+
+<Callout type="info">
+**注意:** 接線弧アルゴリズムは、曲線上の接点を検出する際に敏感です。目的の点の近くでカーソルを慎重に動かし、その点を越えないようにしてください。越えてしまうと接点が表示されなくなる場合があります。
+</Callout>
 
 <VideoPlayer fileName="tangent-arc"/>
 
-<Callout type="info" emoji="💡">
-**ヒント** 接線円弧アルゴリズムは、曲線上の接点を検出する際に敏感です。関心のあるポイントの近くでカーソルを慎重に動かし、超えないようにしてください。超えると接点が表示されない可能性があります。  
-</Callout>
-
-- [Center Circle](center-circle)
-- [Two-Point Circle](two-point-circle)
-- [Three-Point Circle](three-point-circle)
-- [Tangent Circle](tangent-circle)
-- [Center Point Arc](center-point-arc)
-- [Three-Point Arc](three-point-arc)
-
-
-
+## 関連項目
+- [中心円](center-circle)
+- [2点円](two-point-circle)
+- [3点円](three-point-circle)
+- [接線円](tangent-circle)
+- [中心点弧](center-point-arc)
+- [3点弧](three-point-arc)

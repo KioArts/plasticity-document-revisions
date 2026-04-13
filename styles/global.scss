@@ -16,7 +16,6 @@ body {
         );
     }
 
-    // **Added Font-Smoothing Properties**
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -120,39 +119,60 @@ h2 {
 /* HOMEPAGE STYLING (SAFE FOR NEXTRA + VERCEL)        */
 /* -------------------------------------------------- */
 
-/* Light mode gradient */
 html.light .homepage {
-    background: linear-gradient(
-        180deg,
-        #f8fafc 0%,
-        #ffffff 40%,
-        #f1f5f9 100%
-    );
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #ffffff 40%,
+    #f1f5f9 100%
+  );
 }
 
-/* Dark mode gradient */
 html.dark .homepage {
-    background: linear-gradient(
-        180deg,
-        #0f1115 0%,
-        #111318 40%,
-        #0d0f12 100%
-    );
+  background: linear-gradient(
+    180deg,
+    #0f1115 0%,
+    #111318 40%,
+    #0d0f12 100%
+  );
 }
 
-/* Remove Nextra white article box */
+/* Remove Nextra white article box and allow hover overflow */
 .nextra-content article {
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 1;
 }
 
-/* Make homepage content full width */
+/* Make homepage content full width and allow hover overflow */
 .nextra-content {
     max-width: 100% !important;
     width: 100% !important;
     padding: 0 !important;
+    overflow: visible !important;
 }
+
+/* -------------------------------------------------- */
+/* FIX: Prevent ALL Nextra wrappers from clipping     */
+/* -------------------------------------------------- */
+
+.nextra-container,
+.nextra-container main,
+.nextra-container .nx-main,
+.nextra-container .nx-content,
+.nx-heading,
+.nx-anchor {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 0 !important;
+}
+
+/* -------------------------------------------------- */
+/* END FIX                                            */
+/* -------------------------------------------------- */
 
 /* Remove default top padding */
 .nextra-container main {
@@ -173,25 +193,27 @@ html.dark .homepage {
 
 .homepage .card,
 .homepage .resource-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
     border-radius: 12px;
 }
 
-/* Light mode hover */
 html.light .homepage .card:hover,
 html.light .homepage .resource-card:hover {
-    transform: translateY(-4px);
+    transform: scale(1.04);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    background-color: #f3f4f6;
 }
 
-/* Dark mode hover */
 html.dark .homepage .card:hover,
 html.dark .homepage .resource-card:hover {
-    transform: translateY(-4px);
+    transform: scale(1.04);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    background-color: #2a2d31;
 }
 
-/* Card backgrounds */
 html.light .homepage .card,
 html.light .homepage .resource-card {
     background: #ffffff;
@@ -204,7 +226,6 @@ html.dark .homepage .resource-card {
     border: 1px solid #2a2d31;
 }
 
-/* Section title underline */
 .homepage h2 {
     position: relative;
     padding-bottom: 0.5rem;
@@ -219,4 +240,18 @@ html.dark .homepage .resource-card {
     height: 3px;
     border-radius: 2px;
     background: linear-gradient(90deg, #4f8cff, transparent);
+}
+
+/* Ensure cardRow sits above layout wrappers */
+.homepage .cardRow {
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+html.light {
+  --banner-fade-color: #f1f5f9;
+}
+
+html.dark {
+  --banner-fade-color: #0d0f12;
 }

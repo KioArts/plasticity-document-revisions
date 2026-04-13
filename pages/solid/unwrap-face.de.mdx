@@ -1,14 +1,33 @@
 import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
 
-# Unwrap Face
+## Unwrap Face
 
-<Reference shortcut="" command="Unwrap" button="" />
+{/* <Reference shortcut='' command='Unwrap' button=''/> */}
 
-<Callout type="warning" emoji="⚠️">
-    **Unwrap Face** und **Wrap Face** sind noch im Experimentierstadium. Sie sind noch nicht für den Produktiveinsatz bereit.
+<CommandReference
+  command="Unwrap"
+  shortcut=""
+  button="In der Command Palette"
+  buttonIcon="/img/button-unwrap-face.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Entwickelt die Oberfläche einer ausgewählten Fläche.
+
+## Grundlegende Verwendung
+
+1. Wähle die Fläche aus, die du abwickeln möchtest.
+2. Gib **Unwrap** in der Command Palette ein.
+
+<Callout type='info'>
+  **Hinweis:** Beim Abwickeln einer Oberfläche wird das Ergebnis im Zentrum des Welt‑XYZ‑Ursprungs platziert.
 </Callout>
 
 ## Siehe auch
-- [Festkörper und Blech verformen](deform-solid-and-sheet)
-- [Kurve verformen](/sketch/deform-curve)
+- [Deform Solid and Sheet](deform-solid-and-sheet)
+- [Deform Curve](/sketch/deform-curve)

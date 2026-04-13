@@ -5,58 +5,81 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 import { Center } from '/components/Center'
 
-# Kurve instanziieren
 
-<Reference shortcut="" command="Instanz erstellen" button="In Befehls‑Palette"  buttonIcon="button-instance"/>
+{/* # Create Curve Instance
 
-Erstellen Sie wiederverwendbare Duplikate von Kurven. Eine **Instanz**, ähnlich wie bei Solid‑ und Sheet‑Objekten, speichert Transformationsdaten (Position, Drehpunkt, Rotation und Skalierung), Farbinformationen und verweist auf die Originalkurve. Jede Änderung an der Master‑Kurve wird sofort in allen Instanzen widergespiegelt.
+<Reference shortcut="" command="Create Instance" button="In Command Palette"  buttonIcon="button-instance"/> */}
 
-Da Kurven‑Instanzen schreibgeschützte Kopien ihres Elternteils sind, können sie nicht unabhängig bearbeitet werden und werden ohne sichtbares CV‑ (Control‑Vertex‑) Layout angezeigt, um sie von der Originalkurve zu unterscheiden.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/create-curve-instance.mp4"
+  alt="Create Curve Instance Preview" 
+  title="Create Curve Instance"
+  command="Create Instance"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-instance.png" alt="Create Instance Icon" />}
+/> */}
+
+## Kurveninstanz erstellen
+
+<CommandReference
+  command="Create Instance"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-instance.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Erstellt wiederverwendbare Duplikate von Kurven. Eine **Instanz** speichert, ähnlich wie bei der Instanzierung von Volumenkörpern und Flächenobjekten, Transformationsdaten (Position, Pivot-Punkt, Rotation und Skalierung) sowie Farbdaten und verweist auf die ursprüngliche Kurve. Jede Änderung an der Masterkurve wird sofort in allen ihren Instanzen widergespiegelt.
+
+Da Kurveninstanzen schreibgeschützte Kopien ihrer Quelle sind, können sie nicht unabhängig bearbeitet werden. Sie verbergen auch das CV-Layout (Kontrollscheitelpunkte), was sie optisch von der Originalkurve unterscheidet.
 
 <Callout>
-1. Verwenden Sie den Befehl **Create Instance** für Kurven, wenn Sie viele identische Details benötigen – etwa konsistente, symmetrische Skizzen zum Aufbau eines Fahrzeug‑Konstruktionsrahmens oder verwandter Produkte.  
-2. Instanzen funktionieren mit Array‑Befehlen wie **[Curve Array](/common/curve-array)**, **[Radial Array](/common/radial-array)** und **[Rectangular Array](/common/rectangular-array)**.  
-3. Instanzen können auch mit dem Befehl **[Mirror](/common/mirror)** verwendet werden, wodurch Live‑Symmetrie entsteht: Änderungen an der Master‑Geometrie aktualisieren automatisch alle gespiegelten Instanzen.  
-4. Die Befehle **[Place](/common/place)** und **[Copy with Placement](/common/copy-with-placement)** können derzeit nicht auf erstellte Instanzen angewendet werden.
+1. Verwenden Sie den Befehl **Instanz erstellen** für Kurven, wenn Sie viele identische Details benötigen, die konsistent und symmetrisch sein müssen.
+2. Instanzen funktionieren mit Array-Befehlen wie [**Kurven-Array**](/common/curve-array), [**Radiales Array**](/common/radial-array) und [**Rechteckiges Array**](/common/rectangular-array).
+3. Instanzen können auch mit dem Befehl [**Spiegeln**](/common/mirror) verwendet werden, was eine Live-Symmetrie ermöglicht, bei der Änderungen an der Mastergeometrie alle gespiegelten Instanzen automatisch aktualisieren.
+4. Die Befehle [**Platzieren**](/common/place) und [**Mit Platzierung kopieren**](/common/copy-with-placement) können derzeit nicht auf erstellte Instanzen angewendet werden.
 </Callout>
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie die Kurve aus, die Sie als Elternobjekt nutzen möchten.  
-2. Öffnen Sie die Befehls‑Palette, tippen Sie **Instanz erstellen** und führen Sie den Befehl aus.  
-3. Verschieben Sie die neu erstellte Instanz an die gewünschte Position.  
-4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+1. Wählen Sie die Kurve aus, die Sie als übergeordnetes Objekt verwenden möchten.
+2. Öffnen Sie die Befehlspalette, geben Sie **Instanz erstellen** ein und führen Sie den Befehl aus.
+3. Verschieben Sie die neu erstellte Instanz an die gewünschte Position.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="instance-curve"/>
 
 <Callout type="info" emoji="🗒️">
-**Hinweis:** Nachdem eine Instanz erstellt wurde, können Sie diese beliebig oft duplizieren; alle Duplikate spiegeln weiterhin jede Änderung am ursprünglichen Elternobjekt wider.    
+**Hinweis:** Sobald eine Instanz erstellt wurde, können Sie diese beliebig oft duplizieren. Alle Duplikate spiegeln weiterhin alle Änderungen am ursprünglichen übergeordneten Objekt wider.
 </Callout>
 
-## Instanz‑Gruppen
+## Instanzgruppen
 
-Das Instanziieren von Gruppen funktioniert analog zum Instanziieren von Kurven.
+Der Prozess der Instanzierung von Gruppen ist ähnlich wie die Instanzierung von Kurven.
 
-Wird eine Gruppe ausgewählt, die primäre Skizzen enthält, wird eine Instanz der Gruppe erstellt und außerhalb des Gruppenordners in einer eigenen Kategorie im Outliner abgelegt.
+Wenn eine Gruppe ausgewählt ist und primäre Skizzen enthält, wird eine Instanz der Gruppe erstellt und außerhalb des Gruppenordners unter einer eigenen dedizierten Kategorie im Outliner platziert.
 
 <Center width="600px">
 ![!Instancing a Group Part 1](/img/instance-group-curve.png)
 </Center>
 
 | Nummer | Beschreibung |
-| :----: | ------------ |
+| :----: | ----------- |
 | 1 | Hauptgruppe mit enthaltenen Komponenten. |
-| 2 | Elternobjekte, die instanziiert werden. |
-| 3 | Instanz der Hauptgruppe, außerhalb der Hauptgruppe unter der Kategorie **„Instanzen“** platziert. |
+| 2 | Übergeordnete Objekte, die instanziert werden. |
+| 3 | Instanz der Hauptgruppe, die außerhalb der Hauptgruppe unter der Kategorie **„Instanzen"** zugewiesen wird. |
 
 ### Grundlegende Verwendung
 
-1. Wählen Sie im Outliner eine Gruppe zur Instanzierung aus.  
-2. Suchen Sie nach *Create Instance* in der Befehls‑Palette und führen Sie den Befehl aus.  
-3. Verschieben Sie die instanzierte Gruppe.  
-4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+1. Wählen Sie eine Gruppe im Outliner zum Instanzieren aus.
+2. Suchen Sie in der Befehlspalette nach **Instanz erstellen** und führen Sie den Befehl aus.
+3. Verschieben Sie die instanzierte Gruppe.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="instance-group-curve"/>
 
 ## Siehe auch
-- [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance)
+- [Volumenkörper- und Flächeninstanz erstellen](/solid/create-solid-and-sheet-instance)

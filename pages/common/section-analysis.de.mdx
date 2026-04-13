@@ -4,38 +4,48 @@ import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Section Analysis
+## Schnittanalyse
 
-<Reference shortcut="" command="Section Analysis" button="Top Right Menu" buttonIcon='button-section-analysis' />
+{/* <Reference shortcut="" command="Schnittanalyse" button="Menü oben rechts" buttonIcon='button-section-analysis' /> */}
 
-Erstellen Sie einen virtuellen Schnitt durch ein 3D-Modell, um dessen innere Struktur zu analysieren. Diese Funktion entfernt vorübergehend einen Teil des Modells entlang einer definierten Ebene, ohne die Geometrie dauerhaft zu verändern, was sie sowohl für kreative als auch technische Visualisierungen nützlich macht. 
+<CommandReference
+  command="Schnittanalyse"
+  shortcut=""
+  button="Im Menü oben rechts"
+  buttonIcon="/img/button-section-analysis.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie eine Fläche eines Objekts aus, um die Schnittfläche zu definieren.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-section-analysis"/> oder geben Sie *Section Analysis* in die Befehlsleiste ein.
-3. Passen Sie die Einstellungen im Befehlsdialog und über Tastenkombinationen an:
+Erstellt einen virtuellen Schnitt durch ein 3D‑Modell, sodass du dessen innere Struktur betrachten und analysieren kannst. Dabei wird ein Teil des Modells entlang einer definierten Ebene temporär ausgeblendet, ohne die Geometrie dauerhaft zu verändern. Nützlich für kreative und technische Visualisierungen.
+
+## Grundlegende Verwendung
+
+1. Wähle eine Fläche an einem Objekt aus, um die Schnittebene zu definieren.
+2. Drücke die <ButtonIcon type="button-section-analysis"/>‑Schaltfläche oder gib **Schnittanalyse** in der Befehlspalette ein.
+3. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Plane:** Bestimmt die Methode zur Platzierung der Schnittfläche.
-            - **Selection:** Verwendet die gewählte Fläche als Schnittfläche.
-            - **Previous:** Stellt die zuletzt verwendete Schnittfläche wieder her.
-            - **CPlane:** Richtet die Schnittfläche an der aktiven Konstruktionsfläche aus.
-        - **Distance:** Passt die Position der Schnittfläche an.
-        - **Flip:** Kehrt die Richtung der Schnittfläche um.
+        - **Ebene:** Wähle, wie die Schnittebene definiert wird.
+            - **Auswahl:** Setzt die Schnittebene basierend auf der ausgewählten Fläche.
+            - **Vorherige:** Verwendet die zuvor platzierte Schnittebene.
+            - **CPlane:** Richtet die Schnittebene an der aktiven Konstruktionsebene aus.
+        - **Distanz:** Gibt die Distanz an.
+        - **Umkehren:** Kehrt die Richtung der Schnittebene um.
     - <Kst>Tastenkombinationen</Kst>
-      - <kbd>D</kbd> **Distance:** Bewegt die Schnittfläche.
-      - <kbd>F</kbd> **Flip:** Kehrt die Richtung der Schnittfläche um.
-5. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+      - <kbd>D</kbd> **Distanz:** Bewegt die Schnittebene.
+      - <kbd>F</kbd> **Umkehren:** Kehrt die Richtung der Schnittebene um.
+5. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="section-analysis"/>
 
 <Callout type="info" emoji="🗒️">
-**Note** 
-- Nach der Bestätigung im Befehlsdialog wird eine virtuelle Schnittansicht Ihres Objekts angezeigt. Um diese Vorschau zu entfernen, klicken Sie entweder auf die Schaltfläche <ButtonIcon type="button-section-analysis"/> oder geben Sie *Section Analysis* in die Befehlsleiste ein. 
-- Die ursprüngliche Platzierung der Schnittfläche wird gespeichert. Um sie wiederherzustellen, wählen Sie die Option **Previous** im Befehlsdialog. 
-- Die Schnittanalyse kann sich überschneidende Objekte in Rot hervorheben.
-- Abschnittsanalyse kann einen virtuellen Schnitt durch Mesh‑Dateien erzeugen.
+**Hinweis**  
+- Nach dem Bestätigen im Befehlsdialog wird ein virtueller Schnitt deines Objekts angezeigt. Um diese Vorschau zu entfernen, klicke erneut auf die <ButtonIcon type="button-section-analysis"/>‑Schaltfläche oder gib *Schnittanalyse* in der Befehlspalette ein.  
+- Die ursprüngliche Platzierung der Schnittebene wird gespeichert. Um sie wiederherzustellen, wähle im Befehlsdialog die Option **Vorherige**.  
+- Die Schnittanalyse kann interferierende Objekte rot hervorheben.  
+- Die Schnittanalyse kann auch virtuelle Schnitte durch Mesh‑Dateien erzeugen.
 </Callout>
 
 ## Siehe auch
-- [Construction Plane](/plasticity-essentials/construction-plane)
+- [Konstruktionsebene](/plasticity-essentials/plasticity-interface/construction-plane)

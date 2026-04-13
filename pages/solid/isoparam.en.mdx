@@ -3,9 +3,19 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Isoparam
+## Isoparam
 
-<Reference shortcut="Ctrl + R" command="Isoparam" button="" />
+{/* <Reference shortcut="Ctrl + R" command="Isoparam" button="" /> */}
+
+<CommandReference
+  command="Cut Curve"
+  shortcut="Ctrl + R"
+  button="In Command Palette"
+  buttonIcon="/img/button-isoparam.png"
+  tier="both"
+/>
+
+## Description
 
 Create Edges on a Face of a Solid or Sheet along the U or V direction. Multiple Edges can be created simultaneously.
 
@@ -28,12 +38,10 @@ Create Edges on a Face of a Solid or Sheet along the U or V direction. Multiple 
 
 <VideoPlayer fileName="isoparam"/>
 
-<Callout type="info" emoji="💡">
-**Info**
-- Take into consideration that when using the Subdivide option on a surface with a CV layout, it will split the surface and both parts will share the same CV layout. If you want to dissolve the face or revert to its previous state, you cannot—because this is a destructive process.
+<Callout type="info">
+**Note:**    Take into consideration that when using the Subdivide option on a surface with a CV layout, it will split the surface and both parts will share the same CV layout. If you want to dissolve the face or revert to its previous state, you cannot because this is a destructive process.
 </Callout>
 
 ## See also
 - [Offset Curve](offset-curve)
 - [Imprint](imprint)
-- [Extend Edge](extend-edge)

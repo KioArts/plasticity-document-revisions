@@ -3,56 +3,70 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Scale
+## Skalieren
 
-<Reference shortcut="S" command="Scale" button="In der Befehlsleiste"  buttonIcon='button-scale'/>
+{/* <Reference shortcut="S" command="Skalieren" button="In Command Bar" buttonIcon='button-scale' /> */}
 
-- Skalieren Sie Objekte mit dem **Scale‑Gizmo**. Sie können die Skalierung auf eine einzelne Achse beschränken oder **[Freistil‑Skalierung](#freestyle-scale)** nutzen. Der Pivot‑Punkt ist ebenfalls anpassbar. Wenn Sie ein neues Primitive‑ oder Skizzenobjekt an dessen ursprünglichem Einfügepunkt platzieren, richten sich das Scale‑Gizmo und der Pivot automatisch nach der Oberflächennormalen des Objekts aus.
+<CommandReference
+  command="Skalieren"
+  shortcut="S"
+  button="In Command Bar"
+  buttonIcon="/img/button-scale.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
+
+Objekte mit dem Skalieren-Gizmo skalieren. Optionen für Einzelachsenbeschränkungen oder [**Freihand-Skalierung**](#freestyle-scale) sind verfügbar. Der Pivotpunkt ist ebenfalls einstellbar. Wenn ein neues Grundkörper- oder Skizzenobjekt an seinem anfänglichen Einfügepunkt eingefügt wird, richten sich der Skalieren-Gizmo und der Pivot automatisch an der Flächennormalen des Objekts aus.
+
+## Grundlegende Verwendung
 
 1. Wählen Sie die Objekte aus, die Sie skalieren möchten.
 2. Drücken Sie <kbd>S</kbd>.
-3. Verwenden Sie den angezeigten Skalierungs-Gizmo zum Größenändern.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+3. Verwenden Sie den angezeigten Skalieren-Gizmo zum Vergrößern oder Verkleinern.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
    - <Kst>Befehlsdialog</Kst>
-      - **XYZ:** Geben Sie die Skalierung der X-, Y- und Z-Achsen an.
-      - **Orientation:** Legt die Ausrichtung des Skalierungs-Gizmos fest
-      - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Oberflächennormalen des Objekts aus.  
-         - <ButtonIcon type="button-pivot"/> **Pivot:** Setzt die Ausrichtung auf die zuvor definierte Pivot-Ausrichtung.  
-         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet die Ausrichtung an der aktiven Konstruktions-Ebene aus.  
-         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an den globalen (Welt-) Achsen aus.  
-      - **Pivot:** Legen Sie die Position des Pivot-Punkts fest.  
-         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.  
-         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.  
+      - **XYZ:** Geben Sie den Skalierungsfaktor der X-, Y- und Z-Achse an.
+      - **Ausrichtung:** Legen Sie die Ausrichtung des Skalieren-Gizmos fest.
+         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Flächennormalen des Objekts aus.
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Richtet die Ausrichtung an der zuvor definierten Pivot-Ausrichtung aus.
+         - <ButtonIcon type="button-construction-plane"/> **Konstruktionsebene:** Richtet die Ausrichtung an der aktiven Konstruktionsebene aus.
+         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an der globalen (Welt-)Achse aus.
+      - **Pivot:** Legen Sie die Position des Pivotpunkts fest.
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot im Zentrum des Begrenzungsrahmens um die ausgewählten Objekte.
+         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.
          - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts.
 
-         ![Pivot Demonstration](/img/pivot-scale.png)
-
+         ![Pivot-Demonstration](/img/pivot-scale.png)
+      - Erweitert:
+         - **Instanzen invers transformieren**: Skaliert nur das übergeordnete Objekt, während alle zugehörigen Instanzen an ihrer Position bleiben, indem automatisch die entgegengesetzte Transformation auf jede Instanz angewendet wird.
    - <Kst>Tastenkombinationen</Kst>
-   - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Binden Sie an die X-, Y- oder Z-Achse](/tool/sketching-essentials#constrain-to-an-axis).
-   - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Binden Sie an die X-, Y- oder Z-Ebene.
-   - <kbd>S</kbd> **Uniform:** Skaliert gleichmäßig in den X-, Y- und Z-Richtungen.
-   - <kbd>F</kbd> **Freestyle:** Geben Sie die Skalierungsachse durch Klicken auf den Anfangs- und Endpunkt an und klicken Sie dann mit dem gewünschten Skalierungsverhältnis.
-   - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmo anzugeben.
-   - <kbd>W</kbd> **Worldspace:** Ändern Sie die Koordinatenachse des Gizmo in Weltkoordinaten.
-5. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+   - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+   - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.
+   - <kbd>S</kbd> **Gleichmäßig:** Skaliert gleichmäßig in X-, Y- und Z-Richtung.
+   - <kbd>F</kbd> **Freihand:** Geben Sie die Skalierungsachse an, indem Sie auf den Start- und Endpunkt klicken, und klicken Sie dann mit dem gewünschten Skalierungsverhältnis.
+   - <kbd>V</kbd> **Pivot:** Klicken, um die Position des Gizmos anzugeben.
+   - <kbd>W</kbd> **Weltkoordinaten:** Die Koordinatenachse des Gizmos auf Weltkoordinaten ändern.
+4. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
 
-## Freestyle Scale[#freestyle-scale]
+## Freihand-Skalierung[#freestyle-scale]
 
-Dieser Befehl entspricht der Option <kbd>F</kbd> des Befehls **Scale**.
+Dieser Befehl entspricht der <kbd>F</kbd>-Option des **Skalieren**-Befehls.
 
 1. Wählen Sie die Objekte aus, die Sie skalieren möchten.
-2. Verwenden Sie den Befehl **Freestyle Scale** in der Befehlspalette.
-3. Geben Sie die Skalierungsachse durch Klicken auf den Anfangs- und Endpunkt an.
-4. Bewegen Sie den Cursor, um das Objekt zu skalieren, und klicken Sie dann auf das gewünschte Skalierungsverhältnis.
-5. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-   - Die Option entspricht dem Befehl **Scale**.
-6. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+2. Verwenden Sie den Befehl **Freihand-Skalierung** in der Befehlspalette.
+3. Geben Sie die Skalierungsachse an, indem Sie auf den Start- und Endpunkt klicken.
+4. Bewegen Sie den Cursor, um das Objekt zu skalieren, und klicken Sie auf das gewünschte Skalierungsverhältnis.
+5. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
+   - <Kst>Befehlsdialog</Kst>
+      - **Verhältnis:** Geben Sie das Verhältnis des skalierten Objekts an.
+      - **Länge:** Geben Sie die Länge des skalierten Objekts an.
+      - **Gleichmäßig:** Das Objekt gleichmäßig skalieren und dabei die Proportionen beibehalten.
+6. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
 
 <VideoPlayer fileName="freestyle-scale"/>
 
 ## Siehe auch
-- [Mirror](mirror)
-- [Move](move)
-- [Rotate](rotate)
+- [Spiegeln](mirror)
+- [Verschieben](move)
+- [Drehen](rotate)

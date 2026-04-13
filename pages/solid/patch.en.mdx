@@ -4,9 +4,19 @@ import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Patch
+## Patch
 
-<Reference shortcut="" command="Patch" button="In Suggested Commands Menu" buttonIcon="button-patch" />
+{/* <Reference shortcut="" command="Patch" button="In Suggested Commands Menu" buttonIcon="button-patch" /> */}
+
+<CommandReference
+  command="Patch"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-patch.png"
+  tier="both"
+/>
+
+## Description
 
 Create a patch surface from closed Curves or holes along Edges. For holes, G0, G1, G2, and planar continuity options and guide Curves are available.
 
@@ -15,7 +25,7 @@ Create a patch surface from closed Curves or holes along Edges. For holes, G0, G
 You can create a patch surface from closed Curves.
 
 1. Select the closed Curves you want to patch.
-2. Click the button <ButtonIcon type="button-patch" /> on the Right of Command Bar.
+2. Search for **Patch** in the Suggested Commands Menu or Command Palette, and execute it.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
         - **Tolerance:** Specify the tolerance for the patch.
@@ -28,7 +38,7 @@ You can create a patch surface from closed Curves.
 You can patch holes along Edges.
 
 1. Select the Edges that surround the hole.
-2. Click the button <ButtonIcon type="button-patch" /> on the Right of Command Bar.
+2. Search for **Patch** in the Suggested Commands Menu or Command Palette, and execute it.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
         - **Continuity:**
@@ -50,7 +60,7 @@ You can patch holes along Edges.
 You can create a new sheet body by selecting edges of a solid.
 
 1. Select the edges of a solid.
-2. Click the button <ButtonIcon type="button-patch" /> on the Right of Command Bar.
+2. Search for **Patch** in the Suggested Commands Menu or Command Palette, and execute it.
 3. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
         - **Tolerance:** Specify the tolerance for the patch.
@@ -65,7 +75,7 @@ You can patch holes along Edges with guide Curves.
 1. Create the guide Curves.
 2. Add an isoparam at each point where the guide curve touches the surface. Use the [**Isoparam**](isoparam) command.
 3. Select the Edges that surround the hole.
-4. Click the button <ButtonIcon type="button-patch" /> on the Right of Command Bar.
+4. Search for **Patch** in the Suggested Commands Menu or Command Palette, and execute it.
 5. Select the guide Curves.
 6. Set the options in the Command Dialog.
     - Options are the same as above.
@@ -78,11 +88,10 @@ You can patch holes along Edges with guide Curves.
 You can patch multiple holes at once.
 
 1. Select the Sheets with multiple holes you want to patch.
-2. Click the button <ButtonIcon type="button-patch" /> on the Right of Command Bar.
+2. Search for **Patch** in the Suggested Commands Menu or Command Palette, and execute it.
 3. Holes are patched and made Solid.
-<Callout emoji="❗">
-**Note**<br />
-If there is a hole that cannot be filled, the command fails.
+<Callout type="warning">
+**Note:**  If there is a hole that cannot be filled, the command fails.
 </Callout>
 
 <VideoPlayer fileName="patch-4"/>
@@ -94,7 +103,7 @@ You can trim a sheet with the patch tool.
 1. Select the target sheet you want to trim and temporarily hide it.
 2. Select the base sheet and make an edge loop selection where there is a hole.
 3. Enter in body selection mode, unhide the target sheet and make an additive selection to it. 
-5. Click the button <ButtonIcon type="button-patch"/> on the Right of Command Bar.
+5. Search for **Patch** in the Suggested Commands Menu or Command Palette, and execute it.
 6. Set the options in the command dialog. 
     - <Kst>Command Dialog</Kst>
         - **Method:**

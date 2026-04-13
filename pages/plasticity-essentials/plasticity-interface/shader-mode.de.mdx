@@ -1,0 +1,87 @@
+import { Callout } from 'nextra/components'
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Tabs } from 'nextra/components'
+
+# Shader-Modus
+
+## Shader-Modus
+- Sie können zwischen den integrierten Shadern von Plasticity wechseln, indem Sie darauf klicken. Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, werden die ausgewählten Plasticity-Matcaps auf Objekte angewendet und angezeigt.
+
+- Verfügbare Matcaps:
+
+![Matcaps im Shader-Modus](/img/shader-mode-preview.png)
+
+| Name | Nummer | Anwendbarkeit | Hinweis |
+| ---- | ------ | ------------- | ---- |
+| Keramik Dunkel | 1 | Standard-Erscheinungsbild | - |
+| Metall Autolack | 2 | Glänzendes Erscheinungsbild | - |
+| Dunkel Glänzend | 3 | Glänzendes Erscheinungsbild | - |
+| Verlauf | 4 | Umgebungsverlauf-Erscheinungsbild | - |
+| Keramik Glühbirne | 5 | Highlight-Checker | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
+| Farb-Matcap | 6 | Mattes Erscheinungsbild | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
+| Schwarze Silhouette | 7 | Silhouetten-Checker | - |
+| Farbige Silhouette | 8 | Silhouetten-Checker mit Farbe | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
+| Isophoten/Iso-Winkel | 9 | Statischer Oberflächenkontinuitäts-Checker | Shader wird basierend auf dem aktuellen Kamerawinkel auf das Objekt angewendet. Passen Sie die Streifendichte im Menü **"Materialoptionen"** an. |
+| Formschrägen-Checker | 10 | Formschrägen-Checker für Entformung | Der Winkel wird basierend auf der aktuellen Konstruktionsfläche angezeigt. Passen Sie die Schrägwinkel-Schwelle (blau) relativ zur Konstruktionsfläche im Menü **"Materialoptionen"** an. |
+| Horizontale Zebra-Reflexion | 11 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
+| Vertikale Zebra-Reflexion | 12 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
+| Topology Shader    |  13    |  Surface Checker                 |  Use on imported mesh files to trace or create a wireframe look for reverse engineering purposes. This is useful for analyzing complex organic shapes with intricate curves and deformations, which may not be as easily visible when using highlighters or other shaders. You can adjust the direction and line distribution in the **"Material Options"** panel. |
+| Normal Checker     |  14    |  Normal Surface Checker                 |  Use this shader to check if any surfaces are reversed. Blue indicates that the surface is facing outward, while red indicates it is facing inward. |
+
+## Ambient Occlusion (AO)
+
+Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius (1) and falloff (2) in the Appearance section in the Preferences menu.
+
+![Ambient Occlusion Settings](/img/ao-settings.png)
+
+## Alle Matcaps
+- Benutzerdefinierte Matcaps erscheinen unter der Kategorie "Alle Matcaps".
+
+![Benutzerdefinierte Matcaps](/img/custom-matcaps-preview.png)
+
+### Benutzerdefinierte Matcaps installieren
+
+1. Bereiten Sie Ihre Matcap-Dateien vor (EXR und PNG mit identischen Namen).
+2. Finden Sie das Verzeichnis `.plasticity` und erstellen Sie dort einen Ordner namens "matcaps".
+
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+    <Tabs.Tab>
+    Navigieren Sie zu `C:/Users/<username>/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigieren Sie zu `~/.plasticity`.
+    </Tabs.Tab>
+    <Tabs.Tab>
+    Navigieren Sie zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    </Tabs.Tab>
+</Tabs>
+
+3. Verschieben Sie die Dateien in diesen Ordner und starten Sie Plasticity neu.
+
+![Matcaps installieren](/img/installing-matcaps-preview.png)
+
+<Callout type="info" emoji="💡">
+**Tipp**     
+- EXR- und PNG-Dateien sollten 512x512 Pixel groß sein und einen transparenten Hintergrund haben.
+</Callout>
+
+<Callout emoji="❗">
+**Note**     
+- Stellen Sie sicher, dass Sie die Option zum Anzeigen versteckter Ordner in Ihrem Betriebssystem aktivieren, um auf das Verzeichnis `.plasticity` zuzugreifen.
+</Callout>
+
+### Zeige Kanten, Kurven und Flächen ein- oder ausblenden
+
+- Sie können die Sichtbarkeit von Kanten, Kurven und Flächen mit den untenstehenden Schaltflächen umschalten.
+
+![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png)
+
+| Funktion                                                        | Tastenkürzel | Schaltfläche | Befehlsname               |
+| --------------------------------------------------------------- | ------------ | ----------- | ------------------------- |
+| Umschalten der Kanten-Sichtbarkeit <br />(Deaktivieren blendet die Kanten aus.) |              | (13)        | Viewport: toggle Edges    |
+| Umschalten der Kurven-Sichtbarkeit <br />(Deaktivieren blendet die Kurven aus.) |              | (14)        | Viewport: toggle Curves   |
+| Umschalten der Flächen-Sichtbarkeit <br />(Deaktivieren blendet die Flächen aus.) |              | (15)        | Viewport: toggle Faces    |
+
+### See Also
+[Render Mode](/plasticity-essentials/render-mode)

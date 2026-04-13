@@ -3,31 +3,53 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Rebuild Curve（カーブを再構築する）[#rebuild-curve]
+{/* # Rebuild Curve [#rebuild-curve]
 
-<Reference shortcut="" command="Rebuild" button="提案されたコマンドメニュー内" buttonIcon='button-rebuild' />
+<Reference shortcut="" command="Rebuild" button="In Suggested Commands Menu" buttonIcon='button-rebuild'/> */}
 
-カーブの形状は変えずに制御点の位置を最適化することで、カーブを再構築できます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/rebuild-curve.mp4"
+  alt="Rebuild Curve Preview"
+  title="Rebuild Curve"
+  command="Rebuild"
+  shortcut="-"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-rebuild.png" alt="Rebuild Icon" />}
+/> */}
+
+## カーブの再構築
+
+<CommandReference
+  command="Rebuild Curve"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-rebuild.png"
+  tier="both"
+/>
+
+## 説明
+
+コントロール頂点（CV）を再配置して最適化されたレイアウトを実現しながら、元の形状をできる限り維持してカーブを再構築します。
 
 ## 基本的な使い方
 
-1. 再構築したい曲線を選択します。
-2. <ButtonIcon type="button-rebuild" /> ボタンをクリックします。
+1. 再構築したいカーブを選択します。
+2. コマンドパレットを開き、**Rebuild** と入力してコマンドを実行します。
 3. コマンドダイアログでオプションを設定します。
-  - <Kst>コマンドダイアログ</Kst>
+  - <Kst>Command Dialog</Kst>
     - **方法:**
-      - **適合:** 許容範囲内で再構築します。
-        - **トレランス:** 許容範囲を指定します。
-        - **コーナー保持:** 有効にすると、曲線のコーナーは変更されません。
-      - **ポイント** 指定されたCVの数で再構築します。
+      - **再フィット:** 許容誤差内で再構築します。
+        - **許容誤差:** 許容誤差を指定します。
+        - **コーナーを保持:** 有効にすると、カーブのコーナーは変更されません。
+      - **ポイント:** 指定したCV数で再構築します。
         - **ポイント:** CVの数を指定します。
-      - **明示的制御:** 指定された次数とスパンの数で再構築します。*(インディーおよびスタジオライセンスで利用可能)*
-        - **次数 & スパン:** 次数とスパンの数を指定します。
-        - **Weight:** *Degree と Spans* に応じて、**Weight** を調整して CV の位置を制御できます。値が低いほどカーブの形状が緩み、サーフェス作業フローでの品質が向上します。値が高いほどカーブは元の形状に近くなり、精度と構造が維持されます。 (デフォルト: 0.5)  
-4. コマンドダイアログで OK をクリックするか、右クリックして確認します。
+      - **明示的制御:** 指定した次数とスパン数で再構築します。
+        - **次数とスパン:** 次数の値とスパンの数を指定します。
+        - **ウェイト:** 指定した*次数とスパン*の設定に基づいて、**ウェイト**を調整してCVの位置を制御できます。低い値はカーブの形状を緩め、サーフェスワークフローの品質を向上させます。高い値はカーブを元の形状に近づけ、精度と構造を保持します。（デフォルト: **0.5**）
+4. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="rebuild-curve"/>
 
-## See also
-- [Rebuild](/solid/rebuild)
-- [Delete Redundant Topology](delete-redundant-topology)
+## 関連項目
+- [再構築](/solid/rebuild)
+- [冗長なトポロジーの削除](delete-redundant-topology)

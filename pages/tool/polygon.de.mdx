@@ -4,33 +4,31 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Regelmäßiges Polygon
+## Regelmäßiges Polygon
 
-<Reference shortcut='' command='Polygon' button='Werkzeugleiste'   buttonIcon='button-regular-polygon'/>
+{/* <Reference shortcut='' command='Polygon' button='Toolbar' buttonIcon='button-regular-polygon'/> */}
 
-Sie können ein Polygon erstellen.
+<CommandReference
+  command="Polygon"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-regular-polygon.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-regular-polygon" /> Knopf in der Werkzeugleiste.
+Sie können eine regelmäßige geometrische Form wie ein Dreieck, Rechteck oder ein anderes Polygon erstellen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-regular-polygon" /> in der Symbolleiste.
 2. Klicken Sie auf den Mittelpunkt des Polygons.
 3. Bewegen Sie den Cursor, um die Größe anzupassen, und klicken Sie zur Bestätigung.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Ermöglicht direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
-      - <kbd>Umschalt + Scrollen nach oben</kbd> **Einen Vertex hinzufügen:** Erhöht die Anzahl der Vertices des Polygons.
-      - <kbd>Umschalt + Scrollen nach unten</kbd> **Einen Vertex subtrahieren:** Verringert die Anzahl der Vertices des Polygons.
-      - <kbd>Pfeiltaste nach oben</kbd> Erhöht die Anzahl der Vertices des Polygons.
-      - <kbd>Pfeiltaste nach unten</kbd> Verringert die Anzahl der Vertices des Polygons.
-      - <kbd>V</kbd> **Toggle vertical / horizontal:** Ändert die Neigung relativ zur Konstruktionsebene.
-      - <kbd>C</kbd> **Toggle circumscribed:** Wechselt zwischen umschriebenem und eingeschriebenem Polygon.
-      - <kbd>K</kbd> **Knife:** Siehe [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
-      - <kbd>X</kbd>/<kbd>Y</kbd> **X/Y-Axis:** [Beschränkt auf X, Y Achse](/tool/sketching-essentials#constrain-to-an-axis).
-4. Rechtsklick zur Bestätigung.
-5. Das Polygon wird erstellt.
-
-<Callout type="info" emoji="🗒️">
-**Note** 
-- Der Polygonbefehl merkt sich die zuletzt verwendete Anzahl an Ecken, was Ihre Arbeit effizienter beschleunigen kann.
-</Callout>
-
-<VideoPlayer fileName="polygon"/>
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
+      - <kbd>Shift + Scroll Up</kbd> **Eckpunkt hinzufügen:** Erhöht die Anzahl der Eckpunkte des Polygons.
+      - <kbd>Shift + Scroll Down</kbd> **Eckpunkt entfernen:** Verringert die Anzahl der Eckpunkte des Polygons.
+      - <kbd>Pfeil nach oben</kbd> Erhöht die Anzahl der Eckpunkte des Polygons.
+      - <kbd>Pfeil nach unten</kbd> Verringert die Anzahl der Eckpunkte des Polygons.
+      - <kbd>V</kbd> **Vertikal / H

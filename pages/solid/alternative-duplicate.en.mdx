@@ -1,12 +1,23 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
-# Alternative Duplicate
+## Alternative Duplicate
 
-<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" />
+{/* <Reference shortcut="Alt + D" command="Alternative Duplicate" button="" /> */}
 
-Create a Solid from selected Faces and then manipulate its position.
+<CommandReference
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button="In Command Palette"
+  buttonIcon="/img/button-alternative-duplicate.png"
+  tier="both"
+/>
+
+## Description
+
+Create a Solid from selected Faces and then reposition it. This is useful for reconstructing missing or damaged surface fragments. The likelihood of a successful result depends on the complexity of the selected geometry. Simpler face selections tend to produce more reliable outcomes.
 
 ## Basic Usage
 
@@ -25,4 +36,4 @@ Create a Solid from selected Faces and then manipulate its position.
         - <kbd>W</kbd> **Worldspace:** Change the Gizmo's coordinate axis to world coordinates.
 4. Confirm with OK in the Command Dialog or right-click.
 
-<VideoPlayer fileName="alternative-duplicate"/>
+<VideoPlayer fileName="alternative-duplicate-solid"/>

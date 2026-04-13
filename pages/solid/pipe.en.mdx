@@ -2,10 +2,21 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
 
-# Pipe
+## Pipe
 
-<Reference shortcut="P" command="Pipe" button="In Suggested Commands Menu" buttonIcon="button-pipe"/>
+{/* <Reference shortcut="P" command="Pipe" button="In Suggested Commands Menu" buttonIcon="button-pipe"/> */}
+
+<CommandReference
+  command="Pipe"
+  shortcut="P"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-pipe.png"
+  tier="both"
+/>
+
+## Description
 
 Create a pipe of any size from a Curve or an Edge. It can be used for boolean operations. Polygon or custom profile options are available.
 
@@ -20,7 +31,7 @@ Create a pipe of any size from a Curve or an Edge. It can be used for boolean op
                - Same function as the Boolean command. See [**Boolean**](/solid/boolean) command for details.
           - **Select custom profile:** Select Regions, Curves or Faces to specify the custom profiles.
           - **Vertex count:** Specify the number of Vertices for the profile's polygon. If you specify 0, it will be circular.
-          - **Section size:** Specify the section size.
+          - **Diameter:** Specify the section size.
           - **Thickness:** Specify the pipe wall thickness.
           - **Angle:** Specify the rotation angle.
           - **Scale:** Specify the scale value on the ending point of the pipe. Click on the option dialog and manually enter your value or drag with your mouse from left to right. To reverse the ending point of the pipe, use [Reverse Command](/sketch/reverse).
@@ -28,7 +39,7 @@ Create a pipe of any size from a Curve or an Edge. It can be used for boolean op
                - **Distance 1:** Adjust the beginning of the length.
                - **Distance 2:** Adjust the ending of the length.
      - <Kst>Keyboard Shortcuts</Kst>
-          - <kbd>Shift + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>,  <kbd>B</kbd>,  <kbd>T</kbd>
+          - <kbd>Shift + Q</kbd> Slice, <kbd>Q</kbd> Union, <kbd>W</kbd> Difference,  <kbd>B</kbd> New Body,  <kbd>T</kbd> Keep Tools
                - Same function as the Boolean command. See [**Boolean**](/solid/boolean) command for details.
           - <kbd>C</kbd> **Custom profile** Select the Regions, Curves or Faces to specify the custom profiles.
           - <kbd>D</kbd> **Section size** Specify the section size by moving the cursor.
@@ -36,12 +47,12 @@ Create a pipe of any size from a Curve or an Edge. It can be used for boolean op
           - <kbd>Shift + T</kbd> **Thickness** Specify the pipe wall thickness by moving the cursor.
 5. Confirm with OK in the Command Dialog or right-click.
 
-<Callout emoji="❗">
-**Note**<br />
-The "Pipe" command is NOT for creating dimensionally accurate pipes. 
-It is for quickly creating cool looking pipes/tubes. 
-It does a lot of things like angles as polygons that make it not dimensionally accurate for any kind of plumbing or whatever. 
-To create a precise pipe, use the [**Sweep**](sweep) command 
+<Callout type="info">
+**Note:**<br />
+The **Pipe** command is *not* intended for creating dimensionally accurate pipes. Its purpose is to quickly generate visually appealing pipes or tubes.
+
+Because it approximates angles, the resulting geometry is not suitable for precise plumbing, mechanical design, or any situation requiring exact dimensions. To create an accurate, fully controlled pipe, use the [**Sweep**](sweep) command instead.
+
 </Callout>
 
 <VideoPlayer fileName="pipe"/>

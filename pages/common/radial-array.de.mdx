@@ -4,39 +4,50 @@ import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Radial Array
+## Radiale Anordnung
 
-<Reference shortcut="" command="Radial Array" button="Rechts von der Befehlsleiste" buttonIcon='button-radial-array' />
+{/* <Reference shortcut="" command="Radiale Anordnung" button="Rechts von der Befehlsleiste"  buttonIcon='button-radial-array'/> */}
 
-Duplizieren Sie Objekte in einem kreisförmigen Muster, indem Sie Winkel und Anzahl festlegen. Radiale Duplizierung und Instanz-Duplizierung sind ebenfalls möglich.
+<CommandReference
+  command="Radiale Anordnung"
+  shortcut=""
+  button="In der Befehlsleiste"
+  buttonIcon="/img/button-radial-array.png"
+  tier="both"
+/>
 
-<Callout>
-Bilder und Meshes (.OBJ, .STL, .FBX usw.) können angeordnet werden, mit Steuerelementen für den Duplizierungswinkel und die Anzahl der Duplikate. Die Instanzierung wird jedoch nicht unterstützt.
+## Beschreibung
+
+Dupliziere Objekte in einem kreisförmigen Muster, indem du den Winkel und die Anzahl angibst. Radiale und instanzbasierte Duplikation sind ebenfalls möglich.
+
+<Callout type='info'>
+**Hinweis:** Bilder und Meshes (.OBJ, .STL, .FBX usw.) können angeordnet werden, mit Steuerungen für Duplikationswinkel und Kopienanzahl. Das Anordnen von Instanzobjekten wird ebenfalls unterstützt.
 </Callout>
 
-## Grundlegende Nutzung
+## Grundlegende Verwendung
 
-1. Wählen Sie das Objekt zum Duplizieren aus.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-radial-array" /> rechts von der Befehlsleiste.
-3. Klicken Sie auf den Punkt, den Sie als Zentrum festlegen möchten.
+1. Wähle das Objekt aus, das du duplizieren möchtest.
+2. Klicke auf die Schaltfläche <ButtonIcon type="button-radial-array" /> rechts in der Befehlsleiste.
+3. Klicke auf den Punkt, den du als Zentrum festlegen möchtest.
 4. Die Duplikationsvorschau wird angezeigt.
-5. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+5. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
    - <Kst>Befehlsdialog</Kst>
    - **Modus:**
-         - **Gesamt:** Geben Sie die Gesamtdistanz an, bei der alle Duplikate gleichmäßig auf dem angegebenen Gradwert verteilt werden.
-         - **Abstand:** Geben Sie den Abstand für jedes der Duplikate an.
-      - **Degrees:** Geben Sie den Winkel für die Duplizierung an.
-      - **Number 2:** Specify the number of duplications.
-      - **Number 1:** Specify the number of repetitions in a radial pattern.
-      - **Step 1:** Specify the distance between each repetition in a radial pattern.
-      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
+         - **Gesamt:** Gibt die Gesamtdistanz an, über die alle Duplikate gleichmäßig im angegebenen Winkelwert angeordnet werden.
+         - **Abstand:** Gibt den Abstand zwischen den einzelnen Duplikaten an.
+   - **Grad:** Gibt den Winkel für die Duplikation an.
+   - **Anzahl 2:** Gibt die Anzahl der Duplikate an.
+   - **Anzahl 1:** Gibt die Anzahl der Wiederholungen in einem radialen Muster an.
+   - **Schritt 1:** Gibt den Abstand zwischen den Wiederholungen in einem radialen Muster an.
+   - **Instanzen erstellen:** Erstellt Instanzen statt unabhängiger Kopien. (Siehe [Instanzen erstellen](/solid/create-instance))
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Umschalt</kbd> + Mausrad hoch **Add copy:** Erhöht die Anzahl der Duplizierungen.
-      - <kbd>Umschalt</kbd> + Mausrad runter **Subtract copy:** Verringert die Anzahl der Duplizierungen.   
-6. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+   - <kbd>Shift + Mausrad hoch</kbd> **Kopie hinzufügen:** Erhöht die Anzahl der Duplikate.
+   - <kbd>Shift + Mausrad runter</kbd> **Kopie entfernen:** Verringert die Anzahl der Duplikate.
+   - <kbd>I</kbd> **Instanzen umschalten:** Schaltet um, ob die erzeugte Hälfte als Instanz oder als unabhängige Kopie erstellt wird.
+6. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="radial-array"/>
 
 ## Siehe auch
-- [Curve Array](curve-array)
-- [Rectangular Array](rectangular-array)
+- [Kurvenanordnung](curve-array)
+- [Rechteckige Anordnung](rectangular-array)

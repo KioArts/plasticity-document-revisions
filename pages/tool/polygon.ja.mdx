@@ -4,37 +4,32 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Regular Polygon
+## 正多角形
 
-<Reference shortcut='' command='Polygon' button='ツールバー' buttonIcon='button-regular-polygon'/>
+{/* <Reference shortcut='' command='Polygon' button='Toolbar' buttonIcon='button-regular-polygon'/> */}
 
-多角形を作成できます。
+<CommandReference
+  command="Polygon"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-regular-polygon.png"
+  tier="both"
+/>
+
+## 説明
+
+三角形、四角形、またはその他の多角形などの正規の幾何学的形状を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-regular-polygon" /> をクリックします。
-2. 多角形の中心でクリックします。
-3. カーソルを動かして大きさを調整し、クリックして確定します。
+1. ツールバーの <ButtonIcon type="button-regular-polygon" /> ボタンをクリックします。
+2. 多角形の中心をクリックします。
+3. カーソルを移動してサイズを調整し、クリックして確定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-      - <kbd>Shift + ホイール上回転</kbd> **Add a Vertex:** 多角形の頂点を増やします。
-      - <kbd>Shift + ホイール下回転</kbd> **Subtract a Vertex:** 多角形の頂点を減らします。
-      - <kbd>上矢印キー</kbd> 多角形の頂点を増やします。
-      - <kbd>下矢印キー</kbd> 多角形の頂点を減らします。
-      - <kbd>V</kbd> **Toggle vertical / horizontal :** 構築平面に対する傾きを変えます。
-      - <kbd>C</kbd> **Toggle circumscribed :** 外接/内接を切り替えます。
-      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-      - <kbd>X</kbd>/<kbd>Y</kbd> **X/Y-axis:** [X、Y軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-4. 右クリックで確定します。
-5. 多角形が作成されます。
-
-<Callout type="info" emoji="🗒️">
-**Note** 
-- ポリゴンコマンドは、最後に使用した頂点の数を記憶しており、作業の効率を高めることができます。
-</Callout>
-
-<VideoPlayer fileName="polygon"/>
-
-
-
-
+      - <kbd>Tab</kbd>: 寸法の直接入力が可能になります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)をご覧ください。
+      - <kbd>Shift + Scroll Up</kbd> **頂点を追加:** 多角形の頂点の数を増やします。
+      - <kbd>Shift + Scroll Down</kbd> **頂点を削除:** 多角形の頂点の数を減らします。
+      - <kbd>上矢印キー</kbd> 多角形の頂点の数を増やします。
+      - <kbd>下矢印キー</kbd> 多角形の頂点の数を減らします。
+      - <kbd>V</kbd> **垂直 / 水平を切り替え:** 構築平面に対する傾きを変更します。
+      - <kbd>C</kbd> **外接を

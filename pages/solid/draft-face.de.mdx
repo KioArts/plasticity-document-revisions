@@ -4,35 +4,46 @@ import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Draft Face
+## Draft Face
 
-<Reference shortcut="" command="Draft Face" button="Im vorgeschlagenen Befehlsmenü"   buttonIcon='button-draft-face' />
+{/* <Reference shortcut="" command="Draft Face" button="Im Menü „Vorgeschlagene Befehle“"   buttonIcon='button-draft-face' /> */}
 
-Wenden Sie einen Neigungswinkel auf die ausgewählte Face an.
+<CommandReference
+  command="Draft Face"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-draft-face.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Fläche aus, die Sie als Referenzebene verwenden möchten.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-draft-face" /> im Menü [Vorgeschlagene Befehle](/plasticity-essentials/command-bar#suggested-commands).
-3. Wählen Sie Fläche(n) mit der <kbd>Ctrl</kbd>-Taste aus, um sie zu entwerfen.
-4. Ziehen Sie den weißen Kreis, um den Entwurfswinkel festzulegen, oder verwenden Sie das Gizmo, um die Position der Referenzebene anzupassen.
-5. Stellen Sie die Optionen im Befehlsdialog und den Tastenkombinationen ein.
+Wendet einen Entformungswinkel auf die ausgewählte Fläche an.
+
+## Grundlegende Verwendung
+
+1. Wähle die Fläche aus, die als Referenzebene dienen soll.
+3. Wähle eine oder mehrere Flächen mit <kbd>Shift</kbd> zum Entformen und mit <kbd>Ctrl</kbd> zum Abwählen.
+2. Suche im Command-Palette-Menü nach **Draft Face** und führe den Befehl aus.
+4. Ziehe den weißen Kreis, um den Entformungswinkel festzulegen, oder verwende das Gizmo, um die Position der Referenzebene anzupassen.
+5. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Degrees:** Geben Sie den Neigungswinkel an.
-        - **Grow:**
-            - Wenn die konkave innere Face geneigt wird.
-            - **Moving:** Erweitern Sie die äußere Wand, wenn die geneigte Face an die äußere Wand gelangt.
-            - **Fixed:** Stoppen Sie an der äußeren Wand.
-            - **None:** Es geht von selbst weiter, ohne die äußere Wand zu beeinflussen oder von ihr beeinflusst zu werden.
-    - <Kst>Tastenkombinationen</Kst>    
-        - <kbd>A</kbd> **Angle adjacent:** Geben Sie den Winkel durch Bewegen des Cursors an.
-6. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+        - **Grad:** Bestimmt den Entformungswinkel.
+        - **Wachsen:**
+            - Wenn die konkave Innenfläche entformt wird.
+            - **Beweglich:** Verlängert die Außenwand, wenn die entformte Fläche die Außenwand erreicht.
+            - **Fixiert:** Stoppt an der Außenwand.
+            - **Keine:** Setzt unabhängig fort, ohne die Außenwand zu beeinflussen oder von ihr beeinflusst zu werden.
+    - <Kst>Tastenkombinationen</Kst>
+        - <kbd>A</kbd> **Winkel angrenzend:** Bestimmt den Winkel durch Bewegen des Cursors.
+        - <kbd>D</kbd> **Versatz:** Positioniert die Neutralfläche neu.
+        - <kbd>Ctrl</kbd> **Auswahl ändern:** Entformungsflächen hinzufügen oder entfernen.
+6. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="draft-face"/>
 
-<Callout type="info" emoji="🗒️">
-**Note**
-Das Anwenden des Draft-Befehls auf einer nicht gleichmäßigen Fläche ist möglich, jedoch mit bestimmten Einschränkungen. Sie können den Draft-Winkel angeben, aber die Referenzebene nicht verschieben.
+<Callout type="info">
+**Hinweis:** Das Anwenden des Entformungsbefehls auf einer nicht-uniformen Oberfläche ist möglich, jedoch mit gewissen Einschränkungen. Der Entformungswinkel kann festgelegt werden, aber die Referenzebene kann nicht verschoben werden.
 </Callout>
 
 ## Siehe auch

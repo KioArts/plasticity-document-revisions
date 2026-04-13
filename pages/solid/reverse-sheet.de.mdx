@@ -4,26 +4,35 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Reverse Sheet
+## Reverse Sheet
 
-<Reference shortcut="" command="Reverse" button=""/>
+{/* <Reference shortcut="" command="Reverse" button=""/> */}
 
-Reverse the direction of normal on a sheet. 
+<CommandReference
+  command="Reverse"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-reverse.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie das Blech aus, um seine normale Richtung umzukehren.
-2. Geben Sie **Reverse** in die Befehlsleiste ein.
-3. Die normale Richtung des Blechs wurde nun umgekehrt.
+Kehrt die Normalenrichtung eines Sheets um.
+
+## Grundlegende Verwendung
+
+1. Wähle das Sheet aus, dessen Normalenrichtung du umkehren möchtest.
+2. Gib **Reverse** in der Command Palette ein.
+3. Die Normalenrichtung des Sheets wurde umgekehrt.
+
 <VideoPlayer fileName="reverse-sheet"/>
 
-<Callout type="info" emoji="💡">
-**Tip** 
-Um einen Effekt des Reverse-Befehls zu sehen, können Sie das Plasticity-Blender-Bridge-Addon verwenden, bei dem Sie eine Live-Link-Verbindung und Interaktion haben können. Für weitere Informationen dazu, klicken Sie [hier](/blender/install-blender-addon).
-
+<Callout type="info">
+**Hinweis:**  
+Um die Wirkung des **Reverse**‑Befehls zu sehen, kannst du das Plasticity‑Blender‑Bridge‑Addon verwenden, das eine Live‑Verbindung und Interaktion ermöglicht.  
+Weitere Informationen findest du [hier](/blender/install-blender-addon).
 </Callout>
 
 ## Siehe auch
 - [Reverse Curve](/sketch/reverse-curve)
-
-

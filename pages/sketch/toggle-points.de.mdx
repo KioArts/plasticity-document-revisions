@@ -4,26 +4,51 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# Toggle Points
+{/* # Toggle Points
 
-<Reference shortcut="" command="Toggle Points" button="" />
+<Reference shortcut="" command="Toggle Points" button='button-toggle-points' /> */}
 
-Punkte an Flächen, Kurven und Körpern ausblenden oder anzeigen.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/toggle-points.mp4"
+  alt="Toggle Points Preview"
+  title="Toggle Points"
+  command="Toggle Points"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-toggle-points.png" alt="button-toggle-points Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Punkte umschalten
 
-1. Wählen Sie die Fläche, Kurve oder den Körper aus, bei dem Sie die CV-Punkte ausblenden oder anzeigen möchten.
-2. Geben Sie **Toggle Points** in der Befehls-Palette ein und klicken Sie darauf.
+<CommandReference
+  command="Toggle Points"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-toggle-points.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Schaltet die Sichtbarkeit von Kontrollscheitelpunkt- (CV) und Scheitelpunktpunkten auf Kurven sowie CV-Punkten auf Flächen (Sheets) und Körpern (Solids) um.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Geometrie aus:
+    - **Kurven**: Wählen Sie die Kurve oder einen CV-Punkt aus, um das CV-Layout auszublenden. Um die Sichtbarkeit wiederherzustellen, wählen Sie die Kurve aus und führen Sie den Befehl erneut aus.
+    - **Flächen**: Wählen Sie die Fläche oder einen CV-Punkt aus, um die Sichtbarkeit umzuschalten. Um den Standardzustand wiederherzustellen, wählen Sie die Fläche aus und führen Sie den Befehl erneut aus.
+    - **Volumenkörper**: Wählen Sie eine Fläche oder einen CV-Punkt aus, um eine einzelne Fläche umzuschalten, oder wählen Sie den Volumenkörper aus, um alle Flächen zu beeinflussen. Um den Standardzustand wiederherzustellen, wählen Sie die gewünschten Flächen oder den Volumenkörper aus und führen Sie den Befehl erneut aus.
+2. Geben Sie **Toggle Points** in der Befehlspalette ein und klicken Sie mit der linken Maustaste darauf.
+3. Die Punkte werden ausgeblendet oder eingeblendet.
+
+<Callout type="default">
+**Tipp:** Weisen Sie diesem Befehl für schnelleren Zugriff eine Tastenkombination zu. Klicken Sie mit der rechten Maustaste in der Befehlspalette darauf, wählen Sie „Tastenkombination zuweisen" und drücken Sie Ihre gewünschte Tastenkombination.
+</Callout>
 
 <VideoPlayer fileName="toggle-points"/>
 
-<Callout type="info" emoji="💡">
-    **Tip**
-    Erstellen Sie eine Tastenkombination für eine einfache Nutzung und schnellen Zugriff. Klicken Sie mit der rechten Maustaste auf einen Befehl in der Befehls-Palette, dann mit der linken Maustaste auf „Tastenkürzel zuweisen“ und weisen Sie eine Tastenkombination zu.<VideoPlayer fileName="assign-shortcut"/>
-</Callout>
-
 ## Siehe auch
-- [Rebuild Curve](rebuild-curve)
-- [Rebuild Face](/solid/rebuild-face)
-- [Raise Curve Degree](raise-curve-degree)
-- [Raise Surface Degree](/solid/raise-surface-degree)
+- [Kurve neu aufbauen](rebuild-curve)
+- [Fläche neu aufbauen](/solid/rebuild-face)
+- [Kurvengrad erhöhen](raise-curve-degree)
+- [Oberflächengrad erhöhen](/solid/raise-surface-degree)
