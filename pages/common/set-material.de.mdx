@@ -2,54 +2,68 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Set Material
+## Material festlegen
 
-<Reference shortcut="M" command="Set Material" button="" />
+{/* <Reference shortcut="M" command="Material festlegen" button="" /> */}
 
-Weisen Sie Material Solids und Sheets zu. Gruppenmaterial beeinflusst enthaltene Objekte. Kurven werden durch Farbe und Deckkraft beeinflusst. Bildtiefe und Deckkraft können über das Material angepasst werden.
+<CommandReference
+  command="Material festlegen"
+  shortcut="M"
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-set-material.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Weise ausgewählten Solids und Sheets ein Material zu. Gruppenmaterial beeinflusst enthaltene Objekte. Kurven werden durch Farbe und Deckkraft beeinflusst. Bildtiefe und Deckkraft können über das Material angepasst werden.
 
 ## Material für Objekte festlegen
 
-1. Wählen Sie die Solids, Sheets und Kurven aus, denen Sie das Material zuweisen möchten.
-2. Drücken Sie <kbd>M</kbd>.
-3. Legen Sie die Optionen im Befehlsdialog fest.
+1. Wähle die Solids, Sheets und Kurven aus, für die du das Material festlegen möchtest.
+2. Drücke <kbd>M</kbd>.
+3. Lege die Optionen im Befehlsdialog fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Color:** Legen Sie die Grundfarbe des Materials fest.
-        - **Metalness:** Steuert, wie metallisch das Material erscheint. Ein Wert von 0 bedeutet, dass das Material nicht metallisch ist, während ein Wert von 1 bedeutet, dass das Material vollständig metallisch ist.
-        - **Roughness:** Legen Sie die Rauheit der Materialoberfläche fest. Ein Wert von 0 bedeutet, dass die Oberfläche perfekt glatt ist, während ein Wert von 1 bedeutet, dass die Oberfläche sehr rau ist.
-        - **Clearcoat:** Fügt dem Grundmaterial eine zusätzliche Schicht von spiegelnden Reflexionen hinzu. Nützlich für Materialien wie Autolack.
-        - **Clearcoat roughness:** Legen Sie die Rauheit der Clearcoat-Schicht fest.
-        - **Sheen:** Fügt eine weiche, samtartige Reflexion nahe den Kanten des Materials hinzu und simuliert Materialien wie Stoff.
-        - **Sheen roughness:** Legen Sie die Rauheit der Sheen-Schicht fest.
-        - **Sheen color:** Legen Sie die Farbe der Sheen-Schicht fest.
-        - **Specular intensity:** Steuert die Intensität der spiegelnden Reflexion.
-        - **Specular color:** Legen Sie die Farbe der spiegelnden Reflexion fest.
-        - **Transmission:** Steuert den Grad, zu dem das Material Licht durchlässt.
-        - **Thickness:** Legen Sie die Dicke des Materials fest.
-        - **Opacity:** Legen Sie den Grad fest, zu dem das Material transparent oder undurchsichtig ist.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+        - **Farbe:** Legt die Grundfarbe des Materials fest.
+        - **Rauheit:** Legt die Rauheit der Materialoberfläche fest. Ein Wert von `0` bedeutet eine perfekt glatte Oberfläche, ein Wert von `1` eine sehr raue Oberfläche.
+        - **Metallizität:** Steuert, wie metallisch das Material erscheint. `0` bedeutet nicht-metallisch, `1` vollständig metallisch.
+        - **IOR:** Legt den Brechungsindex fest, der steuert, wie Licht beim Durchgang durch das Material gebrochen wird. `1.0` entspricht Luft, höhere Werte dichteren Materialien wie Glas (`1.5`) oder Diamant (`2.4`).
+        - **Deckkraft:** Legt fest, wie transparent oder opak das Material ist.
+    - <Kst>Erweitertes Menü</Kst>
+        - **Klarlack:** Fügt eine zusätzliche Schicht spekularer Reflexion über dem Basismaterial hinzu. Nützlich für Materialien wie Autolack.
+        - **Klarlack-Rauheit:** Legt die Rauheit der Klarlackschicht fest.
+        - **Schimmerfarbe:** Legt die Farbe der Schimmerschicht fest.
+        - **Schimmer:** Fügt eine weiche, samtartige Reflexion an den Kanten des Materials hinzu, um Materialien wie Stoff zu simulieren.
+        - **Schimmer-Rauheit:** Legt die Rauheit der Schimmerschicht fest.
+        - **Spekularfarbe:** Legt die Farbe der spekularen Reflexion fest.
+        - **Spekularintensität:** Steuert die Intensität der spekularen Reflexion.
+        - **Irideszenz:** Steuert die Stärke des irisierenden Effekts, ähnlich dünnen Filmschichten wie Seifenblasen oder Ölschlieren.
+        - **Irideszenz-IOR:** Legt den Brechungsindex der irisierenden Dünnschicht fest.
+        - **Dicke:** Legt die Materialdicke fest.
+        - **Transmission:** Steuert, wie viel Licht durch das Material hindurchgelassen wird.
+        - **Dichte:** Legt die Materialdichte in g/cm^3 fest. Die Masse wird im Auswahlmenü unten rechts pro Objekt berechnet und angezeigt.
 
-<Callout type="info" emoji="🗒️">
-**Note** 
-Transparente Materialien werden nun mit 50% Transparenz angezeigt, selbst wenn Standard- und benutzerdefinierte [matcaps](/plasticity-essentials/shader-mode) im Nicht-Render-Modus verwendet werden.
+4. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
+
+<Callout type="info">
+**Hinweis**: Transparente Materialien werden jetzt mit 50 % Transparenz angezeigt, auch bei Standard- und benutzerdefinierten Matcaps im Nicht-Render-Modus.
 </Callout>
 
 ## Material für Gruppen festlegen
 
-Wenn Sie einem Material für eine Gruppe zuweisen, wird das Material für alle Objekte in der Gruppe festgelegt.
+Wenn du ein Material für eine Gruppe festlegst, wird es für alle Objekte in der Gruppe übernommen.
 
-1. Wählen Sie die Gruppe aus, der Sie das Material im Gliederung zuweisen möchten.
-2. Drücken Sie <kbd>M</kbd>.
-3. Legen Sie die Optionen im Befehlsdialog fest.
-    - Die Optionen sind die gleichen wie beim Festlegen eines Materials für Objekte.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+1. Wähle die Gruppe im Outliner aus.
+2. Drücke <kbd>M</kbd>.
+3. Lege die Optionen im Befehlsdialog fest.
+    - Die Optionen sind dieselben wie beim Festlegen eines Materials für Objekte.
+4. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 ## Material für Referenzbilder festlegen
 
-Siehe ["Wie man Referenzbilder importiert"](/plasticity-essentials/importing-reference-images).
+Siehe ["Referenzbilder importieren"](/plasticity-essentials/importing-reference-images).
 
 ## Siehe auch
-- [Fork Material](fork-material)
-- [Remove Material](remove-material)
-- [Outliner/Material color](/plasticity-essentials/outliner#material-color)
-- [View Mode/Toggle View Mode](/plasticity-essentials/view-mode#toggle-view-mode)
+- [Material verzweigen](fork-material)
+- [Material entfernen](remove-material)
+- [Outliner/Materialfarbe](/plasticity-essentials/plasticity-interface/outliner#material-color)

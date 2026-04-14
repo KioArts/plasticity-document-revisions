@@ -1,47 +1,62 @@
+import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Rectangular Array
+## Rechteckige Anordnung
 
-<Reference shortcut="" command="Rectangular Array" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon='button-rectangular-array'/>
+{/* <Reference shortcut="" command="Rechteckige Anordnung" button="Im Menü „Vorgeschlagene Befehle“"  buttonIcon='button-rectangular-array'/> */}
 
-Duplizieren Sie Objekte in einem linearen Muster, indem Sie die Anzahl der Duplikate festlegen. Optional kann eine zweite Richtung definiert werden, um ein rechteckiges Array zu erstellen. Die Option zum Erstellen von Instanzen ist verfügbar.
+<CommandReference
+  command="Rechteckige Anordnung"
+  shortcut=""
+  button="In der Befehlsleiste"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
 
-<Callout>
-Bilder und Meshes (.OBJ, .STL, .FBX usw.) können angeordnet werden, mit Steuerelementen für Duplizierungsrichtung, Anzahl der Kopien und Duplizierungsmodi. Das Erstellen von Instanzen wird jedoch nicht unterstützt.
+## Beschreibung
+
+Dupliziere Objekte in einem linearen Muster, indem du die Anzahl der Duplikate angibst. Optional kannst du eine weitere Richtung definieren, um eine rechteckige Anordnung zu erstellen. Die Option, Instanzen zu erstellen, ist ebenfalls verfügbar.
+
+<Callout type='info'>
+**Hinweis:** Bilder und Meshes (.OBJ, .STL, .FBX usw.) können angeordnet werden, mit Steuerungen für Duplikationsrichtung, Kopienanzahl und Duplikationsmodi. Das Anordnen von Instanzobjekten wird ebenfalls unterstützt.
 </Callout>
-## Grundlegende Nutzung
 
-1. Wählen Sie das Objekt aus, das Sie duplizieren möchten.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-rectangular-array" /> rechts von der Befehlsleiste.
+## Grundlegende Verwendung
+
+1. Wähle das Objekt aus, das du duplizieren möchtest.
+2. Klicke auf die Schaltfläche <ButtonIcon type="button-rectangular-array" /> rechts in der Befehlsleiste.
 3. Die Duplikationsvorschau wird angezeigt.
-   - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Binden Sie an die X-, Y- oder Z-Achse](/tool/sketching-essentials#constrain-to-an-axis).
-4. Klicken Sie auf die gewünschte Richtung.
-5. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-   - **Modus:**
-         - **Ausdehnung:** Geben Sie den Abstand der Ausdehnung an, bei dem alle Duplikate gleichmäßig angeordnet werden. 
-         - **Abstand:** Geben Sie den Abstand für jedes Duplikat an.
+   - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+4. Klicke auf die gewünschte Richtung.
+5. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
+      - **Modus:**
+         - **Bereich:** Gibt die Distanz an, über die alle Duplikate gleichmäßig angeordnet werden.
+         - **Abstand:** Gibt den Abstand zwischen den einzelnen Duplikaten an.
    - <Kst>Befehlsdialog</Kst>
-      - **Abstand 1:** Geben Sie den Abstand an.
-      - **Anzahl:** Geben Sie die Anzahl der Duplikate an.
-      - **Make instances:** Erstellen Sie Instanzen anstelle separater Kopien. (See [Create Instances](/solid/create-instance))
-   - <Kst>Tastenkürzel</Kst>
-   - <kbd>Shift + Mausrad nach oben</kbd> Kopie hinzufügen: Erhöht die Anzahl der Duplikate.
-   - <kbd>Shift + Mausrad nach unten</kbd> Kopie reduzieren: Verringert die Anzahl der Duplikate.
-6. Wenn Sie in eine andere Richtung duplizieren möchten, klicken Sie im Dialog auf **Select endpoint 2**.
-   1. Klicken Sie mit der rechten Maustaste auf die gewünschte Duplikationsrichtung.
-   2. Legen Sie die Optionen im Befehlsdialog fest.
+      - **Distanz 1:** Gibt die Distanz an.
+      - **Anzahl:** Gibt die Anzahl der Duplikate an.
+      - **Instanzen erstellen:** Erstellt Instanzen statt unabhängiger Kopien. (Siehe [Instanzen erstellen](/solid/create-instance))
+   - <Kst>Tastenkombinationen</Kst>
+   - <kbd>Shift + Mausrad hoch</kbd> **Kopie hinzufügen:** Erhöht die Anzahl der Duplikate.
+   - <kbd>Shift + Mausrad runter</kbd> **Kopie entfernen:** Verringert die Anzahl der Duplikate.
+6. Wenn du in eine weitere Richtung duplizieren möchtest, klicke im Dialog auf **Endpunkt 2 auswählen**.
+   1. Rechtsklicke auf die gewünschte Richtung für die Duplikation.
+   2. Lege die Optionen im Befehlsdialog fest.
       - <Kst>Befehlsdialog</Kst>
-         - **Distance 2:** Geben Sie den Abstand an.
-         - **Repeat:** Geben Sie die Anzahl der Wiederholungen an.
-         - **Make instances:** Erstellen Sie Instanzen anstelle separater Kopien. (See [Create Instances](/solid/create-instance))
+         - **Distanz 2:** Gibt die Distanz an.
+         - **Wiederholen:** Gibt die Anzahl der Wiederholungen an.
+         - **Instanzen erstellen:** Erstellt Instanzen statt unabhängiger Kopien. (Siehe [Instanzen erstellen](/solid/create-instance))
       - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Umschalt + Mausrad hoch</kbd> **Add copy:** Erhöht die Anzahl der Duplikate.
-      - <kbd>Umschalt + Mausrad runter</kbd> **Subtract copy:** Verringert die Anzahl der Duplikate.
-7. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+      - <kbd>Shift + Mausrad hoch</kbd> **Kopie hinzufügen:** Erhöht die Anzahl der Duplikate.
+      - <kbd>Shift + Mausrad runter</kbd> **Kopie entfernen:** Verringert die Anzahl der Duplikate.
+      - <kbd>I</kbd> **Instanzen umschalten:** Schaltet um, ob die erzeugte Hälfte als Instanz oder als unabhängige Kopie erstellt wird.
+7. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
+
+<VideoPlayer fileName="rectangular-array"/>
 
 ## Siehe auch
-- [Curve Array](curve-array)
-- [Radiales Array](radial-array)
+- [Kurvenanordnung](curve-array)
+- [Radiale Anordnung](radial-array)

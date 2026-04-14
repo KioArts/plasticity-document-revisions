@@ -1,0 +1,33 @@
+{
+  "---transform": { "type": "separator", "title": "Transform" },
+  "move": "Move",
+  "rotate": "Rotate",
+  "scale": "Scale",
+  "mirror": "Mirror",
+
+  "---array": { "type": "separator", "title": "Array and Duplication" },
+  "duplicate": "Duplicate",
+  "curve-array": "Curve Array",
+  "radial-array": "Radial Array",
+  "rectangular-array": "Rectangular Array",
+  "copy-with-placement": "Copy with Placement",
+  "paste-with-placement": "Paste with Placement",
+  "place": "Place",
+
+  "---materials": { "type": "separator", "title": "Materials" },
+  "set-material": "Set Material",
+  "fork-material": "Fork Material",
+  "remove-material": "Remove Material",
+
+  "---measurement": { "type": "separator", "title": "Measurement and Analysis" },
+  "measure": {"title": "Measure Distance", "href": "/tool/measure"},
+  "dimension": "Dimension",
+  "section-analysis": "Section Analysis",
+
+  "---geometry": { "type": "separator", "title": "Geometry" },
+  "complete-edge": "Complete Edge",
+  "subdivide": "Subdivide",
+
+  "---scene": { "type": "separator", "title": "Scene and Sharing" },
+  "publish-to-plasticity-share": "Publish to Plasticity Share"
+}

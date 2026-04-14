@@ -4,9 +4,19 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Control Point Curve
+## Control Point Curve
 
-<Reference shortcut="" command="Control Point Curve" button="Toolbar" buttonIcon='button-control-point-curve'/>
+{/* <Reference shortcut="" command="Control Point Curve" button="Toolbar" buttonIcon='button-control-point-curve'/> */}
+
+<CommandReference
+  command="Control Point Curve"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-control-point-curve.png"
+  tier="both"
+/>
+
+## Description
 
 Click on control points to create a curve.
 
@@ -23,12 +33,11 @@ Click on control points to create a curve.
 4. After clicking the last control point, right-click to confirm.
 5. The curve is created.
 
-<Callout type="info" emoji="💡">
-**Difference between two types of curves**
-- Spline Curve: Click points through which the curve will pass to create it.
-- Control Point Curve: Click on the control points of the curve to create it.
+<Callout type="info">
+**Difference between two types of curves**   
+   - **Spline Curve:** The curve passes through each clicked point.
+   - **Control Point Curve:** Clicked points become the control points of the curve, which may not lie on it.
 </Callout>
-
 
 <VideoPlayer fileName="spline-and-control-point-curve"/>
 

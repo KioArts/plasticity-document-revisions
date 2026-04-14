@@ -4,24 +4,49 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# Toggle Points
+{/* # Toggle Points
 
-<Reference shortcut="" command="Toggle Points" button="" />
+<Reference shortcut="" command="Toggle Points" button='button-toggle-points' /> */}
 
-Hide or show points on faces, curves, and bodies.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/toggle-points.mp4"
+  alt="Toggle Points Preview"
+  title="Toggle Points"
+  command="Toggle Points"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-toggle-points.png" alt="button-toggle-points Icon" />}
+/> */}
+
+## Toggle Points
+
+<CommandReference
+  command="Toggle Points"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-toggle-points.png"
+  tier="both"
+/>
+
+## Description
+
+Toggles the visibility of Control-Vertex (CV) and Vertex points on curves, and CV points on faces (sheets) and bodies (solids).
 
 ## Basic Usage
 
-1. Select a face, curve, or body you want to hide or show CV points.
-2. Type **Toggle Points** in the Command Palette and left-click on it.
+1. Select the geometry: 
+    - **Curves**: Select the curve or a CV point to hide the CV layout. To restore visibility, select the curve and execute the command again.
+    - **Sheets**: Select the face or a CV point to toggle visibility. To restore the default state, select the face and execute the command again.
+    - **Solids**: Select a face or CV point to toggle an individual face, or select the solid to affect all faces. To restore the default state, select the desired faces or the solid and execute the command again.
+2. Type **Toggle Points** in the Command Palette and left-click it.
+3. The points are hidden or revealed.
+
+<Callout type="default">
+**Tip:** For quicker access, assign a keyboard shortcut to this command. Right-click it in the Command Palette, select Assign Shortcut, and press your desired key combination.
+</Callout>
 
 <VideoPlayer fileName="toggle-points"/>
 
-<Callout type="info" emoji="💡">
-    **Tip**
-    Create a keyboard bind for easy use and access. Right click on a command in the Command Palette then left-click "Assign shortcut" and assign a keybind to it. 
-<VideoPlayer fileName="assign-shortcut"/>
-</Callout>
 
 ## See also
 - [Rebuild Curve](rebuild-curve)

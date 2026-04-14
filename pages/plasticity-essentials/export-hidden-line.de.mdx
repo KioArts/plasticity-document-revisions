@@ -1,0 +1,81 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+# Verdeckte Linien exportieren
+
+Der Befehl **Export Hidden Line** ähnelt traditionellen CAD‑Exportwerkzeugen, mit denen technische Zeichnungen und Entwürfe erstellt werden können. Er bietet Optionen zum Exportieren von Objektansichten, zum Einbeziehen verdeckter Linien, zur Steuerung des Linienaussehens und zum Anwenden von Farben auf Objekte. Der Befehl rendert ein 3D‑Objekt und konvertiert es in das SVG‑Format. Während er funktional **Export SVG** ähnelt, exportiert dieser nur 2D‑Skizzen aus dem Plasticity‑Dokument – und nur, wenn diese Skizzen relativ flach entlang einer Achse liegen.
+
+Du kannst bestimmte Ansichten für den Export erfassen oder Rasteransichten als 2D‑Vorlagen verwenden. Beachte, dass das Generieren einer SVG aus einem komplexen Modell rechenintensiv ist und einige Zeit dauern kann.
+
+<Callout>
+Wenn das Plasticity‑Dokument unbenannt ist, erscheint ein Pop‑up‑Fenster, das dich auffordert, einen Speicherort auszuwählen. Wenn die Datei bereits benannt und gespeichert wurde, speichert das Ausführen von **Export Hidden Line** aus der Befehlspalette die SVG direkt im selben Verzeichnis.
+</Callout>
+
+## Grundlegende Verwendung
+
+1. Öffne die Befehlspalette, suche nach **Export Hidden Line** und führe den Befehl aus.
+2. Passe die Optionen im Befehlsdialog an:
+   - <Kst>Befehlsdialog</Kst>
+         - **Standardansichten:** Richtet die Kamera vor dem Export auf eine isometrische Projektionsansicht aus. Jede Option zeigt eine andere Kombination von Kameraansichten.
+             - **Oben Links:** Isometrische Ansicht von oben links, zeigt die obere, linke und vordere Ansicht des Objekts.
+             - **Oben:** Orthografische Draufsicht, zeigt nur die obere Ansicht des Objekts.
+             - **Oben Rechts:** Isometrische Ansicht von oben rechts, zeigt die obere, rechte und vordere Ansicht des Objekts.
+               ![image](/img/grid-view-top.svg)
+             - **Links:** Direkte orthografische Ansicht, zeigt nur die linke Ansicht des Objekts.
+             - **Vorne:** Direkte orthografische Ansicht, zeigt nur die Vorderansicht des Objekts.
+             - **Rechts:** Direkte orthografische Ansicht, zeigt nur die rechte Ansicht des Objekts.
+               ![image](/img/grid-view-normal.svg)
+             - **Unten Links:** Isometrische Ansicht von unten links, zeigt die untere, linke und vordere Ansicht des Objekts.
+             - **Unten:** Orthografische Unteransicht, zeigt nur die untere Ansicht des Objekts.
+             - **Unten Rechts:** Isometrische Ansicht von unten rechts, zeigt die untere, rechte und vordere Ansicht des Objekts.
+               ![image](/img/grid-view-bottom.svg)
+         - **Stil:** Steuert das Aussehen und die Dicke der exportierten Linien. Jeder Linientyp kann durch Einstellen seiner Dicke zwischen `0.00` und `10.00` ein‑ oder ausgeblendet werden.
+            - **Sichtbare Kontur:** Erfasst harte Kanten, an denen sich Flächen treffen oder die Richtung ändern, z. B. konkave oder konvexe Übergänge, die direkt sichtbar sind.
+               ![image](/img/style-visible-stroke.svg)
+            - **Silhouette:** Zeichnet die Kontur eines Objekts aus Kameraperspektive, einschließlich überlappender Objektkanten. Kann in manchen Fällen keine saubere Umrisslinie erzeugen.
+               ![image](/img/style-silhouette.svg)
+            - **Weich:** Zeigt subtile Oberflächenkanten, die durch glatte, kontinuierliche Krümmung entstehen, z. B. die Naht zwischen zwei tangentialen Flächen. Enthält auch Oberflächen‑Imprint‑Linien.
+               ![image](/img/style-smooth.svg)
+            - **Farben verwenden:** Wenn einem Objekt ein Material zugewiesen ist, ersetzt es die standardmäßige schwarze SVG‑Linienfarbe durch die Materialfarbe.
+               ![image](/img/style-color.svg)
+         - **Schattierter Hintergrund:** Schaltet das schattierte Erscheinungsbild des Objekts ein oder aus.
+            - **Pixel‑Skalierung:** Steuert die Auflösung der Schattierung.
+               ![image](/img/shaded-background.svg)
+         - **Verdeckte Linien:** Schaltet Sichtbarkeit und Aussehen verdeckter Kanten ein oder aus.
+             - **Strichbreite:** Legt die Strichbreite jedes Strichsegments entlang verdeckter Kanten fest. Dies betrifft keine verdeckten weichen Oberflächenkanten – verwende dafür die Option **Weich** im Stil‑Abschnitt.
+               ![image](/img/hidden-lines-stroke-width.svg)
+             - **Strichlänge:** Legt die Länge jedes Strichsegments fest. Bei `0.0` erscheinen Linien als Punkte. Höhere Werte erzeugen längere Striche.
+               ![image](/img/hidden-lines-dash-length.svg)
+             - **Strichabstand:** Legt den Abstand zwischen Strichen fest. Bei `0.0` erscheinen verdeckte Linien durchgehend.
+               ![image](/img/hidden-lines-gap-size.svg)
+         - **Planare Schraffur:** Erzeugt Schraffurlinien über Flächen mithilfe einer planaren Projektion.
+             - **Abstand:** Steuert den Abstand zwischen Schraffurlinien. Wirkt auf alle Flächen und kann mit anderen Schraffurmethoden kombiniert werden.
+               ![image](/img/planar-hatching-spacing.svg)
+             - **Achsen XYZ:** Rotiert das Schraffurmuster entlang der X‑, Y‑ und Z‑Achse der Schraffurebene.
+         - **Schnittschraffur:** Erzeugt Schraffur nur auf Flächen, die durch den Befehl [Section Analysis](/common/section-analysis) geschnitten wurden.
+            - **Abstand:** Steuert den Abstand zwischen Schraffurlinien. Gilt nur für Schnittflächen und kann kombiniert werden.
+            - **Achsen XYZ:** Rotiert das Schraffurmuster entlang der X‑, Y‑ und Z‑Achse der Schnittebene.
+               ![image](/img/section-hatching-spacing.svg)
+         - **Radiale Schraffur:** Wendet automatisch Schraffur auf sphärische und zylindrische Geometrien an. Kann kombiniert werden.
+            - **Around:** Steuert die Dichte vertikaler Linien von Pol zu Pol.
+            - **Along:** Steuert die Dichte horizontaler Linien entlang des Äquators.
+            - **About:** Steuert die Dichte konzentrischer Linien um den Pol.
+       ![image](/img/radial-hatching-types.svg)
+         - **Parametrische Schraffur:** Wendet Schraffur entlang der Isoparameter (UV) einer Oberfläche an. Besonders nützlich für Splines, funktioniert aber überall.
+            - **U‑Abstand:** Steuert die Dichte der Linien entlang der U‑Richtung.
+            - **V‑Abstand:** Steuert die Dichte der Linien entlang der V‑Richtung.
+               ![image](/img/para-hatching-u-v.svg)
+         - **Toleranz:**
+            - **Kurven‑Chord‑Toleranz:**
+            - **Kurven‑Chord‑Winkel:**
+   - <Kst>Tastenkürzel</Kst>
+         - <kbd>S</kbd> **Bildschirm erfassen:** Erfasst die aktuelle Ansicht und aktualisiert das Vorschaufenster. Funktioniert in perspektivischen, orthografischen und isometrischen Ansichten.
+3. Wenn das Plasticity‑Dokument nicht gespeichert oder benannt wurde, erscheint ein Pop‑up‑Fenster, das nach dem Speicherort fragt. Wähle einen Ort und bestätige.
+4. Die SVG‑Datei wurde exportiert.
+
+<VideoPlayer fileName="export-hidden-line"/>
+
+## Siehe auch
+
+[Export SVG](/plasticity-essentials/export-svg)

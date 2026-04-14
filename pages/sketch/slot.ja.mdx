@@ -1,0 +1,44 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
+
+## スロット
+
+{/* <Reference shortcut="Shift + P" command="Sweep" button="In Suggested Commands Menu"  buttonIcon="button-sweep"/> */}
+
+<CommandReference
+  command="Slot"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-slot.png"
+  tier="both"
+/>
+
+## 説明
+
+カーブを両側に対称にオフセットし、各端を接線円弧で閉じることで、閉じたスロットプロファイルを生成します。
+
+<Callout type="info">
+**注意:** コマンドを機能させるには、カーブが開いていて自己交差していない必要があります。
+</Callout>
+
+## 基本的な使い方
+
+1. オフセットするカーブを選択します。
+2. コマンドパレットで **Slot** を検索するか、<kbd>O</kbd> を2回押して **カーブをオフセット** コマンドを呼び出し、スロットを自動的に有効にします。
+3. コマンドダイアログとキーボードショートカットでオプションを設定します。
+   - <Kst>Command Dialog</Kst>
+      - **幅:** 幅を指定します。
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>D</kbd> **距離:** 幅を指定します。
+4. コマンドダイアログのOKまたは右クリックで確定します。
+5. スロットプロファイルが作成されます。
+
+<VideoPlayer fileName="slot"/>
+
+## 関連項目
+
+- [カーブのオフセット](/sketch/offset-curve)
+- [接線円弧](/tool/tangent-arc)

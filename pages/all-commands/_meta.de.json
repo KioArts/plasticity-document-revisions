@@ -1,10 +1,8 @@
 {
-    "plasticity-essentials": "Plasticity Grundlagen",
-    "tool-commands": "Skizzieren & Primitive Werkzeuge",
-    "common-commands" : "Allgemein",
-    "sketch-commands" : "Skizze",
-    "solid-commands" : "Fest",
-    "download-pdf": "Tastenkürzelliste (PDF)"
+    "plasticity-essentials": "Plasticity-Grundlagen",
+    "tool-commands": "Skizzier- und Grundkörperwerkzeuge",
+    "common-commands": "Gemeinsame Befehle",
+    "sketch-commands": "Skizzenbefehle",
+    "solid-commands": "Solid-Befehle",
+    "download-pdf": "Tastenkürzel-Liste (PDF)"
 }
-
-

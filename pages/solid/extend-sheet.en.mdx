@@ -2,9 +2,19 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Extend Sheet [#extend-sheet]
+## Extend Sheet [#extend-sheet]
 
-<Reference shortcut="" command="Extend" button="" />
+{/* <Reference shortcut="" command="Extend" button="" /> */}
+
+<CommandReference
+  command="Extend"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
+
+## Description
 
 Extend one or more boundary Edges of the Sheet by specifying the distance. Choose from extension shapes like Liner, Soft and Reflective.
 
@@ -16,18 +26,19 @@ Extend one or more boundary Edges of the Sheet by specifying the distance. Choos
 4. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
         - **Shape:** Specify the shape of the extended surface. Options **Natural**, **Linear**, **Soft**, and **Reflective** will directly influence the shape and curvature of the extended surface during extrusion.
-            - **Natural:** Extends the surface "naturally" by continuing the shape described by the original surface just before the start of the extension.
-            - **Linear:** Extends the surface in a flat, straight line from the boundary edge, maintaining the current tangent direction without altering curvature.
-            - **Soft:** Gradually blends the extension with the existing surface for a smooth transition, preserving both tangent and curvature.
-            - **Reflective:** Mirrors the surface curvature and tangency for a symmetrical and seamless continuation, ideal for maintaining surface symmetry.
+            - **Natural:** Extends the surface by continuing the curvature described by the original surface near the boundary edge.
+            - **Linear:** Extends the surface in a straight line from the boundary edge, maintaining the tangent direction.
+            - **Soft:** Smoothly blends the extension with the existing surface, preserving both tangent and curvature continuity (G2).
+            - **Reflective:** Mirrors the surface curvature and tangency across the boundary, ideal for maintaining symmetry between surfaces.
             ![Extend Sheet Shape Demonstration](/img/extend-sheet-shape.png)
-        **Limit:** Control how far the sheet extends toward a target body.
+        - **Limit:** Controls how far the sheet extends toward a target body when intersecting it with another surface.
             - **Minimal:** Extend the sheet to reach the target's outer boundary.
             - **Outside:** Extend the sheet to reach the target's inner boundary. 
             - **Inside:** Extend the sheet to reach the target's outer boundary but if object is partly inside, the inside intersection will be ignored and only the outside part of the sheet will be affected.
         - **Distance:** Specify the distance to extend.
         - **Modify:** When enabled, the Sheet becomes a single Sheet.
     - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>D</kbd> **Distance:** Specify the offset distance.
         - <kbd>Tab</kbd> **Cycle:** Toggle through different **Shape** options.
 5. Confirm with OK in the Command Dialog or right-click.
 

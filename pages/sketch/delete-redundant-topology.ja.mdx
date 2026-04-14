@@ -1,24 +1,45 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
 
-# Delete Redundant Topology（余剰トポロジーの削除）
+{/* # Delete Redundant Topology
 
-<Reference shortcut="" command="Delete Redundant Topology" button="" />
+<Reference shortcut="" command="Delete Redundant Topology" button="" /> */}
 
+{/* <HeadBannerThumbnail
+  src="/videos/banner/delete-redundant-topology.mp4"
+  alt="Delete Redundant Topology Preview" 
+  title="Delete Redundant Topology (Curve)"
+  command="Delete Redundant Topology"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-delete-redundant-topology.png" alt="Deform Icon" />}
+/> */}
 
-このコマンドは、選択されていたオブジェクトに応じて以下のコマンドを自動的に呼び出します。
-    - カーブが選択されているとき: 下記の **Delete Redundant Topology (Curve)** を参照してください。
-    - ソリッドまたはシートが選択されているとき: ソリッドコマンドの [**Delete Redundant Topology (Solid)**](/solid/delete-redundant-topology#delete-redundant-topology-solid) を参照してください。
+## Redundante Topologie löschen
 
-## Delete Redundant Topology (Curve)[#delete-redundant-topology-curve]
+<CommandReference
+  command="Delete Redundant Topology"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-delete-redundant-topology.png"
+  tier="both"
+/>
 
-カーブの余剰な制御点を削除することができます。
+## Beschreibung
 
-1. 余剰な制御点を削除するカーブを選択します。
-2. コマンドパレットで **Delete Redundant Topology** を実行します。
-3. 余剰な制御点が削除されます。
+Entfernt redundante Scheitelpunkte aus der Kurvengeometrie, ohne deren Form oder Genauigkeit zu verändern. Der Algorithmus analysiert jeden Scheitelpunkt und eliminiert nur diejenigen, die überflüssig sind, wobei die ursprüngliche Form der Kurve erhalten bleibt.
+
+{/* <Callout type="info">
+This command automatically calls a sub-command depending on the selected object type.
+    - When Curves are selected: **Delete Redundant Topology (Curve)** described below.
+    - When Solids or Sheets are selected: see [**Delete Redundant Topology (Solid)**](/solid/delete-redundant-topology#delete-redundant-topology-solid) in the Solid Commands section.
+</Callout> */}
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Kurven aus, deren redundante CVs gelöscht werden sollen.
+2. Verwenden Sie den Befehl **Redundante Topologie löschen** in der Befehlspalette.
+3. Die redundanten Scheitelpunkte werden gelöscht.
 
 <VideoPlayer fileName="delete-redundant-topology"/>
-
-## 関連項目
-- [Rebuild](rebuild)

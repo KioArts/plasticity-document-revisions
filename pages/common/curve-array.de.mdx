@@ -3,41 +3,54 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Curve Array
+## Kurvenanordnung
 
-<Reference shortcut="" command="Curve Array" button="" />
+{/* <Reference shortcut="" command="Kurvenanordnung" button="" /> */}
 
-Duplizieren Sie Objekte entlang einer Kurve, indem Sie die Anzahl der Kopien festlegen. Optionen für Drehen (Twist), Skalieren, Ausrichtung und das Erstellen von Instanzen stehen zur Verfügung.
+<CommandReference
+  command="Kurvenanordnung"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-curve-array.png"
+  tier="both"
+/>
 
-<Callout>
-Bilder und Netze (.OBJ, .STL, .FBX usw.) können angeordnet werden, mit Steuerungen für Drehung, Skalierung, Ausrichtung und Platzierung entlang der Kurve. Das Instanziieren davon wird jedoch nicht unterstützt.
+## Beschreibung
+
+Dupliziere Objekte entlang einer Kurve, indem du die Anzahl der Kopien angibst. Optionen für Verdrehung, Skalierung, Ausrichtung und das Erstellen von Instanzen sind verfügbar.
+
+<Callout type='info'>
+**Hinweis:** Bilder und Mesh-Dateien (.OBJ, .STL und ähnliche Formate) können entlang einer Kurve angeordnet werden, mit einstellbaren Parametern für Verdrehung, Skalierung, Ausrichtung und Positionsverteilung. Das Anordnen von Instanzobjekten wird ebenfalls unterstützt.
 </Callout>
 
-## Grundlegende Nutzung
+## Grundlegende Verwendung
 
-1. Wählen Sie das Objekt aus, das Sie duplizieren möchten.
-2. Verwenden Sie den **Curve Array** Befehl in der Befehlspalette.
-3. Wählen Sie die Kurve aus, die als Pfad verwendet werden soll.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+1. Wähle das Objekt aus, das du duplizieren möchtest.
+2. Verwende den Befehl **Kurvenanordnung** in der Befehlspalette.
+3. Wähle die Kurve, die als Pfad verwendet werden soll.
+4. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
    - <Kst>Befehlsdialog</Kst>
-      - **Number:** Geben Sie die Anzahl der Duplikationen an.
-      - **Twist:** Geben Sie den Verdrehungswinkel entlang der Kurve in Grad an.
-      - **Scale:** Geben Sie den Skalierungsfaktor entlang der Kurve an.
-       - **Alignment:**
-         - **Parallel:** Duplizieren Sie die Kurven parallel, unabhängig vom Pfad.
-         - **Normal:** Duplizieren Sie die Kurven mit Winkeln, die an den Pfad ausgerichtet sind.
-      - **Extent:** Geben Sie einen Wert an, um den Duplikationsbereich basierend auf der aktuell ausgewählten Methode anzupassen.
-      - **Method:** Legt fest, wie der Duplikationsbereich gesteuert wird.
-         - **Distance:** Passt den Duplikationsbereich mit einem metrischen Wert an, basierend auf den Einstellungen in Plasticity.
-         - **Ratio:** Passt den Duplikationsbereich mit einem Verhältniswert zwischen 0,00 und 1,00 an. (Standard: 1,00)
-      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
+      - **Anzahl:** Gibt die Anzahl der Duplikate an.
+      - **Verdrehung:** Gibt den Verdrehungswinkel entlang der Kurve in Grad an.
+      - **Skalierung:** Gibt den Skalierungsfaktor entlang der Kurve an.
+      - **Ausrichtung:**
+         - **Normal:** Dupliziert die Kurven mit einer Orientierung, die am lokalen Normalenrahmen der Kurve ausgerichtet ist. Gut für einfache Pfade, kann jedoch bei komplexer Krümmung zu Verdrehungen führen.
+         - **Parallel:** Dupliziert die Kurven mit ihrer ursprünglichen Orientierung, unabhängig von der Drehung entlang des Pfads. Ideal, wenn keine Rotation entlang der Kurve gewünscht ist.
+         - **Transport:** Dupliziert die Kurven mit einem stabilen, verdrehungsfreien Orientierungsrahmen, der der Kurve folgt, ohne zu kippen oder zu flippen. Optimal für komplexe oder organische Pfade, bei denen Normal und Parallel versagen.
+
+      - **Bereich:** Gibt einen Wert an, um den Bereich der Duplikate anzupassen, abhängig von der aktuell ausgewählten Methode.
+      - **Methode:** Definiert, wie der Bereich der Duplikate gesteuert wird.
+         - **Distanz:** Passt den Duplikationsbereich mit einem metrischen Wert an, basierend auf deinen Einstellungen in Plasticity.
+         - **Verhältnis:** Passt den Duplikationsbereich mit einem Verhältniswert zwischen `0.00` und `1.00` an. (Standard: `1.00`)
+      - **Instanzen erstellen:** Erstellt Instanzen statt unabhängiger Kopien. (Siehe [Instanzen erstellen](/solid/create-instance))
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Umschalt + Rad hoch</kbd> **Add copy:** Erhöht die Anzahl der Duplikationen.
-      - <kbd>Umschalt + Rad runter</kbd> **Subtract copy:** Verringert die Anzahl der Duplikationen.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+      - <kbd>Shift + Mausrad hoch</kbd> **Kopie hinzufügen:** Erhöht die Anzahl der Duplikate.
+      - <kbd>Shift + Mausrad runter</kbd> **Kopie entfernen:** Verringert die Anzahl der Duplikate.
+      - <kbd>I</kbd> **Instanzen umschalten:** Schaltet um, ob die erzeugte Hälfte als Instanz oder als unabhängige Kopie erstellt wird.
+4. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="curve-array"/>
 
 ## Siehe auch
-- [Rectangular Array](rectangular-array)
-- [Radial Array](radial-array)
+- [Rechteckige Anordnung](rectangular-array)
+- [Radiale Anordnung](radial-array)

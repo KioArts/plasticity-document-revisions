@@ -3,26 +3,48 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 
-# Split Segment
+{/* # Split Segment
 
-<Reference shortcut="" command="Split Segment" button="Werkzeugleiste"  buttonIcon='button-split-segment'/>
+<Reference shortcut="" command="Split Segment" button="Toolbar" buttonIcon='button-split-segment' /> */}
 
-Teilt den Curve an einem beliebigen Punkt seiner Länge in zwei Segmente.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/split-segment.mp4"
+  alt="Split Segment Preview"
+  title="Split Segment"
+  command="Split Segment"
+  shortcut="Shift + G"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-split-segment.png" alt="Split Segment Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Segment teilen
 
-1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-split-segment" /> in der Werkzeugleiste.
-2. Klicken Sie auf den Punkt, an dem Sie den Curve teilen möchten.
-3. Ein Vertex wird eingefügt und teilt den Curve in zwei Segmente.
+<CommandReference
+  command="Split Segment"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-split-segment.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Teilt die Kurve an einem beliebigen Punkt entlang ihrer Länge in zwei oder mehr Segmente.
+
+{/* <Callout type="warning" emoji="⚠️">
+Be mindful that the [Split Segment](/sketch/split-segment) and [Insert Knot](/sketch/insert-knot) tools share the same icon. When selecting the tool, check the text on the icon or type the correct command directly in the Command Palette.   
+</Callout> */}
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-split-segment" /> in der Symbolleiste.
+2. Klicken Sie auf den Punkt, an dem Sie die Kurve teilen möchten.
+3. Ein Scheitelpunkt wird eingefügt und teilt die Kurve in zwei oder mehr Segmente.
 
 <VideoPlayer fileName="split-segment"/>
 
-<Callout type="warning" emoji="⚠️">
-Beachten Sie, dass die Werkzeuge „Segment Trennen“ und „Knoten Einfügen“ dasselbe Symbol verwenden. Achten Sie beim Auswählen des Werkzeugs auf den Text im Symbol oder geben Sie den richtigen Befehl direkt in die Befehlszeile ein.
-</Callout>
-
-## See also
-- [Insert Knot](insert-knot)
-- [Cut Curve](cut-curve)
-- [Unjoin](unjoin)
-- [Trim](trim)
+## Siehe auch
+- [Knoten einfügen](insert-knot)
+- [Kurve schneiden](cut-curve)
+- [Trennen](unjoin)
+- [Trimmen](trim)

@@ -3,97 +3,145 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
 
-# Toggle Curve Curvature
+{/* # Toggle Curve Curvature
 
-<Reference shortcut="" command="Toggle Curvature" button="Toolbar" buttonIcon='button-toggle-curvature' />
+<Reference shortcut="" command="Toggle Curvature" button="Toolbar" buttonIcon='button-toggle-curvature' /> */}
 
-曲線、サーフェスエッジ、等パラメータの曲率を白いカーブコームで測定し、形状の品質と滑らかさを視覚的に評価します。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/toggle-curve-curvature.mp4"
+  alt="Toggle Curve Curvature Preview"
+  title="Toggle Curve Curvature"
+  command="Toggle Curvature"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-toggle-curvature.png" alt="button-toggle-curvature Icon" />}
+/> */}
 
-![Measure Curve and Surface Curvature](/img/measure-curve-surface-curvature.png)
+## カーブ曲率の切り替え
 
+<CommandReference
+  command="Toggle Curvature"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-toggle-curvature.png"
+  tier="both"
+/>
+
+## 説明
+
+曲率コム（白色で表示）を使用してサーフェスエッジ、カーブ、アイソパラメータの曲率を測定し、形状の品質と滑らかさを視覚的に評価します。
+
+<Center width="800px">
+![カーブとサーフェスの曲率を測定](/img/measure-curve-surface-curvature.svg)
+</Center>
 
 <details>
   <summary>曲率評価とは？</summary>
-  <div className="px-4">
-    <p className="mt-2">
-      <strong>Toggle Curvature</strong>ツールは、曲線やサーフェスの滑らかさと連続性を評価するために曲率を分析します。
-      各点での半径の逆数（曲率）を示す「コーム（櫛）」を表示し、高品質なサーフェス作成に役立ちます。
-    </p>
+  <div className="px-4 mt-2">
 
-    <img src="/img/curvature-comb.png" alt="Curvature Comb" className="mt-4" />
+#### 曲率を理解する
 
-    <p className="mt-2">
-      <strong>曲率</strong>は、その点における半径の逆数として計算されます。これは、離散的な点で視覚的に「コーム」で表示されます。<strong>フロー</strong>と呼ばれるこれらの線の変化は、曲線の挙動や形状を示します。
-      <br /><br />
-      1. 各コーム線の<strong>長さ</strong>は、その点の半径の逆数に比例します。つまり、曲率が大きいほど線が長くなります。
-      <br /><br />
-      2. 各線の<strong>方向</strong>は、その点での曲率に対して垂直（法線方向）です。
-      <br /><br />
-      3. この例の<strong>赤い</strong>輪郭は、曲線の形状と流れを示しています。
+**曲率コム**は、エッジとサーフェスの滑らかさを検査するための視覚的な診断ツールです。肉眼では見えにくい「フラットスポット」や「キンク」を見つけるのに役立ちます。
 
-      > **注:** 曲線やサーフェスの端が平らな場合、曲率は表示されません。
-    </p>
-  </div>
+<Center width="630px">
+![曲率コム](/img/curvature-comb.svg)
+</Center>
+
+#### 曲率の幾何学
+
+曲率は、カーブ上の任意の点における半径の数学的な逆数として定義されます。Plasticityでは、これが視覚的に表現されます：
+
+1.  **大きさ**: 各コムラインの**長さ**は、カーブがどれほど急に曲がっているかを表します。
+    * **長い線** – より急な曲がり（小さな半径）を示します。
+    * **短い線** – より緩やかな曲がり（大きな半径）を示します。
+    * **数式:** 曲率は半径の逆数です：$\kappa = \frac{1}{r}$
+
+2.  **向き**: 各ラインの**方向**は、その点でのカーブに常に垂直（法線）です。
+3.  **曲率フロー**: **赤いライン**（ラインの先端を結ぶ境界線）は曲率の変化率を表します。滑らかで連続した包絡線は高品質なカーブを示します。
+
+> **注意:** セグメントが完全に線形（平坦）な場合、半径が無限大のため曲率コムは表示されず、曲率は $\kappa = 0$ になります。
+
+</div>
 </details>
-
 
 <details>
   <summary>連続性の評価</summary>
-  <div className="px-4">
-  <p className="mt-2">
-    このツールを使って、曲線やサーフェスが<strong>G0</strong>、<strong>G1</strong>、<strong>G2</strong>、<strong>G3</strong>の連続性を持っているかを確認できます。
 
-    <ul>
-    <li><strong>G0</strong>（位置連続） - 同じ点で接しているが、角や方向のズレがある。</li>
-      <li><strong>G1</strong>（接線連続） - 接線は揃っているが、曲率は異なる。</li>
-      <li><strong>G2</strong>（曲率連続） - 曲率も一致しており、滑らかに繋がっているが、コーム線は接線になっていない。</li>
-      <li><strong>G3</strong>（加速度連続） - 曲率と接線が完全に一致し、極めて滑らかな接続が実現される。</li> 
-    </ul>
-    連続性の詳細は <a href="/cad-essentials/continuity-curve-and-surface">こちら</a>。
+#### 連続性の評価
 
-    ![Curvature Examples on G0, G1, and G2](/img/curvature-0.png)
-  </p>
-  </div>
+  曲率ツールを使用して、サーフェスやカーブ間のトランジション品質を評価します。これらのトランジションは連続性レベルで測定されます：
+
+  ![G0、G1、G2の曲率例](/img/curvature-0.svg)
+
+  * **G0（位置）**: カーブは接触していますが、鋭い「キンク」があります。曲率コムはギャップまたは突然の切れ目を示します。
+  * **G1（接線）**: トランジションは触覚的に滑らかです。曲率コムは同じ点で合わさりますが、その長さ（$\kappa$）は異なる場合があります。
+  * **G2（曲率）**: トランジションは視覚的にシームレスです。曲率コムが合わさり、まったく同じ長さを持ち、滑らかな反射を確保します。
+  * **G3（加速度）**: 最高レベルのフロー。コムが一致するだけでなく、変化の速度（赤い包絡線）も一致します。
+
+  これらの概念の詳細については、[連続性の基礎](/cad-essentials/continuity-curve-and-surface)ガイドをご参照ください。
 </details>
 
 <details>
-  <summary>曲率コームの見方</summary>
-  <div className="px-4">
-  <p className="mt-2">
-  曲率コームを読み取る際は、線の長さの変化に注目します。
-  <ul>
-    <li><strong>1.</strong> 線の長さが等しい：一定の曲率（円弧など）。</li>
-      <li><strong>2.</strong> 長さが変化する：加速や減速など曲率が変わっている。</li>
-      <li><strong>3.</strong> 線がゼロになり反転：無曲率（平坦な点）、変曲点。</li>
-      <li><strong>4.</strong> コームの切れ目：<a href="/cad-essentials/nurbs-overview#spans">編集点</a>または曲線間の不連続。</li> 
-  </ul>
+  <summary>曲率コムを理解する</summary>
 
-    ![Understanding Curvature Combs](/img/curvature-comb-1.png)
+  #### 曲率コムを理解する
 
-  </p>
-  </div>
+  **曲率コム**は、カーブの特性を視覚的にマッピングするツールとして機能します。コムラインがパスに沿ってどのように変化するかを観察することで、ジオメトリの状態とフローを診断できます。
+
+  #### プロットの読み方
+
+  1. **均一な半径**: コムラインが同じ長さの場合、カーブは一定の半径を持ち、完全な円弧を示します。
+
+<Center width="400px">
+  ![曲率コムを理解する](/img/radius-even.svg)
+</Center>
+
+  2. **加速と減速**: ライン長の緩やかな変化は加速を示します。
+     * **長さの増加**: カーブが締まっています（半径 $r$ が小さくなっています）。
+     * **長さの減少**: カーブが平坦になっています（半径 $r$ が大きくなっています）。
+     * **数式**: 曲率 $\kappa$ は半径の逆数です：$\kappa = 1/r$
+
+<Center width="400px">
+  ![曲率コムを理解する](/img/acceleration-deceleration.svg)
+</Center>
+
+  3. **変曲点**: 変曲点は、コムラインがカーブの反対側に「切り替わる」瞬間に発生します。これは凹から凸への変化（「S字カーブ」）を示します。
+
+<Center width="400px">
+  ![曲率コムを理解する](/img/inflection-points.svg)
+</Center>
+
+  4. **不一致とブレーク**: コムラインの突然のジャンプや「ブレーク」は曲率の不一致を示します。
+     * これは通常、**編集ポイント**または2つの別々のカーブが合わさる場所で発生します。
+     * ブレークは、カーブが接触（**G0**）または接線（**G1**）であっても、同じ曲率（**G2**）を共有していないことを示し、最終レンダリングで不規則または粗いハイライトが生じることが多いです。
+
+<Center width="400px">
+  ![曲率コムを理解する](/img/discrepancies-breaks.svg)
+</Center>
+
 </details>
 
 ## 基本的な使い方
 
 1. 測定したいカーブを選択します。
-2. コマンドパレットを開き、「Toggle Curvature」と入力して実行します。
-3. 右側のCurvatureパネルでカーブコームのスケールを調整します。
-   - <Kst>Curvature ダイアログ</Kst>
-     - Comb Scale：コームのサイズを調整します。
-4. 新しいカーブの測定結果がOutlinerの「Measurements」に表示されます。
+2. コマンドパレット（<kbd>F</kbd>）を開き、**Toggle Curvature** と入力してコマンドを実行します。またはツールバーの <ButtonIcon type="button-toggle-curvature"/> アイコンをクリックします。
+3. 右側の曲率パネルで曲率コムのスケールを調整します：
+   - <Kst>Curvature Dialog</Kst>
+     - **コムスケール:** コムのサイズを調整します。
+4. 新しい曲率測定がアウトライナーの「測定値」の下に表示されます。
 
 <VideoPlayer fileName="measure-curve-curvature-0"/>
 
 <Callout type="info" emoji="💡">
-**Info**    
+**情報**
 曲率評価は以下に役立ちます：
-  <li><strong>表面品質の確認：</strong> 凹凸や折れを検出し、滑らかな移行を維持。</li>
-  <li><strong>連続性の確認：</strong> G0〜G3で正しく接続されているか確認。</li>
-  <li><strong>反射の調整：</strong> 照明条件下でもスムーズな外観を確保。</li>
-  <li><strong>製造可能性の予測：</strong> 曲率の急変は加工に問題を引き起こす可能性あり。</li>
+    - **サーフェス品質の確保:** 波紋、凹み、意図しないキンクを特定して除去し、滑らかなトランジションを維持します。
+    - **連続性の検証:** サーフェスがG0（位置）、G1（接線）、G2（曲率）、またはG3（加速度）の連続性で接しているかを評価します。
+    - **反射フローの改善:** さまざまな照明条件下でサーフェスがシームレスに見えるかを評価します。
+    - **製造可能性の予測:** 急激な曲率変化は、機械加工、成形、または製造において課題をもたらす可能性があります。
 </Callout>
 
 ## 関連項目
-- [Measure Continuity](/solid/measure-continuity)
+- [連続性の測定](/tool/measure-continuity)

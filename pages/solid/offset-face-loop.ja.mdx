@@ -2,34 +2,46 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Offset Face Loop（フェイスの輪郭をオフセットする）[#offset-face-loop]
+## Offset Face Loop
 
-<Reference shortcut="O" command="Offset Curve" button="推奨コマンドメニューで"  buttonIcon="button-offset-curve"/>
+{/* <Reference shortcut="O" command="Offset Curve" button="推奨コマンドメニュー内"  buttonIcon="button-offset-curve"/> */}
 
-選択したフェイスの輪郭をオフセットして、新しいエッジを作成することができます。
+<CommandReference
+  command="Offset Curve"
+  shortcut="O"
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-offset-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+選択した面の外周エッジを指定した距離だけオフセットし、新しいエッジを作成します。複数の面を選択した場合、個別のエッジまたは結合されたエッジとして生成できます。
 
 ## 基本的な使い方
 
-1. オフセットしたいフェイスを選択します。フェイスは複数を選択できます。
-2. <kbd>O</kbd>を押します。
-3. マウスの動きで距離を指定します。
+1. オフセットしたい面を選択します。
+2. <kbd>O</kbd> を押します。
+3. マウスを動かして距離を指定します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
    - <Kst>コマンドダイアログ</Kst>
-      - **Distance:** 距離を指定します。
+      - **Distance（距離）：** オフセット距離を指定します。
+      **ギャップフィル：**
+            - **Round：** 凸コーナーを丸く埋めます。
+            - **Linear：** 凸コーナーを直線で埋めますが、結果のエッジが分割される場合があります。
+            - **Natural：** 凸コーナーを直線で埋めつつ、連続したエッジを維持します。
+            <img src="/img/offset-gap-fill.svg" width="450" />
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>V</kbd> **Gap fill:**
-         - **Round:** 出っ張った角を丸めます。
-         - **Linear:** 出っ張った角を直線でつなぎます。
-         - **Natural:** ナチュラル
-      - <kbd>I</kbd> **Individual:** 複数のフェイスを選択しているとき、このオプションをオンにすると、フェイスを結合した形をオフセットします。
-      - <kbd>D</kbd> **Distance:** マウスの動きで距離を指定します。
-5. コマンドダイアログの OK をクリックするか、右クリックして確定します。
+      - <kbd>V</kbd> **ギャップフィル切替：** ギャップフィルの種類を順番に切り替えます。
+      - <kbd>S</kbd> **距離をロック：** 両側を同じ距離でオフセットします。
+      - <kbd>D</kbd> **距離：** マウス移動で距離を指定します。
+      - <kbd>I</kbd> **個別モード：** 複数の面を選択している場合、このオプションをオンにすると結合された形でオフセットされます。
+5. コマンドダイアログの OK または右クリックで確定します。
 
-<VideoPlayer fileName="offset-face-loop"/>[#offset-edge]
+<VideoPlayer fileName="offset-face-loop"/>
 
 ## 関連項目
 - [Offset Curve](offset-curve)
 - [Offset Edge](offset-edge)
-- [isoparam](isoparam)
+- [Isoparam](isoparam)
 - [Imprint](imprint)
-- [Extend Edge](extend-edge)

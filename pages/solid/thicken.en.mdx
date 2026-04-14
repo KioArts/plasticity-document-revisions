@@ -2,17 +2,26 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Thicken
+## Thicken
 
-<Reference shortcut="" command="Thicken" button="In Suggested Commands Menu" buttonIcon="button-thicken" />
+{/* <Reference shortcut="" command="Thicken" button="In Suggested Commands Menu" buttonIcon="button-thicken" /> */}
 
-Add thickness to a selected Sheet. Thickness for each side can be specified.<br />
-When Faces are selected: see [**Thicken Face**](thicken-face).
+<CommandReference
+  command="Thicken"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-thicken.png"
+  tier="both"
+/>
+
+## Description
+
+Add thickness to a selected Sheet. Thickness for each side can be specified. When Faces are selected: see [**Thicken Face**](thicken-face).
 
 ## Basic Usage
 
 1. Select the Sheet you want to thicken.
-2. Click the button <ButtonIcon type="button-thicken" /> on the Right of Command Bar.
+2. Execute the **Thicken** command from the Command Palette.
 3. Set the options in the Command Dialog and Keyboard Shortcuts.
     - <Kst>Command Dialog</Kst>
         - **Thickness:** Specify the thickness of each of both sides.

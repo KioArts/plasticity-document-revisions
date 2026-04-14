@@ -1,0 +1,21 @@
+# Cinema 4D Bridge FAQ
+
+----
+- Q: Can Cinema 4D Bridge append Cinema 4D files into Plasticity?
+- A: The primary integration is one-way, from Plasticity to Cinema 4D. A limited upload path is also available: Subdivision Surface objects placed in the Outbox null can be transferred back to Plasticity as PolySpline surfaces. See [Working with PolySplines](how-to-use#working-with-polysplines) for details.
+----
+- Q: Are Plasticity's materials reflected in Cinema 4D?
+- A: Currently, they are not reflected.
+----
+- Q: What happens to the data when models imported into Cinema 4D using Cinema 4D Bridge are refreshed or refaceted?
+- A: When models are refreshed or refaceted in Cinema 4D via the Cinema 4D Bridge, certain data get overwritten while others remain unchanged.
+    - Data overwritten:
+        1. The "geometry" of objects is overwritten. This implies that data associated with points and polygons are overwritten, including Plasticity-managed normal tags and the internal face-group metadata.
+        2. The "Object Manager metadata" of objects is overwritten. For instance, names, hierarchy, visibility, and so forth are overwritten.
+        3. Everything you do in point/edge/polygon editing mode gets potentially overwritten.
+    - Data not overwritten:
+        1. The "data associated with objects" is not overwritten. This includes elements like transforms at the object level, user-added tags (materials, textures, user-created selection tags), parenting, and so on.
+        2. Anything placed in the **Outbox** null is fully protected from incoming updates.
+----
+- Q: Which port do Plasticity and Cinema 4D use for integration?
+- A: By default, they use port 8980. If you wish to change the port, you can do so in Plasticity under Preferences > Server, and in Cinema 4D on the **Server** tab of the Plasticity Bridge dialog.

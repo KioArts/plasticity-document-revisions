@@ -1,3 +1,69 @@
-import Solid_Commands from '/pages/solid.ja.mdx'
+# ソリッドコマンド
 
-<Solid_Commands />
+| コマンド名 | ショートカット | 説明 |
+| --- | --- | --- |
+| [ブーリアン](/solid/boolean) | <kbd>Q</kbd> | ソリッドおよび/またはシートのブーリアン演算。 |
+| [カット](/solid/cut) | <kbd>C</kbd> | ソリッドとシートをカットする。 |
+| **ソリッドとシートのコマンド** | | |
+| [代替複製](/solid/alternative-duplicate) | <kbd>Alt+D</kbd> | 代替複製。 |
+| [拘束サーフェス](/solid/constrained-surface) | | 拘束されたサーフェスを作成する。 |
+| [変形](/solid/deform) | | カーブ変形、ソリッドおよびシート変形の統合コマンド。 |
+| [ソリッドとシートを変形](/solid/deform-solid-and-sheet) | | 不規則および規則的なサーフェス上にオブジェクトをラップする。 |
+| [押し出し](/solid/extrude) | <kbd>E</kbd> | フェース、領域、カーブを押し出す。 |
+| [フィレット](/solid/fillet) | <kbd>B</kbd> | カーブフィレット、頂点フィレット、シェルフィレットの統合コマンド。 |
+| [シェルをフィレット](/solid/fillet-shell) | <kbd>B</kbd> | エッジをフィレットまたは面取りする。 |
+| [中空化](/solid/hollow) | | ソリッドを中空にする。 |
+| [ロフト](/solid/loft) | <kbd>L</kbd> | フェース、エッジ、カーブをロフトする。 |
+| [連続性を測定](/tool/measure-continuity) | | サーフェスエッジ間の連続性を測定する。 |
+| [サーフェス曲率の表示切替](/solid/toggle-surface-curvature) | | サーフェスエッジ間の曲率を測定する。 |
+| [PolySplines](/solid/polyspline) | | メッシュオブジェクトをNURBSオブジェクトに変換する。 |
+| [パッチ](/solid/patch) | | シートの穴/閉じたカーブをシートに埋める。 |
+| [パイプ](/solid/pipe) | <kbd>P</kbd> | エッジとカーブからパイプを作成する。 |
+| [インスタンスを作成](/solid/create-instance) | | ソリッドおよびシートインスタンス作成、カーブインスタンス作成の統合コマンド。 |
+| [ソリッドとシートインスタンスを作成](/solid/create-solid-and-sheet-instance) | | 複数の編集不可オブジェクトを複製する。 |
+| [インスタンスを実体化](/solid/realize-instances) | | ソリッドおよびシートインスタンスの実体化、カーブインスタンスの実体化の統合コマンド。 |
+| [ソリッドとシートインスタンスを実体化](/solid/realize-solid-and-sheet-instances) | | ソリッドおよびシートインスタンスを実際のソリッドジオメトリに変換する。 |
+| [次数を上げる](/solid/raise-degree) | <kbd>Shift+S</kbd> | カーブ次数上昇、サーフェス次数上昇の統合コマンド。 |
+| [サーフェス次数を上げる](/solid/raise-surface-degree) | <kbd>Shift+S</kbd> | サーフェスのコントロール頂点を増加する。 |
+| [シェルからフィレットを削除](/solid/remove-fillets-from-shell) | | ソリッドとシートのフィレットを削除する。 |
+| [回転](/solid/revolve) | | 領域またはカーブを回転する。 |
+| [スイープ](/solid/sweep) | <kbd>Shift+P</kbd> | 領域またはカーブをスイープする。 |
+| [スクエア](/solid/square) | | 次数とスパンを明示的に制御してサーフェスを作成する。 |
+| [スライド](/solid/slide) | | カーブCVスライド、サーフェスCVスライドの統合コマンド。 |
+| [サーフェスCVをスライド](/solid/slide-surface-cv) | <kbd>Shift+G</kbd> | CVハル上でサーフェスのCVをスライドする。 |
+| [厚み付け](/solid/thicken) | | 選択したシートに厚みを追加する。 |
+| [フェースを厚み付け](/solid/thicken-face) | | 選択したフェースに厚みを追加する。 |
+| [XNurbs](/solid/xnurbs) | | 高品質で複雑なサーフェスを作成する。 |
+| **シートコマンド** | | |
+| [整列](/solid/align) | | 頂点整列、サーフェス整列の統合コマンド。 |
+| [サーフェスを整列](/solid/align-surface) | | 2つのシートを整列する。 |
+| [サーフェスをブリッジ](/solid/bridge-surface) | | 2つのシートをブリッジする。 |
+| [延長](/solid/extend) | | カーブ延長、シート延長の統合コマンド。 |
+| [シートを延長](/solid/extend-sheet) | | シートの1つ以上の外側エッジを延長する。 |
+| [境界エッジを検索](/solid/find-boundary-edges) | | シート開口部のエッジを選択する。 |
+| [結合](/solid/join) | <kbd>J</kbd> | カーブ結合、シート結合の統合コマンド。 |
+| [シートを結合](/solid/join-sheets) | <kbd>J</kbd> | 一致するエッジを持つシートを結合する。 |
+| [反転](/solid/reverse) | | カーブ反転、シート反転の統合コマンド。 |
+| [シートを反転](/solid/reverse-sheet) | | シートの法線方向を反転する。 |
+| [結合解除](/solid/unjoin) | <kbd>Alt+J</kbd> | カーブ結合解除、フェース結合解除、シェル結合解除の統合コマンド。 |
+| [フェースの結合を解除](/solid/unjoin-faces) | <kbd>Alt+J</kbd> | 選択したフェースをソリッドまたはシートから分離する。 |
+| [シェルの結合を解除](/solid/unjoin-shells) | <kbd>Alt+J</kbd> | 選択したソリッドまたはシートのすべてのフェースを個別のフェースに分離する。 |
+| [アントリム](/solid/untrim) | <kbd>Alt+T</kbd> | 元の形状に基づいてシートを作成する。 |
+| **フェースコマンド** | | |
+| [フェースを削除](/solid/delete-face) | <kbd>Shift+Backspace</kbd> または <kbd>Shift+Delete</kbd> または <kbd>Shift+X</kbd> | フェースを削除する。 |
+| [フェースに勾配](/solid/draft-face) | | フェースを傾ける。 |
+| [フェースを一致](/solid/match-face) | | フェースを別のフェースに一致させる。 |
+| [フェースをオフセット](/solid/offset-face) | | 選択したフェースをオフセットする。 |
+| [再構築](/solid/rebuild) | | カーブ再構築、フェース再構築の統合コマンド。 |
+| [フェースを再構築](/solid/rebuild-face) | | フェースを再構築する。 |
+| [フェースを展開](/solid/unwrap-face) | | フェースを展開する。 |
+| **エッジコマンド** | | |
+| [冗長なトポロジーを削除](/solid/delete-redundant-topology) | | 余分なエッジを削除する。 |
+| [エッジを完成](/common/complete-edge) | | エッジを延長する。 |
+| [インプリント](/solid/imprint) | <kbd>Shift+I</kbd> | ボディ-ボディインプリント、カーブ-ボディインプリントの統合コマンド。 |
+| [ボディ-ボディインプリント](/solid/imprint-body-body) | <kbd>Shift+I</kbd> | ツールソリッドまたはシートと交差する箇所にターゲットソリッドまたはシート上のエッジを作成する。 |
+| [カーブ-ボディインプリント](/solid/imprint-curve-body) | <kbd>Shift+I</kbd> | ツールカーブに投影される箇所にターゲットソリッドまたはシート上のエッジを作成する。 |
+| [アイソパラム](/solid/isoparam) | <kbd>Ctrl+R</kbd> | アイソパラムを追加する。 |
+| [カーブをオフセット](/solid/offset-curve) | <kbd>O</kbd> | 平面カーブオフセット、領域オフセット、フェースループオフセット、エッジオフセットの統合コマンド。 |
+| [エッジをオフセット](/solid/offset-edge) | <kbd>O</kbd> | 選択したエッジをオフセットする。 |
+| [フェースループをオフセット](/solid/offset-face-loop) | <kbd>O</kbd> | 選択したフェースのアウトラインエッジをオフセットする。 |

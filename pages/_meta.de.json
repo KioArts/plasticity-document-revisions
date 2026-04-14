@@ -1,41 +1,33 @@
 {
-    "index": { 
-        "display": "hidden" 
-    },
-    "whats-new": "Was ist neu", 
-    "all-commands": "Befehlsliste & Tastenkombinationen",
-    "---1": {
-        "type": "separator",
-        "title": ""
-    },
-    "getting-started": "Erste Schritte",
-    "plasticity-essentials": "Plasticity Grundlagen",
-    "---2": {
-        "type": "separator",
-        "title": "Werkzeuge"
-    },
-    "tool": "Skizzieren & Primitive Werkzeuge",
-    "---3": {
-        "type": "separator",
-        "title": "Befehle"
-    },
-    "common": "Allgemein",
-    "sketch": "Skizze",
-    "solid": "Fest",
-    "---4": {
-        "type": "separator",
-        "title": "Integration"
-    },
-    "blender": "Blender",
-    "---5": {
-        "type": "separator",
-        "title": "Fortgeschritten"
-    },
-    "cad-essentials": "CAD Grundlagen",
-    "release-notes": "Release Notes",
-    "contact": {
-        "title": "Benutzerunterstützung",
-        "type": "page",
-        "href": "/getting-started/user-support"
-    }
+  "index": { "display": "hidden" },
+
+  "whats-new": "What's New",
+  "all-commands": "Command List & Shortcut Keys",
+
+  "---intro": { "type": "separator", "title": "Introduction" },
+  "getting-started": "Getting Started",
+  "plasticity-essentials": "Plasticity Essentials",
+  "cad-essentials": "CAD Essentials",
+
+  "---tools": { "type": "separator", "title": "Tools" },
+  "tool": "Sketching & Primitive Tools",
+
+  "---commands": { "type": "separator", "title": "Commands" },
+  "common": "Common",
+  "sketch": "Sketch",
+  "solid": "Solid",
+
+  "---integration": { "type": "separator", "title": "Integration" },
+  "blender": "Blender",
+  "cinema-4d": "Cinema 4D",
+
+  "---advanced": { "type": "separator", "title": "Advanced" },
+
+  "---support": { "type": "separator", "title": "Support" },
+  "release-notes": "Release Notes",
+  "contact": {
+    "title": "User Support",
+    "type": "page",
+    "href": "/getting-started/user-support"
+  }
 }

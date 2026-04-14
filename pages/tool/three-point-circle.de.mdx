@@ -3,24 +3,33 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Three-Point Circle
+## Drei-Punkt-Kreis (Three-Point Circle)
 
-<Reference shortcut='' command='Three-Point Circle' button='Werkzeugleiste' buttonIcon='button-three-point-circle' />
+{/* <Reference shortcut='' command='Three-Point Circle' button='Toolbar'  buttonIcon='button-three-point-circle'/> */}
 
-Sie können einen Kreis erstellen, indem Sie drei Punkte auf seinem Umfang angeben.
+<CommandReference
+  command="Three-Point Circle"
+  shortcut=""
+  button="In der Werkzeugleiste"
+  buttonIcon="/img/button-three-point-circle.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-three-point-circle" /> Knopf in der Werkzeugleiste.
-2. Klicken Sie auf einen Punkt auf dem Umfang des Kreises.
+Sie können einen Kreis erstellen, indem Sie drei Punkte auf seinem Umfang festlegen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-three-point-circle" /> in der Werkzeugleiste.
+2. Klicken Sie auf einen Punkt auf dem Kreisumfang.
 3. Bewegen Sie den Cursor und klicken Sie auf einen zweiten Punkt auf dem Umfang.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Länge numerisch angeben. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
-      - <kbd>K</kbd> **Knife:** Siehe [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Axis:** [Beschränkt auf X, Y, Z Achse](/tool/sketching-essentials#constrain-to-an-axis).
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Maßen. Details finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
+      - <kbd>K</kbd> **Knife:** Siehe [Knife-Modus verwenden](/tool/sketching-essentials#use-knife-mode).
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
 4. Bewegen Sie den Cursor, um die Größe anzupassen, und klicken Sie zur Bestätigung.
 5. Der Kreis wird erstellt.
-
 
 <VideoPlayer fileName="three-point-circle"/>
 

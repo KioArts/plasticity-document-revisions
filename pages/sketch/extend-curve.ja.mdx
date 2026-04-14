@@ -1,34 +1,70 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
 
-# Extend Curve（カーブを延長する）
+{/* <HeadBannerThumbnail
+  src="/videos/banner/extend-curve.mp4"
+  alt="Extend Curve Preview"
+  title="Extend Curve"
+  command="Extend Curve"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-extend-curve.png" alt="Extend Curve icon" />}
+/> */}
 
-<Reference shortcut="" command="Extend Curve" button="" />
+{/* # Extend Curve
 
-距離を指定して曲線を延長します。ナチュラル、リニア、ソフト、リフレクティブ、アークなどの延長形状から選択できます。曲線およびソリッドにターゲットを指定できるようになりました。
+<Reference shortcut="" command="Extend Curve" button="" /> */}
+
+## カーブの延長
+
+<CommandReference
+  command="Extend Curve"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+距離を指定してカーブを延長します。ナチュラル、リニア、ソフト、リフレクティブ、アークなどの延長形状から選択できます。カーブやソリッドのターゲットを指定して正確に一致・交差させることができます。
 
 ## 基本的な使い方
 
-1. 延長したいカーブ端の頂点を選択します。
-2. コマンドパレットで **Extend** を実行します。
-3. <kbd>D</kbd>を押し、カーソルを動かして、延長先の位置でクリックします。
+1. 延長したいカーブの端点を選択します。
+2. コマンドパレットで **延長** コマンドを使用します。
+3. <kbd>D</kbd> を押し、カーソルを移動して端点をクリックします。
 4. コマンドダイアログでオプションを設定します。
-   - <Kst>コマンドダイアログ</Kst>
-      - **Shape:** 拡張されたカーブの形状を指定します。**Natural**、**Linear**、**Soft**、**Reflective**、**Arc** のオプションは、押し出し時のカーブの形状や曲率に直接影響を与えます。  
-            - **Natural:** 拡張の開始直前に元のカーブが持っていた形状をそのまま継続することで、カーブを「自然に」延長します。  
-            - **Linear:** 境界点から直線的にフラットにカーブを延長し、現在の接線方向を維持しながら曲率を変更しません。  
-            - **Soft:** 拡張部分を既存のカーブと徐々にブレンドし、滑らかな遷移を実現しながら接線と曲率の両方を維持します。  
-            - **Reflective:** カーブの曲率と接線を反映させ、対称的でシームレスな拡張を行い、カーブの対称性を維持するのに最適です。  
-            - **Arc:** 境界点から円弧状にカーブを延長します。  
+   - <Kst>Command Dialog</Kst>
+      - **形状:** 延長されたカーブの形状を指定します。**ナチュラル**、**リニア**、**ソフト**、**リフレクティブ**、**アーク**のオプションは、押し出し中の延長カーブの形状と曲率に直接影響します。
+            - **ナチュラル:** 延長開始直前の元のカーブで描かれた曲線を継続することで、カーブを「自然に」延長します。
+            - **リニア:** 境界点から平坦な直線でカーブを延長し、曲率を変えずに現在の接線方向を維持します。
+            - **ソフト:** 滑らかな移行のために延長を既存のカーブと徐々にブレンドし、接線と曲率の両方を保持します。
+            - **リフレクティブ:** 対称的でシームレスな継続のためにカーブの曲率と接線性をミラーリングし、カーブの対称性維持に最適です。
+            - **アーク:** 境界点から円弧でカーブを延長します。
 
-            ![Extend Curve Shape](/img/extend-curve-shape.png) 
-            
-      - **Distance:** 距離を指定します。
-5. コマンドダイアログでOKを押すか、右クリックで確定します。
+            ![カーブ延長形状](/img/extend-curve-shape.svg)
+
+      - **距離:** 距離を指定します。
+5. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="extend-curve"/>
 
+## 依存カーブ延長
+
+別のカーブやソリッドジオメトリと一致・交差させることでカーブを延長し、ターゲットが最終的な延長距離を決定します。
+
+1. 延長したいカーブの端点の1つを選択します。
+2. コマンドパレットで **延長** コマンドを使用します。
+3. 一致・交差させるターゲットジオメトリを選択します。
+     - **カーブ:** 一致・交差させるカーブを選択します。
+     - **ソリッド:** 一致・交差させるシートまたはソリッドオブジェクトを選択します。
+4. カーブがターゲットジオメトリに正確に届くまで延長されます。
+
+<VideoPlayer fileName="dependant-curve-extend"/>
+
 ## 関連項目
-- [Extend](extend)
-- [Extend Sheet](/solid/extend-sheet)
+- [延長](extend)
+- [シートの延長](/solid/extend-sheet)

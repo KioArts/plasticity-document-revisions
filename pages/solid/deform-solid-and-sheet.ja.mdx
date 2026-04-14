@@ -3,47 +3,57 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Deform Solid and Sheet
+## Volumen- und Flächenkörper verformen
 
-<Reference shortcut="" command="Deform" button="" />
+{/* <Reference shortcut="" command="Verformen" button="" /> */}
 
-既存のソリッドおよびシートオブジェクトを、規則的および不規則な表面にラップします。
+<CommandReference
+  command="Verformen"
+  shortcut=""
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-deform.png"
+  tier="both"
+/>
 
-## 基本的な使い方
+## Beschreibung
 
-1. ラップしたいオブジェクトを選択します。
-2. コマンドパレットに **Deform** と入力します
-3. 中立平面として参照面を選択します。
-4. オブジェクトを変形させる対象面を選択します。
-5. コマンドダイアログでオプションを設定します。
-    - <Kst>コマンドダイアログ</Kst>
-          - **スケール:** Z、Y、X 値でスケールします。
-          - **オフセット:** Z、Y、X 値でオフセットします。
-          - **反転:** 
-                - **ミラー:** 変形したオブジェクトを、表面に対して水平方向に鏡像反転します。
-                - **UV:** 変形したオブジェクトのUおよびVの向きを反転します。
-                - **法線:** 変形したオブジェクトの法線を反転します。
-          - **ブレンド:** 変形したオブジェクトを再ブレンドします。オブジェクトのフィレットを再計算し、再度変換して不要な変形を取り除きます。
-          - **ツールを保持:** ツールオブジェクトをそのまま保持しながら、Deform 操作を実行します。
-6. コマンドダイアログで OK をクリックするか、右クリックして確認します。
+Wickelt bestehende Volumen- und Flächenkörper auf eine reguläre oder irreguläre Oberfläche.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Objekte aus, die Sie verformen möchten.
+2. Geben Sie **Verformen** in der Befehlspalette ein.
+3. Wählen Sie eine Referenzfläche als Neutralebene.
+4. Wählen Sie die Zielfläche aus, auf die die Objekte verformt werden sollen.
+5. Legen Sie die Optionen im Befehlsdialog fest.
+    - <Kst>Befehlsdialog</Kst>
+          - **Skalierung:** Skalierung in **U-, V-, N**-Richtung.  
+          - **Versatz:** Versatz in **U-, V-, N**-Richtung.
+          - **Umkehren:** 
+                - **Spiegeln:** Spiegelt die verformten Objekte horizontal relativ zur Oberfläche.
+                - **UV:** Kehrt die U- und V-Ausrichtung der verformten Objekte um.
+                - **Normalen:** Kehrt die Normale der verformten Objekte um.
+          - **Neu verblenden:** Verblendet die verformten Objekte neu. Berechnet die Verrundungen neu und überträgt sie erneut, um unerwünschte Verformungen zu entfernen.
+          - **Werkzeuge behalten:** Führt die Verformung durch, ohne die Werkzeugobjekte zu verändern.
+6. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="deform-solid"/>
 
 <Callout type="info" emoji="ℹ️">
-スケールとオフセットは、パラメトリック値を調整する際にXYZ座標系の代わりにUVN座標系を使用します。これにより、変形したオブジェクトの向きをターゲット表面に対する特定のポイントで定義できます。UVN座標系についての詳細は, [こちら](/cad-essentials/uvn-coordinate-system)をクリックしてください。
+Skalierung und Versatz verwenden ein **UVN**-Koordinatensystem anstelle eines **XYZ**-Koordinatensystems, um den parametrischen Wert anzupassen. Dadurch können Sie die Orientierung der verformten Objekte an einem bestimmten Punkt relativ zur Zielfläche definieren. Weitere Informationen zum UVN-Koordinatensystem finden Sie [hier](/cad-essentials/uvn-coordinate-system).
 </Callout>
 
-### Unwrap Face コマンドを使用したサーフェス変形
+### Oberflächenverformung mit dem Befehl „Fläche abwickeln“
 
-不要な変形や不正確な配置を避けるために、対象オブジェクトに対してコマンドパレットから **Unwrap Face** コマンドを使用してください。これにより、正しくマッピングされたサーフェスが生成され、正確な参照面として使用できます。この機能は、周期的でも閉じていてもいない開いたサーフェスで機能します。サーフェスが周期的または閉じている場合は、次の章を参照してください — [閉じたサーフェスでの変形の使用](/solid/deform-solid-and-sheet#surface-deformation-on-closed-surfaces)。
+Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den Befehl „Fläche abwickeln“ aus der Befehlspalette für das Zielobjekt. Dadurch wird eine korrekt abgebildete Oberfläche erzeugt, die als präzise Referenzfläche verwendet werden kann. Dies funktioniert bei offenen Flächen, die nicht periodisch oder geschlossen sind. Wenn die Oberfläche periodisch oder geschlossen ist, lesen Sie das folgende Kapitel – [Oberflächenverformung auf geschlossenen Flächen](/solid/deform-solid-and-sheet#surface-deformation-on-closed-surfaces).
 
 <VideoPlayer fileName="deform-solid-unwrap"/>
 
-### 閉じたサーフェスでの Deform の使用
+### Oberflächenverformung auf geschlossenen Flächen
 
-シリンダー面のような閉じた（周期的な）サーフェスでのオブジェクト変形には、サーフェスに等パラメトリック線を追加して断片化するか、（可能な場合）変形対象のオブジェクトを分割する必要があります。これは、閉じたサーフェスを包む際にジオメトリが自己交差して結合や連続性の問題を引き起こすためです。
+Das Verformen von Objekten auf geschlossenen (periodischen) Flächen erfordert entweder das Fragmentieren der Oberfläche oder das Aufteilen des zu verformenden Objekts (falls möglich). Dies ist notwendig, da sich die Geometrie beim Wickeln um eine geschlossene Oberfläche selbst überschneidet, was zu Verbindungs- und Stetigkeitsproblemen führt.
 
 <VideoPlayer fileName="deform-solid-unwrap-closed"/>
 
-## 関連項目
-- [Copy with Placement](/common/copy-with-placement)
+## Siehe auch
+- [Kopieren mit Platzierung](/common/copy-with-placement)

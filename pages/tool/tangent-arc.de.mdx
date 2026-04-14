@@ -4,33 +4,44 @@ import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Tangent Arc
+## Tangentenbogen
 
-<Reference shortcut="" command="Tangent Arc" button="Toolbar"  buttonIcon='button-tangent-ark'/>
+{/* <Reference shortcut="" command="Tangent Arc" button="Toolbar"  buttonIcon='button-tangent-ark'/> */}
 
-Sie können einen Bogen erstellen, der tangential zu einer Kurve verläuft.
+<CommandReference
+  command="Tangentenbogen"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-tangent-ark.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-tangent-ark" /> Knopf in der Werkzeugleiste.
-2. Klicken Sie auf die Kurve, an die der Bogen tangential verlaufen wird.
+Sie können einen Bogen erstellen, der an eine Kurve tangential ist.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-tangent-ark" /> in der Symbolleiste.
+2. Klicken Sie auf die Kurve, an die der Bogen tangential sein soll. Optional können Sie auf eine zweite Kurve mit einem Tangenten-Snap klicken.
 3. Bewegen Sie den Cursor, um die Größe des Bogens anzupassen, und klicken Sie zur Bestätigung.
-    - <Kst>Tastenkombinationen</Kst>
-        - <kbd>D</kbd> **Flip direction:** Kehrt die Richtung des Bogens um.
-        - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Axis:** [Beschränkt auf X, Y, Z Achse](/tool/sketching-essentials#constrain-to-an-axis).
-        - <kbd>N</kbd> **Normal:** Bewegen Sie den Bogen senkrecht entlang der Normalrichtungsbeschränkung.
-        - <kbd>B</kbd> **Binormal:** Bewegen Sie den Bogen senkrecht entlang der entgegengesetzten Normalrichtungsbeschränkung.
+    - <Kst>Tastaturkürzel</Kst>
+        - <kbd>D</kbd> **Richtung umkehren:** Kehrt die Richtung des Bogens um.
+        - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y-, Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+        - <kbd>N</kbd> **Normal:** Bewegt den Bogen senkrecht entlang der normalen Richtungsbeschränkung.
+        - <kbd>B</kbd> **Binormal:** Bewegt den Bogen senkrecht entlang der entgegengesetzten normalen Richtungsbeschränkung.
 6. Der Bogen wird erstellt.
+
+<Callout type="info">
+**Hinweis:** Der Tangentenbogen-Algorithmus ist empfindlich beim Erkennen von Tangentenpunkten auf Kurven. Bewegen Sie den Cursor vorsichtig in der Nähe des gewünschten Punktes, ohne ihn zu überqueren, da das Überqueren verhindern kann, dass der Tangentenpunkt angezeigt wird.
+</Callout>
 
 <VideoPlayer fileName="tangent-arc"/>
 
-<Callout type="info" emoji="💡">
-**Tipp** Der Tangentenbogen-Algorithmus ist empfindlich bei der Erkennung von Tangentenpunkten auf Kurven. Bewegen Sie den Cursor vorsichtig in die Nähe des gewünschten Punktes, ohne ihn zu überschreiten, da das Überschreiten verhindern kann, dass der Tangentenpunkt angezeigt wird.  
-</Callout>
-
-- [Center Circle](center-circle)
-- [Two-Point Circle](two-point-circle)
-- [Three-Point Circle](three-point-circle)
-- [Tangent Circle](tangent-circle)
-- [Center Point Arc](center-point-arc)
-- [Three-Point Arc](three-point-arc)
+## Siehe auch
+- [Mittelpunktkreis](center-circle)
+- [Zwei-Punkt-Kreis](two-point-circle)
+- [Drei-Punkt-Kreis](three-point-circle)
+- [Tangentenkreis](tangent-circle)
+- [Mittelpunktbogen](center-point-arc)
+- [Drei-Punkt-Bogen](three-point-arc)

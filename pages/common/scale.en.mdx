@@ -3,9 +3,19 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Scale
+## Scale
 
-<Reference shortcut="S" command="Scale" button="In Command Bar" buttonIcon='button-scale' />
+{/* <Reference shortcut="S" command="Scale" button="In Command Bar" buttonIcon='button-scale' /> */}
+
+<CommandReference
+  command="Scale"
+  shortcut="S"
+  button="In Command Bar"
+  buttonIcon="/img/button-scale.png"
+  tier="both"
+/>
+
+## Description
 
 Scale objects using Scale Gizmo. Options for single-axis constraints or [**freestyle scale**](#freestyle-scale) are available. The pivot point is also adjustable. When you insert a new primitive or sketch object at its initial insertion point, the Scale Gizmo and pivot automatically re-orient to align with the object's surface normal.
 
@@ -28,7 +38,8 @@ Scale objects using Scale Gizmo. Options for single-axis constraints or [**frees
          - <ButtonIcon type="button-active"/> **Active:** Positions the pivot at the last selected (active) object's pivot.
 
          ![Pivot Demonstration](/img/pivot-scale.png)
-         
+      - Advanced:
+         - **Transform instances inversely**: Scales only the parent object while keeping any attached instances in place, by automatically applying the inverse transformation to each instance.
    - <Kst>Keyboard Shortcuts</Kst>
    - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Constrain to the X, Y, or Z-axis](/tool/sketching-essentials#constrain-to-an-axis).
    - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Constrain to the X, Y, or Z-plane.
@@ -47,7 +58,10 @@ This command is equivalent to the <kbd>F</kbd> option of the **Scale** command.
 3. Specify the scaling axis by clicking on the starting and ending points.
 4. Move the cursor to scale the object, and then click the desired scaling ratio.
 5. Set the options in the Command Dialog and Keyboard Shortcuts.
-   - The option is the same as the **Scale** command.
+   - <Kst>Command Dialog</Kst>
+      - **Ratio:** Specify the ratio of the scaled object.
+      - **Length:** Specify the length of the scaled object.
+      - **Uniform:** Uniformly scale the object, keeping proportions intact.
 6. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="freestyle-scale"/>

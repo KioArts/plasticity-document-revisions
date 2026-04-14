@@ -1,56 +1,141 @@
-# Sketch Commands
+### Bridge and Connect
 
-| Command Name                                                      | Shortcut                   | Note                                                                                                       |
-| ----------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| [Deform](/sketch/deform)                                           |                            | Unified command for Deform Curve, Deform Solid and Sheet.                                                   |
-| [Deform Curve](/sketch/deform-curve)                              |                            | Wrap existing curves onto a different surface.                                                              |
-| [Extend](/sketch/extend)                                           |                            | Unified command for Extend Curve, Extend Sheet.                                                             |
-| [Extend Curve](/sketch/extend-curve)                               |                            | Extend a Curve.                                                                                             |
-| [Fillet](/sketch/fillet)                                           | <kbd>B</kbd>               | Unified command for Fillet Curve, Fillet Vertex, Fillet Shell.                                              |
-| [Fillet Curve](/sketch/fillet-curve)                               | <kbd>B</kbd>               | Fillet or chamfer between two Curve segments.                                                               |
-| [Fillet Vertex](/sketch/fillet-vertex)                             | <kbd>B</kbd>               | Fillet or chamfer connected vertices.                                                                       |
-| [Offset Curve](/sketch/offset-curve)                               | <kbd>O</kbd>               | Unified command for Offset Planar Curve, Offset Region, Offset Face Loop, Offset Edge.                      |
-| [Offset Planar Curve](/sketch/offset-planar-curve)                 | <kbd>O</kbd>               | Offset a planar Curve.                                                                                      |
-| [Offset Region](/sketch/offset-region)                             | <kbd>O</kbd>               | Offset the outline curves of a Region.                                                                      |
-| [Offset Vertex](/sketch/offset-vertex)                             | <kbd>O</kbd>               | Insert new vertices along the curve on both sides of a vertex.                                              |
-| [Create Instance](/sketch/create-instance)                                       |                         | Unified command for Create Curve Instance, Create Solid and Sheet Instance.                                                                              |
-| [Create Curve Instance](/sketch/create-curve-instance)                           |                         | Duplicate multiple uneditable objects.                                                                              |
-| [Realize Instances](/sketch/realize-instances)                      |                         | Unified command for Realize Solid and Sheet Instances, Realize Curve Instances                                   |
-| [Realize Curve instances](/sketch/realize-curve-instances)         |                         | Convert curve instances to a real curve.                                                                            |
-| [Raise Degree](/sketch/raise-degree)                               | <kbd>Shift+S</kbd>       | Unified command for Raise Curve Degree, Raise Surface Degree.                                               |
-| [Raise Curve Degree](/sketch/raise-curve-degree)                   | <kbd>Shift+S</kbd>       | Increase Control-Vertices and Degrees of Curves.                                                            |
-| [Rebuild](/sketch/rebuild)                                         |                            | Unified command for Rebuild Curve, Rebuild Face.                                                            |
-| [Rebuild Curve](/sketch/rebuild-curve)                             |                            | Rebuilt by optimizing the positions of the Control Vertices.                                                |
-| [Reverse](/sketch/reverse)                                         |                            | Unified command for Reverse Curve, Reverse Sheet.                                                           |
-| [Reverse Curve](/sketch/reverse-curve)                             |                            | Inverse the direction of a curve.                                                                           |
-| [Subdivide Curve](/sketch/subdivide-curve)                         |          | Increase Control-Vertices and Spans of Curves.                                                              |
-| [Slide](/sketch/slide)                                             |                            | Unified command for Slide Curve CV, Slide Surface CV.                                                       |
-| [Slide Curve CV](/sketch/slide-curve-cv)                           | <kbd>Shift+G</kbd>         | Slide a CV on a Curve along the CV Hull.                                                                    |
-| [Text](/sketch/text)                                               |                            | Create Curves from text.                                                                                    |
-| [Toggle Points](/sketch/toggle-points)                             |                            | Hide or Unhide Control-Vertex points.                                                                       |
-| [Toggle Curve Curvature](/sketch/toggle-curve-curvature)         |                            | Measure curvature across curves.                                                                            |
-| **Project Commands**                                               |                           |                                                                                                            |
-| [Alternative Duplicate](/sketch/alternative-duplicate)             | <kbd>Alt+D</kbd>       | Project the Curves onto the current construction plane.                                                     |
-| [Create Outline](/sketch/create-outline)                           |                          | Project the outline of the objects to create a 3D Curve.                                                    |
-| [Duplicate Curve and Project](/sketch/duplicate-curve-and-project) |                          | Duplicate Curve And Project.                                                                                |
-| [Project](/sketch/project)                                         | <kbd>I</kbd>             | Unified command for Project Body Body, Project Curve Body, Project Curve Curve.                             |
-| [Project Body Body](/sketch/project-body-body)                     | <kbd>I</kbd>             | Create a new Curve representing the intersection line between two Solids or Sheets.                         |
-| [Project Curve Body](/sketch/project-curve-body)                   | <kbd>I</kbd>             | Create a new Curve by projecting a Curve onto a Solid or Sheet.                                             |
-| [Project Curve Curve](/sketch/project-curve-curve)                 | <kbd>I</kbd>             | Create a new Curve by projecting the intersection points of surfaces generated from two independent Curves. |
-| [Project Outline](/sketch/project-outline)                         | <kbd>Alt+D</kbd>       | Project the outline of the Solids or Sheets.                                                                |
-| **Join and Split Commands**                                        |                          |                                                                                                            |
-| [Bridge](/sketch/bridge)                                           |                          | Unified command for Bridge Curve, Bridge Vertex, Bridge Edge.                                               |
-| [Bridge Curve](/sketch/bridge-curve)                               |                          | Bridges two Curves.                                                                                         |
-| [Bridge Edge](/sketch/bridge-edge)                                 |                          | Bridges two Edges.                                                                                          |
-| [Bridge Vertex](/sketch/bridge-vertex)                             |                          | Bridges two Vertices.                                                                                       |
-| [Cut Curve](/sketch/cut-curve)                                     |                          | Cut Curve.                                                                                                  |
-| [Join](/sketch/join)                                               | <kbd>J</kbd>             | Unified command for Join Curves, Join Sheets.                                                               |
-| [Join Curves](/sketch/join-curves)                                 | <kbd>J</kbd>             | Join Curves at connecting points.                                                                           |
-| [Split Segment](/sketch/split-segment)                             |                          | Split a Curve into two segments.                                                                            |
-| [Trim](/sketch/trim)                                               | <kbd>T</kbd>             | Trim Curve.                                                                                                 |
-| [Unjoin](/sketch/unjoin)                                           | <kbd>Alt+J</kbd>       | Unified command for Unjoin Curves, Unjoin Faces, Unjoin Shells.                                             |
-| [Unjoin Curves](/sketch/unjoin-curve)                              | <kbd>Alt+J</kbd>       | Separate joined Curves.                                                                                     |
-| [Insert Knot](/sketch/insert-knot)                                 |                         | Insert a CV on a spline curve.                                                                              |
-| **Vertex Commands**                                                |                          |                                                                                                            |
-| [Convert Vertex](/sketch/convert-vertex)                           |                          | Convert Vertices to Control-Vertices.                                                                       |
-| [Delete Redundant Topology](/sketch/delete-redundant-topology)     |                          | Remove excess points.                                                                                       |
+- Tools to bridge and connect curves, edges, and vertices.
+
+| Name | Description |
+| :--- | :--- |
+| [Bridge](/sketch/bridge) | Bridge two open edges or curves with a smooth connection. |
+| [Bridge Curve](/sketch/bridge-curve) | Bridge two curves with a new connecting curve. |
+| [Bridge Edge](/sketch/bridge-edge) | Bridge two open edges on a surface. |
+| [Bridge Vertex](/sketch/bridge-vertex) | Bridge two vertices with a new curve. |
+
+### Cut and Trim
+
+- Tools to cut, trim, and split curves.
+
+| Name | Description |
+| :--- | :--- |
+| [Cut Curve](/sketch/cut-curve) | Cut a curve at a specified point or intersection. |
+| [Trim](/sketch/trim) | Trim curves at their intersections to clean up geometry. |
+| [Split Segment](/sketch/split-segment) | Split a curve segment at a defined point. |
+
+### Deform and Slide
+
+- Tools to deform and slide curves and control points.
+
+| Name | Description |
+| :--- | :--- |
+| [Deform](/sketch/deform) | Deform selected geometry using a cage or control structure. |
+| [Deform Curve](/sketch/deform-curve) | Deform a curve by manipulating its shape interactively. |
+| [Slide](/sketch/slide) | Slide selected geometry along a surface or edge. |
+| [Slide Curve CV](/sketch/slide-curve-cv) | Slide a control vertex along a curve. |
+
+### Align
+
+- Tools to align vertices, lines, curves, and edges to improve geometric accuracy and consistency.
+
+| Name | Description |
+| :--- | :--- |
+| [Align](/sketch/align) | Align selected geometry to a reference point. |
+| [Align Vertex](/sketch/align-vertex) | Align a vertex to another vertex, point, or reference geometry. |
+
+### Extend
+
+- Tools to extend open curves and edges.
+
+| Name | Description |
+| :--- | :--- |
+| [Extend](/sketch/extend) | Extend an open edge or surface boundary. |
+| [Extend Curve](/sketch/extend-curve) | Extend an open curve from either of its endpoints. |
+
+### Fillet
+
+- Tools to add fillets to curves, edges, and vertices.
+
+| Name | Description |
+| :--- | :--- |
+| [Fillet](/sketch/fillet) | Add a fillet between two curves or edges. |
+| [Fillet Curve](/sketch/fillet-curve) | Add a fillet to a curve at a corner point. |
+| [Fillet Vertex](/sketch/fillet-vertex) | Add a fillet at a curve vertex. |
+
+### Join and Unjoin
+
+- Tools to join and separate curves.
+
+| Name | Description |
+| :--- | :--- |
+| [Join](/sketch/join) | Join selected curves or edges into a single curve. |
+| [Join Curves](/sketch/join-curves) | Join multiple curves end-to-end into one continuous curve. |
+| [Unjoin](/sketch/unjoin) | Separate a joined curve back into individual segments. |
+| [Unjoin Curve](/sketch/unjoin-curve) | Separate a specific curve from a joined set. |
+
+### Offset
+
+- Tools to offset curves and regions.
+
+| Name | Description |
+| :--- | :--- |
+| [Offset Curve](/sketch/offset-curve) | Offset a curve by a defined distance. |
+| [Offset Planar Curve](/sketch/offset-planar-curve) | Offset a planar curve within its plane. |
+| [Offset Region](/sketch/offset-region) | Offset a closed region inward or outward. |
+| [Offset Vertex](/sketch/offset-vertex) | Offset a vertex along its connected edges. |
+| [Slot](/sketch/slot) | Offset a curve symmetrically and create a closed slot profile. |
+
+### Project
+
+- Tools to project curves onto surfaces and bodies.
+
+| Name | Description |
+| :--- | :--- |
+| [Project](/sketch/project) | Project a curve onto a surface along a defined direction. |
+| [Project Body Body](/sketch/project-body-body) | Project the intersection between two bodies as a curve. |
+| [Project Curve Body](/sketch/project-curve-body) | Project a curve onto a body surface. |
+| [Project Curve Curve](/sketch/project-curve-curve) | Project one curve onto another. |
+| [Project Outline](/sketch/project-outline) | Project the silhouette outline of a body as a 2D curve. |
+| [Alternative Duplicate](/sketch/alternative-duplicate) | Project a curve onto an active construction plane to create a new curve. |
+| [Duplicate Curve and Project](/sketch/duplicate-curve-and-project) | Duplicate a curve and project it onto an active construction plane. |
+| [Create Outline](/sketch/create-outline) | Generate an outline curve from selected geometry as a 3D curve. |
+
+### Rebuild and Refine
+
+- Tools to rebuild, reverse, and refine curve geometry.
+
+| Name | Description |
+| :--- | :--- |
+| [Convert Vertex](/sketch/convert-vertex) | Convert a curve vertex between smooth and corner types. |
+| [Delete Redundant Topology](/sketch/delete-redundant-topology) | Remove unnecessary topology from curves and edges. |
+| [Insert Knot](/sketch/insert-knot) | Insert a knot into a curve for finer local control. |
+| [Raise Curve Degree](/sketch/raise-curve-degree) | Increase the degree of a curve for more control points. |
+| [Raise Degree](/sketch/raise-degree) | Increase the degree of selected geometry. |
+| [Rebuild](/sketch/rebuild) | Rebuild selected geometry with a new point count or degree. |
+| [Rebuild Curve](/sketch/rebuild-curve) | Rebuild a curve with a specified number of control points. |
+| [Reverse](/sketch/reverse) | Reverse the direction of selected geometry. |
+| [Reverse Curve](/sketch/reverse-curve) | Reverse the direction of a curve. |
+
+### Instances
+
+- Tools to create and realize curve instances.
+
+| Name | Description |
+| :--- | :--- |
+| [Create Instance](/sketch/create-instance) | Create a reusable instance of selected geometry. |
+| [Create Curve Instance](/sketch/create-curve-instance) | Create a reusable instance of a curve. |
+| [Realize Instances](/sketch/realize-instances) | Convert all instances into independent editable geometry. |
+| [Realize Curve Instances](/sketch/realize-curve-instances) | Convert curve instances into editable geometry. |
+
+### Text
+
+- Tools to create text as curves.
+
+| Name | Description |
+| :--- | :--- |
+| [Text](/sketch/text) | Create editable text as curves in the scene. |
+
+### Display and Analysis
+
+- Tools to toggle visual feedback on curves.
+
+| Name | Description |
+| :--- | :--- |
+| [Toggle Curve Curvature](/sketch/toggle-curve-curvature) | Display curvature combs on curves to evaluate smoothness. |
+| [Toggle Points](/sketch/toggle-points) | Show or hide control points on selected curves. |

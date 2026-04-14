@@ -3,32 +3,41 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Imprint Body Body（ボディをボディに投影してエッジを作成する）[#imprint-body-body]
+## Imprint Body Body[#imprint-body-body]
 
-<Reference shortcut="Shift + I" command="Imprint" button="推奨コマンドメニューで" buttonIcon='button-imprint' />
+{/* <Reference shortcut="Shift + I" command="Imprint" button="推奨コマンドメニュー内" buttonIcon='button-imprint' /> */}
 
-ふたつのソリッドまたは/およびシートの交点にエッジを作成できます。
+<CommandReference
+  command="Imprint"
+  shortcut="Shift + I"
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-imprint.png"
+  tier="both"
+/>
+
+## 説明
+
+ツールとして使用するソリッドまたはシートとターゲットのソリッドまたはシートが交差する位置に、エッジを作成します。必要に応じて、ツール側にもエッジを作成できます。
 
 ## 基本的な使い方
 
-1. 交点のターゲットとして使用するソリッドまたはシートを選択します。
-2. 交点のツールとして使用するソリッドまたはシートを選択します。
+1. 交差結果を適用したいターゲット側のソリッドまたはシートを選択します。
+2. ツールとして使用する 2 つ目のソリッドまたはシートを選択します。
 3. コマンドダイアログでオプションを設定します。
      - <Kst>コマンドダイアログ</Kst>
-          - **Imprint tool:** **Imprint**をオンにすると、**Complete tool** オプションが有効になります。
-          - **Complete target:**
-               - **None:** ターゲットボディ上の投影したエッジの延長をしません。
-               - **Edge:** ターゲットボディ上の投影したエッジが他のエッジにあたるまで延長します。
-          - **Complete tool:**
-               - **None:** ツールボディ上の投影したエッジの延長をしません。
-               - **Edge:** ツールトボディ上の投影したエッジが他のエッジにあたるまで延長します。  
-4. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+          - **Imprint tool（ツールをインプリント）：** **Imprint** をオンにすると **Complete tool** オプションが使用可能になります。
+          - **Complete target（ターゲットの補完）：**
+               - **None：** 投影されたエッジをターゲット側で延長しません。
+               - **Edge：** 投影されたエッジを、ターゲット側の他のエッジと交差するまで延長します。
+          - **Complete tool（ツールの補完）：**
+               - **None：** 投影されたエッジをツール側で延長しません。
+               - **Edge：** 投影されたエッジを、ツール側の他のエッジと交差するまで延長します。
+4. コマンドダイアログの OK または右クリックで確定します。
 
-<VideoPlayer fileName="imprint-body-body"/>g/imprint-body-body.gif)
+<VideoPlayer fileName="imprint-body-body"/>
 
 ## 関連項目
 - [Imprint](imprint)
 - [Imprint Curve Body](imprint-curve-body)
-- [isoparam](isoparam)
+- [Isoparam](isoparam)
 - [Offset Curve](offset-curve)
-- [Extend Edge](extend-edge)

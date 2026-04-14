@@ -1,0 +1,21 @@
+# Cinema 4D Bridge FAQ
+
+----
+- F: Kann Cinema 4D Bridge Cinema 4D-Dateien in Plasticity anhängen?
+- A: Die primäre Integration verläuft nur in eine Richtung, von Plasticity nach Cinema 4D. Ein begrenzter Upload-Pfad ist ebenfalls verfügbar: Subdivision Surface-Objekte, die im Outbox-Null platziert sind, können als PolySpline-Flächen zurück nach Plasticity übertragen werden. Details finden Sie unter [Arbeiten mit PolySplines](how-to-use#arbeiten-mit-polysplines).
+----
+- F: Werden die Materialien von Plasticity in Cinema 4D widergespiegelt?
+- A: Derzeit werden sie nicht widergespiegelt.
+----
+- F: Was passiert mit den Daten, wenn Modelle, die mit Cinema 4D Bridge in Cinema 4D importiert wurden, aktualisiert oder neu facettiert werden?
+- A: Wenn Modelle über die Cinema 4D Bridge in Cinema 4D aktualisiert oder neu facettiert werden, werden bestimmte Daten überschrieben, während andere unverändert bleiben.
+    - Überschriebene Daten:
+        1. Die "Geometrie" der Objekte wird überschrieben. Das bedeutet, dass Daten, die mit Punkten und Polygonen verbunden sind, überschrieben werden, einschließlich der von Plasticity verwalteten Normalen-Tags und der internen Flächengruppen-Metadaten.
+        2. Die "Objekt-Manager-Metadaten" der Objekte werden überschrieben. Beispielsweise werden Namen, Hierarchie, Sichtbarkeit und so weiter überschrieben.
+        3. Alles, was Sie im Punkte-/Kanten-/Polygon-Bearbeitungsmodus tun, wird möglicherweise überschrieben.
+    - Nicht überschriebene Daten:
+        1. Die "mit den Objekten verbundenen Daten" werden nicht überschrieben. Dazu gehören Elemente wie Transformationen auf Objektebene, benutzerdefinierte Tags (Materialien, Texturen, benutzerdefinierte Auswahl-Tags), Elternschaft und so weiter.
+        2. Alles, was im **Outbox**-Null platziert ist, ist vollständig vor eingehenden Updates geschützt.
+----
+- F: Welchen Port verwenden Plasticity und Cinema 4D für die Integration?
+- A: Standardmäßig verwenden sie den Port 8980. Wenn Sie den Port ändern möchten, können Sie dies in Plasticity unter Preferences > Server und in Cinema 4D auf dem **Server**-Tab des Plasticity Bridge-Dialogs tun.

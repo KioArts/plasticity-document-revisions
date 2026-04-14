@@ -1,33 +1,46 @@
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Duplicate
+## Duplizieren
 
-<Reference shortcut="Umschalt + D" command="Duplicate" button="In der Befehlsleiste"  buttonIcon='button-duplicate'/>
+{/* <Reference shortcut="Shift + D" command="Duplizieren" button="In Command Bar" buttonIcon='button-duplicate' /> */}
 
-Objekte duplizieren und mit dem Move Gizmo verschieben. Einschränkungen für eine einzelne Achse oder freies Bewegen möglich. Pivot ist einstellbar.
+<CommandReference
+  command="Duplizieren"
+  shortcut="Shift + D"
+  button="In Command Bar"
+  buttonIcon="/img/button-duplicate.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Objekte aus, die Sie duplizieren möchten.
-2. Drücken Sie <kbd>Umschalt + D</kbd>.
-3. Verwenden Sie den angezeigten Move Gizmo zum Verschieben.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-   - <Kst>Befehlsdialog</Kst>
-      - **XYZ:** Geben Sie die Bewegungsmenge für die X-, Y- und Z-Achsen an.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
-      - <kbd>Umschalt + X</kbd>/ <kbd>Umschalt + Y</kbd>/<kbd>Umschalt + Z</kbd> **X, Y, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.
-      - <kbd>G</kbd> **Screen space:** Begrenzen auf die sichtbare Ebene.
-      - <kbd>F</kbd> **Freestyle:** Klicken Sie, um den Start- und Endpunkt anzugeben, die die Richtung und Entfernung der Bewegung bestimmen.
-      - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmo anzugeben.
-      - <kbd>W</kbd> **Worldspace:** Ändern Sie die Koordinatenachse des Gizmo in Weltkoordinaten.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+Objekte duplizieren und mit dem Verschieben-Gizmo bewegen. Einzelachsenbeschränkungen oder Freihand-Bewegung sind möglich. Der Pivot ist einstellbar.
 
 <Callout type="info">
-   - Beim Duplizieren mehrerer Bereiche werden diese als kombinierte Form dupliziert.
-</Callout> 
+**Hinweis:** Beim Duplizieren mehrerer Regionen werden diese als kombinierte Form dupliziert.
+</Callout>
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Objekte aus, die Sie duplizieren möchten.
+2. Drücken Sie <kbd>Shift + D</kbd>.
+3. Verwenden Sie den angezeigten Verschieben-Gizmo zum Bewegen.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
+   - <Kst>Befehlsdialog</Kst>
+      - **XYZ:** Geben Sie den Verschiebebetrag der X-, Y- und Z-Achse an.
+   - <Kst>Tastenkombinationen</Kst>
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.
+      - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.
+      - <kbd>F</kbd> **Freihand:** Klicken, um den Start- und Endpunkt anzugeben, der Richtung und Abstand der Bewegung bestimmt.
+      - <kbd>V</kbd> **Pivot:** Klicken, um die Position des Gizmos anzugeben.
+      - <kbd>W</kbd> **Weltkoordinaten:** Die Koordinatenachse des Gizmos auf Weltkoordinaten ändern.
+4. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
+
+<VideoPlayer fileName="duplicate"/>
 
 ## Siehe auch
-- [Place](place)
+- [Platzieren](place)

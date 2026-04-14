@@ -1,9 +1,19 @@
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Remove Material
+## Remove Material
 
-<Reference shortcut="Alt + M" command="Remove Material" button="" />
+{/* <Reference shortcut="Alt + M" command="Remove Material" button="" /> */}
+
+<CommandReference
+  command="Remove Material"
+  shortcut="Alt + M"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-set-material.png"
+  tier="both"
+/>
+
+## Description
 
 Remove material from selected objects and reset to default material.
 
@@ -15,5 +25,4 @@ Remove material from selected objects and reset to default material.
 
 ## See also
 - [Set Material](set-material)
-- [Outliner/Material color](/plasticity-essentials/outliner#material-color)
-- [View Mode/Toggle View Mode](/plasticity-essentials/view-mode#toggle-view-mode)
+- [Outliner/Material color](/plasticity-essentials/plasticity-interface/outliner#material-color)

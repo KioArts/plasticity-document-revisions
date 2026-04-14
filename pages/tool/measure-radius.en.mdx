@@ -2,9 +2,19 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import VideoPlayer from '/components/VideoPlayer';
 
-# Measure Radius
+## Measure Radius
 
-<Reference shortcut="" command="Measure Radius" button="In Command Palette" buttonIcon='button-measure-radius' />
+{/* <Reference shortcut="" command="Measure Radius" button="In Command Palette" buttonIcon='button-measure-radius' /> */}
+
+<CommandReference
+  command="Measure Radius"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-measure-radius.png"
+  tier="both"
+/>
+
+## Description
 
 Measures the radius of a solid surface edge or a curve (sketch) and creates a radius annotation.
 
@@ -22,4 +32,4 @@ Measures the radius of a solid surface edge or a curve (sketch) and creates a ra
 <VideoPlayer fileName="measure-radius-01"/>
 
 ## See also
-- [Dimension](dimension)
+- [Dimension](/common/dimension)

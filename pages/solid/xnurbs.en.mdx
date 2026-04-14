@@ -4,13 +4,21 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
 
-# XNurbs
+## XNurbs
 
-<Reference shortcut="" command="XNurbs" button="In Command Palette" buttonIcon='button-xnurbs'/>
+{/* <Reference shortcut="" command="XNurbs" button="In Command Palette" buttonIcon='button-xnurbs'/> */}
+
+<CommandReference
+  command="XNurbs"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-xnurbs.png"
+  tier="studio"
+/>
+
+## Description
 
 XNurbs is a tool that can generate N-sided and quad-sided surfaces with high-quality output. It allows you to bridge gaps and close complex holes on a surface. 
-
-> **Note:** This command is available only with the **Studio License**.
 
 ## Basic Usage
 
@@ -37,9 +45,10 @@ XNurbs is a tool that can generate N-sided and quad-sided surfaces with high-qua
 
 <VideoPlayer fileName="xnurbs"/>
 
-<Callout type="warning">  
-1. Tools like Patch may struggle with complex surfaces. Use XNurbs for generating complex surfaces or as a starting point for  later refinement.  
-2. While XNurbs can bridge gaps even with bad inputs, high-quality surfaces still require proper constraints.   
+<Callout type="info"> 
+**Note:** 
+- Tools like Patch may struggle with complex surfaces. Use XNurbs for generating complex surfaces or as a starting point for  later refinement.  
+- While XNurbs can bridge gaps even with bad inputs, high-quality surfaces still require proper constraints.   
 </Callout>
 
 ## Additional Information

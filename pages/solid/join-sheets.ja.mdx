@@ -3,26 +3,34 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Join Sheets（一致したエッジでシートをつなぐ）[#join-sheets]
+## Join Sheets
 
-<Reference shortcut="J" command="Join" button="推奨コマンドメニューで" buttonIcon='button-join' />
+{/* <Reference shortcut="J" command="Join" button="推奨コマンドメニュー内" buttonIcon='button-join' /> */}
 
-一致したエッジでシートをつなぐことができます。
+<CommandReference
+  command="Join"
+  shortcut="J"
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-join.png"
+  tier="both"
+/>
+
+## 説明
+
+一致するエッジを持つシート同士を結合します。
 
 ## 基本的な使い方
 
-1. つなげたいシートを選択します。
-2. <kbd>J</kbd>を押します。
-3. シートがつながります。
+1. 結合したいシートを選択します。
+2. <kbd>J</kbd> を押します。
+3. シートが結合されます。
 
-<Callout emoji="❗">
-**注意** <br/ >
-つなげたいふたつのシートは、エッジが一致している必要があります。
+<Callout type="info">
+**注意:** 2 つのシートを結合するには、エッジが完全に揃っている必要があります。
 </Callout>
-<br />
+
 <VideoPlayer fileName="join-sheets"/>
 
 ## 関連項目
-- [Join Sheets](join-sheets)
 - [Bridge Surface](bridge-surface)
 - [Unjoin](unjoin)

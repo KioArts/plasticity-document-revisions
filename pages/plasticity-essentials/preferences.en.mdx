@@ -7,6 +7,14 @@ You need to restart Plasticity when you change the settings.
 
 ## Navigation
 
+### Rotation Mode
+
+- **Tumble:** 
+    - Rotates the view around a fixed vertical axis, keeping the up direction locked. Moving the mouse left/right rotates horizontally, and up/down rotates vertically but the view cannot roll or flip upside down. (Default: **Selected**)
+
+- **Arcball:** 
+    - Rotates the view freely in all three axes with no axis constraints. The mouse movement is mapped to the surface of an imaginary sphere around the scene, allowing full 360 degree rotation in any direction.
+
 ### Navigation Settings
 
 - **Zoom to cursor**:
@@ -47,12 +55,32 @@ Available languages:
 
 ## Appearance
 
-- You can select accent colors, supporting colors, viewport background colors, and grid colors.
-- Additional options for controlling the size of Control Points, Vertices, Edges, and Curve Segments.
+Customize colors for the UI and viewport, and adjust the size of control points, vertices, edges, and curve segments.
+
+### UI Colors
+
+- **Accent Colors:** Set the primary colors for the Plasticity UI. Changes apply in real time.
+- **Supporting Colors:** Set the secondary colors for the UI. Affects active group highlights, connected CVs, and related elements.
+- **Neutral Colors:** Set the background colors for menus and toolbars.
+- **Viewport Colors:** Set the viewport background color.
+  - **Choose Custom Color:** Specify a custom color.
+- **Grid Colors:** Set the grid color.
+  - **Choose Custom Color:** Specify a custom color.
+- **Measurement Color:** Set the color for measurement lines.
+  - **Choose Custom Color:** Specify a custom color.
+
+### Properties
+
+- **Control Points:** Specify the size of control points on curves.
+- **Vertices:** Specify the size of vertices on curves.
+- **Edges:** Specify the size of edges on sheets and solids.
+- **Curve Segments:** Specify the thickness of curve lines.
+- **UI Standard Spacing:** Specify the padding and spacing of UI elements such as toolbars and menus.
+- **Zoom Factor:** Specify the zoom sensitivity.
 
 ### Ambient Occlusion (AO)
 
-Adjust the Ambient Occlusion appearance in the viewport by using the Radius **(1)** and Falloff **(2)** settings. Note that the Radius value is a percentage of your current length unit. For example, if you use meters and enter a value of 10, it converts to 0.1 meters. The Radius can range from 0 to 1000, while Falloff ranges from 0.0 to 10.0. (Default: 15 and 0.5)
+Adjust the **Ambient Occlusion** appearance in the viewport using the **Radius (1)** and **Falloff (2)** settings. The Radius value is a percentage of your current length unit. For example, with meters, a value of 10 converts to 0.1 meters. Radius ranges from 0 to 1000 and Falloff from 0.0 to 10.0 (defaults: 15 and 0.5).
 
 ![Ambient Occlusion Settings](/img/ao-settings.png)
 

@@ -2,9 +2,19 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Offset Face
+## Offset Face
 
-<Reference shortcut="" command="Push Face" button="" />
+{/* <Reference shortcut="" command="Push Face" button="" /> */}
+
+<CommandReference
+  command="Push Face"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-push-face.png"
+  tier="both"
+/>
+
+## Description
 
 Offset the selected Faces by specifying the distance. Optional adjacent angle specification available.
 
@@ -18,7 +28,7 @@ Offset the selected Faces by specifying the distance. Optional adjacent angle sp
           - **Distance:** Specify the distance.
           - **Angle Adjacent:** Specify the Angle.
           - **Grow:**
-               - When the concave inner Face is offseted.
+               - When the concave inner Face is offset.
                - **Moving:** Move the whole wall when the offset gets to the outer wall.
                - **Fixed:** Stop at the outer wall.
                - **None:** Keep going by itself neither affecting or affected by the outer wall.

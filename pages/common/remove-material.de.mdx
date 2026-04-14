@@ -1,19 +1,28 @@
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Remove Material
+## Material entfernen
 
-<Reference shortcut="Alt + M" command="Remove Material" button="" />
+{/* <Reference shortcut="Alt + M" command="Material entfernen" button="" /> */}
 
-Entfernen Sie das Material von ausgewählten Objekten und setzen Sie es auf das Standardmaterial zurück.
+<CommandReference
+  command="Material entfernen"
+  shortcut="Alt + M"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-set-material.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Objekte aus, von denen Sie das Material entfernen möchten.
-2. Drücken Sie <kbd>Alt + M</kbd>.
+Entfernt das Material von ausgewählten Objekten und setzt es auf das Standardmaterial zurück.
+
+## Grundlegende Verwendung
+
+1. Wähle die Objekte aus, von denen du das Material entfernen möchtest.
+2. Drücke <kbd>Alt + M</kbd>.
 3. Das Material wird auf den Anfangswert zurückgesetzt.
 
 ## Siehe auch
-- [Set Material](set-material)
-- [Outliner/Material color](/plasticity-essentials/outliner#material-color)
-- [View Mode/Toggle View Mode](/plasticity-essentials/view-mode#toggle-view-mode)
+- [Material festlegen](set-material)
+- [Outliner/Materialfarbe](/plasticity-essentials/plasticity-interface/outliner#material-color)

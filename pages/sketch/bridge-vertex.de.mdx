@@ -1,35 +1,61 @@
 import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Vertex[#bridge-vertex]
+{/* # Bridge Vertex[#bridge-vertex]
 
-<Reference shortcut="" command="Bridge" button="" />
+<Reference shortcut="" command="Bridge" button="" /> */}
 
-Verbindet zwei Vertices, die G0/G1/G2/G3-kontinuierlich sein können. Die Spannung ist einstellbar.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/bridge-vertex.mp4"
+  alt="Bridge Edge Preview"
+  title="Bridge Vertex"
+  command="Bridge"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-bridge-curve.png" alt="Bridge Curve Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Scheitelpunkt verbinden
 
-1. Wählen Sie zwei Vertices, die Sie verbinden möchten.
-2. Verwenden Sie den **Bridge** Befehl im Command Palette.
-3. Legen Sie die Optionen im Command Dialog und den Tastenkombinationen fest.
-     - <Kst>Befehlsdialog</Kst>
-          - **Tension 1:**
-               - **Value 1/2:** Der Spannungswert beeinflusst den 1. Control-Vertex(CV) bis zum 3. CV des Startpunktes/Endpunktes.
-          - **Tension 2:**
-               - **Value 1/2:** Der Spannungswert beeinflusst den 2. CV und den 3. CV des Startpunktes/Endpunktes.
-          - **Tension 3:**
-               - **Value 1/2:** Der Spannungswert beeinflusst den 3. CV des Startpunktes/Endpunktes.
-          - **Start curvature:**
-               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Curve](/cad-essentials/continuity-curve-and-surface) am Startpunkt an.
-          -  **End curvature:**
-               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Curve](/cad-essentials/continuity-curve-and-surface) am Endpunkt an.
-4. Bestätigen Sie mit OK im Command Dialog oder klicken Sie mit der rechten Maustaste.
+<CommandReference
+  command="Bridge"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Verbindet zwei Scheitelpunkte mit G0-, G1-, G2- oder G3-Kontinuität. Die Spannung ist einstellbar und die Krümmungsmessung wird unterstützt.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie zwei Scheitelpunkte aus, die Sie verbinden möchten.
+2. Verwenden Sie den Befehl **Verbinden** in der Befehlspalette oder drücken Sie alternativ <kbd>L</kbd>.
+3. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+     - <Kst>Command Dialog</Kst>
+          - **Spannung 1:**
+               - **Wert 1/2:** Der Spannungswert beeinflusst den 1. Kontrollscheitelpunkt (CV) bis zum 3. CV des Start-/Endpunkts.
+          - **Spannung 2:**
+               - **Wert 1/2:** Der Spannungswert beeinflusst den 2. CV und 3. CV des Start-/Endpunkts.
+          - **Spannung 3:**
+               - **Wert 1/2:** Der Spannungswert beeinflusst den 3. CV des Start-/Endpunkts.
+          - **Startkrümmung:**
+               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Startpunkt an.
+          - **Endkrümmung:**
+               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Endpunkt an.
+     - <Kst>Keyboard Shortcuts</Kst>
+          - <kbd>Tab</kbd> **Kontinuität wechseln:** Wechselt zwischen G0-, G1-, G2- und G3-Kontinuität.
+          - <kbd>D</kbd> **G1-Spannung:** Passt die Spannung für G1-Kontinuität an.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="bridge-vertex"/>
 
 ## Siehe auch
-- [Bridge](bridge)
-- [Bridge Curve](bridge-curve)
-- [Bridge Edge](bridge-edge)
-- [Join](join)
+- [Verbinden](bridge)
+- [Kurve verbinden](bridge-curve)
+- [Kante verbinden](bridge-edge)
+- [Zusammenfügen](join)

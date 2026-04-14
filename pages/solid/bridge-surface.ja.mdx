@@ -2,49 +2,59 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Surface（ふたつのシートを繋ぐ）
+## サーフェスをブリッジ
 
-<Reference shortcut="" command="Bridge Surface" button="" />
+{/* <Reference shortcut="" command="Bridge Surface" button="" /> */}
 
-繋がっていないサーフェイスををブレンドまたはフィレットすることができます。
+<CommandReference
+  command="Bridge Surface"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+G2 やチャンファーなどの形状オプションを使用して、分離または接続された2つのサーフェス間をブレンドします。不要なサーフェスはトリムできます。サーフェスブレンドのテンションも調整可能です。
 
 ## 基本的な使い方
 
-### 離れているサーフェイスを繋ぐ
+### 分離したサーフェスをブリッジする
 
-1. コマンドパレットで**Bridge Surface**コマンドを実行します。
-2. 繋ぎたいふたつのシートを選択します。
+1. コマンドパレットで **サーフェスをブリッジ** コマンドを使用します。
+2. 接続する2つのシートを選択します。
 3. コマンドダイアログでオプションを設定します。
-    - <Kst>コマンドダイアログ</Kst>
-        - **Width:** ブリッジの幅を指定します。
-        - **Tension:** サーフェスの曲率の遷移を調整します。  
-        - **Shape:** 
-            - **G2:** 繋いだサーフェイスはG2接続になります。
-            - **Chamfer:** 繋いだサーフェイスは面取りになります。
-        - **Trim walls:** 有効のとき、ブリッジの後ろのサーフェイスをトリムします。
-        - **Trim blend:** 
-            - **Both:** 繋いだサーフェイスの両側をトリムします。
-            - **Short:** 繋いだサーフェイスの短い側をトリムします。
-            - **Long:** 繋いだサーフェイスの長い側をトリムします。
-            - **None:** 繋いだサーフェイスをトリムしません。
+    - <Kst>Command Dialog</Kst>
+        - **幅:** ブリッジの幅を指定します。
+        - **テンション:** サーフェスの曲率の遷移を調整します。
+        - **形状:** 
+            - **G2:** ブリッジサーフェスが G2 連続になります。
+            - **チャンファー:** ブリッジサーフェスが面取りされます。
+        - **ウォールをトリム:** 有効にすると、ブリッジの背後にあるサーフェスをトリムします。
+            - **両方:** ブリッジサーフェスの両側をトリムします。
+            - **短い方:** サーフェスの短い側をトリムします。
+            - **長い方:** ブリッジサーフェスの長い側をトリムします。
+            - **なし:** ブリッジサーフェスをトリムしません。
             ![Trim Blend Demonstration](/img/bridge-surface-trim.png)
-4. コマンドダイアログでOKをクリックするか、右クリックで確定します。
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>A</kbd> **左右のウォールペアを追加：** 現在のウォール選択に基づいて、追加のブレンドを追加します。
+4. コマンドダイアログで OK をクリックするか、右クリックで確定します。
 
 <VideoPlayer fileName="bridge-surface-1"/>
 
-### 交わっているサーフェイスを繋ぐ
+### 交差するサーフェスをブリッジする
 
-1. コマンドパレットで**Bridge Surface**コマンドを実行します。
-2. 繋ぎたいふたつのシートを選択します。
+1. コマンドパレットで **サーフェスをブリッジ** コマンドを使用します。
+2. 1つ目のサーフェスと2つ目のサーフェスを選択します。
 3. コマンドダイアログでオプションを設定します。
-    - <Kst>コマンドダイアログ</Kst>
-        - **Sense:** 
-            - **Sense 1/Sense 2:** Reverse the direction of the bridge surface.
+    - **向き:** 
+        - **向き 1 / 向き 2:** ブリッジサーフェスの方向を反転します。
     - その他のオプションは上記と同じです。
-4. コマンドダイアログでOKをクリックするか、右クリックで確定します。
+4. コマンドダイアログで OK をクリックするか、右クリックで確定します。
 
 <VideoPlayer fileName="bridge-surface-2"/>
 
 ## 関連項目
-- [Join](join)
-- [Unjoin](unjoin)
+- [結合](join)
+- [結合解除](unjoin)

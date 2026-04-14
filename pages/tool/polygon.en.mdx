@@ -4,11 +4,21 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Regular Polygon
+## Regular Polygon
 
-<Reference shortcut='' command='Polygon' button='Toolbar' buttonIcon='button-regular-polygon'/>
+{/* <Reference shortcut='' command='Polygon' button='Toolbar' buttonIcon='button-regular-polygon'/> */}
 
-You can create a polygon.
+<CommandReference
+  command="Polygon"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-regular-polygon.png"
+  tier="both"
+/>
+
+## Description
+
+You can create a regular geometric shape such as a triangle, rectangle, or other polygon.
 
 ## Basic Usage
 
@@ -28,9 +38,8 @@ You can create a polygon.
 4. Right-click to confirm.
 5. The polygon is created.
 
-<Callout type="info" emoji="🗒️">
-**Note** 
-- The Polygon Command remembers last used number of vertices, which can efficiently speed up your work.
+<Callout type="info">
+**Note:** The Polygon Command remembers last used number of vertices, which can efficiently speed up your work.
 </Callout>
 
 <VideoPlayer fileName="polygon"/>

@@ -3,56 +3,67 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Rotate
+## Drehen
 
-<Reference shortcut="R" command="Rotate" button="In der Befehlsleiste"  buttonIcon='button-rotate'/>
+{/* <Reference shortcut="R" command="Drehen" button="In Command Bar"  buttonIcon='button-rotate'/> */}
 
-- Drehen Sie Objekte mit dem **Rotate‑Gizmo**. Sie können die Drehung auf eine einzelne Achse beschränken oder **[Freistil‑Drehung](#freestyle-rotate)** nutzen. Der Pivot‑Punkt ist ebenfalls anpassbar. Wenn Sie ein neues Primitive‑ oder Skizzenobjekt an dessen ursprünglichem Einfügepunkt platzieren, richten sich das Rotate‑Gizmo und der Pivot automatisch nach der Oberflächennormalen des Objekts aus.
+<CommandReference
+  command="Drehen"
+  shortcut="R"
+  button="In Command Bar"
+  buttonIcon="/img/button-rotate.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
+
+Objekte mit dem Drehen-Gizmo rotieren. Optionen für Einzelachsenbeschränkungen oder [**Freihand-Rotation**](#freestyle-rotate) sind verfügbar. Der Pivotpunkt ist ebenfalls einstellbar. Wenn ein neues Grundkörper- oder Skizzenobjekt an seinem anfänglichen Einfügepunkt eingefügt wird, richten sich der Drehen-Gizmo und der Pivot automatisch an der Flächennormalen des Objekts aus.
+
+## Grundlegende Verwendung
 
 1. Wählen Sie die Objekte aus, die Sie drehen möchten.
 2. Drücken Sie <kbd>R</kbd>.
-3. Verwenden Sie den angezeigten Rotation Gizmo zum Drehen.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+3. Verwenden Sie den angezeigten Rotations-Gizmo zum Drehen.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
    - <Kst>Befehlsdialog</Kst>
-      - **Angle:** Geben Sie den zuletzt mit dem Rotation Gizmo angegebenen Winkel als numerischen Wert an.
-      - **Axis:** Geben Sie die Drehachse mit dem Vektor X, Y oder Z an.
-      - **Orientation:** Legt die Ausrichtung des Dreh-Gizmos fest.
-         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Oberflächennormalen des Objekts aus.  
-         - <ButtonIcon type="button-pivot"/> **Pivot:** Setzt die Ausrichtung auf die zuvor definierte Pivot-Ausrichtung.  
-         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet die Ausrichtung an der aktiven Konstruktions-Ebene aus.  
-         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an den globalen (Welt-) Achsen aus.  
-      - **Pivot:** Legen Sie die Position des Pivot-Punkts fest.  
-         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.  
-         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.  
+      - **Winkel:** Geben Sie den zuletzt angegebenen Winkel mit dem Rotations-Gizmo als numerischen Wert an.
+      - **Achse:** Geben Sie die Rotationsachse mit dem X-, Y- oder Z-Vektor an.
+      - **Ausrichtung:** Legen Sie die Ausrichtung des Drehen-Gizmos fest.
+         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Flächennormalen des Objekts aus.
+         - <ButtonIcon type="button-pivot"/> **Pivot:** Richtet die Ausrichtung an der zuvor definierten Pivot-Ausrichtung aus.
+         - <ButtonIcon type="button-construction-plane"/> **Konstruktionsebene:** Richtet die Ausrichtung an der aktiven Konstruktionsebene aus.
+         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an der globalen (Welt-)Achse aus.
+      - **Pivot:** Legen Sie die Position des Pivotpunkts fest.
+         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot im Zentrum des Begrenzungsrahmens um die ausgewählten Objekte.
+         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.
          - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts.
 
-         ![Pivot Demonstration](/img/pivot-rotate.png)
-
+         ![Pivot-Demonstration](/img/pivot-rotate.png)
+      - Erweitert:
+         - **Instanzen invers transformieren**: Rotiert nur das übergeordnete Objekt, während alle zugehörigen Instanzen an ihrer Position bleiben, indem automatisch die entgegengesetzte Transformation auf jede Instanz angewendet wird.
    - <Kst>Tastenkombinationen</Kst>
-   - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Binden Sie an die X-, Y- oder Z-Achse](/tool/sketching-essentials#constrain-to-an-axis).
-   - <kbd>G</kbd> **Screen space:** Begrenzen Sie auf die sichtbare Ebene.
-   - <kbd>F</kbd> **Freestyle:** Klicken Sie auf den Anfangs- und Endpunkt der Drehachse und dann auf den Referenzpunkt. Bewegen Sie den Cursor, um das Objekt zu drehen, und klicken Sie dann, um den gewünschten Winkel einzustellen.
-   - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmo anzugeben.
-   - <kbd>W</kbd> **Worldspace:** Ändern Sie die Koordinatenachse des Gizmo in Weltkoordinaten.
-5. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+   - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+   - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.
+   - <kbd>F</kbd> **Freihand:** Klicken Sie auf den Start- und Endpunkt der Rotationsachse und dann auf den Referenzpunkt. Bewegen Sie den Cursor, um das Objekt zu drehen, und klicken Sie, um den gewünschten Winkel festzulegen.
+   - <kbd>V</kbd> **Pivot:** Klicken, um die Position des Gizmos anzugeben.
+   - <kbd>W</kbd> **Weltkoordinaten:** Die Koordinatenachse des Gizmos auf Weltkoordinaten ändern.
+5. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
 
-## Freestyle Rotate [#freestyle-rotate]
+## Freihand-Rotation [#freestyle-rotate]
 
-Dieser Befehl entspricht der Option <kbd>F</kbd> des Befehls **Rotate**.
+Dieser Befehl entspricht der <kbd>F</kbd>-Option des **Drehen**-Befehls.
 
 1. Wählen Sie die Objekte aus, die Sie drehen möchten.
-2. Verwenden Sie den Befehl **Freestyle Rotate** im Befehlspalette.
-3. Klicken Sie auf den Anfangs- und Endpunkt der Drehachse und dann auf den Referenzpunkt.
-4. Bewegen Sie den Cursor, um das Objekt zu drehen, und klicken Sie dann, um den gewünschten Winkel einzustellen.
-5. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-   - Die Option entspricht dem Befehl **Rotate**.
-6. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+2. Verwenden Sie den Befehl **Freihand-Rotation** in der Befehlspalette.
+3. Klicken Sie auf den Start- und Endpunkt der Rotationsachse und dann auf den Referenzpunkt.
+4. Bewegen Sie den Cursor, um das Objekt zu drehen, und klicken Sie, um den gewünschten Winkel festzulegen.
+5. Legen Sie die Optionen im Befehlsdialog und den Tastenkombinationen fest.
+   - Die Option ist dieselbe wie beim **Drehen**-Befehl.
+6. Mit OK im Befehlsdialog oder Rechtsklick bestätigen.
 
 <VideoPlayer fileName="freestyle-rotate"/>
 
 ## Siehe auch
-- [Mirror](mirror)
-- [Move](move)
-- [Scale](scale)
+- [Spiegeln](mirror)
+- [Verschieben](move)
+- [Skalieren](scale)

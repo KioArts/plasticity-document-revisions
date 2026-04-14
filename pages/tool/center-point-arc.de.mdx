@@ -3,32 +3,41 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Center Point Arc
+## Mittelpunktbogen
 
-<Reference shortcut='' command='Center Point Arc' button='Werkzeugleiste' buttonIcon='button-center-point-arc'/>
+{/* <Reference shortcut='' command='Center Point Arc' button='Toolbar' buttonIcon='button-center-point-arc'/> */}
 
-Sie können einen Bogen erstellen, indem Sie das Zentrum und zwei Punkte auf dem Umfang angeben.
+<CommandReference
+  command="Mittelpunktbogen"
+  shortcut=""
+  button="In der Symbolleiste"
+  buttonIcon="/img/button-center-point-arc.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-center-point-arc" /> Knopf in der Werkzeugleiste.
+Sie können einen Bogen erstellen, indem Sie den Mittelpunkt und zwei Punkte auf dem Umfang festlegen.
+
+## Grundlegende Verwendung
+
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-center-point-arc" /> in der Symbolleiste.
 2. Klicken Sie auf den Mittelpunkt des Bogens.
 3. Bewegen Sie den Cursor und klicken Sie auf die erste Position des Bogens.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Ermöglicht direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>Tab</kbd>: Ermöglicht die direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
 4. Bewegen Sie den Cursor, um die Größe des Bogens anzupassen, und klicken Sie zur Bestätigung.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>K</kbd> **Knife:** Bitte beachten Sie [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
-      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Auf X, Y, Z Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+   - <Kst>Tastaturkürzel</Kst>
+      - <kbd>K</kbd> **Messer:** Weitere Informationen finden Sie unter [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf X-, Y-, Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
 5. Der Bogen wird erstellt.
-
 
 <VideoPlayer fileName="center-point-arc"/>
 
 ## Siehe auch
-- [Center Circle](center-circle)
-- [Two-Point Circle](two-point-circle)
-- [Three-Point Circle](three-point-circle)
-- [Tangent Circle](tangent-circle)
-- [Three-Point Arc](three-point-arc)
-- [Tangent Arc](tangent-arc)
+- [Mittelpunktkreis](center-circle)
+- [Zwei-Punkt-Kreis](two-point-circle)
+- [Drei-Punkt-Kreis](three-point-circle)
+- [Tangentenkreis](tangent-circle)
+- [Drei-Punkt-Bogen](three-point-arc)
+- [Tangentenbogen](tangent-arc)

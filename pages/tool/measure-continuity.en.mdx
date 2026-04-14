@@ -4,9 +4,19 @@ import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Measure Continuity
+## Measure Continuity
 
-<Reference shortcut="" command="Measure Continuity" button="Toolbar" buttonIcon='button-measure-continuity'/>
+{/* <Reference shortcut="" command="Measure Continuity" button="Toolbar" buttonIcon='button-measure-continuity'/> */}
+
+<CommandReference
+  command="Measure Continuity"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-measure-continuity.png"
+  tier="both"
+/>
+
+## Description
 
 Measure surface edge continuity by determining whether adjoining edges meet with G0, G1, or G2 continuity (G3 is not supported). The command generates Continuity Combs, an interactive measurement placed in the Outliner under Measurements.
 
@@ -21,7 +31,7 @@ Measure surface edge continuity by determining whether adjoining edges meet with
             - **G1:** Checks tangency continuity and reports angular deviation (degrees) between adjacent surfaces.
             - **G2:** Checks curvature continuity and reports curvature deviation as a normalized percentage (0.0 - 1.0).
          - **Continuity Markers:** Please view [here](#continuity-markers).
-   - <Kst>Curvature Dialog</Kst> - Please view [here](/plasticity-essentials/curvature).
+   - <Kst>Curvature Dialog</Kst> - Please view [here](/plasticity-essentials/plasticity-interface/curvature).
         - **G0 Scale / G1 Scale / G2 Scale:** 
                 - Adjusts the visual scale of combs and deviation plots.
         - **Show maxes:** 
@@ -46,7 +56,7 @@ Each icon indicates whether the measured deviation is within tolerance, falls in
 | Icon | Meaning |
 | :---: | --- |
 | <ButtonIcon type="button-green-check"/> | **Within tolerance**. The surfaces meet the selected continuity level (G0, G1, or G2), and the measured deviation is inside the allowed range. |
-| <ButtonIcon type="button-yellow-check"/> | **Special case for G2 curvature continuity**. A deviation value of **1.0** is reported as **“flat”**, meaning one surface has an infinite radius of curvature in a given direction. This is treated as an **exception**, not an error. Because this lies between tolerance limits, visual inspection with [shaders](/plasticity-essentials/shader-mode) is recommended. |
+| <ButtonIcon type="button-yellow-check"/> | **Special case for G2 curvature continuity**. A deviation value of **1.0** is reported as **“flat”**, meaning one surface has an infinite radius of curvature in a given direction. This is treated as an **exception**, not an error. Because this lies between tolerance limits, visual inspection with [shaders](/plasticity-essentials/plasticity-interface/shader-mode) is recommended. |
 | <ButtonIcon type="button-yellow-warning"/> | **Continuity mismatch across levels**. The current continuity level meets tolerance, but a lower continuity order requirement does not. For example, G1 may be within tolerance while G0 fails, so the overall connection is not considered successful. |
 | <ButtonIcon type="button-red-cross"/> | **Out of tolerance**. The surfaces cannot meet the selected continuity level within the allowed deviation range. |
 

@@ -1,3 +1,69 @@
-import Solid_Commands from '/pages/solid.de.mdx'
+# Solid-Befehle
 
-<Solid_Commands />
+| Befehlsname | Tastenkürzel | Hinweis |
+| --- | --- | --- |
+| [Boolesch](/solid/boolean) | <kbd>Q</kbd> | Boolesche Operation für Festkörper und/oder Flächen. |
+| [Schneiden](/solid/cut) | <kbd>C</kbd> | Festkörper und Fläche schneiden. |
+| **Festkörper- und Flächenbefehle** | | |
+| [Alternatives Duplizieren](/solid/alternative-duplicate) | <kbd>Alt+D</kbd> | Alternatives Duplizieren. |
+| [Eingeschränkte Oberfläche](/solid/constrained-surface) | | Eine eingeschränkte Oberfläche erstellen. |
+| [Verformen](/solid/deform) | | Einheitlicher Befehl für Kurve verformen, Festkörper und Fläche verformen. |
+| [Festkörper und Fläche verformen](/solid/deform-solid-and-sheet) | | Objekte auf unregelmäßigen und regelmäßigen Oberflächen umhüllen. |
+| [Extrudieren](/solid/extrude) | <kbd>E</kbd> | Flächen, Regionen und Kurven extrudieren. |
+| [Verrundung](/solid/fillet) | <kbd>B</kbd> | Einheitlicher Befehl für Kurvenverrundung, Vertex-Verrundung, Schalenverrundung. |
+| [Schale verrunden](/solid/fillet-shell) | <kbd>B</kbd> | Kanten verrunden oder fasen. |
+| [Aushöhlen](/solid/hollow) | | Einen Festkörper aushöhlen. |
+| [Loft](/solid/loft) | <kbd>L</kbd> | Fläche, Kante und Kurve loften. |
+| [Kontinuität messen](/tool/measure-continuity) | | Kontinuität über Oberflächenkanten messen. |
+| [Oberflächenkrümmung umschalten](/solid/toggle-surface-curvature) | | Krümmung über Oberflächenkanten messen. |
+| [PolySplines](/solid/polyspline) | | Ein Netzobjekt in ein NURBS-Objekt umwandeln. |
+| [Patch](/solid/patch) | | Flächenlöcher / geschlossene Kurven zu einer Fläche füllen. |
+| [Rohr](/solid/pipe) | <kbd>P</kbd> | Ein Rohr aus Kante und Kurve erstellen. |
+| [Instanz erstellen](/solid/create-instance) | | Einheitlicher Befehl für Festkörper- und Flächeninstanz erstellen, Kurveninstanz erstellen. |
+| [Festkörper- und Flächeninstanz erstellen](/solid/create-solid-and-sheet-instance) | | Mehrere nicht bearbeitbare Objekte duplizieren. |
+| [Instanzen realisieren](/solid/realize-instances) | | Einheitlicher Befehl für Festkörper- und Flächeninstanzen realisieren, Kurveninstanzen realisieren. |
+| [Festkörper- und Flächeninstanzen realisieren](/solid/realize-solid-and-sheet-instances) | | Festkörper- und Flächeninstanzen in echte Festkörpergeometrie umwandeln. |
+| [Grad erhöhen](/solid/raise-degree) | <kbd>Shift+S</kbd> | Einheitlicher Befehl für Kurvengrad erhöhen, Flächengrad erhöhen. |
+| [Flächengrad erhöhen](/solid/raise-surface-degree) | <kbd>Shift+S</kbd> | Oberflächenkontrollpunkte erhöhen. |
+| [Verrundungen aus Schale entfernen](/solid/remove-fillets-from-shell) | | Festkörper- und Flächenverrundungen entfernen. |
+| [Rotieren](/solid/revolve) | | Region oder Kurve rotieren. |
+| [Sweep](/solid/sweep) | <kbd>Shift+P</kbd> | Region oder Kurve sweepen. |
+| [Quadrat](/solid/square) | | Oberflächen mit expliziter Kontrolle über Grade und Spannweiten erstellen. |
+| [Gleiten](/solid/slide) | | Einheitlicher Befehl für Kurven-CV gleiten, Flächen-CV gleiten. |
+| [Flächen-CV gleiten](/solid/slide-surface-cv) | <kbd>Shift+G</kbd> | Einen CV entlang der CV-Hülle auf einer Oberfläche verschieben. |
+| [Verdicken](/solid/thicken) | | Einer ausgewählten Fläche Dicke hinzufügen. |
+| [Fläche verdicken](/solid/thicken-face) | | Einer ausgewählten Seite Dicke hinzufügen. |
+| [XNurbs](/solid/xnurbs) | | Hochwertige und komplexe Oberflächen erstellen. |
+| **Flächenbefehle** | | |
+| [Ausrichten](/solid/align) | | Einheitlicher Befehl für Vertex ausrichten, Oberfläche ausrichten. |
+| [Oberfläche ausrichten](/solid/align-surface) | | Zwei Flächen ausrichten. |
+| [Oberfläche verbinden](/solid/bridge-surface) | | Zwei Flächen verbinden. |
+| [Erweitern](/solid/extend) | | Einheitlicher Befehl für Kurve erweitern, Fläche erweitern. |
+| [Fläche erweitern](/solid/extend-sheet) | | Eine oder mehrere Außenkanten der Fläche erweitern. |
+| [Randkanten finden](/solid/find-boundary-edges) | | Kanten einer Flächenöffnung auswählen. |
+| [Verbinden](/solid/join) | <kbd>J</kbd> | Einheitlicher Befehl für Kurven verbinden, Flächen verbinden. |
+| [Flächen verbinden](/solid/join-sheets) | <kbd>J</kbd> | Flächen mit übereinstimmenden Kanten verbinden. |
+| [Umkehren](/solid/reverse) | | Einheitlicher Befehl für Kurve umkehren, Fläche umkehren. |
+| [Fläche umkehren](/solid/reverse-sheet) | | Die Normalenrichtung einer Fläche umkehren. |
+| [Trennen](/solid/unjoin) | <kbd>Alt+J</kbd> | Einheitlicher Befehl für Kurven trennen, Flächen trennen, Schalen trennen. |
+| [Flächen trennen](/solid/unjoin-faces) | <kbd>Alt+J</kbd> | Ausgewählte Seiten von Festkörper oder Fläche trennen. |
+| [Schalen trennen](/solid/unjoin-shells) | <kbd>Alt+J</kbd> | Alle Seiten aus ausgewählten Festkörpern oder Flächen in einzelne Seiten trennen. |
+| [Untrim](/solid/untrim) | <kbd>Alt+T</kbd> | Eine Fläche basierend auf der Originalform erstellen. |
+| **Seitenbefehle** | | |
+| [Seite löschen](/solid/delete-face) | <kbd>Shift+Backspace</kbd> oder <kbd>Shift+Delete</kbd> oder <kbd>Shift+X</kbd> | Seite löschen. |
+| [Seite neigen](/solid/draft-face) | | Seite neigen. |
+| [Seite anpassen](/solid/match-face) | | Seiten an eine andere Seite anpassen. |
+| [Seite versetzen](/solid/offset-face) | | Die ausgewählten Seiten versetzen. |
+| [Neu aufbauen](/solid/rebuild) | | Einheitlicher Befehl für Kurve neu aufbauen, Fläche neu aufbauen. |
+| [Seite neu aufbauen](/solid/rebuild-face) | | Seite neu aufbauen. |
+| [Seite abwickeln](/solid/unwrap-face) | | Seite abwickeln. |
+| **Kantenbefehle** | | |
+| [Redundante Topologie löschen](/solid/delete-redundant-topology) | | Überschüssige Kanten entfernen. |
+| [Kante vervollständigen](/common/complete-edge) | | Kanten erweitern. |
+| [Einprägen](/solid/imprint) | <kbd>Shift+I</kbd> | Einheitlicher Befehl für Körper-Körper einprägen, Kurve-Körper einprägen. |
+| [Körper-Körper einprägen](/solid/imprint-body-body) | <kbd>Shift+I</kbd> | Kanten auf dem Ziel-Festkörper oder der Zielfläche erstellen, wo er/sie einen Werkzeug-Festkörper oder eine Werkzeugfläche schneidet. |
+| [Kurve-Körper einprägen](/solid/imprint-curve-body) | <kbd>Shift+I</kbd> | Kanten auf dem Ziel-Festkörper oder der Zielfläche erstellen, wo er/sie auf eine Werkzeugkurve projiziert wird. |
+| [Isoparam](/solid/isoparam) | <kbd>Ctrl+R</kbd> | Isoparams hinzufügen. |
+| [Kurve versetzen](/solid/offset-curve) | <kbd>O</kbd> | Einheitlicher Befehl für planare Kurve versetzen, Region versetzen, Flächenschleife versetzen, Kante versetzen. |
+| [Kante versetzen](/solid/offset-edge) | <kbd>O</kbd> | Die ausgewählten Kanten versetzen. |
+| [Flächenschleife versetzen](/solid/offset-face-loop) | <kbd>O</kbd> | Die Umrisskanten ausgewählter Seiten versetzen. |

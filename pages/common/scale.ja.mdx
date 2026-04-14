@@ -3,56 +3,70 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Scale（拡大縮小）
+## スケール
 
-<Reference shortcut="S" command="Scale" button="コマンドバーで  "  buttonIcon='button-scale'/>
+{/* <Reference shortcut="S" command="スケール" button="In Command Bar" buttonIcon='button-scale' /> */}
 
-- **Scale Gizmo** を使ってオブジェクトを拡大・縮小します。単一軸への制限や **[フリースタイルスケール](#freestyle-scale)** が利用可能です。ピボットポイントも調整できます。新しいプリミティブやスケッチオブジェクトを初期挿入点に配置すると、Scale Gizmo とピボットは自動的にオブジェクトの表面法線に合わせて再配置されます。
+<CommandReference
+  command="スケール"
+  shortcut="S"
+  button="In Command Bar"
+  buttonIcon="/img/button-scale.png"
+  tier="both"
+/>
+
+## 説明
+
+スケールギズモを使用してオブジェクトをスケーリングします。単一軸の制限または[**フリースタイルスケール**](#freestyle-scale)のオプションが使用できます。ピボットポイントも調整可能です。新しいプリミティブまたはスケッチオブジェクトを初期挿入ポイントに挿入すると、スケールギズモとピボットは自動的にオブジェクトのサーフェス法線に合わせて再配置されます。
 
 ## 基本的な使い方
 
-1. 拡大縮小したいオブジェクトを選択します。
-2. キーボードショートカット <kbd>S</kbd> を押します。
-3. 表示された拡大縮小ギズモを使用して大きさを変更します。 
+1. スケーリングしたいオブジェクトを選択します。
+2. <kbd>S</kbd>を押します。
+3. 表示されたスケールギズモを使用してサイズを変更します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
    - <Kst>コマンドダイアログ</Kst>
-      - **XYZ:** X、Y、Z軸方向の拡大率を指定します。
-      - **Orientation:** スケールギズモの向きを設定します。
-         - <ButtonIcon type="button-normal"/> **法線:** オブジェクトの表面法線に合わせて方向を設定します。
-         - <ButtonIcon type="button-pivot"/> **ピボット:** 事前に定義されたピボットの向きに合わせて方向を設定します。
-         - <ButtonIcon type="button-construction-plane"/> **作業平面:** アクティブな作業平面に方向を合わせます。
-         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）軸に方向を合わせます。
+      - **XYZ:** X、Y、Z軸のスケールを指定します。
+      - **オリエンテーション:** スケールギズモの向きを設定します。
+         - <ButtonIcon type="button-normal"/> **ノーマル:** オブジェクトのサーフェス法線に合わせて向きを設定します。
+         - <ButtonIcon type="button-pivot"/> **ピボット:** 以前に定義したピボットの向きに合わせて向きを設定します。
+         - <ButtonIcon type="button-construction-plane"/> **コンストラクションプレーン:** アクティブなコンストラクションプレーンに合わせて向きを設定します。
+         - <ButtonIcon type="button-world"/> **ワールド:** グローバル（ワールド）軸に合わせて向きを設定します。
       - **ピボット:** ピボットポイントの位置を設定します。
-         - <ButtonIcon type="button-bbox"/> **バウンディングボックス:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。
-         - <ButtonIcon type="button-median"/> **中央値:** 選択したオブジェクトのピボットの平均位置にピボットを配置します。
-         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボット位置にピボットを配置します。
+         - <ButtonIcon type="button-bbox"/> **Bbox:** 選択したオブジェクトを囲むバウンディングボックスの中心にピボットを配置します。
+         - <ButtonIcon type="button-median"/> **メジアン:** 選択したオブジェクトのピボットの平均位置にピボットを配置します。
+         - <ButtonIcon type="button-active"/> **アクティブ:** 最後に選択した（アクティブな）オブジェクトのピボットにピボットを配置します。
 
-         ![Pivot Demonstration](/img/pivot-scale.png)
-
+         ![ピボットのデモンストレーション](/img/pivot-scale.png)
+      - 詳細設定:
+         - **インスタンスを逆変換する**: 各インスタンスに自動的に逆変換を適用することで、親オブジェクトのみをスケーリングし、関連するインスタンスはそのままの位置に保ちます。
    - <Kst>キーボードショートカット</Kst>
-   - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-   - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z-plane:** X, Y, Z平面に拘束します。
-   - <kbd>S</kbd> **Uniform:** X、Y、Z方向に均等に拡大縮小します。
-   - <kbd>F</kbd> **Freestyle:** 始点と終点をクリックして拡大縮小の軸を指定し、希望の拡大率でクリックします。
-   - <kbd>V</kbd> **Pivot:** クリックしてギズモの位置を指定します。
-   - <kbd>W</kbd> **Worldspace:** ギズモの座標軸をワールド座標にします。
-4. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+   - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、またはZ軸に制限](/tool/sketching-essentials#constrain-to-an-axis)します。
+   - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z平面:** X、Y、またはZ平面に制限します。
+   - <kbd>S</kbd> **均一:** X、Y、Z方向に均一にスケーリングします。
+   - <kbd>F</kbd> **フリースタイル:** 開始点と終了点をクリックしてスケーリング軸を指定し、希望のスケーリング比率でクリックします。
+   - <kbd>V</kbd> **ピボット:** クリックしてギズモの位置を指定します。
+   - <kbd>W</kbd> **ワールド座標:** ギズモの座標軸をワールド座標に変更します。
+4. コマンドダイアログのOKまたは右クリックで確定します。
 
-## Freestyle Scale[#freestyle-scale]
+## フリースタイルスケール[#freestyle-scale]
 
-このコマンドは **Scale** コマンドの<kbd>F</kbd>オプションと同じです。
+このコマンドは**スケール**コマンドの<kbd>F</kbd>オプションと同等です。
 
-1. 拡大縮小したいオブジェクトを選択します。
-2. コマンドパレットで **Freestyle Scale** を実行します。
-3. 始点と終点をクリックして拡大縮小の軸を指定します。
-4. カーソルを動かして拡大縮小し、希望の拡大率でクリックします。
+1. スケーリングしたいオブジェクトを選択します。
+2. コマンドパレットで**フリースタイルスケール**コマンドを使用します。
+3. 開始点と終了点をクリックしてスケーリング軸を指定します。
+4. カーソルを動かしてオブジェクトをスケーリングし、希望のスケーリング比率をクリックします。
 5. コマンドダイアログとキーボードショートカットでオプションを設定します。
-   - オプションは **Scale** コマンドと同じです。
-6. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+   - <Kst>コマンドダイアログ</Kst>
+      - **比率:** スケーリングされたオブジェクトの比率を指定します。
+      - **長さ:** スケーリングされたオブジェクトの長さを指定します。
+      - **均一:** オブジェクトを均一にスケーリングし、プロポーションを維持します。
+6. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="freestyle-scale"/>
 
 ## 関連項目
-- [Mirror](mirror)
-- [Move](move)
-- [Rotate](rotate)
+- [ミラー](mirror)
+- [移動](move)
+- [回転](rotate)

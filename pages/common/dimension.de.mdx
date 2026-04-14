@@ -1,32 +1,42 @@
 import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
 
-# Dimension
+## Bemaßung
 
-<Reference shortcut="= (Gleichheitszeichen)" command="Dimension" button="" />
+{/* <Reference shortcut="= (Gleichheitszeichen)" command="Bemaßung" button="" /> */}
 
-Maße ändern, wie zum Beispiel die Größe einer rechteckigen Kurve oder den Durchmesser eines Zylinders.
+<CommandReference
+  command="Bemaßung"
+  shortcut="="
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-dimension.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie das Objekt aus, dessen Maße Sie ändern möchten.
-    | Maßänderungsziel                                  | Auswahlmodus |
-    | ------------------------------------------------- | ------------ |
-    | Länge von zwei Seiten eines Kurvenrechtecks       | Edge         |
-    | Durchmesser eines Kreises oder Bogens einer Kurve | Edge         |
-    | Durchmesser eines Zylinders                       | Face         |
-    | Durchmesser einer Kugel                           | Solid        |
-    | Längen der drei Seiten eines Würfels              | Solid        |
-    | Größe der Rundung eines Festkörpers               | Face         |
-    | Abstand zwischen den Ebenen eines Festkörpers     | Face         |
-2. Drücken Sie <kbd>=</kbd> oder verwenden Sie den **Dimension**befehl in der Command Palette.
-3. Der Maßwert wird angezeigt.
-4. Drücken Sie <kbd>Tab</kbd>, um in den Maßeingabemodus zu wechseln.
-5. Geben Sie den Maßwert ein.
-6. Wenn es mehrere Maße gibt, drücken Sie <kbd>Tab</kbd>, um zu wechseln und die Maße einzugeben.
-7. Drücken Sie <kbd>Eingabe</kbd>, um zu bestätigen.
+Ändere Bemaßungswerte wie die Größe eines rechteckigen Kurvenobjekts oder den Durchmesser eines Zylinders.
+
+## Grundlegende Verwendung
+
+1. Wähle das Objekt aus, dessen Bemaßung du ändern möchtest.
+    | Ziel der Bemaßungsänderung                 | Auswahlmodus   |
+    | ------------------------------------------ | -------------- |
+    | Länge der zwei Seiten eines Kurvenrechtecks | Kante          |
+    | Durchmesser eines Kurvenkreises oder -bogens | Kante          |
+    | Durchmesser eines Zylinders                 | Fläche         |
+    | Durchmesser einer Kugel                     | Solid          |
+    | Längen der drei Seiten eines Würfels        | Solid          |
+    | Größe einer Verrundung eines Solids         | Fläche         |
+    | Abstand zwischen Ebenen eines Solids        | Fläche         |
+2. Drücke <kbd>=</kbd> oder verwende den Befehl **Bemaßung** in der Befehlspalette.
+3. Der Bemaßungswert wird angezeigt.
+4. Drücke <kbd>Tab</kbd>, um in den Eingabemodus für Bemaßungen zu wechseln.
+5. Gib den Bemaßungswert ein.
+6. Wenn mehrere Bemaßungen vorhanden sind, drücke <kbd>Tab</kbd>, um zu wechseln und weitere Werte einzugeben.
+7. Drücke <kbd>Enter</kbd>, um zu bestätigen.
 
 <VideoPlayer fileName="dimension"/>
 
 ## Siehe auch
-- [Measure](measure)
+- [Messen](/tool/measure)

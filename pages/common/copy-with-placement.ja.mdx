@@ -1,37 +1,55 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
 
-# Copy with Placement
 
-<Reference shortcut="Ctrl + Shift + C" command="Copy With Placement" button="" />
+## 配置付きコピー
 
-基準点を使用してオブジェクトをコピーします。[**配置して貼り付け**](paste-with-placement) コマンドと併用すると、[**配置**](place) コマンドと同様の機能が得られます。特に異なる[ウィンドウ](/plasticity-essentials/file-menu)にオブジェクトを配置する際に便利です。
+{/* <Reference shortcut="Ctrl + Shift + C" command="配置付きコピー" button="" /> */}
+
+<CommandReference
+  command="配置付きコピー"
+  shortcut="Ctrl + Shift + C"
+  button="提案コマンドメニュー内"
+  buttonIcon="/img/button-copy-with-placement.png"
+  tier="both"
+/>
+
+## 説明
+
+参照点を指定してオブジェクトをコピーします。類似の機能を持つ [**配置付きペースト**](paste-with-placement) コマンドと組み合わせて使用すると、[**配置**](place) コマンドに近い操作が可能です。特に、異なる Plasticity ウィンドウ間でオブジェクトを配置する際に便利です。
+
+<Callout type='info'>
+注意: 「配置付きコピー」コマンドはメッシュでは使用できません。
+</Callout>
 
 ## 基本的な使い方
 
-1. **Copy with Placement**コマンド
+1. **配置付きコピー** コマンド
     1. コピーしたいオブジェクトを選択します。
-    2. <kbd>Ctrl + Shift + C</kbd>を押します。
-    3. コピーするオブジェクトの参照点をクリックします。
-2. 別のウィンドウにペーストする場合、そのターゲットウィンドウに切り替えます。
-3. **Paste with Placement**コマンド
-    1. <kbd>Ctrl + Shift + V</kbd>を押します。
-    2. ターゲットウィンドウ内での配置先の参照点をクリックします。
-        - <Kst>キーボードショートカット</Kst>
-            - <kbd>F</kbd> **Flip**Allows flipping the duplication axis.
-            - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **x/y/z-up** Sets the duplication axis to the X/Y/Z-axis.
-            - <kbd>S</kbd> **Scale:** Allows scaling.
-            - <kbd>A</kbd> **Angle:** Allows rotation.
-            - <kbd>D</kbd> **Offset:** Allows consecutive duplication.
-            - <kbd>Shift + Q</kbd> **Slice:** Creates a Solid at the intersections with the Boolean target and preserves the remaining Solids.
-            - <kbd>Q</kbd> **Union:** Joins the Boolean target and tool together.
-            - <kbd>W</kbd> **Difference:** Removes the tool from the Boolean target.
-            - <kbd>Shift + E</kbd> **Intersect:** Creates a Solid at the intersection of the Boolean target and tool.
-            - <kbd>B</kbd> **New Body:** Creates a new Solid without performing Boolean operations.
-            - <kbd>T</kbd>  **Keep Tool:** Preserves the tool after performing a Boolean operation.
+    2. <kbd>Ctrl + Shift + C</kbd> を押します。
+    3. コピー元オブジェクトの参照点をクリックします。
+2. 別のウィンドウに貼り付けたい場合は、そのウィンドウに切り替えます。
+3. **配置付きペースト** コマンド
+    1. <kbd>Ctrl + Shift + V</kbd> を押します。
+    2. 対象ウィンドウで目的の参照点をクリックします。
+        - <Kst>キーボードショートカット</Kst> 
+            - <kbd>F</kbd> **反転:** 複製軸を反転します。
+            - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **x/y/z‑アップ:** 複製軸を X/Y/Z 軸に設定します。
+            - <kbd>S</kbd> **スケール:** スケーリングを行います。
+            - <kbd>A</kbd> **角度:** 回転を行います。
+            - <kbd>D</kbd> **オフセット:** 連続複製を行います。
+            - <kbd>Shift + Q</kbd> **スライス:** ブーリアン対象との交差部分にソリッドを作成し、残りのソリッドを保持します。
+            - <kbd>Q</kbd> **ユニオン:** ブーリアン対象とツールを結合します。
+            - <kbd>W</kbd> **差分:** ブーリアン対象からツールを削除します。
+            - <kbd>Shift + E</kbd> **交差:** ブーリアン対象とツールの交差部分にソリッドを作成します。
+            - <kbd>B</kbd> **新規ボディ:** ブーリアン操作を行わず新しいソリッドを作成します。
     3. 右クリックで確定します。
-    4. 追加のオブジェクトをコピーする場合、手順3-2と3-3を繰り返します。
-    5. <kbd>Esc</kbd>を押してコマンドを終了します。
+    4. 追加のオブジェクトをコピーする場合は、手順 3‑2 と 3‑3 を繰り返します。
+    5. <kbd>Esc</kbd> を押してコマンドを終了します。
 
 <VideoPlayer fileName="copy-with-placement"/>
+
+## 関連項目
+- [配置付きペースト](/common/paste-with-placement)

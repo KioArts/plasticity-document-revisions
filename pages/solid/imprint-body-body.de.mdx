@@ -3,32 +3,41 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Imprint Body Body[#imprint-body-body]
+## Imprint Body Body[#imprint-body-body]
 
-<Reference shortcut="Umschalt + I" command="Imprint" button="Im vorgeschlagenen Befehlsmenü" buttonIcon='button-imprint' />
+{/* <Reference shortcut="Shift + I" command="Imprint" button="Im Menü „Vorgeschlagene Befehle“" buttonIcon='button-imprint' /> */}
 
-Erstellen Sie Kanten am Zielsolid oder Sheet, wo es mit einem Werkzeug-Solid oder Sheet schneidet. Optional können auch Kanten am Werkzeug erstellt werden.
+<CommandReference
+  command="Imprint"
+  shortcut="Shift + I"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-imprint.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie den ersten Solid oder Sheet, den Sie als Ziel für den Schnitt verwenden möchten.
-2. Wählen Sie den zweiten Solid oder Sheet, den Sie als Werkzeug für den Schnitt verwenden möchten.
-3. Legen Sie die Optionen im Befehlsdialog fest.
+Erstellt Kanten auf dem Ziel‑Volumenkörper oder Sheet an den Stellen, an denen er sich mit einem Werkzeug‑Volumenkörper oder Sheet schneidet. Optional können auch auf dem Werkzeugkörper Kanten erzeugt werden.
+
+## Grundlegende Verwendung
+
+1. Wähle den ersten Volumenkörper oder das erste Sheet aus, das als Ziel für die Schnittprojektion dienen soll.
+2. Wähle den zweiten Volumenkörper oder das zweite Sheet aus, das als Werkzeug für die Schnittprojektion verwendet wird.
+3. Lege die Optionen im Befehlsdialog fest.
      - <Kst>Befehlsdialog</Kst>
-          - **Imprint tool:** Schalten Sie **Imprint** ein, um die Option **Complete tool** anzugeben.
-          - **Complete target:** 
-               - **None:** Erweitert die projizierten Kanten nicht am Zielkörper.
-               - **Edge:** Erweitert die projizierten Kanten, bis sie mit anderen Kanten am Zielkörper schneiden.
-          - **Complete tool:**
-               - **None:** Erweitert die projizierten Kanten nicht am Werkzeugkörper.
-               - **Edge:** Erweitert die projizierten Kanten, bis sie mit anderen Kanten am Werkzeugkörper schneiden.   
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+          - **Werkzeug imprägnieren:** Aktiviere **Imprint**, um die Option **Komplettes Werkzeug** zu verwenden.
+          - **Komplettes Ziel:** 
+               - **Keine:** Die projizierten Kanten werden auf dem Zielkörper nicht verlängert.
+               - **Kante:** Verlängert die projizierten Kanten, bis sie andere Kanten des Zielkörpers schneiden.
+          - **Komplettes Werkzeug:**
+               - **Keine:** Die projizierten Kanten werden auf dem Werkzeugkörper nicht verlängert.
+               - **Kante:** Verlängert die projizierten Kanten, bis sie andere Kanten des Werkzeugkörpers schneiden.
+4. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="imprint-body-body"/>
 
 ## Siehe auch
 - [Imprint](imprint)
 - [Imprint Curve Body](imprint-curve-body)
-- [isoparam](isoparam)
+- [Isoparam](isoparam)
 - [Offset Curve](offset-curve)
-- [Extend Edge](extend-edge)

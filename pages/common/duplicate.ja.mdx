@@ -1,33 +1,46 @@
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Duplicate（複製）
+## 複製
 
-<Reference shortcut="Shift + D" command="Duplicate" button="コマンドバーで "  buttonIcon='button-duplicate'/>
+{/* <Reference shortcut="Shift + D" command="複製" button="In Command Bar" buttonIcon='button-duplicate' /> */}
 
-オブジェクトを複製し、Move Gizmoを使用して移動できます。単一軸の制約やフリースタイルの移動が可能です。ピボットは調整可能です。
+<CommandReference
+  command="複製"
+  shortcut="Shift + D"
+  button="In Command Bar"
+  buttonIcon="/img/button-duplicate.png"
+  tier="both"
+/>
+
+## 説明
+
+オブジェクトを複製し、移動ギズモを使用して移動します。単一軸の制限またはフリースタイル移動が可能です。ピボットは調整可能です。
+
+<Callout type="info">
+**注意:** 複数のリージョンを複製する場合、結合された形状として複製されます。
+</Callout>
 
 ## 基本的な使い方
 
 1. 複製したいオブジェクトを選択します。
-2. キーボードショートカット<kbd>Shift + D</kbd>を押します。
-3. 表示された移動ギズモを使って移動します。
+2. <kbd>Shift + D</kbd>を押します。
+3. 表示された移動ギズモを使用して移動します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
    - <Kst>コマンドダイアログ</Kst>
-      - **XYZ:** X、Y、Z軸方向の移動量を指定します。
+      - **XYZ:** X、Y、Z軸の移動量を指定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z-plane:** X, Y, Z平面に拘束します。
-      - <kbd>G</kbd> **Screen space:** 見た目の平面に限定します。
-      - <kbd>F</kbd> **Freestyle:** 始点と終点をクリックして、移動の方向と距離を指定します。
-      - <kbd>V</kbd> **Pivot:** クリックしてギズモの位置を指定します。
-      - <kbd>W</kbd> **Worldspace:** ギズモの座標軸をワールド座標にします。
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、またはZ軸に制限](/tool/sketching-essentials#constrain-to-an-axis)します。
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z平面:** X、Y、またはZ平面に制限します。
+      - <kbd>G</kbd> **スクリーンスペース:** 見える平面に制限します。
+      - <kbd>F</kbd> **フリースタイル:** クリックして開始点と終了点を指定し、移動の方向と距離を決定します。
+      - <kbd>V</kbd> **ピボット:** クリックしてギズモの位置を指定します。
+      - <kbd>W</kbd> **ワールド座標:** ギズモの座標軸をワールド座標に変更します。
+4. コマンドダイアログのOKまたは右クリックで確定します。
 
-<Callout type="info">
-   - 複数のリージョンを複製すると、結合されたシェイプとして複製されます。
-</Callout>
+<VideoPlayer fileName="duplicate"/>
 
 ## 関連項目
-- [Place](place)
+- [配置](place)

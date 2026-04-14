@@ -1,4 +1,4 @@
-# Export OBJ
+## Export OBJ
 
 1. Select the Solid or Sheet you want to export.
    - If nothing is selected, all displayed Solids and Sheets will be exported.
@@ -6,24 +6,31 @@
 3. A save-as dialog box will appear.
    - Enter the file name.
    - Select **Wavefront OBJ (*.obj)** as the file type.
-4. The Export OBJ dialog box will appear.
-   - Configure the options.
+4. The **Export OBJ** dialog box will appear. Configure the options.
 
    | Option | Overview | Detail | Recommended Value |
-   | ------- | ------- |------- |------- |
-   | **Topology** |  | **The shape of the polygons to be converted** <br /> Tris (only triangular polygons) <br /> Quads (quadrangular and triangular polygons) <br /> Ngons (polygons with multiple sides, quadrangular, triangular polygons)||
-   |**Density** |  | **This is the only value that automatically sets other values, so it's easy to achieve good results with this value alone.** <br /> Lower the value: fewer polygons, rough shape conversion.<br /> Increase the value: more polygons, detailed shape conversion.||
-   |**Min width** | Minimum Size | **Specify the minimum size of the polygons.** <br /> To avoid congestion of small polygons, such as minute fillets, increase this value. |
-   |**Max width** | Maximum Size | **Specify the maximum size of the polygons.** <br /> To avoid extremely long or large polygons, decrease this value. <br /> To make the size of the polygons more uniform, decrease this value. |
-   |**Surface plane tolerance** | Maximum Allowable Deviation <br /> (in cm) | **Specify the accuracy of the conversion.** <br /> Lower the value: more polygons, detailed shape conversion.<br /> Increase the value: fewer polygons, rough shape conversion. <br /> Although less intuitive than Max width, this is one of the most common ways to increase or decrease the number of polygons. | A suitable value for low poly is 0.01, and for high poly is 0.0001. <br /> If you want to use a value smaller than 0.001, it may be better to decrease the Max width. |
-   |**Surface angle tolerance** | Maximum Allowable Angular Deviation <br /> (in radians) | **Specify the accuracy of the surface conversion.** <br /> Lower the value: the  Curved surface is converted faithfully, and the number of polygons increases.<br /> Increase the value: the  Curved surface is converted roughly, and the number of polygons decreases.<br /> This can be thought of as the minimum number of segments, or elements, per circle or cylinder. | A suitable value is 0.35 (for low poly) to 0.15 (for high poly). |
-   |**Curve plane tolerance** | Maximum Allowable Deviation of Edge <br /> (in cm) | **Specify the accuracy of the conversion of the Edges and Face boundaries.** <br /> This is similar to Surface plane tolerance, but affects the conversion of Edges and Face boundaries more than the center of the Face. ||
-   |**Curve angle tolerance** | Maximum Allowable Angular Deviation of Edge <br /> (in radians) | **Specify the accuracy of the conversion of the Edges of curved surfaces (boundaries of the Face).** <br /> This is similar to Surface angle tolerance, but affects the conversion of Edges (boundaries of the Face) more than the center of the Face. | A suitable value is 0.35 (for low poly) to 0.15 (for high poly). |
-   |**Curve max length** | Maximum Allowable Length of Curve (Edge) Segment |         |
-   |**Plane angle** | Maximum Allowable Ratio between Plane Tolerance and Max Width | Useful for obtaining more quadrangles or polygons. |
-   |**Inflect** | Preserve surface quality | Add additional detail in areas where curved surfaces transition from convex to concave. | 
-   | **Simplify radial surfaces** | Simplify radius geometry to improve overall edge flow. | Orient all surfaces - spheres, cylinders, tori, and cones - along a common axial direction. When the edge flow lines are aligned during faceting, simple radial geometry and blends line up more predictably. |
-   | **Remove small features**    | Strip tiny surface details when exporting. | The option defines a bounding box threshold in the dialog. Any detail smaller than the specified size is omitted, making it ideal for high poly to low poly workflows. |
-   | **Convex ngons only**        | Prevent creation of concave ngons for cleaner topology. | Available only when exporting ngons. It forces all exported ngons to be convex, inserting extra faces where necessary. This results in reliable topology and consistent normal shading in applications that don't support concave ngons, at the slight cost of a higher ngon count. |
-1. Click OK.
-2. The OBJ file is exported.
+   |---|---|---|---|
+   | **Topology** | Shape of the exported polygons | **Tris** - triangular polygons only. <br /> **Quads** - quadrangular and triangular polygons. <br /> **Ngons** - polygons with multiple sides, including quads and tris. | |
+   | **Show Wireframe** | Display the wireframe of the exported mesh | Useful for previewing topology and density, which gauges the overall surface quality before exporting. | |
+   | **Density** | Overall polygon density | The only value that automatically adjusts other settings. <br /> Lower value: fewer polygons, rougher shape. <br /> Higher value: more polygons, more detail. | |
+   | **Min Width** | Minimum polygon size | Increase to avoid congestion of small polygons in areas like minute fillets. | |
+   | **Max Width** | Maximum polygon size | Decrease to avoid extremely large polygons or to make polygon size more uniform. | |
+   | **Edge Plane Tolerance** | Maximum allowable deviation of edges (in cm) | Similar to Face Plane Tolerance, but affects edges and face boundaries more than the center of the face. | |
+   | **Face Plane Tolerance** | Maximum allowable deviation (in cm) | Lower value: more polygons, more detail. <br /> Higher value: fewer polygons, rougher shape. <br /> One of the most effective ways to control polygon count. | Low poly: `0.01` - High poly: `0.0001` <br /> If you need a value smaller than `0.001`, consider decreasing Max Width instead. |
+   | **Edge Angle Tolerance** | Maximum allowable angular deviation of edges (in radians) | Similar to Face Angle Tolerance, but affects edges and face boundaries more than the center of the face. | Low poly: `0.35` - High poly: `0.15` |
+   | **Face Angle Tolerance** | Maximum allowable angular deviation (in radians) | Lower value: curved surfaces converted faithfully, more polygons. <br /> Higher value: curved surfaces converted roughly, fewer polygons. | Low poly: `0.35` - High poly: `0.15` |
+
+   **Advanced**
+
+   | Option | Overview | Detail | Recommended Value |
+   |---|---|---|---|
+   | **Curve Max Length** | Maximum allowable length of a curve segment | | |
+   | **Plane Angle** | Maximum allowable ratio between plane tolerance and max width | Useful for obtaining more quadrangles or polygons. | |
+   | **Remove Small Features** | Strip tiny surface details on export | Defines a bounding box threshold — any detail smaller than the specified size is omitted. Ideal for high poly to low poly workflows. | |
+   | **Inflect** | Preserve surface quality | Adds detail in areas where curved surfaces transition from convex to concave. | |
+   | **Simplify Radial Surfaces** | Simplify radius geometry to improve edge flow | Orients spheres, cylinders, tori, and cones along a common axial direction so edge flow lines align more predictably during faceting. | |
+   | **Convex Ngons Only** | Prevent concave ngons for cleaner topology | Available only when exporting Ngons. Forces all exported ngons to be convex, inserting extra faces where necessary. Results in reliable topology and consistent normal shading at the slight cost of a higher ngon count. | |
+   | **Scale** | Export scale multiplier | Applies a multiplier to all exported coordinates for correct unit conversion in the target application. |  |
+   | **Up Axis** | Orientation of exported geometry | Sets the up axis to match the conventions of the target application. |  |
+5. Click OK.
+6. The OBJ file is exported.

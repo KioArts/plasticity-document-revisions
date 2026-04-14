@@ -2,34 +2,45 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Offset Edge
+## Offset Edge
 
-<Reference shortcut="O" command="Offset Curve" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon="button-offset-curve"/>
+{/* <Reference shortcut="O" command="Offset Curve" button="Im Menü „Vorgeschlagene Befehle“"  buttonIcon="button-offset-curve"/> */}
 
-Verschieben Sie die ausgewählten Kanten, indem Sie den Abstand angeben, um neue Kanten zu erstellen. Die Option für symmetrisches Versetzen auf beiden Seiten ist verfügbar.
+<CommandReference
+  command="Offset Curve"
+  shortcut="O"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Kanten aus, die Sie versetzen möchten.
-2. Drücken Sie <kbd>O</kbd>.
-3. Bewegen Sie die Maus nach links und rechts, um die Richtung und den Abstand anzugeben.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+Versetzt die ausgewählten Kanten um eine angegebene Distanz und erzeugt neue Kanten. Eine Option für symmetrisches Versetzen auf beiden Seiten ist verfügbar.
+
+## Grundlegende Verwendung
+
+1. Wähle die Kanten aus, die du versetzen möchtest.
+2. Drücke <kbd>O</kbd>.
+3. Bewege die Maus nach links oder rechts, um Richtung und Distanz festzulegen.
+4. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
    - <Kst>Befehlsdialog</Kst>
-      - **Distance:** Geben Sie den Abstand an.
+      - **Distanz:** Bestimmt die Versatzdistanz.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>V</kbd> **Gap fill:**
-         - **Round:** Rundet konvexe Ecken.
-         - **Linear:** Verbindet konvexe Ecken mit geraden Linien.
-         - **Natural:** Natürlich
-      - <kbd>Tab</kbd> **Lock distances:** Versetzen Sie mit gleichem Abstand auf beiden Seiten.
-      - <kbd>D</kbd> **Distance:** Geben Sie den Abstand mit der Mausbewegung an.
-5. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+         - <kbd>V</kbd> **Lückenfüllung:**
+            - **Rund:** Füllt konvexe Ecken mit einer Rundung.
+            - **Linear:** Füllt konvexe Ecken mit geraden Linien, jedoch können die resultierenden Kanten fragmentiert sein.
+            - **Natürlich:** Füllt konvexe Ecken mit geraden Linien und erhält dabei durchgehende Kanten.
+            <img src="/img/offset-gap-fill.svg" width="450" />
+      - <kbd>S</kbd> **Distanzen sperren:** Versetzt beide Seiten mit gleicher Distanz.
+      - <kbd>V</kbd> **Lückenfüllung:** Zwischen den Optionen wechseln.
+      - <kbd>D</kbd> **Distanz:** Distanz durch Mausbewegung festlegen.
+5. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="offset-edge"/>
 
 ## Siehe auch
 - [Offset Curve](offset-curve)
 - [Offset Face Loop](offset-face-loop)
-- [isoparam](isoparam)
+- [Isoparam](isoparam)
 - [Imprint](imprint)
-- [Extend Edge](extend-edge)

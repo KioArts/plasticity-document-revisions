@@ -2,20 +2,30 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Untrim
+## Untrim
 
-<Reference shortcut="Alt + T" command="Untrim" button="" />
+{/* <Reference shortcut="Alt + T" command="Untrim" button="" /> */}
 
-Erstellen Sie ein Sheet basierend auf der ursprünglichen Form des ausgewählten Face.
+<CommandReference
+  command="Untrim"
+  shortcut="Alt + T"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-untrim.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie das Face aus, das Sie rückschneiden möchten.
-2. Drücken Sie <kbd>Alt + T</kbd>.
+Erstellt ein Sheet basierend auf der ursprünglichen Form der ausgewählten Fläche.
+
+## Grundlegende Verwendung
+
+1. Wähle die Fläche aus, die du untrimmen möchtest.
+2. Drücke <kbd>Alt + T</kbd>.
 - <Kst>Befehlsdialog</Kst>
-    - **Keep edges:** Wählen Sie aus, ob eingeprägte Linien eingefügt werden sollen, um die Kanten der beschnittenen Fläche zu erhalten.
+    - **Kanten behalten:** Wähle, ob eingeprägte Linien eingefügt werden sollen, um die Kanten der beschnittenen Fläche zu erhalten.
 - <Kst>Tastenkombinationen</Kst>
-    - <kbd>Tab</kbd> **Keep edges:** Schaltet die Option zum Beibehalten der Kanten der beschnittenen Fläche um.
+    - <kbd>Tab</kbd> **Kanten behalten:** Schaltet die Option zum Beibehalten der Kanten der beschnittenen Fläche um.
 3. Ein Sheet basierend auf der ursprünglichen Form wird erstellt.
 
 <VideoPlayer fileName="untrim"/>

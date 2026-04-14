@@ -2,9 +2,19 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Mirror
+## Mirror
 
-<Reference shortcut="Alt + X" command="Mirror" button="In Suggested Commands Menu"  buttonIcon='button-mirror'/>
+{/* <Reference shortcut="Alt + X" command="Mirror" button="In Suggested Commands Menu"  buttonIcon='button-mirror'/> */}
+
+<CommandReference
+  command="Mirror"
+  shortcut="Alt + X"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-mirror.png"
+  tier="both"
+/>
+
+## Description
 
 Mirror objects using Mirror Gizmo. Slice along the mirror plane and merge halves together. [**Freestyle mirroring**](#freestyle-mirror) possible.
 
@@ -15,15 +25,17 @@ Mirror objects using Mirror Gizmo. Slice along the mirror plane and merge halves
 3. Use the displayed Mirror Gizmo to mirror.
 4. Specify the mirroring direction and options.
    - <Kst>Command Dialog</Kst>
-      - **Cut:** When enabled, the mirror target is divided by the mirror plane before mirroring.
-      - **Union:** When enabled, the two mirrored objects are combined.
+      - **Cut down mirror plane:** When enabled, the mirror target is divided by the mirror plane before mirroring.
+      - **Union halves:** When enabled, the two mirrored objects are combined.
+      - **Make Instances:** When enabled, the mirrored half becomes an instance of the original object rather than an independent copy.
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **Position X/Y/Z** Mirror in the positive direction of the X/Y/Z-axis.
       - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **Negative X/Y/Z** Mirror in the negative direction of the X/Y/Z-axis.
+      - <kbd>I</kbd> **Toggle make instances:** Toggles whether the mirrored half is created as an instance or an independent copy.
       - <kbd>F</kbd> **Freestyle:** Specify the mirroring plane by clicking on the starting and ending points.
       - <kbd>Q</kbd> **Union (merge):** Combines the two mirrored objects.
 5. You can also specify the mirror plane by clicking on a flat or curved surface.
-   - When a  Curved surface is selected, the mirror plane is the plane that is perpendicular to the normal of that surface and makes contact with the  Curved surface.
+   - When a  Curved surface is selected, the mirror plane is the plane that is perpendicular to the normal of that surface and makes contact with the Curved surface.
 6. Confirm with OK in the Command Dialog or right-click.
 
 ## Freestyle Mirror[#freestyle-mirror]
@@ -34,7 +46,10 @@ This command is equivalent to the <kbd>F</kbd> option of the **Mirror** command.
 2. Use the **Freestyle Mirror**  command in the Command Palette.
 3. Specify the mirroring plane by clicking on the starting and ending points.
 4. Set the options in the Command Dialog and Keyboard Shortcuts.
-   - The option is the same as the **Mirror** command.
+   - <Kst>Command Dialog</Kst>
+      - Same options as above in [Mirror](/common/mirror#basic-usage).
+   - <Kst>Keyboard Shortcuts</Kst>
+      - Same options as above in [Mirror](/common/mirror#basic-usage).
 5. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="freestyle-mirror"/>

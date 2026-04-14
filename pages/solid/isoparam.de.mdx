@@ -3,37 +3,49 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Isoparam
+## Isoparam
 
-<Reference shortcut="Strg + R" command="Isoparam" button="" />
+{/* <Reference shortcut="Ctrl + R" command="Isoparam" button="" /> */}
 
-Kanten auf einer Face eines Solid oder Sheet in der U- oder V-Richtung erstellen. Mehrere Kanten können gleichzeitig erstellt werden.
+<CommandReference
+  command="Cut Curve"
+  shortcut="Ctrl + R"
+  button="In Command Palette"
+  buttonIcon="/img/button-isoparam.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Drücken Sie <kbd>Strg + R</kbd>.
-2. Platzieren Sie den Mauszeiger an der Position, an der Sie die Isoparams erstellen möchten.
-3. Legen Sie die Optionen in den Tastenkombinationen fest.
+Erstellt Kanten auf einer Fläche eines Volumenkörpers oder Sheets entlang der U‑ oder V‑Richtung. Mehrere Kanten können gleichzeitig erzeugt werden.
+
+## Grundlegende Verwendung
+
+1. Drücke <kbd>Ctrl + R</kbd>.
+2. Bewege den Mauszeiger an die Position, an der du die Isoparams erstellen möchtest.
+3. Lege die Optionen in den Tastenkombinationen fest.
 - <Kst>Befehlsdialog</Kst>
-      - **Direction:** Legen Sie die Richtung der isoparametrischen Linie fest (U oder V).
-      - **Count:** Legen Sie die Anzahl der zu erzeugenden isoparametrischen Linien fest.
-      - **Param:** Geben Sie den Parameterwert an, der die Position der isoparametrischen Linie zwischen Start- und Endpunkt bestimmt, beeinflusst von der U- und V-Richtung.
-      - **Subdivide:** Legen Sie fest, ob das aktuelle CV-Layout der Oberfläche unterteilt werden soll. Wenn deaktiviert, wird die Linie eingefügt, ohne das vorhandene CV-Layout zu verändern. Wenn aktiviert, berücksichtigt die Unterteilung das aktuelle CV-Layout und fügt eine Linie ein, die die Oberfläche teilt, während die CV-Konsistenz über die unterteilten Flächen hinweg erhalten bleibt.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd> **U/V direction:** Wechseln Sie die Richtung des zu erstellenden Isoparam.
-      - <kbd>Umschalt</kbd> + Mausrad hoch **Add cut:** Erhöht die Anzahl der Isoparams.
-      - <kbd>Umschalt</kbd> + Mausrad runter **Subtract cut:** Reduziert die Anzahl der Isoparams.
-      - <kbd>S</kbd> **Subdivide:** CV-Oberflächenlayout unterteilen.
-4. Bestätigen Sie mit einem Rechtsklick.
+      - **Richtung:** Bestimmt die Richtung der isoparametrischen Linie (U oder V).
+      - **Anzahl:** Bestimmt die Anzahl der zu erzeugenden isoparametrischen Linien.
+      - **Parameter:** Bestimmt den Parameterwert, der die Position der isoparametrischen Linie zwischen Start- und Endpunkt festlegt, abhängig von U- und V‑Richtung.
+      - **Unterteilen:** Bestimmt, ob das aktuelle CV‑Layout der Fläche unterteilt wird.  
+        Wenn deaktiviert, wird die Linie eingefügt, ohne das bestehende CV‑Layout zu verändern.  
+        Wenn aktiviert, wird die Fläche unter Berücksichtigung des CV‑Layouts geteilt, sodass beide Flächen ein konsistentes CV‑Layout behalten.
+- <Kst>Tastenkombinationen</Kst>
+      - <kbd>Tab</kbd> **U/V‑Richtung:** Wechselt die Richtung der zu erstellenden Isoparam.
+      - <kbd>Shift</kbd> + Mausrad hoch **Schnitt hinzufügen:** Erhöht die Anzahl der Isoparams.
+      - <kbd>Shift</kbd> + Mausrad runter **Schnitt entfernen:** Verringert die Anzahl der Isoparams.
+      - <kbd>S</kbd> **Unterteilen:** Unterteilt das CV‑Flächenlayout.
+4. Bestätige mit Rechtsklick.
 
 <VideoPlayer fileName="isoparam"/>
 
-<Callout type="info" emoji="💡">
-**Info**
-- Beachte, dass bei Verwendung der Unterteilungsoption auf einer Oberfläche mit einem CV-Layout die Oberfläche geteilt wird und sich beide Flächen dasselbe CV-Layout teilen – wenn du das Face auflösen oder in den vorherigen Zustand zurückkehren möchtest, ist das nicht möglich, da es sich um einen destruktiven Vorgang handelt.
+<Callout type="info">
+**Hinweis:**  
+Wenn die Option *Unterteilen* auf einer Fläche mit CV‑Layout verwendet wird, wird die Fläche geteilt und beide Teile teilen sich dasselbe CV‑Layout.  
+Ein Auflösen der Fläche oder Zurücksetzen auf den vorherigen Zustand ist nicht möglich, da dies ein destruktiver Vorgang ist.
 </Callout>
 
 ## Siehe auch
 - [Offset Curve](offset-curve)
 - [Imprint](imprint)
-- [Extend Edge](extend-edge)

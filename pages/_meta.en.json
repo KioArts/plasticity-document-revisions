@@ -1,41 +1,38 @@
 {
-    "index": {
-        "display": "hidden"
-    },
-    "whats-new": "What's New",
-    "all-commands": "Command List & Shortcut Keys",
-    "---1": {
-        "type": "separator",
-        "title": ""
-    },
-    "getting-started": "Getting Started",
-    "plasticity-essentials": "Plasticity Essentials",
-    "---2": {
-        "type": "separator",
-        "title": "Tools"
-    },
-    "tool": "Sketching & Primitive Tools",
-    "---3": {
-        "type": "separator",
-        "title": "Commands"
-    },
-    "common": "Common",
-    "sketch": "Sketch ",
-    "solid": "Solid ",
-    "---4": {
-        "type": "separator",
-        "title": "Integration"
-    },
-    "blender": "Blender",
-    "---5": {
-        "type": "separator",
-        "title": "Advanced"
-    },
-    "cad-essentials": "CAD Essentials",
-    "release-notes": "Release Notes",
-    "contact": {
-        "title": "User Support",
-        "type": "page",
-        "href": "/getting-started/user-support"
-    }
+  "index": { "display": "hidden" },
+
+  "introduction": { "display": "hidden"},
+  "tools": { "display": "hidden"},
+  "commands": { "display": "hidden"},
+  "integration": { "display": "hidden"},
+  "advanced": { "display": "hidden"},
+  "support": { "display": "hidden"},
+
+  "whats-new": "What's New",
+  "all-commands": "Command List and Shortcut Keys",
+
+  "---intro": { "type": "separator", "title": "Introduction" },
+  "getting-started": "Getting Started",
+  "plasticity-essentials": "Plasticity Essentials",
+  "cad-essentials": "CAD Essentials",
+
+  "---tools": { "type": "separator", "title": "Tools" },
+  "tool": "Sketching and Primitive Tools",
+
+  "---commands": { "type": "separator", "title": "Commands" },
+  "common": "Common",
+  "sketch": "Sketch",
+  "solid": "Solid",
+
+  "---integration": { "type": "separator", "title": "Integration" },
+  "blender": "Blender",
+  "cinema-4d": "Cinema 4D",
+
+  "---support": { "type": "separator", "title": "Changelog" },
+  "release-notes": "Release Notes",
+  "contact": {
+    "title": "User Support",
+    "type": "page",
+    "href": "/getting-started/user-support"
+  }
 }

@@ -4,16 +4,26 @@ import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Section Analysis
+## Section Analysis
 
-<Reference shortcut="" command="Section Analysis" button="Top Right Menu" buttonIcon='button-section-analysis' />
+{/* <Reference shortcut="" command="Section Analysis" button="Top Right Menu" buttonIcon='button-section-analysis' /> */}
+
+<CommandReference
+  command="Section Analysis"
+  shortcut=""
+  button="In Top Right Menu"
+  buttonIcon="/img/button-section-analysis.png"
+  tier="both"
+/>
+
+## Description
 
 Create a virtual slice through a 3D model, allowing you to view and analyze its internal structure. This temporarily removes part of the model along a defined plane without permanently altering the geometry. Useful for creative and technical visualizations. 
 
 ## Basic Usage
 
 1. Select a face on an object to define the section plane.
-2. Press the <ButtonIcon type="button-section-analysis"/> button or type *Section Analysis* in the Command Palette.
+2. Press the <ButtonIcon type="button-section-analysis"/> button or type **Section Analysis** in the Command Palette.
 3. Set the options in the Command Dialog and Keyboard Shortcuts.
     - <Kst>Command Dialog</Kst>
         - **Plane:** Choose how to define the section plane.
@@ -38,4 +48,4 @@ Create a virtual slice through a 3D model, allowing you to view and analyze its 
 </Callout>
 
 ## See also
-- [Construction Plane](/plasticity-essentials/construction-plane)
+- [Construction Plane](/plasticity-essentials/plasticity-interface/construction-plane)

@@ -1,14 +1,33 @@
 import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
 
-# Unwrap Face
+## Unwrap Face
 
-<Reference shortcut="" command="Unwrap" button="" />
+{/* <Reference shortcut='' command='Unwrap' button=''/> */}
 
-<Callout type="warning" emoji="⚠️">
-    **Unwrap Face**と**Wrap Face**は、まだ実験的な機能です。まだ本番での使用には向いていません。
+<CommandReference
+  command="Unwrap"
+  shortcut=""
+  button="コマンドパレット内"
+  buttonIcon="/img/button-unwrap-face.png"
+  tier="both"
+/>
+
+## 説明
+
+選択した面のサーフェスを展開します。
+
+## 基本的な使い方
+
+1. 展開したい面を選択します。
+2. コマンドパレットで **Unwrap** と入力します。
+
+<Callout type='info'>
+  **注意:** サーフェスを展開すると、結果はワールド XYZ 原点の中心に配置されます。
 </Callout>
 
 ## 関連項目
-- [ソリッドとシートの変形](deform-solid-and-sheet)
-- [カーブの変形](/sketch/deform-curve)
+- [Deform Solid and Sheet](deform-solid-and-sheet)
+- [Deform Curve](/sketch/deform-curve)

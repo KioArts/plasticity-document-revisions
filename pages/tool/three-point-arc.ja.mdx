@@ -3,23 +3,33 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Three-Point Arc
+## 三点アーク（Three-Point Arc）
 
-<Reference shortcut='' command='Three-Point Arc' button='ツールバー'  buttonIcon='button-three-point-arc'/>
+{/* <Reference shortcut='' command='Three-Point Arc' button='Toolbar'  buttonIcon='button-three-point-arc'/> */}
 
-3点を指定して円弧を作成できます。
+<CommandReference
+  command="Three-Point Arc"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-three-point-arc.png"
+  tier="both"
+/>
+
+## 説明
+
+円周上の 3 点を指定してアーク（円弧）を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-three-point-arc" /> をクリックします。
-2. 円周上の最初の位置でクリックします。
-3. カーソルを移動して円周上の2点目でクリックします。
+1. ツールバーの <ButtonIcon type="button-three-point-arc" /> ボタンをクリックします。
+2. 円弧の円周上の 1 点目をクリックします。
+3. カーソルを動かし、円周上の 2 点目をクリックします。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-4. カーソルを移動して円周上の3点目でクリックします。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [X/Y/Z 軸に拘束](/tool/sketching-essentials#constrain-to-an-axis)。
+4. カーソルを動かし、円周上の 3 点目をクリックします。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> : 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-5. 円弧が作成されます。
+      - <kbd>Tab</kbd>: 寸法を直接入力できます。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)。
+5. アークが作成されます。
 
 <VideoPlayer fileName="three-point-arc"/>
 
@@ -30,6 +40,3 @@ import Kst from '/components/KeyboardShortcutsTitle'
 - [Tangent Circle](tangent-circle)
 - [Center Point Arc](center-point-arc)
 - [Tangent Arc](tangent-arc)
-
-
-

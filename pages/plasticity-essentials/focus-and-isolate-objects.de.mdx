@@ -2,61 +2,101 @@ import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
 import ButtonIcon from '/components/ButtonIcon'
 
-## Objekte fokussieren und isolieren
+## Fokus und Isolierung
 
-### Objekte fokussieren
+## Objekte fokussieren
 
-Dieser Befehl vergrößert das ausgewählte Objekt, sodass es den gesamten Ansichtsbereich ausfüllt.
+Dieser Befehl vergrößert das ausgewählte Objekt so, dass es den gesamten Viewport ausfüllt.
 
-<Reference shortcut="/ (Schrägstrich)" command="Viewport: Focus" button="" />
+{/* <Reference shortcut="/ (Slash)" command="Viewport: Focus" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Viewport: focus"
+  shortcut="/"
+  button="In Command Palette"
+  buttonIcon="/img/button-viewport-focus.png"
+  tier="both"
+/>
 
 ##### Verwendung
 
 1. Wählen Sie die Objekte aus, auf die Sie fokussieren möchten.
 2. Drücken Sie <kbd>/</kbd>, um den Befehl auszuführen.
-3. Die ausgewählten Objekte werden vergrößert und füllen den gesamten Ansichtsbereich.
+3. Die ausgewählten Objekte werden vergrößert und füllen den gesamten Viewport aus.
 
-### Objekte isolieren
+## Objekte isolieren
 
-Dieser Befehl fokussiert das ausgewählte Objekt, indem es es exklusiv auf dem Bildschirm anzeigt und alle anderen Objekte vorübergehend ausblendet. Dieser Befehl unterstützt auch hierarchische Isolierung.
+Dieser Befehl fokussiert auf das ausgewählte Objekt, indem es ausschließlich auf dem Bildschirm angezeigt wird und alle anderen Objekte vorübergehend ausgeblendet werden. Dieser Befehl unterstützt auch hierarchische Isolierung.
 
-<Reference shortcut=". (Punkt)" command="Isolate" button="" />
+{/* <Reference shortcut=". (Period)" command="Isolate" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Isolate"
+  shortcut="."
+  button="In Command Palette"
+  buttonIcon="/img/button-isolate.png"
+  tier="both"
+/>
 
 ##### Verwendung
 
 1. Wählen Sie die Objekte aus, auf die Sie fokussieren möchten.
-2. Öffnen Sie die Befehlsleiste und geben Sie „Isolate“ ein oder drücken Sie <kbd>.</kbd>, um den Befehl auszuführen.
+2. Öffnen Sie die Befehlspalette und geben Sie „Isolate" ein, oder drücken Sie <kbd>.</kbd>, um den Befehl auszuführen.
 3. Nur die ausgewählten Objekte werden auf dem Bildschirm angezeigt.
 
 ##### Hierarchische Isolierung
 
-1. Nach der Ausführung des Isolate-Befehls können Sie zusätzliche Objekte auswählen, auf die Sie fokussieren möchten.
-2. Führen Sie den Isolate-Befehl erneut aus, und der Bildschirm wird auf die neu ausgewählten Objekte eingegrenzt.
-3. Dieser Prozess kann wiederholt werden, um mehrere Isolationsschichten zu erstellen.
-4. Um die aktuelle Isolationsebene zu verlassen, drücken Sie <kbd>.</kbd> oder klicken Sie auf die **Isoliert**‑Schaltfläche oben‑mittig im Bildschirm, wenn kein Objekt ausgewählt ist.
+1. Nach der Ausführung des Isolate-Befehls können Sie weitere Objekte auswählen, auf die Sie fokussieren möchten.
+2. Führen Sie den Isolate-Befehl erneut aus, und die Anzeige wird auf die neu ausgewählten Objekte eingeschränkt.
+3. Dieser Vorgang kann über mehrere Isolierungsebenen hinweg wiederholt werden.
+4. Um die aktuelle Isolierungsebene zu verlassen, drücken Sie <kbd>.</kbd> oder klicken Sie auf die Schaltfläche **Isolated** oben in der Mitte des Bildschirms, wenn kein Objekt ausgewählt ist.
 
-##### Anzeige und Schichtenzähler
+##### Indikator und Ebenenanzahl
 
-Ein Indikator oben auf dem Bildschirm zeigt an, dass der Isoliermodus aktiv ist. Eine Zahl neben dem Indikator zeigt an, wie viele Isolationsschichten angewendet wurden. Wenn beispielsweise „2 Isolated“ angezeigt wird, bedeutet dies, dass Sie sich in der zweiten Schicht der Isolierung befinden.
+Ein Indikator oben auf dem Bildschirm zeigt an, dass der Isolate-Modus aktiv ist. Eine Zahl neben dem Indikator gibt an, wie viele Isolierungsebenen angewendet wurden. Wird beispielsweise „2 Isolated" angezeigt, bedeutet dies, dass Sie sich in der zweiten Isolierungsebene befinden.
 
-### Objekte entisolieren
+## Isolierung von Objekten aufheben
 
-Dieser Befehl zeigt alle zuvor isolierten Objekte im Ansichtsbereich an. Es wird nicht zur vorherigen hierarchischen Isolierungsschicht zurückgekehrt, sodass alle Objekte sichtbar werden.
+Dieser Befehl blendet alle zuvor isolierten Objekte im Viewport wieder ein. Er kehrt nicht zur vorherigen hierarchischen Isolierungsebene zurück, sodass alle Objekte sichtbar sind.
 
-<Reference shortcut="Alt + . (Punkt)" command="Unisolate" button="" />
+{/* <Reference shortcut="Alt + . (Period)" command="Unisolate" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Unisolate"
+  shortcut="Alt + ."
+  button="In Command Palette"
+  buttonIcon="/img/button-unisolate.png"
+  tier="both"
+/>
 
 ##### Verwendung
 
-1. Öffnen Sie die Befehlsleiste und geben Sie „Unisolate“ ein oder drücken Sie <kbd>Alt + .</kbd>, um den Befehl auszuführen.
-2. Nach der Ausführung des Unisolate-Befehls können Sie alle sichtbaren Objekte im Ansichtsbereich sehen.
+1. Öffnen Sie die Befehlspalette und geben Sie „Unisolate" ein, oder drücken Sie <kbd>Alt + .</kbd>, um den Befehl auszuführen.
+2. Nach der Ausführung des Unisolate-Befehls sind alle sichtbaren Objekte im Viewport wieder zu sehen.
 
 <VideoPlayer fileName="isolate-unisolate"/>
 
-### Objekte zentrieren
+## Objekte zentrieren
 
 Dieser Befehl zentriert ein bestimmtes Objekt in der Mitte des Bildschirms.
 
-<Reference shortcut="Space" command="Viewport: navigate to selection" button="" />
+{/* <Reference shortcut="Space" command="Viewport: navigate to selection" button="" /> */}
+
+<br/>
+
+<CommandReference
+  command="Viewport: navigate to selection"
+  shortcut="Space"
+  button="In Command Palette"
+  buttonIcon="/img/button-navigate-to-selection.png"
+  tier="both"
+/>
 
 ##### Verwendung
 

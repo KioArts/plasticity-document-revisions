@@ -1,0 +1,51 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+
+
+{/* # Realize Curve Instances
+
+<Reference shortcut="" command="Realize Instances" button="In Command Palette"  buttonIcon="button-realize-instances"/> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/realize-curve-instances.mp4"
+  alt="Realize Curve Instances Preview"
+  title="Realize Curve Instances"
+  command="Realize Instances"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-realize-instances.png" alt="Realize Instances Icon" />}
+/> */}
+
+## カーブインスタンスの実体化
+
+<CommandReference
+  command="Realize Instances"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-realize-instances.png"
+  tier="both"
+/>
+
+## 説明
+
+選択したカーブインスタンスを編集可能なスケッチオブジェクトに変換し、必要に応じて変更できる本物のカーブに変えます。
+
+## 基本的な使い方
+
+1. 変換したいカーブインスタンスを選択します。
+2. コマンドパレットを開き、**Realize Instances** と入力してコマンドを実行します。
+3. インスタンスが編集可能なオブジェクトに変換されました。
+
+<VideoPlayer fileName="realize-instance-curve"/>
+
+## インスタンス化されたグループの実体化
+
+ワークフローは上記の基本的な使い方と同じです。
+
+<VideoPlayer fileName="realize-instance-group-curve"/>
+
+## 関連項目
+- [ソリッドおよびシートインスタンスの実体化](/solid/realize-solid-and-sheet-instances)

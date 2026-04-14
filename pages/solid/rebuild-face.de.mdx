@@ -3,32 +3,43 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Rebuild Face
+## Rebuild Face
 
-<Reference shortcut="" command="Rebuild" button="Im vorgeschlagenen Befehlsmenü" buttonIcon="button-rebuild"/>
+{/* <Reference shortcut="" command="Rebuild" button="Im Menü „Vorgeschlagene Befehle“" buttonIcon="button-rebuild"/> */}
 
-Die Oberfläche eines Gesichts rekonstruieren
+<CommandReference
+  command="Rebuild"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-rebuild.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie ein Gesicht oder Gesichter aus, die Sie neu aufbauen möchten.
-2. Verwenden Sie den Neu aufbauen-Befehl in der Befehlsleiste oder klicken Sie auf den Neu aufbauen-Button <ButtonIcon type="button-rebuild"/> rechts in der Befehlsleiste.
-3. Stellen Sie die Optionen im Befehlsdialog ein.
+Erneuert die Oberfläche einer Fläche, indem Splines, Grad, Spans und das CV‑Layout angepasst werden.
+
+## Grundlegende Verwendung
+
+1. Wähle die Fläche oder Flächen aus, die du neu aufbauen möchtest.
+2. Führe den Befehl **Rebuild** aus der Command Palette aus.
+3. Lege die Optionen im Befehlsdialog fest.
     - <Kst>Befehlsdialog</Kst>
     - **Methode:**
-        - **Explizite Kontrolle:** *(Nur mit Studio-Lizenz verfügbar)*
-            - **Grad:** Geben Sie den U- und V-Gradwert an.
-            - **Spannen:** Geben Sie den U- und V-Spannwert an.
-            - **Erweitern:** Geben Sie den U- und V-Erweiterungswert an.
-            - **Verkleinern:** Verkleinern Sie projizierende Reihen und Spalten von CVs, um sie enger an die Begrenzungskanten der zugeschnittenen Fläche anzupassen.
-        - **Toleranz:** 
-          - **Toleranz:** Geben Sie die Toleranz der Flächen-CV-Anzahl an. Ein niedrigerer Wert führt zu einer größeren Anzahl von Flächen-CVs, während ein höherer Wert zu einer geringeren Anzahl von CVs führt. Dies bestimmt die Qualität des Flächenausgangs.
-          - **Erweitern:** Geben Sie den U- und V-Erweiterungswert an.
-          - **Verkleinern:** Verkleinern Sie die projizierten Reihen oder Spalten von CVs bis zu den Begrenzungskanten.
-5. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+        - **Explizite Kontrolle:** *(Nur mit Studio‑Lizenz verfügbar)*
+            - **Grad:** Bestimme den U‑ und V‑Grad.
+            - **Spans:** Bestimme die U‑ und V‑Spans.
+            - **Erweitern:** Bestimme die U‑ und V‑Erweiterung.
+            - **Schrumpfen:** Schrumpft herausragende CV‑Reihen und ‑Spalten, um näher an die Begrenzungskanten der beschnittenen Fläche anzupassen.
+        - **Toleranz:**
+            - **Toleranz:** Bestimmt die Toleranz für die Anzahl der Oberflächen‑CVs.  
+              Niedrige Werte erzeugen viele CVs, hohe Werte weniger — dies beeinflusst die Oberflächenqualität.
+            - **Erweitern:** Bestimme die U‑ und V‑Erweiterung.
+            - **Schrumpfen:** Schrumpft herausragende CV‑Reihen und ‑Spalten, um näher an die Begrenzungskanten der beschnittenen Fläche anzupassen.
+5. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
-<VideoPlayer fileName="rebuild-face"/>
+{/* <VideoPlayer fileName="rebuild-face"/> */}
 
 ## Siehe auch
 - [Rebuild](rebuild)
-- [Raise Surface Degree](raise-surface-degree)
+- [Raise Degree](raise-degree)

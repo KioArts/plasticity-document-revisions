@@ -3,48 +3,49 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Duplicate Curve and Project
+{/* # Duplicate Curve and Project
 
-<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" />
+<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" /> */}
 
-Erstellt eine Kurve, die auf die Konstruktionsebene von einer Kurve oder Kante projiziert wird.  
-Sie hat die gleiche Funktionalität wie [**Alternative Duplizieren**](alternative-duplicate).
+{/* <HeadBannerThumbnail
+  src="/videos/banner/duplicate-curve-and-project.mp4"
+  alt="Delete Redundant Topology Preview" 
+  title="Duplicate Curve and Project"
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-alternative-duplicate.png" alt="Alternative Duplicate Icon" />}
+/> */}
+
+## Kurve duplizieren und projizieren
+
+<CommandReference
+  command="Cut Curve"
+  shortcut="C"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Projiziert eine Kurve oder Kante auf die Konstruktionsebene, um eine neue Kurve zu erstellen.
+Dieser Befehl hat die gleiche Funktionalität wie [**Alternatives Duplizieren**](alternative-duplicate).
 
 ## Grundlegende Verwendung
 
 1. Wählen Sie die Kurven oder Kanten aus, die Sie projizieren möchten.
 2. Richten Sie die Konstruktionsebene ein, auf die die Kurven projiziert werden sollen.
-3. Drücken Sie <kbd>Alt + D</kbd>, um den Befehl auszuführen, oder geben Sie *Alternative Duplizieren* in die Befehlsleiste ein.
-4. Die Kurve wird erstellt. Verwenden Sie das angezeigte Verschiebungs-Gizmo, um sie zu bewegen.
-5. Legen Sie die Optionen im Befehlsdialog und die Tastenkombinationen fest.
-   - <Kst>Befehlsdialog</Kst>  
-      - **XYZ:** Geben Sie die Verschiebung der X-, Y- und Z-Achsen an.  
-      - **Ausrichtung:** Legen Sie die Ausrichtung des Verschiebe-Gizmos fest.  
-         - <ButtonIcon type="button-normal"/> **Normal:** Richtet die Ausrichtung an der Oberflächennormalen des Objekts aus.  
-         - <ButtonIcon type="button-pivot"/> **Pivot:** Setzt die Ausrichtung auf die zuvor definierte Pivot-Ausrichtung.  
-         - <ButtonIcon type="button-construction-plane"/> **Konstruktions-Ebene:** Richtet die Ausrichtung an der aktiven Konstruktions-Ebene aus.  
-         - <ButtonIcon type="button-world"/> **Welt:** Richtet die Ausrichtung an den globalen (Welt-) Achsen aus.  
-      - **Pivot:** Legen Sie die Position des Pivot-Punkts fest.  
-         - <ButtonIcon type="button-bbox"/> **Bbox:** Positioniert den Pivot in der Mitte des Begrenzungsrahmens der ausgewählten Objekte.  
-         - <ButtonIcon type="button-median"/> **Median:** Positioniert den Pivot an der durchschnittlichen Position der Pivots der ausgewählten Objekte.  
-         - <ButtonIcon type="button-active"/> **Aktiv:** Positioniert den Pivot am Pivot des zuletzt ausgewählten (aktiven) Objekts. 
-   - <Kst>Tastenkombinationen</Kst>  
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Achse:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).  
-      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X-, Y-, Z-Ebene:** Auf die X-, Y- oder Z-Ebene beschränken.  
-      - <kbd>G</kbd> **Bildschirmraum:** Auf die sichtbare Ebene beschränken.  
-      - <kbd>F</kbd> **Freistil:** Klicken Sie, um den Start- und Endpunkt festzulegen, um Richtung und Distanz der Bewegung zu bestimmen.  
-      - <kbd>V</kbd> **Pivot:** Klicken Sie, um die Position des Gizmos festzulegen.  
-      - <kbd>Alt + V</kbd> **Pivot entfernen:** Entfernt die konfigurierten Pivots.  
-      - <kbd>W</kbd> **Ausrichtung:** Ändert die Koordinatenachsen des Gizmos auf verschiedene Ausrichtungen. 
-6. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.
+3. Drücken Sie <kbd>Alt + D</kbd>, um den Befehl auszuführen, oder geben Sie **Alternative Duplicate** in der Befehlspalette ein.
+4. Die Kurve wird erstellt. Verwenden Sie das angezeigte Verschieben-Gizmo zum Verschieben.
+5. Klicken Sie mit der rechten Maustaste oder klicken Sie im Befehlsdialog auf OK, um zu bestätigen.
 
 <VideoPlayer fileName="duplicate-curve-and-project"/>
 
 ## Siehe auch
-- [Alternative Duplicate](alternative-duplicate)
-- [Project Outline](project-outline)
-- [Create Outline](create-outline)
-- [Project Curve Body](project-curve-body)
-- [Project Curve Curve](project-curve-curve)
-- [Project Body Body](project-body-body)
-- [Offset Curve](offset-curve)
+- [Alternatives Duplizieren](alternative-duplicate)
+- [Umriss projizieren](project-outline)
+- [Umriss erstellen](create-outline)
+- [Kurvenkörper projizieren](project-curve-body)
+- [Kurve-Kurve projizieren](project-curve-curve)
+- [Körper-Körper projizieren](project-body-body)

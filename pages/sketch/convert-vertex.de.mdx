@@ -2,20 +2,42 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 
-# Convert Vertex
+{/* # Convert Vertex
 
-<Reference shortcut="" command="Convert Vertex" button="" />
+<Reference shortcut="" command="Convert Vertex" button="" /> */}
 
-Konvertieren von Vertices zu Control-Vertices.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/convert-vertex.mp4"
+  alt="Convert Vertex Preview"
+  title="Convert Vertex"
+  command="Convert Vertex"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-convert-vertex.png" alt="Convert Vertex Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Scheitelpunkt konvertieren
 
-1. Wählen Sie die Vertices aus, die Sie konvertieren möchten.
-2. Verwenden Sie den **Convert Vertex** Befehl in der Befehlspalette.
-3. Die Vertices sind jetzt Control-Vertices.
+<CommandReference
+  command="Convert Vertex"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-convert-vertex.png"
+  tier="both"
+/>
 
-<Callout type="info" emoji="ℹ️">
-  Sie können einen Vertex auch durch Doppelklick darauf konvertieren.
+## Beschreibung
+
+Konvertiert standardmäßige Scheitelpunkte in Kontroll-Scheitelpunkte.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Scheitelpunkte aus, die Sie konvertieren möchten.
+2. Verwenden Sie den Befehl **Scheitelpunkt konvertieren** in der Befehlspalette.
+3. Die Scheitelpunkte sind nun Kontroll-Scheitelpunkte.
+
+<Callout type="info">
+Sie können einen Scheitelpunkt auch durch Doppelklick darauf konvertieren.
 </Callout>
 
 <VideoPlayer fileName="convert-vertex"/>

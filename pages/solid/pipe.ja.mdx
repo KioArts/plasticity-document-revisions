@@ -2,46 +2,65 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
 
-# Pipe（パイプを作成）
+## パイプ
 
-<Reference shortcut="P" command="Pipe" button="推奨コマンドメニューで" buttonIcon="button-pipe"/>
+{/* <Reference shortcut="P" command="Pipe" button="In Suggested Commands Menu" buttonIcon="button-pipe"/> */}
 
-カーブやエッジに沿ったパイプを作成できます。
+<CommandReference
+  command="Pipe"
+  shortcut="P"
+  button="Suggested Commands Menu 内"
+  buttonIcon="/img/button-pipe.png"
+  tier="both"
+/>
+
+## 説明
+
+曲線またはエッジから任意のサイズのパイプを作成します。ブーリアン演算にも使用できます。ポリゴンまたはカスタムプロファイルのオプションが利用可能です。
 
 ## 基本的な使い方
 
-1. パイプにしたいカーブまたはエッジを選択します。複数のカーブまたはエッジを選択したときは、複数のパイプが作成されます。
+1. パイプを作成したい曲線またはエッジを選択します。複数選択すると複数のパイプが作成されます。
 2. <kbd>P</kbd> を押します。
-3. 黄色い点をドラッグして断面サイズを、黄色い四角をドラッグしてパイプの厚みを指定します。白い丸をドラッグして回転角度を指定します。
-4. コマンドダイアログやキーボードショートカットでオプションを設定します。
+3. 黄色い点をドラッグして断面サイズを指定し、黄色い四角をドラッグしてパイプの厚みを指定します。白い円をドラッグして回転角度を指定します。
+4. コマンドダイアログおよびキーボードショートカットでオプションを設定します。
      - <Kst>コマンドダイアログ</Kst>
-          - **Select target bodies:**
-               - Booleanコマンドと同じ機能です。詳細は[**Boolean**](boolean)コマンドを参照してください。
-          - **Select custom profile:** カスタムプロファイルにするリージョン、カーブ、フェースを選択します。
-          - **Vertex count:** プロファイルの多角形の頂点数を指定します。0を指定すると円形になります。
-          - **Section size:** 断面サイズを指定します。
-          - **Thickness:** パイプの厚みを指定します。
-          - **Angle:** 回転角度を指定します。
-          - **Scale:** パイプの終点にスケール値を設定。オプションダイアログを開いて手動入力、またはマウスで調整。[Reverse コマンド](/sketch/reverse)で方向を反転。
-          - **Distance:** 結果の長さを調整。値を1.00から0に下げるとパイプが短くなる。（初期値：1.00）
-               - **Distance 1:** 長さの開始点を調整。
-               - **Distance 2:** 長さの終点を調整。
+          - **ターゲットボディを選択:**  
+            Boolean コマンドと同じ機能です。詳細は [**Boolean**](/solid/boolean) を参照してください。
+          - **カスタムプロファイルを選択:**  
+            カスタムプロファイルとして領域、曲線、または面を選択します。
+          - **頂点数:**  
+            プロファイルのポリゴンの頂点数を指定します。0 を指定すると円形になります。
+          - **直径:** 断面サイズを指定します。
+          - **厚み:** パイプの肉厚を指定します。
+          - **角度:** 回転角度を指定します。
+          - **スケール:**  
+            パイプの終点でのスケール値を指定します。オプションダイアログをクリックして値を入力するか、マウスを左右にドラッグします。終点方向を反転するには [Reverse Command](/sketch/reverse) を使用します。
+          - **距離:**  
+            結果の長さを調整します。1.00 から 0 に減らすと短くなります。（デフォルト: 1.00）
+               - **距離 1:** 始点側の長さを調整します。
+               - **距離 2:** 終点側の長さを調整します。
      - <Kst>キーボードショートカット</Kst>
-          - <kbd>Shift + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>,  <kbd>B</kbd>,  <kbd>T</kbd>
-               - Booleanコマンドと同じ機能です。詳細は[**Boolean**](boolean)コマンドを参照してください。
-          - <kbd>C</kbd> **Custom profile** カスタムプロファイルにするリージョン、カーブ、フェースを選択します。
-          - <kbd>D</kbd> **Section size** 断面サイズをカーソルを動かして指定します。
-          - <kbd>A</kbd> **Angle** 回転角度をカーソルを動かして指定します。
-          - <kbd>Shift + T</kbd> **Thickness** パイプの厚みをカーソルを動かして指定します。
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+          - <kbd>Shift + Q</kbd> スライス, <kbd>Q</kbd> 結合, <kbd>W</kbd> 差分, <kbd>B</kbd> 新規ボディ, <kbd>T</kbd> ツール保持  
+            Boolean コマンドと同じ機能です。詳細は [**Boolean**](/solid/boolean) を参照してください。
+          - <kbd>C</kbd> **カスタムプロファイル**  
+            領域、曲線、または面を選択してカスタムプロファイルを指定します。
+          - <kbd>D</kbd> **断面サイズ**  
+            カーソル移動で断面サイズを指定します。
+          - <kbd>A</kbd> **角度**  
+            カーソル移動で回転角度を指定します。
+          - <kbd>Shift + T</kbd> **厚み**  
+            カーソル移動でパイプの厚みを指定します。
+5. コマンドダイアログの OK をクリックするか、右クリックで確定します。
 
-<Callout emoji="❗">
-**注意**<br />
-Pipeコマンドは、正確な寸法のパイプを作るためのものではありません。
-見た目がクールなパイプやチューブを素早く作成するためのものです。
-ポリゴンとして角度をつけるなど、多くのことを行うので、配管などには寸法的に正確ではありません。
-正確なパイプを作るには、[Sweep](sweep) コマンドを使ってください。
+<Callout type="info">
+**注意:**  
+**Pipe** コマンドは寸法的に正確なパイプを作成するためのものではありません。視覚的に魅力的なパイプやチューブを素早く生成するためのコマンドです。
+
+角度を近似して処理するため、配管や精密な機械設計など、正確な寸法が必要な用途には適していません。  
+正確で制御されたパイプを作成するには [**Sweep**](sweep) コマンドを使用してください。
 </Callout>
 
 <VideoPlayer fileName="pipe"/>

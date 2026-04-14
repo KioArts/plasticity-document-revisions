@@ -1,35 +1,81 @@
-# Skizzieren & Primitive Werkzeuge
+### Skizziergrundlagen
 
-[Skizzier-Grundlagen](/tool/sketching-essentials)
+- Lernen Sie die Grundlagen des präzisen Skizzierens von Kurven, des Einrastens an Punkten und der Verwendung temporärer Konstruktionshilfslinien. Siehe [Skizzier-Grundlagen](/tool/sketching-essentials) für eine vollständige Übersicht.
 
-| Befehlsname                                         | Tastenkombination       | Anmerkung                               |
-| --------------------------------------------------- | ----------------------- | --------------------------------------- |
-| [Line](/tool/line)                                   | <kbd>Umschalt+A</kbd> | Liniensegmente.                         |
-| [Spline Curve](/tool/spline-curve)                   |                         | Spline-Kurve.                           |
-| [Control Point Curve](/tool/control-point-curve)     |                         | Kurve mit Kontrollpunkten.              |
-| [Center Circle](/tool/center-circle)                 |                         | Kreis durch Zentrum und Durchmesser.    |
-| [Two Point Circle](/tool/two-point-circle)           |                         | Kreis durch den Durchmesser.            |
-| [Three Point Circle](/tool/three-point-circle)       |                         | Kreis durch drei Punkte.                |
-| [Tangent Circle](/tool/tangent-circle)               |                         | Kreis durch Tangente an zwei Kurven.    |
-| [Center Point Arc](/tool/center-point-arc)           |                         | Bogen durch Zentrum und zwei Punkte.    |
-| [Three Point Arc](/tool/three-point-arc)             |                         | Bogen durch drei Punkte.                |
-| [Tangent Arc](/tool/tangent-arc)                     |                         | Bogen durch Tangente an einer Kurve.    |
-| [Ellipse](/tool/ellipse)                             |                      | Ellipse nach kleiner und großer Achse.                        |
-| [Regular Polygon](/tool/polygon)                     |                         | Regelmäßiges Polygon.                   |
-| [Spiral](/tool/spiral)                               |                         | Spirale.                                |
-| [Corner Rectangle](/tool/corner-rectangle)           |                         | Rechteck durch Diagonale.               |
-| [Center Rectangle](/tool/center-rectangle)           |                         | Rechteck durch Zentrum und Punkt.       |
-| [Three Point Rectangle](/tool/three-point-rectangle) |                         | Rechteck durch drei Punkte.             |
-| [Bridge Curve](/sketch/bridge-curve)                 |                         | Kurven verbinden.                       |
-| [Trim](/sketch/trim)                                 |                         | Kurve trimmen.                          |
-| [Split Curve At Point](/sketch/split-segment)        |                         | Eine Kurve in zwei Segmente teilen.     |
-| [Insert CV At Point](/sketch/insert-knot)            |                         | Fügen Sie einen Kontrollpunkt auf einer Spline-Kurve hinzu. |
-| [Sphere](/tool/sphere)                               |                         | Kugel.                                  |
-| [Corner Box](/tool/corner-box)                       | <kbd>Umschalt+B</kbd> | Box durch diagonale Eckpunkte und Höhe. |
-| [Center Box](/tool/center-box)                       |                         | Box durch Zentrum, Eckpunkt und Höhe.   |
-| [Three Point Box](/tool/three-point-box)             |                         | Box durch drei Punkte und Höhe.         |
-| [Cylinder](/tool/cylinder)                           | <kbd>Umschalt+C</kbd> | Zylinder.                               |
-| [Measure Distance](/common/measure-distance)                  | <kbd>Ctrl + =</kbd>  | Entfernung messen                        |
-| [Measure Radius](/tool/measure-radius)               |                      | Radiale Werte messen.                     |
-| [Measure Continuity](/tool/measure-continuity)       |                      | Oberfläche G0/G1/G2 Kontinuität messen.      |
-| [Toggle Curvature](/tool/toggle-curvature)           |                      | Krümmung an Oberflächen‑ und Skizzenobjekten messen. |
+### Kurven und Linien
+
+- Werkzeuge zum Erstellen, Verbinden und Bearbeiten von Kurven.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Linie](/tool/line) | Geraden Linien zwischen zwei Punkten zeichnen. |
+| [Spline-Kurve](/tool/spline-curve) | Eine glatte Kurve durch das Platzieren von Punkten zeichnen, durch die die Kurve verläuft. |
+| [Kontrollpunkt-Kurve](/tool/control-point-curve) | Eine Kurve mit Kontrollpunkten zeichnen, die ihre Form beeinflussen, ohne auf ihr zu liegen. |
+| [Kurvenbrücke](/sketch/bridge-curve) | Zwei bestehende Kurven mit einer glatten Überbrückungskurve verbinden. |
+| [Kurve am Punkt teilen](/sketch/split-segment) | Eine Kurve an einem bestimmten Punkt in zwei separate Kurven teilen. |
+| [CV am Punkt einfügen](/sketch/insert-knot) | Einen Kontrollpunkt zu einer bestehenden Kurve hinzufügen für feinere Formkontrolle. |
+| [Trimmen](/sketch/trim) | Kurven an ihren Schnittpunkten trimmen, um die Geometrie zu bereinigen. |
+
+### Kreiswerkzeuge
+
+- Werkzeuge zum Erstellen von Kreisen mit verschiedenen Konstruktionsmethoden.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Mittelkreis](/tool/center-circle) | Einen Kreis durch Festlegen des Mittelpunkts und Radius zeichnen. |
+| [Zwei-Punkt-Kreis](/tool/two-point-circle) | Einen Kreis durch Festlegen zweier Punkte auf dem Durchmesser zeichnen. |
+| [Drei-Punkt-Kreis](/tool/three-point-circle) | Einen Kreis zeichnen, der durch drei bestimmte Punkte verläuft. |
+| [Tangentialkreis](/tool/tangent-circle) | Einen Kreis tangential zu bestehenden Kurven oder Kanten zeichnen. |
+| [Ellipse](/tool/ellipse) | Eine Ellipse durch Festlegen des Mittelpunkts und zweier Radien erstellen. |
+
+### Bogenwerkzeuge
+
+- Werkzeuge zum Erstellen von Bögen mit verschiedenen Konstruktionsmethoden.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Mittelpunktbogen](/tool/center-point-arc) | Einen Bogen durch Festlegen eines Mittelpunkts, Radius und Winkels zeichnen. |
+| [Drei-Punkt-Bogen](/tool/three-point-arc) | Einen Bogen zeichnen, der durch drei bestimmte Punkte verläuft. |
+| [Tangentialbogen](/tool/tangent-arc) | Einen Bogen zeichnen, der tangential an einer bestehenden Kurve oder Kante beginnt. |
+
+### Polygone und Spiralen
+
+- Werkzeuge zum Erstellen von regelmäßigen Vielecken und Spiralkurven.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Regelmäßiges Polygon](/tool/polygon) | Ein Vieleck mit einer definierten Anzahl von Seiten zeichnen. |
+| [Spirale](/tool/spiral) | Eine Spiralkurve mit einer definierten Steigung und Anzahl von Windungen zeichnen. |
+
+### Rechteckwerkzeuge
+
+- Werkzeuge zum Erstellen von Rechtecken mit verschiedenen Konstruktionsmethoden.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Eck-Rechteck](/tool/corner-rectangle) | Ein Rechteck durch Festlegen zweier gegenüberliegender Eckpunkte zeichnen. |
+| [Mittel-Rechteck](/tool/center-rectangle) | Ein Rechteck vom Mittelpunkt nach außen zeichnen. |
+| [Drei-Punkt-Rechteck](/tool/three-point-rectangle) | Ein gedrehtes Rechteck mit drei Punkten zur Festlegung von Ausrichtung und Größe zeichnen. |
+
+### 3D-Grundkörper
+
+- Werkzeuge zum Erstellen grundlegender 3D-Festkörperformen als Ausgangspunkt für die Modellierung.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Kugel](/tool/sphere) | Eine Kugel durch Festlegen des Mittelpunkts und Radius erstellen. |
+| [Eck-Quader](/tool/corner-box) | Einen Quader durch Festlegen zweier gegenüberliegender Eckpunkte erstellen. |
+| [Mittel-Quader](/tool/center-box) | Einen Quader vom Mittelpunkt nach außen erstellen. |
+| [Drei-Punkt-Quader](/tool/three-point-box) | Einen gedrehten Quader mit drei Punkten zur Festlegung von Ausrichtung und Größe erstellen. |
+| [Zylinder](/tool/cylinder) | Einen Zylinder durch Festlegen des Basismittelpunkts, Radius und Höhe erstellen. |
+
+### Messung und Analyse
+
+- Werkzeuge zur Bewertung von Kurven- und Oberflächenqualität.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Kontinuität messen](/tool/measure-continuity) | Die Kontinuität zwischen zwei Kurven oder Oberflächen analysieren. |
+| [Abstand messen](/tool/measure) | Den Abstand zwischen zwei Punkten messen. |
+| [Radius messen](/tool/measure-radius) | Den Radius einer Kurve oder kreisförmigen Kante messen. |
+| [Krümmung umschalten](/tool/toggle-curvature) | Krümmungskämme auf Kurven anzeigen, um ihre Glätte zu visualisieren und zu bewerten. |

@@ -3,43 +3,52 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Hollow（中空にする）
+## Hollow
 
-<Reference shortcut="" command="Hollow" button="推奨コマンドメニューで" buttonIcon="button-hollow"/>
+{/* <Reference shortcut="" command="Hollow" button="推奨コマンドメニュー内"  buttonIcon="button-hollow"/> */}
 
-このコマンドは、選択されているオブジェクトによって結果が異なります。
-- フェイスが選択されているとき: 開いた中空のソリッドを作成します。
-- ソリッドが選択されているとき: 閉じた中空のソリッドを作成します。
+<CommandReference
+  command="Hollow"
+  shortcut=""
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-hollow.png"
+  tier="both"
+/>
+
+## 説明
+
+面が選択されている場合：選択した面をくり抜き、ソリッド内部に開いた空洞を作成します。  
+ソリッドが選択されている場合：選択したソリッドを閉じた中空形状に変換します。
 
 ## 基本的な使い方
 
-### 開いた中空のソリッドを作成するとき
+### 開いた中空ソリッドを作成
 
-1. 中空にしたいソリッドのフェイスを選択します。
-2. ボタン <ButtonIcon type="button-hollow" /> をクリックします。
+1. くり抜きたいソリッドの面を選択します。
+2. コマンドパレットから **Hollow** を実行します。
 3. 黄色い点を動かして壁の厚みを指定します。
 4. コマンドダイアログでオプションを設定します。
   - <Kst>コマンドダイアログ</Kst>
-    - **thickness:** 壁の厚みを指定します。
-    - **Local:** フェイスを中空にするときは無効にします。
+    - **Thickness（厚み）：** 壁の厚みを指定します。
+    - **Local：** ソリッド全体を中空化する場合は無効にします。
   - <Kst>キーボードショートカット</Kst>
-    - <kbd>D</kbd> カーソルを動かして厚みを指定します。
-5. コマンドダイアログでOKをクリックするか、右クリックで確定します。
-6. 開いた中空のソリッドが作成されます。
+    - <kbd>D</kbd> カーソル移動で厚みを指定します。
+5. コマンドダイアログの OK または右クリックで確定します。
+6. 開いた中空ソリッドが作成されます。
 
 <VideoPlayer fileName="hollow"/>
 
-### 閉じた中空のソリッドを作成するとき
+### 閉じた中空ソリッドを作成
 
-1. 中空にしたいソリッドを選択します。
-2. コマンドパレットで **Hollow** コマンドを実行します。
+1. 中空化したいソリッドを選択します。
+2. コマンドパレットから **Hollow** を実行します。
 3. 黄色い点を動かして壁の厚みを指定します。
-  - <Kst>コマンドダイアログ</Kst>  
-    - **thickness:** 壁の厚みを指定します。
-    - **Local:** ソリッドを中空にするときは無効にします。
+  - <Kst>コマンドダイアログ</Kst>
+    - **Thickness（厚み）：** 壁の厚みを指定します。
+    - **Local：** ソリッド全体を中空化する場合は無効にします。
   - <Kst>キーボードショートカット</Kst>
-    - <kbd>D</kbd> カーソルを動かして厚みを指定します。
-5. コマンドダイアログでOKをクリックするか、右クリックで確定します。
-6. 閉じた中空のソリッドが作成されます。
+    - <kbd>D</kbd> カーソル移動で厚みを指定します。
+5. コマンドダイアログの OK または右クリックで確定します。
+6. 閉じた中空ソリッドが作成されます。
 
 <VideoPlayer fileName="hollow-solid"/>

@@ -4,102 +4,112 @@ import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Patch
+## Patch
 
-<Reference shortcut="" command="Patch" button="Im vorgeschlagenen Befehlsmenü" buttonIcon="button-patch"/>
+{/* <Reference shortcut="" command="Patch" button="In Suggested Commands Menu" buttonIcon="button-patch" /> */}
 
-Erstellen Sie eine Patch-Oberfläche aus geschlossenen Curves oder Löchern entlang von Edges. Für Löcher sind die Kontinuitätsoptionen G0, G1, G2 und planar sowie Leit-Curves verfügbar.
+<CommandReference
+  command="Patch"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-patch.png"
+  tier="both"
+/>
 
-## Erstellung eines Patch aus Curves
+## Beschreibung
 
-Sie können eine Patch-Oberfläche aus geschlossenen Curves erstellen.
+Erstellt eine Patch‑Fläche aus geschlossenen Kurven oder Löchern entlang von Kanten. Für Löcher stehen G0-, G1-, G2- und planare Stetigkeitsoptionen sowie Führungskurven zur Verfügung.
 
-1. Wählen Sie die geschlossenen Curves aus, die Sie patchen möchten.
-2. Klicken Sie auf den Button <ButtonIcon type="button-patch" /> rechts von der Befehlsleiste.
+## Patch aus Kurven erstellen
+
+Sie können eine Patch‑Fläche aus geschlossenen Kurven erzeugen.
+
+1. Wählen Sie die geschlossenen Kurven aus, die gepatcht werden sollen.
+2. Suchen Sie **Patch** im Menü „Vorgeschlagene Befehle“ oder in der Befehlspalette und führen Sie ihn aus.
 3. Legen Sie die Optionen im Befehlsdialog fest.
-    - **Tolerance:** Geben Sie die Toleranz für den Patch an.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+    - <Kst>Befehlsdialog</Kst>
+        - **Toleranz:** Gibt die Toleranz für den Patch an.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="patch-1"/>
 
-## Löcher entlang von Edges patchen
+## Löcher entlang von Kanten patchen
 
-Sie können Löcher entlang von Edges patchen.
+Sie können Löcher entlang von Kanten patchen.
 
-1. Wählen Sie die Edges aus, die das Loch umgeben.
-2. Klicken Sie auf den Button <ButtonIcon type="button-patch" /> rechts von der Befehlsleiste.
+1. Wählen Sie die Kanten aus, die das Loch umschließen.
+2. Suchen Sie **Patch** im Menü „Vorgeschlagene Befehle“ oder in der Befehlspalette und führen Sie ihn aus.
 3. Legen Sie die Optionen im Befehlsdialog fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Continuity:**
-            - **Planar:** Geben Sie die Kontinuität der Oberfläche als planar an.
+        - **Stetigkeit:**
+            - **Planar:** Legt die Stetigkeit der Fläche als planar fest.
             - **G0, G1, G2**
-                - Geben Sie die [Kontinuität der Oberfläche](/cad-essentials/continuity-curve-and-surface) an.
-                - Die Kontinuität kann individuell angegeben werden, indem Sie auf die schwarzen Kreise auf der Oberfläche klicken.
-        - **Faces:**
-            - **Single:**
+                - Legt die [Stetigkeit der Fläche](/cad-essentials/continuity-curve-and-surface) fest.
+                - Die Stetigkeit kann individuell durch Klicken auf die schwarzen Kreise auf der Fläche eingestellt werden.
+        - **Flächen:**
+            - **Einzeln:**
             - **Minimal:**
-            - **Quality:**
-        - **Tolerance:** Geben Sie die Toleranz für den Patch an.
-4. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+            - **Qualität:**
+        - **Toleranz:** Gibt die Toleranz für den Patch an.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="patch-2"/>
 
-## Erstellen eines Blatts mit Patchloch
+## Blechfläche mit Patch‑Loch erstellen
 
-Sie können einen neuen Blattkörper erstellen, indem Sie die Kanten eines Solids auswählen.
+Sie können einen neuen Blechkörper erstellen, indem Sie Kanten eines Volumenkörpers auswählen.
 
-1. Wählen Sie die Kanten eines Solids aus.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-patch" /> rechts in der Befehlsleiste.
-3. Stellen Sie die Optionen im Befehlsdialog ein.
+1. Wählen Sie die Kanten eines Volumenkörpers aus.
+2. Suchen Sie **Patch** im Menü „Vorgeschlagene Befehle“ oder in der Befehlspalette und führen Sie ihn aus.
+3. Legen Sie die Optionen im Befehlsdialog fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Toleranz:** Geben Sie die Toleranz für das Patch an.
-4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+        - **Toleranz:** Gibt die Toleranz für den Patch an.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="patch-6"/>
 
-## Patchen mit Leit-Curves
+## Patch mit Führungskurven
 
-Sie können Löcher entlang von Edges mit Leit-Curves patchen.
+Sie können Löcher entlang von Kanten mit Führungskurven patchen.
 
-1. Erstellen Sie die Leit-Curves.
-2. Fügen Sie an jedem Punkt, an dem die Leit-Curve die Oberfläche berührt, einen Isoparam hinzu. Verwenden Sie den [**Isoparam**](isoparam)-Befehl.
-3. Wählen Sie die Edges aus, die das Loch umgeben.
-4. Klicken Sie auf den Button <ButtonIcon type="button-patch" /> rechts von der Befehlsleiste.
-5. Wählen Sie die Leit-Curves aus.
+1. Erstellen Sie die Führungskurven.
+2. Fügen Sie an jedem Punkt, an dem die Führungskurve die Fläche berührt, einen Isoparam ein. Verwenden Sie den Befehl [**Isoparam**](isoparam).
+3. Wählen Sie die Kanten aus, die das Loch umschließen.
+4. Suchen Sie **Patch** im Menü „Vorgeschlagene Befehle“ oder in der Befehlspalette und führen Sie ihn aus.
+5. Wählen Sie die Führungskurven aus.
 6. Legen Sie die Optionen im Befehlsdialog fest.
-    - Die Optionen sind wie oben.
-7. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+    - Optionen sind identisch wie oben.
+7. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="patch-3"/>
 
 ## Mehrere Löcher patchen
 
-Sie können mehrere Löcher auf einmal patchen.
+Sie können mehrere Löcher gleichzeitig patchen.
 
-1. Wählen Sie die Sheets mit mehreren Löchern aus, die Sie patchen möchten.
-2. Klicken Sie auf den Button <ButtonIcon type="button-patch" /> rechts von der Befehlsleiste.
-3. Löcher werden gepatcht und zu Solid gemacht.
-<Callout emoji="❗">
-**Hinweis**<br />
-Wenn es ein Loch gibt, das nicht gefüllt werden kann, schlägt der Befehl fehl.
+1. Wählen Sie die Bleche mit mehreren Löchern aus, die gepatcht werden sollen.
+2. Suchen Sie **Patch** im Menü „Vorgeschlagene Befehle“ oder in der Befehlspalette und führen Sie ihn aus.
+3. Die Löcher werden gepatcht und zu Volumenkörpern geschlossen.
+<Callout type="warning">
+**Hinweis:** Wenn ein Loch nicht gefüllt werden kann, schlägt der Befehl fehl.
 </Callout>
 
 <VideoPlayer fileName="patch-4"/>
 
-## Schicht mit Patch trimmen 
+## Blech mit Patch trimmen
 
-Sie können eine Fläche mit dem Patch-Werkzeug zuschneiden.
+Sie können ein Blech mit dem Patch‑Werkzeug trimmen.
 
-1. Wählen Sie die Ziel-Fläche aus, die Sie zuschneiden möchten, und blenden Sie sie vorübergehend aus.
-2. Wählen Sie die Basis-Fläche aus und treffen Sie eine Kantenloop-Auswahl an der Stelle, wo sich ein Loch befindet.
-3. Wechseln Sie in den Körperauswahlmodus, blenden Sie die Ziel-Fläche wieder ein und fügen Sie eine additive Auswahl hinzu.
-5. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-patch"/> rechts in der Befehlsleiste.
-6. Stellen Sie die Optionen im Befehlsdialog ein.
-    - <Kst>Command Dialog</Kst>
-        - **Method:**
-            - **Trim to hole:** Trimmen Sie die Ziel-Fläche an das Loch der Basis-Fläche an.
-            - **Trim to sheet:** Trimmen Sie die Ziel-Fläche, um sie mit dem Endbereich der Basis-Fläche auszurichten.
-        - **Tolerance:** Geben Sie die Toleranz für den Patch an.
+1. Wählen Sie das Zielblech aus, das Sie trimmen möchten, und blenden Sie es vorübergehend aus.
+2. Wählen Sie das Basisblech aus und erstellen Sie eine Kantenloop‑Auswahl um das Loch.
+3. Wechseln Sie in den Körperauswahlmodus, blenden Sie das Zielblech wieder ein und fügen Sie es der Auswahl hinzu.
+5. Suchen Sie **Patch** im Menü „Vorgeschlagene Befehle“ oder in der Befehlspalette und führen Sie ihn aus.
+6. Legen Sie die Optionen im Befehlsdialog fest.
+    - <Kst>Befehlsdialog</Kst>
+        - **Methode:**
+            - **Trim to hole:** Trimmt das Zielblech zum Loch des Basisblechs.
+            - **Trim to sheet:** Trimmt das Zielblech, sodass es mit dem Endabschnitt des Basisblechs übereinstimmt.
+        - **Toleranz:** Gibt die Toleranz für den Patch an.
         
 <VideoPlayer fileName="patch-5"/>
 

@@ -1,32 +1,42 @@
 import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
 
-# Dimension
+## 寸法
 
-<Reference shortcut="= (等号)" command="Dimension" button="" />
+{/* <Reference shortcut="= (イコール)" command="寸法" button="" /> */}
 
-カーブの四角形の大きさや、円柱の直径などの寸法値を変更することができます。
+<CommandReference
+  command="寸法"
+  shortcut="="
+  button="コマンドパレット内"
+  buttonIcon="/img/button-dimension.png"
+  tier="both"
+/>
+
+## 説明
+
+矩形カーブのサイズやシリンダーの直径など、寸法値を変更します。
 
 ## 基本的な使い方
 
-1. 寸法値を変更したいオブジェクトを選択します。
-    | 寸法変更の対象               | Selection Mode |
-    | ---------------------------- | -------------- |
-    | カーブの四角形の2辺の長さ    | Edge           |
-    | カーブの円、円弧の直径       | Edge           |
-    | 円柱の直径                   | Face           |
-    | 球の直径                     | Solid          |
-    | 立方体の3辺の長さ            | Solid          |
-    | ソリッドのフィレットの大きさ | Face           |
-    | ソリッドの平面間の距離       | Face           |
-2. <kbd>=</kbd>を押すか、コマンドパレットから**Dimension**コマンドを選択します。
+1. 寸法を変更したいオブジェクトを選択します。
+    | 寸法変更の対象                           | 選択モード |
+    | ---------------------------------------- | ---------- |
+    | カーブ矩形の2辺の長さ                     | エッジ     |
+    | カーブの円または円弧の直径               | エッジ     |
+    | シリンダーの直径                         | フェース   |
+    | 球の直径                                 | ソリッド   |
+    | 立方体の3辺の長さ                         | ソリッド   |
+    | ソリッドのフィレットのサイズ             | フェース   |
+    | ソリッドの平面間距離                     | フェース   |
+2. <kbd>=</kbd> を押すか、コマンドパレットで **寸法** コマンドを使用します。
 3. 寸法値が表示されます。
-4. <kbd>Tab</kbd>を押して、寸法入力モードに入ります。
+4. <kbd>Tab</kbd> を押して寸法入力モードに入ります。
 5. 寸法値を入力します。
-6. 複数の寸法値があるときは、<kbd>Tab</kbd>を押して切り替え、寸法値を入力します。
-7. <kbd>Enter</kbd>を押して確定します。
+6. 複数の寸法がある場合、<kbd>Tab</kbd> を押して切り替えながら入力します。
+7. <kbd>Enter</kbd> を押して確定します。
 
 <VideoPlayer fileName="dimension"/>
 
 ## 関連項目
-- [Measure](measure)
+- [計測](/tool/measure)

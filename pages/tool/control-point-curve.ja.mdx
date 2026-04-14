@@ -4,34 +4,42 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Control Point Curve
+## Control Point Curve
 
-<Reference shortcut="" command="Control Point Curve" button="ツールバー" buttonIcon='button-control-point-curve'/>
+{/* <Reference shortcut="" command="Control Point Curve" button="Toolbar" buttonIcon='button-control-point-curve'/> */}
 
-制御点をクリックしてカーブを作成します。
+<CommandReference
+  command="Control Point Curve"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-control-point-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+コントロールポイントをクリックしてカーブを作成します。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-control-point-curve" /> をクリックします。
-2. カーブの始点でクリックします。
-3. 制御点をクリックしてカーブを作成します。
+1. ツールバーの <ButtonIcon type="button-control-point-curve" /> ボタンをクリックします。
+2. カーブの開始点をクリックします。
+3. コントロールポイントをクリックしてカーブを作成します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-      - <kbd>Tab</kbd> **Control / Through-point:** Spline Curveに切り替えます。
-      - <kbd>Ctrl + Z</kbd> **Undo:** 直前のクリックを取り消します。
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-4. 最後の制御点をクリックしたら、右クリックで確定します。
+      - <kbd>K</kbd> **Knife:** [ナイフモードの使用](/tool/sketching-essentials#use-knife-mode) を参照。
+      - <kbd>Tab</kbd> **コントロール / 通過点:** スプラインカーブに切り替えます。
+      - <kbd>Ctrl + Z</kbd> **元に戻す:** 最後のクリックを取り消します。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [軸に制限する](/tool/sketching-essentials#constrain-to-an-axis)。
+4. 最後のコントロールポイントをクリックしたら、右クリックで確定します。
 5. カーブが作成されます。
 
-<Callout type="info" emoji="💡">
-**２つのカーブの違い**
-- Spline Curve: カーブが通過する点をクリックして、カーブを作成します。
-- Control Point Curve: カーブの制御点をクリックして、カーブを作成します。
+<Callout type="info">
+**2 種類のカーブの違い**  
+   - **Spline Curve:** カーブはクリックしたすべての点を通過します。  
+   - **Control Point Curve:** クリックした点はコントロールポイントとなり、カーブ上に位置しない場合があります。
 </Callout>
 
 <VideoPlayer fileName="spline-and-control-point-curve"/>
 
 ## 関連項目
 - [Spline Curve](spline-curve)
-
-

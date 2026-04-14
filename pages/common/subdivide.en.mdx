@@ -1,0 +1,33 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## Subdivide
+
+{/* <Reference shortcut="" command="Subdivide" button="" /> */}
+
+<CommandReference
+  command="Subdivide"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-subdivide.png"
+  tier="both"
+/>
+
+## Description
+
+Increase the number of Control Vertices (CVs) on selected curves and the number of Degrees and Spans on selected surfaces by **doubling** their counts each time the command is run.
+
+## Basic Usage
+
+1. **Select** one or more curves or surfaces.  
+2. Open the Command Palette and type **Subdivide**.  
+3. The operation completes as follows:  
+   - **Surfaces:** Degrees and spans are increased by one count more, and the surface remains selected. This depends heavily on how the surface is constructed and how many spans and degrees there are.  
+   - **Curves:** CVs are doubled, and the newly created CVs become selected.
+
+<VideoPlayer fileName="subdivide"/>
+
+## See also
+- [Raise Degree](/sketch/raise-degree)
+- [Rebuild](/sketch/rebuild) 

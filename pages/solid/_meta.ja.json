@@ -1,6 +1,91 @@
 {
-    "solid-command-essentials": {
-        "title": "ソリッドコマンドの基本",
-        "display": "hidden"
-    }
+  "---boolean": { "type": "separator", "title": "ブーリアンとカット" },
+  "boolean": "ブーリアン",
+  "cut": "カット",
+
+  "---create": { "type": "separator", "title": "作成と複製" },
+  "alternative-duplicate": "代替複製",
+  "create-instance": "インスタンス作成",
+  "create-solid-and-sheet-instance": "ソリッドおよびシートのインスタンス作成",
+  "realize-instances": "インスタンスの実体化",
+  "realize-solid-and-sheet-instances": "ソリッドおよびシートインスタンスの実体化",
+
+  "---surface-creation": { "type": "separator", "title": "サーフェス作成" },
+  "bridge-surface": "ブリッジサーフェス",
+  "constrained-surface": "拘束サーフェス",
+  "extrude": "押し出し",
+  "loft": "ロフト",
+  "patch": "パッチ",
+  "pipe": "パイプ",
+  "polyspline": "ポリスプライン",
+  "revolve": "回転",
+  "square": "スクエア",
+  "sweep": "スイープ",
+  "xnurbs": "Xnurbs",
+
+  "---deform": { "type": "separator", "title": "変形とスライド" },
+  "deform": "変形",
+  "deform-solid-and-sheet": "ソリッドとシートの変形",
+  "slide": "スライド",
+  "slide-surface-cv": "サーフェスCVスライド",
+
+  "---delete": { "type": "separator", "title": "削除と除去" },
+  "delete-face": "フェース削除",
+  "delete-redundant-topology": "冗長トポロジー削除",
+  "remove-fillets-from-shell": "シェルのフィレット除去",
+  "remove-nominal-surface": "ノミナルサーフェス除去",
+
+  "---draft": { "type": "separator", "title": "ドラフトと整列" },
+  "align": "整列",
+  "align-surface": "サーフェス整列",
+  "draft-face": "ドラフトフェース",
+
+  "---extend": { "type": "separator", "title": "延長" },
+  "extend": "延長",
+  "extend-sheet": "シート延長",
+
+  "---fillet": { "type": "separator", "title": "フィレット" },
+  "fillet": "フィレット",
+  "fillet-shell": "シェルフィレット",
+
+  "---hollow": { "type": "separator", "title": "中空化と厚み付け" },
+  "hollow": "中空化",
+  "thicken": "厚み付け",
+  "thicken-face": "フェース厚み付け",
+
+  "---imprint": { "type": "separator", "title": "インプリント" },
+  "imprint": "インプリント",
+  "imprint-body-body": "ボディ同士のインプリント",
+  "imprint-curve-body": "カーブとボディのインプリント",
+
+  "---join": { "type": "separator", "title": "結合と分離" },
+  "join": "結合",
+  "join-sheets": "シート結合",
+  "unjoin": "分離",
+  "unjoin-faces": "フェース分離",
+  "unjoin-shells": "シェル分離",
+
+  "---offset": { "type": "separator", "title": "オフセット" },
+  "offset-curve": "カーブオフセット",
+  "offset-edge": "エッジオフセット",
+  "offset-face": "フェースオフセット",
+  "offset-face-loop": "フェースループオフセット",
+
+  "---rebuild": { "type": "separator", "title": "再構築と調整" },
+  "isoparam": "アイソパラメータ",
+  "match-face": "フェースマッチ",
+  "raise-degree": "次数上げ",
+  "raise-surface-degree": "サーフェス次数上げ",
+  "rebuild": "再構築",
+  "rebuild-face": "フェース再構築",
+  "reverse": "反転",
+  "reverse-sheet": "シート反転",
+
+  "---trim": { "type": "separator", "title": "トリムと展開" },
+  "untrim": "アントリム",
+  "unwrap-face": "フェース展開",
+
+  "---display": { "type": "separator", "title": "表示と解析" },
+  "find-boundary-edges": "境界エッジを検索",
+  "toggle-surface-curvature": "サーフェス曲率の切り替え"
 }

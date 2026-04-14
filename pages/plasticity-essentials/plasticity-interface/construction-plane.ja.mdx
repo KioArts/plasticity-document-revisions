@@ -1,0 +1,137 @@
+---
+title: 作業平面（Construction Planes）
+description: 作業平面の使い方ガイド。作成、保存、名前変更、再利用の方法。
+---
+import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import Kst from '/components/KeyboardShortcutsTitle'
+
+# 作業平面（Construction Planes）
+
+カーブはアクティブな作業平面上に作成されます。
+作業平面には XY・YZ・XZ 平面があり、新しい作業平面を作成することもできます。
+
+### XY・YZ・XZ 平面の使用
+
+- <kbd>Numpad 7</kbd>: XY 平面を使用（上面図）
+- <kbd>Numpad 3</kbd>: YZ 平面を使用（右側面図）
+- <kbd>Numpad 1</kbd>: XZ 平面を使用（前面図）
+
+### 2D スナップの使用
+
+2D スナップを有効にすると、選択したポイントがすべてアクティブな作業平面上に投影され、3D 空間ではなく平面の向きに沿って動作が制限されます。  
+このオプションは右側の「Planes」メニューにあります。
+
+![2D Snapping](/img/planes-2d-snapping.png)
+
+<Callout type="info">
+ **注意:** 2D スナップには **アクティブな作業平面** が必要です。CPlane が設定されていない場合、この機能は効果がありません。
+</Callout>
+
+<VideoPlayer fileName="construction-plane-0"/>
+
+### 1. サーフェスに合わせた作業平面の作成
+
+ソリッドまたはシートの面に合わせた作業平面を作成できます。
+
+1. 作業平面として使用したい面または領域を選択します。
+2. <kbd>Space</kbd> を押します。
+3. 作業平面が作成されます。
+4. ビューが作成された作業平面に合わせて調整されます。
+
+- ビューを変更したくない場合は <kbd>Shift + Space</kbd> を押します。
+
+<VideoPlayer fileName="construction-plane-1"/>
+
+### 2. 面とエッジを使って垂直な作業平面を作成
+
+面とエッジを選択することで、面に対して垂直な作業平面を作成できます。
+
+1. 使用したい面とエッジを選択します。
+2. <kbd>Space</kbd> を押します。
+3. 作業平面が作成されます。
+4. ビューが作成された作業平面に合わせて調整されます。
+
+- ビューを変更したくない場合は <kbd>Shift + Space</kbd> を押します。
+
+<VideoPlayer fileName="construction-plane-6"/>
+
+<Callout type="info" emoji="💡">
+**ヒント**  
+   面の選択はビューの基準方向を決め、エッジの選択はビューの向きを決めるガイドとして機能します。
+</Callout>
+
+### 3. 対向する平行面から中間作業平面を作成
+
+対向する平行な面または領域の平均位置に基づいて、中間位置の作業平面を作成できます。
+
+1. 少なくとも 2 つの対向する面または領域を選択します。
+2. <kbd>Space</kbd> を押します。
+3. 中間作業平面が作成されます。
+4. ビューが作成された作業平面に合わせて調整されます。
+
+- ビューを変更したくない場合は <kbd>Shift + Space</kbd> を押します。
+
+<VideoPlayer fileName="construction-plane-2"/> 
+
+### 4. 複数のポイントから作業平面を作成
+
+2 点以上のポイントに基づいて作業平面を作成できます。
+
+1. 作業平面として使用したいポイントを 2 点以上選択します。
+2. <kbd>Space</kbd> を押します。
+3. 2 点の場合、カメラに平行で、選択した 2 点を通る作業平面が作成されます。これはビュー方向に合わせて面やハルを整列させる際に便利です。
+3. 3 点の場合はその位置に正確に作成され、4 点以上の場合は平均位置に作成されます。
+4. ビューが作成された作業平面に合わせて調整されます。
+
+- ビューを変更したくない場合は <kbd>Shift + Space</kbd> を押します。
+- スケッチの領域を選択して、その領域に合わせた作業平面を作成することもできます。
+
+<VideoPlayer fileName="construction-plane-3"/>
+
+### 5. 現在のビューに合わせた作業平面の作成
+
+現在のビュー方向に合わせた作業平面を作成できます。
+
+#### 5.1 ワールド原点を通る作業平面
+
+1. 作業平面の向きとなるビューを調整します。
+2. <kbd>Ctrl + Space</kbd> を押します。
+3. 作業平面が作成されます。
+
+<VideoPlayer fileName="construction-plane-4"/> 
+
+#### 5.2 選択したポイントを通る作業平面
+
+1. 作業平面の向きとなるビューを調整します。
+2. <kbd>Ctrl + Shift + Space</kbd> を押します。
+3. 作成したい作業平面の原点をクリックします。
+4. 作業平面が作成されます。
+
+<VideoPlayer fileName="construction-plane-5"/> 
+
+### 6. 作業平面の保存と利用
+
+作成した作業平面は保存して再利用できます。
+
+#### 6.1 作業平面の保存
+
+1. 画面上部の **Temporary construction plane** をクリックします。
+2. **Custom plane 0** が Outliner の「Planes」および右側の「Added Planes」メニューに追加されます。
+
+![Outliner Planes](/img/construction-plane-saved.png) 
+
+![Added Planes](/img/planes-added-planes.png)  
+
+#### 6.2 保存した作業平面の利用
+
+1. 右側の **Custom plane 0** をクリックします。
+2. 保存された作業平面がアクティブになります。
+
+- **Custom plane 0** をダブルクリックすると、作業平面がアクティブになり、ビューもその平面に合わせて調整されます。
+
+#### 6.3 作業平面の名前変更
+
+1. Outliner 内の保存された作業平面をダブルクリックします。
+2. 名前を変更し、Enter または 3D ビューポート内を左クリックします。

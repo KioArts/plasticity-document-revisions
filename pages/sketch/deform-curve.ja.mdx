@@ -3,37 +3,59 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Deform Curve
+{/* # Deform Curve
 
-<Reference shortcut="" command="Deform" button="" />
+<Reference shortcut="" command="Deform" button="" /> */}
 
-既存のソリッドおよびシートオブジェクトを、規則的および不規則な表面にラップします。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/deform-curve.mp4"
+  alt="Deform Curve Preview" 
+  title="Deform Curve"
+  command="Deform"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-deform.png" alt="Deform Icon" />}
+/> */}
+
+## カーブの変形
+
+<CommandReference
+  command="Deform"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-deform.png"
+  tier="both"
+/>
+
+## 説明
+
+既存のカーブを規則的または不規則なサーフェスに沿わせます。このツールは、選択したカーブをターゲットジオメトリに直接投影または適合させ、形状を維持しながら下のサーフェスの輪郭に合わせます。彫刻パス、パーティングラインの定義、ガイドカーブのレイアウトなどのタスクに役立ちます。
 
 ## 基本的な使い方
 
-1. ラップしたいオブジェクトを選択します。
-2. コマンドパレットに **Deform** と入力します
-3. 中立平面として参照面を選択します。
-4. オブジェクトを変形させる対象面を選択します。
+1. 変形したいカーブを選択します。
+2. コマンドパレットに **Deform** と入力します。
+3. 既存のカーブがニュートラル平面として配置されている参照フェースを選択します。
+4. カーブを変形させるターゲットフェースを選択します。
 5. コマンドダイアログでオプションを設定します。
-    - <Kst>コマンドダイアログ</Kst>
-          - **スケール:** Z、Y、X 値でスケールします。
-          - **オフセット:** Z、Y、X 値でオフセットします。
-          - **反転:** 
-                - **ミラー:** 変形したオブジェクトを、表面に対して水平方向に鏡像反転します。
-                - **UV:** 変形したオブジェクトのUおよびVの向きを反転します。
-                - **法線:** 変形したオブジェクトの法線を反転します。
-          - **ツールを保持:** ツールオブジェクトをそのまま保持しながら、Deform 操作を実行します。
-6. コマンドダイアログで OK をクリックするか、右クリックして確認します。
+    - <Kst>Command Dialog</Kst>
+          - **スケール:** **U, V, N** 値でのスケール。
+          - **オフセット:** **U, V, N** 値でのオフセット。
+          - **反転:**
+                - **ミラー:** 変形したカーブをZ軸でミラーします。
+                - **UV:** 変形したカーブのUとVの向きを反転します。
+                - **法線:** 変形したカーブの法線を反転します。
+          - **ツールを保持:** ツールオブジェクトをそのままにしながら変形操作を実行します。
+6. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="deform-curve"/>
 
-<Callout type="info" emoji="ℹ️">
-スケールとオフセットは、パラメトリック値を調整する際にXYZ座標系の代わりにUVN座標系を使用します。これにより、変形したオブジェクトの向きをターゲット表面に対する特定のポイントで定義できます。UVN座標系についての詳細は, [こちら](/cad-essentials/uvn-coordinate-system)をクリックしてください。
+<Callout type="info">
+スケールとオフセットは、パラメトリック値を調整する際に **XYZ** 座標系の代わりに **UVN** 座標系を使用します。これにより、ターゲットサーフェスとの関係における特定の点での変形オブジェクトの向きを定義できます。UVN座標系の詳細については、[こちら](/cad-essentials/uvn-coordinate-system)をクリックしてください。
 </Callout>
 
-### アンラップフェイスコマンドによる曲線変形
+### アンラップフェースコマンドを使用したカーブの変形
 
-望ましくない変形や不正確な配置を避けるために、対象オブジェクトに対してコマンドパレットの「アンラップフェイス」コマンドを使用します。これにより、正しくマッピングされたサーフェスが生成され、その後、正確な参照面として使用できます。
+不要な変形や不正確な配置を避けるには、ターゲットオブジェクトのコマンドパレットから[フェースのアンラップ](/solid/unwrap-face)コマンドを使用します。これにより正確にマッピングされたサーフェスが生成され、正確な参照フェースとして使用できます。
 
 <VideoPlayer fileName="deform-curve-unwrap"/>

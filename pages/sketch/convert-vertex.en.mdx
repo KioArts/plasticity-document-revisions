@@ -2,11 +2,33 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 
-# Convert Vertex
+{/* # Convert Vertex
 
-<Reference shortcut="" command="Convert Vertex" button="" />
+<Reference shortcut="" command="Convert Vertex" button="" /> */}
 
-Convert Vertices to Control-Vertices.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/convert-vertex.mp4"
+  alt="Convert Vertex Preview"
+  title="Convert Vertex"
+  command="Convert Vertex"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-convert-vertex.png" alt="Convert Vertex Icon" />}
+/> */}
+
+## Convert Vertex
+
+<CommandReference
+  command="Convert Vertex"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-convert-vertex.png"
+  tier="both"
+/>
+
+## Description
+
+Converts standard Vertices into Control-Vertices.
 
 ## Basic Usage
 
@@ -14,8 +36,8 @@ Convert Vertices to Control-Vertices.
 2. Use the **Convert Vertex** command in the Command Palette.
 3. The Vertices are now Control Vertices.
 
-<Callout type="info" emoji="ℹ️">
-  You can also convert Vertex by double-clicking on it.
+<Callout type="info">
+You can also convert a Vertex by double-clicking on it.
 </Callout>
 
 <VideoPlayer fileName="convert-vertex"/>

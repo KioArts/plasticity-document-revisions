@@ -1,0 +1,44 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
+
+## Slot
+
+{/* <Reference shortcut="Shift + P" command="Sweep" button="In Suggested Commands Menu"  buttonIcon="button-sweep"/> */}
+
+<CommandReference
+  command="Slot"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-slot.png"
+  tier="both"
+/>
+
+## Description
+
+Offsets a curve symmetrically on both sides and closes each end with a tangent arc, producing a closed slot profile.
+
+<Callout type="info">
+**Note:** The curve must be open and not self-intersecting for the command to work.
+</Callout>
+
+## Basic Usage
+
+1. Select a curve to offset.
+2. Search for **Slot** in the Command Palette, or press <kbd>O</kbd> twice to invoke **Offset Curve** command and activate Slot automatically.
+3. Set the options in the Command Dialog and Keyboard Shortcuts.
+   - <Kst>Command Dialog</Kst>
+      - **Width:** Specify the width.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>D</kbd> **Distance:** Specify the width.
+4. Confirm with OK in the Command Dialog or right-click.
+5. The slot profile is created.
+
+<VideoPlayer fileName="slot"/>
+
+## See also
+
+- [Offset Curve](/sketch/offset-curve)
+- [Tangent Arc](/tool/tangent-arc)

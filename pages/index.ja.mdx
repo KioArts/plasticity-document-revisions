@@ -1,36 +1,88 @@
 ---
-title: Plasticity Manual
-description: The official manual for Plasticity 3D. All keyboard shortcuts. Updated daily!
+title: Plasticity マニュアル
+description: Plasticity 3D の公式マニュアル。すべてのキーボードショートカットを掲載。毎日更新！
 ---
+import ResourceSection from "../components/ResourceSection.jsx";
 
-import Hero from "../components/Hero.jsx"
-import FeatureGrid from "../components/FeatureGrid.jsx"
-import ResourceSection from "../components/ResourceSection.jsx"
+<div style={{margin: '2em 0'}}>
+    <span style={{fontSize: '2em'}}><span style={{fontWeight: 800}}>Plasticity&nbsp;</span>マニュアル</span>
+</div>
 
-<div className="homepage">
-
-<Hero
-  title="Plasticity Documentation"
-  subtitle="Your complete guide to modeling, sculpting, and designing with precision."
-  ctaText="Start Learning"
-  ctaLink="/docs/getting-started"
-/>
-
-<FeatureGrid
-  features={[
-    { title: "Precision Modeling", description: "Accurate CAD tools.", icon: "/icons/precision.svg" },
-    { title: "Sculpting Tools", description: "Organic workflows.", icon: "/icons/sculpt.svg" },
-    { title: "Rendering", description: "Beautiful visuals.", icon: "/icons/render.svg" }
+<ResourceSection
+  title="イントロダクション"
+  items={[
+    {
+      title: "リリースノート",
+      description: "新機能や変更点を記録したリリースノートを掲載するページです。",
+      link: "/release-notes"
+    },
+    {
+      title: "はじめに",
+      description: "ライセンス、主要機能、インストール手順、サポート情報など、Plasticity を始めるための概要。",
+      link: "/getting-started"
+    },
+    {
+      title: "Plasticity 基本",
+      description: "Plasticity の仕組みを学び、理解するための基本項目です。",
+      link: "/plasticity-essentials"
+    },
+    {
+      title: "CAD 基礎",
+      description: "上級ユーザー向けの主要な CAD コンセプトとテクニック。",
+      link: "/cad-essentials"
+    },
+    {
+      title: "コマンド一覧とショートカットキー",
+      description: "すべてのコマンドとショートカットキーの完全リスト。PDF もダウンロード可能。",
+      link: "/all-commands"
+    }
   ]}
 />
 
 <ResourceSection
-  title="Explore Resources"
+  title="ツール"
   items={[
-    { title: "Tutorials", description: "Learn step-by-step.", image: "/images/tutorials.jpg", link: "/docs/tutorials" },
-    { title: "Advanced Guides", description: "Deep technical knowledge.", image: "/images/advanced.jpg", link: "/docs/advanced" },
-    { title: "API Reference", description: "Extend Plasticity.", image: "/images/api.jpg", link: "/docs/api" }
+    {
+      title: "スケッチ and プリミティブツール",
+      description: "形状をスケッチし、基本的なプリミティブを作成するためのツールを学びます。",
+      link: "/tool"
+    },
   ]}
 />
 
-</div>
+<ResourceSection
+  title="コマンド"
+  items={[
+    {
+      title: "共通コマンド",
+      description: "主要なスケッチおよびソリッドコマンドの統合概要。",
+      link: "/common"
+    },
+    {
+      title: "スケッチ",
+      description: "2D スケッチの作成と編集に特化したコマンド。",
+      link: "/sketch"
+    },
+    {
+      title: "ソリッド",
+      description: "3D ソリッド形状を構築・編集するためのコマンド。",
+      link: "/solid"
+    },
+  ]}
+/>
+
+<ResourceSection
+  title="連携"
+  items={[
+    {
+      title: "Blender",
+      description: "Plasticity を Blender ワークフローに統合する方法を学びます。",
+      link: "/blender"
+    },
+    {
+      title: "Cinema 4D",
+      description: "Plasticity を Cinema 4D ワークフローに統合する方法を学びます。",
+      link: "/cinema-4d"
+    }
+  ]}
+/>

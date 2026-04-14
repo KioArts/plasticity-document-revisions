@@ -2,27 +2,38 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import VideoPlayer from '/components/VideoPlayer';
 
-# Measure Distance
+## Abstand messen (Measure Distance)
 
-<Reference shortcut="Ctrl + =" command="Measure Distance" button="Toolbar" buttonIcon='button-measure' />
+{/* <Reference shortcut="Ctrl + =" command="Measure Distance" button="Toolbar" buttonIcon='button-measure' /> */}
 
-Messen Sie Dimensionen wie die Größe einer rechteckigen Curve oder den Durchmesser eines Zylinders. 
-Die Maßwerte aktualisieren sich entsprechend der Verformung des gemessenen Objekts.
+<CommandReference
+  command="Measure Distance"
+  shortcut="Ctrl + ="
+  button="In der Werkzeugleiste"
+  buttonIcon="/img/button-measure.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Messen Sie Abmessungen wie die Größe einer rechteckigen Kurve oder den Durchmesser eines Zylinders.  
+Die Maßwerte aktualisieren sich automatisch entsprechend der Verformung des gemessenen Objekts.
 
 ## Grundlegende Verwendung
 
-1. Drücken Sie <kbd>Strg + =</kbd> oder verwenden Sie den **Measure Distance**-Befehl in der Befehlspalette.
-2. Wählen Sie die Curve, Edge oder den Schnapp-Punkt, den Sie messen möchten.
-3. Bewegen Sie den Cursor zur gewünschten Achse und klicken Sie, um die Platzierung der Dimension zu bestätigen.
-4. Maßwerte werden angezeigt, entsprechend den Koordinatenachsen der Konstruktionsebene. Zusätzlich wird 'Measurements' im Outliner hinzugefügt.
-
+1. Drücken Sie <kbd>Ctrl + =</kbd> oder verwenden Sie den Befehl **Measure Distance** in der Befehlspalette.
+2. Wählen Sie die Kurve, Kante oder den Fangpunkt aus, den Sie messen möchten.
+3. Bewegen Sie den Cursor zur gewünschten Achse und klicken Sie, um die Platzierung des Maßes zu bestätigen.
+4. Die Maßwerte werden entsprechend den Koordinatenachsen der Konstruktionsebene angezeigt. Zusätzlich wird ein Eintrag unter **Measurements** im Outliner hinzugefügt.
+5. Um die Position der Messung anzupassen, wähle sie im Outliner aus und drücke <kbd>G</kbd>, um sie entlang ihrer Achse zu bewegen.
 <Callout type="info">
-- Sie können auch Maßwerte basierend auf einer benutzerdefinierten Konstruktionsebene anzeigen. Anweisungen zur Erstellung einer Konstruktionsebene finden Sie [hier](/plasticity-essentials/construction-plane).
+**Hinweis:** Sie können Maßwerte auch basierend auf einer benutzerdefinierten Konstruktionsebene anzeigen. Eine Anleitung zum Erstellen einer Konstruktionsebene finden Sie [hier](/plasticity-essentials/construction-plane).
 </Callout>
 
-## Messen des geradlinigen Abstands zwischen zwei Punkten
+## Messen der Geradlinigen Entfernung zwischen zwei Punkten
 
-- Durch Rechtsklick beim Bestätigen des Maßwerts können Sie den geradlinigen Abstand zwischen zwei Punkten messen.
+- Durch Rechtsklick beim Bestätigen des Maßwerts können Sie die direkte Entfernung zwischen zwei Punkten messen.
+
 <VideoPlayer fileName="measure-2"/>
 
 ## Siehe auch

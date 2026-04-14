@@ -4,39 +4,50 @@ import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Radial Array（円形状配列で複製）
+## 放射状配列
 
-<Reference shortcut="" command="Radial Array" button="コマンドバー右"  buttonIcon='button-radial-array'/>
+{/* <Reference shortcut="" command="放射状配列" button="コマンドバー右側"  buttonIcon='button-radial-array'/> */}
 
-角度と数を指定して、オブジェクトを円形パターンで複製できます。放射状の複製およびインスタンス複製も可能です。
+<CommandReference
+  command="放射状配列"
+  shortcut=""
+  button="コマンドバー内"
+  buttonIcon="/img/button-radial-array.png"
+  tier="both"
+/>
 
-<Callout>
-画像およびメッシュ（.OBJ、.STL、.FBX など）は、複製角度と複製数を制御して配置できます。ただし、インスタンス化はサポートされていません。
+## 説明
+
+角度と数を指定して、オブジェクトを円形パターンで複製します。放射状およびインスタンスによる複製も可能です。
+
+<Callout type='info'>
+**注意:** 画像およびメッシュ（.OBJ、.STL、.FBX など）は配列でき、複製角度やコピー数を調整できます。インスタンスオブジェクトの配列もサポートされています。
 </Callout>
 
 ## 基本的な使い方
 
 1. 複製したいオブジェクトを選択します。
-2. コマンドバー右のボタン <ButtonIcon type="button-radial-array" /> をクリックします。
-3. 中心にしたい点をクリックします。
+2. コマンドバー右側の <ButtonIcon type="button-radial-array" /> ボタンをクリックします。
+3. 中心として設定したい点をクリックします。
 4. 複製プレビューが表示されます。
-5. コマンドダイアログとキーボードショートカットでオプションを設定します。
+5. コマンドダイアログおよびキーボードショートカットでオプションを設定します。
    - <Kst>コマンドダイアログ</Kst>
    - **モード:**
-         - **合計:** 指定した次数値で、すべての複製が均等に配置される合計距離を指定します。 
+         - **トータル:** 指定した角度値に基づき、すべての複製を均等に配置する総距離を指定します。
          - **間隔:** 各複製の間隔距離を指定します。
-      - **Degrees:** 複製する角度を指定します。
-      - **Number 2:** Specify the number of duplications.
-      - **Number 1:** Specify the number of repetitions in a radial pattern.
-      - **Step 1:** Specify the distance between each repetition in a radial pattern.
-      - **Make instances:** Create instances instead of independent copies. (See [Create Instances](/solid/create-instance))
+   - **角度:** 複製の角度を指定します。
+   - **数 2:** 複製数を指定します。
+   - **数 1:** 放射状パターンの繰り返し数を指定します。
+   - **ステップ 1:** 放射状パターンの各繰り返し間の距離を指定します。
+   - **インスタンス作成:** 独立したコピーではなくインスタンスを作成します。（[インスタンス作成](/solid/create-instance) を参照）
    - <Kst>キーボードショートカット</Kst>
-   - <kbd>Shift</kbd> + ホイール上回転 **Add copy:** 複製の数を増やします。
-   - <kbd>Shift</kbd> + ホイール下回転 **Subtract copy:** 複製の数を減らします。
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+   - <kbd>Shift + ホイール上</kbd> **コピー追加:** 複製数を増やします。
+   - <kbd>Shift + ホイール下</kbd> **コピー削減:** 複製数を減らします。
+   - <kbd>I</kbd> **インスタンス切り替え:** ミラーされた半分をインスタンスとして作成するか、独立コピーとして作成するかを切り替えます。
+6. コマンドダイアログで OK を押すか、右クリックで確定します。
 
 <VideoPlayer fileName="radial-array"/>
 
 ## 関連項目
-- [Curve Array](curve-array)
-- [Rectangular Array](rectangular-array)
+- [カーブ配列](curve-array)
+- [矩形配列](rectangular-array)

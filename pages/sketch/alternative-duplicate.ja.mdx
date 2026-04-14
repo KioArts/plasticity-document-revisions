@@ -1,34 +1,61 @@
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
+import VideoPlayer from '/components/VideoPlayer';
 
-# Alternative Duplicate
+{/* # Alternative Duplicate
 
-<Reference shortcut="Alt + D" command="Alternative Duplicate" button=""/>
+<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" /> */}
 
-カーブを現在の構築平面に法線の方向に投影し、カーブを生成します。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/alternative-duplicate-sketch.mp4"
+  alt="Alternative Duplicate Preview"
+  title="Alternative Duplicate"
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-duplicate.png" alt="Alternative Duplicate Icon" />}
+/> */}
+
+## 代替複製
+
+<CommandReference
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button="In Command Palette"
+  buttonIcon="/img/button-duplicate.png"
+  tier="both"
+/>
+
+## 説明
+
+法線方向に沿って現在の構築平面にカーブを投影し、新しいカーブを生成します。生成された投影は、カーブの全体的な形状と連続性を維持しながら、元のジオメトリを平面上に平坦化します。
+
+<Center width="450px">
+![代替複製](/img/alternative-duplicate.svg)
+</Center>
 
 ## 基本的な使い方
 
-1. 投影したい構築平面をセットします。
+1. 投影に使用する構築平面を設定します。詳細については、[構築平面](/plasticity-essentials/plasticity-interface/construction-plane)を参照してください。
 2. 投影するカーブを選択します。
 3. <kbd>Alt + D</kbd> を押してコマンドを実行します。
-4. 投影された曲線が現在の構築平面に作成されます。
-5. 移動ギズモを使用して曲線を移動することもできます。
-  - 移動方向を限定することもできます。
-  - <Kst>キーボードショートカット</Kst>
-    - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-    - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z-plane:** X, Y, Z平面に拘束します。
-    - <kbd>G</kbd> **Screen space:** 見た目の平面に限定します。
-    - <kbd>F</kbd> **Freestyle:** 最初のクリックで始点、次のクリックで終点を指定します。
-    - <kbd>V</kbd> **Pivot:** ギズモの位置をクリックして指定します。
-    - <kbd>W</kbd> **Worldspace:** ギズモの座標軸を元に戻します。
-6. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+4. 投影されたカーブが現在の構築平面上に作成されます。
+5. 右クリックするか、コマンドダイアログの **OK** をクリックして確定します。
+
+<Callout type='info'>
+**ヒント:** 投影後、[移動](/common/move)ギズモを使用して結果のカーブを再配置できます。
+</Callout>
+
+<VideoPlayer fileName="alternative-duplicate-curve"/>
 
 ## 関連項目
-- [Project Outline](project-outline)
-- [Create Outline](create-outline)
-- [Project Curve Body](project-curve-body)
-- [Project Curve Curve](project-curve-curve)
-- [Project Body Body](project-body-body)
-- [Offset Curve](offset-curve)
+- [カーブの複製と投影](duplicate-curve-and-project)
+- [輪郭の投影](project-outline)
+- [輪郭の作成](create-outline)
+- [カーブボディの投影](project-curve-body)
+- [カーブとカーブの投影](project-curve-curve)
+- [ボディとボディの投影](project-body-body)
+- [カーブのオフセット](offset-curve)

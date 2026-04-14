@@ -1,11 +1,33 @@
 import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
+import { Center } from '/components/Center'
 
-# Project Outline
+{/* # Project Outline
 
-<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" />
+<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" /> */}
 
-Project the outline of the Solids or Sheets onto the current construction plane along the normal direction, thereby generating a Curves.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-outline-sketch.mp4"
+  alt="Project Outline Preview"
+  title="Project Outline"
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button=""
+  buttonIcon={<img src="/img/button-alternative-duplicate.png" alt="Alternative Duplicate Icon" />}
+/> */}
+## Project Outline
+
+<CommandReference
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button="In Command Palette"
+  buttonIcon="/img/button-alternative-duplicate.png"
+  tier="both"
+/>
+
+## Description
+
+Project the outlines of solids or sheets onto the active construction plane along their normal direction, generating a matching new curve.
 
 ## Basic Usage
 
@@ -15,7 +37,7 @@ Project the outline of the Solids or Sheets onto the current construction plane 
 4. The projected Curves will be created on the current construction plane.
 5. Optionally, you can move the Curves using the Move Gizmo.
 6. Right-click or click OK in the Command Dialog to confirm.
-<br/>
+
 <VideoPlayer fileName="project-outline"/>
 
 ## See also

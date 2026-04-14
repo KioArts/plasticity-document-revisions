@@ -3,11 +3,38 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Text
+{/* # Text
 
-<Reference shortcut="" command="Text" button="" />
+<Reference shortcut="" command="Text" button="" /> */}
 
-Creates Curves from the inputted text. Built-in fonts and sizes can be specified.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/text.mp4"
+  alt="Text Preview"
+  title="Text"
+  command="Text"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-text.png" alt="Text Icon" />}
+/> */}
+
+## Text
+
+<CommandReference
+  command="Text"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-text.png"
+  tier="both"
+/>
+
+## Description
+
+Creates Curves from the inputted text. Built-in fonts and sizes can be specified, however, installing custom fonts is currently unavailable.
+
+<Callout type="default">
+**Note**<br/>
+The default font size is 1cm in height and the text will be positioned at the origin of the XY plane.
+</Callout>
 
 ## Basic Usage
 
@@ -20,9 +47,5 @@ Creates Curves from the inputted text. Built-in fonts and sizes can be specified
 3. Confirm with OK in the Command Dialog or right-click.
 4. The text Curves are created.
 
-<Callout emoji="❗">
-**Note**<br />
-The default font size is 1cm in height and the text will be positioned at the origin of the XY plane.
-</Callout>
 
 <VideoPlayer fileName="text"/>

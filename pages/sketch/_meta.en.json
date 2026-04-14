@@ -1,0 +1,78 @@
+{
+  "---bridge": { "type": "separator", "title": "Bridge and Connect" },
+  "bridge": "Bridge",
+  "bridge-curve": "Bridge Curve",
+  "bridge-edge": "Bridge Edge",
+  "bridge-vertex": "Bridge Vertex",
+
+  "---cut": { "type": "separator", "title": "Cut and Trim" },
+  "cut-curve": "Cut Curve",
+  "trim": "Trim",
+  "split-segment": "Split Segment",
+
+  "---deform": { "type": "separator", "title": "Deform and Slide" },
+  "deform": "Deform",
+  "deform-curve": "Deform Curve",
+  "slide": "Slide",
+  "slide-curve-cv": "Slide Curve CV",
+
+  "---align": { "type": "separator", "title": "Align" },
+  "align": "Align",
+  "align-vertex": "Align Vertex",
+
+  "---extend": { "type": "separator", "title": "Extend" },
+  "extend": "Extend",
+  "extend-curve": "Extend Curve",
+
+  "---fillet": { "type": "separator", "title": "Fillet" },
+  "fillet": "Fillet",
+  "fillet-curve": "Fillet Curve",
+  "fillet-vertex": "Fillet Vertex",
+
+  "---join": { "type": "separator", "title": "Join and Unjoin" },
+  "join": "Join",
+  "join-curves": "Join Curves",
+  "unjoin": "Unjoin",
+  "unjoin-curve": "Unjoin Curve",
+
+  "---offset": { "type": "separator", "title": "Offset" },
+  "offset-curve": "Offset Curve",
+  "offset-planar-curve": "Offset Planar Curve",
+  "offset-region": "Offset Region",
+  "offset-vertex": "Offset Vertex",
+  "slot": "Slot",
+
+  "---project": { "type": "separator", "title": "Project" },
+  "project": "Project",
+  "project-body-body": "Project Body Body",
+  "project-curve-body": "Project Curve Body",
+  "project-curve-curve": "Project Curve Curve",
+  "project-outline": "Project Outline",
+  "alternative-duplicate": "Alternative Duplicate",
+  "duplicate-curve-and-project": "Duplicate Curve and Project",
+  "create-outline": "Create Outline",
+
+  "---rebuild": { "type": "separator", "title": "Rebuild and Refine" },
+  "convert-vertex": "Convert Vertex",
+  "delete-redundant-topology": "Delete Redundant Topology",
+  "insert-knot": "Insert Knot",
+  "raise-curve-degree": "Raise Curve Degree",
+  "raise-degree": "Raise Degree",
+  "rebuild": "Rebuild",
+  "rebuild-curve": "Rebuild Curve",
+  "reverse": "Reverse",
+  "reverse-curve": "Reverse Curve",
+
+  "---instances": { "type": "separator", "title": "Instances" },
+  "create-instance": "Create Instance",
+  "create-curve-instance": "Create Curve Instance",
+  "realize-instances": "Realize Instances",
+  "realize-curve-instances": "Realize Curve Instances",
+
+  "---text": { "type": "separator", "title": "Text" },
+  "text": "Text",
+
+  "---display": { "type": "separator", "title": "Display and Analysis" },
+  "toggle-curve-curvature": "Toggle Curve Curvature",
+  "toggle-points": "Toggle Points"
+}

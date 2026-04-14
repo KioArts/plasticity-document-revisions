@@ -1,9 +1,32 @@
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import VideoPlayer from '/components/VideoPlayer';
 
-# Project Curve Body [#project-curve-body]
+{/* # Project Curve Body [#project-curve-body]
 
-<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/>
+<Reference shortcut="I" command="Project" button="In Suggested Commands Menu"  buttonIcon='button-project'/> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-curve-body-sketch.mp4"
+  alt="Project Curve Body Preview"
+  title="Project Curve Body"
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-project.png" alt="Project Curve Body Icon" />}
+/> */}
+
+## Project Curve Body
+
+<CommandReference
+  command="Project"
+  shortcut="I"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-project.png"
+  tier="both"
+/>
+
+## Description
 
 Create a new Curve by projecting a Curve onto a Solid or Sheet. Choose projection method normal or direction vector. Bidirectional is also available.
 
@@ -11,19 +34,23 @@ Create a new Curve by projecting a Curve onto a Solid or Sheet. Choose projectio
 
 1. Select the Solid or Sheet to project onto.
 2. Press <kbd>I</kbd> or click the button.
-3. Select the  Curve to project.
-4. Set the options in the Command Dialog:
+3. Select the Curve to project.
+4. Set the options in the Command Dialog and Keyboard Shortcuts.
    - <Kst>Command Dialog</Kst>
       - **Method:**
             - **Normal:** Projects in the positive Z-axis direction based on the construction plane.
-            - **Vector:** Projects in a linear direction. **Bidirectional** and **Hide occlusion** will be enabled.
-            ![Project Curve Body Method Demonstration](/img/project-curve-body-method.png)
-      - **Bidirectional:** When enabled, the projection will also occur in the negative direction of the specified axis.
-      ![Project Curve Body Bidirectional Demonstration](/img/project-curve-body-bidirectional.png)
+            - **Vector:** Projects in a linear direction. **Bidirectional** and **Hide occlusion** will be enabled.     
+            <img src="/img/project-curve-body-method.svg" width="500" />
+      - **Bidirectional:** When enabled, the projection will also occur in the negative direction of the specified axis.      
+      <img src ="/img/project-curve-body-bidirectional.svg" width="500" />
       - **Hide occluded:** When enabled, the projection will not occur on hidden Faces in the positive direction of the specified axis.
-      ![Project Curve Body Hide Occluded Demonstration](/img/project-curve-body-hide-occluded.png)
+      <img src ="/img/project-curve-body-hide-occluded.svg" width="500" />
+   - <Kst>Command Dialog</Kst>
+      - <kbd>S</kbd> **Screen space:** Project the new Curve using the the current camera view as a projection method.
 5. Right-click or click OK in the Command Dialog to confirm.
 6. The projected Curve will be created.
+
+<VideoPlayer fileName="project-curve-body"/>
 
 ## See also
 - [Alternative Duplicate](alternative-duplicate)

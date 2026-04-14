@@ -1,3 +1,57 @@
-import Sketch_Commands from '/pages/sketch.de.mdx'
+# Skizzenbefehle
 
-<Sketch_Commands />
+| Befehlsname | Tastenkürzel | Hinweis |
+| --- | --- | --- |
+| [Ausrichten](/sketch/align) | | Einheitlicher Befehl für Vertex ausrichten, Oberfläche ausrichten. |
+| [Vertex ausrichten](/sketch/align-vertex) | | Kurven basierend auf Vertex-Auswahl ausrichten. |
+| [Verformen](/sketch/deform) | | Einheitlicher Befehl für Kurve verformen, Festkörper und Fläche verformen. |
+| [Kurve verformen](/sketch/deform-curve) | | Bestehende Kurven auf eine andere Oberfläche projizieren. |
+| [Erweitern](/sketch/extend) | | Einheitlicher Befehl für Kurve erweitern, Fläche erweitern. |
+| [Kurve erweitern](/sketch/extend-curve) | | Eine Kurve erweitern. |
+| [Verrundung](/sketch/fillet) | <kbd>B</kbd> | Einheitlicher Befehl für Kurvenverrundung, Vertex-Verrundung, Schalenverrundung. |
+| [Kurve verrunden](/sketch/fillet-curve) | <kbd>B</kbd> | Verrundung oder Fase zwischen zwei Kurvensegmenten. |
+| [Vertex verrunden](/sketch/fillet-vertex) | <kbd>B</kbd> | Verrundung oder Fase verbundener Vertices. |
+| [Kurve versetzen](/sketch/offset-curve) | <kbd>O</kbd> | Einheitlicher Befehl für planare Kurve versetzen, Region versetzen, Flächenschleife versetzen, Kante versetzen. |
+| [Planare Kurve versetzen](/sketch/offset-planar-curve) | <kbd>O</kbd> | Eine planare Kurve versetzen. |
+| [Region versetzen](/sketch/offset-region) | <kbd>O</kbd> | Die Umrisskurven einer Region versetzen. |
+| [Vertex versetzen](/sketch/offset-vertex) | <kbd>O</kbd> | Neue Vertices entlang der Kurve auf beiden Seiten eines Vertex einfügen. |
+| [Instanz erstellen](/sketch/create-instance) | | Einheitlicher Befehl für Kurveninstanz erstellen, Festkörper- und Flächeninstanz erstellen. |
+| [Kurveninstanz erstellen](/sketch/create-curve-instance) | | Mehrere nicht bearbeitbare Objekte duplizieren. |
+| [Instanzen realisieren](/sketch/realize-instances) | | Einheitlicher Befehl für Festkörper- und Flächeninstanzen realisieren, Kurveninstanzen realisieren. |
+| [Kurveninstanzen realisieren](/sketch/realize-curve-instances) | | Kurveninstanzen in echte Kurven umwandeln. |
+| [Grad erhöhen](/sketch/raise-degree) | <kbd>Shift+S</kbd> | Einheitlicher Befehl für Kurvengrad erhöhen, Flächengrad erhöhen. |
+| [Kurvengrad erhöhen](/sketch/raise-curve-degree) | <kbd>Shift+S</kbd> | Kontrollpunkte und Grade von Kurven erhöhen. |
+| [Neu aufbauen](/sketch/rebuild) | | Einheitlicher Befehl für Kurve neu aufbauen, Fläche neu aufbauen. |
+| [Kurve neu aufbauen](/sketch/rebuild-curve) | | Durch Optimierung der Positionen der Kontrollpunkte neu aufbauen. |
+| [Umkehren](/sketch/reverse) | | Einheitlicher Befehl für Kurve umkehren, Fläche umkehren. |
+| [Kurve umkehren](/sketch/reverse-curve) | | Die Richtung einer Kurve umkehren. |
+| [Gleiten](/sketch/slide) | | Einheitlicher Befehl für Kurven-CV gleiten, Flächen-CV gleiten. |
+| [Kurven-CV gleiten](/sketch/slide-curve-cv) | <kbd>Shift+G</kbd> | Einen CV entlang der CV-Hülle auf einer Kurve verschieben. |
+| [Text](/sketch/text) | | Kurven aus Text erstellen. |
+| [Punkte umschalten](/sketch/toggle-points) | | Kontrollpunkte ein- oder ausblenden. |
+| [Kurvenkrümmung umschalten](/sketch/toggle-curve-curvature) | | Krümmung entlang von Kurven messen. |
+| **Projektionsbefehle** | | |
+| [Alternatives Duplizieren](/sketch/alternative-duplicate) | <kbd>Alt+D</kbd> | Kurven auf die aktuelle Konstruktionsebene projizieren. |
+| [Umriss erstellen](/sketch/create-outline) | | Den Umriss der Objekte projizieren, um eine 3D-Kurve zu erstellen. |
+| [Kurve duplizieren und projizieren](/sketch/duplicate-curve-and-project) | | Kurve duplizieren und projizieren. |
+| [Projizieren](/sketch/project) | <kbd>I</kbd> | Einheitlicher Befehl für Körper-Körper projizieren, Kurve-Körper projizieren, Kurve-Kurve projizieren. |
+| [Körper-Körper projizieren](/sketch/project-body-body) | <kbd>I</kbd> | Eine neue Kurve erstellen, die die Schnittlinie zwischen zwei Festkörpern oder Flächen darstellt. |
+| [Kurve-Körper projizieren](/sketch/project-curve-body) | <kbd>I</kbd> | Eine neue Kurve durch Projektion einer Kurve auf einen Festkörper oder eine Fläche erstellen. |
+| [Kurve-Kurve projizieren](/sketch/project-curve-curve) | <kbd>I</kbd> | Eine neue Kurve durch Projektion der Schnittpunkte von Flächen aus zwei unabhängigen Kurven erstellen. |
+| [Umriss projizieren](/sketch/project-outline) | <kbd>Alt+D</kbd> | Den Umriss der Festkörper oder Flächen projizieren. |
+| **Verbinden- und Teilenbefehle** | | |
+| [Brücke](/sketch/bridge) | | Einheitlicher Befehl für Kurvenbrücke, Vertex-Brücke, Kantenbrücke. |
+| [Kurvenbrücke](/sketch/bridge-curve) | | Zwei Kurven verbinden. |
+| [Kantenbrücke](/sketch/bridge-edge) | | Zwei Kanten verbinden. |
+| [Vertex-Brücke](/sketch/bridge-vertex) | | Zwei Vertices verbinden. |
+| [Kurve schneiden](/sketch/cut-curve) | | Kurve schneiden. |
+| [Verbinden](/sketch/join) | <kbd>J</kbd> | Einheitlicher Befehl für Kurven verbinden, Flächen verbinden. |
+| [Kurven verbinden](/sketch/join-curves) | <kbd>J</kbd> | Kurven an Verbindungspunkten zusammenfügen. |
+| [Segment teilen](/sketch/split-segment) | | Eine Kurve in zwei Segmente teilen. |
+| [Trimmen](/sketch/trim) | <kbd>T</kbd> | Kurve trimmen. |
+| [Trennen](/sketch/unjoin) | <kbd>Alt+J</kbd> | Einheitlicher Befehl für Kurven trennen, Flächen trennen, Schalen trennen. |
+| [Kurven trennen](/sketch/unjoin-curve) | <kbd>Alt+J</kbd> | Verbundene Kurven trennen. |
+| [Knoten einfügen](/sketch/insert-knot) | | Einen CV auf einer Spline-Kurve einfügen. |
+| **Vertex-Befehle** | | |
+| [Vertex konvertieren](/sketch/convert-vertex) | | Vertices in Kontrollpunkte umwandeln. |
+| [Redundante Topologie löschen](/sketch/delete-redundant-topology) | | Überschüssige Punkte entfernen. |

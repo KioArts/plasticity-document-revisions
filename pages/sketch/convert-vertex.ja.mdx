@@ -2,20 +2,42 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 
-# Convert Vertex（頂点を制御点に変換する）
+{/* # Convert Vertex
 
-<Reference shortcut="" command="Convert Vertex" button="" />
+<Reference shortcut="" command="Convert Vertex" button="" /> */}
 
-頂点を制御点に変換することができます。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/convert-vertex.mp4"
+  alt="Convert Vertex Preview"
+  title="Convert Vertex"
+  command="Convert Vertex"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-convert-vertex.png" alt="Convert Vertex Icon" />}
+/> */}
+
+## 頂点の変換
+
+<CommandReference
+  command="Convert Vertex"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-convert-vertex.png"
+  tier="both"
+/>
+
+## 説明
+
+標準の頂点をコントロール頂点に変換します。
 
 ## 基本的な使い方
 
 1. 変換したい頂点を選択します。
-2. コマンドパレットで**Convert Vertex**を選択します。
-3. 頂点が制御点に変換されます。
+2. コマンドパレットで **頂点を変換** コマンドを使用します。
+3. 頂点がコントロール頂点になりました。
 
-<Callout type="info" emoji="ℹ️">
-  頂点をダブルクリックすることでも変換できます。
+<Callout type="info">
+頂点をダブルクリックして変換することもできます。
 </Callout>
 
 <VideoPlayer fileName="convert-vertex"/>

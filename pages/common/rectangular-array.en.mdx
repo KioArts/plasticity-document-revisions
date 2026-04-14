@@ -4,14 +4,24 @@ import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Rectangular Array
+## Rectangular Array
 
-<Reference shortcut="" command="Rectangular Array" button="In Suggested Commands Menu"  buttonIcon='button-rectangular-array'/>
+{/* <Reference shortcut="" command="Rectangular Array" button="In Suggested Commands Menu"  buttonIcon='button-rectangular-array'/> */}
+
+<CommandReference
+  command="Rectangular Array"
+  shortcut=""
+  button="In Command Bar"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
+
+## Description
 
 Duplicate objects in a linear pattern by specifying the number of duplicates. Optionally, define another direction to create a rectangular array. Option to create instances is possible.
 
-<Callout>
-Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for duplication direction, number of copies, and duplication modes. However, instancing them is not supported.
+<Callout type='info'>
+**Note:** Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for duplication direction, number of copies, and duplication modes. Arraying instance objects is also supported.
 </Callout>
 
 ## Basic Usage
@@ -42,6 +52,7 @@ Images and meshes (.OBJ, .STL, .FBX, etc.) can be arrayed, with controls for dup
       - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Shift + Wheel up</kbd> **Add copy:** Increases the number of duplications.
       - <kbd>Shift + Wheel down</kbd> **Subtract copy:** Reduces the number of duplications.
+      - <kbd>I</kbd> **Toggle make instances:** Toggles whether the mirrored half is created as an instance or an independent copy.
 7. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="rectangular-array"/>

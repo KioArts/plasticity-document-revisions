@@ -3,26 +3,48 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 
-# Knoten Einfügen
+{/* # Insert Knot
 
-<Reference shortcut="" command="Knoten Einfügen" button="Werkzeugleiste" buttonIcon='button-split-segment' />
+<Reference shortcut="" command="Insert Knot" button="Toolbar" buttonIcon='button-insert-cv-into-curve' /> */}
 
-Fügt einen Kontrollpunkt (Control-Vertex) in eine Spline-Kurve ein.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/insert-knot.mp4"
+  alt="Insert Knot Preview"
+  title="Insert Knot"
+  command="Insert CV into curve"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-insert-cv-into-curve.png" alt="Insert CV Into Curve icon" />}
+/> */}
+
+## Knoten einfügen
+
+<CommandReference
+  command="Insert CV into curve"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-insert-cv-into-curve.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Fügt einen CV (Kontrollscheitelpunkt) in eine Spline-Kurve ein.
 
 ## Grundlegende Verwendung
 
-1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-split-segment" /> in der Werkzeugleiste.
-2. Klicken Sie auf den Punkt, an dem Sie einen Kontrollpunkt einfügen möchten.
-3. Ein Kontrollpunkt wird eingefügt, wodurch ein zusätzlicher Punkt zur Spline-Kurve hinzugefügt wird.
+1. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-insert-cv-into-curve" /> in der Symbolleiste.
+2. Klicken Sie auf den Punkt, an dem Sie einen CV einfügen möchten.
+3. Ein CV wird eingefügt und fügt der Spline-Kurve einen zusätzlichen Punkt hinzu.
 
 <VideoPlayer fileName="insert-knot"/>
 
 <Callout type="info" emoji="🗒️">
-**Hinweis** Das Einfügen eines Kontrollpunktes erfordert, dass die Kurve eine Spline ist; andernfalls hat es bei einer normalen segmentierten Kurve keine Wirkung.
+**Hinweis** Das Einfügen eines Kontrollscheitelpunkts erfordert, dass die Kurve ein Spline ist; andernfalls hat der Befehl keine Auswirkung auf eine reguläre segmentierte Kurve.
 </Callout>
 
 ## Siehe auch
-- [Segment Trennen](split-segment)
-- [Kurve Schneiden](cut-curve)
+- [Segment teilen](split-segment)
+- [Kurve schneiden](cut-curve)
 - [Trennen](unjoin)
 - [Trimmen](trim)

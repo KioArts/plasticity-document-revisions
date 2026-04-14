@@ -2,28 +2,50 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import VideoPlayer from '/components/VideoPlayer';
 
-# Offset Vertex
+{/* # Offset Vertex
 
-<Reference shortcut="O" command="Offset Curve" button="" />
+<Reference shortcut="O" command="Offset Curve" button="" /> */}
 
-頂点の両側にカーブに沿って新しい頂点を挿入します。
+{/* <HeadBannerThumbnail
+  src="/videos/banner/offset-vertex.mp4"
+  alt="Offset Vertex Preview"
+  title="Offset Vertex"
+  command="Offset Curve"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-offset-curve.png" alt="Offset Vertex Icon" />}
+/> */}
+
+## 頂点のオフセット
+
+<CommandReference
+  command="Offset Curve"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-offset-curve.png"
+  tier="both"
+/>
+
+## 説明
+
+頂点の両側のカーブに沿って新しい頂点を挿入します。
 
 ## 基本的な使い方
 
 1. 頂点を選択します。
 2. <kbd>O</kbd> を押します。
-3. マウスを動かして、新しい頂点の位置を決めます。
+3. マウスを移動して新しい頂点の位置を決定します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
-    - <Kst>コマンドダイアログ</Kst>
-        - **Distance:** 距離を指定します。
-    - <Kst>キーボードショートカット</Kst>
-        - <kbd>D</kbd> **Distance:** マウスの動きで距離を指定します。
+    - <Kst>Command Dialog</Kst>
+        - **距離:** 距離を指定します。
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>D</kbd> **距離:** マウスの移動で距離を指定します。
 5. クリックして頂点の位置を固定します。
-6. コマンドダイアログのOKか右クリックで確定します。
+5. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="offset-vertex"/>
 
 ## 関連項目
-- [Offset Curve](offset-curve)
-- [Offset Planar Curve](offset-planar-curve)
-- [Offset Region](offset-region)
+- [カーブのオフセット](offset-curve)
+- [平面カーブのオフセット](offset-planar-curve)
+- [リージョンのオフセット](offset-region)

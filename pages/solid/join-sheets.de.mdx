@@ -3,26 +3,34 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Join Sheets
+## Join Sheets
 
-<Reference shortcut="J" command="Join" button="Im vorgeschlagenen Befehlsmenü" buttonIcon='button-join' />
+{/* <Reference shortcut="J" command="Join" button="Im Menü „Vorgeschlagene Befehle“" buttonIcon='button-join' /> */}
 
-Verbinden Sie Sheets mit passenden Kanten.
+<CommandReference
+  command="Join"
+  shortcut="J"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-join.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Sheets aus, die Sie verbinden möchten.
-2. Drücken Sie <kbd>J</kbd>.
-3. Sheets werden verbunden.
+Verbindet Sheets mit übereinstimmenden Kanten.
 
-<Callout emoji="❗">
-**Hinweis**<br />
-Um zwei Sheets zu verbinden, müssen ihre Kanten perfekt ausgerichtet sein.
+## Grundlegende Verwendung
+
+1. Wähle die Sheets aus, die du verbinden möchtest.
+2. Drücke <kbd>J</kbd>.
+3. Die Sheets werden verbunden.
+
+<Callout type="info">
+**Hinweis:** Um zwei Sheets zu verbinden, müssen ihre Kanten perfekt ausgerichtet sein.
 </Callout>
-<br />
+
 <VideoPlayer fileName="join-sheets"/>
 
 ## Siehe auch
-- [Join Sheets](join-sheets)
 - [Bridge Surface](bridge-surface)
 - [Unjoin](unjoin)

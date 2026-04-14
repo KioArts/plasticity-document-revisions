@@ -3,28 +3,46 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Fillet Curve（カーブをフィレットする）
+{/* <HeadBannerThumbnail
+  src="/videos/banner/fillet-curve.mp4"
+  alt="Fillet Curve Preview"
+  title="Fillet Curve"
+  command="Fillet"
+  shortcut="B"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-fillet.png" alt="Fillet icon" />}
+/> */}
 
-<Reference shortcut="B" command="Fillet" button="推奨コマンドメニューで"  buttonIcon='button-fillet'/>
+## カーブのフィレット
 
-2つのカーブセグメントをフィレットまたは面取りできます。
+<CommandReference
+  command="Fillet"
+  shortcut="B"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-fillet.png"
+  tier="both"
+/>
+
+## 説明
+
+2つのカーブセグメント間にフィレットまたは面取りを適用します。
 
 ## 基本的な使い方
 
-1. フィレットまたは面取りをしたいカーブを選択します。
-2. <kbd>B</kbd> を押すか、推奨コマンドメニュー内の <ButtonIcon type="button-fillet" /> ボタンをクリックしてください。
-3. 黄色い点を動かすことで、フィレットまたは面取りを作成できます。動かす方向によって、フィレットまたは面取りが作成されます。
+1. フィレットまたは面取りを適用したいカーブを選択します。
+2. <kbd>B</kbd> を押すか、[推奨コマンド](/plasticity-essentials/plasticity-interface/command-bar#suggested-commands)メニューの <ButtonIcon type="button-fillet" /> ボタンをクリックします。
+3. 黄色い点を移動してフィレットまたは面取りの半径を指定します。移動方向によってフィレットまたは面取りのどちらかが適用されます。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
-    - <Kst>コマンドダイアログ</Kst>
-        - **Distance:** 距離を指定します。
-    - <Kst>キーボードショートカット</Kst>
-        - <kbd>D</kbd> **Fillet Distance:** カーソルを動かすことで、フィレットの距離を指定します。
-        - <kbd>C</kbd> **Chamfer Distance:** カーソルを動かすことで、面取りの距離を指定します。
-5. コマンドダイアログの OK をクリックするか、右クリックで確定します。
+   - <Kst>Command Dialog</Kst>
+      - **半径:** 距離を指定します。
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>D</kbd> **フィレット距離:** カーソルを移動してフィレット距離を指定します。
+      - <kbd>C</kbd> **面取り距離:** カーソルを移動して面取り距離を指定します。
+5. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="fillet"/>
 
 ## 関連項目
-- [Fillet](fillet)
-- [Fillet Vertex](fillet-vertex)
-- [Fillet Shell](/solid/fillet-shell)
+- [フィレット](fillet)
+- [頂点のフィレット](fillet-vertex)
+- [シェルのフィレット](/solid/fillet-shell)

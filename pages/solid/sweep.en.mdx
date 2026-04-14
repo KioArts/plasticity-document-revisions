@@ -1,18 +1,29 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
 
-# Sweep
+## Sweep
 
-<Reference shortcut="Shift + P" command="Sweep" button="In Suggested Commands Menu"  buttonIcon="button-sweep"/>
+{/* <Reference shortcut="Shift + P" command="Sweep" button="In Suggested Commands Menu"  buttonIcon="button-sweep"/> */}
 
-Sweeping Faces or Regions generates Solids, while sweeping Curves produces Sheets. Specify twisting angle and optionally select multiple sweep guides.
+<CommandReference
+  command="Sweep"
+  shortcut="Shift + P"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-sweep.png"
+  tier="both"
+/>
+
+## Description
+
+Sweeping Faces or Regions generates Solids, while sweeping Curves produces Sheets. Specify twisting angle in degrees and optionally select multiple sweep guides. It now supports boolean operations.
 
 ## Basic Usage
 
 1. Select the Regions, Faces, or Curves to be swept.
 2. Press <kbd>Shift + P</kbd>.
-3. Select the  Curve that will serve as the path for the sweep.
+3. Select the Curve that will serve as the path for the sweep.
 4. Set the options in the Command Dialog and Keyboard Shortcuts.
    - <Kst>Command Dialog</Kst>
       - **Twist:** Specify the twisting angle in degrees.
@@ -23,12 +34,17 @@ Sweeping Faces or Regions generates Solids, while sweeping Curves produces Sheet
       - **Distance:**
          - Adjust the result length. Decreasing the value from 1.00 to 0 shortens the length. (Default: 1.00)
    - <Kst>Advanced Dialog</Kst>
+      - **Keep tools:** Keep the swept body after a boolean operation.
       - **Simplify:** Specify whether to generate trimmed planar sections or maintain uniform geometry. (Default: OFF)
       - **Corner type:**
          - Mitre: Have an external pointy corner.
          - Round: Have an external round corner.
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>D</kbd> **Twist:** Specify the Twist with mouse movement.
+      - <kbd>Shift + Q</kbd> **Slice**, <kbd>Q</kbd> **Union**, <kbd>W</kbd> **Difference**, <kbd>Shift + E</kbd> **Intersect:** Perform a boolean operation.
+      - <kbd>B</kbd> **New body:** Retain the resulting body after a boolean operation or modeling step.
+      - <kbd>T</kbd> **Keep tools:** Performs Boolean operations while keeping the tool objects intact.
+      - <kbd>Ctrl</kbd> **Snap:** Constrains snapping to fixed 5° degree steps.
 5. Optionally select sweep guides.
       1. Make sure that **Select guides:** is highlighted in the Command Dialog.
       2. Select the Curves that will serve as guides for the sweep.

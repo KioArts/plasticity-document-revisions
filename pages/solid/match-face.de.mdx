@@ -3,27 +3,36 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Match Face
+## Match Face
 
-<Reference shortcut="" command="Match Face" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon="button-match-face"/>
+{/* <Reference shortcut="" command="Match Face" button="Im Menü „Vorgeschlagene Befehle“"  buttonIcon="button-match-face"/> */}
 
-Ersetzen Sie das ausgewählte Face durch ein anderes Face.
+<CommandReference
+  command="Match Face"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-match-face.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie Faces zum Angleichen aus.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-match-face" /> im Menü [Vorgeschlagene Befehle](/plasticity-essentials/command-bar#suggested-commands).
-3. Wählen Sie die Oberfläche zum Ersetzen aus.
-4. Legen Sie die Optionen im Command Dialog fest.
+Ersetzt die ausgewählte Fläche durch eine andere Fläche.
+
+## Grundlegende Verwendung
+
+1. Wähle die Flächen aus, die du angleichen möchtest.
+2. Suche **Match Face** in der Command Palette und führe den Befehl aus.
+3. Wähle die Fläche aus, durch die ersetzt werden soll.
+4. Lege die Optionen im Befehlsdialog fest.
     - <Kst>Befehlsdialog</Kst>
-        - **Grow:**
-            - Wenn ein konkaves inneres Face versetzt wird.
-            - **Moving:** Bewegen Sie die gesamte Wand, wenn der Versatz zur äußeren Wand gelangt.
-            - **Fixed:** Stoppen Sie an der äußeren Wand.
-            - **None:** Fahren Sie von selbst fort, ohne die äußere Wand zu beeinflussen oder von ihr beeinflusst zu werden.
-        - **Side:** 
-            - **Front:** Wenn aktiviert, wird das Face mit dem vorderen Face der ausgewählten Oberfläche abgeglichen.
-5. Bestätigen Sie mit OK im Command Dialog oder Rechtsklick.
+        - **Wachsen:** Wird verwendet, wenn eine konkave Innenfläche versetzt wird.
+            - **Beweglich:** Bewegt die gesamte Wand, wenn der Versatz die Außenwand erreicht.
+            - **Fixiert:** Stoppt an der Außenwand.
+            - **Keine:** Setzt unabhängig fort, ohne die Außenwand zu beeinflussen oder von ihr beeinflusst zu werden.
+        - **Seite:** 
+            - **Vorne:** Wenn aktiviert, wird die Fläche an die Vorderseite der ausgewählten Fläche angepasst.
+5. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="match-face"/>
 

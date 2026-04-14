@@ -3,21 +3,30 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Match Face
+## Match Face
 
-<Reference shortcut="" command="Match Face" button="In Suggested Commands Menu"  buttonIcon="button-match-face"/>
+{/* <Reference shortcut="" command="Match Face" button="In Suggested Commands Menu"  buttonIcon="button-match-face"/> */}
+
+<CommandReference
+  command="Match Face"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-match-face.png"
+  tier="both"
+/>
+
+## Description
 
 Replace the selected Face with another Face.
 
 ## Basic Usage
 
 1. Select Faces to match.
-2. Click the button <ButtonIcon type="button-match-face" /> in the [Suggested Commands](/plasticity-essentials/command-bar#suggested-commands) menu.
+2. Search **Match Face** in the Command Palette and execute the command.
 3. Select the surface to replace with.
 4. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
-        - **Grow:**
-            - When a concave inner Face is offset.
+        - **Grow:** When a concave inner Face is offset.
             - **Moving:** Move the whole wall when the offset gets to the outer wall.
             - **Fixed:** Stop at the outer wall.
             - **None:** Keep going by itself, neither affecting or affected by the outer wall.

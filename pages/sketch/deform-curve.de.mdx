@@ -3,37 +3,59 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Deform Curve
+{/* # Deform Curve
 
-<Reference shortcut="" command="Deform" button="" />
+<Reference shortcut="" command="Deform" button="" /> */}
 
-Wickeln Sie vorhandene Solids- und Sheet-Objekte auf eine regelmäßige oder unregelmäßige Oberfläche.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/deform-curve.mp4"
+  alt="Deform Curve Preview" 
+  title="Deform Curve"
+  command="Deform"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-deform.png" alt="Deform Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Kurve deformieren
 
-1. Wählen Sie die Objekte aus, die Sie umhüllen möchten.
-2. Geben Sie **Deform** in die Befehlsleiste ein.
-3. Wählen Sie eine Referenzfläche als Neutralebene aus.
-4. Wählen Sie die Zielfläche aus, auf die die Objekte deformiert werden sollen.
-5. Stellen Sie die Optionen im Befehlsdialog ein.
-    - <Kst>Befehlsdialog</Kst>
-          - **Skalierung:** Skalierung in **Z,Y,X Wert**
-          - **Offset:** Offset in **Z,Y,X Wert**
-          - **Flip:** 
-                - **Spiegeln:** Spiegeln Sie die deformierten Objekte horizontal zur Oberfläche.
-                - **UV:** Drehen Sie die U- und V-Ausrichtung der deformierten Objekte um.
-                - **Normal:** Drehen Sie die Normalen der deformierten Objekte um.
-          - **Werkzeuge behalten:** Führen Sie die Deform-Operation durch, während die Werkzeugobjekte intakt bleiben.
+<CommandReference
+  command="Deform"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-deform.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Wickelt vorhandene Kurven auf eine regelmäßige oder unregelmäßige Oberfläche. Dieses Werkzeug projiziert oder passt ausgewählte Kurven direkt auf die Zielgeometrie an, wobei ihre Form erhalten bleibt und sie sich gleichzeitig den Konturen der darunterliegenden Oberfläche anpassen. Es eignet sich für Aufgaben wie Gravurpfade, das Definieren von Trennlinien oder das Festlegen von Führungskurven.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Kurven aus, die Sie verformen möchten.
+2. Geben Sie **Deform** in der Befehlspalette ein.
+3. Wählen Sie eine Referenzfläche aus, auf der die vorhandenen Kurven als neutrale Ebene platziert sind.
+4. Wählen Sie die Zielfläche aus, mit der die Kurven deformiert werden sollen.
+5. Legen Sie die Optionen im Befehlsdialog fest.
+    - <Kst>Command Dialog</Kst>
+          - **Skalierung:** Skalierung im **U, V, N**-Wert.
+          - **Versatz:** Versatz im **U, V, N**-Wert.
+          - **Spiegeln:**
+                - **Spiegel:** Spiegelt die deformierten Kurven in der Z-Achse.
+                - **UV:** Dreht die U- und V-Orientierung der deformierten Kurven um.
+                - **Normal:** Dreht die Normale der deformierten Kurven um.
+          - **Werkzeuge behalten:** Führt die Deformationsoperation durch und lässt die Werkzeugobjekte dabei unverändert.
 6. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="deform-curve"/>
 
-<Callout type="info" emoji="ℹ️">
-Scale und Offset verwenden ein **UVN**-Koordinatensystem anstelle eines **XYZ**-Koordinatensystems, wenn der parametrische Wert angepasst wird. Dies ermöglicht es Ihnen, die Ausrichtung der deformierten Objekte an einem bestimmten Punkt in Bezug auf die Zieloberfläche festzulegen. Für weitere Informationen zum UVN-Koordinatensystem klicken Sie [hier](/cad-essentials/uvn-coordinate-system).
+<Callout type="info">
+Skalierung und Versatz verwenden ein **UVN**-Koordinatensystem anstelle des **XYZ**-Koordinatensystems bei der Anpassung des parametrischen Werts. Dies ermöglicht es, die Ausrichtung der deformierten Objekte an einem bestimmten Punkt in Bezug auf die Zielfläche zu definieren. Weitere Informationen zum UVN-Koordinatensystem finden Sie [hier](/cad-essentials/uvn-coordinate-system).
 </Callout>
 
-### Kurvenverformung mit dem Befehl "Fläche entpacken"
+### Kurvendeformation mit dem Befehl „Fläche entfalten"
 
-Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den Befehl "Fläche entpacken" aus der Befehlsübersicht auf dem Zielobjekt. Dies erzeugt eine korrekt abgebildete Oberfläche, die anschließend als genaue Referenzfläche verwendet werden kann.
+Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den Befehl [Fläche entfalten](/solid/unwrap-face) aus der Befehlspalette auf dem Zielobjekt. Dadurch wird eine korrekt zugeordnete Oberfläche generiert, die dann als genaue Referenzfläche verwendet werden kann.
 
 <VideoPlayer fileName="deform-curve-unwrap"/>

@@ -1,19 +1,28 @@
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Remove Material（マテリアルを削除）
+## マテリアル削除
 
-<Reference shortcut="Alt + M" command="Remove Material" button="" />
+{/* <Reference shortcut="Alt + M" command="マテリアル削除" button="" /> */}
 
-選択したオブジェクトからマテリアルを削除し、デフォルトのマテリアルにリセットできます。
+<CommandReference
+  command="マテリアル削除"
+  shortcut="Alt + M"
+  button="提案コマンドメニュー内"
+  buttonIcon="/img/button-set-material.png"
+  tier="both"
+/>
+
+## 説明
+
+選択したオブジェクトからマテリアルを削除し、デフォルトのマテリアルにリセットします。
 
 ## 基本的な使い方
 
 1. マテリアルを削除したいオブジェクトを選択します。
-2. <kbd>Alt + M</kbd>を押します。
-3. マテリアルが初期値に戻ります。
+2. <kbd>Alt + M</kbd> を押します。
+3. マテリアルが初期値にリセットされます。
 
 ## 関連項目
-- [Set Material](set-material)
-- [Outliner/Material color](/plasticity-essentials/outliner#material-color)
-- [View Mode/Toggle View Mode](/plasticity-essentials/view-mode#toggle-view-mode)
+- [マテリアル設定](set-material)
+- [アウトライナー/マテリアルカラー](/plasticity-essentials/plasticity-interface/outliner#material-color)

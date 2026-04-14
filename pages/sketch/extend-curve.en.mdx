@@ -1,12 +1,35 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
 
-# Extend Curve
+{/* <HeadBannerThumbnail
+  src="/videos/banner/extend-curve.mp4"
+  alt="Extend Curve Preview"
+  title="Extend Curve"
+  command="Extend Curve"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-extend-curve.png" alt="Extend Curve icon" />}
+/> */}
 
-<Reference shortcut="" command="Extend Curve" button="" />
+{/* # Extend Curve
 
-Extend a Curve by specifying the distance. Choose from extension shapes like Natural, Linear, Soft, Reflective, and Arc. You can now specify a target on curves and solids.
+<Reference shortcut="" command="Extend Curve" button="" /> */}
+
+## Extend Curve
+
+<CommandReference
+  command="Extend Curve"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
+
+## Description
+
+Extend a Curve by specifying the distance. Choose from extension shapes like Natural, Linear, Soft, Reflective, and Arc. You can now specify a target on curves and solids to match and intersect with precisely.
 
 ## Basic Usage
 
@@ -22,13 +45,26 @@ Extend a Curve by specifying the distance. Choose from extension shapes like Nat
             - **Reflective:** Mirrors the curvature and tangency of the curve for a symmetrical and seamless continuation, ideal for maintaining curve symmetry.
             - **Arc:** Extends the curve in a circular arc from the boundary point. 
 
-            ![Extend Curve Shape](/img/extend-curve-shape.png)
+            ![Extend Curve Shape](/img/extend-curve-shape.svg)
             
       - **Distance:** Specify the distance.
 5. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="extend-curve"/>
 
-## See also
+## Dependent Curve Extend
+
+Extend a curve by matching and intersecting it with another curve or solid geometry, letting the target define the final extend distance.
+
+1. Select one of the endpoints of the curve you want to extend.
+2. Use the **Extend** command in the Command Palette.
+3. Select the target geometry to match and intersect with.
+     - **Curves:** Select a curve to match and intersect with.
+     - **Solids:** Select a sheet or solid object to match and intersect with.
+4. The curve extends precisely to meet the target geometry.
+
+<VideoPlayer fileName="dependant-curve-extend"/>
+
+## See Also
 - [Extend](extend)
 - [Extend Sheet](/solid/extend-sheet)

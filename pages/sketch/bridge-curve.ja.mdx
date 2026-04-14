@@ -4,50 +4,55 @@ import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Curve（カーブをなめらかに繋げる）[#bridge-curve]
+## Bridge Curve
 
-<Reference shortcut="" command="Bridge Curve" button="ツールバー" buttonIcon='button-bridge-curve'/>
+<CommandReference
+  command="Bridge Curve"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
 
-2 つのカーブを G0、G1、G2、G3 の連続性でブリッジします。テンション調整が可能です。自動トリムに対応。カーブの測定機能も利用できます。
+## 説明
+
+2 本のカーブを G0 / G1 / G2 / G3 のいずれかの連続性でブリッジします。テンション調整、オートトリム、曲率表示に対応しています。
 
 ## 基本的な使い方
 
-<Callout emoji="❗">
-    **注意**<br />
-ポイントを選択する前に、[**グリッドスナップ**](/plasticity-essentials/grid-and-units) と [**オブジェクトスナップ**](/plasticity-essentials/snap#object-snap) を有効にしてください。
-</Callout>
-<Callout type="info" emoji="ℹ️">
-始点と終点は、カーブ上、エッジ上、フェース上、または構築平面上の任意の点を選択することができます。
+<Callout type="info">
+ポイントを選択する前に、[Object Snaps](/plasticity-essentials/plasticity-interface/snap#object-snap) の Control‑Point、Edge、Curve、Face、Axis を有効にしてください。  
+開始点と終了点は、カーブ・エッジ・フェイス上の任意の位置にスナップできます。
 </Callout>
 
-1. ツールバーの <ButtonIcon type="button-bridge-curve" /> をクリックします。
-2. 始点をクリックします。
-     - <Kst>キーボードショートカット</Kst>
-     - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-     - <kbd>N</kbd> **Normal:** フェイスの法線方向に限定します。
-     - <kbd>Tab</kbd> **Cycle continuity:** G0、G1、G2、G3 の連続性を切り替えます。
-     - <kbd>D</kbd> **G1 Tension:**  G1 連続性のテンションを調整します。 
-     - <kbd>Q</kbd> **Trim:**  G1 連続性のテンションを調整します。 
-3. 終点をクリックします。
+1. ツールバーの <ButtonIcon type="button-bridge-curve" /> ボタンをクリックします。
+2. 開始点をクリックします。
+3. 終了点をクリックします。  
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
      - <Kst>コマンドダイアログ</Kst>
-          - **Parameter:**
-               - **Value 1/2:** 始点/終点のセグメント上の相対位置を指定します。
-          - **Sense:** 
-               - **Sense 1/2**: 始点/終点の方向を反転します。
-          - **Tension 1:**
-               - **Value 1/2:** 始点/終点の第1制御点(CV)から第3CVに影響するテンション値を指定します。
-          - **Tension 2:**
-               - **Value 1/2:** 始点/終点の第2CVと第3CVに影響するテンション値を指定します。
-          - **Tension 3:**
-               - **Value 1/2:** 始点/終点の第3CVに影響するテンション値を指定します。
-          - **Start curvature:**
-               - **G0, G1, G2, G3:** 始点での[曲線の連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-               - **End curvature:**
-               - **G0, G1, G2, G3:** 終点での[曲線の連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-          -  **Trim:** オンにすると、ブリッジからはみ出たカーブはトリムされます。
-          - **Analysis:** メニューを開いているときに、カーブチャーコームのサイズを調整します。[カーブの測定について詳しくはこちら](/sketch/measure-curvature)。
-5. コマンドダイアログでOKを押すか、右クリックで確定します。
+          - **Parameter（パラメータ）：**
+               - **Value 1/2:** 開始点／終了点の相対位置。
+          - **Sense（方向反転）：**
+               - **Sense 1/2:** 開始点／終了点の方向を反転します。
+          - **Tension 1：**
+               - **Value 1/2:** 開始点／終了点の 1〜3 番目の CV に影響するテンション。
+          - **Tension 2：**
+               - **Value 1/2:** 開始点／終了点の 2・3 番目の CV に影響するテンション。
+          - **Tension 3：**
+               - **Value 1/2:** 開始点／終了点の 3 番目の CV に影響するテンション。
+          - **Start curvature（開始側の曲率）：**
+               - **G0, G1, G2, G3:** 開始点の[カーブ連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+          - **End curvature（終了側の曲率）：**
+               - **G0, G1, G2, G3:** 終了点の[カーブ連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+          - **Trim:** ブリッジを超えて伸びているカーブを自動トリムします。
+          - **Show curvature:** 曲率表示を切り替えます。詳細は [Toggle Curvature](/tool/toggle-curvature)。
+     - <Kst>キーボードショートカット</Kst>
+     - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [軸に制限する](/tool/sketching-essentials#constrain-to-an-axis)。
+     - <kbd>Tab</kbd> **連続性切り替え:** G0 → G1 → G2 → G3 を順に切り替えます。
+     - <kbd>D</kbd> **G1 テンション:** G1 連続性のテンションを調整します。
+     - <kbd>Q</kbd> **Trim:** 選択中のカーブのトリムをオン／オフします。
+          
+5. コマンドダイアログの OK または右クリックで確定します。
 
 <VideoPlayer fileName="bridge-curve"/>
 
@@ -56,4 +61,4 @@ import Kst from '/components/KeyboardShortcutsTitle'
 - [Bridge Vertex](bridge-vertex)
 - [Bridge Edge](bridge-edge)
 - [Join](join)
-- [Measure Curvature](/sketch/measure-curvature)
+- [Toggle Curvature](/tool/toggle-curvature)

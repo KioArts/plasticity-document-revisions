@@ -2,22 +2,31 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Fork Material
+## マテリアル分岐
 
-<Reference shortcut="Shift + M" command="Fork Material" button="" />
+{/* <Reference shortcut="Shift + M" command="マテリアル分岐" button="" /> */}
 
-選択したオブジェクトのマテリアルを複製して編集できるようにします。
+<CommandReference
+  command="マテリアル分岐"
+  shortcut="Shift + M"
+  button="コマンドパレット内"
+  buttonIcon="/img/button-set-material.png"
+  tier="both"
+/>
+
+## 説明
+
+選択したオブジェクトのマテリアルを複製し、編集できるようにします。
 
 ## 基本的な使い方
 
-1. フォークしたいマテリアルを持つオブジェクトを選択します。
+1. マテリアルを分岐したいオブジェクトを選択します。
 2. <kbd>Shift + M</kbd> を押します。
-3. マテリアルが複製され、そのオブジェクト専用に編集可能になります。
+3. マテリアルが複製され、編集可能になります。
 
 <VideoPlayer fileName="fork-material"/>
 
 ## 関連項目
-- [Remove Material](remove-material)
-- [Set Material](set-material)
-- [Outliner/Material color](/plasticity-essentials/outliner#material-color)
-- [View Mode/Toggle View Mode](/plasticity-essentials/view-mode#toggle-view-mode)
+- [マテリアル削除](remove-material)
+- [マテリアル設定](set-material)
+- [アウトライナー/マテリアルカラー](/plasticity-essentials/plasticity-interface/outliner#material-color)

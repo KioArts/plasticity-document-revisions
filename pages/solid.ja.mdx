@@ -1,63 +1,106 @@
-# ソリッドコマンド[#Solid-commands]
+### ブーリアンとカット
 
-| コマンド名                                                 | ショートカット                      | 機能                                                                                      |
-| ------------------------------------------------------------ | ---------------------------- | ---------------------------------------------------------------------------------------- |
-| [Boolean](/solid/boolean)                                     | <kbd>Q</kbd>                 | ブーリアンソリッドおよび/またはシート。                                                |
-| [Cut](/solid/cut)                                             | <kbd>C</kbd>                 | ソリッドとシートをカットします。                                                        |
-| **Solid and Sheet Commands**                                 |                              |                                                                                          |
-| [Alternative Duplicate](/solid/alternative-duplicate)         | <kbd>Alt+D</kbd>           | 代替複製。                                                                                |
-| [Constrained Surface](/solid/constrained-surface)             |                              | 制約された表面を作成します。                                                            |
-| [Deform](/solid/deform)                                      |                               | 曲線を変形、ソリッドおよびシートを変形するための統一コマンド。                         |
-| [Deform Solid and Sheet](/solid/deform-solid-and-sheet)       |                               | 不規則および規則的な表面にオブジェクトをラップします。                                   |
-| [Extrude](/solid/extrude)                                     | <kbd>E</kbd>                 | 面、領域、曲線を押し出します。                                                          |
-| [Fillet](/solid/fillet)                                       | <kbd>B</kbd>                 | 曲線のフィレット、頂点のフィレット、シェルのフィレットのための統一コマンド。          |
-| [Fillet Shell](/solid/fillet-shell)                           | <kbd>B</kbd>                 | エッジをフィレットまたは面取りします。                                                  |
-| [Hollow](/solid/hollow)                                       |                              | ソリッドを空洞にします。                                                                 |
-| [Loft](/solid/loft)                                           | <kbd>L</kbd>                 | 面、エッジ、曲線をロフトします。                                                          |
-| [Measure Continuity](/tool/measure-continuity)               |                            | サーフェスエッジ間の連続性を測定します。                                                  |
-| [Toggle Surface Curvature](/solid/toggle-surface-curvature) |                            | Measure curvature across surface edges.                                                  |
-| [Patch](/solid/patch)                                         |                              | シートの穴や閉じた曲線をシートに填埋します。                                            |
-| [Pipe](/solid/pipe)                                           | <kbd>P</kbd>                 | エッジと曲線からパイプを作成します。                                                    |
-| [Raise Degree](/solid/raise-degree)                           | <kbd>Shift+S</kbd>         | 曲線の次数を上げ、表面の次数を上げるための統一コマンド。                               |
-| [Raise Surface Degree](/solid/raise-surface-degree)           | <kbd>Shift+S</kbd>         | 表面の制御点を増加させます。                                                             |
-| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) |                              | ソリッドおよびシートのフィレットを削除します。                                          |
-| [Revolve](/solid/revolve)                                     |                              | 領域または曲線を回転させます。                                                           |
-| [Sweep](/solid/sweep)                                         | <kbd>Shift+P</kbd>         | 領域または曲線をスイープします。                                                         |
-| [Square](/solid/square)                                       |                               | 明示的な制御により、度数とスパンを持つ表面を作成します。                                 |
-| [Slide](/solid/slide)                                        |                               | Slide Curve CV、Slide Surface CVの統一コマンド。                                      |
-| [Slide Surface CV](/solid/slide-surface-cv)                   | <kbd>Shift+G</kbd>           | CVをサーフェス上でCVハルに沿ってスライドさせます。                                       |
-| [Thicken](/solid/thicken)                                     |                              | 選択したシートに厚みを追加します。                                                      |
-| [Thicken Face](/solid/thicken-face)                           |                              | 選択した面に厚みを追加します。                                                          |
-| [XNurbs](/solid/xnurbs)                                       |                               | 高品質で複雑な表面を作成します。                                                         |
-| **Sheet Commands**                                           |                              |                                                                                          |
-| [Align](/solid/align)                                         |                              | サーフェスを整列  
-| [Bridge Surface](/solid/bridge-surface)                       |                              | 2つのシートをブリッジします。                                                            |
-| [Extend](/solid/extend)                                       |                              | 曲線を拡張、シートを拡張するための統一コマンド。                                        |
-| [Extend Sheet](/solid/extend-sheet)                           |                              | シートの外側の1つ以上のエッジを拡張します。                                             |
-| [Find Boundary Edges](/solid/find-boundary-edges)             |                              | シートの開口部のエッジを選択します。                                                    |
-| [Join](/solid/join)                                           | <kbd>J</kbd>                 | 曲線を結合、シートを結合するための統一コマンド。                                       |
-| [Join Sheets](/solid/join-sheets)                             | <kbd>J</kbd>                 | 一致するエッジを持つシートを結合します。                                               |
-| [Reverse](/solid/reverse)                                     |                              | カーブ反転とシート反転の統合コマンド。                                       |
-| [Reverse Sheet](/solid/reverse-sheet)                         |                              | シートの法線の方向を逆転させます。                                                      |
-| [Unjoin](/solid/unjoin)                                       | <kbd>Alt+J</kbd>           | 曲線を分割、面を分割、シェルを分割するための統一コマンド。                              |
-| [Unjoin Faces](/solid/unjoin-faces)                           | <kbd>Alt+J</kbd>           | ソリッドまたはシートから選択した面を分離します。                                       |
-| [Unjoin Shells](/solid/unjoin-shells)                         | <kbd>Alt+J</kbd>           | 選択したソリッドまたはシートからすべての面を個々の面に分離します。                    |
-| [Untrim](/solid/untrim)                                       | <kbd>Alt+T</kbd>           | 元の形状に基づいてシートを作成します。                                                 |
-| **Face Commands**                                            |                              |                                                                                          |
-| [Delete Face](/solid/delete-face)                             |<kbd>Shift+Backspace</kbd> or <kbd>Shift+Delete</kbd> or <kbd>Shift+X</kbd> | 面を削除します。                                                                         |
-| [Draft Face](/solid/draft-face)                               |                              | 面を傾斜させます。                                                                        |
-| [Match Face](/solid/match-face)                               |                              | 面を別の面に一致させます。                                                                |
-| [Offset Face](/solid/offset-face)                             |                              | 選択した面をオフセットします。                                                           |
-| [Rebuild](/solid/rebuild)                                     |                              | 曲線を再構築、面を再構築するための統一コマンド。                                        |
-| [Rebuild Face](/solid/rebuild-face)                           |                              | 面を再構築します。                                                                        |
-| [Unwrap Face](/solid/unwrap-face)                             |                              | 面を展開します。                                                                          |
-| **Edge Commands**                                            |                              |                                                                                          |
-| [Delete Redundant Topology](/solid/delete-redundant-topology) |                              | 不要なエッジを削除します。                                                                |
-| [Complete Edge](/common/complete-edge)                        |                              | エッジを拡張します。                                                                      |
-| [Imprint](/solid/imprint)                                     | <kbd>Shift+I</kbd>         | ボディボディをインプリント、曲線ボディをインプリントするための統一コマンド。            |
-| [Imprint Body Body](/solid/imprint-body-body)                 | <kbd>Shift+I</kbd>         | ツールソリッドまたはシートと交差するターゲットソリッドまたはシートにエッジを作成します。|
-| [Imprint Curve Body](/solid/imprint-curve-body)               | <kbd>Shift+I</kbd>         | ツール曲線に投影されるターゲットソリッドまたはシートにエッジを作成します。             |
-| [Isoparam](/solid/isoparam)                                   | <kbd>Ctrl+R</kbd>          | アイソパラメータを追加します。                                                           |
-| [Offset Curve](/solid/offset-curve)                           | <kbd>O</kbd>                 | 平面曲線のオフセット、領域のオフセット、面ループのオフセット、エッジのオフセットのための統一コマンド。 |
-| [Offset Edge](/solid/offset-edge)                             | <kbd>O</kbd>                 | 選択したエッジをオフセットします。                                                       |
-| [Offset Face Loop](/solid/offset-face-loop)                   | <kbd>O</kbd>                 | 選択した面のアウトラインエッジをオフセットします。                                      |
+- ソリッドボディを結合・減算するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Boolean](/solid/boolean) | 2 つのソリッドボディを結合、減算、または交差させます。 |
+| [Cut](/solid/cut) | 別のボディを切削ツールとして使用してソリッドボディを切断します。 |
+
+### インスタンス
+
+- ソリッドおよびシートのインスタンスを作成・実体化するツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Create Instance](/solid/create-instance) | 選択したジオメトリの再利用可能なインスタンスを作成します。 |
+| [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance) | ソリッドとシートの再利用可能なインスタンスを作成します。 |
+| [Realize Instances](/solid/realize-instances) | すべてのインスタンスを独立した編集可能ジオメトリに変換します。 |
+| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) | ソリッドおよびシートのインスタンスを編集可能ジオメトリに変換します。 |
+
+### サーフェス作成
+
+- サーフェスおよびソリッドを作成するツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Alternative Duplicate](/solid/alternative-duplicate) | 選択したサーフェス断片からソリッドを生成する別の方法です。 |
+| [Bridge Surface](/solid/bridge-surface) | 2 つの既存サーフェス間に滑らかなブリッジサーフェスを作成します。 |
+| [Constrained Surface](/solid/constrained-surface) | 既存ジオメトリに拘束されたサーフェスを作成します。 |
+| [Extrude](/solid/extrude) | カーブまたはフェースを指定方向に押し出してソリッドまたはシートを作成します。 |
+| [Loft](/solid/loft) | 複数のカーブまたはプロファイルを通過させてサーフェスを作成します。 |
+| [Patch](/solid/patch) | 開いた境界を新しいサーフェスパッチで埋めます。 |
+| [Pipe](/solid/pipe) | カーブパスに沿ってパイプソリッドを作成します。 |
+| [PolySpline](/solid/polyspline) | メッシュオブジェクトを変換してポリサーフェスを作成します。 |
+| [Revolve](/solid/revolve) | カーブを軸の周りに回転させてソリッドまたはシートを作成します。 |
+| [Square](/solid/square) | XNurbs を使用して境界カーブ間に未トリムサーフェスを作成します。 |
+| [Sweep](/solid/sweep) | プロファイルカーブをパスに沿ってスイープし、ソリッドまたはシートを作成します。 |
+| [Xnurbs](/solid/xnurbs) | 境界カーブから高品質なサーフェスを生成します。 |
+
+### 変形とスライド
+
+- ソリッドおよびシートジオメトリを変形・スライドするツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Deform](/solid/deform) | 選択したジオメトリを変形します。 |
+| [Deform Solid and Sheet](/solid/deform-solid-and-sheet) | ソリッドおよびシートボディを変形します。 |
+| [Slide](/solid/slide) | ジオメトリをサーフェスまたはエッジに沿ってスライドさせます。 |
+| [Slide Surface CV](/solid/slide-surface-cv) | サーフェスのコントロールポイントをサーフェス上でスライドさせます。 |
+
+### 削除と除去
+
+- フェースの削除およびトポロジの除去を行うツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Delete Face](/solid/delete-face) | ソリッドまたはシートボディから選択したフェースを削除します。 |
+| [Delete Redundant Topology](/solid/delete-redundant-topology) | ソリッドまたはシートの不要なトポロジを除去します。 |
+| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) | シェルボディからフィレットフェースを除去します。 |
+| [Remove Nominal Surface](/solid/remove-nominal-surface) | ボディからノミナルサーフェス参照を削除します。 |
+
+### ドラフトとアライン
+
+- ドラフト角の適用およびジオメトリの整列を行うツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Align](/solid/align) | 選択したジオメトリを参照サーフェスエッジに整列します。 |
+| [Align Surface](/solid/align) | シートボディを参照シートエッジに整列します。 |
+| [Draft Face](/solid/draft-face) | 金型や鋳造ワークフローのためにフェースにドラフト角を適用します。 |
+
+### 延長
+
+- サーフェスおよびシート境界を延長するツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Extend](/solid/extend) | 開いたエッジまたはサーフェス境界を延長します。 |
+| [Extend Sheet](/solid/extend-sheet) | シートボディを境界エッジから延長します。 |
+
+### フィレット
+
+- ソリッドエッジにフィレットや面取りを追加するツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Fillet](/solid/fillet) | ソリッドボディの選択したエッジにフィレットまたは面取りを追加します。 |
+| [Fillet Shell](/solid/fillet-shell) | シェルボディのエッジにフィレットまたは面取りを追加します。 |
+
+### 中空化と厚み付け
+
+- ソリッドを中空化し、サーフェスに厚みを追加するツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Hollow](/solid/hollow) | 内部の材料を除去してソリッドボディを中空化します。 |
+| [Thicken](/solid/thicken) | シートボディに厚みを追加してソリッド化します。 |
+| [Thicken Face](/solid/thicken-face) | 選択したフェースに指定量の厚みを追加します。 |
+
+### インプリント
+
+- カーブやボディをサーフェスにインプリントするツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Imprint](/solid/imprint)

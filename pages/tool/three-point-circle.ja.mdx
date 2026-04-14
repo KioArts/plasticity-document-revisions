@@ -3,23 +3,32 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
+## 三点円（Three-Point Circle）
 
-# Three-Point Circle（3点指定の円）
+{/* <Reference shortcut='' command='Three-Point Circle' button='Toolbar'  buttonIcon='button-three-point-circle'/> */}
 
-<Reference shortcut='' command='Three-Point Circle' button='ツールバー'  buttonIcon='button-three-point-circle'/>
+<CommandReference
+  command="Three-Point Circle"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-three-point-circle.png"
+  tier="both"
+/>
 
-円周上の3点を指定して円を作成できます。
+## 説明
+
+円周上の 3 点を指定して円を作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-three-point-circle" />をクリックします。
-2. 円周上の1点をクリックします。
-3. カーソルを動かして円周上の2点目をクリックします。
+1. ツールバーの <ButtonIcon type="button-three-point-circle" /> ボタンをクリックします。
+2. 円周上の 1 点目をクリックします。
+3. カーソルを動かし、円周上の 2 点目をクリックします。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>Tab</kbd> : 寸法値に直接入力できるようになります。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)を参照してください。
-      - <kbd>K</kbd> **Knife:** [ナイフモードを使う](/tool/sketching-essentials#use-knife-mode)を参照してください。
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-4. カーソルを動かして大きさを調整し、クリックして確定します。
+      - <kbd>Tab</kbd>: 寸法を直接入力できます。詳細は[こちら](/tool/sketching-essentials#specify-dimensions-numerically)。
+      - <kbd>K</kbd> **Knife:** [ナイフモードの使用](/tool/sketching-essentials#use-knife-mode)を参照してください。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [X/Y/Z 軸に拘束](/tool/sketching-essentials#constrain-to-an-axis)。
+4. カーソルを動かしてサイズを調整し、クリックして確定します。
 5. 円が作成されます。
 
 <VideoPlayer fileName="three-point-circle"/>
@@ -31,6 +40,3 @@ import Kst from '/components/KeyboardShortcutsTitle'
 - [Center Point Arc](center-point-arc)
 - [Three-Point Arc](three-point-arc)
 - [Tangent Arc](tangent-arc)
-
-
-

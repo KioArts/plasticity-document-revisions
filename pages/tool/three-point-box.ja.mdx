@@ -3,28 +3,38 @@ import ButtonIcon from '/components/ButtonIcon';
 import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Three Point Box
+## 三点ボックス（Three-Point Box）
 
-<Reference shortcut='' command='Three-Point Box' button='ツールバー'  buttonIcon='button-three-point-box'/>
+{/* <Reference shortcut='' command='Three-Point Box' button='Toolbar'  buttonIcon='button-three-point-box'/> */}
 
-3点を指定した四角形と高さを指定して直方体を作成できます。
+<CommandReference
+  command="Three-Point Box"
+  shortcut=""
+  button="ツールバー内"
+  buttonIcon="/img/button-three-point-box.png"
+  tier="both"
+/>
+
+## 説明
+
+底面上の 3 点と高さを指定して、長方形のボックスを作成できます。
 
 ## 基本的な使い方
 
-1. ツールバーのボタン <ButtonIcon type="button-three-point-box" /> をクリックします。
-2. 底面の角をクリックします。
-3. 底面のもう1点をクリックします。
-4. カーソルを動かして底面の大きさを調整し、クリックして確定します。
+1. ツールバーの <ButtonIcon type="button-three-point-box" /> ボタンをクリックします。
+2. 底面の一つ目の角をクリックします。
+3. 底面上の別の点をクリックします。
+4. カーソルを動かして底面のサイズを調整し、クリックして確定します。
    - <Kst>コマンドダイアログ</Kst>
-      - **Select target bodies :**
-         - Booleanコマンドと同じ機能です。詳細は[**Boolean**](/solid/boolean)コマンドを参照してください。
-      - **Width:** 幅を指定します。
-      - **Length:** 長さを指定します。
-      - **Height:** 高さを指定します。
+      - **対象ボディを選択:**
+         - Boolean コマンドと同じ動作です。詳細は [**Boolean**](/solid/boolean) を参照してください。
+      - **幅:** 幅を指定します。
+      - **長さ:** 長さを指定します。
+      - **高さ:** 高さを指定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [X/Y/Z 軸に拘束](/tool/sketching-essentials#constrain-to-an-axis)。
 5. カーソルを動かして高さを調整し、クリックして確定します。
-7. 直方体が作成されます。
+7. 長方形のボックスが作成されます。
 
 <VideoPlayer fileName="three-point-box"/>
 
@@ -32,6 +42,3 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 - [Center Box](center-box)
 - [Corner Box](corner-box)
-
-
-

@@ -1,50 +1,62 @@
+import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 
-# Rectangular Array（長方形配列で複製）
+## 矩形配列
 
-<Reference shortcut="" command="Rectangular Array" button="推奨コマンドメニューで" buttonIcon='button-rectangular-array' />
+{/* <Reference shortcut="" command="矩形配列" button="提案コマンドメニュー内"  buttonIcon='button-rectangular-array'/> */}
 
-複製数を指定して、オブジェクトを直線状に複製できます。必要に応じて別の方向を指定することで、長方形配列を作成できます。インスタンスを作成するオプションも利用可能です。
+<CommandReference
+  command="矩形配列"
+  shortcut=""
+  button="コマンドバー内"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
 
-<Callout>
-画像およびメッシュ（.OBJ、.STL、.FBX など）は、複製方向、コピー数、複製モードを制御して並べることができます。ただし、インスタンス化はサポートされていません。
+## 説明
+
+複製数を指定して、オブジェクトを直線的なパターンで複製します。必要に応じて別方向を指定し、矩形配列を作成できます。インスタンス作成オプションも利用できます。
+
+<Callout type='info'>
+**注意:** 画像およびメッシュ（.OBJ、.STL、.FBX など）は配列でき、複製方向、コピー数、複製モードを調整できます。インスタンスオブジェクトの配列もサポートされています。
 </Callout>
 
 ## 基本的な使い方
 
 1. 複製したいオブジェクトを選択します。
-2. コマンドバー右のボタン <ButtonIcon type="button-rectangular-array" /> をクリックします。
+2. コマンドバー右側の <ButtonIcon type="button-rectangular-array" /> ボタンをクリックします。
 3. 複製プレビューが表示されます。
-   - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
-4. 複製したい方向をクリックします。
-5. コマンドダイアログとキーボードショートカットでオプションを設定します。
-   - **モード:**
-         - **範囲:** すべての複製が均等に配置される範囲距離を指定します。
+   - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [X/Y/Z 軸に拘束](/tool/sketching-essentials#constrain-to-an-axis)。
+4. 希望する方向をクリックします。
+5. コマンドダイアログおよびキーボードショートカットでオプションを設定します。
+      - **モード:**
+         - **範囲:** 指定した距離内で複製を均等に配置します。
          - **間隔:** 各複製の間隔距離を指定します。
    - <Kst>コマンドダイアログ</Kst>
       - **距離 1:** 距離を指定します。
-      - **数:** 複製の数を指定します。
-      - **インスタンスを作成:** 独立したコピーの代わりにインスタンスを作成します。（インスタンスの作成
- を参照） (See [Create Instances](/solid/create-instance))
+      - **数:** 複製数を指定します。
+      - **インスタンス作成:** 独立コピーではなくインスタンスを作成します。（[インスタンス作成](/solid/create-instance) を参照）
    - <Kst>キーボードショートカット</Kst>
-   - <kbd>Shift + ホイールアップ</kbd> コピー追加: 複製の数を増やします。
-   - <kbd>Shift + ホイールダウン</kbd> コピー削除: 複製の数を減らします。
-5. \<オプション\> もうひとつの方向にも配列で複製したいときは、ダイアログの**Select endpoint 2**をクリックします。
+   - <kbd>Shift + ホイール上</kbd> **コピー追加:** 複製数を増やします。
+   - <kbd>Shift + ホイール下</kbd> **コピー削減:** 複製数を減らします。
+6. 別方向にも複製したい場合は、ダイアログ内の **エンドポイント 2 を選択** をクリックします。
    1. 複製したい方向を右クリックします。
    2. コマンドダイアログでオプションを設定します。
       - <Kst>コマンドダイアログ</Kst>
-         - **Distance 2:** 距離を指定します。
-         - **Repeat:** 複製する回数を指定します。
-         - **インスタンスを作成:** 独立したコピーの代わりにインスタンスを作成します。（インスタンスの作成
- を参照） (See [Create Instances](/solid/create-instance))
+         - **距離 2:** 距離を指定します。
+         - **繰り返し:** 繰り返し数を指定します。
+         - **インスタンス作成:** 独立コピーではなくインスタンスを作成します。（[インスタンス作成](/solid/create-instance) を参照）
       - <Kst>キーボードショートカット</Kst>
-      - <kbd>Shift</kbd> + ホイール上回転 **Add copy:** 複製の数を増やします。
-      - <kbd>Shift</kbd> + ホイール下回転 **Subtract copy:** 複製の数を減らします。
-6. コマンドダイアログのOKをクリックするか、右クリックで確定します。
+      - <kbd>Shift + ホイール上</kbd> **コピー追加:** 複製数を増やします。
+      - <kbd>Shift + ホイール下</kbd> **コピー削減:** 複製数を減らします。
+      - <kbd>I</kbd> **インスタンス切り替え:** ミラーされた半分をインスタンスとして作成するか、独立コピーとして作成するかを切り替えます。
+7. コマンドダイアログで OK を押すか、右クリックで確定します。
+
+<VideoPlayer fileName="rectangular-array"/>
 
 ## 関連項目
-- [Curve Array](curve-array)
-- [Radial Array](radial-array)
+- [カーブ配列](curve-array)
+- [放射状配列](radial-array)

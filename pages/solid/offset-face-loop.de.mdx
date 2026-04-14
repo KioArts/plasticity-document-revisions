@@ -2,34 +2,46 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Offset Face Loop
+## Offset Face Loop
 
-<Reference shortcut="O" command="Offset Curve" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon="button-offset-curve"/>
+{/* <Reference shortcut="O" command="Offset Curve" button="Im Menü „Vorgeschlagene Befehle“"  buttonIcon="button-offset-curve"/> */}
 
-Verschieben Sie die Umrisskanten der ausgewählten Face, indem Sie den Abstand angeben, um neue Edge zu erstellen. Mehrere Face erzeugen neue einzelne Edge oder eine kombinierte Edge.
+<CommandReference
+  command="Offset Curve"
+  shortcut="O"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-offset-curve.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Face aus, die Sie versetzen möchten.
-2. Drücken Sie <kbd>O</kbd>.
-3. Bewegen Sie die Maus, um den Abstand anzugeben.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+Versetzt die Umrisskanten der ausgewählten Flächen um eine angegebene Distanz, um neue Kanten zu erzeugen. Mehrere Flächen erzeugen entweder einzelne neue Kanten oder eine kombinierte Kante.
+
+## Grundlegende Verwendung
+
+1. Wähle die Flächen aus, die du versetzen möchtest.
+2. Drücke <kbd>O</kbd>.
+3. Bewege die Maus, um die Distanz festzulegen.
+4. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
    - <Kst>Befehlsdialog</Kst>
-      - **Distance:** Geben Sie den Abstand an.
+      - **Distanz:** Bestimmt die Versatzdistanz.
+      **Lückenfüllung:**
+            - **Rund:** Füllt konvexe Ecken mit einer Rundung.
+            - **Linear:** Füllt konvexe Ecken mit geraden Linien, jedoch können die resultierenden Kanten fragmentiert sein.
+            - **Natürlich:** Füllt konvexe Ecken mit geraden Linien und erhält dabei durchgehende Kanten.
+            <img src="/img/offset-gap-fill.svg" width="450" />
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>V</kbd> **Gap fill:**
-         - **Round:** Rundet konvexe Ecken.
-         - **Linear:** Verbindet konvexe Ecken mit geraden Linien.
-         - **Natural:** Natürlich
-      - <kbd>I</kbd> **Individual:** Wenn mehrere Face ausgewählt sind, aktiviert diese Option das Versetzen der Face in kombinierter Form.
-      - <kbd>D</kbd> **Distance:** Geben Sie den Abstand mit der Mausbewegung an.
-5. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
+      - <kbd>V</kbd> **Lückenfüllung:** Zwischen den Optionen wechseln.
+      - <kbd>S</kbd> **Distanzen sperren:** Versetzt beide Seiten mit gleicher Distanz.
+      - <kbd>D</kbd> **Distanz:** Distanz durch Mausbewegung festlegen.
+      - <kbd>I</kbd> **Individuell:** Wenn mehrere Flächen ausgewählt sind, versetzt diese Option die Flächen in kombinierter Form.
+5. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="offset-face-loop"/>
 
 ## Siehe auch
 - [Offset Curve](offset-curve)
 - [Offset Edge](offset-edge)
-- [isoparam](isoparam)
+- [Isoparam](isoparam)
 - [Imprint](imprint)
-- [Extend Edge](extend-edge)

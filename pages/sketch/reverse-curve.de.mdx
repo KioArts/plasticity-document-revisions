@@ -4,20 +4,40 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Reverse Curve
+{/* # Reverse Curve
 
-<Reference shortcut="" command="Reverse" button=""/>
+<Reference shortcut="" command="Reverse" button=""/> */}
 
-Richten Sie die Richtung einer Kurve um. 
+{/* <HeadBannerThumbnail
+  src="/videos/banner/reverse-curve.mp4"
+  alt="Reverse Curve Preview"
+  title="Reverse Curve"
+  command="Reverse"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-reverse.png" alt="Reverse Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Kurve umkehren
+
+<CommandReference
+  command="Reverse"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-reverse.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Kehrt die Richtung einer Kurve um.
+
+## Grundlegende Verwendung
 
 1. Wählen Sie die Kurve aus, deren Richtung Sie umkehren möchten.
-2. Geben Sie **Reverse** in die Befehlsleiste ein.
-3. Jetzt wurde die Richtung der Kurve umgekehrt.
+2. Geben Sie **Reverse** in der Befehlspalette ein.
+3. Die Richtung der Kurve wurde nun umgekehrt.
 <VideoPlayer fileName="reverse-curve"/>
 
 ## Siehe auch
-- [Reverse Sheet](/solid/reverse-sheet)
-
-
+- [Fläche umkehren](/solid/reverse-sheet)

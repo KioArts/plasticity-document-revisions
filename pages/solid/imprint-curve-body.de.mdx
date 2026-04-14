@@ -3,52 +3,61 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Imprint Curve Body[#imprint-curve-body]
+## Imprint Curve Body[#imprint-curve-body]
 
-<Reference shortcut="Umschalt + I" command="Imprint" button="Im Menü Vorgeschlagene Befehle" buttonIcon='button-imprint' />
+{/* <Reference shortcut="Shift + I" command="Imprint" button="Im Menü „Vorgeschlagene Befehle“" buttonIcon='button-imprint' /> */}
 
-Erstellen Sie Kanten am Zielsolid oder Sheet, wo es auf eine Werkzeug-Curve projiziert wird. Optional kann die Projektionsrichtung angegeben werden; auch eine bidirektionale Projektion ist verfügbar.
+<CommandReference
+  command="Imprint"
+  shortcut="Shift + I"
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-imprint.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-### Wenn Curves ausgewählt sind
+Erstellt Kanten auf dem Ziel‑Volumenkörper oder Sheet an den Stellen, an denen er auf eine Werkzeugkurve projiziert wird. Die Projektionsrichtung kann optional festgelegt werden; eine bidirektionale Projektion ist ebenfalls möglich.
 
-1. Drücken Sie <kbd>Umschalt + I</kbd>.
-2. Wählen Sie einen Solid oder Sheet, auf den die Curves projiziert werden sollen.
-3. Fahren Sie mit Schritt 4 fort.
+## Grundlegende Verwendung
 
-### Wenn Solid oder Sheet ausgewählt sind
+### Wenn Kurven ausgewählt sind
 
-1. Drücken Sie <kbd>Umschalt + I</kbd>.
-2. Wählen Sie Curves, die auf den Solid oder Sheet projiziert werden sollen.
-3. Fahren Sie mit Schritt 4 fort.
+1. Drücke <kbd>Shift + I</kbd>.
+2. Wähle einen Volumenkörper oder ein Sheet aus, auf den/das die Kurven projiziert werden sollen.
+3. Weiter mit Schritt 4.
+
+### Wenn Volumenkörper oder Sheets ausgewählt sind
+
+1. Drücke <kbd>Shift + I</kbd>.
+2. Wähle Kurven aus, die auf den Volumenkörper oder das Sheet projiziert werden sollen.
+3. Weiter mit Schritt 4.
 
 ### Wenn nichts ausgewählt ist
 
-1. Drücken Sie <kbd>Umschalt + I</kbd>.
-2. Wählen Sie einen Solid oder Sheet, auf den die Curves projiziert werden sollen.
-3. Wählen Sie Curves, die auf den Solid oder Sheet projiziert werden sollen.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-     - <Kst>Befehlsdialog</Kst>
-          - **Method:**
-               - **Normal:** Projiziert mit der Standardmethode.
-               - **Vector:** Projiziert in eine lineare Richtung. **Bidirectional** und **Hide occlusion** werden aktiviert.  
-               ![Imprint Curve Body Method Demonstration](/img/imprint-curve-body-method.png)
-          - **Bidirectional:** Führt die Projektion in beide Richtungen durch.
-               ![Imprint Curve Body Bidirectional Demonstration](/img/imprint-curve-body-bidirectional.png)
-          - **Hide occlusion:** Wenn aktiviert, wird nicht auf Oberflächen hinter dem Objekt projiziert.
-               ![Imprint Curve Body Hide Occlusion Demonstration](/img/imprint-curve-body-hide-occlusion.png)
-          - **Completion:** Geben Sie die Erweiterung der projizierten Kanten an.
-               - **None:** Erweitert die projizierten Kanten nicht.
-               - **Edge:** Erweitert die projizierten Kanten bis sie andere Kanten schneiden.
-               - **Boundary:** Erweitert die projizierten Kanten bis sie andere Kanten schneiden und verbindet sie.
-               ![Imprint Curve Body Completion Demonstration](/img/imprint-curve-body-completion.png)
-5. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
-
+1. Drücke <kbd>Shift + I</kbd>.
+2. Wähle einen Volumenkörper oder ein Sheet aus, auf den/das die Kurven projiziert werden sollen.
+3. Wähle Kurven aus, die projiziert werden sollen.
+4. Lege die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
+- <Kst>Befehlsdialog</Kst>
+     - **Methode:**
+          - **Normal:** Standardprojektionsmethode.
+          - **Vektor:** Projiziert in eine lineare Richtung. **Bidirektional** und **Verdeckungen ausblenden** werden aktiviert.
+          <img src="/img/project-curve-body-method.svg" width="500" />
+     - **Bidirektional:** Führt die Projektion in beide Richtungen aus.
+          <img src="/img/project-curve-body-bidirectional.svg" width="500" />
+     - **Verdeckungen ausblenden:** Wenn aktiviert, wird nicht auf Flächen hinter dem Objekt projiziert.
+          <img src="/img/project-curve-body-hide-occluded.svg" width="500" />
+     - **Vervollständigung:** Bestimmt die Erweiterung der projizierten Kanten.
+          - **Keine:** Projizierte Kanten werden nicht verlängert.
+          - **Kante:** Verlängert die projizierten Kanten, bis sie andere Kanten schneiden.
+          - **Begrenzung:** Verlängert die projizierten Kanten bis zum Schnittpunkt und verbindet sie.
+          <img src="/img/imprint-curve-body-completion.svg" width="500" />
+5. Bestätige mit OK im Befehlsdialog oder per Rechtsklick.
 
 ## Siehe auch
 - [Imprint](imprint)
 - [Imprint Body Body](imprint-body-body)
-- [isoparam](isoparam)
+- [Isoparam](isoparam)
 - [Offset Curve](offset-curve)
 - [Extend Edge](extend-edge)

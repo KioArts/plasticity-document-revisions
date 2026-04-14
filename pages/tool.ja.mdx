@@ -1,35 +1,81 @@
-# スケッチ＆プリミティブツール
+### スケッチの基本
 
-[スケッチの基本](/tool/sketching-essentials)
+- 正確なカーブのスケッチ、点へのスナップ、一時的な作図補助線の使用の基本を学びます。完全な概要は[スケッチの基本](/tool/sketching-essentials)を参照してください。
 
-| コマンド名                                          | ショートカット       | 機能                                 |
-| --------------------------------------------------- | -------------------- | ------------------------------------ |
-| [Line](/tool/line)                                   | <kbd>Shift+A</kbd> | 線分                                 |
-| [Spline Curve](/tool/spline-curve)                   |                      | スプラインカーブ                     |
-| [Control Point Curve](/tool/control-point-curve)     |                      | 制御点カーブ                         |
-| [Center Circle](/tool/center-circle)                 |                      | 中心と直径を指定する円               |
-| [Two Point Circle](/tool/two-point-circle)           |                      | 直径を指定する円                     |
-| [Three Point Circle](/tool/three-point-circle)       |                      | 3点を指定する円                      |
-| [Tangent Circle](/tool/tangent-circle)              |                      | 2つのカーブに接する円                |
-| [Center Point Arc](/tool/center-point-arc)           |                      | 中心と2点を指定する円弧              |
-| [Three Point Arc](/tool/three-point-arc)             |                      | 3点を指定する円弧                    |
-| [Tangent Arc](/tool/tangent-arc)                     |                      | カーブに接する円弧                                     |
-| [Ellipse](/tool/ellipse)                             |                      | 短軸と長軸による楕円。                        |
-| [Regular Polygon](/tool/polygon)                     |                      | 多角形                               |
-| [Spiral](/tool/spiral)                               |                      | 螺旋                                 |
-| [Corner Rectangle](/tool/corner-rectangle)           |                      | 対角線を指定する四角形               |
-| [Center Rectangle](/tool/center-rectangle)           |                      | 中心と1点を指定する四角形            |
-| [Three Point Rectangle](/tool/three-point-rectangle) |                      | 3点を指定する四角形                  |
-| [Bridge Curve](/sketch/bridge-curve)          |                      | カーブをつなぐ                       |
-| [Trim](/sketch/trim)                                 |                      | カーブを切り捨てる                   |
-| [Split Curve At Point](/sketch/split-segment)        |                      | カーブをふたつのセグメントに分割する |
-| [Insert CV At Point](/sketch/insert-knot)            |                      | スプライン曲線に制御点を挿入します。    |
-| [Sphere](/tool/sphere)                               |                      | 球                                  |
-| [Corner Box](/tool/corner-box)                       | <kbd>Shift+B</kbd> | 対角線と高さを指定する直方体            |
-| [Center Box](/tool/center-box)                       |                      | 中心と1点、高さを指定する直方体      |
-| [Three Point Box](/tool/three-point-box)             |                      | 3点と高さを指定する直方体            |
-| [Cylinder](/tool/cylinder)                           | <kbd>Shift+C</kbd> | 円柱                                 |
-| [Measure Distance](/tool/measure-distance)                    | <kbd>Ctrl + =</kbd>  | 距離を測定                         |
-| [Measure Radius](/tool/measure-radius)               |                      | 放射状の値を測定します。                   |
-| [Measure Continuity](/tool/measure-continuity)       |                      | 表面の G0/G1/G2 連続性を測定します。      |
-| [Toggle Curvature](/tool/toggle-curvature)           |                      | サーフェスとスケッチオブジェクトの曲率を測定します。 |
+### カーブとライン
+
+- カーブの作成、接続、操作のためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [ライン](/tool/line) | 2点間に直線を引く。 |
+| [スプライン曲線](/tool/spline-curve) | カーブが通過する点を配置して滑らかな曲線を描く。 |
+| [コントロールポイント曲線](/tool/control-point-curve) | カーブ上に乗らずに形状に影響するコントロールポイントを使用して曲線を描く。 |
+| [カーブをブリッジ](/sketch/bridge-curve) | 2つの既存のカーブを滑らかなブリッジカーブで接続する。 |
+| [点でカーブを分割](/sketch/split-segment) | 指定した点でカーブを2つの別々のカーブに分割する。 |
+| [点にCVを挿入](/sketch/insert-knot) | より細かい形状制御のために既存のカーブにコントロール頂点を追加する。 |
+| [トリム](/sketch/trim) | カーブを交差点でトリムしてジオメトリを整理する。 |
+
+### 円ツール
+
+- 異なる構築方法で円を作成するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [中心円](/tool/center-circle) | 中心点と半径を定義して円を描く。 |
+| [2点円](/tool/two-point-circle) | 直径上の2点を定義して円を描く。 |
+| [3点円](/tool/three-point-circle) | 3つの指定した点を通る円を描く。 |
+| [接線円](/tool/tangent-circle) | 既存のカーブまたはエッジに接する円を描く。 |
+| [楕円](/tool/ellipse) | 中心と2つの半径を定義して楕円を作成する。 |
+
+### 弧ツール
+
+- 異なる構築方法で弧を作成するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [中心点弧](/tool/center-point-arc) | 中心点、半径、角度を定義して弧を描く。 |
+| [3点弧](/tool/three-point-arc) | 3つの指定した点を通る弧を描く。 |
+| [接線弧](/tool/tangent-arc) | 既存のカーブまたはエッジに接して始まる弧を描く。 |
+
+### 多角形とスパイラル
+
+- 正多角形とスパイラル曲線を作成するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [正多角形](/tool/polygon) | 定義した辺の数で多角形を描く。 |
+| [スパイラル](/tool/spiral) | 定義したピッチと回転数でスパイラル曲線を描く。 |
+
+### 矩形ツール
+
+- 異なる構築方法で矩形を作成するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [コーナー矩形](/tool/corner-rectangle) | 2つの対角コーナー点を定義して矩形を描く。 |
+| [中心矩形](/tool/center-rectangle) | 中心点から外側に向かって矩形を描く。 |
+| [3点矩形](/tool/three-point-rectangle) | 3点で向きとサイズを定義して回転した矩形を描く。 |
+
+### 3Dプリミティブ
+
+- モデリングの出発点として基本的な3Dソリッド形状を作成するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [球](/tool/sphere) | 中心と半径を定義して球を作成する。 |
+| [コーナーボックス](/tool/corner-box) | 2つの対角コーナー点を定義してボックスを作成する。 |
+| [中心ボックス](/tool/center-box) | 中心点から外側に向かってボックスを作成する。 |
+| [3点ボックス](/tool/three-point-box) | 3点で向きとサイズを定義して回転したボックスを作成する。 |
+| [シリンダー](/tool/cylinder) | ベースの中心、半径、高さを定義してシリンダーを作成する。 |
+
+### 測定と解析
+
+- カーブとサーフェスの品質を評価するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [連続性を測定](/tool/measure-continuity) | 2つのカーブまたはサーフェス間の連続性を解析する。 |
+| [距離を測定](/tool/measure) | 2点間の距離を測定する。 |
+| [半径を測定](/tool/measure-radius) | カーブまたは円形エッジの半径を測定する。 |
+| [曲率の表示切替](/tool/toggle-curvature) | カーブ上に曲率コームを表示して滑らかさを視覚化および評価する。 |

@@ -3,9 +3,31 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Join Curves
+{/* # Join Curves
 
-<Reference shortcut="J" command="Join" button="In Command Bar" buttonIcon='button-join' />
+<Reference shortcut="J" command="Join" button="In Command Bar" buttonIcon='button-join' /> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/join-curves.mp4"
+  alt="Join Curves Preview"
+  title="Join Curves"
+  command="Join"
+  shortcut="J"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-join.png" alt="Join Curves Icon" />}
+/> */}
+
+## Join Curves
+
+<CommandReference
+  command="Join"
+  shortcut="J"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-join.png"
+  tier="both"
+/>
+
+## Description
 
 Join Curves at connecting points.
 
@@ -18,7 +40,7 @@ Join Curves at connecting points.
 <Callout emoji="❗">
 **Note**<br />
 To join two Curves, their endpoints must be perfectly aligned.
-When they are perfectly aligned, the Points will turn blue-green. If they appear purple, they are not aligned. To ensure a precise alignment, see [Object Snaps](/plasticity-essentials/snap#object-snap).
+When they are perfectly aligned, the Points will turn blue-green. If they appear purple, they are not aligned. To ensure a precise alignment, see [Object Snaps](/plasticity-essentials/plasticity-interface/snap).
 </Callout>
 
 <VideoPlayer fileName="join-curves"/>

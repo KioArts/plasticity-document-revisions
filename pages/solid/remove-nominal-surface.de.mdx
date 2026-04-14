@@ -4,20 +4,29 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# Remove Nominal Surface
+## Nominale Oberfläche entfernen
 
-<Reference shortcut="" command="Remove Nominal Surface" button="" />
+{/* <Reference shortcut="" command="Nominale Oberfläche entfernen" button="" /> */}
 
-## Grundlegende Nutzung
-Eine nominale Fläche ist eine Funktion, die Löcher in einer Fläche heilt, indem sie zusätzliche Spannen auf versteckte Weise erzeugt, während Sie mit sichtbaren Oberflächen-Kontrollpunkten arbeiten. Dies ermöglicht eine einfache direkte Bearbeitung der Oberfläche. Der Befehl "Nominale Fläche entfernen" zeigt die zusätzlichen versteckten Spannen auf der Fläche an.
+<CommandReference
+  command="Nominale Oberfläche entfernen"
+  shortcut=""
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-remove-nominal-surface.png"
+  tier="both"
+/>
 
-1. Wählen Sie die Fläche aus, bei der Sie die versteckten Kontrollpunkte (CVs) anzeigen möchten.
-2. Verwenden Sie den Befehl **Remove Nominal Surface** in der Befehls-Palette. 
+## Beschreibung
+
+Eine nominale Oberfläche ist ein Feature, das Löcher in einem Oberflächenbereich verdeckt heilt, indem zusätzliche versteckte Spans erzeugt werden, während Sie mit sichtbaren Oberflächen-CVs arbeiten. Dies ermöglicht eine einfache direkte Oberflächenbearbeitung. Der Befehl „Nominale Oberfläche entfernen“ zeigt diese zusätzlichen versteckten Spans im Oberflächenbereich an.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie eine Fläche aus, deren versteckte CVs Sie sichtbar machen möchten.
+2. Verwenden Sie den Befehl **Nominale Oberfläche entfernen** in der Befehlspalette.
+
+<Callout type="info">
+**Tipp:** Verwenden Sie den Befehl [Neu aufbauen](/solid/rebuild) in der Befehlspalette, um den Oberflächenbereich neu aufzubauen und unnötige Spans zu entfernen.
+</Callout>
 
 <VideoPlayer fileName="remove-nominal-surface"/>
-
-<Callout type="info" emoji="💡">
-    **Tip**
-    Verwenden Sie den Befehl **Rebuild** <ButtonIcon type="button-rebuild"/> rechts in der Befehlsleiste oder in der Befehls-Palette, um die Fläche neu zu erstellen und unnötige Spannen der Fläche zu entfernen.
-<VideoPlayer fileName="rebuild-surface-nominal-surface-example"/>
-</Callout>

@@ -2,11 +2,33 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Edge[#bridge-edge]
+{/* # Bridge Edge[#bridge-edge]
 
-<Reference shortcut="" command="Bridge" button="" />
+<Reference shortcut="" command="Bridge" button="" /> */}
 
-Bridges two Edges that can be G0/G1/G2/G3 continuous. Specify which end of the Edges to bridge. Tension is adjustable.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/bridge-edge.mp4"
+  alt="Bridge Edge Preview"
+  title="Bridge Edge"
+  command="Bridge"
+  shortcut="-"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-bridge-curve.png" alt="Bridge Curve Icon" />}
+/> */}
+
+## Bridge Edge
+
+<CommandReference
+  command="Bridge"
+  shortcut=""
+  button="In Toolbar"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
+
+## Description
+
+Bridges two surface Edges with G0, G1, G2, or G3 continuity. The bridged end of each Edge can be specified, tension is adjustable, and curvature measurement is supported.
 
 ## Basic Usage
 
@@ -26,7 +48,11 @@ Bridges two Edges that can be G0/G1/G2/G3 continuous. Specify which end of the E
           - **Start curvature:**
                - **G0, G1, G2, G3:** Specify the [continuity of the  Curve](/cad-essentials/continuity-curve-and-surface) at the starting point.
           -  **End curvature:**
-               - **G0, G1, G2, G3:** Specify the [continuity of the  Curve](/cad-essentials/continuity-curve-and-surface) at the ending point.      
+               - **G0, G1, G2, G3:** Specify the [continuity of the  Curve](/cad-essentials/continuity-curve-and-surface) at the ending point.  
+          -  **Show curvature:** Toggles the curvature visualization on the curve. Learn more in [Toggle Curvature](/tool/toggle-curvature).
+     - <Kst>Keyboard Shortcuts</Kst>
+          - <kbd>Tab</kbd> **Cycle continuity:** Toggle between G0, G1, G2, and G3 continuity. 
+          - <kbd>D</kbd> **G1 Tension:** Adjust the tension for G1 continuity. 
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="bridge-edge"/>

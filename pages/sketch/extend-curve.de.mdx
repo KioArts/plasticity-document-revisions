@@ -1,34 +1,70 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
 
-# Extend Curve
+{/* <HeadBannerThumbnail
+  src="/videos/banner/extend-curve.mp4"
+  alt="Extend Curve Preview"
+  title="Extend Curve"
+  command="Extend Curve"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-extend-curve.png" alt="Extend Curve icon" />}
+/> */}
 
-<Reference shortcut="" command="Extend Curve" button="" />
+{/* # Extend Curve
 
-Erweitern Sie eine Kurve, indem Sie die Distanz angeben. Wählen Sie aus Erweiterungsformen wie Natürlich, Linear, Sanft, Reflexiv und Bogen. Sie können jetzt ein Ziel für Kurven und Volumenkörper angeben.
+<Reference shortcut="" command="Extend Curve" button="" /> */}
 
-## Grundlegende Nutzung
+## Kurve verlängern
 
-1. Wähle den Endpunkt der Curve, die du verlängern möchtest.
-2. Verwende den **Extend** Befehl in der Befehlspalette.
-3. Drücke <kbd>D</kbd>, bewege den Cursor und klicke auf den Endpunkt.
-4. Stelle die Optionen im Befehlsdialog ein.
-   - <Kst>Befehlsdialog</Kst>
-      - **Shape:** Legt die Form der erweiterten Kurve fest. Die Optionen **Natural**, **Linear**, **Soft**, **Reflective** und **Arc** beeinflussen direkt die Form und Krümmung der erweiterten Kurve während der Extrusion.  
-         - **Natural:** Erweitert die Kurve „natürlich“, indem die Form fortgesetzt wird, die die ursprüngliche Kurve unmittelbar vor Beginn der Erweiterung beschreibt.  
-         - **Linear:** Erweitert die Kurve in einer flachen, geraden Linie vom Randpunkt aus, wobei die aktuelle Tangentenrichtung beibehalten wird, ohne die Krümmung zu verändern.  
-         - **Soft:** Blendet die Erweiterung allmählich in die bestehende Kurve ein, um einen weichen Übergang zu gewährleisten, wobei sowohl Tangente als auch Krümmung erhalten bleiben.  
-         - **Reflective:** Spiegelt die Krümmung und Tangente der Kurve für eine symmetrische und nahtlose Fortsetzung, ideal zur Wahrung der Kurvensymmetrie.  
-         - **Arc:** Erweitert die Kurve in einem kreisförmigen Bogen vom Randpunkt aus. 
+<CommandReference
+  command="Extend Curve"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-extend-curve.png"
+  tier="both"
+/>
 
-         ![Extend Curve Shape](/img/extend-curve-shape.png) 
-         
-      - **Distance:** Gib die Entfernung an.
-5. Bestätige mit OK im Befehlsdialog oder Rechtsklick.
+## Beschreibung
+
+Verlängert eine Kurve durch Angabe der Distanz. Wählen Sie aus Verlängerungsformen wie Natürlich, Linear, Weich, Reflektiv und Bogen. Sie können nun ein Ziel auf Kurven und Volumenkörpern angeben, um präzise zu treffen und zu schneiden.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie den Endpunkt der Kurve aus, die Sie verlängern möchten.
+2. Verwenden Sie den Befehl **Verlängern** in der Befehlspalette.
+3. Drücken Sie <kbd>D</kbd>, bewegen Sie den Cursor und klicken Sie auf den Endpunkt.
+4. Legen Sie die Optionen im Befehlsdialog fest.
+   - <Kst>Command Dialog</Kst>
+      - **Form:** Gibt die Form der verlängerten Kurve an. Die Optionen **Natürlich**, **Linear**, **Weich**, **Reflektiv** und **Bogen** beeinflussen direkt die Form und Krümmung der verlängerten Kurve während der Extrusion.
+            - **Natürlich:** Verlängert die Kurve „natürlich", indem die durch die ursprüngliche Kurve kurz vor dem Beginn der Verlängerung beschriebene Kurve fortgesetzt wird.
+            - **Linear:** Verlängert die Kurve in einer flachen, geraden Linie vom Grenzpunkt aus und behält die aktuelle Tangentenrichtung ohne Änderung der Krümmung bei.
+            - **Weich:** Blendet die Verlängerung schrittweise mit der vorhandenen Kurve für einen weichen Übergang ein und bewahrt dabei sowohl die Tangente als auch die Krümmung.
+            - **Reflektiv:** Spiegelt die Krümmung und Tangentialität der Kurve für eine symmetrische und nahtlose Fortsetzung, ideal für die Beibehaltung der Kurvensymmetrie.
+            - **Bogen:** Verlängert die Kurve in einem Kreisbogen vom Grenzpunkt aus.
+
+            ![Kurve verlängern Form](/img/extend-curve-shape.svg)
+
+      - **Distanz:** Gibt die Distanz an.
+5. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="extend-curve"/>
 
+## Abhängige Kurvenverlängerung
+
+Verlängert eine Kurve durch Anpassen und Schneiden mit einer anderen Kurve oder Volumenkörpergeometrie, wobei das Ziel die endgültige Verlängerungsdistanz bestimmt.
+
+1. Wählen Sie einen der Endpunkte der Kurve aus, die Sie verlängern möchten.
+2. Verwenden Sie den Befehl **Verlängern** in der Befehlspalette.
+3. Wählen Sie die Zielgeometrie aus, mit der Sie treffen und schneiden möchten.
+     - **Kurven:** Wählen Sie eine Kurve zum Treffen und Schneiden aus.
+     - **Volumenkörper:** Wählen Sie ein Flächen- oder Volumenkörperobjekt zum Treffen und Schneiden aus.
+4. Die Kurve verlängert sich präzise bis zur Zielgeometrie.
+
+<VideoPlayer fileName="dependant-curve-extend"/>
+
 ## Siehe auch
-- [Extend](extend)
-- [Extend Sheet](/solid/extend-sheet)
+- [Verlängern](extend)
+- [Fläche verlängern](/solid/extend-sheet)

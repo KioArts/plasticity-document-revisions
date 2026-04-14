@@ -1,26 +1,49 @@
 import Reference from '/components/Reference'
 import VideoPlayer from '/components/VideoPlayer';
+import { Center } from '/components/Center'
 
-# Project Outline
+{/* # Project Outline
 
-<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" />
+<Reference shortcut="Alt + D" command="Alternative Duplicate" button="" /> */}
 
-Projizieren Sie die Kontur der Solids oder Sheets auf die aktuelle Bauebene entlang der normalen Richtung, wodurch eine Kurve entsteht.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/project-outline-sketch.mp4"
+  alt="Project Outline Preview"
+  title="Project Outline"
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button=""
+  buttonIcon={<img src="/img/button-alternative-duplicate.png" alt="Alternative Duplicate Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Umriss projizieren
 
-1. Legen Sie die gewünschte Bauebene für die Projektion fest.
-2. Wählen Sie die Solids oder Sheets aus, die projiziert werden sollen.
+<CommandReference
+  command="Alternative Duplicate"
+  shortcut="Alt + D"
+  button="In Command Palette"
+  buttonIcon="/img/button-alternative-duplicate.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Projiziert die Umrisse von Volumenkörpern oder Flächen entlang ihrer Normalenrichtung auf die aktive Konstruktionsebene und erzeugt dabei eine passende neue Kurve.
+
+## Grundlegende Verwendung
+
+1. Legen Sie die gewünschte Konstruktionsebene für die Projektion fest.
+2. Wählen Sie die Volumenkörper oder Flächen aus, auf die projiziert werden soll.
 3. Drücken Sie <kbd>Alt + D</kbd>, um den Befehl auszuführen.
-4. Die projizierten Kurven werden auf der aktuellen Bauebene erstellt.
-5. Optional können Sie die Kurven mit dem Move Gizmo verschieben.
+4. Die projizierten Kurven werden auf der aktuellen Konstruktionsebene erstellt.
+5. Optional können Sie die Kurven mit dem Verschieben-Gizmo verschieben.
 6. Klicken Sie mit der rechten Maustaste oder klicken Sie im Befehlsdialog auf OK, um zu bestätigen.
-<br/>
+
 <VideoPlayer fileName="project-outline"/>
 
-## See also
-- [Alternative Duplicate](alternative-duplicate)
-- [Create Outline](create-outline)
-- [Project Curve Body](project-curve-body)
-- [Project Curve Curve](project-curve-curve)
-- [Project Body Body](project-body-body)
+## Siehe auch
+- [Alternatives Duplizieren](alternative-duplicate)
+- [Umriss erstellen](create-outline)
+- [Kurvenkörper projizieren](project-curve-body)
+- [Kurve-Kurve projizieren](project-curve-curve)
+- [Körper-Körper projizieren](project-body-body)

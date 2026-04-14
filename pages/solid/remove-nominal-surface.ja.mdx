@@ -4,20 +4,29 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# 公称面を削除する
+## ノミナルサーフェスの削除
 
-<Reference shortcut="" command="Remove Nominal Surface" button="" />
+{/* <Reference shortcut="" command="ノミナルサーフェスの削除" button="" /> */}
+
+<CommandReference
+  command="ノミナルサーフェスの削除"
+  shortcut=""
+  button="コマンドパレット内"
+  buttonIcon="/img/button-remove-nominal-surface.png"
+  tier="both"
+/>
+
+## 説明
+
+ノミナルサーフェスは、可視のサーフェスCVで作業する際に、表面領域の穴を隠れたスパンで補修する機能です。これにより、直接的なサーフェス編集が容易になります。「ノミナルサーフェスの削除」コマンドは、これらの隠れたスパンを表示します。
 
 ## 基本的な使い方
-公称面は、表面のCVを操作する際に、目に見えない形で追加のスパンを生成して表面の穴を埋める機能です。これにより、簡単に直接表面を編集することができます。「公称面を削除」コマンドは、表面領域にある追加の隠されたスパンを表示します
 
-1. 隠された制御点（CV）を表示したい面を選択します。
-2. コマンドパレットで **Remove Nominal Surface** コマンドを使用します。
+1. 隠れたCVを表示したいフェースを選択します。
+2. コマンドパレットで **ノミナルサーフェスの削除** を実行します。
+
+<Callout type="info">
+**ヒント:** コマンドパレットの [リビルド](/solid/rebuild) コマンドを使用すると、サーフェス領域を再構築し、不要なスパンを取り除くことができます。
+</Callout>
 
 <VideoPlayer fileName="remove-nominal-surface"/>
-
-<Callout type="info" emoji="💡">
-    **Tip**
-    コマンドバーの右側またはコマンドパレットで **Rebuild** <ButtonIcon type="button-rebuild"/> コマンドを使用して、表面領域を再構築し、不要なスパンを削除します
-<VideoPlayer fileName="rebuild-surface-nominal-surface-example"/>
-</Callout>

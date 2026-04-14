@@ -1,6 +1,91 @@
 {
-  "solid-command-essentials": {
-    "title": "Grundlagen der Solid-Befehle",
-    "display": "hidden"
-  }
+  "---boolean": { "type": "separator", "title": "Boolesche Operationen und Schneiden" },
+  "boolean": "Boolean",
+  "cut": "Cut",
+
+  "---create": { "type": "separator", "title": "Erstellen und Duplizieren" },
+  "alternative-duplicate": "Alternatives Duplizieren",
+  "create-instance": "Instanz erstellen",
+  "create-solid-and-sheet-instance": "Volumen- und Blechinstanz erstellen",
+  "realize-instances": "Instanzen realisieren",
+  "realize-solid-and-sheet-instances": "Volumen- und Blechinstanzen realisieren",
+
+  "---surface-creation": { "type": "separator", "title": "Flächenerstellung" },
+  "bridge-surface": "Fläche überbrücken",
+  "constrained-surface": "Eingeschränkte Fläche",
+  "extrude": "Extrudieren",
+  "loft": "Loft",
+  "patch": "Patch",
+  "pipe": "Pipe",
+  "polyspline": "PolySplines",
+  "revolve": "Revolvieren",
+  "square": "Square",
+  "sweep": "Sweep",
+  "xnurbs": "Xnurbs",
+
+  "---deform": { "type": "separator", "title": "Verformen und Schieben" },
+  "deform": "Verformen",
+  "deform-solid-and-sheet": "Volumen und Blech verformen",
+  "slide": "Schieben",
+  "slide-surface-cv": "Flächen‑CV schieben",
+
+  "---delete": { "type": "separator", "title": "Löschen und Entfernen" },
+  "delete-face": "Fläche löschen",
+  "delete-redundant-topology": "Redundante Topologie löschen",
+  "remove-fillets-from-shell": "Fasen aus Schale entfernen",
+  "remove-nominal-surface": "Nennfläche entfernen",
+
+  "---draft": { "type": "separator", "title": "Schräge und Ausrichten" },
+  "align": "Ausrichten",
+  "align-surface": "Fläche ausrichten",
+  "draft-face": "Schräge Fläche",
+
+  "---extend": { "type": "separator", "title": "Erweitern" },
+  "extend": "Erweitern",
+  "extend-sheet": "Blech erweitern",
+
+  "---fillet": { "type": "separator", "title": "Fase" },
+  "fillet": "Fase",
+  "fillet-shell": "Schale fasen",
+
+  "---hollow": { "type": "separator", "title": "Aushöhlen und Verstärken" },
+  "hollow": "Aushöhlen",
+  "thicken": "Verstärken",
+  "thicken-face": "Fläche verstärken",
+
+  "---imprint": { "type": "separator", "title": "Einprägen" },
+  "imprint": "Einprägen",
+  "imprint-body-body": "Körper auf Körper einprägen",
+  "imprint-curve-body": "Kurve auf Körper einprägen",
+
+  "---join": { "type": "separator", "title": "Verbinden und Trennen" },
+  "join": "Verbinden",
+  "join-sheets": "Bleche verbinden",
+  "unjoin": "Trennen",
+  "unjoin-faces": "Flächen trennen",
+  "unjoin-shells": "Schalen trennen",
+
+  "---offset": { "type": "separator", "title": "Versatz" },
+  "offset-curve": "Kurve versetzen",
+  "offset-edge": "Kante versetzen",
+  "offset-face": "Fläche versetzen",
+  "offset-face-loop": "Flächenloop versetzen",
+
+  "---rebuild": { "type": "separator", "title": "Neuaufbau und Verfeinerung" },
+  "isoparam": "Isoparam",
+  "match-face": "Fläche anpassen",
+  "raise-degree": "Grad erhöhen",
+  "raise-surface-degree": "Flächengrad erhöhen",
+  "rebuild": "Neuaufbau",
+  "rebuild-face": "Fläche neu aufbauen",
+  "reverse": "Umkehren",
+  "reverse-sheet": "Blech umkehren",
+
+  "---trim": { "type": "separator", "title": "Trimmen und Abwickeln" },
+  "untrim": "Untrim",
+  "unwrap-face": "Fläche abwickeln",
+
+  "---display": { "type": "separator", "title": "Anzeige und Analyse" },
+  "find-boundary-edges": "Randkanten finden",
+  "toggle-surface-curvature": "Flächenkrümmung umschalten"
 }

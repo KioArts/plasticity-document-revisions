@@ -3,52 +3,61 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 
-# Imprint Curve Body（カーブをボディに投影してエッジを作成する）[#imprint-curve-body]
+## Imprint Curve Body[#imprint-curve-body]
 
-<Reference shortcut="Shift + I" command="Imprint" button="提案コマンドメニュー内"  buttonIcon='button-imprint' />
+{/* <Reference shortcut="Shift + I" command="Imprint" button="推奨コマンドメニュー内" buttonIcon='button-imprint' /> */}
 
-カーブをソリッドまたはシートに投影してエッジを作成できます。
+<CommandReference
+  command="Imprint"
+  shortcut="Shift + I"
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-imprint.png"
+  tier="both"
+/>
+
+## 説明
+
+ツールとなるカーブに対してターゲットのソリッドまたはシートを投影し、その投影位置にエッジを作成します。投影方向を指定することもでき、双方向投影にも対応しています。
 
 ## 基本的な使い方
 
-### カーブが選択されているとき:
+### カーブが選択されている場合
 
-1. <kbd>Shift + I</kbd>を押します。
+1. <kbd>Shift + I</kbd> を押します。
 2. カーブを投影するソリッドまたはシートを選択します。
-3. ステップ4に進みます。
+3. 手順 4 へ進みます。
 
-### ソリッドまたはシートが選択されているとき:
+### ソリッドまたはシートが選択されている場合
 
-1. <kbd>Shift + I</kbd>を押します。
+1. <kbd>Shift + I</kbd> を押します。
 2. ソリッドまたはシートに投影するカーブを選択します。
-3. ステップ4に進みます。
+3. 手順 4 へ進みます。
 
-### 何も選択されていないとき:
+### 何も選択されていない場合
 
-1. <kbd>Shift + I</kbd>を押します。
-2. ソリッドまたはシートに投影するカーブを選択します。
-3. カーブを投影するソリッドまたはシートを選択します。
-4. コマンドダイアログでオプションを設定します。
-     - <Kst>コマンドダイアログ</Kst>
-          - **Method:**
-               - **Normal:** 標準的な方法で投影します。
-               - **Vector:** 直線方向に投影します。**Bidirectional** と **Hide occlusion** が有効になります。
-               ![Imprint Curve Body Method Demonstration](/img/imprint-curve-body-method.png)
-          - **Bidirectional:** 投影を両方向に行います。
-               ![Imprint Curve Body Bidirectional Demonstration](/img/imprint-curve-body-bidirectional.png)
-          - **Hide occlusion:** オンにすると、オブジェクトの背後の面への投影を行いません。
-               ![Imprint Curve Body Hide Occlusion Demonstration](/img/imprint-curve-body-hide-occlusion.png)
-          - **Completion:** 投影したエッジの延長を指定します。
-               - **None:** 投影したエッジの延長をしません。
-               - **Edge:** 投影したエッジが他のエッジにあたるまで延長します。
-               - **Boundary:** 投影したエッジが他のエッジにあたるまで延長し、そのエッジをつなぎます。
-               ![Imprint Curve Body Completion Demonstration](/img/imprint-curve-body-completion.png)
-5. コマンドダイアログのOKをクリックするか、右クリックで確定します。
-
+1. <kbd>Shift + I</kbd> を押します。
+2. カーブを投影するソリッドまたはシートを選択します。
+3. 投影するカーブを選択します。
+4. コマンドダイアログとキーボードショートカットでオプションを設定します。
+- <Kst>コマンドダイアログ</Kst>
+     - **Method（方法）：**
+          - **Normal：** 標準的な投影方法。
+          - **Vector：** 直線方向に投影します。**Bidirectional** と **Hide occlusion** が有効になります。
+          <img src="/img/project-curve-body-method.svg" width="500" />
+     - **Bidirectional（双方向）：** 投影を両方向に実行します。
+          <img src="/img/project-curve-body-bidirectional.svg" width="500" />
+     - **Hide occlusion（遮蔽を無視）：** 有効にすると、対象物の背後にある面には投影されません。
+          <img src="/img/project-curve-body-hide-occluded.svg" width="500" />
+     - **Completion（補完）：** 投影されたエッジの延長方法を指定します。
+          - **None：** 延長しません。
+          - **Edge：** 他のエッジと交差するまで延長します。
+          - **Boundary：** 他のエッジと交差するまで延長し、さらに接続します。
+          <img src="/img/imprint-curve-body-completion.svg" width="500" />
+5. コマンドダイアログの OK または右クリックで確定します。
 
 ## 関連項目
 - [Imprint](imprint)
 - [Imprint Body Body](imprint-body-body)
-- [isoparam](isoparam)
+- [Isoparam](isoparam)
 - [Offset Curve](offset-curve)
 - [Extend Edge](extend-edge)

@@ -1,20 +1,37 @@
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon';
+import CommandReference from '/components/CommandReference'
 
-# Revolve
+## Revolve
 
-<Reference shortcut="" command="Revolve" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon="button-revolve"/>
+{/* <Reference shortcut="" command="Revolve" button="In Suggested Commands Menu" buttonIcon="button-revolve" /> */}
 
-Das Drehen von Regionen erzeugt Solids, während das Drehen von Curves entweder Solids oder Sheets produziert. Optionen beinhalten Normal, Binormal und Tangent.
+<CommandReference
+  command="Revolve"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-revolve.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Region oder Curve zum Drehen aus.
-2. Klicken Sie auf die Schaltfläche <ButtonIcon type="button-revolve" /> rechts von der Befehlsleiste.
-3. Legen Sie die Drehachse fest. 
-   - Entlang der Achse drehen, die durch den ersten Klick als Startpunkt und den zweiten Klick als Endpunkt definiert wird.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Umschalt + T</kbd> **Thickness:**
-      - <kbd>A</kbd> **Angle:** Bewegen Sie die Maus, um den Drehwinkel zu bestimmen.
-5. Bestätigen Sie mit OK im Command Dialog oder Rechtsklick.
+Das Rotieren von Regions erzeugt Solids, während das Rotieren von Curves entweder Solids oder Sheets erzeugt. Die verfügbaren Optionen sind Normal, Binormal und Tangent. Boolesche Operationen werden ebenfalls unterstützt.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie eine Region oder Curve zum Rotieren aus.
+2. Aktivieren Sie den Befehl über die Schaltfläche <ButtonIcon type="button-revolve" /> im Menü „Suggested Commands" oder suchen Sie in der Befehlspalette nach **Revolve**.
+3. Legen Sie die Rotationsachse fest.
+   - Rotieren entlang der Achse, die durch den ersten Klick als Startpunkt und den zweiten Klick als Endpunkt definiert wird.
+   - <Kst>Command Dialog</Kst>
+      - **Degrees:** Geben Sie den Rotationswinkel in Grad an.
+      - **Keep tools:** Behält den extrudierten Körper nach einer booleschen Operation bei.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>Shift + T</kbd> **Thickness:** Wandstärke festlegen.
+      - <kbd>A</kbd> **Angle:** Bewegen Sie die Maus, um den Rotationswinkel festzulegen.
+      - <kbd>Shift + Q</kbd> **Slice**, <kbd>Q</kbd> **Union**, <kbd>W</kbd> **Difference**, <kbd>Shift + E</kbd> **Intersect:** Führt eine boolesche Operation aus.
+      - <kbd>B</kbd> **New body:** Behält den resultierenden Körper nach einer booleschen Operation oder einem Modellierungsschritt bei.
+      - <kbd>T</kbd> **Keep tools:** Führt boolesche Operationen durch und behält dabei die Werkzeugobjekte bei.
+5. Bestätigen Sie mit OK im Befehlsdialog oder mit einem Rechtsklick.

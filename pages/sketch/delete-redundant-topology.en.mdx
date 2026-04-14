@@ -1,24 +1,45 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
 
-# Delete Redundant Topology
+{/* # Delete Redundant Topology
 
-<Reference shortcut="" command="Delete Redundant Topology" button="" />
+<Reference shortcut="" command="Delete Redundant Topology" button="" /> */}
 
+{/* <HeadBannerThumbnail
+  src="/videos/banner/delete-redundant-topology.mp4"
+  alt="Delete Redundant Topology Preview" 
+  title="Delete Redundant Topology (Curve)"
+  command="Delete Redundant Topology"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-delete-redundant-topology.png" alt="Deform Icon" />}
+/> */}
 
-This command automatically calls the following command depending on the selected object.
+## Delete Redundant Topology
+
+<CommandReference
+  command="Delete Redundant Topology"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-delete-redundant-topology.png"
+  tier="both"
+/>
+
+## Description
+
+Remove redundant vertex points from curve geometry without altering its shape or accuracy. The algorithm analyzes each vertex and eliminates only those that are unnecessary, preserving the curve's original form.
+
+{/* <Callout type="info">
+This command automatically calls a sub-command depending on the selected object type.
     - When Curves are selected: **Delete Redundant Topology (Curve)** described below.
-    - When Solids or Sheets are selected: see [**Delete Redundant Topology (Solid)**](/solid/delete-redundant-topology#delete-redundant-topology-solid)  in the Solid Commands section.
+    - When Solids or Sheets are selected: see [**Delete Redundant Topology (Solid)**](/solid/delete-redundant-topology#delete-redundant-topology-solid) in the Solid Commands section.
+</Callout> */}
 
-## Delete Redundant Topology (Curve)[#delete-redundant-topology-curve]
+## Basic Usage
 
-You can delete redundant Control Vertices(CVs) of Curves.
-
-1. Select the  Curves to delete redundant CVs.
+1. Select the Curves to delete redundant CVs.
 2. Use the **Delete Redundant Topology** command in the Command Palette.
-3. The redundant CVs are deleted.
+3. The redundant Vertex points are deleted.
 
 <VideoPlayer fileName="delete-redundant-topology"/>
-
-## See also
-- [Rebuild](rebuild)

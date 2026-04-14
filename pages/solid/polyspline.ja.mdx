@@ -1,0 +1,48 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Kst from '/components/KeyboardShortcutsTitle'
+import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
+
+## PolySplines
+
+<CommandReference
+  command="PolySplines"
+  shortcut=""
+  button="コマンドパレット内"
+  buttonIcon=""
+  tier="studio"
+/>
+
+## 説明
+
+**PolySplines** はメッシュオブジェクトを **G2** 連続性を持つ滑らかな未トリムのスプラインサーフェスへ変換し、従来のサブディビジョンワークフローよりも少なく、よりクリーンなパッチを生成します。
+
+Catmull‑Clark サブディビジョンがメッシュを反復的な近似処理で細分化するのに対し、PolySplines は製造やエンジニアリング用途に適した B‑スプラインパッチを出力します。四角形主体のメッシュが最適ですが、三角形や N‑ゴンも処理できます。
+
+<Center width="550px">
+![PolySpline Example](/img/polyspline-example.svg)
+</Center>
+
+<Callout type="info">
+PolySplines は [Blender Bridge](/blender/how-to-use#working-with-polysplines) アドオンと併用でき、ライブ出力更新やシーンへの自動インポートに対応しています。
+</Callout>
+
+<Callout>
+**注意:** 
+- PolySplines は現在、DCC モデラーで適用された **頂点** や **エッジのクリース**、ベベルをサポートしていません。現時点での回避策は、角やエッジを強化するために手動でエッジループを追加することです。
+- **.OBJ** や **.FBX** などのメッシュ形式が現在サポートされています。
+</Callout>
+
+## 基本的な使い方
+
+1. メッシュをインポートするか、シーン内で選択します。
+2. コマンドパレットを開き、**PolySplines** を検索して実行します。
+3. コマンドダイアログ内のオプションを調整します:
+   - <Kst>コマンドダイアログ</Kst>
+         - **角の丸め:** 厚みの有無に関わらず、オープンボディの角を丸めます。
+         - **パッチを結合:** 有効にすると、隣接するパッチが単一のサーフェスに統合され、クリーンな CV レイアウトになります。無効の場合、各パッチは独立した Bézier パッチとして保持されます。
+         - **境界を正確に補間:** サーフェス境界を、メッシュ境界が定義するスプライン曲線に近似ではなく正確に一致させます。これは、2 つのオープンボディを結合する際に境界が完全に揃い、きれいにマージできるため特に有効です。
+
+4. スプラインオブジェクトが作成されます。
+
+<VideoPlayer fileName="polyspline"/>

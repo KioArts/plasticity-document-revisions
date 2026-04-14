@@ -4,26 +4,46 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# Kurvengrad erhöhen
+{/* # Raise Curve Degree
 
-<Reference shortcut="Shift + S" command="Raise Degree" button="Im vorgeschlagenen Befehlsmenü" buttonIcon="button-raise-degree" />
+<Reference shortcut="Shift + S" command="Raise Degree" button="In Suggested Commands Menu" buttonIcon="button-raise-degree" /> */}
 
-Erhöhe den Grad einer Kurve.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/raise-curve-degree.mp4"
+  alt="Raise Curve Degree Preview"
+  title="Raise Curve Degree"
+  command="Raise Degree"
+  shortcut="Shift + S"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-raise-degree.png" alt="Raise Degree Icon" />}
+/> */}
 
-## Grundlegende Nutzung
+## Kurvengrad erhöhen
+
+<CommandReference
+  command="Raise Degree"
+  shortcut="Shift + S"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-raise-degree.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Erhöht den Grad der ausgewählten Kurven. Dabei wird die Anzahl der Kontrollscheitelpunkte (CVs) automatisch erhöht und es können zusätzliche Spannweiten eingeführt werden, je nachdem wie komplex die Kurvengeometrie ist.
+
+## Grundlegende Verwendung
 
 1. Wählen Sie eine oder mehrere Kurven aus.
-2. Drücken Sie <kbd> Shift + S </kbd> oder klicken Sie auf die Schaltfläche 'Grad der Kurve oder Fläche erhöhen' <ButtonIcon type="button-raise-degree"/> rechts in der Befehlsleiste, um den Grad der Kurven um 1 zu erhöhen.
+2. Drücken Sie <kbd>Shift + S</kbd>, um den Grad der Kurve(n) zu erhöhen.
+3. Die Kurve(n) erhalten einen zusätzlichen Grad und die neu erstellten CVs werden automatisch ausgewählt.
 
 <VideoPlayer fileName="raise-degree-curve"/>
 
 <Callout type="info" emoji="💡">
-**Tip**
-- Verwenden Sie den Befehl **Punkte umschalte**, um die Stützpunkte der ausgewählten Kurve zu verstecken.
+**Tipp:** Verwenden Sie den Befehl [Punkte umschalten](/sketch/toggle-points), um die Kontrollpunkte der ausgewählten Kurve auszublenden. Dies ist besonders praktisch, wenn das CV-Layout dicht gepackt ist und die Navigation in Plasticity erschwert.
 </Callout>
 
-<VideoPlayer fileName="raise-degree-curve-hidepoints"/>
-
 ## Siehe auch
-- [Subdivide Curve](subdivide-curve)
-- [Rebuild Curve](rebuild-curve)
+- [Kurve unterteilen](/common/subdivide)
+- [Kurve neu aufbauen](rebuild-curve)

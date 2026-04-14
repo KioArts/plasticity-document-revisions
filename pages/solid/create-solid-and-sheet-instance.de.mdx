@@ -5,60 +5,71 @@ import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
 import { Center } from '/components/Center'
 
-# Solid‑ und Sheet‑Instanz erstellen
+# Solid- und Sheet-Instanz erstellen
 
-<Reference shortcut="" command="Instanz erstellen" button="In Befehls‑Palette"  buttonIcon="button-instance"/>
+{/* <Reference shortcut="" command="Create Instance" button="In Command Palette"  buttonIcon="button-instance"/> */}
 
-Erstellen Sie wiederverwendbare Duplikate eines Solid‑ oder Sheet‑Objekts, ohne die zugrunde liegende Geometrie zu kopieren. Eine Instanz speichert Transformationsdaten (Position, Drehpunkt, Rotation, Skalierung), Materialinformationen und verweist auf das ursprüngliche Solid‑Objekt, sodass jede Änderung an der Master‑Geometrie sofort in allen Instanzen widergespiegelt wird.
+<CommandReference
+  command="Create Instance"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-instance.png"
+  tier="both"
+/>
 
-Instanzen sind schreibgeschützte Kopien ihres Elternteils und können nicht unabhängig bearbeitet werden. Sie werden mit einer mittel‑ bis hellgrauen Kantenfarbe dargestellt, um sie klar vom Originalobjekt zu unterscheiden.
+## Beschreibung
 
-<Callout>
-1. Verwenden Sie den Befehl **Create Instance**, wenn Sie viele identische Bauteile benötigen – z. B. Befestigungselemente, Paneele oder wiederholende Strukturelemente – und dabei das Modell leichtgewichtig und wartungsfreundlich halten wollen.  
-2. Instanzen funktionieren mit Array‑Befehlen wie **[Curve Array](/common/curve-array)**, **[Radial Array](/common/radial-array)** und **[Rectangular Array](/common/rectangular-array)**.  
-3. Instanzen können ebenfalls mit dem Befehl **[Mirror](/common/mirror)** verwendet werden, wodurch Live‑Symmetrie entsteht: Änderungen an der Master‑Geometrie aktualisieren automatisch alle gespiegelten Instanzen.  
-4. Die Befehle **[Place](/common/place)** und **[Copy with Placement](/common/copy-with-placement)** können derzeit nicht auf erstellte Instanzen angewendet werden.
+Erstellen Sie wiederverwendbare Duplikate eines Solid- oder Sheet-Objekts, ohne die zugrundeliegende Geometrie zu kopieren. Eine Instanz speichert Transformationsdaten (Position, Drehpunkt, Rotation, Skalierung), Materialdaten und referenziert das ursprüngliche Solid-Objekt, sodass jede Änderung an der Mastergeometrie sofort in allen Instanzen übernommen wird.
+
+Instanzen sind schreibgeschützte Kopien ihres übergeordneten Objekts und können nicht unabhängig voneinander bearbeitet werden. Sie werden mit einer mittel- bis hellgrauen Oberflächenkantenfarbe angezeigt, um sie deutlich vom Originalobjekt zu unterscheiden.
+
+<Callout type="info">
+**Hinweis:**    
+1. Verwenden Sie den Befehl **Instanz erstellen**, wenn Sie viele identische Teile wie Befestigungselemente, Platten oder sich wiederholende Strukturelemente benötigen und dabei das Modell leichtgewichtig und einfach zu pflegen halten möchten. 
+2. Instanzen funktionieren mit Array-Befehlen wie [**Kurven-Array**](/common/curve-array), [**Radiales Array**](/common/radial-array) und [**Rechteckiges Array**](/common/rectangular-array).  
+3. Instanzen können auch mit dem Befehl [**Spiegeln**](/common/mirror) verwendet werden, was eine Live-Symmetrie ermöglicht, bei der Änderungen an der Mastergeometrie alle gespiegelten Instanzen automatisch aktualisieren.
+4. Verwenden Sie den Befehl [**Platzieren**](/common/place) auf erstellten Instanzen, um sie auf Objekten zu platzieren und dabei manuell Oberflächendetails hinzuzufügen.
+5. Der Befehl [**Kopieren mit Platzierung**](/common/copy-with-placement) kann derzeit nicht auf erstellte Instanzen angewendet werden.
 </Callout>
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie das Solid oder Sheet aus, das Sie als Elternobjekt verwenden möchten.  
-2. Öffnen Sie die Befehls‑Palette, tippen Sie **Instanz erstellen** und führen Sie den Befehl aus.  
-3. Verschieben Sie die neu erstellte Instanz an die gewünschte Position.  
-4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+1. Wählen Sie das Solid- oder Sheet-Objekt aus, das Sie als übergeordnetes Objekt verwenden möchten.
+2. Öffnen Sie die Befehlspalette, geben Sie **Instanz erstellen** ein und führen Sie den Befehl aus.
+3. Verschieben Sie die neu erstellte Instanz an den gewünschten Ort.
+4. Bestätigen Sie mit OK im Befehlsdialog oder klicken Sie mit der rechten Maustaste.
 
-<Center width="600px">
-<VideoPlayer fileName="instance-solid-and-sheet"/>
-</Center>
-
-<Callout type="info" emoji="🗒️">
-**Hinweis:** Sobald eine Instanz erstellt wurde, können Sie diese beliebig oft duplizieren; alle Duplikate spiegeln weiterhin jede Änderung am ursprünglichen Elternobjekt wider.    
+<Callout type="info">
+**Hinweis:** Sobald eine Instanz erstellt wurde, können Sie diese Instanz beliebig oft duplizieren. Alle Duplikate spiegeln weiterhin alle Änderungen am ursprünglichen übergeordneten Objekt wider.    
 </Callout>
 
-## Instanz‑Gruppen
+<VideoPlayer fileName="instance-solid-and-sheet"/>
 
-Das Instanziieren von Gruppen funktioniert analog zum Instanziieren einzelner Objekte.
+## Instanzgruppen
 
-Wird eine Gruppe ausgewählt, die primäre Geometrie enthält, wird eine Instanz dieser Gruppe erstellt und außerhalb des Gruppenordners in einer eigenen Kategorie im Outliner abgelegt.
+Der Prozess der Instanziierung von Gruppen ähnelt dem der Instanziierung von Objekten.
+
+Wenn eine Gruppe ausgewählt wird und primäre Geometrie enthält, wird eine Instanz der Gruppe erstellt und außerhalb des Gruppenordners unter einer eigenen dedizierten Kategorie im Outliner platziert.
 
 <Center width="600px">
-![Instancing a Group Part 1](/img/instance-group-solid.png)
+![Instanziierung einer Gruppe Teil 1](/img/instance-group-solid.png)
 </Center>
 
 | Nummer | Beschreibung |
-| :----: | ------------ |
-| 1 | Hauptgruppe mit Komponenten darin. |
-| 2 | Elternobjekte, die instanziiert werden. |
-| 3 | Instanz der Hauptgruppe, außerhalb der Hauptgruppe unter der Kategorie **„Instanzen“** platziert. |
+| :----: | ----------- |
+| 1 | Hauptgruppe mit enthaltenen Komponenten. |
+| 2 | Übergeordnete Objekte, die instanziiert werden. |
+| 3 | Instanz der Hauptgruppe, die außerhalb der Hauptgruppe unter der Kategorie **„Instanzen"** zugeordnet ist. |
 
 ### Grundlegende Verwendung
 
-1. Wählen Sie im Outliner eine Gruppe zur Instanzierung aus.  
-2. Suchen Sie nach **Instanz erstellen** in der Befehls‑Palette und führen Sie den Befehl aus.  
-3. Verschieben Sie die instanzierte Gruppe.  
-4. Bestätigen Sie mit **OK** im Befehlsdialog oder per Rechtsklick.
+1. Wählen Sie eine Gruppe im Outliner aus, um sie zu instanziieren.
+2. Suchen Sie in der Befehlspalette nach **Instanz erstellen** und führen Sie den Befehl aus.
+3. Verschieben Sie die instanziierte Gruppe.
+4. Bestätigen Sie mit OK im Befehlsdialog oder klicken Sie mit der rechten Maustaste.
 
 <VideoPlayer fileName="instance-group-solid"/>
 
 ## Siehe auch
-- [Kurven‑Instanz erstellen](/sketch/create-curve-instance)
+- [Instanz realisieren](/solid/realize-instances)
+- [Instanz erstellen](/solid/create-instance)

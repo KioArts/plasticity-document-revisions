@@ -1,0 +1,44 @@
+import VideoPlayer from '/components/VideoPlayer';
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
+
+## Schlitz
+
+{/* <Reference shortcut="Shift + P" command="Sweep" button="In Suggested Commands Menu"  buttonIcon="button-sweep"/> */}
+
+<CommandReference
+  command="Slot"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-slot.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Versetzt eine Kurve symmetrisch auf beiden Seiten und schließt jedes Ende mit einem Tangentenbogen, wodurch ein geschlossenes Schlitzprofil entsteht.
+
+<Callout type="info">
+**Hinweis:** Die Kurve muss offen und nicht selbstschneidend sein, damit der Befehl funktioniert.
+</Callout>
+
+## Grundlegende Verwendung
+
+1. Wählen Sie eine Kurve zum Versetzen aus.
+2. Suchen Sie in der Befehlspalette nach **Slot**, oder drücken Sie <kbd>O</kbd> zweimal, um den Befehl **Kurve versetzen** aufzurufen und Schlitz automatisch zu aktivieren.
+3. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+   - <Kst>Command Dialog</Kst>
+      - **Breite:** Gibt die Breite an.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>D</kbd> **Distanz:** Gibt die Breite an.
+4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+5. Das Schlitzprofil wird erstellt.
+
+<VideoPlayer fileName="slot"/>
+
+## Siehe auch
+
+- [Kurve versetzen](/sketch/offset-curve)
+- [Tangentenbogen](/tool/tangent-arc)

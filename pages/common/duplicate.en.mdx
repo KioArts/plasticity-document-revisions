@@ -1,12 +1,27 @@
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
+import VideoPlayer from '/components/VideoPlayer';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Duplicate
+## Duplicate
 
-<Reference shortcut="Shift + D" command="Duplicate" button="In Command Bar" buttonIcon='button-duplicate' />
+{/* <Reference shortcut="Shift + D" command="Duplicate" button="In Command Bar" buttonIcon='button-duplicate' /> */}
+
+<CommandReference
+  command="Duplicate"
+  shortcut="Shift + D"
+  button="In Command Bar"
+  buttonIcon="/img/button-duplicate.png"
+  tier="both"
+/>
+
+## Description
 
 Duplicate objects and move them using Move Gizmo. Single-axis constraints or Freestyle movement possible. Pivot is adjustable.
+
+<Callout type="info">
+**Note:** When duplicating multiple Regions, they will be duplicated as a combined shape.
+</Callout> 
 
 ## Basic Usage
 
@@ -25,9 +40,8 @@ Duplicate objects and move them using Move Gizmo. Single-axis constraints or Fre
       - <kbd>W</kbd> **Worldspace:** Change the Gizmo's coordinate axis to world coordinates.
 4. Confirm with OK in the Command Dialog or right-click.
 
-<Callout type="info">
-   - When duplicating multiple Regions, they will be duplicated as a combined shape.
-</Callout> 
+
+<VideoPlayer fileName="duplicate"/>
 
 ## See also
 - [Place](place)

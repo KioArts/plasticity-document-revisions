@@ -2,28 +2,51 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Offset Region
+{/* # Offset Region
 
-<Reference shortcut="O" command="Offset Curve" button="In Suggested Commands Menu"  buttonIcon='button-offset-curve'/>
+<Reference shortcut="O" command="Offset Curve" button="In Suggested Commands Menu"  buttonIcon='button-offset-curve'/> */}
+
+{/* <HeadBannerThumbnail
+  src="/videos/banner/offset-region.mp4"
+  alt="Offset Region Preview"
+  title="Offset Region"
+  command="Offset Region"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-offset-curve.png" alt="Offset Region Icon" />}
+/> */}
+
+## Offset Region
+
+<CommandReference
+  command="Offset Curve"
+  shortcut="O"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-offset-curve.png"
+  tier="both"
+/>
+
+## Description
 
 Offset the outline curves of a selected Region by specifying the distance to create new Regions. Multiple Regions create new Individual Regions or a combined Region.
 
 ## Basic Usage
 
-1. Select the Regions you want to offset.
+1. Select the Region(s) you want to offset.
 2. Press <kbd>O</kbd>.
 3. Drag the yellow arrow to specify the distance.
 4. Set the options in the Command Dialog and Keyboard Shortcuts.
    - <Kst>Command Dialog</Kst>
-      - **Distance:** Specify the Distance.
-      - **Gap fill:** 
+      - **Distance:** Specify the distance.
+      - **Gap fill:** Specify how the empty space is filled.
          - **Round:** Rounds convex corners. 
-         - **Linear:** Connects convex corners with straight lines. 
-         - **Natural:** Natural    
+         - **Linear:** Connects convex corners with straight lines, adding extra vertices. 
+         - **Natural:** Preserves the original shape without adding extra vertices.   
+         <img src="/img/offset-region-gap-fill.svg" width="450" />
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Tab</kbd> **Lock distances:** Offset with equal distance on both sides.
       - <kbd>I</kbd> **Individual:** When multiple Regions are selected, turning on this option offsets the Regions in a combined form.
-      - <kbd>V</kbd> **Gap fill:** 
+      - <kbd>V</kbd> **Gap fill:** Cycle through the gap fill options.
       - <kbd>D</kbd> **Distance:** Specify the distance with mouse movement.
 5. Confirm with OK in the Command Dialog or right-click.
 

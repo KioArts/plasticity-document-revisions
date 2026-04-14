@@ -1,88 +1,125 @@
-# 使用方法
+import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
+
+# 使い方
 
 ## Blender Bridgeのセットアップ
 
-'Blender Bridge' アドオンがインストールされていること、そしてPlasticityの機能が有効になっていることを確認してください。セットアップの手順は[こちら](install-blender-addon)を参照してください。
+「Blender Bridge」アドオンがインストールされ、Plasticityで機能が有効になっていることを確認してください。セットアップ手順は[こちら](install-blender-addon)を参照してください。
 
-## 基本的な使用方法
+## 基本的な使い方
 
-Plasticityで作成されたオブジェクトをBlenderに転送するには、BlenderのPlasticityサイドバーパネルの「Refresh」ボタンをクリックします。
+PlasticityでのオブジェクトをBlenderに転送するには、BlenderのPlasticityサイドバーパネルにある「Refresh」ボタンをクリックします。
 
-1. **Plasticityにて:**
+1. **Plasticity内:**
     1. Plasticityを開きます。
     2. Blenderに転送したいオブジェクトを作成します。
-2. **Blenderにて:**
-    1. Plasticityサイドバーパネルの「Connect」ボタンをクリックします。接続が確立すると、パネルに追加のオプションが表示されます。
+2. **Blender内:**
+    1. 「Plasticity」サイドバーパネルの「Connect」ボタンをクリックします。接続が確立されると、パネルに追加オプションが表示されます。
         ![BB Blender Connet](/img/bb-blender-connect.png)
-    2. Plasticityサイドバーパネルの「Refresh」ボタンをクリックして、PlasticityからBlenderにオブジェクトを転送します。
+    2. 「Plasticity」サイドバーパネルの「Refresh」ボタンをクリックして、PlasticityからBlenderにオブジェクトを転送します。
         ![BB Blender Connet](/img/bb-blender-refresh.png)
-    3. 転送されたオブジェクトはBlenderの3Dビューポートに表示されます。
-        - Plasticityの全てのソリッドとシートは、Blenderにメッシュとして転送されます。
-        - 「Only visible」が無効になっている場合(デフォルト)、Plasticityの非表示のオブジェクトはBlenderで非表示のオブジェクトとして転送されます。「Only visible」が有効な場合、Plasticityの非表示のオブジェクトは転送されません。
-        - サイズをスケーリングするための「Scale」オプションが利用可能です。
-3. **Plasticityにて:**
+    3. 転送されたオブジェクトがBlenderの3Dビューポートに表示されます。
+        - Plasticityのすべてのソリッドおよびシートは、Blenderではメッシュとして転送されます。
+        - 「Only visible」が無効（デフォルト）の場合、Plasticityの非表示オブジェクトはBlenderにも非表示オブジェクトとして転送されます。「Only visible」が有効の場合、非表示オブジェクトは転送されません。
+        - 「Scale」オプションでサイズのスケールを調整できます。
+3. **Plasticity内:**
     1. 必要に応じてオブジェクトを編集します。
-4. **Blenderにて:**
-    1. Plasticityで行われた変更を更新するには、Plasticityサイドバーパネルの「Refresh」ボタンをクリックします。
+4. **Blender内:**
+    1. Plasticityでの変更を反映するには、「Plasticity」サイドバーパネルの「Refresh」ボタンをクリックします。
 
 ## ライブリンク
 
-ライブリンクが有効になっている場合、Plasticityのオブジェクトに行われた変更は自動的にBlenderに転送されます。
+ライブリンクを有効にすると、Plasticityでオブジェクトに加えた変更が自動的にBlenderに転送されます。
 
-1. **Plasticityにて:**
+1. **Plasticity内:**
     1. Plasticityを開きます。
     2. Blenderに転送したいオブジェクトを作成します。
-2. **Blenderにて:**
-    1. Blender Bridgeアドオンがインストールされていて有効になっていることを確認します。
-    2. Plasticityサイドバーパネルの「Live Link」ボタンをクリックします。
+2. **Blender内:**
+    1. Blender Bridgeアドオンがインストールされ、有効になっていることを確認します。
+    2. 「Plasticity」サイドバーパネルの「Live Link」ボタンをクリックします。
         ![BB Blender Live Link](/img/bb-blender-live-link.png)
-3. **Plasticityにて:**
+3. **Plasticity内:**
     1. 必要に応じてオブジェクトを編集します。
-4. **Blenderにて:**
-    1. 変更は自動的にBlenderに転送されます。
+4. **Blender内:**
+    1. 変更内容が自動的にBlenderに転送されます。
 
-## Refacetメッシュ
+## メッシュの再フェイセット（Refacet）
 
-Refacetメッシュオプションは、転送されたオブジェクトのメッシュを自動的にリトポロジーします。これは、メッシュの頂点の数を減少させるために役立ち、Blenderでのパフォーマンスを向上させることができます。
+「Refacet Mesh」オプションは、転送されたオブジェクトのメッシュを自動的にリトポロジーします。これにより頂点数を削減し、Blenderでのパフォーマンスを向上させることができます。
 
-1. **Blenderにて:**
-    1. リトポロジーする転送されたオブジェクトを選択します。
-    2. Plasticityサイドバーパネルの「Refacet」ボタンをクリックします。
+1. **Blender内:**
+    1. リトポロジーする転送済みオブジェクトを選択します。
+    2. 「Plasticity」サイドバーパネルの「Refacet」ボタンをクリックします。
         ![BB Blender Refacet](/img/bb-blender-refacet.png)
-        - Plasticityサイドバーパネルでrefacetの設定を指定できます。
-            - Tri/Ngon: 生成されるメッシュのタイプ。'Tri'は三角形のみのメッシュを生成し、'Ngon'は5つ以上の辺を持つ多角形を含むメッシュを生成します。
-            - Tolerance: オリジナルのメッシュとリトポロジーされたメッシュとの間の最大距離。許容値が低いと、オリジナルのメッシュにより密接に一致するメッシュが生成されますが、頂点の数が多いメッシュになります。
-            - Angle: オリジナルのメッシュとリトポロジーされたメッシュとの間の最大角度。角度が低いと、オリジナルのメッシュにより密接に一致するメッシュが生成されますが、頂点の数が多いメッシュになります。
-        - 高度なオプションを表示するには「Advanced」ボタンをクリックします。
-            - Tri/Ngon: 生成されるメッシュのタイプ。'Tri'は三角形のみのメッシュを生成し、'Ngon'は5つ以上の辺を持つ多角形を含むメッシュを生成します。
-            - Min width: リトポロジーされたメッシュの最小幅。最小幅が低いと、頂点の数が多いメッシュになります。
-            - Max width: リトポロジーされたメッシュの最大幅。最大幅が低いと、頂点の数が多いメッシュになります。
-            - Edge Chord Tolerance: オリジナルのEdge chordとリトポロジーされたメッシュとの間の最大距離。
-            - Edge Angle Tolerance: オリジナルのEdge angleとリトポロジーされたメッシュとの間の最大角度。
-            - Face Plane Tolerance: オリジナルのFace planeとリトポロジーされたメッシュとの間の最大距離。
-            - Face Angle Tolerance: オリジナルのFace angleとリトポロジーされたメッシュとの間の最大角度。
-        - Refacetは自動的にリトポロジーされたメッシュのエッジに「Mark Sharp」を生成します。
+        - 「Plasticity」サイドバーパネルでRefacetの設定を指定できます。
+            - **Tri/Ngon:** 生成するメッシュの種類。「Tri」は三角形のみのメッシュを生成し、「Ngon」は5辺以上のポリゴンを含むメッシュを生成します。
+            - **許容誤差（Tolerance）:** 元のメッシュとリトポロジー後のメッシュ間の最大距離。値が小さいほど元のメッシュに近くなりますが、頂点数が増加します。
+            - **角度（Angle）:** 元のメッシュとリトポロジー後のメッシュ間の最大角度。値が小さいほど元のメッシュに近くなりますが、頂点数が増加します。
+        - 「Advanced」ボタンをクリックすると詳細オプションが表示されます。
+            - **Tri/Ngon:** 生成するメッシュの種類。「Tri」は三角形のみのメッシュを生成し、「Ngon」は5辺以上のポリゴンを含むメッシュを生成します。
+            - **最小幅（Min width）:** リトポロジー後のメッシュの最小幅。値が小さいほど頂点数が増加します。
+            - **最大幅（Max width）:** リトポロジー後のメッシュの最大幅。値が小さいほど頂点数が増加します。
+            - **エッジコード許容誤差（Edge Chord Tolerance）:** 元のエッジコードとリトポロジー後のメッシュ間の最大距離。
+            - **エッジ角度許容誤差（Edge Angle Tolerance）:** 元のエッジ角度とリトポロジー後のメッシュ間の最大角度。
+            - **面の平面許容誤差（Face Plane Tolerance）:** 元の面の平面とリトポロジー後のメッシュ間の最大距離。
+            - **面の角度許容誤差（Face Angle Tolerance）:** 元の面角度とリトポロジー後のメッシュ間の最大角度。
+        - Refacetはリトポロジー後のメッシュのエッジに自動的に「Mark Sharp」を適用します。
 
 ## ユーティリティ
 
 ![BB Blender Utilities](/img/bb-blender-utilities.png)
 
-### Auto Mark edges（オートマークエッジ）
+### エッジの自動マーク
 
-- 選択されたフェイスに基づいて、最後の操作パネルに応じてエッジをシャープまたはシームとしてマークします。
+- 最後に使用した操作パネルに応じて、選択した面に基づいてエッジをシャープまたはシームとしてマークします。
 
-### Merge UV Seams（UVシームの統合）
+### UVシームの結合
 
-- 選択されたフェイスに基づいてUVシームを統合します。
+- 選択した面に基づいてUVシームを結合します。
 
-### Select Plasticity Face(s)（Plasticityフェイスの選択）
+### Plasticityの面を選択
 
-- PlasticityからのFacesに基づいて、フェイスの選択範囲を拡張します。
+- Plasticityの面に基づいて面の選択範囲を拡張します。
 
-### Select Plasticity edges（Plasticityエッジの選択）
+### Plasticityのエッジを選択
 
-- フェイスを選択し、コマンドを実行して、PlasticityからのEdgesに基づいてエッジを選択します。
+- 面を選択した後、このコマンドを実行してPlasticityのエッジに基づいてエッジを選択します。
 
-### Paint Plasticity Faces（Plasticity Facesのペイント）
+### Plasticityの面をペイント
 
-- PlasticityからのFacesに基づいて、ランダムな頂点カラーを塗ります。
+- Plasticityの面に基づいてランダムな頂点カラーを適用します。
+
+## PolySplines を使用した作業
+
+Blenderでジオメトリをモデリングし、Plasticityに転送すると、PolySplines が自動的に適用されます。[PolySplines](/solid/polyspline) を使用するには Studio ライセンスが必要です。
+
+### 基本的な使い方
+
+1. **Plasticity内:**
+    1. シーンが空で、モデリングされたオブジェクトが含まれていないことを確認し、Blenderシーンへの意図しない転送を防ぎます。
+
+2. **Blender内:**
+    1. 「Plasticity」サイドバーパネルの「Connect」ボタンをクリックします。
+    2. 「Plasticity」サイドバーパネルの「Only Visible」オプションを有効にして、PlasticityからBlenderにオブジェクトが転送されないようにします。
+    3. 「Refresh」ボタンをクリックして、Blenderのアウトライナーに追加オプションを表示します。
+
+        ![Outliner Blender](/img/blender-outliner-polysplines.png)
+
+    4. Blenderオブジェクトを「Outbox」グループに配置し、レベルを少なくとも **1** に設定した **Subdivision** モディファイアーを追加します。
+        - ジオメトリを変更するモディファイアーはすべて **Subdivision** モディファイアーの **後に** 配置してください。Plasticityに転送される際にすべてのモディファイアーが自動的に適用されます。
+
+        ![Modifiers](/img/blender-outliner-polysplines-02.png)
+    5. 「Plasticity」サイドバーパネルの「Refresh」ボタンをクリックして、BlenderからPlasticityにオブジェクトを転送します。
+
+3. **Plasticity内:**
+    1. 転送されたオブジェクトがPlasticityの3Dビューポートに表示されます。
+        - スケール、位置、回転などのトランスフォームデータは自動的に適用されます。
+        - すべてのモディファイアーは転送時に自動的に適用されます。
+        - オブジェクトは自動的にPolySplineサーフェスに変換されます。
+
+<Callout type="info">
+**ミラーモディファイアー:** ソースオブジェクトがミラー平面に接触または交差していることを確認してください。これはミラーを正常に機能させるために必要です。
+</Callout>
+
+<VideoPlayer fileName="blender-using-polysplines"/>

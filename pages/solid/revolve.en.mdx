@@ -1,20 +1,37 @@
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import ButtonIcon from '/components/ButtonIcon';
+import CommandReference from '/components/CommandReference'
 
-# Revolve
+## Revolve
 
-<Reference shortcut="" command="Revolve" button="In Suggested Commands Menu" buttonIcon="button-revolve" />
+{/* <Reference shortcut="" command="Revolve" button="In Suggested Commands Menu" buttonIcon="button-revolve" /> */}
 
-Revolving Regions generates Solids, while revolving Curves produces either Solids or Sheets. Options include Normal, Binormal, and Tangent.
+<CommandReference
+  command="Revolve"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-revolve.png"
+  tier="both"
+/>
+
+## Description
+
+Revolving Regions generates Solids, while revolving Curves produces either Solids or Sheets. Options include Normal, Binormal, and Tangent. It now supports boolean operations.
 
 ## Basic Usage
 
-1. Select the Region or Curve to revolve.
-2. Click the button <ButtonIcon type="button-revolve" /> on the Right of Command Bar.
+1. Select a Region or Curve to revolve.
+2. Activate the command via the <ButtonIcon type="button-revolve" /> button in Suggested Commands, or search for **Revolve** in the Command Palette.
 3. Specify the revolution axis. 
    - Revolve along the axis defined by the first click as the start point and the second click as the endpoint.
+   - <Kst>Command Dialog</Kst>
+      - **Degrees:** Specify the degree to revolve.
+      - **Keep tools:** Keep the swept body after a boolean operation.
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Shift + T</kbd> **Thickness:**
       - <kbd>A</kbd> **Angle:** Move the mouse to specify the rotation angle.
+      - <kbd>Shift + Q</kbd> **Slice**, <kbd>Q</kbd> **Union**, <kbd>W</kbd> **Difference**, <kbd>Shift + E</kbd> **Intersect:** Perform a boolean operation.
+      - <kbd>B</kbd> **New body:** Retain the resulting body after a boolean operation or modeling step.
+      - <kbd>T</kbd> **Keep tools:** Performs Boolean operations while keeping the tool objects intact.
 5. Confirm with OK in the Command Dialog or right-click.

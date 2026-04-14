@@ -2,19 +2,30 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 
-# Find Boundary Edges（開いているシートのエッジを選択）
+## Find Boundary Edges
 
-<Reference shortcut="" command="Find Boundary Edges" button="" />
+{/* <Reference shortcut="" command="Find Boundary Edges" button="" /> */}
 
+<CommandReference
+  command="Find Boundary Edges"
+  shortcut=""
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-find-boundary-edges.png"
+  tier="both"
+/>
 
-開いているシートのエッジを選択できます。
+## 説明
+
+選択したシートの開いている部分の境界エッジを選択します。
 
 ## 基本的な使い方
 
-1. 開いているエッジを見つけたいシートを選択します。
-2. コマンドパレットに **"Find Boundary Edges"** と入力し、クリックしてください。
-3. 開いているシートのエッジが選択されます。
+1. 境界エッジを見つけたいシートを選択します。
+2. コマンドパレットで **Find Boundary Edges** と入力して実行します。
+3. シートの開口部のエッジが選択されます。
 
-<Callout type="info" emoji="💡">
-未接続のエッジは、意図した通りにソリッドにならない原因の一つです。このコマンドで未接続のエッジを見つけることができます。
+<Callout type="info">
+**注意:**  
+未接続のエッジは、ソリッドにならない原因の一つです。  
+このコマンドを使うことで、未接続エッジを見つけることができます。
 </Callout>

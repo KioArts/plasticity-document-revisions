@@ -1,10 +1,19 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 
-# Delete Redundant Topology
+## Delete Redundant Topology
 
-<Reference shortcut="" command="Delete Redundant Topology" button="" />
+{/* <Reference shortcut="" command="Delete Redundant Topology" button="" /> */}
 
+<CommandReference
+  command="Delete Redundant Topology"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-delete-redundant-topology.png"
+  tier="both"
+/>
+
+## Description
 
 This command automatically calls the following command depending on the selected object.
     - When Curves are selected: see [**Delete Redundant Topology (Curve)**](/sketch/delete-redundant-topology#delete-redundant-topology-curve) in the Sketch Commands section.

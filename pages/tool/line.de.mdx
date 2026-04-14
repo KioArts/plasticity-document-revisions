@@ -3,24 +3,33 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Line
+## Line
 
-<Reference shortcut="Umschalt + A" command="Line" button="Werkzeugleiste"  buttonIcon='button-line'/>
+{/* <Reference shortcut="Shift + A" command="Line" button="Toolbar"   buttonIcon='button-line'/> */}
 
-Sie können eine Reihe von verbundenen Liniensegmenten erstellen.
+<CommandReference
+  command="Line"
+  shortcut="Shift + A"
+  button="In der Toolbar"
+  buttonIcon="/img/button-line.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Klicken Sie auf den <ButtonIcon type="button-line" /> Knopf in der Werkzeugleiste.
-2. Klicken Sie, um den Startpunkt des Liniensegments festzulegen.
-3. Klicken Sie auf den Winkel des Liniensegments, um eine Reihe von Liniensegmenten zu erstellen.
+Du kannst eine Reihe verbundener Liniensegmente erstellen.
+
+## Grundlegende Verwendung
+
+1. Klicke auf den <ButtonIcon type="button-line" />‑Button in der Toolbar.
+2. Klicke, um den Startpunkt des Liniensegments festzulegen.
+3. Klicke im gewünschten Winkel, um eine Reihe von Liniensegmenten zu erstellen.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Tab</kbd>: Ermöglicht direkte Eingabe von Abmessungen. Weitere Informationen finden Sie [hier](/tool/sketching-essentials#specify-dimensions-numerically).
-      - <kbd>K</kbd> **Knife:** Siehe [Messermodus verwenden](/tool/sketching-essentials#use-knife-mode).
-      - <kbd>Strg + Z</kbd> **Undo:** Hebt den letzten Klick auf.
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-Axis:** [Beschränkt auf X, Y, Z Achse](/tool/sketching-essentials#constrain-to-an-axis).
-4. Nach dem Klicken auf den letzten Punkt, rechtsklick zur Bestätigung.
+      - <kbd>Tab</kbd>: Aktiviert die direkte Eingabe von Maßen. Siehe [hier](/tool/sketching-essentials#specify-dimensions-numerically) für Details.
+      - <kbd>K</kbd> **Knife:** Siehe [Knife‑Modus verwenden](/tool/sketching-essentials#use-knife-mode).
+      - <kbd>Ctrl + Z</kbd> **Rückgängig:** Macht den letzten Klick rückgängig.
+      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z‑Achse:** [Bewegung auf Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+4. Nach dem letzten Punkt Rechtsklick zum Bestätigen.
 5. Die Liniensegmente werden erstellt.
-
 
 <VideoPlayer fileName="line"/>

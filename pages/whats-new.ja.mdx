@@ -3,345 +3,393 @@ import Reference from '/components/Reference'
 import { Tabs } from 'nextra/components'
 import { Center } from '/components/Center'
 import { SideBySide } from '/components/SideBySide'
+import ButtonIcon from '/components/ButtonIcon'
 
-発売日：2025年12月15日
+リリース日: 2026年4月16日
 
-# Plasticity 25.3 リリースノート
+# Plasticity 2026.1 リリースノート
 
-Plasticity 25.3 は、サーフェスモデリング、精密編集、ワークフロー効率を大幅に向上させる包括的なアップデートを提供します。本アップデートでは、ライブインスタンスの作成とリアライズ、半径計測および楕円ツール、自動ピボット調整、リアルタイム曲率・連続性フィードバックが追加され、さらにアレイ、ミラー、スイープ機能およびワークフローが改善されています。
+Plasticity 2026.1 では、PolySplines、Export Hidden Line、Slot などの新コマンドが追加され、Extrude、Align、Place、Mirror などの既存コマンドが改善されました。また、アウトライナー検索、コンストラクションプレーンの2Dスナッピング、SpaceMouseの改良、スケッチコマンド全般での数値精度向上など、インターフェース面でも多数の更新が含まれています。
 
-ユーザーは円柱・円錐サーフェスでのエッジ操作、ドラッグ＆ドロップによるマテリアル操作、高速ナビゲーション、トポロジー制御のための新しい OBJ 書き出しオプション、拡張言語サポートなどの強化を利用できます。以下はアップデートの詳細です。
+## 1. 新コマンド
 
-## 1. 新しいコマンド
+### PolySplines
+- **メッシュオブジェクトをNURBSサーフェスに変換**    
+PolySplines は、メッシュオブジェクトをPlasticity 内の編集可能なNURBSサーフェスに変換するサードパーティの新コマンドです。G2連続性を持つクリーンな単スパン・複数スパンのサーフェスを生成します。これはStudioのみの機能であり、Blender Bridgeアドオンと組み合わせて使用できます。
 
-### インスタンス作成コマンド
-- **インスタンスワークフロー**  
-  *Create Instance* コマンドは、ソリッド、シート、カーブ、グループのライブインスタンスを作成し、元のジオメトリを参照します。このアプローチにより、メッシュデータの重複を回避し、モデルを軽量に保ち、親オブジェクトの変更がすべてのインスタンスに自動的に反映されます。
+<Center 
+width="500px"
+borderRadius="8px">
+![PolySplines の例](/img/polyspline-example.svg)
+</Center>
+
+詳細: [PolySplines](/solid/polyspline)、[Blender Bridge（PolySplines との使い方）](/blender/how-to-use#working-with-polysplines)
+
+### Export Hidden Line
+- **3DオブジェクトからSVG技術図面を作成**    
+Export Hidden Line は、3Dモデルから技術的なSVG図面を生成する新コマンドです。隠れ線の表示、線スタイル設定、オブジェクトシェーダーのエクスポート、複数手法によるハッチング、線の着色、オブジェクトを自動配置するグリッドビューテンプレートをサポートしています。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Export Hidden Line サンプル画像](/release/26.1/export-hidden-line.svg)
+</Center>
+
+[詳細を見る](/plasticity-essentials/export-hidden-line)
+
+### Slot
+- **カーブからスロットを作成**    
+開いたカーブを両側に対称的にオフセットし、端をキャップしたクローズドのスロット形状を作成します。ボルトスロット、換気用カットアウトなどの機械部品に便利です。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Slot GIF](/release/26.1/slot-example.gif)
+</Center>
+
+[詳細を見る](/sketch/slot)
+
+## 2. モデリングの強化
+
+### ギズモ距離入力
+- **統一されたギズモコントロール**    
+ギズモを共有するコマンドで <kbd>Tab</kbd> キーを使って正確な距離値を入力できるようになりました。これにより、変換操作をより速く、一貫性を持って行えます。以下のコマンドがこの機能に対応しています。
+
+
+| コマンド            | 説明                          |
+|--------------------|--------------------------------------|
+| [Move](/common/move)                 | XYZギズモ距離値を指定     |
+| [Rotate](/common/rotate)             | XYZギズモ距離値を指定     |
+| [Scale](/common/scale)               | XYZギズモ距離値を指定     |
+| [Push Face](/solid/offset-face)      | ギズモで距離値を指定     |
+| [Extrude](/solid/extrude)            | ギズモで距離値を指定     |
+| [Thicken](/solid/thicken-face)       | ギズモで距離値を指定     |
+
+{/* <Center 
+width="500px"
+borderRadius="8px">
+![Gizmo Distance GIF](/release/26.1/gizmo-distance-shortcut.gif)
+</Center> */}
+
+### 数値精度
+- **高精度化**  
+入力関数（<kbd>=</kbd>）を使用するコマンドで、<kbd>Ctrl + C</kbd> により最大8桁の小数点以下の数値をコピーできるようになりました（例: `30.345` → `30.34587689`）。
+
+| カテゴリ | コマンド |
+|---|---|
+| **カーブ** | [Line](/tool/line), [Spline Curve](/tool/spline-curve), [Control Point Curve](/tool/control-point-curve) |
+| **円** | [Center Circle](/tool/center-circle), [Two Point Circle](/tool/two-point-circle), [Three Point Circle](/tool/three-point-circle), [Tangent Circle](/tool/tangent-circle), [Ellipse](/tool/ellipse) |
+| **弧** | [Center Point Arc](/tool/center-point-arc), [Three Point Arc](/tool/three-point-arc), [Tangent Arc](/tool/tangent-arc) |
+| **矩形** | [Corner Rectangle](/tool/corner-rectangle), [Center Rectangle](/tool/center-rectangle), [Three Point Rectangle](/tool/three-point-rectangle) |
+| **3Dプリミティブ** | [Sphere](/tool/sphere), [Corner Box](/tool/corner-box), [Center Box](/tool/center-box), [Three Point Box](/tool/three-point-box), [Cylinder](/tool/cylinder), [Dimension](/tool/measure) |
+
+### OBJエクスポートコマンド
+- **スケールと上方向軸のコントロール**    
+OBJエクスポーターに「Scale」フィールドと「Up Axis」トグルが追加されました。Scaleはエクスポートされる全座標に乗数を適用し、対象アプリケーションへの正確な単位変換を可能にします。Up Axisはエクスポートされるジオメトリの向きを、受け取るソフトウェアの規則に合わせて設定します。
 
 <Center 
 width="400px"
-border="1px solid #221458ff"
+border ="1px solid rgb(140, 140, 140)"
 borderRadius="8px">
-![Instance Example GIF](/img/2025.3-instance-example.gif)
+![OBJエクスポート - スケールと上方向軸コントロール](/release/26.1/export-obj-scale-axis.png)
 </Center>
 
-詳細はこちら – [ソリッドとシートのインスタンス作成](/solid/create-solid-and-sheet-instance) ・ [カーブのインスタンス作成](/sketch/create-curve-instance)
+**スケールと上方向軸リファレンス**
 
-### インスタンスのリアライズコマンド
-- **インスタンスから実体ボディへ**  
-  *Realize Instances* コマンドは、選択したインスタンスオブジェクトを編集可能な実体ボディへ変換し、Plasticity 内で完全なコントロールを可能にします。
+| ソフトウェア | デフォルト単位 | cm作業時 | mm作業時 | 上方向軸 |
+|---|---|---|---|---|
+| Blender | メートル | `0.01` | `0.001` | Z up |
+| Unreal Engine | センチメートル | `1.0` | `0.1` | Z up |
+| Maya | センチメートル | `1.0` | `0.1` | Y up |
+| Unity | メートル | `0.01` | `0.001` | Y up |
+| 3ds Max | インチ | `0.3937` | `0.03937` | Z up |
+| Cinema 4D | センチメートル | `1.0` | `0.1` | Y up |
+
+[詳細を見る](/plasticity-essentials/export-obj)
+
+### STLエクスポートコマンド
+- **長さ単位のオーバーライド**    
+STLエクスポート時に、使用する長さ単位を上書きできるようになりました。
 
 <Center 
 width="400px"
-border="1px solid #221458ff"
+border ="1px solid rgb(140, 140, 140)"
 borderRadius="8px">
-![Realize Instances Example GIF](/img/2025.3-realize-instances-example.gif)
+![OBJエクスポート - スケールと上方向軸コントロール](/release/26.1/export-stl-length-unit.png)
 </Center>
 
-詳細はこちら – [ソリッドとシートのインスタンスのリアライズ](/solid/realize-solid-and-sheet-instances) ・ [カーブインスタンスのリアライズ](/sketch/realize-curve-instances)
+現在指定可能な単位は以下のとおりです。
 
-### Plasticity Share への公開コマンド
-- **.plasticity ドキュメントをオンライン共有**  
-  *Publish to Plasticity Share* は新しいエクスポートコマンドで、作業内容をウェブリンクとして共有できます。アップロードされるのはメッシュデータのみ（CAD ジオメトリやソースファイルは含まれない）ため、共有ファイルはプレビューのみ可能でダウンロードはできず、クラウド使用量を最小限に抑えられます。元のプロジェクトを公開せずにビジュアライゼーションを素早く共有したい場合に最適です。
+| 使用可能な単位 | 変換例 |
+|----------------|--------------------------------------------------------------|
+| ミリメートル     | `1` mm = `0.1` cm = `0.001` m = `0.03937` in = `0.003281` ft           |
+| センチメートル     | `1` cm = `10` mm = `0.01` m = `0.3937` in = `0.03281` ft               |
+| メートル          | `1` m = `1000` mm = `100` cm = `39.37` in = `3.28084` ft               |
+| インチ           | `1` in = `25.4` mm = `2.54` cm = `0.0254` m = `0.08333` ft             |
+| フィート           | `1` ft = `304.8` mm = `30.48` cm = `0.3048` m = `12` in                |
 
-[詳しくはこちら](/common/publish-to-plasticity-share)
+## 3. 全般的な改善
 
-### 半径計測コマンド
-- **放射状ジオメトリの計測**  
-  円柱、円錐、その他の類似形状に適用できる専用の *Measure Radius* コマンドが追加されました。
+### 設定メニュー
+- **設定メニュー** - メニューをPlasticityウィンドウ内でドラッグして移動できるようになりました。
+- **回転モード** - 新しい **Arcball** 回転モードが追加されました。マウスの動きをシーン周辺の仮想球体にマッピングすることで、全3軸に沿って自由にビューを回転させ、あらゆる方向への360度回転が可能になります。
+- **計測カラー** - **外観**セクションに新しいカラー設定が追加され、スケッチツールに表示される計測線と計測単位の色をカスタマイズできます。
 
-<Center 
-width="400px"
-border="1px solid #221458ff"
-borderRadius="8px">
-![Radial Measurement Example GIF](/img/2025.3-measure-radial-example.gif)
-</Center>
+### SpaceMouse
+- **動作** - SpaceMouseの動作を他のソフトウェアとより一貫したものにするための全般的な改善と調整が行われました。お使いのデバイスの最新ドライバーへのアップデートを推奨します。変更内容は以下のとおりです。
+    - **方向** - 上下方向が反転されました。
+    - **速度** - 他のアプリケーションの期待値に合わせてデフォルト速度が再調整されました。
+    - **ホライゾンのロック** - *設定 > SpaceMouse* にロール動作を切り替える新オプションが追加されました。
 
-[詳しくはこちら](/common/measure-radius)
+### キーボードオーバーレイ
+- **背景の切り替え** - 非常に明るいシーンで使用した場合、ショートカットオーバーレイが白から暗い背景に切り替わるようになりました。
 
-### 新しい楕円ツール
-- **楕円ツール**  
-  *Ellipse* ツールが Plasticity に追加され、正確な楕円の作成を精密にコントロールできます。
+### メニューパネル
+- **展開・折りたたみ速度** - メニューパネルの展開・折りたたみが高速化されました。
 
-<Center 
-width="400px"
-border="1px solid #221458ff"
-borderRadius="8px">
-![Ellipse Tool Example GIF](/img/2025.3-ellipse-tool-example.gif)
-</Center>
+### アセットパネル
+- **キーバインドのサポート** - アセットパネルで矢印キーによるナビゲーションがサポートされました。
 
-[詳しくはこちら](/tool/ellipse)
+### 軸方向ギズモ
+- **軸の表示更新** - 軸方向ギズモがカメラに正対したときにフェードアウトするようになりました。
 
-## 2. モデリング機能の強化
+### ファイル保存ウィンドウ
+- **ファイルの保存** - 未保存の変更がある場合、Plasticityが保存確認のダイアログを表示するようになりました。
 
-### 計測およびカーブ表示のアップデート
-- **計測**  
-  寸法線の両端に矢印が表示されるようになりました。
+### サムネイル表示
+- **macOSファイル識別** - macOSでサムネイルプレビューがサポートされました。
 
-<Center width="500px">
-![Measurement Appearance Change](/img/2025.3-measurement-changes-example.svg)
-</Center>
-
-- **カーブ**  
-  線幅が細くレンダリングされ、密度の高いシーンでの視認性が向上します。
-
-<Center width="500px">
-![Curve Appearance Change](/img/2025.3-curve-changes-examples.svg)
-</Center>
-
-### グリッドにスナップ
-- **スケールギズモ**  
-  スケールツール使用時、グリッドスナップが有効であればインクリメンタルスナップが適用されます。
-
-### スナップポイント
-- **球面フェース**       
-球面フェースは現在、**中心**スナップポイントを提供します。このスナップポイントは、**[ビュー モード](/plasticity-essentials/view-mode)**でX‑レイモードを有効にすると利用可能になります。
-
-[詳しく見る](/plasticity-essentials/snap)
-
-### Move ツール
-- **ソリッドおよびシートのエッジ操作**  
-  ソリッドまたはシートボディのエッジ移動が、円柱フェース・円錐フェース上の円形エッジに対応しました。これらのフェースの解析ジオメトリが保持されます。移動するエッジが直線または円であり、隣接するフェースが平面・円柱・円錐であれば、内部・外部のサーフェスエッジを操作できます。
-
-<Center 
-width="400px"
-border="1px solid #221458ff"
-borderRadius="8px">
-![Edge Manipulation Example GIF](/img/2025.3-edge-manipulation-example.gif)
-</Center>
-
-[詳しくはこちら](/common/move)
-
-### ピボットポイント
-- **自動ピボット調整**  
-  プリミティブまたはスケッチオブジェクトを最初に配置した位置で、サーフェス法線に沿ってピボットポイントが自動的に調整されます。対象ツールは以下のとおりです。
-
-| プリミティブツール | スケッチツール |
-| ---- | ---- |
-| [Corner Box](/tool/corner-box) | [Corner Rectangle](/tool/corner-rectangle) |
-| [Center Box](/tool/center-box) | [Center Rectangle](/tool/center-rectangle) |
-| [Cylinder](/tool/cylinder) | [Three Point Rectangle](/tool/three-point-rectangle) |
-| - | [Center Circle](/tool/center-circle) |
-| - | [Two Point Circle](/tool/two-point-circle) |
-| - | [Three Point Circle](/tool/three-point-circle) |
-| - | [Regular Polygon](/tool/polygon) |
-| - | [Ellipse](/tool/ellipse) |
-
-## 3. 全体的な改善
-
-### マウスナビゲーション
-- **ナビゲーション**  
-  マウスホイールによるズーム速度が高速化されました。特に大規模シーンで細部へ素早くアクセスする際に操作性が向上します。
-
-### パフォーマンス
-- **カーブ**  
-  多数の交差カーブを含むシーンで最適化が行われました。  
-- **OBJ ファイルへのスナップ**  
-  OBJ ファイルへのスナップが最適化され、フェースや頂点へのスナップ時の応答性が向上しました。
-
-### ローカリゼーション  
-**新しい言語**  
-Plasticity は、**設定** セクションで最大 **6** つの優先言語を設定できるようになりました。今後のリリースでさらに多くの言語が追加される予定です。
-
-| 言語                         | ステータス |
-|------------------------------|------------|
-| Deutsch | -  |
-| English | (Default: Selected) |
-| Italiano | - |
-| 日本語 (Japanese) | -  |
-| Русский (Russian) | - |
-| 中文 (Simplified Chinese)| - |
-| 繁體中文 (Traditional Chinese) | - |
-| Español | Planned  |
-| Français | Planned |
-| Português | Planned |
-| Svenska (Swedish) | Planned |
+### ウィンドウアプリケーションサイズ
+- **ウィンドウ操作** - Windows上でPlasticityを小さいサイズにリサイズした場合の動作が改善されました。
+- **コマンドダイアログ** - コマンドダイアログに、長いオプションリストをスクロールするためのスクロールバーが追加されました。
 
 ## 4. 新機能
 
-### エクスポートとインポート
-- **SVG 書き出し**  
-  Plasticity から SVG ファイルを書き出せるようになりました。
+### コントロールポイントモード
+- **交差点のビジュアライゼーション**  
+コントロールポイント選択モードでは、2つのカーブが交差する箇所、または頂点が接続されている箇所に小さなドットが表示されるようになりました。これにより、カーブが本当に接続されていることが明確に確認できます。
 
-[詳しくはこちら](/plasticity-essentials/export-svg)
-
-### レンダーモード
-- **新しいデフォルト HDRI**  
-  [Render Mode](/plasticity-essentials/render-mode) に新しいデフォルト環境 HDRI が追加され、有効化した際に使用できます。
-
-<Center width="230px">
-![New HDRI Environment](/img/2025.3-new-hdri.png)
-</Center>
-
-### アセットメニュー
-- **新しい PBR マテリアル**  
-  *Cathedral Tile* という新しい物理ベースマテリアルが、Plasticity の Physical Material Library に追加されました。
-
-<Center width="230px">
-![New Material](/img/2025.3-new-physical-material.png)
-</Center>
-
-- **ハイライトインジケーター**  
-  *Assets* タブでマテリアルにカーソルを合わせると、そのマテリアルを使用しているすべてのアイテムがビューポート内でハイライトされます。
-
-<Center width="600px"
-border="1px solid #221458ff"
+<Center 
+width="600px"
 borderRadius="8px">
-![Assets Tab Highlight Indicator](/img/2025.3-highlight-indicator.gif)
+![機能の例](/release/26.1/point-mode-visualization-change.svg)
 </Center>
 
-- **ドラッグ＆ドロップ マテリアル**  
-  *Assets* メニュー内の **Material Library** から物理マテリアルをビューポートのオブジェクトに直接ドラッグ＆ドロップできるようになりました。以前の Plasticity では利用できなかった新機能です。
+[詳細を見る](/tool/sketching-essentials#accurate-snap)
 
-<Center width="600px"
-border="1px solid #221458ff"
+### アウトライナー
+- **検索フィールド**  
+アウトライナーに検索フィールドが追加されました。<kbd>Ctrl + F</kbd> または検索アイコンでアクセスでき、多数のオブジェクトが存在するシーンで特定のオブジェクトを見つけやすくなります。
+
+<Center 
+width="315px"
 borderRadius="8px">
-![Drag And Drop Materials From Assets Menu](/img/2025.3-assets-menu-material-update.gif)
+![機能の例](/release/26.1/outliner-search-field.png)
 </Center>
 
-[詳しくはこちら](/plasticity-essentials/assets)
+[詳細を見る](/plasticity-essentials/plasticity-interface/outliner#locate-objects-in-the-outliner)
 
-### OBJ エクスポート
-- **小さなディテールの削除**  
-  数値範囲を指定して、特定以下のサイズのサーフェスディテールを削除できます。ハイポリ → ローポリのワークフローでのテクスチャベイクやトポロジ最適化、または一般的なメッシュクリーンアップに便利です。
+- **アクティブコレクション**  
+アウトライナーでグループをダブルクリックすると、そのグループが **アクティブコレクション** として設定されます。新しくモデリング、インポート、または作成されたオブジェクトは自動的にそのグループに配置されます。現在アクティブなコレクションはビジュアルハイライトで示されます。
 
-<Center width="600px"
-border="1px solid #221458ff"
+<Center 
+width="125px"
 borderRadius="8px">
-![Remove Small Features](/img/2025.3-remove-small-features.gif)
+![アクティブコレクション](/release/26.1/toggle-active-collection.svg)
 </Center>
 
-- **放射状サーフェスの簡略化**  
-  可能な場合、放射状ジオメトリを簡略化し、エッジフローを整え、エッジが分断されず連続した状態になるよう調整します。比較的単純な形状で最も効果的ですが、複雑なジオメトリでは最適化が完全に適用できない場合があります。
-
-<Center width="600px"
-border="1px solid #221458ff"
+<Center 
+width="280px"
 borderRadius="8px">
-![Simplify Radial Surfaces](/img/2025.3-simplify-radial-surface-export.gif)
+![アクティブコレクション](/release/26.1/toggle-active-collection.png)
 </Center>
+[詳細を見る](/plasticity-essentials/plasticity-interface/outliner#active-collection)
 
-- **Ngon 最適化**  
-  トポロジモードが **Ngons** に設定されている場合、*Convex Ngons Only* を有効にすると凹面 ngons の生成を防ぎます。RizomUV、3ds Max など、一部アプリケーションは凹面 ngons を正しく扱えず、ノーマルやシェーディングに問題を起こすため有効です。エクスポートされる ngons が若干増える可能性はありますが、全体のシェーディング品質とトポロジの信頼性が向上します。
 
-<Center width="400px"
-border="1px solid #221458ff"
+### コンストラクションプレーン
+- **2Dスナッピング**   
+Planesメニューに新しい **2Dスナッピング** オプションが追加されました。有効にしてアクティブなコンストラクションプレーンが設定されている場合、すべてのピックポイントがそのプレーンに投影されます。ポイントをドラッグすると3D空間ではなくコンストラクションプレーン上で移動し、関連する操作もプレーンの向きに従います。
+
+<Center 
+width="270px"
 borderRadius="8px">
-![Ngon Shading Optimization](/img/2025.3-ngon-shading-optimization-export.svg)
+![2Dスナッピング](/release/26.1/planes-2d-snapping.png)
 </Center>
 
-- **空メッシュおよびインスタンスのエクスポート**  
-  *Export OBJ* コマンドは空のメッシュ（例：STL、FBX、OBJ）およびインスタンスのエクスポートに対応しました。リアルボディに変換されていないインスタンスも含まれます。何も選択されていない場合、ビューポートに表示されているすべてがエクスポート対象になります。
+[詳細を見る](/plasticity-essentials/plasticity-interface/construction-plane#using-2d-snapping)
 
-[詳しくはこちら](/plasticity-essentials/export-obj)
+### マテリアル
+- **マテリアルの保持**     
+継承されたマテリアルを持つオブジェクトを新しく開いたシーンウィンドウにコピー＆ペーストした際に、マテリアルが正しく保持されるようになりました。
 
-## 5. 改良された機能
-
-### ビューポート
-- **ドラッグ＆ドロップ マテリアル**  
-  Outliner のマテリアルドットを、ビューポートへ直接ドラッグできるようになりました。Outliner 内で別オブジェクトにドラッグする従来の方法に加わる新しい操作方法です。
-
-<Center width="600px"
-border="1px solid #221458ff"
+<Center 
+width="500px"
 borderRadius="8px">
-![New Approach To Assigning Materials In Outliner](/img/2025.3-outliner-to-viewport-material-update.gif)
+![マテリアルのコピー＆ペースト GIF](/release/26.1/material-copy-paste-window.gif)
 </Center>
 
-[詳しくはこちら](/plasticity-essentials/outliner#material-color)
+- **密度属性**     
+マテリアルメニューに密度フィールドが追加され、マテリアルの密度を指定できるようになりました。単位は「単位」セクションで調整でき、最終的な質量計算結果は選択メニューに表示されます。
 
-### メッシュオブジェクト
-- **原点ピボット**  
-  メッシュ（STL、FBX、OBJ など）のピボットポイントを操作し、その位置を保存できるようになりました。
-
-### 設定
-- **ファセティング設定の改善**  
-  Plasticity を再起動せずにファセティング密度を変更できます。この設定は新規ボディおよび編集に適用され、既存ボディは再ファセット化されません。
-
-## 6. 改良されたコマンド
-
-### アレイコマンド
-- **インスタンス、メッシュ、イメージのアレイ**  
-  Plasticity ではインスタンス、メッシュ、イメージをアレイできるようになりました。利用可能なアレイコマンドは以下のとおりです。
-
-| Array Commands |
-| ---- |
-| [Curve Array](/common/curve-array) |
-| [Radial Array](/common/radial-array) |
-| [Rectangular Array](/common/rectangular-array) |
-
-- **Make Instances オプション**  
-  アレイコマンドに *Make Instances* オプションが追加されました。
-
-詳しくはこちら – [Curve Array](/common/curve-array), [Radial Array](/common/radial-array), [Rectangular Array](/common/rectangular-array)
-
-### トランスフォーム
-- **インスタンスとメッシュ**  
-  *Mirror* コマンドはメッシュ（STL、FBX、OBJ など）およびインスタンスをミラーできます。
-
-- **インスタンスのミラー縮尺**  
-  任意の軸に -1 のスケール値を適用すると、その軸方向にインスタンスをミラーできます。インスタンスオブジェクトで完全サポートされます。
-
-### 曲率計測
-- **新しいコマンド名**  
-  Measure Curvature は *Toggle Curvature* に名称変更されました。Measurements → Curvature の Outliner から曲率表示をオン・オフできます。
-
-- **新しいパネルメニュー**  
-  *Toggle Curvature* に右側パネルの専用メニューが追加されました。ここでコームサイズの調整や visibility 制御（「Comb scale」）が行えます。
-
-<Center width="270px">
-![New Panel Menu](/img/2025.3-curvature-panel.svg)
-</Center>
-
-- **ライブフィードバック**  
-  *Toggle Curvature* を有効にしたまま、カーブやエッジをリアルタイムで操作でき、曲率が即時反映されます。特に [Slide](/solid/slide) コマンド使用時に、スケッチやサーフェスの曲率最適化を行いやすくなります。
-
-<Center width="400px"
-border="1px solid #221458ff"
+<Center 
+width="500px"
 borderRadius="8px">
-![Control Curvature Real Time](/img/2025.3-curvature-manipulation-example.gif)
+![密度属性 GIF](/release/26.1/material-density.gif)
 </Center>
 
-- **ファイル互換性**  
-  バージョン 25.3 で作成したファイルは旧バージョンでも開けます。既存の曲率計測データは自動的に削除され、エラーは発生しません。
+[詳細を見る](/common/set-material)
 
-[詳しくはこちら](/tool/toggle-curvature)
+## 5. 改善されたコマンド
 
-### 連続性計測
-- **新しいパネルメニュー**  
-  *Measure Continuity* に右側パネルの専用メニューが追加されました。G0/G1/G2 のそれぞれで *Scale* を調整でき、*"Show maxes"* により偏差値の表示を切り替えられます。
+### Alignコマンド
+- **カーブの整列**  
+AlignコマンドでG0、G1、G2、G3連続性での2つのカーブの整列がサポートされました。頂点から頂点、カーブからカーブの整列に対応し、ポリラインや円・多角形などの幾何形状も含まれます。また、2つのカーブで頂点が共有または重複している場合の扱いを容易にする新しい選択順序アルゴリズムも追加されました。
 
-<Center width="270px">
-![New Panel Menu](/img/2025.3-curvature-panel.svg)
-</Center>
-
-- **ライブフィードバック**  
-  *Toggle Curvature* と同様、*Measure Continuity* を有効にした状態でカーブやエッジをリアルタイムに操作でき、連続性値が即時更新されます。
-
-<Center width="400px"
-border="1px solid #221458ff"
+<Center 
+width="500px"
 borderRadius="8px">
-![Control Continuity Real Time](/img/2025.3-continuity-manipulation-example.gif)
+![PolySplines の例](/release/26.1/align-curve-example.gif)
 </Center>
 
-[詳しくはこちら](/tool/measure-continuity)
+[詳細を見る](/sketch/align-vertex)
 
-### セクション解析
-- **メッシュオブジェクト**  
-  *Section Analysis* コマンドを利用して、メッシュ（STL、FBX、OBJ）を仮想的にスライスできます。
+### Placeコマンド
+- **対応オブジェクトの拡張**   
+Placeコマンドでメッシュオブジェクトとインスタンスオブジェクトの両方の配置がサポートされ、これらのオブジェクトタイプをより細かく制御できるようになりました。インスタンスの配置では、フェースとエッジのスナップポイント、およびメッシュの頂点とフェースのみに対応しています。
 
-[詳しくはこちら](/common/section-analysis)
+- **インスタンスの作成**  
+オブジェクトを配置する際に直接インスタンスを作成できるようになりました。
 
-### スイープ
-- **高度なオプション**  
-  *Sweep* に新しいコーナータイプ **Mitre** と **Round** が追加されました。外向きコーナーを持つガイドに沿ってカーブをスイープする際、Mitre は鋭角コーナーを生成し、Round は丸みを帯びたコーナーを作成します。Round は特に 90 度コーナーで最良の結果を得られます。
+<Center 
+width="500px"
+borderRadius="8px">
+![PolySplines の例](/release/26.1/place-command.gif)
+</Center>
 
-[詳しくはこちら](/solid/sweep)
+[詳細を見る](/common/place)
 
-## 7. その他
+### Mirrorコマンド
+- **インスタンスの作成**  
+**Make instances** オプションを有効にするとMirrorコマンドがインスタンスを作成できるようになり、<kbd>I</kbd> キーで呼び出せます。
 
-### ショートカット
-- **デフォルトキー削除**  
-  *Subdivide*（Alt + S）のデフォルトキー設定が削除されました。
+<Center 
+width="500px"
+borderRadius="8px">
+![PolySplines の例](/release/26.1/mirror-command.gif)
+</Center>
+
+[詳細を見る](/common/mirror)
+
+### Extrudeコマンド
+- **エッジの押し出し**    
+Extrudeコマンドでサーフェスエッジを直接押し出せるようになりました。
+
+- **個別モードと方向モードの切り替え**   
+**Extrude** コマンドに新しいモードトグルが追加されました。*Individual* モードは各サーフェスをそれぞれ自身の法線方向に押し出し、*Direction* モードは選択した全サーフェスを単一の統一された方向に押し出します。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Extrude の方向と個別 GIF](/release/26.1/extrude-directions.gif)
+</Center>
+
+[詳細を見る](/solid/extrude)
+
+### Patchコマンド
+- **リージョンのパッチ**  
+Patchコマンドがリージョンを有効な入力として受け付けるようになりました（以前はサポートされていませんでした）。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![パッチリージョン](/release/26.1/patch-command.gif)
+</Center>
+
+[詳細を見る](/solid/patch)
+
+### Tangent Circle
+- **インライン半径入力**    
+Tangent Circleでインライン半径入力が表示されるようになり、作成中に半径の値を確認・丸めやすくなりました。以前は非表示だったため、許容範囲内の正確な値を入力することが困難でした。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Tangent Circle](/release/26.1/tangent-circle-inline.gif)
+</Center>
+
+[詳細を見る](/tool/tangent-circle)
+
+### カーブアレイコマンド
+- **新しいアライメント**  
+カーブアレイコマンドに **Transport（トランスポート）** という新しいアライメントモードが追加されました。*Normal* や *Parallel* がローカル法線の計算に依存するのに対し、Transport はカーブに沿って滑らかに追従する安定したフレームを使用します。これにより、ねじれや反転が防止され、複雑で有機的なパスでもオブジェクトの向きが正しく保たれます。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Curve Array](/release/26.1/curve-array-transport.gif)
+</Center>
+
+[詳細はこちら](/common/curve-array)
+
+
+### Rotate / Move / Scale コマンド
+- **XYZカラーチップ**  
+ダイアログにXYZ座標系に対応したカラーチップが追加され、各オプションがどの軸に影響するかを把握しやすくなりました。
+
+<Center 
+width="400px"
+borderRadius="8px">
+![変換コマンドのチップ](/release/26.1/dialogue-xyz-color.png)
+</Center>
+
+- **インスタンスを逆方向に変換**     
+変換コマンドに **Advanced** セクションが追加され、**Transform Instances Inversely** オプションが利用できます。有効にすると、変換は親オブジェクトにのみ適用され、インスタンスはその場に留まります。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![逆変換](/release/26.1/move-inverse-transformation.gif)
+</Center>
+
+- **フリースタイルサブオプション**  
+ソリッドおよびシートオブジェクトのフェースをフリースタイルで回転・スケールできるようになりました。
+
+詳細: [Rotate](/common/rotate), [Scale](/common/scale), [Move](/common/move)
+
+### Pipeコマンド
+- **ラベルの明確化**   
+*Section Size* という用語が *Diameter*（直径）に変更され、目的がより明確になり曖昧さが解消されました。
+
+[詳細を見る](/solid/pipe)
+
+### Sweepコマンド
+- **ラジアンから度へ**  
+Sweepコマンドでねじれ角の定義に度を使用するようになりました。<kbd>Ctrl</kbd> を押しながら操作すると5度刻みでスナップするため、精密な調整が容易になります。
+
+- **ブーリアン演算**    
+コマンドにブーリアンコマンドの補完機能が追加されました。オブジェクトをスイープしている最中にブーリアン演算を実行できます。
+
+[詳細を見る](/solid/sweep)
+
+### Revolveコマンド
+- **ブーリアン演算**   
+オブジェクトを回転させている最中にブーリアン演算がサポートされました。
+
+[詳細を見る](/solid/revolve)
+
+### Hollowコマンド
+- **複数ボディの中空化**   
+Hollowコマンドで複数のボディを一度に中空化できるようになりました。
+
+[詳細を見る](/solid/hollow)
+
+### Bridgeコマンド
+- **設定の記憶**     
+Bridgeコマンドが使用間の連続性設定（G0、G1、G2、G3）を記憶するようになりました。
+
+[詳細を見る](/sketch/bridge)
+
 
 ## 過去のアップデート情報
 
-- 2025年7月10日 [Version 2025.2](/release-notes/whats-new-2025.2)
+- 2025年12月15日 [バージョン 2025.3](/release-notes/whats-new-2025.3)

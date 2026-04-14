@@ -3,27 +3,36 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Match Face
+## Match Face
 
-<Reference shortcut="" command="Match Face" button="推奨コマンドメニューで" buttonIcon="button-match-face"/>
+{/* <Reference shortcut="" command="Match Face" button="推奨コマンドメニュー内"  buttonIcon="button-match-face"/> */}
 
-フェイスを他のフェイスに置き換えることができます。
+<CommandReference
+  command="Match Face"
+  shortcut=""
+  button="推奨コマンドメニュー内"
+  buttonIcon="/img/button-match-face.png"
+  tier="both"
+/>
+
+## 説明
+
+選択した面を別の面で置き換えます。
 
 ## 基本的な使い方
 
-1. 置き換えたいフェイスを選択します。
-2. 推奨コマンドメニュー ([Suggested Commands](/plasticity-essentials/command-bar#suggested-commands)) 内の <ButtonIcon type="button-match-face" /> ボタンをクリックしてください。
-3. 置き換え先のサーフェイスを選択します。
+1. 一致させたい面を選択します。
+2. コマンドパレットで **Match Face** を検索して実行します。
+3. 置き換え先となる面を選択します。
 4. コマンドダイアログでオプションを設定します。
     - <Kst>コマンドダイアログ</Kst>
-        - **Grow:**
-            - 凹面の内側のフェイスを合わせるとき。
-            - **Moving:** 外壁に到達したら、壁全体を移動します。
-            - **Fixed:** 外壁で停止します。
-            - **None:** 外壁の影響を受けずに、フェイスが進み続けます。
-        - **Side:** 
-            - **Front:** 有効にすると、選択された面の前面に一致します。
-5. コマンドダイアログでOKをクリックするか、右クリックで確定します。
+        - **Grow（成長モード）：** 凹面の内側をオフセットする場合に使用します。
+            - **Moving：** オフセットが外側の壁に到達したとき、壁全体を移動します。
+            - **Fixed：** 外側の壁で停止します。
+            - **None：** 外側の壁に影響されず、また影響を与えずにそのまま進みます。
+        - **Side（側）：**
+            - **Front：** 有効にすると、選択した面の前面に一致させます。
+5. コマンドダイアログの OK または右クリックで確定します。
 
 <VideoPlayer fileName="match-face"/>
 

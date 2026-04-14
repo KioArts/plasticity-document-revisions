@@ -1,0 +1,113 @@
+.wrapper {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Soft transparent fade mask */
+/* .fade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.05) 30%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+} */
+
+
+/* Command dialogue container */
+.dialogue {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+}
+
+/* Command box */
+.commandBox {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: fit-content;
+  max-width: 370px;
+}
+
+/* Title inside the box */
+.title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+}
+
+/* Rows for command, shortcut, button */
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.valueRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.inlineIcon {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonText {
+  color: #fff;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.value {
+  color: #fff;
+  opacity: 0.85;
+}
+
+.icon {
+  margin-top: 0.4rem;
+  width: 22px;
+  height: 22px;
+}
+
+
+
+.inlineIcon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}

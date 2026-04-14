@@ -1,11 +1,33 @@
 import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 
-# Trim
+{/* # Trim
 
-<Reference shortcut="T" command="Trim" button="Toolbar"  buttonIcon='button-trim'/>
+<Reference shortcut="T" command="Trim" button="Toolbar"  buttonIcon='button-trim'/> */}
 
-Remove specified segments from planar or 3D Curves.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/trim.mp4"
+  alt="Trim Preview"
+  title="Trim"
+  command="Trim"
+  shortcut="T"
+  button="In Toolbar"
+  buttonIcon={<img src="/img/button-trim.png" alt="Trim Icon" />}
+/> */}
+
+## Trim
+
+<CommandReference
+  command="Trim"
+  shortcut="T"
+  button="In Toolbar"
+  buttonIcon="/img/button-trim.png"
+  tier="both"
+/>
+
+## Description
+
+Remove specified segments from planar or 3D curves. Segments are defined by the intersections, endpoints, or control points that divide a curve into distinct sections.
 
 ## Basic Usage
 

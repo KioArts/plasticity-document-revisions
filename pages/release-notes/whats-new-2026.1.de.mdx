@@ -1,0 +1,387 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
+import { Center } from '/components/Center'
+import { SideBySide } from '/components/SideBySide'
+import ButtonIcon from '/components/ButtonIcon'
+
+Veröffentlichungsdatum: 16. April 2026
+
+# Plasticity 2026.1 Versionshinweise
+
+Plasticity 2026.1 fügt neue Befehle wie PolySplines, Export Hidden Line und Slot hinzu und verbessert bestehende Befehle wie Extrude, Align, Place und Mirror. Außerdem enthält dieses Release zahlreiche Interface‑Updates, darunter Outliner‑Suche, 2D‑Snapping für Konstruktionsebenen, SpaceMouse‑Verbesserungen und höhere numerische Präzision in Skizzenbefehlen.
+
+## 1. Neue Befehle
+
+### PolySplines
+- **Mesh‑Objekte in NURBS‑Flächen umwandeln**  
+PolySplines ist ein neuer Drittanbieterbefehl, der Mesh‑Objekte (.OBJ, .STL usw.) in editierbare NURBS‑Flächen in Plasticity umwandelt und saubere ein- und mehrspannige Flächen mit G2‑Kontinuität erzeugt. Dies ist ein Studio‑exklusives Feature und funktioniert gut mit dem Blender‑Bridge‑Addon.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![PolySplines Example](/img/polyspline-example.svg)
+</Center>
+
+Mehr erfahren: [PolySplines](/solid/polyspline), [Blender Bridge (Arbeiten mit PolySplines)](/blender/how-to-use#working-with-polysplines)
+
+### Export Hidden Line
+- **Technische SVG‑Zeichnungen aus 3D‑Objekten erstellen**  
+Export Hidden Line ist ein neuer Befehl, der technische SVG‑Zeichnungen aus deinem 3D‑Modell erzeugt. Er unterstützt verdeckte Kanten, Linienstile, Shader‑Export, mehrere Schraffurmethoden, Linienfärbung und eine Rastervorlage für automatische Objektpositionierung.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Export Hidden Line Example Image](/release/26.1/export-hidden-line.svg)
+</Center>
+
+[Mehr erfahren](/plasticity-essentials/export-hidden-line)
+
+### Slot
+- **Einen Schlitz aus einer Kurve erstellen**  
+Erstellt eine geschlossene Schlitzform, indem eine offene Kurve symmetrisch auf beiden Seiten mit abgerundeten Enden versetzt wird. Nützlich für mechanische Teile wie Schraubenschlitze, Lüftungsausschnitte und ähnliche Profile.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Slot GIF](/release/26.1/slot-example.gif)
+</Center>
+
+[Mehr erfahren](/sketch/slot)
+
+## 2. Modellierungsverbesserungen
+
+### Gizmo‑Distanz‑Eingabe
+- **Einheitliche Gizmo‑Steuerung**  
+Befehle, die das Gizmo gemeinsam nutzen, können jetzt mit <kbd>Tab</kbd> einen präzisen Distanzwert eingeben. Dies ermöglicht schnellere und konsistentere Eingaben bei Transformationen. Die folgenden Befehle unterstützen dieses Verhalten:
+
+| Befehl | Beschreibung |
+|--------|--------------|
+| [Move](/common/move) | XYZ‑Gizmo‑Distanzwert eingeben |
+| [Rotate](/common/rotate) | XYZ‑Gizmo‑Distanzwert eingeben |
+| [Scale](/common/scale) | XYZ‑Gizmo‑Distanzwert eingeben |
+| [Push Face](/solid/offset-face) | Distanzwert über Gizmo eingeben |
+| [Extrude](/solid/extrude) | Distanzwert über Gizmo eingeben |
+| [Thicken](/solid/thicken-face) | Distanzwert über Gizmo eingeben |
+
+### Numerische Präzision
+- **Höhere Präzision**  
+Befehle, die die Eingabefunktion (<kbd>=</kbd>) verwenden, kopieren jetzt bis zu 8 Dezimalstellen mit <kbd>Ctrl + C</kbd> (z. B. wird `30.345` als `30.34587689` kopiert).
+
+| Kategorie | Befehle |
+|---|---|
+| **Kurven** | [Line](/tool/line), [Spline Curve](/tool/spline-curve), [Control Point Curve](/tool/control-point-curve) |
+| **Kreise** | [Center Circle](/tool/center-circle), [Two Point Circle](/tool/two-point-circle), [Three Point Circle](/tool/three-point-circle), [Tangent Circle](/tool/tangent-circle), [Ellipse](/tool/ellipse) |
+| **Bögen** | [Center Point Arc](/tool/center-point-arc), [Three Point Arc](/tool/three-point-arc), [Tangent Arc](/tool/tangent-arc) |
+| **Rechtecke** | [Corner Rectangle](/tool/corner-rectangle), [Center Rectangle](/tool/center-rectangle), [Three Point Rectangle](/tool/three-point-rectangle) |
+| **3D‑Primitive** | [Sphere](/tool/sphere), [Corner Box](/tool/corner-box), [Center Box](/tool/center-box), [Three Point Box](/tool/three-point-box), [Cylinder](/tool/cylinder), [Dimension](/tool/measure) |
+
+### Export OBJ Befehl
+- **Skalierungs‑ und Up‑Axis‑Steuerung**  
+Der OBJ‑Exporter enthält jetzt ein Skalierungsfeld und einen Up‑Axis‑Schalter. Die Skalierung multipliziert alle exportierten Koordinaten, um korrekte Einheitenkonvertierung zu ermöglichen. Die Up‑Axis legt die Orientierung der exportierten Geometrie entsprechend der Zielsoftware fest.
+
+<Center 
+width="400px"
+border ="1px solid rgb(140, 140, 140)"
+borderRadius="8px">
+![Export OBJ - Scale and Up Axis Controls](/release/26.1/export-obj-scale-axis.png)
+</Center>
+
+**Referenz für Skalierung und Up‑Axis**
+
+| Software | Standard‑Einheit | Bei Arbeit in cm | Bei Arbeit in mm | Up Axis |
+|---|---|---|---|---|
+| Blender | Meter | `0.01` | `0.001` | Z up |
+| Unreal Engine | Zentimeter | `1.0` | `0.1` | Z up |
+| Maya | Zentimeter | `1.0` | `0.1` | Y up |
+| Unity | Meter | `0.01` | `0.001` | Y up |
+| 3ds Max | Inch | `0.3937` | `0.03937` | Z up |
+| Cinema 4D | Zentimeter | `1.0` | `0.1` | Y up |
+
+[Mehr erfahren](/plasticity-essentials/export-obj)
+
+### Export STL Befehl
+- **Längeneinheit überschreiben**  
+Beim Export nach STL kann nun die verwendete Längeneinheit überschrieben werden.
+
+<Center 
+width="400px"
+border ="1px solid rgb(140, 140, 140)"
+borderRadius="8px">
+![Export OBJ - Scale and Up Axis Controls](/release/26.1/export-stl-length-unit.png)
+</Center>
+
+Die verfügbaren Einheiten sind:
+
+| Einheit | Beispielumrechnung |
+|---------|---------------------|
+| Millimeter | `1` mm = `0.1` cm = `0.001` m = `0.03937` in = `0.003281` ft |
+| Zentimeter | `1` cm = `10` mm = `0.01` m = `0.3937` in = `0.03281` ft |
+| Meter | `1` m = `1000` mm = `100` cm = `39.37` in = `3.28084` ft |
+| Inch | `1` in = `25.4` mm = `2.54` cm = `0.0254` m = `0.08333` ft |
+| Foot | `1` ft = `304.8` mm = `30.48` cm = `0.3048` m = `12` in |
+
+## 3. Allgemeine Verbesserungen
+
+### Einstellungsmenü
+- **Einstellungsmenü** – Das Menü kann jetzt innerhalb des Plasticity‑Fensters verschoben werden.
+- **Rotationsmodus** – Ein neuer **Arcball**‑Modus ermöglicht freie Rotation über alle drei Achsen, indem Mausbewegungen auf eine imaginäre Kugel um die Szene abgebildet werden.
+- **Messfarben** – Im Bereich **Appearance** kann nun die Farbe von Messlinien und Maßeinheiten angepasst werden.
+
+### SpaceMouse
+- **Verhalten** – Allgemeine Verbesserungen für konsistenteres Verhalten im Vergleich zu anderer Software. Es wird empfohlen, den neuesten Treiber zu installieren. Änderungen umfassen:
+    - **Richtungen** – Auf/Ab sind jetzt umgekehrt.
+    - **Geschwindigkeit** – Standardgeschwindigkeit wurde neu kalibriert.
+    - **Horizont sperren** – Neue Option unter *Preferences > SpaceMouse*.
+
+### Tastatur‑Overlay
+- **Hintergrundumschaltung** – Das Overlay wechselt nun bei sehr hellen Szenen zu einem dunklen Hintergrund.
+
+### Menü‑Panels
+- **Ein-/Ausklappgeschwindigkeit** – Panels klappen jetzt schneller ein und aus.
+
+### Asset‑Panel
+- **Tastatursteuerung** – Navigation per Pfeiltasten wird unterstützt.
+
+### Axiale Gizmos
+- **Sichtbarkeitsupdate** – Gizmos verblassen, wenn sie direkt zur Kamera ausgerichtet sind.
+
+### Speicherfenster
+- **Speichern** – Plasticity fragt nun, ob ungespeicherte Änderungen gespeichert werden sollen.
+
+### Thumbnail‑Anzeige
+- **macOS‑Unterstützung** – Thumbnails werden jetzt auf macOS angezeigt.
+
+### Fenstergröße
+- **Fensterverhalten** – Plasticity verhält sich bei kleinen Fenstergrößen unter Windows vorhersehbarer.
+- **Befehlsdialoge** – Lange Listen haben jetzt eine Scrollleiste.
+
+## 4. Neue Funktionen
+
+### Kontrollpunktmodus
+- **Visualisierung von Schnittpunkten**  
+Im Kontrollpunktmodus erscheint ein kleiner Punkt an jeder Stelle, an der sich zwei Kurven schneiden oder an der Scheitelpunkte verbunden sind.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Feature Example](/release/26.1/point-mode-visualization-change.svg)
+</Center>
+
+[Mehr erfahren](/tool/sketching-essentials#accurate-snap)
+
+### Outliner
+- **Suchfeld**  
+Der Outliner enthält jetzt ein Suchfeld, erreichbar über <kbd>Ctrl + F</kbd> oder das Suchsymbol.
+
+<Center 
+width="315px"
+borderRadius="8px">
+![Feature Example](/release/26.1/outliner-search-field.png)
+</Center>
+
+[Mehr erfahren](/plasticity-essentials/plasticity-interface/outliner#locate-objects-in-the-outliner)
+
+- **Aktive Sammlung**  
+Doppelklick auf eine Gruppe setzt sie als **Active Collection**. Neue Objekte werden automatisch dort platziert. Eine Hervorhebung zeigt die aktive Sammlung an.
+
+<Center 
+width="125px"
+borderRadius="8px">
+![Active Collection](/release/26.1/toggle-active-collection.svg)
+</Center>
+
+<Center 
+width="280px"
+borderRadius="8px">
+![Active Collection](/release/26.1/toggle-active-collection.png)
+</Center>
+
+[Mehr erfahren](/plasticity-essentials/plasticity-interface/outliner#active-collection)
+
+### Konstruktionsebene
+- **2D‑Snapping**  
+Eine neue Option **2D Snapping** wurde hinzugefügt. Bei aktiver Konstruktionsebene werden alle Punkte auf diese Ebene projiziert. Ziehen bewegt Punkte entlang der Ebene statt im 3D‑Raum.
+
+<Center 
+width="270px"
+borderRadius="8px">
+![2D Snapping](/release/26.1/planes-2d-snapping.png)
+</Center>
+
+[Mehr erfahren](/plasticity-essentials/plasticity-interface/construction-plane#using-2d-snapping)
+
+### Materialien
+- **Materialerhaltung**  
+Beim Kopieren/Einfügen von Objekten mit vererbten Materialien in ein neues Fenster bleiben Materialien korrekt erhalten.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Copy and Paste Materials GIF](/release/26.1/material-copy-paste-window.gif)
+</Center>
+
+- **Dichteattribut**  
+Das Materialmenü enthält jetzt ein Dichtefeld. Einheiten können angepasst werden, und die Masse wird im Auswahlmenü angezeigt.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Density Attribute GIF](/release/26.1/material-density.gif)
+</Center>
+
+[Mehr erfahren](/common/set-material)
+
+## 5. Verbesserte Befehle
+
+### Align Befehl
+- **Kurven ausrichten**  
+Der Align‑Befehl unterstützt jetzt G0‑, G1‑, G2‑ und G3‑Kontinuität. Unterstützt Vertex‑zu‑Vertex und Curve‑zu‑Curve, einschließlich Polylinien und Formen wie Kreise und Polygone. Ein neuer Auswahlalgorithmus erleichtert Fälle mit geteilten oder überlappenden Scheitelpunkten.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![PolySplines Example](/release/26.1/align-curve-example.gif)
+</Center>
+
+[Mehr erfahren](/sketch/align-vertex)
+
+### Place Befehl
+- **Erweiterte Objektunterstützung**  
+Place unterstützt jetzt Mesh‑ und Instanzobjekte. Instanzen unterstützen Face‑ und Edge‑Snapping; Meshes unterstützen Vertex und Face.
+
+- **Instanzen erstellen**  
+Instanzen können jetzt direkt beim Platzieren erzeugt werden.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![PolySplines Example](/release/26.1/place-command.gif)
+</Center>
+
+[Mehr erfahren](/common/place)
+
+### Mirror Befehl
+- **Instanzen erstellen**  
+Mirror kann jetzt Instanzen erzeugen, wenn **Make instances** aktiviert ist. Der Befehl kann mit <kbd>I</kbd> aufgerufen werden.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![PolySplines Example](/release/26.1/mirror-command.gif)
+</Center>
+
+[Mehr erfahren](/common/mirror)
+
+### Extrude Befehl
+- **Kantenextrusion**  
+Extrude kann jetzt Oberflächenkanten direkt extrudieren.
+
+- **Modusumschaltung: Individuell / Richtung**  
+*Individual* extrudiert jede Fläche entlang ihrer eigenen Normalen. *Direction* extrudiert alle Flächen entlang einer gemeinsamen Richtung.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Extrude Direction and Individual GIF](/release/26.1/extrude-directions.gif)
+</Center>
+
+[Mehr erfahren](/solid/extrude)
+
+### Patch Befehl
+- **Regionen patchen**  
+Patch akzeptiert jetzt Regionen als Eingabe.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Patch Regions](/release/26.1/patch-command.gif)
+</Center>
+
+[Mehr erfahren](/solid/patch)
+
+### Tangent Circle
+- **Inline‑Radius‑Eingabe**  
+Der Radius wird jetzt inline angezeigt und kann leichter angepasst werden.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Tangent Circle](/release/26.1/tangent-circle-inline.gif)
+</Center>
+
+[Mehr erfahren](/tool/tangent-circle)
+
+### Kurven-Array-Befehl
+- **Neue Ausrichtung**  
+Der Kurven-Array-Befehl enthält jetzt einen neuen Ausrichtungsmodus namens **Transport**. Im Gegensatz zu *Normal* oder *Parallel*, die auf lokalen Normalenberechnungen basieren, verwendet Transport einen stabilen Frame, der der Kurve gleichmäßig folgt. Dadurch werden Verdrehungen oder Umklappungen verhindert und Objekte bleiben selbst entlang komplexer, organischer Pfade korrekt ausgerichtet.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Curve Array](/release/26.1/curve-array-transport.gif)
+</Center>
+
+[Mehr erfahren](/common/curve-array)
+
+
+### Rotate / Move / Scale
+- **XYZ‑Farbfelder**  
+Farbfelder zeigen die Achsenfarben des Koordinatensystems.
+
+<Center 
+width="400px"
+borderRadius="8px">
+![Transform Commands Chips](/release/26.1/dialogue-xyz-color.png)
+</Center>
+
+- **Instanzen invers transformieren**  
+Transformationen können nur auf das Elternobjekt angewendet werden, während Instanzen an Ort und Stelle bleiben.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Transform Inversely](/release/26.1/move-inverse-transformation.gif)
+</Center>
+
+- **Freestyle‑Unteroption**  
+Freestyle‑Rotation und Skalierung für Flächen ist jetzt möglich.
+
+Mehr erfahren: [Rotate](/common/rotate), [Scale](/common/scale), [Move](/common/move)
+
+### Pipe Befehl
+- **Bezeichnungsänderung**  
+*Section Size* wurde in *Diameter* umbenannt.
+
+[Mehr erfahren](/solid/pipe)
+
+### Sweep Befehl
+- **Von Radiant zu Grad**  
+Der Twist‑Winkel wird jetzt in Grad angegeben. <kbd>Ctrl</kbd> rastet in 5‑Grad‑Schritten ein.
+
+- **Boolesche Operationen**  
+Während des Sweep‑Vorgangs können boolesche Operationen ausgeführt werden.
+
+[Mehr erfahren](/solid/sweep)
+
+### Revolve Befehl
+- **Boolesche Operationen**  
+Revolve unterstützt jetzt boolesche Operationen während des aktiven Drehens.
+
+[Mehr erfahren](/solid/revolve)
+
+### Hollow Befehl
+- **Mehrere Körper aushöhlen**  
+Hollow kann jetzt mehrere Körper gleichzeitig aushöhlen.
+
+[Mehr erfahren](/solid/hollow)
+
+### Bridge Befehl
+- **Einstellungen merken**  
+Bridge merkt sich G0–G3‑Einstellungen zwischen Verwendungen.
+
+[Mehr erfahren](/sketch/bridge)
+
+## Informationen zu früheren Updates
+
+- 15. Dezember 2025 [Version 2025.3](/release-notes/whats-new-2025.3)

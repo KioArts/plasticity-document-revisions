@@ -2,46 +2,66 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
+import CommandReference from '/components/CommandReference'
 
-# Pipe
+## Pipe
 
-<Reference shortcut="P" command="Pipe" button="Im vorgeschlagenen Befehlsmenü" buttonIcon="button-pipe" />
+{/* <Reference shortcut="P" command="Pipe" button="In Suggested Commands Menu" buttonIcon="button-pipe"/> */}
 
-Erstellen Sie ein Rohr jeder Größe aus einer Curve oder einem Edge. Es kann für boolesche Operationen verwendet werden. Polygon- oder benutzerdefinierte Profiloptionen sind verfügbar.
+<CommandReference
+  command="Pipe"
+  shortcut="P"
+  button="Im Suggested Commands Menu"
+  buttonIcon="/img/button-pipe.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Curve oder Edge aus, die Sie verrohren möchten. Wenn Sie mehrere Kurven oder Kanten auswählen, werden mehrere Pipes erstellt.
+Erstellt ein Rohr beliebiger Größe aus einer Kurve oder einer Kante. Es kann für Boolesche Operationen verwendet werden. Optionen für Polygonprofile oder benutzerdefinierte Profile sind verfügbar.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Kurve oder Kante aus, die Sie verrohren möchten. Wenn Sie mehrere auswählen, werden mehrere Rohre erzeugt.
 2. Drücken Sie <kbd>P</kbd>.
-3. Ziehen Sie den gelben Punkt, um die Abschnittsgröße und das gelbe Quadrat, um die Rohrwandstärke zu bestimmen. Ziehen Sie den weißen Kreis, um den Drehwinkel festzulegen.
-4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-     - <Kst>Befehlsdialog</Kst>   
-          - **Select target bodies:**
-               - Gleiche Funktion wie der Befehl Boolean. Siehe [**Boolean**](/solid/boolean) Befehl für Details.
-          - **Select custom profile:** Wählen Sie Regions, Curves oder Faces aus, um die benutzerdefinierten Profile festzulegen.
-          - **Vertex count:** Geben Sie die Anzahl der Vertices für das Polygon des Profils an. Wenn Sie 0 angeben, wird es kreisförmig sein.
-          - **Section size:** Geben Sie die Abschnittsgröße an.
-          - **Thickness:** Geben Sie die Rohrwandstärke an.
-          - **Angle:** Geben Sie den Drehwinkel an.
-          - **Scale:** Skalierungswert am Rohrende festlegen. Optionsdialog öffnen, Wert manuell eingeben oder mit Maus ziehen. [Reverse-Befehl](/sketch/reverse) zum Umkehren der Richtung verwenden.
-          - **Distance:** Ergebnislänge anpassen. Wert von 1,00 auf 0 verringern, um Rohr zu verkürzen. (Standard: 1,00)
-               - **Distance 1:** Startpunkt der Länge anpassen.
-               - **Distance 2:** Endpunkt der Länge anpassen.
+3. Ziehen Sie den gelben Punkt, um die Abschnittsgröße festzulegen, und das gelbe Quadrat, um die Wandstärke zu bestimmen. Ziehen Sie den weißen Kreis, um den Rotationswinkel festzulegen.
+4. Legen Sie die Optionen im Befehlsdialog und in den Tastenkombinationen fest.
+     - <Kst>Befehlsdialog</Kst>
+          - **Zielkörper auswählen:**  
+            Gleiche Funktion wie der Boolean-Befehl. Details finden Sie unter [**Boolean**](/solid/boolean).
+          - **Benutzerdefiniertes Profil auswählen:**  
+            Wählen Sie Bereiche, Kurven oder Flächen als benutzerdefinierte Profile.
+          - **Anzahl der Scheitelpunkte:**  
+            Legt die Anzahl der Scheitelpunkte des Polygonprofils fest. Bei 0 wird es kreisförmig.
+          - **Durchmesser:** Legt die Abschnittsgröße fest.
+          - **Dicke:** Legt die Wandstärke des Rohrs fest.
+          - **Winkel:** Legt den Rotationswinkel fest.
+          - **Skalierung:**  
+            Legt den Skalierungswert am Endpunkt des Rohrs fest. Klicken Sie in das Optionsfeld und geben Sie den Wert ein oder ziehen Sie mit der Maus.  
+            Um den Endpunkt umzukehren, verwenden Sie den Befehl [Reverse](/sketch/reverse).
+          - **Distanz:**  
+            Passt die Länge des Ergebnisses an. Eine Reduzierung von 1.00 auf 0 verkürzt die Länge. (Standard: 1.00)
+               - **Distanz 1:** Passt den Anfang der Länge an.
+               - **Distanz 2:** Passt das Ende der Länge an.
      - <Kst>Tastenkombinationen</Kst>
-          - <kbd>Umschalt + Q</kbd>, <kbd>Q</kbd>, <kbd>W</kbd>, <kbd>B</kbd>, <kbd>T</kbd>
-               - Gleiche Funktion wie der Befehl Boolean. Siehe [**Boolean**](/solid/boolean) Befehl für Details.
-          - <kbd>C</kbd> **Custom profile** Wählen Sie die Regions, Curves oder Faces aus, um die benutzerdefinierten Profile festzulegen.
-          - <kbd>D</kbd> **Section size** Bestimmen Sie die Abschnittsgröße durch Bewegen des Cursors.
-          - <kbd>A</kbd> **Angle** Bestimmen Sie den Drehwinkel durch Bewegen des Cursors.
-          - <kbd>Umschalt + T</kbd> **Thickness** Bestimmen Sie die Rohrwandstärke durch Bewegen des Cursors.
+          - <kbd>Shift + Q</kbd> Slice, <kbd>Q</kbd> Vereinigung, <kbd>W</kbd> Differenz, <kbd>B</kbd> Neuer Körper, <kbd>T</kbd> Werkzeuge behalten  
+            Gleiche Funktion wie der Boolean-Befehl. Details unter [**Boolean**](/solid/boolean).
+          - <kbd>C</kbd> **Benutzerdefiniertes Profil**  
+            Wählen Sie Bereiche, Kurven oder Flächen als benutzerdefinierte Profile.
+          - <kbd>D</kbd> **Abschnittsgröße**  
+            Legen Sie die Abschnittsgröße durch Bewegen des Cursors fest.
+          - <kbd>A</kbd> **Winkel**  
+            Legen Sie den Rotationswinkel durch Bewegen des Cursors fest.
+          - <kbd>Shift + T</kbd> **Dicke**  
+            Legen Sie die Wandstärke durch Bewegen des Cursors fest.
 5. Bestätigen Sie mit OK im Befehlsdialog oder mit Rechtsklick.
 
-<Callout emoji="❗">
-**Hinweis**<br />
-Der Befehl "Pipe" dient NICHT zum Erstellen maßstabsgetreuer Rohre. 
-Er dient zum schnellen Erstellen von cool aussehenden Rohren/Röhren. 
-Er führt viele Dinge wie Winkel als Polygone aus, die ihn für jede Art von Sanitär oder ähnlichem nicht maßstabsgetreu machen. 
-Um ein präzises Rohr zu erstellen, verwenden Sie den [**Sweep**](sweep) Befehl 
+<Callout type="info">
+**Hinweis:**  
+Der **Pipe**-Befehl ist *nicht* dafür gedacht, maßlich präzise Rohre zu erstellen. Er dient dazu, schnell optisch ansprechende Rohre oder Schläuche zu erzeugen.
+
+Da Winkel approximiert werden, ist die Geometrie nicht geeignet für präzise Sanitärinstallationen, mechanische Konstruktionen oder andere Anwendungen, die exakte Maße erfordern.  
+Für ein präzises, vollständig kontrolliertes Rohr verwenden Sie stattdessen den [**Sweep**](sweep)-Befehl.
 </Callout>
 
 <VideoPlayer fileName="pipe"/>

@@ -1,4 +1,108 @@
-import Viewport_Commands from '/pages/plasticity-essentials.ja.mdx'
+# Plasticityの基本
 
-<Viewport_Commands />
+- [オブジェクトの種類](/plasticity-essentials/object-types)
 
+| コマンド名 | ショートカット | 説明 |
+| --- | --- | --- |
+| [**3Dビューポートの操作**](/plasticity-essentials/operating-the-3d-viewport) | | |
+| ビューポート: 正面ビューに移動 | <kbd>Num.1</kbd> | 正面ビュー。 |
+| ビューポート: 右ビューに移動 | <kbd>Num.3</kbd> | 右ビュー。 |
+| ビューポート: 上面ビューに移動 | <kbd>Num.7</kbd> | 上面ビュー。 |
+| ビューポート: 背面ビューに移動 | <kbd>Ctrl+Num.1</kbd> | 背面ビュー。 |
+| ビューポート: 左ビューに移動 | <kbd>Ctrl+Num.3</kbd> | 左ビュー。 |
+| ビューポート: 底面ビューに移動 | <kbd>Ctrl+Num.7</kbd> | 底面ビュー。 |
+| ビューポート: 平行投影カメラの切替 | <kbd>Num.5</kbd> | 透視投影と平行投影を切り替える。 |
+| ビューポート: 選択オブジェクトに移動 | <kbd>Space</kbd> | 選択したオブジェクトを画面の中心に表示する。 |
+| オービット: ドリーイン | | カメラをターゲットに近づける。 |
+| オービット: ドリーアウト | | カメラをターゲットから遠ざける。 |
+| オービット: 下にパン | | 角度を変えずにカメラビューを下にシフトする。 |
+| オービット: 左にパン | | 角度を変えずにカメラビューを左にシフトする。 |
+| オービット: 右にパン | | 角度を変えずにカメラビューを右にシフトする。 |
+| オービット: 上にパン | | 角度を変えずにカメラビューを上にシフトする。 |
+| オービット: 下に回転 | | オービットターゲットを中心にカメラを下に傾ける。 |
+| オービット: 左に回転 | | オービットターゲットを中心にカメラを左に回転する。 |
+| オービット: 右に回転 | | オービットターゲットを中心にカメラを右に回転する。 |
+| オービット: 上に回転 | | オービットターゲットを中心にカメラを上に傾ける。 |
+| [**Pメニュー**](/plasticity-essentials/plasticity-interface/file-menu) | | |
+| 最近使ったファイル | | 最近保存して作業したファイルを表示する。 |
+| 新規 | <kbd>Ctrl+N</kbd> | シーンをクリアして新しいPlasticityドキュメントを作成する。 |
+| 新しいウィンドウ | | 新しいウィンドウでPlasticityを起動する。 |
+| 開く | <kbd>Ctrl+O</kbd> | Plasticityドキュメントを開く。 |
+| インポート/追加 | <kbd>Ctrl+Shift+O</kbd> | ドキュメントをインポートする。[こちら](/plasticity-essentials/import-export#file-import)を参照。 |
+| 保存 | <kbd>Ctrl+S</kbd> | Plasticityドキュメントを保存する。 |
+| 名前を付けて保存 | <kbd>Ctrl+Shift+S</kbd> | 新しいPlasticityドキュメントとして保存する。 |
+| エクスポート | <kbd>Ctrl+Shift+E</kbd> | ドキュメントをエクスポートする。[こちら](/plasticity-essentials/import-export#file-export)を参照。 |
+| クイック保存バージョン | | 同じファイル名にタイムスタンプを付加してドキュメントのコピーを保存する。 |
+| スタートアップシーンとして保存 | | 現在のドキュメントをスタートアップシーンとして保存する。次回起動時に自動的に開かれる。 |
+| 環境設定 | <kbd>Ctrl+, (カンマ)</kbd> | 環境設定ダイアログを開く。 |
+| ライセンスの管理 | | ライセンストークンとデバイスを管理する。 |
+| Plasticityバージョン: 0.0.0 | | インストールされているPlasticityのバージョン。 |
+| Plasticity Shareに公開 | | ウェブに公開する。[こちら](/common/publish-to-plasticity-share)を参照。 |
+| 共有ドキュメントの管理 | | Plasticity Shareにアップロードされた(.plasticity)ドキュメントを管理する。[こちら](/common/publish-to-plasticity-share)を参照。 |
+| 終了 | <kbd>Ctrl+Q</kbd> | |
+| [**オブジェクトのグループ化**](/plasticity-essentials/group-objects) | | |
+| 選択をグループ化 | <kbd>Ctrl+G</kbd> | 選択をグループ化する。 |
+| ルートで選択をグループ化 | | ルートで選択をグループ化する。 |
+| 選択のグループ解除 | <kbd>Alt+G</kbd> | 選択のグループを解除する。 |
+| [**オブジェクト状態の切替**](/plasticity-essentials/toggle-object-states) | | |
+| 選択を非表示 | <kbd>H</kbd> | 選択を非表示にする。 |
+| 未選択を非表示 | <kbd>Shift+H</kbd> | 未選択を非表示にする。 |
+| すべて表示 | <kbd>Alt+H</kbd> | すべて表示する。 |
+| 非表示を反転 | <kbd>Ctrl+H</kbd> | 非表示を反転する。 |
+| 選択をロック | | 選択を選択不可にする。 |
+| [**オブジェクトのフォーカスと分離**](/plasticity-essentials/focus-and-isolate-objects) | | |
+| ビューポート: フォーカス | <kbd>/ (スラッシュ)</kbd> | 選択したオブジェクトにズームする。 |
+| 分離 | <kbd>. (ピリオド)</kbd> | 未選択オブジェクトを一時的に非表示にして選択オブジェクトを分離する。 |
+| [**選択モード**](/plasticity-essentials/plasticity-interface/selection-mode) | | |
+| 選択モード: コントロールポイント | <kbd>1</kbd> | コントロールポイント選択モード。 |
+| 選択モード: エッジ | <kbd>2</kbd> | エッジ選択モード。 |
+| 選択モード: フェース | <kbd>3</kbd> | フェース選択モード。 |
+| 選択モード: ソリッド | <kbd>4</kbd> | ボディ選択モード。 |
+| 選択モード: すべて | <kbd>Tab / 5</kbd> | すべて選択可能モード。 |
+| 選択: コントロールポイントを切替 | <kbd>Shift+1</kbd> | コントロールポイント選択モードを切り替える。 |
+| 選択: エッジを切替 | <kbd>Shift+2</kbd> | エッジ選択モードを切り替える。 |
+| 選択: フェースを切替 | <kbd>Shift+3</kbd> | フェース選択モードを切り替える。 |
+| 選択: ソリッドを切替 | <kbd>Shift+4</kbd> | ボディ選択モードを切り替える。 |
+| [**オブジェクトの選択**](/plasticity-essentials/selecting-objects) | | |
+| すべて選択 | <kbd>A</kbd> | すべて選択する。 |
+| 選択を反転 | <kbd>Alt + A</kbd> | すべて選択する。 |
+| すべてのカーブを選択 | | すべてのカーブを選択する。 |
+| 選択を反転 | <kbd>Alt+A</kbd> | 選択を反転する。 |
+| 隣接を選択 | <kbd>Ctrl+Shift+=</kbd> | 隣接を選択する。 |
+| 選択解除 | <kbd>Esc</kbd> | すべての選択を解除する。 |
+| 選択: コントロールポイントに変換 | <kbd>Ctrl+1</kbd> | 選択に含まれるコントロールポイントを選択する。 |
+| 選択: エッジに変換 | <kbd>Ctrl+2</kbd> | 選択に含まれるエッジを選択する。 |
+| 選択: フェースに変換 | <kbd>Ctrl+3</kbd> | 選択に含まれるフェースを選択する。 |
+| 選択: ソリッドに変換 | <kbd>Ctrl+4</kbd> | 選択に含まれるソリッドを選択する。 |
+| 選択: グループに変換 | <kbd>Ctrl+5</kbd> | 選択したオブジェクトのグループ内のすべてのオブジェクトを選択する。 |
+| [**表示モード**](/plasticity-essentials/plasticity-interface/view-mode) | | |
+| 断面解析 | | 断面解析を切り替える。 |
+| ビューポート: オーバーレイの切替 | <kbd>Alt+Shift+Z</kbd> | オーバーレイ表示を切り替える。 |
+| ビューポート: X-Rayモードの切替 | <kbd>Alt+Z</kbd> | X-Rayモードを切り替える。 |
+| ビューポート: エッジの切替 | | エッジ表示を切り替える。 |
+| ビューポート: フェースの切替 | | フェース表示を切り替える。 |
+| [**グリッドと単位**](/plasticity-essentials/plasticity-interface/grid-and-units) | | |
+| グリッド: グリッドスナップの切替 | | グリッドスナップを切り替える。 |
+| ビューポート: グリッドサイズを縮小 | | グリッドサイズを縮小する。 |
+| ビューポート: グリッドサイズを拡大 | | グリッドサイズを拡大する。 |
+| [**スナップ**](/plasticity-essentials/plasticity-interface/snap) | | |
+| オブジェクトスナップの切替 | | オブジェクトスナップを切り替える。 |
+| [**作図平面**](/plasticity-essentials/plasticity-interface/construction-plane) | | |
+| ビューポート: 選択に移動 | <kbd>Space</kbd> | 選択から作図平面を作成する（カメラを整列）。 |
+| ビューポート: 作図平面を選択に設定 | <kbd>Shift+Space</kbd> | 選択から作図平面を作成する（整列しない）。 |
+| 原点にビュースペース作図平面を作成 | <kbd>Ctrl+Space</kbd> | カメラから作図平面を作成する（原点を通る）。 |
+| ビュースペース作図平面を作成 | <kbd>Ctrl+Shift+Space</kbd> | カメラから作図平面を作成する（距離点を選択）。 |
+| [**一般機能**](/plasticity-essentials/general) | | |
+| コピー | <kbd>Ctrl+C</kbd> | コピーする。 |
+| ペースト | <kbd>Ctrl+V</kbd> | ペーストする。 |
+| 元に戻す | <kbd>Ctrl+Z</kbd> | 元に戻す。 |
+| やり直す | <kbd>Ctrl+Shift+Z</kbd> | やり直す。 |
+| 削除 | <kbd>Shift+Backspace</kbd> または <kbd>X</kbd> | 選択したオブジェクトを削除する。グループを削除するとグループとその子が削除される。 |
+| コントロールポイントを削除 | | 選択したコントロールポイントを削除する。 |
+| エッジを削除 | | 選択したエッジを削除する。 |
+| フェースを削除 | <kbd>Shift+X</kbd> または <kbd>Shift+Delete</kbd> | 選択したフェースを削除する。 |
+| 溶解 | <kbd>Backspace</kbd> または <kbd>X</kbd> | 選択したオブジェクトを削除する。グループを溶解するとグループは削除されるがその項目は残る。 |
+| フェースを溶解 | | 選択した冗長なフェースを削除する。 |
+| 編集: 最後のコマンドを繰り返す | <kbd>Shift+R</kbd> | 最後のコマンドを繰り返す。 |
+| サイドバー: 左を切替 | <kbd>Ctrl+B</kbd> | 左サイドバーの表示を切り替える。 |
+| サイドバー: 右を切替 | <kbd>Ctrl+Shift+B</kbd> | 右サイドバーの表示を切り替える。 |

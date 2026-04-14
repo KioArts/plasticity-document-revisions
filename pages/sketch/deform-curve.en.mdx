@@ -3,11 +3,33 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Deform Curve
+{/* # Deform Curve
 
-<Reference shortcut="" command="Deform" button="" />
+<Reference shortcut="" command="Deform" button="" /> */}
 
-Wrap existing curves onto a regular and irregular surface.
+{/* <HeadBannerThumbnail
+  src="/videos/banner/deform-curve.mp4"
+  alt="Deform Curve Preview" 
+  title="Deform Curve"
+  command="Deform"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-deform.png" alt="Deform Icon" />}
+/> */}
+
+## Deform Curve
+
+<CommandReference
+  command="Deform"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-deform.png"
+  tier="both"
+/>
+
+## Description
+
+Wrap existing curves onto a regular and irregular surface. This tool projects or conforms selected curves directly onto target geometry, preserving their shape while adapting them to the contours of the underlying surface. It is useful for tasks such as engraving paths, defining parting lines, or laying out guide curves.
 
 ## Basic Usage
 
@@ -28,12 +50,12 @@ Wrap existing curves onto a regular and irregular surface.
 
 <VideoPlayer fileName="deform-curve"/>
 
-<Callout type="info" emoji="ℹ️">
+<Callout type="info">
 Scale and Offset uses a **UVN** coordinate system instead of **XYZ** coordinate system when adjusting the parametric value, allowing you to define the orientation of the deformed objects at a specific point in relation to the target surface. For more information on the UVN coordiante system, click [here](/cad-essentials/uvn-coordinate-system).
 </Callout>
 
 ### Curve Deformation Using the Unwrap Face Command
 
-To avoid unwanted deformation or inaccurate placement, use the Unwrap Face command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
+To avoid unwanted deformation or inaccurate placement, use the [Unwrap Face](/solid/unwrap-face) command from the Command Palette on the target object. This generates a correctly mapped surface, which can then be used as an accurate reference face.
 
 <VideoPlayer fileName="deform-curve-unwrap"/>

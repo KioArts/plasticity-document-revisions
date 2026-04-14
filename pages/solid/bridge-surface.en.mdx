@@ -2,11 +2,21 @@ import VideoPlayer from '/components/VideoPlayer';
 import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Bridge Surface
+## Bridge Surface
 
-<Reference shortcut="" command="Bridge Surface" button="" />
+{/* <Reference shortcut="" command="Bridge Surface" button="" /> */}
 
-Blend between two disconnected Surfaces with available shape options G2 or Chamfer. Redundant surfaces may be trimmed.
+<CommandReference
+  command="Bridge Surface"
+  shortcut=""
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-bridge-curve.png"
+  tier="both"
+/>
+
+## Description
+
+Blend between two disconnected or connected surfaces using shape options such as G2 or Chamfer. Redundant surfaces can be trimmed. Tension of the surface blend can also be controlled.
 
 ## Basic Usage
 
@@ -22,12 +32,13 @@ Blend between two disconnected Surfaces with available shape options G2 or Chamf
             - **G2:** The bridge surface is G2 continuous.
             - **Chamfer:** The bridge surface is chamfered.
         - **Trim walls:** When enabled, trim the surfaces behaind the bridge.
-        - **Trim blend:** 
             - **Both:** Trim both sides of the bridge surface.
             - **Short:** Trim the shorter side of the surface.
             - **Long:** Trim the longer side of the bridge surface.
             - **None:** Do not trim the bridge surface.
             ![Trim Blend Demonstration](/img/bridge-surface-trim.png)
+    - <Kst>Keyboard Shortcuts</Kst>
+        - <kbd>A</kbd> **Add left-right wall pair:** Adds an additional blend based on the current wall selections.
 4. Confirm with OK in the Command Dialog or right-click.
 
 <VideoPlayer fileName="bridge-surface-1"/>

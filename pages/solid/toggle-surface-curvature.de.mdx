@@ -3,99 +3,134 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Callout } from 'nextra/components'
+import { Center } from '/components/Center'
 
-# Toggle Surface Curvature
+## Toggle Surface Curvature
 
-<Reference shortcut="" command="Toggle Curvature" button="Toolbar" buttonIcon='button-toggle-curvature' />
+{/* <Reference shortcut="" command="Toggle Curvature" button="Toolbar" buttonIcon='button-toggle-curvature' /> */}
 
-Messen Sie die Krümmung von Oberflächenkanten, Kurven und Isoparametern mithilfe eines Krümmungskamms (weiß dargestellt), um die Formqualität und Glätte visuell zu beurteilen.
+<CommandReference
+  command="Toggle Curvature"
+  shortcut=""
+  button="Im Menü „Vorgeschlagene Befehle“"
+  buttonIcon="/img/button-toggle-curvature.png"
+  tier="both"
+/>
 
-![Measure Curve and Surface Curvature](/img/measure-curve-surface-curvature.png)
+## Beschreibung
 
+Misst die Krümmung von Oberflächenkanten, Kurven und Isoparams mithilfe eines Krümmungskamms (weiß dargestellt), um die Formqualität und Glätte visuell zu beurteilen.
+
+<Center width="800px">
+![Measure Curve and Surface Curvature](/img/measure-curve-surface-curvature.svg)
+</Center>
 
 <details>
-  <summary>Was ist Krümmungsbewertung?</summary>
-  <div className="px-4">
-    <p className="mt-2">
-      Das Werkzeug <strong>Toggle Curvature</strong> analysiert die Krümmung von Kurven oder Oberflächen, um Glätte und Kontinuität zu beurteilen.
-      Es zeigt Krümmungskämme, die den Krümmungsradius an verschiedenen Punkten darstellen – besonders hilfreich für hochwertige Flächen.
-    </p>
+  <summary>Was ist Krümmungsanalyse?</summary>
+  <div className="px-4 mt-2">
 
-    <img src="/img/curvature-comb.png" alt="Curvature Comb" className="mt-4" />
+#### Krümmung verstehen
 
-    <p className="mt-2">
-      <strong>Krümmung</strong> wird als der Kehrwert des Radius an einem bestimmten Punkt berechnet. Diese Werte werden grafisch in Abständen durch sogenannte Krümmungskämme dargestellt. Die Änderung der Kämme entlang der Kurve – der sogenannte <strong>Fluss</strong> – zeigt das Verhalten der Form.
+Der **Krümmungskamm** ist ein visuelles Diagnosewerkzeug, das hilft, die Glätte von Kanten und Oberflächen zu beurteilen. Er macht „flache Stellen“ oder „Knicke“ sichtbar, die mit bloßem Auge schwer zu erkennen sind.
 
-      1. Die <strong>Länge</strong> jeder Linie ist proportional zum Kehrwert des Radius – größere Krümmung ergibt längere Linien.
-      2. Die <strong>Richtung</strong> jeder Linie ist senkrecht zur Kurve an diesem Punkt  
-      3. Die <strong>rote</strong> Umrandung zeigt den Verlauf der Kurve. 
+<Center width="630px">
+![Curvature Comb](/img/curvature-comb.svg)
+</Center>
 
-      > **Hinweis:** Ist eine Kante oder Kurve flach, wird keine Krümmung angezeigt.
-    </p>
-  </div>
+#### Die Geometrie der Krümmung
+
+Krümmung ist definiert als der mathematische Kehrwert des Radius an einem bestimmten Punkt einer Kurve. In Plasticity wird dies visuell dargestellt:
+
+1. **Stärke:** Die **Länge** jeder Kamm-Linie zeigt an, wie stark die Kurve an dieser Stelle gebogen ist.
+    * **Längere Linien** – engerer Bogen (kleinerer Radius)
+    * **Kürzere Linien** – flacherer Bogen (größerer Radius)
+    * **Mathematisch:** Krümmung ist der Kehrwert des Radius: $\kappa = \frac{1}{r}$
+
+2. **Ausrichtung:** Die **Richtung** jeder Linie ist immer senkrecht (normal) zur Kurve.
+3. **Krümmungsverlauf:** Die **rote Linie** (die Verbindung der Spitzen) zeigt die Änderung der Krümmung. Eine glatte, kontinuierliche Hülle weist auf eine hochwertige Kurve hin.
+
+> **Hinweis:** Wenn ein Segment perfekt gerade ist, erscheint kein Krümmungskamm, da der Radius unendlich ist und die Krümmung somit $\kappa = 0$ beträgt.
+
+</div>
 </details>
-
 
 <details>
   <summary>Kontinuität bewerten</summary>
-  <div className="px-4">
-  <p className="mt-2">
-    Verwenden Sie das Werkzeug, um zu prüfen, ob eine Fläche oder Kurve <strong>G0</strong>, <strong>G1</strong>, <strong>G2</strong> oder <strong>G3</strong> Kontinuität an Verbindungsstellen aufweist.
 
-    <ul>
-    <li><strong>G0</strong> (Positionskontinuität) – Kurven treffen sich am selben Punkt, aber es gibt einen sichtbaren Knick.</li>
-      <li><strong>G1</strong> (Tangentialkontinuität) – Tangenten stimmen überein, aber Krümmungswerte unterscheiden sich.</li>
-      <li><strong>G2</strong> (Krümmungskontinuität) – Krümmung stimmt überein, glatter Übergang ohne sichtbare Brüche.</li>
-      <li><strong>G3</strong> (Beschleunigungskontinuität) – Krümmung und Tangenten stimmen überein, keine Reflexionsbrüche.</li> 
-    </ul>
-    Weitere Infos zur Kontinuität finden Sie <a href="/cad-essentials/continuity-curve-and-surface">hier</a>. 
+#### Kontinuität bewerten
 
-    ![Curvature Examples on G0, G1, and G2](/img/curvature-0.png)
-  </p>
-  </div>
+Nutze das Krümmungswerkzeug, um die Übergangsqualität zwischen Oberflächen oder Kurven zu beurteilen. Diese Übergänge werden durch Kontinuitätsstufen beschrieben:
+
+![Curvature Examples on G0, G1, and G2](/img/curvature-0.svg)
+
+* **G0 (Position):** Die Kurven berühren sich, aber es gibt einen sichtbaren Knick. Der Krümmungskamm zeigt einen Sprung.
+* **G1 (Tangente):** Der Übergang fühlt sich glatt an. Die Kämme treffen sich, aber ihre Längen ($\kappa$) unterscheiden sich.
+* **G2 (Krümmung):** Der Übergang ist visuell nahtlos. Die Kämme treffen sich und haben die gleiche Länge.
+* **G3 (Beschleunigung):** Höchste Flussqualität. Auch die Änderung der Krümmung (rote Hülle) stimmt überein.
+
+Weitere Details findest du in unserem Leitfaden [Continuity Essentials](/cad-essentials/continuity-curve-and-surface).
+
 </details>
 
 <details>
   <summary>Krümmungskämme verstehen</summary>
-  <div className="px-4">
-  <p className="mt-2">
-  Die Kämme zeigen, wie sich die Krümmung entlang der Kurve verändert.
 
-  Below are examples of how to read them:
-  <ul>
-    <li><strong>1.</strong> Gleiche Länge der Linien = gleichmäßiger Radius (z. B. Kreis).</li>
-      <li><strong>2.</strong> Unterschiedliche Länge = Änderung der Krümmung (Beschleunigung oder Verlangsamung).</li>
-      <li><strong>3.</strong> Seitenwechsel mit Null-Länge = Wendepunkt (flach).</li>
-      <li><strong>4.</strong> Unterbrechungen = Krümmungsfehler zwischen <a href="/cad-essentials/nurbs-overview#spans">Bearbeitungspunkten</a>.</li>
-  </ul>
+#### Krümmungskämme verstehen
 
-    ![Understanding Curvature Combs](/img/curvature-comb-1.png)
+Der **Krümmungskamm** dient als visuelle Karte des Charakters einer Kurve. Durch Beobachtung der Linienlängen kannst du die Qualität und den Fluss der Geometrie beurteilen.
 
-  </p>
-  </div>
+#### Den Plot lesen
+
+1. **Konstanter Radius:** Gleich lange Linien bedeuten einen konstanten Radius – ein perfekter Kreisbogen.
+
+<Center width="400px">
+  ![Understanding Curvature Combs](/img/radius-even.svg)
+</Center>
+
+2. **Beschleunigung & Verzögerung:** Eine allmähliche Änderung der Linienlänge zeigt Beschleunigung.
+   * **Längere Linien:** Die Kurve wird enger (Radius wird kleiner).
+   * **Kürzere Linien:** Die Kurve wird flacher (Radius wird größer).
+   * **Mathematisch:** $\kappa = 1/r$
+
+<Center width="400px">
+  ![Understanding Curvature Combs](/img/acceleration-deceleration.svg)
+</Center>
+
+3. **Wendepunkte:** Ein Wendepunkt tritt auf, wenn die Kamm-Linien auf die andere Seite der Kurve „umspringen“. Dies zeigt den Übergang von konkav zu konvex (S‑Kurve).
+
+<Center width="400px">
+  ![Understanding Curvature Combs](/img/inflection-points.svg)
+</Center>
+
+4. **Unstimmigkeiten und Brüche:** Ein plötzlicher Sprung zeigt eine Krümmungsabweichung.
+   * Tritt oft an **Bearbeitungspunkten** oder Übergängen zwischen zwei Kurven auf.
+   * Ein Bruch bedeutet: Die Kurven sind zwar G0 oder G1, aber nicht G2 – was zu unsauberen Reflexionen führt.
+
+<Center width="400px">
+  ![Understanding Curvature Combs](/img/discrepancies-breaks.svg)
+</Center>
+
 </details>
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie die Oberflächekante aus, die Sie messen möchten.
-2. Öffnen Sie die Befehlspalette, geben Sie „Toggle Curvature“ ein und führen Sie den Befehl aus.
-3. Passen Sie die Skalierung der Krümmungskämme im Curvature-Panel auf der rechten Seite an:
-   - <Kst>[Curvature Dialog](/plasticity-essentials/curvature)</Kst>
-     - Comb Scale: Steuert die Größe der Kämme.
-4. Eine neue Krümmungsmessung wird im Outliner unter „Measurements“ angezeigt.
+1. Wähle die Oberflächenkante aus, die du messen möchtest.
+2. Öffne die Command Palette, gib „Toggle Curvature“ ein und führe den Befehl aus.
+3. Passe die Kamm-Skalierung im Krümmungs-Panel rechts an:
+   - <Kst>[Krümmungsdialog](/plasticity-essentials/plasticity-interface/curvature)</Kst>
+     - **Comb Scale:** Passt die Größe der Kämme an.
+4. Eine neue Krümmungsmessung erscheint im Outliner unter „Measurements“.
+
+<Callout type="info">
+**Info**  
+Krümmungsanalyse hilft dir:
+- **Oberflächenqualität sicherzustellen:** Wellen, Dellen oder ungewollte Knicke erkennen und entfernen.
+- **Kontinuität zu prüfen:** G0, G1, G2 oder G3 Übergänge bewerten.
+- **Reflexionsfluss zu optimieren:** Nahtlose Oberflächen unter Licht beurteilen.
+- **Fertigung zu planen:** Starke Krümmungswechsel können Probleme beim Fräsen, Formen oder Biegen verursachen.
+</Callout>
 
 <VideoPlayer fileName="measure-curvature-0"/>
-
-<Callout type="info" emoji="💡">
-**Info**    
-Krümmungsbewertung hilft Ihnen:
-<ul>
-  <li><strong>Flächenqualität sichern:</strong> Beulen und Knicke erkennen und glätten.</li>
-  <li><strong>Kontinuität prüfen:</strong> Treffen sich Flächen sauber mit G0–G3?</li>
-  <li><strong>Reflexion verbessern:</strong> Störungsfreie Lichtübergänge kontrollieren.</li>
-  <li><strong>Herstellbarkeit beurteilen:</strong> Zu starke Krümmung erschwert Fertigung.</li>
-</ul>
-</Callout>
 
 ## Siehe auch
 - [Measure Continuity](/tool/measure-continuity)

@@ -3,28 +3,46 @@ import Reference from '/components/Reference'
 import ButtonIcon from '/components/ButtonIcon';
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Fillet Curve
+{/* <HeadBannerThumbnail
+  src="/videos/banner/fillet-curve.mp4"
+  alt="Fillet Curve Preview"
+  title="Fillet Curve"
+  command="Fillet"
+  shortcut="B"
+  button="In Suggested Commands Menu"
+  buttonIcon={<img src="/img/button-fillet.png" alt="Fillet icon" />}
+/> */}
 
-<Reference shortcut="B" command="Fillet" button="Im vorgeschlagenen Befehlsmenü"  buttonIcon='button-fillet' />
+## Kurve verrunden
 
-Abrunden oder Fasen zwischen zwei Curve Segmenten.
+<CommandReference
+  command="Fillet"
+  shortcut="B"
+  button="In Suggested Commands Menu"
+  buttonIcon="/img/button-fillet.png"
+  tier="both"
+/>
 
-## Grundlegende Nutzung
+## Beschreibung
 
-1. Wählen Sie die Curves aus, an denen Sie Abrunden oder Fasen anwenden möchten.
-2. Drücken Sie <kbd>B</kbd> oder klicken Sie auf die Schaltfläche <ButtonIcon type="button-fillet" /> im Menü Vorgeschlagene Befehle.
-3. Bewegen Sie den gelben Punkt, um den Radius des Abrundens oder Fasens anzugeben. Je nach Bewegungsrichtung wird entweder abgerundet oder gefast.
-4. Legen Sie die Optionen im Befehlsdialog und mit Tastaturkürzeln fest.
-   - <Kst>Befehlsdialog</Kst>
-      - **Distance:** Geben Sie den Abstand an.
-   - <Kst>Tastenkombinationen</Kst>
-      - <kbd>D</kbd> **Fillet Distance:** Geben Sie den Abrundungsabstand durch Bewegen des Cursors an.
-      - <kbd>C</kbd> **Chamfer Distance:** Geben Sie den Fasenabstand durch Bewegen des Cursors an.
-5. Bestätigen Sie mit OK im Befehlsdialog oder Rechtsklick.
+Verrundet oder fasst zwischen zwei Kurvensegmenten.
+
+## Grundlegende Verwendung
+
+1. Wählen Sie die Kurven aus, auf die Sie eine Verrundung oder Fase anwenden möchten.
+2. Drücken Sie <kbd>B</kbd> oder klicken Sie auf die Schaltfläche <ButtonIcon type="button-fillet" /> im Menü [Empfohlene Befehle](/plasticity-essentials/plasticity-interface/command-bar#suggested-commands).
+3. Bewegen Sie den gelben Punkt, um den Radius der Verrundung oder Fase festzulegen. Je nach Bewegungsrichtung wird entweder eine Verrundung oder eine Fase erstellt.
+4. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
+   - <Kst>Command Dialog</Kst>
+      - **Radius:** Gibt die Distanz an.
+   - <Kst>Keyboard Shortcuts</Kst>
+      - <kbd>D</kbd> **Verrundungsdistanz:** Gibt die Verrundungsdistanz durch Bewegen des Cursors an.
+      - <kbd>C</kbd> **Fasendistanz:** Gibt die Fasendistanz durch Bewegen des Cursors an.
+5. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
 
 <VideoPlayer fileName="fillet"/>
 
 ## Siehe auch
-- [Fillet](fillet)
-- [Fillet Vertex](fillet-vertex)
-- [Fillet Shell](/solid/fillet-shell)
+- [Verrunden](fillet)
+- [Scheitelpunkt verrunden](fillet-vertex)
+- [Hülle verrunden](/solid/fillet-shell)

@@ -4,20 +4,40 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Reverse Curve
+{/* # Reverse Curve
 
-<Reference shortcut="" command="Reverse" button=""/>
+<Reference shortcut="" command="Reverse" button=""/> */}
 
-カーブの方向を逆にします。 
+{/* <HeadBannerThumbnail
+  src="/videos/banner/reverse-curve.mp4"
+  alt="Reverse Curve Preview"
+  title="Reverse Curve"
+  command="Reverse"
+  shortcut="-"
+  button="In Command Palette"
+  buttonIcon={<img src="/img/button-reverse.png" alt="Reverse Icon" />}
+/> */}
+
+## カーブの反転
+
+<CommandReference
+  command="Reverse"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-reverse.png"
+  tier="both"
+/>
+
+## 説明
+
+カーブの方向を反転します。
 
 ## 基本的な使い方
 
-1. 方向を逆にしたいカーブを選択します。
+1. 方向を反転したいカーブを選択します。
 2. コマンドパレットに **Reverse** と入力します。
-3. これでカーブの方向が逆になりました。
+3. カーブの方向が反転されました。
 <VideoPlayer fileName="reverse-curve"/>
 
 ## 関連項目
-- [Reverse Sheet](/solid/reverse-sheet)
-
-
+- [シートの反転](/solid/reverse-sheet)
