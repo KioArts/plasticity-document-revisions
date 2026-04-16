@@ -1,0 +1,54 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+
+# Migration Guide: v26.1
+
+Version 26.1 introduces changes to default keybindings, selection modes, and SpaceMouse input. This guide covers what's changed and how to adjust your workflow.
+
+## Keybinding Changes
+
+### Lock Distances (Tab > S)
+
+The <kbd>Tab</kbd> key no longer toggles "Lock distances" (symmetric/equal distance on both sides). This has been reassigned to <kbd>S</kbd> by default in the following commands:
+
+**Sketch:**
+
+- [Offset Planar Curve](/sketch/offset-planar-curve)
+- [Offset Region](/sketch/offset-region)
+
+**Solid:**
+
+- [Offset Face Loop](/solid/offset-face-loop)
+- [Offset Edge](/solid/offset-edge)
+- [Extrude](/solid/extrude)
+
+## Selection Mode Changes
+
+### All Selection Modes (Tab > 5)
+
+Previously, pressing <kbd>Tab</kbd> enabled all selection modes at once. In 26.1, this has been reassigned to <kbd>5</kbd>. The individual mode shortcuts remain unchanged:
+
+| Selection Mode | Shortcut | Icon |
+| --- | --- | :---: |
+| Control Point | <kbd>1</kbd> | <ButtonIcon type="button-select-point" /> |
+| Edge | <kbd>2</kbd> | <ButtonIcon type="button-select-edge" /> |
+| Face | <kbd>3</kbd> | <ButtonIcon type="button-select-face" /> |
+| Solid | <kbd>4</kbd> | <ButtonIcon type="button-select-solid" /> |
+| All | <kbd>5</kbd> | <ButtonIcon type="button-select-point-all" /> <ButtonIcon type="button-select-edge-all" /> <ButtonIcon type="button-select-face-all" /> <ButtonIcon type="button-select-solid-all" /> |
+
+
+Pressing <kbd>5</kbd> does not cycle, it enables all selection modes simultaneously. If you prefer the old behavior, you can reassign this action back to <kbd>Tab</kbd> or any other key by opening the Command Palette with <kbd>F</kbd>, searching for *Selection mode: set all*, right-clicking, and assigning a new shortcut.
+
+<img src="/release/26.1/26.1-guide-keybinding-change.png" width="600" />
+
+## SpaceMouse Changes
+
+SpaceMouse behavior has been improved to be more consistent with other 3D software. Updating to the latest driver for your device is recommended.
+
+- **Directions** - Up/Down directions are now reversed.
+- **Speed** - Default speed has been recalibrated to better match the expected feel in other applications.
+- **Lock Horizon** - A new option in *Preferences > SpaceMouse* to toggle roll behavior.
+
+## See Also
+
+- [Changelog](/release-notes)

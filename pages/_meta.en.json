@@ -1,3 +1,4 @@
+
 {
   "index": { "display": "hidden" },
 
@@ -10,6 +11,7 @@
 
   "whats-new": "What's New",
   "all-commands": "Command List and Shortcut Keys",
+  "migration-26.1": "Migration Guide: v26.1",
 
   "---intro": { "type": "separator", "title": "Introduction" },
   "getting-started": "Getting Started",

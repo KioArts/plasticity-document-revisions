@@ -1,32 +1,38 @@
 {
   "index": { "display": "hidden" },
 
-  "whats-new": "What's New",
-  "all-commands": "Command List & Shortcut Keys",
+  "introduction": { "display": "hidden"},
+  "tools": { "display": "hidden"},
+  "commands": { "display": "hidden"},
+  "integration": { "display": "hidden"},
+  "advanced": { "display": "hidden"},
+  "support": { "display": "hidden"},
 
-  "---intro": { "type": "separator", "title": "Introduction" },
-  "getting-started": "Getting Started",
-  "plasticity-essentials": "Plasticity Essentials",
-  "cad-essentials": "CAD Essentials",
+  "whats-new": "Neuigkeiten",
+  "all-commands": "Befehlsliste und Tastenkürzel",
+  "migration-26.1": "Migrationsleitfaden: v26.1",
 
-  "---tools": { "type": "separator", "title": "Tools" },
-  "tool": "Sketching & Primitive Tools",
+  "---intro": { "type": "separator", "title": "Einführung" },
+  "getting-started": "Erste Schritte",
+  "plasticity-essentials": "Plasticity Grundlagen",
+  "cad-essentials": "CAD Grundlagen",
 
-  "---commands": { "type": "separator", "title": "Commands" },
-  "common": "Common",
-  "sketch": "Sketch",
-  "solid": "Solid",
+  "---tools": { "type": "separator", "title": "Werkzeuge" },
+  "tool": "Skizzen- und Grundkörperwerkzeuge",
+
+  "---commands": { "type": "separator", "title": "Befehle" },
+  "common": "Allgemein",
+  "sketch": "Skizze",
+  "solid": "Volumenkörper",
 
   "---integration": { "type": "separator", "title": "Integration" },
   "blender": "Blender",
   "cinema-4d": "Cinema 4D",
 
-  "---advanced": { "type": "separator", "title": "Advanced" },
-
-  "---support": { "type": "separator", "title": "Support" },
-  "release-notes": "Release Notes",
+  "---support": { "type": "separator", "title": "Änderungsprotokoll" },
+  "release-notes": "Versionshinweise",
   "contact": {
-    "title": "User Support",
+    "title": "Benutzerunterstützung",
     "type": "page",
     "href": "/getting-started/user-support"
   }

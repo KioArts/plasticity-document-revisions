@@ -1,0 +1,54 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+
+# 移行ガイド: v26.1
+
+バージョン26.1では、デフォルトのキーバインド、選択モード、SpaceMouse入力に変更が加えられました。このガイドでは、変更点とワークフローの調整方法について説明します。
+
+## キーバインドの変更
+
+### 距離をロック (Tab > S)
+
+<kbd>Tab</kbd>キーで「距離をロック」（両側の対称・均等距離）を切り替える機能が廃止されました。この機能はデフォルトで<kbd>S</kbd>キーに再割り当てされ、以下のコマンドに適用されます：
+
+**スケッチ:**
+
+- [平面カーブのオフセット](/sketch/offset-planar-curve)
+- [リージョンのオフセット](/sketch/offset-region)
+
+**ソリッド:**
+
+- [フェイスループのオフセット](/solid/offset-face-loop)
+- [エッジのオフセット](/solid/offset-edge)
+- [押し出し](/solid/extrude)
+
+## 選択モードの変更
+
+### すべての選択モード (Tab > 5)
+
+以前は<kbd>Tab</kbd>を押すとすべての選択モードが一度に有効になりました。26.1では、この機能は<kbd>5</kbd>に変更されました。個別の選択モードのショートカットは変更ありません：
+
+| 選択モード | ショートカット | アイコン |
+| --- | --- | :---: |
+| コントロールポイント | <kbd>1</kbd> | <ButtonIcon type="button-select-point" /> |
+| エッジ | <kbd>2</kbd> | <ButtonIcon type="button-select-edge" /> |
+| フェイス | <kbd>3</kbd> | <ButtonIcon type="button-select-face" /> |
+| ソリッド | <kbd>4</kbd> | <ButtonIcon type="button-select-solid" /> |
+| すべて | <kbd>5</kbd> | <ButtonIcon type="button-select-point-all" /> <ButtonIcon type="button-select-edge-all" /> <ButtonIcon type="button-select-face-all" /> <ButtonIcon type="button-select-solid-all" /> |
+
+
+<kbd>5</kbd>はモードを順番に切り替えるのではなく、すべての選択モードを同時に有効にします。以前の動作に戻したい場合は、<kbd>F</kbd>でコマンドパレットを開き、*Selection mode: set all* を検索して右クリックし、新しいショートカットを割り当てることで、<kbd>Tab</kbd>やその他のキーに再割り当てできます。
+
+<img src="/release/26.1/26.1-guide-keybinding-change.png" width="600" />
+
+## SpaceMouseの変更
+
+SpaceMouseの動作が改善され、他の3Dソフトウェアとの一貫性が向上しました。お使いのデバイスの最新ドライバーへの更新を推奨します。
+
+- **方向** – 上下方向が反転されました。
+- **速度** – デフォルト速度が再調整され、他のアプリケーションで期待される操作感に近づきました。
+- **水平ロック** – *Preferences > SpaceMouse* にロール動作を切り替える新しいオプションが追加されました。
+
+## 関連項目
+
+- [変更履歴](/release-notes)

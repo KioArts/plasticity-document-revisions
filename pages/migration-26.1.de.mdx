@@ -1,0 +1,54 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import ButtonIcon from '/components/ButtonIcon'
+
+# Migrationsleitfaden: v26.1
+
+Version 26.1 führt Änderungen an den Standard-Tastenkombinationen, Auswahlmodi und der SpaceMouse-Eingabe ein. Dieser Leitfaden beschreibt, was sich geändert hat und wie Sie Ihren Workflow anpassen können.
+
+## Änderungen der Tastenkombinationen
+
+### Abstände sperren (Tab > S)
+
+Die <kbd>Tab</kbd>-Taste schaltet nicht mehr „Abstände sperren" (symmetrischer/gleicher Abstand auf beiden Seiten) um. Diese Funktion wurde standardmäßig der Taste <kbd>S</kbd> zugewiesen und betrifft folgende Befehle:
+
+**Skizze:**
+
+- [Planare Kurve versetzen](/sketch/offset-planar-curve)
+- [Region versetzen](/sketch/offset-region)
+
+**Volumenkörper:**
+
+- [Flächenkontur versetzen](/solid/offset-face-loop)
+- [Kante versetzen](/solid/offset-edge)
+- [Extrudieren](/solid/extrude)
+
+## Änderungen der Auswahlmodi
+
+### Alle Auswahlmodi (Tab > 5)
+
+Bisher aktivierte <kbd>Tab</kbd> alle Auswahlmodi gleichzeitig. In Version 26.1 wurde diese Funktion auf <kbd>5</kbd> umgelegt. Die einzelnen Auswahlmodi-Tastenkürzel bleiben unverändert:
+
+| Auswahlmodus | Tastenkürzel | Symbol |
+| --- | --- | :---: |
+| Kontrollpunkt | <kbd>1</kbd> | <ButtonIcon type="button-select-point" /> |
+| Kante | <kbd>2</kbd> | <ButtonIcon type="button-select-edge" /> |
+| Fläche | <kbd>3</kbd> | <ButtonIcon type="button-select-face" /> |
+| Volumenkörper | <kbd>4</kbd> | <ButtonIcon type="button-select-solid" /> |
+| Alle | <kbd>5</kbd> | <ButtonIcon type="button-select-point-all" /> <ButtonIcon type="button-select-edge-all" /> <ButtonIcon type="button-select-face-all" /> <ButtonIcon type="button-select-solid-all" /> |
+
+
+Die Taste <kbd>5</kbd> wechselt nicht zwischen den Modi – sie aktiviert alle Auswahlmodi gleichzeitig. Wenn Sie das alte Verhalten bevorzugen, können Sie diese Aktion wieder auf <kbd>Tab</kbd> oder eine andere Taste zuweisen, indem Sie die Befehlspalette mit <kbd>F</kbd> öffnen, nach *Selection mode: set all* suchen, rechtsklicken und eine neue Tastenkombination zuweisen.
+
+<img src="/release/26.1/26.1-guide-keybinding-change.png" width="600" />
+
+## SpaceMouse-Änderungen
+
+Das SpaceMouse-Verhalten wurde verbessert, um eine bessere Übereinstimmung mit anderer 3D-Software zu gewährleisten. Es wird empfohlen, den neuesten Treiber für Ihr Gerät zu installieren.
+
+- **Richtungen** – Die Auf-/Ab-Richtungen sind jetzt vertauscht.
+- **Geschwindigkeit** – Die Standardgeschwindigkeit wurde neu kalibriert, um das erwartete Verhalten anderer Anwendungen besser abzubilden.
+- **Horizont sperren** – Eine neue Option unter *Preferences > SpaceMouse*, um das Rollverhalten umzuschalten.
+
+## Siehe auch
+
+- [Changelog](/release-notes)
