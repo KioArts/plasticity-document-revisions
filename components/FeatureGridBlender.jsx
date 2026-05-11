@@ -1,4 +1,4 @@
-import styles from './FeatureGrid.module.css';
+import styles from './FeatureGridBlender.module.css';
 
 /**
  * FeatureGrid
