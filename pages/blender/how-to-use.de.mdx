@@ -3,123 +3,117 @@ import { Callout } from 'nextra/components'
 
 # Verwendung
 
-## Blender Bridge einrichten
+## Einrichtung
 
-Stellen Sie sicher, dass das Add-on „Blender Bridge" installiert und die Funktion in Plasticity aktiviert ist. Die Einrichtungsanleitung finden Sie [hier](install-blender-addon).
+Bevor du beginnst, installiere das Blender‑Bridge‑Add‑on und aktiviere den Server in Plasticity. Falls du das noch nicht getan hast, siehe die [Setup‑Anleitung](install-blender-addon).
 
 ## Grundlegende Verwendung
 
-Um in Plasticity erstellte Objekte nach Blender zu übertragen, klicken Sie auf die Schaltfläche „Refresh" im Plasticity-Seitenleistenpanel in Blender.
+Die Bridge überträgt Objekte bei Bedarf von Plasticity nach Blender. Klicke im Plasticity‑Seitenpanel in Blender auf **Refresh**, und deine aktuelle Plasticity‑Szene wird übertragen.
 
-1. **In Plasticity:**
-    1. Öffnen Sie Plasticity.
-    2. Erstellen Sie die Objekte, die Sie nach Blender übertragen möchten.
-2. **In Blender:**
-    1. Klicken Sie auf die Schaltfläche „Connect" im „Plasticity"-Seitenleistenpanel. Sobald eine Verbindung hergestellt wurde, werden zusätzliche Optionen im Panel angezeigt.
-        ![BB Blender Connet](/img/bb-blender-connect.png)
-    2. Klicken Sie auf die Schaltfläche „Refresh" im „Plasticity"-Seitenleistenpanel, um Objekte von Plasticity nach Blender zu übertragen.
-        ![BB Blender Connet](/img/bb-blender-refresh.png)
-    3. Die übertragenen Objekte erscheinen im 3D-Viewport von Blender.
-        - Alle Solids und Sheets in Plasticity werden in Blender als Meshes übertragen.
-        - Wenn „Only visible" deaktiviert ist (Standard), werden unsichtbare Objekte in Plasticity als unsichtbare Objekte nach Blender übertragen. Wenn „Only visible" aktiviert ist, werden unsichtbare Objekte nicht übertragen.
-        - Die Option „Scale" ermöglicht eine Skalierung der Größe.
-3. **In Plasticity:**
-    1. Bearbeiten Sie die Objekte nach Bedarf.
-4. **In Blender:**
-    1. Um Änderungen aus Plasticity zu aktualisieren, klicken Sie auf die Schaltfläche „Refresh" im „Plasticity"-Seitenleistenpanel.
+1. **In Plasticity** — Öffne oder erstelle das Dokument, mit dem du arbeiten möchtest.
+
+2. **In Blender** — Öffne das **Plasticity**‑Seitenpanel im 3D‑Viewport und klicke auf **Connect**. Nach der Verbindung erscheinen zusätzliche Optionen.
+
+    ![Blender Bridge connect button](/img/bb-blender-connect.png)
+
+3. **In Blender** — Klicke auf **Refresh**, um Objekte aus Plasticity in die Blender‑Szene zu laden.
+
+    ![Blender Bridge refresh button](/img/bb-blender-refresh.png)
+
+    Alle Solids und Sheets aus Plasticity werden in Blender als Meshes importiert. Einige Paneloptionen beeinflussen, was übertragen wird:
+
+    - **Only Visible** — Wenn deaktiviert (Standard), werden in Plasticity versteckte Objekte als versteckte Blender‑Objekte übertragen. Wenn aktiviert, werden versteckte Objekte vollständig übersprungen.
+    - **Scale** — Multipliziert die Größe der importierten Geometrie. Nützlich, wenn dein Plasticity‑Dokument in einer anderen Einheit skaliert wurde als deine Blender‑Szene.
+
+4. **In Plasticity bearbeiten, in Blender aktualisieren.** Immer wenn du Geometrie in Plasticity änderst, klicke erneut auf **Refresh**, um Blender zu aktualisieren. Materialien, Modifier, Transformationen und Auswahlzustände bleiben erhalten – siehe [Workflow Helpers](introduction-blender-bridge#workflow-helpers) für Details.
 
 ## Live Link
 
-Wenn Live Link aktiviert ist, werden alle Änderungen an Objekten in Plasticity automatisch nach Blender übertragen.
+Live Link entfernt den manuellen Refresh‑Schritt. Mit aktivierter Funktion werden Änderungen in Plasticity automatisch in Echtzeit nach Blender gestreamt.
 
-1. **In Plasticity:**
-    1. Öffnen Sie Plasticity.
-    2. Erstellen Sie die Objekte, die Sie nach Blender übertragen möchten.
-2. **In Blender:**
-    1. Stellen Sie sicher, dass das Blender Bridge Add-on installiert und aktiviert ist.
-    2. Klicken Sie auf die Schaltfläche „Live Link" im „Plasticity"-Seitenleistenpanel.
-        ![BB Blender Live Link](/img/bb-blender-live-link.png)
-3. **In Plasticity:**
-    1. Bearbeiten Sie die Objekte nach Bedarf.
-4. **In Blender:**
-    1. Die Änderungen werden automatisch nach Blender übertragen.
+1. **In Plasticity** — Öffne das Dokument, das du streamen möchtest.
 
-## Mesh neu vernetzen (Refacet)
+2. **In Blender** — Klicke im Plasticity‑Panel auf **Live Link**.
 
-Die Option „Refacet Mesh" retopologisiert das Mesh des übertragenen Objekts automatisch. Dies ist nützlich, um die Anzahl der Vertices zu reduzieren und die Performance in Blender zu verbessern.
+    ![Blender Bridge Live Link toggle](/img/bb-blender-live-link.png)
 
-1. **In Blender:**
-    1. Wählen Sie die zu retopologisierenden übertragenen Objekte aus.
-    2. Klicken Sie auf die Schaltfläche „Refacet" im „Plasticity"-Seitenleistenpanel.
-        ![BB Blender Refacet](/img/bb-blender-refacet.png)
-        - Die Refacet-Konfiguration kann im „Plasticity"-Seitenleistenpanel angepasst werden.
-            - **Tri/Ngon:** Der zu generierende Mesh-Typ. „Tri" erzeugt ein Mesh ausschließlich mit Dreiecken, während „Ngon" ein Mesh mit Polygonen mit fünf oder mehr Seiten erzeugt.
-            - **Toleranz:** Der maximale Abstand zwischen dem ursprünglichen Mesh und dem retopologisierten Mesh. Eine geringere Toleranz erzeugt ein Mesh, das dem Original stärker ähnelt, jedoch mehr Vertices enthält.
-            - **Winkel:** Der maximale Winkel zwischen dem ursprünglichen und dem retopologisierten Mesh. Ein kleinerer Winkel erzeugt ein genaueres Mesh mit mehr Vertices.
-        - Klicken Sie auf die Schaltfläche „Advanced", um erweiterte Optionen anzuzeigen.
-            - **Tri/Ngon:** Der zu generierende Mesh-Typ. „Tri" erzeugt ein Mesh ausschließlich mit Dreiecken, während „Ngon" ein Mesh mit Polygonen mit fünf oder mehr Seiten erzeugt.
-            - **Min. Breite:** Die Mindestbreite des retopologisierten Meshes. Eine geringere Mindestbreite erzeugt ein Mesh mit mehr Vertices.
-            - **Max. Breite:** Die Maximalbreite des retopologisierten Meshes. Eine geringere Maximalbreite erzeugt ein Mesh mit mehr Vertices.
-            - **Kantentoleranz (Chord):** Der maximale Abstand zwischen dem ursprünglichen Kantenzug und dem retopologisierten Mesh.
-            - **Kantentoleranz (Winkel):** Der maximale Winkel zwischen dem ursprünglichen Kantenwinkel und dem retopologisierten Mesh.
-            - **Flächenebenentoleranz:** Der maximale Abstand zwischen der ursprünglichen Flächenebene und dem retopologisierten Mesh.
-            - **Flächenwinkeltoleranz:** Der maximale Winkel zwischen dem ursprünglichen Flächenwinkel und dem retopologisierten Mesh.
-        - Refacet erzeugt automatisch „Mark Sharp"-Markierungen an den Kanten des retopologisierten Meshes.
+3. **In Plasticity bearbeiten.** Bewege einen Kontrollpunkt, verrunde eine Kante, ändere einen Parameter – Blender aktualisiert sich innerhalb von ein bis zwei Sekunden, inklusive Kamera, Licht und Materialien deiner Szene.
 
-## Dienstprogramme
+Live Link ist der schnellste Weg, dein Modell während der Arbeit im Kontext zu sehen. Deaktiviere es, wenn du den Stream pausieren möchtest.
 
-![BB Blender Utilities](/img/bb-blender-utilities.png)
+## Refacet Mesh
 
-### Kanten automatisch markieren
+Refacet retopologisiert das importierte Mesh und erzeugt die Triangulation basierend auf der zugrunde liegenden NURBS‑Fläche neu. Damit kannst du zwischen einer Low‑Poly‑Vorschau und einem dichteren Mesh für Renderings wechseln, ohne etwas in Plasticity zu ändern.
 
-- Markiert Kanten als scharf oder als Nähte basierend auf den ausgewählten Flächen, abhängig vom zuletzt verwendeten Operationspanel.
+1. Wähle die übertragenen Objekte in Blender aus.
 
-### UV-Nähte zusammenführen
+2. Klicke im Plasticity‑Panel auf **Refacet**.
 
-- Führt UV-Nähte basierend auf den ausgewählten Flächen zusammen.
+    ![Blender Bridge refacet button](/img/bb-blender-refacet.png)
 
-### Plasticity-Fläche(n) auswählen
+Refacet markiert neue Kanten automatisch als „sharp“, sodass Smooth Shading direkt funktioniert.
 
-- Erweitert die Flächenauswahl basierend auf den Flächen aus Plasticity.
+### Grundeinstellungen
 
-### Plasticity-Kanten auswählen
+- **Tri / Ngon** — Der Typ der zu erzeugenden Polygone. *Tri* erzeugt nur Dreiecke; *Ngon* erlaubt Fünf‑ oder Mehrseitige Polygone, wo sinnvoll.
+- **Tolerance** — Die maximal zulässige Abweichung zwischen der ursprünglichen NURBS‑Fläche und dem neuen Mesh. Niedrigere Werte folgen der Fläche genauer, erhöhen aber die Polygonzahl.
+- **Angle** — Der maximale Winkel zwischen benachbarten Flächen. Niedrigere Werte erzeugen glattere Krümmungen, aber mehr Polygone.
 
-- Nach dem Auswählen von Flächen können mit diesem Befehl Kanten basierend auf den Kanten aus Plasticity ausgewählt werden.
+### Erweiterte Einstellungen
 
-### Plasticity-Flächen einfärben
+Klicke im Panel auf **Advanced**, um weitere Optionen anzuzeigen:
 
-- Fügt zufällige Vertex-Farben basierend auf den Flächen aus Plasticity hinzu.
+- **Min Width** — Die minimale Flächenbreite im resultierenden Mesh. Kleinere Werte erlauben feinere Details.
+- **Max Width** — Die maximale Flächenbreite. Kleinere Werte erzwingen eine dichtere Tessellation.
+- **Edge Chord Tolerance** — Wie genau neue Kanten den ursprünglichen NURBS‑Kanten folgen.
+- **Edge Angle Tolerance** — Der Winkelspielraum entlang der Kanten.
+- **Face Plane Tolerance** — Wie genau flache Bereiche der ursprünglichen NURBS‑Fläche entsprechen.
+- **Face Angle Tolerance** — Der Winkelspielraum über die Flächen hinweg.
+
+## Auswahl‑Werkzeuge
+
+Das Plasticity‑Seitenpanel stellt fünf Blender‑Befehle für die Arbeit mit importierter Geometrie bereit. Jeder nutzt die ursprünglichen Plasticity‑Face‑ und Edge‑IDs, die beim Import erhalten bleiben.
+
+![Blender Bridge utilities panel](/img/bb-blender-utilities.png)
+
+- **Auto Mark Edges** — Markiert ausgewählte Kanten als „sharp“ oder als UV‑Seams, abhängig von der letzten Operator‑Einstellung.
+- **Merge UV Seams** — Verschmilzt doppelte Vertices entlang der Nähte der ausgewählten Flächen und stellt ein geschlossenes Mesh wieder her.
+- **Select Plasticity Face(s)** — Erweitert die Auswahl auf alle Blender‑Flächen, die vom gleichen Plasticity‑Face stammen.
+- **Select Plasticity Edges** — Wechselt nach einer Flächenauswahl zu den Blender‑Kanten, die den ursprünglichen Plasticity‑Kanten entsprechen.
+- **Paint Plasticity Faces** — Backt eine eindeutige Vertex‑Farbe pro Plasticity‑Face. Nützlich für Substance Painter‑Masken oder prozedurale Shader, die Face‑IDs verwenden.
 
 ## Arbeiten mit PolySplines
 
-Modellieren Sie Ihre Geometrie in Blender und übertragen Sie sie nach Plasticity, wo PolySplines automatisch angewendet wird. Eine Studio-Lizenz ist erforderlich, um [PolySplines](/solid/polyspline) zu verwenden.
+PolySplines funktionieren in die entgegengesetzte Richtung: Du modellierst eine Form in Blender mit Subdivision‑Surfaces, sendest sie zurück nach Plasticity, und sie wird automatisch zu einer G2‑kontinuierlichen, editierbaren NURBS‑Fläche. Eine Studio‑Lizenz ist erforderlich – siehe die [PolySplines‑Dokumentation](/solid/polyspline) für Details.
 
-### Grundlegende Verwendung
+### Grundworkflow
 
-1. **In Plasticity:**
-    1. Stellen Sie sicher, dass die Szene leer ist und keine modellierten Objekte enthält, um eine ungewollte Übertragung nach Blender zu verhindern.
+1. **In Plasticity** — Beginne mit einer leeren Szene. Alles, was bereits im Dokument ist, würde beim Verbinden nach Blender übertragen und anschließend durch PolySplines zurückkommen – meist unerwünscht.
 
 2. **In Blender:**
-    1. Klicken Sie auf die Schaltfläche „Connect" im „Plasticity"-Seitenleistenpanel.
-    2. Aktivieren Sie die Option „Only Visible" im „Plasticity"-Seitenleistenpanel, um sicherzustellen, dass keine Objekte von Plasticity nach Blender übertragen werden.
-    3. Klicken Sie auf die Schaltfläche „Refresh", um zusätzliche Optionen im Blender-Outliner anzuzeigen.
 
-        ![Outliner Blender](/img/blender-outliner-polysplines.png)
+    1. Klicke im Plasticity‑Panel auf **Connect**.
+    2. Aktiviere **Only Visible**, um zu verhindern, dass etwas aus Plasticity nach Blender übertragen wird.
+    3. Klicke auf **Refresh**, um die PolySplines‑Gruppen im Outliner einzurichten.
 
-    4. Platzieren Sie das Blender-Objekt in der Gruppe „Outbox" und fügen Sie einen **Subdivision**-Modifier mit einem Level von mindestens **1** hinzu.
-        - Alle geometrieverändernden Modifier sollten **nach** dem Subdivision-Modifier platziert werden, da alle Modifier bei der Übertragung nach Plasticity automatisch angewendet werden.
+        ![PolySplines groups in the Blender outliner](/img/blender-outliner-polysplines.png)
 
-        ![Modifiers](/img/blender-outliner-polysplines-02.png)
-    5. Klicken Sie auf die Schaltfläche „Refresh" im „Plasticity"-Seitenleistenpanel, um die Objekte von Blender nach Plasticity zu übertragen.
+    4. Lege dein Blender‑Objekt in die Gruppe **Outbox** und füge einen **Subdivision Surface**‑Modifier mit mindestens Level **1** hinzu.
 
-3. **In Plasticity:**
-    1. Die übertragenen Objekte erscheinen im 3D-Viewport von Plasticity.
-        - Transformationsdaten wie Skalierung, Position und Rotation werden automatisch übernommen.
-        - Alle Modifier werden bei der Übertragung automatisch angewendet.
-        - Das Objekt wird automatisch in eine PolySpline-Fläche konvertiert.
+        Andere Modifier, die Geometrie verändern, müssen **nach** dem Subdivision‑Modifier im Stack stehen – alle Modifier werden beim Transfer nach Plasticity automatisch angewendet.
+
+        ![Subdivision modifier setup in Blender](/img/blender-outliner-polysplines-02.png)
+
+    5. Klicke auf **Refresh**, um das Objekt zurück nach Plasticity zu senden.
+
+3. **In Plasticity** — Die konvertierte PolySpline‑Fläche erscheint im Viewport:
+    - Skalierung, Position und Rotation werden automatisch übernommen.
+    - Alle Blender‑Modifier werden beim Transfer gebacken.
+    - Das Ergebnis ist eine editierbare NURBS‑Fläche, bereit für Fillets, Booleans und den restlichen Plasticity‑Werkzeugsatz.
 
 <Callout type="info">
-**Mirror-Modifier:** Stellen Sie sicher, dass das Quellobjekt die Spiegelebene berührt oder schneidet. Dies ist erforderlich, um ein erfolgreiches Spiegelergebnis zu erzielen.
+**Mirror Modifier:** Das Objekt muss die Spiegelachse berühren, damit der Mirror‑Modifier ein gültiges Ergebnis erzeugt. Schwebende Geometrie neben der Achse schlägt fehl.
 </Callout>
 
 <VideoPlayer fileName="blender-using-polysplines"/>

@@ -1,0 +1,197 @@
+/* =========================================================
+   InteractiveFeatureCard — interactive panel + preview on top,
+   title + text below. Designed to span the full width of a
+   FeatureGrid row.
+   ========================================================= */
+
+.card {
+  min-width: 0;
+  background: #111114;
+  border: 1px solid #232327;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter Tight', system-ui, sans-serif;
+
+  /* Span the full row when inside a CSS grid like FeatureGrid */
+  grid-column: 1 / -1;
+}
+
+/* ---- Interactive area ---- */
+.imageWrap {
+  width: 100%;
+  /* Matches the card background — no contrasting black strip anymore */
+  background: #111114;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.interactive {
+  display: grid;
+  /* Three columns: sleek tab, buttons panel, preview canvas */
+  grid-template-columns: auto 260px 1fr;
+  gap: 12px;
+  min-height: 300px;
+  align-items: stretch;
+}
+
+/* ---- Sleek vertical PLASTICITY tab (sits OUTSIDE the panel) ---- */
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 6px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 9px;
+  color: #6a6a68;
+  letter-spacing: 0.25em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  user-select: none;
+  background: transparent;
+}
+
+/* ---- Buttons panel ---- */
+.panel {
+  background: #161618;
+  border: 0.5px solid #2a2a2d;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelLabel {
+  font-size: 11px;
+  color: #a4a39d;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: #2a2a2d;
+  border: 0.5px solid #3a3a3d;
+  color: #d4d4d2;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  margin-bottom: 6px;
+  text-align: center;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  background: #34343a;
+  border-color: #4a4a4d;
+}
+
+.btn:focus-visible {
+  outline: none;
+  border-color: #d97540;
+  box-shadow: 0 0 0 1px rgba(217, 117, 64, 0.4);
+}
+
+.btnActive {
+  background: #2a1a14;
+  border: 1px solid #d97540;
+  color: #f0a070;
+}
+
+.btnActive:hover {
+  background: #34201a;
+  border-color: #d97540;
+}
+
+/* ---- Preview pane ---- */
+.preview {
+  background: #161618;
+  border: 0.5px solid #2a2a2d;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.previewCanvas {
+  flex: 1;
+  background: #0d0d0f;
+  border: 0.5px solid #2a2a2d;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+/* Make any SVG child fill the canvas properly */
+.previewCanvas svg {
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  display: block;
+}
+
+.previewCaption {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 9px;
+  color: #5a5955;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ---- Body (matches FeatureCard exactly) ---- */
+.body {
+  padding: 20px 22px 22px;
+}
+
+.title {
+  font-family: 'Instrument Serif', 'Times New Roman', serif;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #f5f4ef;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.text {
+  color: #a4a39d;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---- Mobile: stack tab → panel → preview ---- */
+@media (max-width: 640px) {
+  .imageWrap {
+    padding: 18px;
+  }
+
+  .interactive {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  /* Hide the vertical tab on mobile — it doesn't make sense when stacked */
+  .tab {
+    display: none;
+  }
+
+  .previewCanvas {
+    min-height: 180px;
+  }
+}

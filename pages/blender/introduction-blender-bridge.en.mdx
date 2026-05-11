@@ -1,11 +1,135 @@
+import { SelectionUtilitiesCard } from './components/SelectionUtilitiesCard';
+import { RefacetShowcase } from './components/RefacetShowcase';
+import { PolySplinesShowcase } from './components/PolySplinesShowcase';
+import { FeatureCard } from './components/FeatureCard';
+import { FeatureGrid } from './components/FeatureGrid';
+import { GetStartedPanel } from './components/Getstartedpanel';
+
 # Introduction of Blender Bridge
 
-The Blender Bridge is a feature that allows for the rapid transfer of mesh data from Plasticity to Blender. This is realized as a Blender add-on. Once you've connected, you can just click refresh, and data is loaded really quickly. You don't need to worry about exporting to a temporary file and getting all the setting options right.
+The Blender Bridge is a Plasticity addon for Blender that streams mesh data between the two apps. Connect once, hit refresh, and your model is in Blender. No temporary files, no export dialogs, no settings to second guess. Use it any time you want Blender's render, lighting, animation, or rigging tools on top of Plasticity's NURBS modeling.
 
-Even if you modify the geometry in Plasticity, the materials set in Blender are preserved. Additionally, the group structure in Plasticity is reflected as a collection in Blender. In this process, Blender's hierarchy is created using the Plasticity document name as an identifier. Therefore, multiple Plasticity documents can be incorporated into a single Blender document.
+---
 
-There's also a live link feature. The live link is a really cool feature; you can see stuff being updated in real time. The real workhorse of the Blender Bridge is the ability to quickly get assets in, so you can see them using Blender materials, Blender lighting, Ray tracing. You can view your objects in a scene with the real camera that might be used in a game or in a final render, with a specific FOV. You get the full power of Blender, including parenting things to empties, so you can animate them, rig them, and see if your mechanical parts fit together.
+## Live Link
 
-The workflow is also a fantastic experience. After placing the Plasticity document in the Blender scene, you can still change the faceting settings. Almost all of Plasticity's faceting tools are available within Blender. This means you can quickly get the polygon density or edge flow needed for your model, resulting in a faster workflow.
+Toggle Live Link and every change in Plasticity flows into Blender automatically. No exports, no temp files, no settings dialog. Move a control vertex and watch the rendered viewport update in seconds. It's the fastest way to see your model in context as you work, with real Blender materials, Cycles or Eevee lighting, and your scene's actual camera reacting to every edit.
 
-The specification of UV seams and sharps in Blender is not retained in the current version. However, the Blender add-on comes with features that automatically mark edges, automatically select geometry corresponding to Plasticity faces or edges, and merge UV seams. These features also contribute to a faster workflow.
+<video
+  src="/img/test.mp4"
+  autoPlay
+  muted
+  loop
+  playsInline
+  style={{
+    width: '100%',
+    maxWidth: '700px',
+    borderRadius: '15px',
+    display: 'block',
+    margin: '24px auto',
+  }}
+/>
+
+---
+
+## Refacet and Remesh
+
+All of faceting tools are exposed inside the Blender addon, which means tolerance, edge flow, and polygon density can be adjusted directly from the Plasticity panel in Blender. Start at a low poly preview and push to a denser mesh when you're ready to render, then go even tighter for final output. 
+
+Topology decisions stop being permanent. You can rebuild a scene at a different density with one click while keeping materials, lighting, and camera setup intact in one file.
+
+<RefacetShowcase
+  imageSize={425}
+  items={[
+    { stage: 'Default',   tolerance: '0.0005', faces: '5,625', src: '/img/default.png',   alt: 'Low-poly mesh' },
+    { stage: 'Low-Poly',  tolerance: '0.05',   faces: '170',  src: '/img/low-poly.png',  alt: 'Medium-density mesh' },
+    { stage: 'High-Poly', tolerance: '0.0001',   faces: '28,390', src: '/img/high-poly.png', alt: 'High-density mesh' },
+  ]}
+/>
+
+---
+
+## PolySplines
+
+Block out a shape with subdivision surfaces in Blender, drop it in the Outbox group, and Plasticity converts it into G2 continuous editable NURBS automatically. 
+
+Use it when you want to sketch a form quickly with the freedom of Sub-D modeling, then hand the result back to Plasticity to clean up, fillet, and prepare for manufacturing or precise downstream work. It's the one part of the bridge that flows from Blender to Plasticity, and it changes what you can prototype before committing to CAD.
+
+<PolySplinesShowcase
+  imageSize={500}
+  badge="Studio Only"
+  items={[
+    {
+      stage: 'Sub-D Mesh',
+      src: '/img/mesh.png',
+      alt: 'Subdivision mesh in Blender',
+      meta: [
+        { label: 'source',   value: 'Blender' },
+        { label: 'vertices', value: '80' },
+      ],
+    },
+    {
+      stage: 'NURBS',
+      src: '/img/nurbs.png',
+      alt: 'G2 NURBS surface in Plasticity',
+      meta: [
+        { label: 'source',     value: 'Plasticity' },
+        { label: 'continuity', value: 'G2' },
+      ],
+    },
+  ]}
+/>
+
+---
+
+## Workflow Helpers
+ 
+The bridge is built for the loop you actually work in, where geometry changes upstream and your downstream setup stays exactly where you left it. Materials and collections carry across automatically and a small panel of Blender commands handles everything else.
+ 
+<FeatureGrid minCardWidth={260}>
+  <FeatureCard
+    src="/img/modifiers-stacks.svg"
+    alt="Blender modifier panel showing Array, Mirror, and Scatter modifiers"
+    title="Modifier workflow"
+    text="Object level modifiers and scatter systems built on top of your imported geometry survive every refresh. Set up your procedural workflow once and keep iterating on the CAD upstream."
+  />
+  <FeatureCard
+    src="/img/collections-sync.svg"
+    alt="Plasticity groups appearing as Blender collections in the Outliner"
+    title="Collections sync"
+    text="Plasticity groups become Blender collections, scoped by the document name so multi file scenes stay clean."
+  />
+  <SelectionUtilitiesCard />
+</FeatureGrid>
+
+---
+
+<GetStartedPanel
+  title={<>Get Started!</>}
+  description="Free with every Plasticity license. Works with Blender 4.1 and newer on Windows, macOS, and Linux."
+  primaryCta={{
+    label: 'Download addon (.zip)',
+    href: 'https://github.com/nkallen/plasticity-blender-addon/archive/refs/heads/main.zip',
+  }}
+  secondaryCta={{
+    label: 'Read setup guide',
+    href: '/blender/install-blender-addon',
+  }}
+  steps={[
+    {
+      title: 'Install the .zip in Blender',
+      subtitle: 'Edit > Preferences > Add-ons > Install',
+      link: { label: 'Docs', href: '/blender/install-blender-addon#installing-blender-add-on' },
+    },
+    {
+      title: 'Enable the server in Plasticity',
+      subtitle: 'P menu > Preferences > Server > Enabled',
+      link: { label: 'Docs', href: '/blender/install-blender-addon#enabling-feature-in-plasticity' },
+    },
+    {
+      title: 'Connect from the Plasticity sidebar in Blender',
+      subtitle: '3D Viewport > Plasticity panel > Connect',
+      link: { label: 'Docs', href: '/blender/how-to-use' },
+    },
+  ]}
+/>

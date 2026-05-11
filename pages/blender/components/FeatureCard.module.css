@@ -1,0 +1,83 @@
+/* =========================================================
+   FeatureCard — image on top, title + text below.
+   Self-contained styles. No external CSS variables required.
+   ========================================================= */
+
+.card {
+  /* min-width: 0 lets the card shrink below its image's intrinsic
+     size when the parent grid gets narrow. Without this, cards can
+     refuse to shrink and overflow their container. */
+  min-width: 0;
+
+  background: #111114;
+  border: 1px solid #232327;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter Tight', system-ui, sans-serif;
+}
+
+/* ---- Image area ---- */
+.imageWrap {
+  width: 100%;
+  /* aspect-ratio comes from inline style — see component */
+  background: #0a0a0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+  color: #5a5955;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.02) 8px,
+      rgba(255, 255, 255, 0.02) 16px
+    ),
+    #111114;
+}
+
+/* ---- Body ---- */
+.body {
+  padding: 20px 22px 22px;
+}
+
+.title {
+  font-family: 'Instrument Serif', 'Times New Roman', serif;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #f5f4ef;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.text {
+  color: #a4a39d;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}

@@ -1,11 +1,135 @@
-# Einführung in Blender Bridge
+import { SelectionUtilitiesCard } from './components/SelectionUtilitiesCard';
+import { RefacetShowcase } from './components/RefacetShowcase';
+import { PolySplinesShowcase } from './components/PolySplinesShowcase';
+import { FeatureCard } from './components/FeatureCard';
+import { FeatureGrid } from './components/FeatureGrid';
+import { GetStartedPanel } from './components/Getstartedpanel';
 
-Die Blender Bridge ist ein Feature, das den schnellen Transfer von Mesh-Daten von Plasticity nach Blender ermöglicht. Dies wird als Blender Add-on realisiert. Sobald Sie verbunden sind, können Sie einfach auf Aktualisieren klicken, und die Daten werden sehr schnell geladen. Sie müssen sich keine Gedanken darüber machen, in eine temporäre Datei zu exportieren und alle Einstellungsoptionen richtig zu bekommen.
+# Einführung in die Blender Bridge
 
-Selbst wenn Sie die Geometrie in Plasticity ändern, bleiben die in Blender eingestellten Materialien erhalten. Darüber hinaus wird die Gruppenstruktur in Plasticity als Sammlung in Blender wiedergegeben. In diesem Prozess wird Blenders Hierarchie mit dem Plasticity Dokumentnamen als Identifikator erstellt. Daher können mehrere Plasticity-Dokumente in ein einziges Blender-Dokument integriert werden.
+Die Blender Bridge ist ein Plasticity‑Add-on für Blender, das Mesh-Daten zwischen beiden Anwendungen streamt. Einmal verbinden, Refresh drücken, und dein Modell erscheint in Blender. Keine temporären Dateien, keine Exportdialoge, keine Einstellungen, die man hinterfragen muss. Nutze es immer dann, wenn du Blender’s Rendering-, Licht-, Animations- oder Rigging‑Tools auf Plasticitys NURBS‑Modellierung anwenden möchtest.
 
-Es gibt auch eine Live-Link-Funktion. Der Live-Link ist ein wirklich cooles Feature; man kann sehen, wie Sachen in Echtzeit aktualisiert werden. Das Hauptarbeitspferd der Blender Bridge ist die Fähigkeit, Assets schnell reinzubekommen, so dass man sie mit Blender Materialien, Blender Beleuchtung, Raytracing sehen kann. Sie können Ihre Objekte in einer Szene mit der echten Kamera betrachten, die möglicherweise in einem Spiel oder in einem finalen Render verwendet wird, mit einem spezifischen FOV. Sie erhalten die volle Leistung von Blender, einschließlich dem Verknüpfen von Dingen zu Leerpunkten, so dass Sie sie animieren, riggen und sehen können, ob Ihre mechanischen Teile zusammenpassen.
+---
 
-Der Workflow ist auch ein fantastisches Erlebnis. Nachdem Sie das Plasticity-Dokument in die Blender-Szene eingefügt haben, können Sie immer noch die Facetteneinstellungen ändern. Fast alle Facetting-Tools von Plasticity sind innerhalb von Blender verfügbar. Das bedeutet, dass Sie schnell die benötigte Polygon-Dichte oder den Edge-Flow für Ihr Modell erhalten können, was zu einem schnelleren Workflow führt.
+## Live Link
 
-Die Spezifikation von UV-Nähten und Schärfen in Blender wird in der aktuellen Version nicht beibehalten. Das Blender Add-on kommt jedoch mit Funktionen, die Kanten automatisch markieren, automatisch Geometrie auswählen, die den Plasticity-Flächen oder -Kanten entspricht, und UV-Nähte zusammenführen. Diese Features tragen auch zu einem schnelleren Workflow bei.
+Schalte Live Link ein und jede Änderung in Plasticity fließt automatisch nach Blender. Keine Exporte, keine Temp-Dateien, kein Einstellungsdialog. Bewege einen Kontrollpunkt und sieh zu, wie sich der gerenderte Viewport in Sekunden aktualisiert. Es ist der schnellste Weg, dein Modell während der Arbeit im Kontext zu sehen – mit echten Blender‑Materialien, Cycles‑ oder Eevee‑Beleuchtung und der tatsächlichen Kamera deiner Szene, die auf jede Bearbeitung reagiert.
+
+<video
+  src="/img/test.mp4"
+  autoPlay
+  muted
+  loop
+  playsInline
+  style={{
+    width: '100%',
+    maxWidth: '700px',
+    borderRadius: '15px',
+    display: 'block',
+    margin: '24px auto',
+  }}
+/>
+
+---
+
+## Refacet und Remesh
+
+Alle Faceting‑Tools stehen im Blender‑Add-on zur Verfügung, sodass Toleranz, Kantenfluss und Polygon­dichte direkt im Plasticity‑Panel in Blender angepasst werden können. Beginne mit einer Low‑Poly‑Vorschau, erhöhe die Dichte für Renderings und gehe für den finalen Output noch weiter.
+
+Topologie‑Entscheidungen sind nicht mehr endgültig. Du kannst eine Szene mit einem Klick in einer anderen Dichte neu aufbauen, während Materialien, Licht und Kamera­einstellungen in derselben Datei erhalten bleiben.
+
+<RefacetShowcase
+  imageSize={425}
+  items={[
+    { stage: 'Default',   tolerance: '0.0005', faces: '5,625', src: '/img/default.png',   alt: 'Low-poly mesh' },
+    { stage: 'Low-Poly',  tolerance: '0.05',   faces: '170',  src: '/img/low-poly.png',  alt: 'Medium-density mesh' },
+    { stage: 'High-Poly', tolerance: '0.0001',   faces: '28,390', src: '/img/high-poly.png', alt: 'High-density mesh' },
+  ]}
+/>
+
+---
+
+## PolySplines
+
+Blocke eine Form mit Subdivision‑Surfaces in Blender aus, lege sie in die Outbox‑Gruppe, und Plasticity wandelt sie automatisch in G2‑kontinuierliche, editierbare NURBS um.
+
+Nutze es, wenn du eine Form schnell mit der Freiheit des Sub‑D‑Modellierens skizzieren möchtest und das Ergebnis anschließend an Plasticity zurückgeben willst, um es zu bereinigen, zu verrunden und für Fertigung oder präzise Weiterarbeit vorzubereiten. Es ist der einzige Teil der Bridge, der von Blender nach Plasticity fließt – und er verändert, was du prototypen kannst, bevor du dich auf CAD festlegst.
+
+<PolySplinesShowcase
+  imageSize={500}
+  badge="Studio Only"
+  items={[
+    {
+      stage: 'Sub-D Mesh',
+      src: '/img/mesh.png',
+      alt: 'Subdivision mesh in Blender',
+      meta: [
+        { label: 'source',   value: 'Blender' },
+        { label: 'vertices', value: '80' },
+      ],
+    },
+    {
+      stage: 'NURBS',
+      src: '/img/nurbs.png',
+      alt: 'G2 NURBS surface in Plasticity',
+      meta: [
+        { label: 'source',     value: 'Plasticity' },
+        { label: 'continuity', value: 'G2' },
+      ],
+    },
+  ]}
+/>
+
+---
+
+## Workflow‑Hilfen
+
+Die Bridge ist für den Arbeitszyklus gebaut, den du tatsächlich nutzt: Geometrie ändert sich upstream, während dein Setup downstream genau dort bleibt, wo du es gelassen hast. Materialien und Collections werden automatisch übernommen, und ein kleines Panel mit Blender‑Befehlen kümmert sich um den Rest.
+
+<FeatureGrid minCardWidth={260}>
+  <FeatureCard
+    src="/img/modifiers-stacks.svg"
+    alt="Blender modifier panel showing Array, Mirror, and Scatter modifiers"
+    title="Modifier‑Workflow"
+    text="Objekt‑Modifier und Scatter‑Systeme, die auf deiner importierten Geometrie aufbauen, überstehen jeden Refresh. Richte deinen prozeduralen Workflow einmal ein und iteriere weiter am CAD‑Modell upstream."
+  />
+  <FeatureCard
+    src="/img/collections-sync.svg"
+    alt="Plasticity groups appearing as Blender collections in the Outliner"
+    title="Collections‑Sync"
+    text="Plasticity‑Gruppen werden zu Blender‑Collections, nach Dokumentnamen gruppiert, damit Mehrdatei‑Szenen sauber bleiben."
+  />
+  <SelectionUtilitiesCard />
+</FeatureGrid>
+
+---
+
+<GetStartedPanel
+  title={<>Los geht’s!</>}
+  description="Kostenlos mit jeder Plasticity‑Lizenz. Funktioniert mit Blender 4.1 und neuer auf Windows, macOS und Linux."
+  primaryCta={{
+    label: 'Addon herunterladen (.zip)',
+    href: 'https://github.com/nkallen/plasticity-blender-addon/archive/refs/heads/main.zip',
+  }}
+  secondaryCta={{
+    label: 'Setup‑Anleitung lesen',
+    href: '/blender/install-blender-addon',
+  }}
+  steps={[
+    {
+      title: 'ZIP in Blender installieren',
+      subtitle: 'Edit > Preferences > Add-ons > Install',
+      link: { label: 'Docs', href: '/blender/install-blender-addon#installing-blender-add-on' },
+    },
+    {
+      title: 'Server in Plasticity aktivieren',
+      subtitle: 'P‑Menü > Preferences > Server > Enabled',
+      link: { label: 'Docs', href: '/blender/install-blender-addon#enabling-feature-in-plasticity' },
+    },
+    {
+      title: 'Aus Blender verbinden',
+      subtitle: '3D Viewport > Plasticity‑Panel > Connect',
+      link: { label: 'Docs', href: '/blender/how-to-use' },
+    },
+  ]}
+/>

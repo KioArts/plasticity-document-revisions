@@ -1,0 +1,213 @@
+/* =========================================================
+   RefacetShowcase — tabbed image showcase
+   Tabs, frame, and meta strip all share the same max-width
+   (set inline via the `imageSize` prop) and stack centered.
+   ========================================================= */
+
+.showcase {
+  margin: 24px 0;
+  width: 100%;
+
+  /* Stack the three sections centered, each capped to imageSize. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter Tight', system-ui, sans-serif;
+
+  /* Local theme — recolor here. */
+  --rs-bg:        #111114;
+  --rs-bg-elev:   #1a1a1f;
+  --rs-line:      #232327;
+  --rs-line-hi:   #3a3a42;
+  --rs-ink:       #f5f4ef;
+  --rs-ink-dim:   #a4a39d;
+  --rs-ink-faint: #5a5955;
+  --rs-accent:    #c084fc;
+  --rs-mono:      'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+
+/* ----- Tabs ----- */
+.tabs {
+  width: 100%;
+  /* max-width comes from inline style */
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--rs-bg);
+  border: 1px solid var(--rs-line);
+  border-radius: 12px;
+}
+
+.tab {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--rs-ink-faint);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--rs-ink-dim);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--rs-accent);
+  outline-offset: 2px;
+}
+
+.tabActive {
+  background: var(--rs-bg-elev);
+  color: var(--rs-ink);
+  box-shadow: inset 0 0 0 1px var(--rs-line-hi);
+}
+
+.tabActive:hover {
+  background: var(--rs-bg-elev);
+  color: var(--rs-ink);
+}
+
+.tabNum {
+  font-family: var(--rs-mono);
+  font-size: 11px;
+  color: var(--rs-ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.tabActive .tabNum {
+  color: var(--rs-accent);
+}
+
+.tabStage {
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ----- Image frame ----- */
+.frame {
+  width: 100%;
+  /* aspect-ratio and max-width come from inline style */
+  border: 1px solid var(--rs-line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0a0a0b;
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Subtle fade-in when switching tabs */
+  animation: rs-fade 240ms ease-out;
+}
+
+@keyframes rs-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Placeholder shown when an item has no `src` */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--rs-mono);
+  font-size: 13px;
+  color: var(--rs-ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.02) 10px,
+      rgba(255, 255, 255, 0.02) 20px
+    ),
+    var(--rs-bg);
+}
+
+.placeholder small {
+  font-size: 11px;
+  color: var(--rs-ink-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ----- Metadata strip ----- */
+.meta {
+  width: 100%;
+  /* max-width comes from inline style */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 10px 16px;
+  background: var(--rs-bg);
+  border: 1px solid var(--rs-line);
+  border-radius: 8px;
+  font-family: var(--rs-mono);
+  font-size: 12px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.metaKey {
+  color: var(--rs-ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+}
+
+.metaVal {
+  color: var(--rs-ink);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.metaDivider {
+  width: 1px;
+  height: 14px;
+  background: var(--rs-line);
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 600px) {
+  .tab {
+    padding: 8px 10px;
+    font-size: 12px;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .meta {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

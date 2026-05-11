@@ -1,0 +1,248 @@
+/* =========================================================
+   PolySplinesShowcase — tabbed image showcase
+   Same layout as RefacetShowcase. Metadata strip takes
+   variable key/value pairs.
+   ========================================================= */
+
+.showcase {
+  margin: 24px 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter Tight', system-ui, sans-serif;
+
+  /* Local theme — recolor here. */
+  --ps-bg:        #111114;
+  --ps-bg-elev:   #1a1a1f;
+  --ps-line:      #232327;
+  --ps-line-hi:   #3a3a42;
+  --ps-ink:       #f5f4ef;
+  --ps-ink-dim:   #a4a39d;
+  --ps-ink-faint: #5a5955;
+  --ps-accent:    #c084fc;
+  --ps-badge:     #ff7a45;
+  --ps-mono:      'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+
+/* ----- Tabs ----- */
+.tabs {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--ps-bg);
+  border: 1px solid var(--ps-line);
+  border-radius: 12px;
+}
+
+.tab {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--ps-ink-faint);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--ps-ink-dim);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--ps-accent);
+  outline-offset: 2px;
+}
+
+.tabActive {
+  background: var(--ps-bg-elev);
+  color: var(--ps-ink);
+  box-shadow: inset 0 0 0 1px var(--ps-line-hi);
+}
+
+.tabActive:hover {
+  background: var(--ps-bg-elev);
+  color: var(--ps-ink);
+}
+
+.tabNum {
+  font-family: var(--ps-mono);
+  font-size: 11px;
+  color: var(--ps-ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.tabActive .tabNum {
+  color: var(--ps-accent);
+}
+
+.tabStage {
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ----- Image frame -----
+   position: relative is needed so the badge can absolutely position
+   inside the frame. */
+.frame {
+  width: 100%;
+  border: 1px solid var(--ps-line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0a0a0b;
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: ps-fade 240ms ease-out;
+}
+
+@keyframes ps-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ----- Studio / tier badge -----
+   Bordered rectangle in the top-right corner, mono caps text,
+   accent orange. Sits over the image but doesn't intercept clicks. */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--ps-badge);
+  border-radius: 4px;
+  color: var(--ps-badge);
+  font-family: var(--ps-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* Placeholder shown when an item has no `src` */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--ps-mono);
+  font-size: 13px;
+  color: var(--ps-ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.02) 10px,
+      rgba(255, 255, 255, 0.02) 20px
+    ),
+    var(--ps-bg);
+}
+
+.placeholder small {
+  font-size: 11px;
+  color: var(--ps-ink-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ----- Metadata strip ----- */
+.meta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--ps-bg);
+  border: 1px solid var(--ps-line);
+  border-radius: 8px;
+  font-family: var(--ps-mono);
+  font-size: 12px;
+}
+
+.metaGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.metaKey {
+  color: var(--ps-ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+}
+
+.metaVal {
+  color: var(--ps-ink);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.metaDivider {
+  width: 1px;
+  height: 14px;
+  background: var(--ps-line);
+  display: inline-block;
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 600px) {
+  .tab {
+    padding: 8px 10px;
+    font-size: 12px;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .meta {
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .badge {
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+}

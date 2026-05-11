@@ -1,0 +1,102 @@
+/* =========================================================
+   GetStartedPanel — docs-style CTA panel.
+   Plain black background, no gradient, no decorative glow.
+   ========================================================= */
+
+.panel {
+  margin: 48px 0;
+  padding: 56px;
+  background: #111114;
+  border: 1px solid #232327;
+  border-radius: 24px;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter Tight', system-ui, sans-serif;
+
+  /* Local theme */
+  --gsp-ink:         #f5f4ef;
+  --gsp-ink-dim:     #a4a39d;
+  --gsp-line-strong: #2e2e33;
+  --gsp-bg:          #111114;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ---- Intro column ---- */
+.intro {
+  min-width: 0;
+}
+
+.title {
+  font-family: 'Instrument Serif', 'Times New Roman', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--gsp-ink);
+  margin: 0 0 18px;
+}
+
+.description {
+  color: var(--gsp-ink-dim);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 460px;
+}
+
+.actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 26px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btnPrimary {
+  background: var(--gsp-ink);
+  color: var(--gsp-bg);
+}
+
+.btnGhost {
+  color: var(--gsp-ink);
+  border: 1px solid var(--gsp-line-strong);
+}
+
+/* ---- Steps column ---- */
+.steps {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .panel {
+    padding: 40px 32px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+}

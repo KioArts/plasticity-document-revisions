@@ -1,11 +1,135 @@
-# Blender Bridgeの紹介
+import { SelectionUtilitiesCard } from './components/SelectionUtilitiesCard';
+import { RefacetShowcase } from './components/RefacetShowcase';
+import { PolySplinesShowcase } from './components/PolySplinesShowcase';
+import { FeatureCard } from './components/FeatureCard';
+import { FeatureGrid } from './components/FeatureGrid';
+import { GetStartedPanel } from './components/Getstartedpanel';
 
-Blender Bridgeは、PlasticityからBlenderへのメッシュデータを迅速に転送するための機能です。これはBlenderのアドオンとして実現されています。接続が完了すると、リフレッシュをクリックするだけで、データは非常に迅速にロードされます。一時的なファイルへのエクスポートやすべての設定オプションの調整を心配する必要はありません。
+# Blender Bridge の紹介
 
-Plasticityでジオメトリを変更しても、Blenderで設定したマテリアルは保持されます。さらに、Plasticityのグループ構造はBlenderのコレクションとして反映されます。この過程で、Plasticityのドキュメント名を識別子としてBlenderの階層が作成されます。そのため、複数のPlasticityドキュメントを1つのBlenderドキュメントに統合することができます。
+Blender Bridge は、Plasticity と Blender の間でメッシュデータをストリーミングする Blender 用の Plasticity アドオンです。一度接続し、Refresh を押すだけでモデルが Blender に現れます。テンポラリファイルもエクスポートダイアログも不要で、設定に悩む必要もありません。Plasticity の NURBS モデリングに、Blender のレンダリング・ライティング・アニメーション・リギングツールを組み合わせたいときにいつでも使えます。
 
-ライブリンク機能もあります。ライブリンクは本当にクールな機能で、リアルタイムでの更新を見ることができます。Blender Bridgeの真の働き者は、迅速にアセットを取り込む能力であり、それによってBlenderのマテリアル、ライティング、レイトレーシングを使用してアセットを見ることができます。特定のFOVを持つゲームや最終レンダリングで使用される本物のカメラでのシーン内でオブジェクトを見ることができます。Blenderの全機能、エンプティにアイテムを親として設定することを含めて、アニメートしたり、リグを組み立てたり、機械部品がしっかりと合うかどうかを確認することができます。
+---
 
-ワークフローも素晴らしい体験です。BlenderシーンにPlasticityドキュメントを配置した後でも、フェセッティングの設定を変更することができます。PlasticityのほぼすべてのフェセッティングツールはBlender内で利用可能です。これは、モデルに必要なポリゴンの密度やエッジの流れを迅速に取得できる、より速いワークフローを意味します。
+## Live Link
 
-現在のバージョンでは、BlenderでのUVシームやシャープの指定は保持されません。しかし、Blenderのアドオンには、エッジを自動的にマークする機能、Plasticityのフェイスやエッジに対応するジオメトリを自動的に選択する機能、およびUVシームをマージする機能が含まれています。これらの機能も、より速いワークフローに貢献しています。
+Live Link をオンにすると、Plasticity のすべての変更が自動的に Blender に流れ込みます。エクスポートもテンポラリファイルも設定ダイアログも不要です。制御点を動かすと、数秒でレンダービューポートが更新されます。作業中のモデルを文脈の中で確認する最速の方法で、Blender のマテリアル、Cycles/Eevee のライティング、そしてシーンのカメラがすべての編集にリアルタイムで反応します。
+
+<video
+  src="/img/test.mp4"
+  autoPlay
+  muted
+  loop
+  playsInline
+  style={{
+    width: '100%',
+    maxWidth: '700px',
+    borderRadius: '15px',
+    display: 'block',
+    margin: '24px auto',
+  }}
+/>
+
+---
+
+## Refacet と Remesh
+
+すべてのファセットツールは Blender アドオン内から利用でき、許容誤差・エッジフロー・ポリゴン密度を Blender の Plasticity パネルから直接調整できます。低ポリプレビューから始め、レンダリング準備ができたら高密度メッシュへ、最終出力ではさらに細かくすることも可能です。
+
+トポロジの決定は固定ではなくなります。マテリアル、ライティング、カメラ設定をそのままに、ワンクリックで異なる密度のシーンを再構築できます。
+
+<RefacetShowcase
+  imageSize={425}
+  items={[
+    { stage: 'Default',   tolerance: '0.0005', faces: '5,625', src: '/img/default.png',   alt: 'Low-poly mesh' },
+    { stage: 'Low-Poly',  tolerance: '0.05',   faces: '170',  src: '/img/low-poly.png',  alt: 'Medium-density mesh' },
+    { stage: 'High-Poly', tolerance: '0.0001',   faces: '28,390', src: '/img/high-poly.png', alt: 'High-density mesh' },
+  ]}
+/>
+
+---
+
+## PolySplines
+
+Blender でサブディビジョンサーフェスを使って形状をブロックアウトし、それを Outbox グループに入れると、Plasticity が自動的に G2 連続の編集可能な NURBS に変換します。
+
+Sub-D モデリングの自由さで素早く形をスケッチし、その結果を Plasticity に戻してクリーンアップ、フィレット、製造準備や精密作業に進めたいときに使います。これはブリッジの中で唯一 Blender → Plasticity の方向に流れる機能で、CAD にコミットする前に試作できる範囲を大きく広げます。
+
+<PolySplinesShowcase
+  imageSize={500}
+  badge="Studio Only"
+  items={[
+    {
+      stage: 'Sub-D Mesh',
+      src: '/img/mesh.png',
+      alt: 'Subdivision mesh in Blender',
+      meta: [
+        { label: 'source',   value: 'Blender' },
+        { label: 'vertices', value: '80' },
+      ],
+    },
+    {
+      stage: 'NURBS',
+      src: '/img/nurbs.png',
+      alt: 'G2 NURBS surface in Plasticity',
+      meta: [
+        { label: 'source',     value: 'Plasticity' },
+        { label: 'continuity', value: 'G2' },
+      ],
+    },
+  ]}
+/>
+
+---
+
+## ワークフロー支援機能
+
+ブリッジは、上流のジオメトリが変わり、下流のセットアップはそのまま維持されるという実際の作業ループに合わせて設計されています。マテリアルやコレクションは自動的に同期され、残りは小さな Blender コマンドパネルが処理します。
+
+<FeatureGrid minCardWidth={260}>
+  <FeatureCard
+    src="/img/modifiers-stacks.svg"
+    alt="Blender modifier panel showing Array, Mirror, and Scatter modifiers"
+    title="モディファイアワークフロー"
+    text="インポートしたジオメトリの上に構築されたオブジェクトレベルのモディファイアやスキャッターシステムは、Refresh のたびに保持されます。一度プロシージャルワークフローを構築すれば、上流の CAD を更新し続けるだけです。"
+  />
+  <FeatureCard
+    src="/img/collections-sync.svg"
+    alt="Plasticity groups appearing as Blender collections in the Outliner"
+    title="コレクション同期"
+    text="Plasticity のグループは Blender のコレクションとして表示され、ドキュメント名でスコープされるため、複数ファイルのシーンでも整理された状態を保てます。"
+  />
+  <SelectionUtilitiesCard />
+</FeatureGrid>
+
+---
+
+<GetStartedPanel
+  title={<>始めよう！</>}
+  description="すべての Plasticity ライセンスに無料で付属。Windows、macOS、Linux の Blender 4.1 以降に対応。"
+  primaryCta={{
+    label: 'アドオンをダウンロード (.zip)',
+    href: 'https://github.com/nkallen/plasticity-blender-addon/archive/refs/heads/main.zip',
+  }}
+  secondaryCta={{
+    label: 'セットアップガイドを読む',
+    href: '/blender/install-blender-addon',
+  }}
+  steps={[
+    {
+      title: 'Blender に .zip をインストール',
+      subtitle: 'Edit > Preferences > Add-ons > Install',
+      link: { label: 'Docs', href: '/blender/install-blender-addon#installing-blender-add-on' },
+    },
+    {
+      title: 'Plasticity でサーバーを有効化',
+      subtitle: 'P メニュー > Preferences > Server > Enabled',
+      link: { label: 'Docs', href: '/blender/install-blender-addon#enabling-feature-in-plasticity' },
+    },
+    {
+      title: 'Blender の Plasticity サイドバーから接続',
+      subtitle: '3D Viewport > Plasticity panel > Connect',
+      link: { label: 'Docs', href: '/blender/how-to-use' },
+    },
+  ]}
+/>

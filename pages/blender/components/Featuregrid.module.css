@@ -1,0 +1,13 @@
+/* =========================================================
+   FeatureGrid — auto-flowing horizontal grid wrapper.
+   The grid-template-columns and gap come from inline style
+   (props on the component) so they're configurable per use.
+   ========================================================= */
+
+.grid {
+  display: grid;
+  /* grid-template-columns and gap come from inline style */
+  margin: 24px 0;
+  width: 100%;
+  max-width: 100%;
+}

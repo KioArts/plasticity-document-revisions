@@ -1,28 +1,34 @@
-# Blender Bridgeのセットアップ
+----
 
-Blender Bridgeの機能を使うには、Blenderへのアドオンのインストールと、Plasticityでの機能の有効化が必要です。
+# Blender Bridge のセットアップ
 
-## Blenderアドオンのインストール
+Blender Bridge を使用するには、Blender にアドオンをインストールし、Plasticity でサーバーを有効にします。セットアップは一度行えば完了し、その後は両方のアプリが起動しているだけで自動的に接続されます。
 
-1. 公式のGitHubリポジトリからBlender Bridgeアドオンをダウンロードします。以下は最新バージョンへの直接のリンクです。: 
-    [plasticity-blender-addon-main.zip](https://github.com/nkallen/plasticity-blender-addon/archive/refs/heads/main.zip)
+## Blender アドオンのインストール
 
-2. Blenderを起動します。
+1. 最新バージョンのアドオンをダウンロードします：  
+   [plasticity-blender-addon-main.zip](https://github.com/nkallen/plasticity-blender-addon/archive/refs/heads/main.zip)
 
-3. 通常の方法でplasticity-blender-addon-main.zipをBlenderアドオンとしてインストールします。
-    - Blenderを開きます。
-    - Edit > Preferences > Add-ons に移動します。
-    - "Install..." をクリックし、ダウンロードしたzipファイルを選択します。
-    - "[ ]Object: Plasticity" がリストに表示されるまでに時間がかかる場合があることに注意してください。
+2. Blender を起動します。
 
-4. インストールが完了すると、3Dビューポートのサイドバーに"Plasticity" を見つけることができます。
+3. **Edit > Preferences > Add-ons** を開きます。
 
-## Plasticityでの機能の有効化
+4. **Install...** をクリックし、ダウンロードした zip ファイルを選択します。Blender は zip を直接読み込むため、事前に解凍しないでください。
 
-1. Plasticityを起動します。
+5. リストに **Object: Plasticity** が表示されたらチェックを入れます。初回インストール時は読み込みに少し時間がかかる場合があります。
 
-2. 画面左上のPメニューからPreferencesを開きます。
+有効化すると、3D ビューポートのサイドバーに **Plasticity** パネルが表示されます。サイドバーが非表示の場合は <kbd>N</kbd> を押してください。
 
-3. 左側のServerを開き、Enabledにチェックリストを入れます。
+## Plasticity でサーバーを有効にする
 
-以上で、Blender Bridgeの機能を使う準備が整いました。
+1. Plasticity を起動します。
+
+2. 画面左上の **P** メニューから **Preferences** を開きます。
+
+3. 左側のリストから **Server** を選択します。
+
+4. **Enabled** にチェックを入れます。
+
+これで両側のブリッジが有効になりました。準備完了です。
+
+最初の更新操作やワークフロー全体を確認するには、[Blender Bridge の使い方](/blender/how-to-use) をチェックしてください。
