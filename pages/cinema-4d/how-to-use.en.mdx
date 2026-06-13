@@ -115,8 +115,8 @@ In Cinema 4D Bridge this workflow is built around **Subdivision Surface** object
 
         ![Outliner C4D](/img/c4d-outliner-polysplines.png)
 
-    4. Create a **Subdivision Surface** object and place it inside the **Outbox** null. Parent your geometry under that Subdivision Surface. **Please note:** Currently, parametric objects are not supported. To pass your object, you must first convert it into a polygon mesh (Make Editable).
-        - *Support for live procedural and parametric setups is planned for future updates.*
+    4. 4. Create a **Subdivision Surface** object and place it inside the **Outbox** null. Parent your cage geometry (a Polygon Object, a primitive such as Cube or Sphere, or any generator stack such as Symmetry, Connect, Boole or Array) under that Subdivision Surface. The Subdivision Surface's Editor Subdivision level must be **at least 1**.
+        - The control cage is resolved automatically. Primitives, generators, and even nested generator stacks are evaluated through Cinema 4D's cache system, so you can upload live procedural setups without having to make them editable first.
         - Objects in the Outbox are protected from incoming Plasticity updates — your cage will not be overwritten on refresh.
 
         ![SDS Cage](/img/c4d-outliner-polysplines-02.png)
