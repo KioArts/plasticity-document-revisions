@@ -115,8 +115,8 @@ In Cinema 4D Bridge basiert dieser Workflow auf **Subdivision Surface**-Objekten
 
         ![Outliner C4D](/img/c4d-outliner-polysplines.png)
 
-    4. Erstellen Sie ein **Subdivision Surface**-Objekt und platzieren Sie es innerhalb des **Outbox**-Nulls. Ordnen Sie Ihre Geometrie diesem Subdivision Surface unter. **Bitte beachten Sie:** Aktuell wird Parametrik nicht unterstützt. Um das Objekt korrekt zu übergeben, muss es zunächst in ein Polygon-Objekt umgewandelt werden ("Grundobjekt konvertieren" / "Make Editable").
-        - *Die Unterstützung für prozedurale und parametrische Setups ist für zukünftige Updates geplant.*
+    4. Erstellen Sie ein **Subdivision Surface**-Objekt und platzieren Sie es innerhalb des **Outbox**-Nulls. Setzen Sie Ihre Kontrollkäfig-Geometrie (ein Polygon-Objekt, ein Primitiv wie Würfel oder Kugel oder einen beliebigen Generator-Stack wie Symmetrie, Verbinden, Boole oder Array) als Kind unter dieses Subdivision Surface. Die Editor-Unterteilungsstufe des Subdivision Surface muss **mindestens 1** sein.
+        - Der Kontrollkäfig wird automatisch aufgelöst. Primitive, Generatoren und sogar verschachtelte Generator-Stacks werden über das Cache-System von Cinema 4D ausgewertet, sodass Sie live-prozedurale Setups hochladen können, ohne sie zuvor editierbar machen zu müssen.
         - Objekte im Outbox sind vor eingehenden Plasticity-Updates geschützt — Ihr Käfig wird beim Refresh nicht überschrieben.
 
         ![SDS-Käfig](/img/c4d-outliner-polysplines-02.png)
