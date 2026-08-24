@@ -6,71 +6,196 @@ import { Callout } from 'nextra/components'
 
 # アセット
 
-アセットセクションには、現在アクティブなPlasticityプロジェクトで使用されているすべてのマテリアルが表示されます。
+アセットセクションには、Plasticity で現在利用可能なすべてのアセットパックが表示されます。この新しいアセット管理ワークフローを使用すると、再利用可能なコンポーネントライブラリを作成し、他のユーザーと共有し、事前に作成されたジオメトリでシーンを素早く構成できます。
 
-![アセット](/img/assets.png)
+![Assets](/img/assets.png)
 
-## 表示されるマテリアル
 
-- 作成したすべてのマテリアルは、「使用されているマテリアル」セクションに表示されます。
-- マテリアルのプロパティを変更すると、関連するすべてのオブジェクトがリアルタイムで更新されます。
-- マテリアルはリストから削除することはできません。
-- このセクションは、新しいマテリアルを割り当てる際のカラーパレットとして使用できます。
+## アセットパックの使い方
 
-## マテリアルを選択
+Assets パネルは、Plasticity インターフェースの左側のリボンの上から3番目**(1)**にあります。アセットパックとは、インセットやグリーブルなどの既製オブジェクトのコレクションを1つのファイルにまとめたもので、プロジェクト間でインポートして再利用できます。
 
-- マテリアルを右クリックすると、「このマテリアルで選択されたすべてのオブジェクトを選択」というオプションが表示され、同じマテリアルを共有するすべてのオブジェクトを迅速に選択できます。
+![Assets Panel Location](/img/assets-panel.png)
 
-![共有マテリアルでオブジェクトを選択](/img/assets-select-materials.png)
+### 基本的な使い方
 
-## 物理マテリアル
+1. Assets パネルを開きます。
+2. アセットパックをまだインポートしていない場合は、**Add Asset Pack** ボタン - <ButtonIcon type="button-add-asset-pack"/> をクリックして、コンピューターからアセットパックファイル(.plasticitypack)をインポートします。
+  - 詳細については [Importing Asset Packs](#importing-asset-packs) セクションを参照してください。
+  - アセットパックの作成方法や、アセットを他のユーザーと共有する方法については、[Mark Objects as Assets](#marking-objects-as-assets) セクションおよび [Export Asset Packs](#exporting-asset-packs) セクションを参照してください。
+3. アセットパックがインポートされると、フォルダー内の利用可能なアセットを参照できます。
+4. アセットをシーンに挿入するには、Assets フォルダーからビューポートにドラッグ&ドロップするだけです。
+  - **Place** コマンドが自動的に呼び出されます。詳細は [Place](/common/place) を参照してください。
+5. 右クリックしてシーン内のアセットの配置を確定します。
+6. アセットが追加されました。
 
-Assetsパネルの下部には、Plasticityに付属しているさまざまな物理マテリアルが表示されます。正しく表示するには、[レンダーモード](/plasticity-essentials/render-mode) を有効にして、オブジェクト上にシェーダーが視覚化されるようにしてください。
+<VideoPlayer fileName="use-asset-pack"/>
 
-### 物理マテリアルの編集
-
-各マテリアルには、独自のマテリアルプロパティを含むプリセットが用意されています。これらのプロパティは、キーボードで <kbd>M</kbd> を押すことで編集できます。
-
-- **テクスチャスケール:** テクスチャ全体のスケールを調整します。
-- **ブレンディング:** トライプラナー投影のブレンディングを制御します。値が0の場合は最大ブレンディング、7の場合は境界でのブレンディングが適用されません。明らかな継ぎ目を隠すのに便利です。
-- **回転:** オブジェクトに適用されたマテリアルを回転させます。
-  - **X軸回転:** マテリアル全体をワールド座標系のX軸で回転します。
-  - **Y軸回転:** マテリアル全体をワールド座標系のY軸で回転します。
-  - **Z軸回転:** マテリアル全体をワールド座標系のZ軸で回転します。
-
-![物理マテリアルの編集](/img/physical-materials.png)
-
-<VideoPlayer fileName="physical-material"/>
-
-### 表示されているマテリアル
-
-以下は、プレビュー可能なすべての物理マテリアルの一覧表です：
-
-| 名前   | サムネイルプレビュー | 名前   | サムネイルプレビュー |
-|:------:|:---------------------:|:------:|:----------------------:|
-|Aluminum |![Aluminum](/img/aluminum.png)| Bronze Oxidized   | ![Bronze Oxidized](/img/bronze-oxidized.png)  |
-|Aluminum Brushed|![Aluminum Brushed](/img/aluminum-brushed.png)| Brass  | ![Brass](/img/brass.png)   |
-|Aluminum Matte|![Aluminum Matte](/img/aluminum-matte.png)| Brass Oxidized   | ![Brass Oxidized](/img/brass-oxidized.png) |
-|Gold Foil | ![Gold Foil](/img/gold-foil.png)  | Car Paint     | ![Car Paint](/img/car-paint.png)  |
-|White Plastic | ![White Plastic](/img/white-plastic.png) | Concrete      | ![Concrete](/img/concrete.png)  |
-|Rubber | ![Rubber](/img/rubber.png) | Royal Blue Linen  | ![Royal Blue Linen](/img/royal-blue-linen.png)  |
-|Plastic Rough | ![Plastic Rough](/img/plastic-rough.png)  |Porcelain Fabric     | ![Porcelain Fabric](/img/porcelain-fabric.png) |
-|Nickel | ![Nickel](/img/nickel.png)  | Brown Leather     | ![Brown Leather](/img/brown-leather.png)   |
-|Nickel Oxidized | ![Nickel Oxidized](/img/nickel-oxidized.png)   | Milan Polished Marble     | ![Milan Polished Marble](/img/milan-polished-marble.png) |
-|Iron | ![Iron](/img/iron.png)  | Stainless Steel Brushed     | ![Stainless Steel Brushed](/img/stainless-steel-brushed.png) |
-|Gold | ![Gold](/img/gold.png)   |  Simple Plaster    | ![Simple Plaster](/img/simple-plaster.png)  |
-|Copper | ![Copper](/img/copper.png)   |Sandstone    | ![Sandstone](/img/sandstone.png) |
-|Copper Oxidized    | ![Copper Oxidized](/img/copper-oxidized.png)  |  Perforated Metal    | ![Perforated Metal](/img/perforated-netal.png) |
-|Copper Brushed   | ![Copper Brushed](/img/copper-brushed.png)  | Hex Metal    | ![Hex Metal](/img/hex-metal.png) |
-|Copper Old    | ![Copper Old](/img/copper-old.png)   | Wood Dark Maple    | ![Wood Dark Maple](/img/wood-dark-maple.png)  |
-|Chrome    | ![Chrome](/img/chrome.png)   | Wood Painted Green    | ![Wood Painted Green](/img/wood-painted-green.png)   |
-|Bronze    | ![Bronze](/img/bronze.png)   | Wood Walnut    | ![Wood Walnut](/img/wood-walnut.png)  |
-
-<Callout type="info" emoji="🗒️">
-**注意**  
-- オブジェクトをメッシュやCADファイルとしてエクスポートしても、BlenderやMayaなどのDCC（デジタルコンテンツ制作）ソフトウェアにインポートする際に物理マテリアルのプロパティは保持されません。これらのマテリアルはPlasticity内でのビジュアライゼーションを目的としており、マテリアルシェーダーを使ってオブジェクトのコンセプトを表現するためのものです。
+<Callout type="info">
+- 独自のアセットパックを作成する方法については [Mark Objects as Assets](#marking-objects-as-assets) を参照してください。
+- Plasticity プロジェクトに新しいアセットを取り込む方法については [Import Asset Packs](#importing-asset-packs) を参照してください。
+- アセットを他のユーザーと共有する方法については [Export Asset Packs](#exporting-asset-packs) を参照してください。
+- アセットを元の状態に戻す方法については [Reload Assets](#reloading-assets) を参照してください。
 </Callout>
 
-## See also
+## オブジェクトをアセットとしてマークする
+
+<CommandReference
+  command="Toggle Asset"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-toggle-asset.png"
+  tier="both"
+/>
+
+オブジェクトを選択し、コマンドパレットから **Toggle Asset** コマンドを使用してアセットとしてマークできます。
+
+### 基本的な使い方
+
+1. ビューポート内でオブジェクトを選択します。
+2. コマンドパレットで **Toggle Asset** を検索して実行します。
+  - あるいは、Outliner 内のオブジェクトを右クリックして **Mark as Asset** を選択することもできます。
+3. オブジェクトはアセットとしてマークされ、Outliner 内でアセットであることを示すアイコンが表示されます - <ButtonIcon type="button-asset-icon-indicator"/>。アセットのマークを解除するには、オブジェクトを選択して **Toggle Asset** コマンドを再度実行します。
+  - あるいは、Outliner 内のオブジェクトを右クリックして **Unmark as Asset** を選択することもできます。
+
+<VideoPlayer fileName="mark-as-asset-in-viewport"/>
+
+## アセットパックのインポート
+
+アセットパックのインポートは簡単な操作で、Plasticity プロジェクトに新しいアセットを取り込むことができます。
+
+<Callout type="info">
+アセットパックを保存するためのマスターディレクトリを用意しておくことをお勧めします。そうすることで、アクセスや整理がしやすくなります。この方法であれば、アセットパックへのリンクが保持されるため、必要なときに簡単に再読み込みできます。アセットパックを移動または名前変更した場合は、Plasticity に再インポートする必要があります。
+</Callout>
+
+### 基本的な使い方
+
+Plasticity にアセットパックをインポートする方法は3つあります。
+
+#### ドラッグ&ドロップ
+
+1. アセットパックファイルを Plasticity のビューポートに直接ドラッグ&ドロップします。
+2. アセットパックがインポートされ、Assets パネルに追加されます。
+
+<VideoPlayer fileName="drag-and-drop-asset-pack"/>
+
+#### Import/Append メニューからインポート
+
+1. **File** > **Import/Append...** > **[アセットパック名].plasticitypack** に移動します。
+2. コンピューターからアセットパックファイルを選択し、**Open** をクリックします。
+
+<VideoPlayer fileName="import-asset-pack-file"/>
+
+<Callout type="info">
+アセットパックは Outliner にはインポートされますが、Assets パネルには追加されません。グループフォルダーには、自動的にアセットとしてマークされたオブジェクトが含まれます。
+</Callout>
+
+#### Assets パネルからアセットパックをインポートする
+
+1. Assets パネルを開きます。
+2. **Add Asset Pack** ボタン - <ButtonIcon type="button-add-asset-pack"/> をクリックします。
+3. コンピューターからアセットパックファイル(.plasticitypack)を選択します。
+
+<VideoPlayer fileName="import-asset-pack-panel"/>
+
+## アセットパックのエクスポート
+
+<CommandReference
+  command="Export Asset Pack"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-export-asset-pack.png"
+  tier="both"
+/>
+
+アセットパックをエクスポートすると、アセットを他のユーザーと共有したり、別の Plasticity プロジェクトで使用したりできます。
+
+<Callout type="info">
+アセットパックをエクスポートすると、デフォルトで自動的に Assets パネルに追加されます。
+</Callout>
+
+### 基本的な使い方
+
+Plasticity からアセットパックをエクスポートする方法は1つあります。
+
+#### Export Asset Pack コマンドを実行してエクスポートする
+
+1. Outliner 内でオブジェクトがアセットとしてマークされていることを確認します。
+  - Outliner 内のオブジェクトを右クリックし、**Mark as Asset** を選択します。
+  - あるいは、コマンドパレットから **Toggle Asset** コマンドを使用してオブジェクトをアセットとしてマークすることもできます。
+2. コマンドパレットで **Export Asset Pack** を検索して実行します。
+3. 保存場所の選択を求めるウィンドウが表示されます。任意の場所を選択し、**Save** をクリックします。
+4. アセットパックがエクスポートされました。
+
+{/* <VideoPlayer fileName="export-asset-pack"/> */}
+
+## アセットの再読み込み
+
+<CommandReference
+  command="Reload Asset"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-reload-asset.png"
+  tier="both"
+/>
+
+アセットを再読み込みすると、基本的にデフォルトの元の状態に戻ります。これは、アセットに変更を加えた後、元の形に戻したい場合に便利です。
+
+これは、アセットをシーンに挿入して変更を加えた場合に有効です。アセットのステータスが「linked」である必要があることに注意してください - <ButtonIcon type="button-asset-linked"/>。
+
+![Reload Asset](/img/reload-asset.png)
+
+### 基本的な使い方
+
+1. 変更されたアセットを選択します。
+2. コマンドパレットで **Reload Asset** を検索して実行します。
+  - あるいは、Outliner 内のアセットを右クリックして **Reload Asset** を選択することもできます。
+3. アセットが元の状態に戻ります。
+
+<VideoPlayer fileName="reload-asset"/>
+
+## コンテキストメニュー
+
+Plasticity では、**Outliner** と **Asset タブ** の両方で右クリックのコンテキストメニューが用意されており、右クリックする対象によって表示されるオプションが異なります。
+
+### Outliner
+
+#### 通常のオブジェクトを右クリックする
+
+通常の(アセットではない)オブジェクトを右クリックすると、**Mark as Asset** オプションが表示されます。
+
+![Outliner - Mark as Asset](/img/outliner-mark-as-asset.png)
+
+すでにアセットとしてマークされているオブジェクトを右クリックすると、代わりに **Unmark as Asset** オプションが表示されます。
+
+![Outliner - Unmark as Asset](/img/outliner-unmark-as-asset.png)
+
+#### リンクされたアセットを右クリックする
+
+Outliner 内で**リンクされている(linked)**アセットを右クリックすると、**Reload Asset** オプションが表示されます。
+
+![Outliner - Reload Asset](/img/outliner-assets-menu-linked-reload.png)
+
+### Asset タブ
+
+#### アセットパックを右クリックする
+
+アセットパックを右クリックすると、2つのオプションが表示されます。
+
+- **Reveal File in Browser** - コンピューター上のアセットパックのファイルの場所を開きます。
+- **Remove Asset Pack** - Assets パネルからアセットパックを削除します。
+
+![Asset Tab - Asset Pack Options](/img/asset-tab-menu.png)
+
+#### アセットを右クリックする
+
+アセットパックフォルダー内の個々のアセットを右クリックすると、2つのオプションが表示されます。
+
+- **Select All Instances of This Asset** - シーン内にある、そのアセットのすべてのインスタンスを選択します。
+- **Reload All Instances of This Asset** - シーン内にあるそのアセットのすべてのインスタンスを元の状態に戻します。
+
+![Asset Tab - Individual Asset Options](/img/asset-tab-menu-asset.png)
+
+## 関連項目
 - [Set Material](/common/set-material)
 - [View Mode](/plasticity-essentials/plasticity-interface/view-mode)
