@@ -6,73 +6,195 @@ import { Callout } from 'nextra/components'
 
 # Assets
 
-The Assets section displays all materials currently in use within the active Plasticity project. 
+The Assets section displays all asset packs currently available in Plasticity. This new asset management workflow lets you create reusable component libraries, share them with other users, and quickly populate scenes with pre-built geometry.
 
 ![Assets](/img/assets.png)
 
-## Displayed Materials
 
-- Every material you create appears in the **Used Materials** section.  
-- Changing a material's properties updates all objects that use it in real time.  
-- Materials can't be removed from the list; they disappear only after every object that references them has been deleted from the scene.  
-- To assign a material to other objects, simply drag and drop it from either the **Used Materials** or **Materials Library** sections onto the target object.  
+## How to Use Asset Packs
 
-## Select Materials
+The Assets panel is located in the left ribbon of the Plasticity interface, third from the top **(1)**. An asset pack is a collection of pre-made objects such as insets or greebles that are bundled into a single file so you can import and reuse across projects.
 
-- Right-clicking a material opens the "Select All with This Material" option, allowing you to quickly select all objects sharing that material.
+![Assets Panel Location](/img/assets-panel.png)
 
-![Select Objects with Shared Materials](/img/assets-select-materials.png)
+### Basic Usage
 
-## Physical Materials
+1. Open the Assets panel.
+2. If you don't have any asset packs imported, click on the **Add Asset Pack** button - <ButtonIcon type="button-add-asset-pack"/> to import an asset pack file (.plasticitypack) from your computer.
+  - Check out the [Importing Asset Packs](#importing-asset-packs) section for more details.
+  - Check out the [Mark Objects as Assets](#marking-objects-as-assets) and [Export Asset Packs](#exporting-asset-packs) sections for more details on how to create an asset pack and share your assets with others.
+3. Once the asset pack is imported, you can browse through the available assets in the folder.
+4. To insert an asset into your scene, simply drag and drop it from the Assets folder into the viewport.
+  - The **Place** command will be automatically invoked - see [Place](/common/place) for more details.
+5. Right-click to confirm the placement of the asset in the scene.
+6. Your asset has been added.
 
-In the bottom section of the Assets panel, you'll find a broad selection of Physical Materials that come with Plasticity. To view them properly, make sure [Render Mode](/plasticity-essentials/render-mode) is activated so the shaders are visualized on the objects. 
+<VideoPlayer fileName="use-asset-pack"/>
 
-### Editing Physical Materials
-
-Each material comes with a preset containing unique material properties. You can edit these properties by pressing <kbd>M</kbd> on your keyboard.
-
-- **Texture scale:** Adjusts the overall scale of the texture.
-- **Blending:** Controls the triplanar projection blending. A value of 0 applies maximum blending, while 7 applies no blending at the borders. Useful for hiding obvious seams.
-- **Rotate:** Rotates the material applied to the object.
-            - **Rotate X:** Rotates the entire material around the X-axis in world coordinates.
-            - **Rotate Y:** Rotates the entire material around the Y-axis in world coordinates.
-            - **Rotate Z:** Rotates the entire material around the Z-axis in world coordinates.
-
-![Physical Material - Edit](/img/physical-materials.png)
-
-<VideoPlayer fileName="physical-material"/>
-
-### Displayed Materials
-
-Below is a table list with all of the available physical materials for preview:
-
-| Name   | Thumbnail Preview   | Name   | Thumbnail Preview    |
-|:------:|:---------------------:|:------:|:----------------------:|
-|Aluminum |![Aluminum](/img/aluminum.png)| Brass   | ![Brass](/img/brass.png)  |
-|Aluminum Brushed|![Aluminum Brushed](/img/aluminum-brushed.png)| Brass Oxidized  | ![Brass Oxidized](/img/brass-oxidized.png)   |
-|Aluminum Matte|![Aluminum Matte](/img/aluminum-matte.png)| Car Paint   | ![Car Paint](/img/car-paint.png) |
-|Gold Foil | ![Gold Foil](/img/gold-foil.png)  | Concrete     | ![Concrete](/img/concrete.png)  |
-|White Plastic | ![White Plastic](/img/white-plastic.png) | Royal Blue Linen      | ![Royal Blue Linen](/img/royal-blue-linen.png)  |
-|Rubber | ![Rubber](/img/rubber.png) | Porcelain Fabric  | ![Porcelain Fabric](/img/porcelain-fabric.png)  |
-|Plastic Rough | ![Plastic Rough](/img/plastic-rough.png)  | Brown Leather     | ![Brown Leather](/img/brown-leather.png) |
-|Nickel | ![Nickel](/img/nickel.png)  | Milan Polished Marble     | ![Milan Polished Marble](/img/milan-polished-marble.png)   |
-|Nickel Oxidized | ![Nickel Oxidized](/img/nickel-oxidized.png)   | Cathedral Tile     | ![Cathedral Tile](/img/cathedral-tile.png) |
-|Iron | ![Iron](/img/iron.png)  | Stainless Steel Brushed     | ![Stainless Steel Brushed](/img/stainless-steel-brushed.png) |
-|Gold | ![Gold](/img/gold.png)   |  Simple Plaster    | ![Simple Plaster](/img/simple-plaster.png)  |
-|Copper | ![Copper](/img/copper.png)   |Sandstone    | ![Sandstone](/img/sandstone.png) |
-|Copper Oxidized    | ![Copper Oxidized](/img/copper-oxidized.png)  |  Perforated Metal    | ![Perforated Metal](/img/perforated-netal.png) |
-|Copper Brushed   | ![Copper Brushed](/img/copper-brushed.png)  | Hex Metal    | ![Hex Metal](/img/hex-metal.png) |
-|Copper Old    | ![Copper Old](/img/copper-old.png)   | Wood Dark Maple    | ![Wood Dark Maple](/img/wood-dark-maple.png)  |
-|Chrome    | ![Chrome](/img/chrome.png)   | Wood Painted Green    | ![Wood Painted Green](/img/wood-painted-green.png)   |
-|Bronze    | ![Bronze](/img/bronze.png)   | Wood Walnut    | ![Wood Walnut](/img/wood-walnut.png)  |
-|Bronze Oxidized    | ![Bronze Oxidized](/img/bronze-oxidized.png)   |    |    |
-
-
-
-<Callout type="info" emoji="🗒️">
-**Note**
-- Exporting the object as a mesh or CAD file will not preserve the physical material properties when imported into DCC (Digital Content Creation) software such as Blender or Maya. These materials are intended for visualization within Plasticity, allowing you to present the concept of an object using material shaders.
+<Callout type="info">
+- See how to [Mark Objects as Assets](#marking-objects-as-assets) to create your own asset packs.
+- See how to [Import Asset Packs](#importing-asset-packs) to bring in new assets into your Plasticity project.
+- See how to [Export Asset Packs](#exporting-asset-packs) to share your assets with others.
+- See how to [Reload Assets](#reloading-assets) to revert an asset back to its original state.
 </Callout>
+
+## Marking Objects as Assets
+
+<CommandReference
+  command="Toggle Asset"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-toggle-asset.png"
+  tier="both"
+/>
+
+You can select the object and use **Toggle Asset** command to mark it as an asset from the Command Palette.
+
+### Basic Usage
+
+1. Select the object in the viewport.
+2. Search for **Toggle Asset** in the Command Palette and execute it.
+  - Alternatively, you can right-click on the object in the Outliner and select **Mark as Asset**.
+3. The object is now marked as an asset and will have an icon indicating that it is an asset in the Outliner - <ButtonIcon type="button-asset-icon-indicator"/>. To unmark an asset, select the object and execute the **Toggle Asset** command again.
+  - Alternatively, you can right-click on the object in the Outliner and select **Unmark as Asset**.
+
+<VideoPlayer fileName="mark-as-asset-in-viewport"/>
+
+## Importing Asset Packs
+
+Importing asset packs is a simple process that allows you to bring in new assets into your Plasticity project.
+
+<Callout type="info">
+It is recommended to have a master directory where you can store your asset packs for easy access and organization. This way the connection link to the asset packs will remain intact and you can easily reload them when needed. If you move or rename the asset pack, you will need to re-import it into Plasticity.
+</Callout>
+
+### Basic Usage
+
+There are three ways to import asset packs into Plasticity: 
+
+#### Drag And Drop
+
+1. Drag and drop the asset pack file directly into the Plasticity viewport.
+2. The asset pack will be imported and added to the Assets panel.
+
+<VideoPlayer fileName="drag-and-drop-asset-pack"/>
+
+#### Import from Import/Append Menu
+
+1. Go to **File** > **Import/Append...** > **[Asset Pack Name].plasticitypack**.
+2. Select the asset pack file from your computer and click **Open**.
+
+<VideoPlayer fileName="import-asset-pack-file"/>
+
+<Callout type="info">
+Asset packs are imported into the Outliner, but they are not added to the Assets panel. The group folder will contain the objects that are automatically marked as assets.
+</Callout>
+
+#### Importing Asset Packs from the Assets Panel
+
+1. Open the Assets panel.
+2. Click on the **Add Asset Pack** button - <ButtonIcon type="button-add-asset-pack"/>.
+3. Select the asset pack file (.plasticitypack) from your computer.
+
+<VideoPlayer fileName="import-asset-pack-panel"/>
+
+## Exporting Asset Packs
+
+<CommandReference
+  command="Export Asset Pack"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-export-asset-pack.png"
+  tier="both"
+/>
+
+Exporting asset packs allows you to share your assets with others or use them in different Plasticity projects.
+
+<Callout type="info">
+After exporting an asset pack, it will automatically be added to the Assets panel by default. 
+</Callout>
+
+### Basic Usage
+
+There is one way to export asset packs from Plasticity:
+
+#### Export from Invoking the Export Asset Pack command
+
+1. Ensure that the object is marked as an asset in the Outliner.
+  - Right-click on the object in the Outliner and select **Mark as Asset**.
+  - Alternatively, you can use the **Toggle Asset** command from the Command Palette to mark the object as an asset.
+2. Search for **Export Asset Pack** in the Command Palette and execute it.
+3. A window will pop up asking you to select a location to save the asset pack. Choose your desired location and click **Save**.
+4. Your asset pack has been exported.
+
+{/* <VideoPlayer fileName="export-asset-pack"/> */}
+
+## Reloading Assets
+
+<CommandReference
+  command="Reload Asset"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-reload-asset.png"
+  tier="both"
+/>
+
+Reloading an asset will essentially revert it to its default, original state. This is useful if you've made changes to an asset and want to revert it back to its original form.
+
+This takes effect when you've inserted an asset into your scene and made changes to it. Note that the asset needs to have a status of "linked" - <ButtonIcon type="button-asset-linked"/>.
+
+![Reload Asset](/img/reload-asset.png)
+
+### Basic Usage
+
+1. Select the modified asset.
+2. Search for **Reload Asset** in the Command Palette and execute it.
+  - Alternatively, you can right-click on the asset in the Outliner and select **Reload Asset**.
+3. The asset will be reverted back to its original state.
+
+<VideoPlayer fileName="reload-asset"/>
+
+## Context Menu
+
+Plasticity provides right-click context menus in both the **Outliner** and the **Asset Tab**, with different options depending on what you right-click.
+
+### Outliner
+
+#### Right-Click on a Regular Object
+
+Right-clicking on a regular (non-asset) object gives you the option to **Mark as Asset**.
+
+![Outliner - Mark as Asset](/img/outliner-mark-as-asset.png)
+
+Right-clicking on an object already marked as an asset gives you the option to **Unmark as Asset** instead.
+
+![Outliner - Unmark as Asset](/img/outliner-unmark-as-asset.png)
+
+#### Right-Click on a Linked Asset
+
+Right-clicking on an asset that is **linked** in the Outliner gives you the option to **Reload Asset**.
+
+![Outliner - Reload Asset](/img/outliner-assets-menu-linked-reload.png)
+
+### Asset Tab
+
+#### Right-Click on an Asset Pack
+
+Right-clicking on an asset pack displays two options:
+
+- **Reveal File in Browser** - opens the file location of the asset pack on your computer.
+- **Remove Asset Pack** - removes the asset pack from the Assets panel.
+
+![Asset Tab - Asset Pack Options](/img/asset-tab-menu.png)
+
+#### Right-Click on an Asset
+
+Right-clicking on an individual asset inside an asset pack folder displays two options:
+
+- **Select All Instances of This Asset** - selects every instance of that asset currently in your scene.
+- **Reload All Instances of This Asset** - reverts every instance of that asset in your scene back to its original state.
+
+![Asset Tab - Individual Asset Options](/img/asset-tab-menu-asset.png)
 
 ## See also
 - [Set Material](/common/set-material)
