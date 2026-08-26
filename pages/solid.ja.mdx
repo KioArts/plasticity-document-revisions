@@ -1,106 +1,165 @@
-### ブーリアンとカット
+### ブール演算とカット
 
 - ソリッドボディを結合・減算するためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
-| [Boolean](/solid/boolean) | 2 つのソリッドボディを結合、減算、または交差させます。 |
-| [Cut](/solid/cut) | 別のボディを切削ツールとして使用してソリッドボディを切断します。 |
+| [Boolean](/solid/boolean) | 2つのソリッドボディを結合、減算、またはインターセクトします。 |
+| [Cut](/solid/cut) | あるソリッドボディを別のボディを切断ツールとして使用して切断します。 |
 
 ### インスタンス
 
-- ソリッドおよびシートのインスタンスを作成・実体化するツール。
+- ソリッドインスタンスを作成・実体化するためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
 | [Create Instance](/solid/create-instance) | 選択したジオメトリの再利用可能なインスタンスを作成します。 |
 | [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance) | ソリッドとシートの再利用可能なインスタンスを作成します。 |
-| [Realize Instances](/solid/realize-instances) | すべてのインスタンスを独立した編集可能ジオメトリに変換します。 |
-| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) | ソリッドおよびシートのインスタンスを編集可能ジオメトリに変換します。 |
+| [Realize Instances](/solid/realize-instances) | すべてのインスタンスを独立した編集可能なジオメトリに変換します。 |
+| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) | ソリッドおよびシートインスタンスを編集可能なジオメトリに変換します。 |
 
 ### サーフェス作成
 
-- サーフェスおよびソリッドを作成するツール。
+- サーフェスとソリッドを作成するためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
-| [Alternative Duplicate](/solid/alternative-duplicate) | 選択したサーフェス断片からソリッドを生成する別の方法です。 |
-| [Bridge Surface](/solid/bridge-surface) | 2 つの既存サーフェス間に滑らかなブリッジサーフェスを作成します。 |
-| [Constrained Surface](/solid/constrained-surface) | 既存ジオメトリに拘束されたサーフェスを作成します。 |
-| [Extrude](/solid/extrude) | カーブまたはフェースを指定方向に押し出してソリッドまたはシートを作成します。 |
-| [Loft](/solid/loft) | 複数のカーブまたはプロファイルを通過させてサーフェスを作成します。 |
+| [Alternative Duplicate](/solid/alternative-duplicate) | 選択したサーフェスフラグメントから、別の方法を使用してソリッドを作成します。 |
+| [Bridge Surface](/solid/bridge-surface) | 既存の2つのサーフェス間に滑らかなブリッジサーフェスを作成します。 |
+| [Constrained Surface](/solid/constrained-surface) | 既存のジオメトリに拘束されたサーフェスを作成します。 |
+| [Extrude](/solid/extrude) | カーブまたはフェースを定義した方向に押し出して、ソリッドまたはシートを作成します。 |
+| [Loft](/solid/loft) | 一連のカーブまたはプロファイルをロフトしてサーフェスを作成します。 |
 | [Patch](/solid/patch) | 開いた境界を新しいサーフェスパッチで埋めます。 |
 | [Pipe](/solid/pipe) | カーブパスに沿ってパイプソリッドを作成します。 |
 | [PolySpline](/solid/polyspline) | メッシュオブジェクトを変換してポリサーフェスを作成します。 |
-| [Revolve](/solid/revolve) | カーブを軸の周りに回転させてソリッドまたはシートを作成します。 |
-| [Square](/solid/square) | XNurbs を使用して境界カーブ間に未トリムサーフェスを作成します。 |
+| [Revolve](/solid/revolve) | カーブを軸周りに回転させて、ソリッドまたはシートを作成します。 |
+| [Square](/solid/square) | XNurbsを使用して境界カーブ間にトリムされていないサーフェスを作成します。 |
 | [Sweep](/solid/sweep) | プロファイルカーブをパスに沿ってスイープし、ソリッドまたはシートを作成します。 |
-| [Xnurbs](/solid/xnurbs) | 境界カーブから高品質なサーフェスを生成します。 |
+| [Xnurbs](/solid/xnurbs) | XNurbsを使用して境界カーブから高品質なサーフェスを作成します。 |
 
 ### 変形とスライド
 
-- ソリッドおよびシートジオメトリを変形・スライドするツール。
+- ソリッドおよびシートジオメトリを変形・スライドするためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
 | [Deform](/solid/deform) | 選択したジオメトリを変形します。 |
 | [Deform Solid and Sheet](/solid/deform-solid-and-sheet) | ソリッドおよびシートボディを変形します。 |
-| [Slide](/solid/slide) | ジオメトリをサーフェスまたはエッジに沿ってスライドさせます。 |
-| [Slide Surface CV](/solid/slide-surface-cv) | サーフェスのコントロールポイントをサーフェス上でスライドさせます。 |
+| [Slide](/solid/slide) | 選択したジオメトリをサーフェスまたはエッジに沿ってスライドします。 |
+| [Slide Surface CV](/solid/slide-surface-cv) | サーフェスのコントロールバーテックスをそのサーフェスに沿ってスライドします。 |
 
 ### 削除と除去
 
-- フェースの削除およびトポロジの除去を行うツール。
+- ソリッドからフェースを削除し、トポロジーを除去するためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
 | [Delete Face](/solid/delete-face) | ソリッドまたはシートボディから選択したフェースを削除します。 |
-| [Delete Redundant Topology](/solid/delete-redundant-topology) | ソリッドまたはシートの不要なトポロジを除去します。 |
+| [Delete Redundant Topology](/solid/delete-redundant-topology) | ソリッドまたはシートジオメトリから不要なトポロジーを除去します。 |
 | [Remove Fillets from Shell](/solid/remove-fillets-from-shell) | シェルボディからフィレットフェースを除去します。 |
-| [Remove Nominal Surface](/solid/remove-nominal-surface) | ボディからノミナルサーフェス参照を削除します。 |
+| [Remove Nominal Surface](/solid/remove-nominal-surface) | ボディからノミナルサーフェスの参照を除去します。 |
 
 ### ドラフトとアライン
 
-- ドラフト角の適用およびジオメトリの整列を行うツール。
+- ドラフト角度を適用し、ジオメトリを整列するためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
-| [Align](/solid/align) | 選択したジオメトリを参照サーフェスエッジに整列します。 |
-| [Align Surface](/solid/align) | シートボディを参照シートエッジに整列します。 |
-| [Draft Face](/solid/draft-face) | 金型や鋳造ワークフローのためにフェースにドラフト角を適用します。 |
+| [Align](/solid/align) | 選択したジオメトリを参照サーフェスのエッジに整列します。 |
+| [Project Align](/solid/project-align) | ターゲットサーフェスを指定した方向に沿って参照サーフェスに投影・整列します。 |
+| [Align Surface](/solid/align-surface) | シートボディを参照シートのエッジに整列します。 |
+| [Draft Face](/solid/draft-face) | 金型・鋳造ワークフロー向けにフェースへドラフト角度を適用します。 |
 
 ### 延長
 
-- サーフェスおよびシート境界を延長するツール。
+- サーフェスおよびシート境界を延長するためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
 | [Extend](/solid/extend) | 開いたエッジまたはサーフェス境界を延長します。 |
-| [Extend Sheet](/solid/extend-sheet) | シートボディを境界エッジから延長します。 |
+| [Extend Sheet](/solid/extend-sheet) | シートボディをその境界エッジの1つから延長します。 |
 
 ### フィレット
 
-- ソリッドエッジにフィレットや面取りを追加するツール。
+- ソリッドエッジにフィレットやチャンファーを追加するためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
-| [Fillet](/solid/fillet) | ソリッドボディの選択したエッジにフィレットまたは面取りを追加します。 |
-| [Fillet Shell](/solid/fillet-shell) | シェルボディのエッジにフィレットまたは面取りを追加します。 |
+| [Fillet](/solid/fillet) | ソリッドボディの選択したエッジにフィレットまたはチャンファーを追加します。 |
+| [Fillet Shell](/solid/fillet-shell) | シェルボディのエッジにフィレットまたはチャンファーを追加します。 |
 
 ### 中空化と厚み付け
 
-- ソリッドを中空化し、サーフェスに厚みを追加するツール。
+- ソリッドを中空化し、サーフェスに厚みを付けるためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
-| [Hollow](/solid/hollow) | 内部の材料を除去してソリッドボディを中空化します。 |
-| [Thicken](/solid/thicken) | シートボディに厚みを追加してソリッド化します。 |
-| [Thicken Face](/solid/thicken-face) | 選択したフェースに指定量の厚みを追加します。 |
+| [Hollow](/solid/hollow) | 内部素材を除去してソリッドボディを中空化します。 |
+| [Thicken](/solid/thicken) | シートボディに厚みを加えてソリッドに変換します。 |
+| [Thicken Face](/solid/thicken-face) | 選択したフェースを定義した量だけ厚くします。 |
 
 ### インプリント
 
-- カーブやボディをサーフェスにインプリントするツール。
+- サーフェスにカーブやボディをインプリントするためのツール。
 
 | 名前 | 説明 |
 | :--- | :--- |
-| [Imprint](/solid/imprint)
+| [Imprint](/solid/imprint) | サーフェスにジオメトリをインプリントして新しいエッジを作成します。 |
+| [Imprint Body Body](/solid/imprint-body-body) | 2つのボディの交差部分を、それぞれのサーフェスにインプリントします。 |
+| [Imprint Curve Body](/solid/imprint-curve-body) | カーブをソリッドまたはシートボディにインプリントします。 |
+
+### 結合と分離
+
+- ソリッドおよびシートボディを結合・分離するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Join](/solid/join) | 選択したサーフェスまたはボディを1つのボディに結合します。 |
+| [Join Sheets](/solid/join-sheets) | 複数のシートボディを1つに結合します。 |
+| [Unjoin](/solid/unjoin) | 結合されたボディを個々のパーツに分離します。 |
+| [Unjoin Faces](/solid/unjoin-faces) | 選択したフェースをボディから分離します。 |
+| [Unjoin Shells](/solid/unjoin-shells) | シェルボディを個々のサーフェスに分離します。 |
+
+### オフセット
+
+- カーブ、エッジ、フェースをオフセットするためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Offset Curve](/solid/offset-curve) | カーブを定義した距離だけオフセットします。 |
+| [Offset Edge](/solid/offset-edge) | 選択したエッジをサーフェスに沿ってオフセットします。 |
+| [Offset Face](/solid/offset-face) | フェースを定義した距離だけ内側または外側にオフセットします。 |
+| [Offset Face Loop](/solid/offset-face-loop) | ソリッドボディ上のフェースループをオフセットします。 |
+
+### リビルドとリファイン
+
+- ソリッドおよびサーフェスジオメトリをリビルド、反転、リファインするためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Isoparam](/solid/isoparam) | サーフェスにアイソパラメータラインを追加または調整します。 |
+| [Match Face](/solid/match-face) | あるサーフェスフェースの連続性を別のフェースに合わせます。 |
+| [Raise Degree](/solid/raise-degree) | 選択したジオメトリの次数を上げます。 |
+| [Raise Surface Degree](/solid/raise-surface-degree) | サーフェスの次数を上げてコントロールポイントを増やします。 |
+| [Rebuild](/solid/rebuild) | 選択したジオメトリを新しいポイント数または次数でリビルドします。 |
+| [Rebuild Face](/solid/rebuild-face) | 選択したフェースを新しいコントロール構造でリビルドします。 |
+| [Reverse](/solid/reverse) | 選択したジオメトリの法線方向を反転します。 |
+| [Reverse Sheet](/solid/reverse-sheet) | シートボディの法線方向を反転します。 |
+
+### トリムとアンラップ
+
+- サーフェスのトリムを解除し、アンラップするためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Untrim](/solid/untrim) | サーフェスからトリム境界を除去し、元の全体形状に戻します。 |
+| [Unwrap Face](/solid/unwrap-face) | フェースを平らな2Dサーフェスにアンラップします。 |
+
+### 表示と解析
+
+- ソリッドおよびサーフェスの品質を解析・可視化するためのツール。
+
+| 名前 | 説明 |
+| :--- | :--- |
+| [Find Boundary Edges](/solid/find-boundary-edges) | サーフェスまたはソリッド上の開いた境界エッジを強調表示します。 |
+| [Toggle Surface Curvature](/solid/toggle-surface-curvature) | サーフェスに曲率解析を表示して品質を評価します。 |

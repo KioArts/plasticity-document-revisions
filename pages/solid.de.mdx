@@ -4,161 +4,162 @@
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Boolean](/solid/boolean) | Kombiniere, subtrahiere oder schneide zwei Volumenkörper miteinander. |
-| [Cut](/solid/cut) | Schneide einen Volumenkörper mithilfe eines anderen Körpers als Schneidwerkzeug. |
+| [Boolean](/solid/boolean) | Zwei Volumenkörper kombinieren, subtrahieren oder schneiden. |
+| [Cut](/solid/cut) | Einen Volumenkörper mit einem anderen als Schneidwerkzeug schneiden. |
 
 ### Instanzen
 
-- Werkzeuge zum Erstellen und Realisieren von Volumen- und Flächeninstanzen.
+- Werkzeuge zum Erstellen und Realisieren von Volumeninstanzen.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Create Instance](/solid/create-instance) | Erstelle eine wiederverwendbare Instanz der ausgewählten Geometrie. |
-| [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance) | Erstelle eine wiederverwendbare Instanz eines Volumenkörpers und eines Flächenkörpers. |
-| [Realize Instances](/solid/realize-instances) | Wandle alle Instanzen in unabhängige, bearbeitbare Geometrie um. |
-| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) | Wandle Volumen- und Flächeninstanzen in bearbeitbare Geometrie um. |
+| [Create Instance](/solid/create-instance) | Eine wiederverwendbare Instanz der ausgewählten Geometrie erstellen. |
+| [Create Solid and Sheet Instance](/solid/create-solid-and-sheet-instance) | Eine wiederverwendbare Instanz eines Volumenkörpers und einer Fläche erstellen. |
+| [Realize Instances](/solid/realize-instances) | Alle Instanzen in unabhängige, editierbare Geometrie umwandeln. |
+| [Realize Solid and Sheet Instances](/solid/realize-solid-and-sheet-instances) | Volumen- und Flächeninstanzen in editierbare Geometrie umwandeln. |
 
-### Flächenerstellung
+### Oberflächenerstellung
 
-- Werkzeuge zum Erstellen von Flächen und Volumenkörpern.
-
-| Name | Beschreibung |
-| :--- | :--- |
-| [Alternative Duplicate](/solid/alternative-duplicate) | Erzeuge einen Volumenkörper aus ausgewählten Flächenfragmenten mit einer alternativen Methode. |
-| [Bridge Surface](/solid/bridge-surface) | Erzeuge eine glatte Übergangsfläche zwischen zwei bestehenden Flächen. |
-| [Constrained Surface](/solid/constrained-surface) | Erzeuge eine Fläche, die an bestehende Geometrie gebunden ist. |
-| [Extrude](/solid/extrude) | Extrudiere eine Kurve oder Fläche entlang einer definierten Richtung zu einem Volumen- oder Flächenkörper. |
-| [Loft](/solid/loft) | Erzeuge eine Fläche durch Lofting über mehrere Kurven oder Profile. |
-| [Patch](/solid/patch) | Fülle eine offene Begrenzung mit einer neuen Flächenpatch. |
-| [Pipe](/solid/pipe) | Erzeuge einen Rohrkörper entlang eines Kurvenpfads. |
-| [PolySpline](/solid/polyspline) | Erzeuge eine Polysurface durch Konvertieren eines Mesh-Objekts. |
-| [Revolve](/solid/revolve) | Rotier eine Kurve um eine Achse, um einen Volumen- oder Flächenkörper zu erzeugen. |
-| [Square](/solid/square) | Erzeuge eine ungetrimmte Fläche zwischen Begrenzungskurven mithilfe von XNurbs. |
-| [Sweep](/solid/sweep) | Führe ein Profil entlang eines Pfads, um einen Volumen- oder Flächenkörper zu erzeugen. |
-| [Xnurbs](/solid/xnurbs) | Erzeuge eine hochwertige Fläche aus Begrenzungskurven mit XNurbs. |
-
-### Verformen und Schieben
-
-- Werkzeuge zum Verformen und Verschieben von Volumen- und Flächenkörpern.
+- Werkzeuge zum Erstellen von Oberflächen und Volumenkörpern.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Deform](/solid/deform) | Verforme ausgewählte Geometrie. |
-| [Deform Solid and Sheet](/solid/deform-solid-and-sheet) | Verforme Volumen- und Flächenkörper. |
-| [Slide](/solid/slide) | Schiebe ausgewählte Geometrie entlang einer Fläche oder Kante. |
-| [Slide Surface CV](/solid/slide-surface-cv) | Schiebe einen Flächenkontrollpunkt entlang seiner Fläche. |
+| [Alternative Duplicate](/solid/alternative-duplicate) | Einen Volumenkörper aus ausgewählten Oberflächenfragmenten mit einer alternativen Methode erstellen. |
+| [Bridge Surface](/solid/bridge-surface) | Eine glatte Überbrückungsfläche zwischen zwei bestehenden Oberflächen erstellen. |
+| [Constrained Surface](/solid/constrained-surface) | Eine an bestehende Geometrie gebundene Oberfläche erstellen. |
+| [Extrude](/solid/extrude) | Eine Kurve oder Fläche entlang einer definierten Richtung extrudieren, um einen Volumenkörper oder eine Fläche zu erstellen. |
+| [Loft](/solid/loft) | Eine Oberfläche durch Lofting über eine Reihe von Kurven oder Profilen erstellen. |
+| [Patch](/solid/patch) | Eine offene Begrenzung mit einem neuen Oberflächen-Patch füllen. |
+| [Pipe](/solid/pipe) | Einen Rohrkörper entlang eines Kurvenpfads erstellen. |
+| [PolySpline](/solid/polyspline) | Eine Polyfläche durch Konvertieren eines Mesh-Objekts erstellen. |
+| [Revolve](/solid/revolve) | Eine Kurve um eine Achse rotieren, um einen Volumenkörper oder eine Fläche zu erstellen. |
+| [Square](/solid/square) | Eine ungetrimmte Oberfläche zwischen Begrenzungskurven mit XNurbs erstellen. |
+| [Sweep](/solid/sweep) | Ein Profilkurve entlang eines Pfads führen, um einen Volumenkörper oder eine Fläche zu erstellen. |
+| [Xnurbs](/solid/xnurbs) | Eine hochwertige Oberfläche aus Begrenzungskurven mit XNurbs erstellen. |
+
+### Verformen und Verschieben
+
+- Werkzeuge zum Verformen und Verschieben von Volumen- und Flächengeometrie.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Deform](/solid/deform) | Ausgewählte Geometrie verformen. |
+| [Deform Solid and Sheet](/solid/deform-solid-and-sheet) | Volumen- und Flächenkörper verformen. |
+| [Slide](/solid/slide) | Ausgewählte Geometrie entlang einer Oberfläche oder Kante verschieben. |
+| [Slide Surface CV](/solid/slide-surface-cv) | Einen Oberflächenkontrollpunkt entlang seiner Oberfläche verschieben. |
 
 ### Löschen und Entfernen
 
-- Werkzeuge zum Löschen von Flächen und Entfernen von Topologie.
+- Werkzeuge zum Löschen von Flächen und Entfernen von Topologie aus Volumenkörpern.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Delete Face](/solid/delete-face) | Lösche eine ausgewählte Fläche aus einem Volumen- oder Flächenkörper. |
-| [Delete Redundant Topology](/solid/delete-redundant-topology) | Entferne unnötige Topologie aus Volumen- oder Flächengeometrie. |
-| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) | Entferne Verrundungsflächen aus einem Schalenkörper. |
-| [Remove Nominal Surface](/solid/remove-nominal-surface) | Entferne die nominale Flächenreferenz eines Körpers. |
+| [Delete Face](/solid/delete-face) | Eine ausgewählte Fläche aus einem Volumen- oder Flächenkörper löschen. |
+| [Delete Redundant Topology](/solid/delete-redundant-topology) | Unnötige Topologie aus Volumen- oder Flächengeometrie entfernen. |
+| [Remove Fillets from Shell](/solid/remove-fillets-from-shell) | Verrundungsflächen von einem Schalenkörper entfernen. |
+| [Remove Nominal Surface](/solid/remove-nominal-surface) | Den Verweis auf die Nominaloberfläche eines Körpers entfernen. |
 
-### Schrägzug und Ausrichten
+### Neigung und Ausrichtung
 
-- Werkzeuge zum Anwenden von Schrägzügen und zum Ausrichten von Geometrie.
+- Werkzeuge zum Anwenden von Neigungswinkeln und Ausrichten von Geometrie.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Align](/solid/align) | Richte ausgewählte Geometrie an einer Referenzkantenfläche aus. |
-| [Align Surface](/solid/align) | Richte einen Flächenkörper an einer Referenzfläche aus. |
-| [Draft Face](/solid/draft-face) | Wende einen Schrägzug auf eine Fläche an, z. B. für Guss- und Formprozesse. |
+| [Align](/solid/align) | Ausgewählte Geometrie an einer Referenzoberflächenkante ausrichten. |
+| [Project Align](/solid/project-align) | Eine Zieloberfläche entlang einer festgelegten Richtung auf eine Referenzoberfläche projizieren und ausrichten. |
+| [Align Surface](/solid/align-surface) | Einen Flächenkörper an einer Referenzflächenkante ausrichten. |
+| [Draft Face](/solid/draft-face) | Einen Neigungswinkel auf eine Fläche für Guss- und Formprozesse anwenden. |
 
 ### Verlängern
 
-- Werkzeuge zum Verlängern von Flächen und Flächenkörpern.
+- Werkzeuge zum Verlängern von Oberflächen und Flächenbegrenzungen.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Extend](/solid/extend) | Verlängere eine offene Kante oder Flächenbegrenzung. |
-| [Extend Sheet](/solid/extend-sheet) | Verlängere einen Flächenkörper an einer seiner Begrenzungskanten. |
+| [Extend](/solid/extend) | Eine offene Kante oder Oberflächenbegrenzung verlängern. |
+| [Extend Sheet](/solid/extend-sheet) | Einen Flächenkörper von einer seiner Begrenzungskanten aus verlängern. |
 
-### Verrunden
+### Verrundung
 
-- Werkzeuge zum Erstellen von Verrundungen und Fasen an Volumenkanten.
-
-| Name | Beschreibung |
-| :--- | :--- |
-| [Fillet](/solid/fillet) | Füge ausgewählten Kanten eines Volumenkörpers eine Verrundung oder Fase hinzu. |
-| [Fillet Shell](/solid/fillet-shell) | Füge den Kanten eines Schalenkörpers eine Verrundung oder Fase hinzu. |
-
-### Aushöhlen und Verstärken
-
-- Werkzeuge zum Aushöhlen von Volumenkörpern und Verstärken von Flächen.
+- Werkzeuge zum Hinzufügen von Verrundungen und Fasen an Volumenkörperkanten.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Hollow](/solid/hollow) | Höhle einen Volumenkörper aus, indem inneres Material entfernt wird. |
-| [Thicken](/solid/thicken) | Verstärke einen Flächenkörper zu einem Volumenkörper durch Hinzufügen von Dicke. |
-| [Thicken Face](/solid/thicken-face) | Verstärke eine ausgewählte Fläche um einen definierten Betrag. |
+| [Fillet](/solid/fillet) | Eine Verrundung oder Fase an ausgewählten Kanten eines Volumenkörpers hinzufügen. |
+| [Fillet Shell](/solid/fillet-shell) | Eine Verrundung oder Fase an den Kanten eines Schalenkörpers hinzufügen. |
+
+### Aushöhlen und Verdicken
+
+- Werkzeuge zum Aushöhlen von Volumenkörpern und Verdicken von Oberflächen.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Hollow](/solid/hollow) | Einen Volumenkörper durch Entfernen von Innenmaterial aushöhlen. |
+| [Thicken](/solid/thicken) | Einen Flächenkörper durch Hinzufügen von Dicke in einen Volumenkörper verdicken. |
+| [Thicken Face](/solid/thicken-face) | Eine ausgewählte Fläche um einen definierten Betrag verdicken. |
 
 ### Prägen
 
-- Werkzeuge zum Prägen von Kurven und Körpern auf Flächen.
+- Werkzeuge zum Einprägen von Kurven und Körpern auf Oberflächen.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Imprint](/solid/imprint) | Präge Geometrie auf eine Fläche, um neue Kanten zu erzeugen. |
-| [Imprint Body Body](/solid/imprint-body-body) | Präge die Schnittkurve zweier Körper auf deren Flächen. |
-| [Imprint Curve Body](/solid/imprint-curve-body) | Präge eine Kurve auf einen Volumen- oder Flächenkörper. |
+| [Imprint](/solid/imprint) | Geometrie auf eine Oberfläche einprägen, um neue Kanten zu erzeugen. |
+| [Imprint Body Body](/solid/imprint-body-body) | Die Schnittmenge zweier Körper auf deren Oberflächen einprägen. |
+| [Imprint Curve Body](/solid/imprint-curve-body) | Eine Kurve auf einen Volumen- oder Flächenkörper einprägen. |
 
 ### Verbinden und Trennen
 
-- Werkzeuge zum Verbinden und Auftrennen von Volumen- und Flächenkörpern.
+- Werkzeuge zum Verbinden und Trennen von Volumen- und Flächenkörpern.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Join](/solid/join) | Verbinde ausgewählte Flächen oder Körper zu einem einzigen Körper. |
-| [Join Sheets](/solid/join-sheets) | Verbinde mehrere Flächenkörper zu einem einzigen. |
-| [Unjoin](/solid/unjoin) | Trenne einen verbundenen Körper wieder in einzelne Teile. |
-| [Unjoin Faces](/solid/unjoin-faces) | Trenne ausgewählte Flächen von einem Körper. |
-| [Unjoin Shells](/solid/unjoin-shells) | Trenne Schalenkörper in einzelne Flächen. |
+| [Join](/solid/join) | Ausgewählte Oberflächen oder Körper zu einem einzigen Körper verbinden. |
+| [Join Sheets](/solid/join-sheets) | Mehrere Flächenkörper zu einem verbinden. |
+| [Unjoin](/solid/unjoin) | Einen verbundenen Körper wieder in einzelne Teile trennen. |
+| [Unjoin Faces](/solid/unjoin-faces) | Ausgewählte Flächen von einem Körper trennen. |
+| [Unjoin Shells](/solid/unjoin-shells) | Schalenkörper in einzelne Oberflächen trennen. |
 
-### Offset
+### Versatz
 
 - Werkzeuge zum Versetzen von Kurven, Kanten und Flächen.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Offset Curve](/solid/offset-curve) | Versetze eine Kurve um einen definierten Abstand. |
-| [Offset Edge](/solid/offset-edge) | Versetze eine ausgewählte Kante entlang einer Fläche. |
-| [Offset Face](/solid/offset-face) | Versetze eine Fläche nach innen oder außen. |
-| [Offset Face Loop](/solid/offset-face-loop) | Versetze eine zusammenhängende Flächenschleife eines Körpers. |
+| [Offset Curve](/solid/offset-curve) | Eine Kurve um einen definierten Abstand versetzen. |
+| [Offset Edge](/solid/offset-edge) | Eine ausgewählte Kante entlang einer Oberfläche versetzen. |
+| [Offset Face](/solid/offset-face) | Eine Fläche um einen definierten Abstand nach innen oder außen versetzen. |
+| [Offset Face Loop](/solid/offset-face-loop) | Eine Schleife von Flächen auf einem Volumenkörper versetzen. |
 
-### Neuaufbau und Verfeinerung
+### Neu aufbauen und Verfeinern
 
-- Werkzeuge zum Neuaufbau, Umkehren und Verfeinern von Volumen- und Flächengeometrie.
-
-| Name | Beschreibung |
-| :--- | :--- |
-| [Isoparam](/solid/isoparam) | Füge Isoparameterlinien hinzu oder passe sie an. |
-| [Match Face](/solid/match-face) | Passe die Flächenkontinuität einer Fläche an eine andere an. |
-| [Raise Degree](/solid/raise-degree) | Erhöhe den Grad der ausgewählten Geometrie. |
-| [Raise Surface Degree](/solid/raise-surface-degree) | Erhöhe den Grad einer Fläche für mehr Kontrollpunkte. |
-| [Rebuild](/solid/rebuild) | Baue ausgewählte Geometrie mit neuer Punktanzahl oder neuem Grad neu auf. |
-| [Rebuild Face](/solid/rebuild-face) | Baue eine ausgewählte Fläche mit neuer Kontrollstruktur neu auf. |
-| [Reverse](/solid/reverse) | Kehre die Normalenrichtung der ausgewählten Geometrie um. |
-| [Reverse Sheet](/solid/reverse-sheet) | Kehre die Normalenrichtung eines Flächenkörpers um. |
-
-### Zuschneiden und Abwickeln
-
-- Werkzeuge zum Entfernen von Trimmgrenzen und zum Abwickeln von Flächen.
+- Werkzeuge zum Neuaufbau, Umkehren und Verfeinern von Volumen- und Oberflächengeometrie.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Untrim](/solid/untrim) | Entferne Trimmgrenzen einer Fläche, um ihre volle Ausdehnung wiederherzustellen. |
-| [Unwrap Face](/solid/unwrap-face) | Wickle eine Fläche in eine flache 2D‑Darstellung ab. |
+| [Isoparam](/solid/isoparam) | Isoparameterlinien auf einer Oberfläche hinzufügen oder anpassen. |
+| [Match Face](/solid/match-face) | Die Stetigkeit einer Oberflächenfläche an eine andere anpassen. |
+| [Raise Degree](/solid/raise-degree) | Den Grad der ausgewählten Geometrie erhöhen. |
+| [Raise Surface Degree](/solid/raise-surface-degree) | Den Grad einer Oberfläche für mehr Kontrollpunkte erhöhen. |
+| [Rebuild](/solid/rebuild) | Ausgewählte Geometrie mit einer neuen Punktanzahl oder einem neuen Grad neu aufbauen. |
+| [Rebuild Face](/solid/rebuild-face) | Eine ausgewählte Fläche mit einer neuen Kontrollstruktur neu aufbauen. |
+| [Reverse](/solid/reverse) | Die Normalenrichtung der ausgewählten Geometrie umkehren. |
+| [Reverse Sheet](/solid/reverse-sheet) | Die Normalenrichtung eines Flächenkörpers umkehren. |
+
+### Trimmen und Abwickeln
+
+- Werkzeuge zum Zurücksetzen von Trimmungen und Abwickeln von Oberflächen.
+
+| Name | Beschreibung |
+| :--- | :--- |
+| [Untrim](/solid/untrim) | Trimmbegrenzungen von einer Oberfläche entfernen, um ihre volle Ausdehnung wiederherzustellen. |
+| [Unwrap Face](/solid/unwrap-face) | Eine Fläche in eine flache 2D-Oberfläche abwickeln. |
 
 ### Anzeige und Analyse
 
-- Werkzeuge zur Analyse und Visualisierung der Qualität von Volumen- und Flächenkörpern.
+- Werkzeuge zur Analyse und Visualisierung der Qualität von Volumenkörpern und Oberflächen.
 
 | Name | Beschreibung |
 | :--- | :--- |
-| [Find Boundary Edges](/solid/find-boundary-edges) | Hebe offene Begrenzungskanten einer Fläche oder eines Körpers hervor. |
-| [Toggle Surface Curvature](/solid/toggle-surface-curvature) | Zeige eine Krümmungsanalyse auf Flächen an, um die Qualität zu beurteilen. |
+| [Find Boundary Edges](/solid/find-boundary-edges) | Offene Begrenzungskanten auf einer Oberfläche oder einem Volumenkörper hervorheben. |
+| [Toggle Surface Curvature](/solid/toggle-surface-curvature) | Krümmungsanalyse auf Oberflächen anzeigen, um die Qualität zu beurteilen. |
