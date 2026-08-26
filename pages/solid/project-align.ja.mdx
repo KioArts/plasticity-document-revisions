@@ -1,0 +1,55 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## プロジェクトアライン
+
+<CommandReference
+  command="Project Align"
+  shortcut=""
+  button="コマンドパレット内"
+  buttonIcon="/img/button-align.png"
+  tier="both"
+/>
+
+## 説明
+
+プロジェクトアラインは、指定した投影方向に沿って、ターゲットサーフェスのエッジを参照サーフェスに整列させ、その方向に制限されたリアルタイム更新を行います。オプションでソルバー、連続性、投影方法を選択でき、参照カーブを使用してアライメントを制御することもできます。
+
+<Callout type="info">
+ターゲットサーフェスはトリムされておらず、単一のサーフェスパッチで構成されている必要があります。トリムされている場合や複数のパッチで構成されている場合、コマンドは期待どおりに動作しません。
+</Callout>
+
+## 基本的な使い方
+
+1. コマンドパレットで **Project Align** と入力し、実行します。
+2. アライメント対象のターゲットエッジを選択するよう求められ、次に整列先の参照サーフェスを選択します。
+    - 必要に応じて、ターゲットサーフェスのアライメントを誘導する参照カーブを選択できます。
+3. ギズモハンドルを使用して投影方向を指定します。
+4. コマンドダイアログでオプションを指定します。
+    - <Kst>コマンドダイアログ</Kst>
+        - **Solver:** サーフェスの整列に使用するソルバーを選択します。
+            - **XNurbs:** xNURBSソルバーを使用してサーフェスを整列します。これがデフォルトのオプションです。一般的に最も精度が高いですが、アライメントを誘導するための参照カーブが必要です。（Studioライセンスが必要）
+            - **Constrained:** 拘束ソルバーを使用してサーフェスを整列します。このオプションは高速ですが、xNURBSソルバーほど正確な結果が得られない場合があり、参照カーブは不要です。
+                - **注意:** アライメントハンドルの近くに小さなアイコンが表示され、コマンド操作の種類と使用されている連続性が示されます。アイコンをダブルクリックすることで拘束を編集し、連続性のタイプを変更できます - <ButtonIcon type="button-constraint-align-project-G0"/> / <ButtonIcon type="button-constraint-align-project-G1"/> / <ButtonIcon type="button-constraint-align-project-G2"/>。
+        - **Continuity:** [サーフェスの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+            - **G0:** 位置連続性。
+            - **G1:** 接線連続性。
+            - **G2:** 曲率連続性。
+            - **Perpendicular:** サーフェスを参照サーフェスに対して垂直になるように整列します。CV（コントロールバーテックス）の最初の行は参照サーフェスに対して垂直上向きになり、残りのサーフェスは滑らかさを維持するように調整されます。
+        - **Blend extra rows:** 新しいサーフェスの始点と終点でのブレンド方法を制御します。
+        - **Projection:** 使用する投影方法を選択します。
+            - **Normal:** ターゲットサーフェスをその法線方向に沿って投影します。
+            - **Vector:** ターゲットサーフェスを指定したベクトル方向に沿って投影します。
+            <img src="/img/project-curve-body-method.svg" width="500" />
+5. コマンドダイアログでOKをクリックするか、右クリックで確定します。
+
+<VideoPlayer fileName="project-align"/>
+
+## 関連項目
+
+- [Align](/solid/align)
+- [Align Surface](/solid/align-surface)
+- [Align Vertex](/sketch/align-vertex)

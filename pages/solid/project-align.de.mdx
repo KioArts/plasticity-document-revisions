@@ -1,0 +1,55 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## Projekt ausrichten
+
+<CommandReference
+  command="Project Align"
+  shortcut=""
+  button="Im Befehlspalette"
+  buttonIcon="/img/button-align.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Projekt ausrichten richtet die Kante einer Zieloberfläche entlang einer festgelegten Projektionsrichtung an einer Referenzoberfläche aus, mit Echtzeit-Aktualisierungen, die auf diese Richtung beschränkt sind. Mit den Optionen können Sie den Solver, die Stetigkeit und die Projektionsmethode auswählen, und optional kann eine Referenzkurve die Ausrichtung steuern.
+
+<Callout type="info">
+Die Zieloberfläche muss ungetrimmt sein und aus einem einzigen Oberflächen-Patch bestehen. Wenn sie getrimmt ist oder aus mehreren Patches besteht, funktioniert der Befehl nicht wie erwartet.
+</Callout>
+
+## Grundlegende Verwendung
+
+1. Geben Sie **Project Align** in der Befehlspalette ein und führen Sie den Befehl aus.
+2. Der Befehl fordert Sie auf, die auszurichtende Zielkante und anschließend die Referenzoberfläche auszuwählen, an der ausgerichtet werden soll.
+    - Optional können Sie eine Referenzkurve auswählen, um die Ausrichtung der Zieloberfläche zu steuern.
+3. Legen Sie die Projektionsrichtung mit den Gizmo-Griffen fest.
+4. Legen Sie die Optionen im Befehlsdialog fest.
+    - <Kst>Befehlsdialog</Kst>
+        - **Solver:** Wählen Sie den Solver zum Ausrichten der Oberflächen.
+            - **XNurbs:** Verwendet den xNURBS-Solver zum Ausrichten der Oberflächen. Dies ist die Standardoption. Sie ist im Allgemeinen am genauesten, erfordert jedoch eine Referenzkurve zur Steuerung der Ausrichtung. (Studio-Lizenz erforderlich)
+            - **Constrained:** Verwendet einen eingeschränkten Solver zum Ausrichten der Oberflächen. Diese Option ist schneller, liefert aber möglicherweise nicht so genaue Ergebnisse wie der xNURBS-Solver, und es ist keine Referenzkurve erforderlich.
+                - **Hinweis:** In der Nähe des Ausrichtungsgriffs erscheint ein kleines Symbol, das die Art des Befehlsvorgangs und die verwendete Stetigkeit anzeigt. Sie können die Einschränkung bearbeiten, indem Sie auf das Symbol doppelklicken, um den Stetigkeitstyp zu ändern - <ButtonIcon type="button-constraint-align-project-G0"/> / <ButtonIcon type="button-constraint-align-project-G1"/> / <ButtonIcon type="button-constraint-align-project-G2"/>.
+        - **Stetigkeit:** Legen Sie die [Stetigkeit der Oberfläche](/cad-essentials/continuity-curve-and-surface) fest.
+            - **G0:** Positionsstetigkeit.
+            - **G1:** Tangentenstetigkeit.
+            - **G2:** Krümmungsstetigkeit.
+            - **Perpendicular:** Richtet die Oberfläche senkrecht zur Referenzoberfläche aus. Die erste Reihe der Kontrollpunkte (CVs) zeigt senkrecht nach oben zur Referenzoberfläche, während der Rest der Oberfläche angepasst wird, um die Glätte beizubehalten.
+        - **Blend extra rows:** Steuert, wie die neue Oberfläche an ihrem Anfang und Ende überblendet.
+        - **Projektion:** Wählen Sie die zu verwendende Projektionsmethode.
+            - **Normal:** Projiziert die Zieloberfläche entlang ihrer Normalenrichtung.
+            - **Vector:** Projiziert die Zieloberfläche entlang einer festgelegten Vektorrichtung.
+            <img src="/img/project-curve-body-method.svg" width="500" />
+5. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
+
+<VideoPlayer fileName="project-align"/>
+
+## Siehe auch
+
+- [Align](/solid/align)
+- [Align Surface](/solid/align-surface)
+- [Align Vertex](/sketch/align-vertex)
