@@ -1,4 +1,5 @@
 import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
 
 # Sketching Essentials
 
@@ -42,3 +43,37 @@ These visual indicators confirm that the geometry is properly connected.
 - Use Knife mode to cut one or more Faces as you draw a Curve. You must snap to points on the target Faces as you draw. 
 
 <VideoPlayer fileName="sketching-tips-5"/>
+
+
+## Constraint System[#constraint-system]
+ 
+- The Constraint System lets you constrain a surface or curve based on the command executed on it. This forms a relationship between geometry, building a live-editing network where connected objects update together.
+- Double-clicking on the constraint icon opens the Constraint Options menu, where you can adjust the constraint settings.
+
+<Callout type="info">
+Currently, constraints cannot be saved in the project file. They are only active during the current session.
+</Callout>
+
+<VideoPlayer fileName="sketching-tips-6"/>
+
+### Surface Constraint
+
+- Constraints can be applied to solid commands, allowing you to control the behavior of the resulting geometry. The following table lists the available solid commands and their constraint options:
+
+| Command Name | Option | Note |
+| ------- | ------- | ------- |
+| Square | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | - |
+| Edge Align (Surface) | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | - |
+| Project Align | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | - |
+
+### Curve Constraint
+
+- Constraints can also be applied to curve commands, allowing you to control the behavior of the resulting geometry. The following table lists the available curve commands and their constraint options:
+
+| Command Name | Option | Note |
+| ------- | ------- | ------- |
+| Bridge Curve | Specify the Continuity between G0, G1, G2, or G3 | - |
+| Bridge Vertex | Specify the Continuity between G0, G1, G2, or G3 | - |
+| Bridge Edge | Specify the Continuity between G0, G1, G2, or G3 | - |
+| Edge Align (Curve) | Specify the Continuity between G0, G1, G2, or G3 | - |
+
