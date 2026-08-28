@@ -1,4 +1,5 @@
 import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
 
 # Sketching Essentials
 
@@ -42,3 +43,35 @@ Diese visuellen Hinweise bestätigen, dass die Geometrie korrekt verbunden ist.
 - Verwende den Knife‑Modus, um eine oder mehrere Flächen zu schneiden, während du eine Kurve zeichnest. Du musst beim Zeichnen auf Punkte der Zielflächen snappen.
 
 <VideoPlayer fileName="sketching-tips-5"/>
+
+## Constraint System[#constraint-system]
+
+- Das Constraint System ermöglicht es, eine Fläche oder Kurve basierend auf dem an ihr ausgeführten Befehl einzuschränken. Dadurch entsteht eine Beziehung zwischen Geometrien, die ein live editierbares Netzwerk bildet, in dem verbundene Objekte gemeinsam aktualisiert werden.
+- Ein Doppelklick auf das Constraint-Symbol öffnet das Menü „Constraint Options“, in dem die Constraint-Einstellungen angepasst werden können.
+
+<Callout type="info">
+Constraints können derzeit nicht in der Projektdatei gespeichert werden. Sie sind nur während der aktuellen Sitzung aktiv.
+</Callout>
+
+<VideoPlayer fileName="sketching-tips-6"/>
+
+### Surface Constraint
+
+- Constraints können auf Solid-Befehle angewendet werden, wodurch sich das Verhalten der resultierenden Geometrie steuern lässt. Die folgende Tabelle listet die verfügbaren Solid-Befehle und ihre Constraint-Optionen auf:
+
+| Befehlsname | Option | Hinweis |
+| ------- | ------- | ------- |
+| Square | Kontinuität zwischen G0, G1, G2 oder Free festlegen; Anpassung der Partial Alignment; Anpassung der Boundary; Analyseeinstellungen | - |
+| Edge Align (Surface) | Kontinuität zwischen G0, G1, G2 oder Free festlegen; Anpassung der Partial Alignment; Anpassung der Boundary; Analyseeinstellungen | - |
+| Project Align | Kontinuität zwischen G0, G1, G2 oder Free festlegen; Anpassung der Partial Alignment; Anpassung der Boundary; Analyseeinstellungen | - |
+
+### Curve Constraint
+
+- Constraints können auch auf Curve-Befehle angewendet werden, wodurch sich das Verhalten der resultierenden Geometrie steuern lässt. Die folgende Tabelle listet die verfügbaren Curve-Befehle und ihre Constraint-Optionen auf:
+
+| Befehlsname | Option | Hinweis |
+| ------- | ------- | ------- |
+| Bridge Curve | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | - |
+| Bridge Vertex | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | - |
+| Bridge Edge | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | - |
+| Edge Align (Curve) | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | - |

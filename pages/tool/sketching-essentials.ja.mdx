@@ -1,4 +1,5 @@
 import VideoPlayer from '/components/VideoPlayer';
+import { Callout } from 'nextra/components'
 
 # Sketching Essentials
 
@@ -42,3 +43,35 @@ import VideoPlayer from '/components/VideoPlayer';
 - ナイフモードを使用すると、カーブを描きながら 1 つ以上の面を切断できます。描画中は対象面上のポイントにスナップする必要があります。
 
 <VideoPlayer fileName="sketching-tips-5"/>
+
+## Constraint System[#constraint-system]
+
+- Constraint System(拘束システム)を使用すると、サーフェスやカーブに対して実行されたコマンドに基づいて拘束を設定できます。これによりジオメトリ間に関係性が生まれ、接続されたオブジェクトが連動して更新されるライブ編集ネットワークが構築されます。
+- 拘束アイコンをダブルクリックすると、Constraint Options メニューが開き、拘束の設定を調整できます。
+
+<Callout type="info">
+現在、拘束はプロジェクトファイルに保存できません。拘束は現在のセッション中のみ有効です。
+</Callout>
+
+<VideoPlayer fileName="sketching-tips-6"/>
+
+### Surface Constraint
+
+- 拘束はソリッドコマンドにも適用でき、生成されるジオメトリの挙動を制御できます。以下の表は、利用可能なソリッドコマンドとその拘束オプションの一覧です。
+
+| コマンド名 | オプション | 注記 |
+| ------- | ------- | ------- |
+| Square | G0、G1、G2、Free のいずれかで連続性を指定;Partial Alignment の調整;Boundary の調整;Analysis 設定 | - |
+| Edge Align (Surface) | G0、G1、G2、Free のいずれかで連続性を指定;Partial Alignment の調整;Boundary の調整;Analysis 設定 | - |
+| Project Align | G0、G1、G2、Free のいずれかで連続性を指定;Partial Alignment の調整;Boundary の調整;Analysis 設定 | - |
+
+### Curve Constraint
+
+- 拘束はカーブコマンドにも適用でき、生成されるジオメトリの挙動を制御できます。以下の表は、利用可能なカーブコマンドとその拘束オプションの一覧です。
+
+| コマンド名 | オプション | 注記 |
+| ------- | ------- | ------- |
+| Bridge Curve | G0、G1、G2、G3 のいずれかで連続性を指定 | - |
+| Bridge Vertex | G0、G1、G2、G3 のいずれかで連続性を指定 | - |
+| Bridge Edge | G0、G1、G2、G3 のいずれかで連続性を指定 | - |
+| Edge Align (Curve) | G0、G1、G2、G3 のいずれかで連続性を指定 | - |
