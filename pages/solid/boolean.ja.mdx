@@ -17,7 +17,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## 説明
 
-ソリッドとシートの組み合わせでブーリアンを行うことができます。
+複数のオブジェクトを、ソリッドとシートの任意の組み合わせで結合、減算、または交差させます。処理に失敗した場合は、選択したオブジェクトの問題箇所を特定しやすいように、赤色の視覚的なヒントでその箇所が強調表示されます。ブール演算は、単純な形状を組み合わせて複雑な形状や造形を作成するための強力なツールです。
 
 ## 基本的な使い方
 
@@ -34,11 +34,11 @@ import Kst from '/components/KeyboardShortcutsTitle'
    - <Kst>Command Dialog</Kst>
       - **Keep Tools:** ツールオブジェクトをそのまま残してブーリアン演算を実行します。
       - **Opetation:**
-         - **Union:** ターゲットとツールオブジェクトを結合して1つのソリッドにします。
-         - **Difference:** ツールオブジェクトをターゲットから削除します。
-         - **Intersect:** ターゲットとツールの交差部分のみをソリッドとして作成します。
-         - **Slice:** ターゲットとの交差部分を分割してソリッドを作成し、残りの部分も保持します。
-         - **Region:** ソリッドやシートの集合体内で閉じた領域からソリッドを作成します。
+         - <ButtonIcon type="button-boolean-union"/>**Union:** ターゲットとツールオブジェクトを結合して1つのソリッドにします。
+         - <ButtonIcon type="button-boolean-difference"/>**Difference:** ツールオブジェクトをターゲットから削除します。
+         - <ButtonIcon type="button-boolean-intersect"/>**Intersect:** ターゲットとツールの交差部分のみをソリッドとして作成します。
+         - <ButtonIcon type="button-boolean-slice"/>**Slice:** ターゲットとの交差部分を分割してソリッドを作成し、残りの部分も保持します。
+         - <ButtonIcon type="button-boolean-region"/>**Region:** ソリッドやシートの集合体内で閉じた領域からソリッドを作成します。
          - 操作による結果の違いについては、[通常のブーリアン演算](#normal-boolean-operations)のセクションを参照してください。
       - **Advanced:**
          - **Target Material:** ブーリアン演算中にターゲットオブジェクトをソリッドとして扱うか、シートとして扱うかを定義します。この設定は、特に「差分」や「交差」などの操作で、ツールとの相互作用に影響します。
