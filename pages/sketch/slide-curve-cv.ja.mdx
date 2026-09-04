@@ -4,20 +4,6 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-{/* # Slide Curve CVs
-
-<Reference shortcut="Shift + G" command="Slide" button="" /> */}
-
-{/* <HeadBannerThumbnail
-  src="/videos/banner/slide-curve-cv.mp4"
-  alt="Slide Curve CV Preview"
-  title="Slide Curve CV"
-  command="Slide"
-  shortcut="Shift + G"
-  button="In Command Palette"
-  buttonIcon={<img src="/img/button-reverse.png" alt="Reverse Icon" />}
-/> */}
-
 ## カーブCVのスライド
 
 <CommandReference
@@ -30,28 +16,39 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## 説明
 
-スプラインカーブで定義されたコントロールケージの接線方向に沿ってコントロール頂点（CV）をスライドさせます。
+スプラインカーブによって定義されたコントロールケージの接線方向に沿って、コントロールバーテックス(CV)をスライドさせます。複数のCVをスライドさせることで、カーブに沿って滑らかな遷移を生み出す比例調整が可能になり、アクティブな作図平面に対するミラー効果も含まれます。
 
 ## 基本的な使い方
 
-1. スライドさせたいCVを1つまたは複数選択します。
-2. <kbd>Shift + G</kbd> を押してスライドコマンドを有効にします。
+1. スライドさせたいCVを1つ、または複数選択します。
+2. <kbd>Shift + G</kbd> を押して、Slideコマンドを有効にします。
 3. コマンドダイアログとキーボードショートカットでオプションを設定します。
-   - <Kst>Command Dialog</Kst>
-      - **距離:** 移動したCVの距離を指定します。
-   - <Kst>Keyboard Shortcuts</Kst>
-      - <kbd>Ctrl + Z</kbd> **元に戻す:** 最後のコマンド実行を取り消し、前の状態に戻します。
-      - <kbd>U</kbd> **正のU方向:** 正のU方向にスライドします。
-      - <kbd>Shift + U</kbd> **負のU方向:** 負のU方向にスライドします。
-      - <kbd>N</kbd> **法線:** 法線方向にスライドします。
-3. 特定の方向コントロールを持つギズモハンドルが表示されます。これらを使用してCVを移動し、位置を正確に調整します。
+   - <Kst>コマンドダイアログ</Kst>
+      - **Distance:** 移動するCVの距離を指定します。
+      - **Advanced:** スライド操作をより精密に制御するための追加オプション。
+        - **Proportional:** スライドが周囲のCVにどのように影響するかを選択します。
+          - **None:** 周囲のCVには影響しません。
+          - **All:** 周囲のすべてのCVがスライドの影響を受け、U/Vのフォールオフ設定に基づいて比例的に移動します。
+          - **Selected:** 選択したCVのみがスライドの影響を受け、最後に選択したCVがスライド用ギズモハンドルを呼び出します。
+        - **Falloff U:** U方向のフォールオフ量を指定します。
+        - **Falloff V:** V方向のフォールオフ量を指定します。
+        - **Mirror:** アクティブな作図平面に対してミラー効果を適用します。ミラーの軸は、グローバルな作図平面またはカスタム定義された作図平面のいずれかに応じて変化します。
+          - **None:** ミラー平面は指定されません。
+          - **X/Y/Z:** X、Y、Z軸のいずれかでミラーします。
+   - <Kst>キーボードショートカット</Kst>
+      - <kbd>Ctrl + Z</kbd> **Undo:** 直前のコマンド実行を取り消し、以前の状態に戻します。
+      - <kbd>U</kbd> **Positive U:** U方向の正の向きにスライドします。
+      - <kbd>Shift + U</kbd> **Negative U:** U方向の負の向きにスライドします。
+      - <kbd>N</kbd> **Normal:** 法線方向にスライドします。
+3. 特定の方向コントロールを持つギズモハンドルが表示されます。これを使用してCVを移動させ、位置を正確に調整します。
 4. コマンドダイアログのOKまたは右クリックで確定します。
 
 <VideoPlayer fileName="slide-curve"/>
 
-<Callout type="info" emoji="💡">
-*-* スライドコマンドには、<kbd>Ctrl</kbd> を押したままにすることでプレビューモードとアクティブモードを切り替えられるトグル機能が含まれています。これにより、コマンド実行前後の結果を比較できます。
-*-* スプラインカーブのみ操作可能で、通常の直線は操作できません。
+<Callout type="info">   
+注記: 
+  - Slideコマンドには、<kbd>Ctrl</kbd> を押し続けることでプレビューモードとアクティブモードを切り替えられるトグル機能があります。これにより、コマンド実行前後の結果を比較できます。     
+  - 操作できるのはスプラインカーブのみで、通常の直線は操作できません。
 </Callout>
 
 ## 関連項目
