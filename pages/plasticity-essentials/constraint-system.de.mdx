@@ -1,0 +1,35 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+## Constraint-System[#constraint-system]
+ 
+- Mit dem **Constraint-System** können Sie eine Fläche oder Kurve anhand des darauf ausgeführten Befehls einschränken. Dadurch entsteht eine Beziehung zwischen Geometrien, die ein Live-Bearbeitungsnetzwerk bildet, in dem verbundene Objekte gemeinsam aktualisiert werden.
+- Ein einzelner Klick auf das Constraint-Symbol öffnet das Menü **Constraint-Optionen**, in dem du die Constraint-Einstellungen für den jeweiligen Befehl anpassen kannst.
+
+<Callout type="info">
+Constraints können derzeit nicht in der Projektdatei gespeichert werden. Sie sind nur während der aktuellen Sitzung aktiv.
+</Callout>
+
+<VideoPlayer fileName="sketching-tips-6"/>
+
+### Flächen-Constraint
+
+- Constraints können auf Solid-Befehle angewendet werden, sodass Sie das Verhalten der resultierenden Geometrie steuern können. Die folgende Tabelle listet die verfügbaren Solid-Befehle und ihre Constraint-Optionen auf:
+
+| Befehlsname | Option | Hinweis |
+| ------- | ------- | ------- |
+| [Square](/solid/square) | Kontinuität zwischen G0, G1, G2 oder Frei festlegen; Anpassung der Teilausrichtung; Anpassung der Begrenzung; Analyseeinstellungen | Option zum Erstellen von Constraints; Merkt sich die zuletzt verwendete Einstellung für **Constraints erstellen** |
+| [Surface Align](/solid/surface-align) | Kontinuität zwischen G0, G1, G2 oder Frei festlegen; Anpassung der Teilausrichtung; Anpassung der Begrenzung; Analyseeinstellungen | Option zum Erstellen von Constraints |
+| [Project Align](/solid/project-align) | Kontinuität zwischen G0, G1, G2 oder Frei festlegen; Anpassung der Teilausrichtung; Anpassung der Begrenzung; Analyseeinstellungen | Erstellt Constraints automatisch |
+
+### Kurven-Constraint
+
+- Constraints können auch auf Kurvenbefehle angewendet werden, sodass Sie das Verhalten der resultierenden Geometrie steuern können. Die folgende Tabelle listet die verfügbaren Kurvenbefehle und ihre Constraint-Optionen auf:
+
+| Befehlsname | Option | Hinweis |
+| ------- | ------- | ------- |
+| [Vertex Align](/sketch/vertex-align) | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | Option zum Erstellen von Constraints |
+| [Bridge Curve](/sketch/bridge-curve) | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | Option zum Erstellen von Constraints; Merkt sich die zuletzt verwendete Einstellung für **Constraints erstellen** |
+| [Bridge Vertex](/sketch/bridge-vertex) | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | Option zum Erstellen von Constraints; Merkt sich die zuletzt verwendete Einstellung für **Constraints erstellen** |
+| [Bridge Edge](/sketch/bridge-edge) | Kontinuität zwischen G0, G1, G2 oder G3 festlegen | Option zum Erstellen von Constraints; Merkt sich die zuletzt verwendete Einstellung für **Constraints erstellen** |

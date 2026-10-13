@@ -17,7 +17,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
   buttonIcon={<img src="/img/button-bridge-curve.png" alt="Bridge Curve Icon" />}
 /> */}
 
-## 頂点のブリッジ
+## Bridge Vertex
 
 <CommandReference
   command="Bridge"
@@ -29,33 +29,41 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## 説明
 
-2つの頂点をG0、G1、G2、またはG3連続性でブリッジします。テンションは調整可能で、曲率の測定もサポートされています。
+2 つのバーテックスを G0、G1、G2、G3 の連続性でブリッジします。テンションを調整でき、曲率の計測にも対応しています。
 
 ## 基本的な使い方
 
-1. ブリッジしたい2つの頂点を選択します。
-2. コマンドパレットで **ブリッジ** コマンドを使用するか、代わりに <kbd>L</kbd> を押します。
-3. コマンドダイアログとキーボードショートカットでオプションを設定します。
-     - <Kst>Command Dialog</Kst>
-          - **テンション 1:**
-               - **値 1/2:** 開始点/終了点の第1コントロール頂点（CV）から第3CVに影響するテンション値。
-          - **テンション 2:**
-               - **値 1/2:** 開始点/終了点の第2CVと第3CVに影響するテンション値。
-          - **テンション 3:**
-               - **値 1/2:** 開始点/終了点の第3CVに影響するテンション値。
-          - **開始曲率:**
-               - **G0, G1, G2, G3:** 開始点における[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-          - **終了曲率:**
-               - **G0, G1, G2, G3:** 終了点における[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+1. ブリッジしたい 2 つのバーテックスを選択します。
+2. Command Palette で **Bridge** コマンドを実行するか、<kbd>L</kbd> キーを押します。
+3. Command Dialog とキーボードショートカットでオプションを設定します。 
+          - <Kst>Command Dialog</Kst>
+          - **Parameter:**
+               - **Value 1/2:** 始点/終点のセグメント上での相対位置です。
+          - **Tension G1:**
+               - **Value 1/2:** 始点/終点の 1 番目から 3 番目のコントロールバーテックス (CV) に影響するテンション値です。
+          - **Tension G2:**
+               - **Value 1/2:** 始点/終点の 2 番目と 3 番目の CV に影響するテンション値です。
+          - **Tension G3:**
+               - **Value 1/2:** 始点/終点の 3 番目の CV に影響するテンション値です。
+          - **Start curvature:**
+               - **G0, G1, G2, G3:** 始点での[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+          -  **End curvature:**
+               - **G0, G1, G2, G3:** 終点での[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。      
+          - **Trim:** オンにすると、ブリッジからはみ出しているカーブがトリムされます。
+          - **Show curvature:** カーブ上の曲率表示を切り替えます。詳しくは [Toggle Curvature](/tool/toggle-curvature) を参照してください。
+          - **Create Constraints:** ブリッジされたカーブにコンストレイントを作成し、指定した連続性を維持するとともに、さらなる調整を可能にします。これらのコンストレイントは [Constraints](/plasticity-essentials/constraint-system) メニューで編集できます。
      - <Kst>Keyboard Shortcuts</Kst>
-          - <kbd>Tab</kbd> **連続性の切り替え:** G0、G1、G2、G3連続性を切り替えます。
-          - <kbd>D</kbd> **G1テンション:** G1連続性のテンションを調整します。
-4. コマンドダイアログのOKまたは右クリックで確定します。
+     - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z 軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+     - <kbd>Tab</kbd> **Cycle continuity:** G0、G1、G2、G3 の連続性を切り替えます。 
+     - <kbd>D</kbd> **G1 Tension:** G1 連続性のテンションを調整します。 
+     - <kbd>Q</kbd> **Trim:** 選択したカーブのトリムのオン/オフを切り替えます。      
+4. Command Dialog の OK をクリックするか、右クリックで確定します。
 
 <VideoPlayer fileName="bridge-vertex"/>
 
+
 ## 関連項目
-- [ブリッジ](bridge)
-- [カーブのブリッジ](bridge-curve)
-- [エッジのブリッジ](bridge-edge)
-- [結合](join)
+- [Bridge](bridge)
+- [Bridge Curve](bridge-curve)
+- [Bridge Edge](bridge-edge)
+- [Join](join)

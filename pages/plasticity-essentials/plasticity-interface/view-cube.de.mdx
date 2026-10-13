@@ -1,26 +1,47 @@
-# Ansichtswürfel
+import ButtonIcon from '/components/ButtonIcon'
 
-## Ansichtswürfel
+# View Cube
 
-Der 3D-Ansichtswürfel in Plasticity dient als visuelle und interaktive Orientierungshilfe im 3D-Arbeitsbereich. Er ermöglicht es den Benutzern, die Blickrichtung ihres Modells schnell zu verstehen und zu steuern.
+## View Cube
 
-![Ansichtswürfel](/img/view-cube.png)
+Der **3D View Cube** in Plasticity dient als visuelle und interaktive Referenz zur Orientierung im 3D-Arbeitsbereich. Er bietet Ihnen eine schnelle Möglichkeit, die Blickrichtung auf Ihr Modell zu verstehen und zu steuern.
+
+![View Cube Interaction](/img/view-cube-arrows.svg)
 
 ## Funktionen
 
 - **Achsenanzeigen:** Der Würfel zeigt drei beschriftete Achsen an:
 
-        - **X-Achse (Rot)**
-        - **Y-Achse (Grün)**
-        - **Z-Achse (Blau)**
+        - <ButtonIcon type="x-arrow"/> **X-Achse** / <ButtonIcon type="y-arrow"/> **Y-Achse** / <ButtonIcon type="z-arrow"/> **Z-Achse**
 
-**Ansichtssteuerung:** Durch Klicken auf verschiedene Flächen des Würfels wird die Kameraperspektive auf vordefinierte Ausrichtungen umgestellt.
+**Ansichtssteuerung:** Durch Klicken auf verschiedene Flächen und Kanten des Würfels wechselt die Kameraansicht zu vordefinierten Ausrichtungen.
 
 ## Interaktion
 
-- **Auf eine Fläche klicken**: Richtet die Kamera auf diese Fläche aus. Durch Doppelklick wird die Ansicht gespiegelt.
+- **Klick auf einen Achsenpfeil**: Richtet die Kamera aus, um in diese Achsenrichtung zu blicken.
+    - **X-Achse**: Richtet die Kamera in der Ansicht Rechts (Right) aus.
+    - **Y-Achse**: Richtet die Kamera in der Ansicht Hinten (Back) aus.
+    - **Z-Achse**: Richtet die Kamera in der Ansicht Oben (Top) aus.
 
-- **Auf einen Achsenpfeil klicken**: Richtet die Kamera auf die entsprechende Achsenrichtung aus.
-    - **X-Achse**: Kamera in die rechte Ansicht ausrichten.
-    - **Y-Achse**: Kamera in die Rückansicht ausrichten.
-    - **Z-Achse**: Kamera in die Draufsicht ausrichten.
+<br/>
+
+- **Klick auf eine Fläche**: Richtet die Kamera auf diese Fläche aus. Ein Doppelklick dreht die Ansicht um.
+
+
+![View Cube Interaction](/img/view-cube-faces.svg)
+
+<br/>
+
+- **Klick auf eine Kante**: Klicken Sie auf die Kanten des Würfels, um das Modell aus einer isometrischen Perspektive zu betrachten.
+
+![View Cube Interaction](/img/view-cube-edges.svg)
+
+<br/>
+
+- **Klick auf eine Ecke**: Klicken Sie auf die Ecken des Würfels, um das Modell aus einer isometrischen Perspektive zu betrachten.
+
+![View Cube Interaction](/img/view-cube-corners.svg)
+
+- **Rechtsklick auf den View Cube**: Öffnet ein Kontextmenü mit Viewport-Ansichtsbefehlen und deren Tastenkürzeln.
+
+![Context Menu View Cube](/img/context-menu-view-cube.png)

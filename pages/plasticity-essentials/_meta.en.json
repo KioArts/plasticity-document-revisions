@@ -1,6 +1,7 @@
 {
 "---interface": { "type": "separator", "title": "User Interface" },
   "plasticity-interface": "Plasticity Interface",
+  "constraint-system": "Constraint System",
 
   "---objects": { "type": "separator", "title": "Working with Objects" },
   "object-types": "Object Types",

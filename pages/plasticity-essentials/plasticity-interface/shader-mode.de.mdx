@@ -71,6 +71,36 @@ Ambient Occlusion is turned off by default. However, you can enable it in the Pe
 - Stellen Sie sicher, dass Sie die Option zum Anzeigen versteckter Ordner in Ihrem Betriebssystem aktivieren, um auf das Verzeichnis `.plasticity` zuzugreifen.
 </Callout>
 
+### Einfärbbare benutzerdefinierte Matcaps
+
+Sie können steuern, ob ein benutzerdefiniertes Matcap eingefärbt oder nicht eingefärbt wird, indem Sie eine JSON-Datei in denselben Ordner wie Ihre Matcap-Dateien legen. Die JSON-Datei muss denselben Namen wie das Matcap haben.
+
+Wenn Ihre Matcap-Dateien beispielsweise `my_matcap.png` und `my_matcap.exr` heißen, erstellen Sie eine Datei mit dem Namen `my_matcap.json` und folgendem Inhalt:
+
+```json
+{
+  "isTinted": true
+}
+```
+
+Setzen Sie `isTinted` auf `true` für ein eingefärbtes Matcap oder auf `false` für ein nicht eingefärbtes.
+
+#### JSON-Datei erstellen
+
+1. Erstellen Sie mit einem beliebigen Texteditor (Notepad, TextEdit, VS Code usw.) eine neue Textdatei.
+2. Fügen Sie den folgenden Inhalt in die Datei ein:
+
+```json
+   {
+     "isTinted": true
+   }
+```
+
+3. Speichern Sie die Datei mit demselben Namen wie Ihre Matcap-Dateien und der Dateiendung `.json` (zum Beispiel `my_matcap.json`).
+4. Legen Sie die JSON-Datei in denselben Ordner wie Ihre Matcap-Dateien. Das Matcap verwendet nun die von Ihnen festgelegte Einfärbungseinstellung.
+
+![JSON-Datei im selben Ordner wie die Matcap-Dateien](/img/installing-json-file.png)
+
 ### Zeige Kanten, Kurven und Flächen ein- oder ausblenden
 
 - Sie können die Sichtbarkeit von Kanten, Kurven und Flächen mit den untenstehenden Schaltflächen umschalten.

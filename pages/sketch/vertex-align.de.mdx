@@ -1,0 +1,70 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## Vertex Align
+
+<CommandReference
+  command="Edge Align"
+  shortcut=""
+  button="In der Befehlspalette"
+  buttonIcon="/img/button-align.png"
+  tier="studio"
+/>
+
+## Beschreibung
+
+Richtet zwei Vertices oder Kurven aus, um ihre Kontinuität anzugleichen. Unterstützt Spline-, Polylinien- und geometrische Kurven mit Kontrolle über ihre Parameterposition und Constraints.
+
+### Grundlegende Verwendung[#basic-usage]
+
+1. Wählen Sie den zu verschiebenden Ziel-Vertex aus und anschließend den Referenz-Vertex, an dem ausgerichtet werden soll.
+    - Details zur Wahl der Ausrichtungsreihenfolge finden Sie unter [Auswahlmethoden](/sketch/align-vertex#selection-methods).
+2. Geben Sie **Edge Align** in die Befehlspalette ein.
+3. Legen Sie die Optionen im Befehlsdialog fest.
+    - <Kst>Befehlsdialog</Kst>
+        - **Kontinuität:** **G0, G1, G2** Legt die [Kontinuität der Fläche](/cad-essentials/continuity-curve-and-surface) fest.
+            - Die Kontinuität kann einzeln festgelegt werden, indem Sie auf die schwarzen Kreise auf der Fläche klicken.
+        - **Spannung:** Definiert die Spannung der Kontinuität der ausgerichteten Kurve – G1, G2 und G3.
+            - **G1** / **G2** / **G3:** Legt den CV-Kontinuitätsabstand fest.
+        - **Teilausrichtung:** Ermöglicht es, nur einen Teil der Kurve auszurichten. Start- und Endpunkt der Ausrichtung können Sie mit den verschiebbaren Gizmo-Griffen auf der Kurve festlegen.
+            - **Parameter:** Definiert die Position des ausgerichteten Objekts im Parameterraum der Geometrie.
+        - **Krümmung anzeigen:** Aktiviert die Krümmungsvisualisierung. Die Größe des Krümmungskamms können Sie im Menü [Krümmung](/plasticity-essentials/plasticity-interface/curvature) anpassen.
+        - **Constraints erstellen:** Erstellt Constraints auf der ausgerichteten Kurve, um die festgelegte Kontinuität beizubehalten, und ermöglicht weitere Anpassungen. Diese Constraints können Sie im Menü [Constraints](/plasticity-essentials/constraint-system) bearbeiten.
+    - <Kst>Tastenkürzel</Kst>
+        - <kbd>D</kbd> **G1-Spannung:** Passt die Spannung der G1-Kontinuität an.
+        - <kbd>C</kbd> **Constraints erstellen:** Erstellt eine Constraint-Beziehung mit der ausgerichteten Kurve und ermöglicht weitere Anpassungen.
+        - <kbd>P</kbd> **Teilausrichtung:** Aktiviert die Teilausrichtung, sodass nur ein Teil der Kurve ausgerichtet wird.
+        - <kbd>Tab</kbd> **Kontinuität wechseln:** Wechselt zwischen den Kontinuitätsoptionen.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
+
+<VideoPlayer fileName="align-vertex-1"/>
+
+## Auswahlmethoden[#selection-methods]
+
+Mit den Auswahlmethoden steuern Sie, wie Objekte ausgerichtet werden, wenn es komplexer wird, etwa wenn sich mehrere Vertices überlagern oder viele Kurven in der Szene vorhanden sind. 
+
+Der Ausrichtungsprozess funktioniert wie unter [Grundlegende Verwendung](/sketch/align-vertex#basic-usage), Sie können jedoch aus drei Methoden wählen, um festzulegen, wie Objekte ausgewählt und ausgerichtet werden.
+
+<br/>
+### **Vertex Align**
+    - **Ctrl + Shift Pop-up-Methode**
+        - Halten Sie <kbd>Ctrl + Shift</kbd> gedrückt und klicken Sie mit der linken Maustaste auf den **Ziel-Vertex**. Es erscheint ein Pop-up-Menü mit allen Kurven, die mit diesem Vertex verbunden sind. Fahren Sie über die Einträge, um die jeweilige Kurve hervorzuheben, und klicken Sie, um den **Ziel-Vertex** zu bestätigen.  
+          Um den **Referenz-Vertex** auszuwählen, wiederholen Sie den Vorgang, halten aber beim Klicken im Menü <kbd>Shift</kbd> gedrückt, um die Auswahl abzuschließen.
+
+    - **Mausrad-Methode**
+        - Klicken Sie mit der linken Maustaste auf einen Vertex und **halten** Sie die Taste gedrückt. Scrollen Sie dann mit dem Mausrad, um durch die Kurven zu wechseln, die diesen Vertex gemeinsam haben.
+
+<VideoPlayer fileName="align-vertex-selection-0"/>
+
+### **Curve Align**
+    - **Kantenauswahlmodus**
+        - Im Kantenauswahlmodus bestimmt Plasticity anhand des Vertex oder Segments, das Ihrem Klick am nächsten liegt, automatisch, welches Ende der Kurve ausgerichtet wird. Dieselbe Logik gilt bei der Auswahl der Referenzkurve.
+
+<VideoPlayer fileName="align-curve-selection-0"/>
+
+## Siehe auch
+- [Surface Align](/solid/surface-align)
+- [Project Align](/solid/project-align)

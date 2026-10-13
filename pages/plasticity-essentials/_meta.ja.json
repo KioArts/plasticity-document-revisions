@@ -1,0 +1,27 @@
+{
+"---interface": { "type": "separator", "title": "User Interface" },
+  "plasticity-interface": "Plasticity Interface",
+  "constraint-system": "Constraint System",
+
+  "---objects": { "type": "separator", "title": "Working with Objects" },
+  "object-types": "Object Types",
+  "group-objects": "Group Objects",
+  "selecting-objects": "Selecting Objects",
+  "toggle-object-states": "Toggle Object States",
+  "focus-and-isolate-objects": "Focus and Isolate Objects",
+
+  "---viewport": { "type": "separator", "title": "Viewport and Display" },
+  "operating-the-3d-viewport": "Operating the 3D Viewport",
+  "render-mode": "Render Mode",
+
+  "---preferences": { "type": "separator", "title": "Preferences and Tools" },
+  "preferences": "Preferences",
+  "radial-menu": "Radial Menu",
+  "general": "General Functions",
+
+  "---import-export": { "type": "separator", "title": "Import and Export" },
+  "import-export": "Import/Export",
+  "importing-reference-images": "Importing Reference Images",
+  "export-obj": "Export OBJ",
+  "export-svg": "Export SVG"
+}

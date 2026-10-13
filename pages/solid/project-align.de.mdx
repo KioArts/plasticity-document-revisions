@@ -11,7 +11,7 @@ import { Callout } from 'nextra/components'
   shortcut=""
   button="Im Befehlspalette"
   buttonIcon="/img/button-align.png"
-  tier="both"
+  tier="studio"
 />
 
 ## Beschreibung
@@ -33,7 +33,7 @@ Die Zieloberfläche muss ungetrimmt sein und aus einem einzigen Oberflächen-Pat
         - **Solver:** Wählen Sie den Solver zum Ausrichten der Oberflächen.
             - **XNurbs:** Verwendet den xNURBS-Solver zum Ausrichten der Oberflächen. Dies ist die Standardoption. Sie ist im Allgemeinen am genauesten, erfordert jedoch eine Referenzkurve zur Steuerung der Ausrichtung. (Studio-Lizenz erforderlich)
             - **Constrained:** Verwendet einen eingeschränkten Solver zum Ausrichten der Oberflächen. Diese Option ist schneller, liefert aber möglicherweise nicht so genaue Ergebnisse wie der xNURBS-Solver, und es ist keine Referenzkurve erforderlich.
-                - **Hinweis:** In der Nähe des Ausrichtungsgriffs erscheint ein kleines Symbol, das die Art des Befehlsvorgangs und die verwendete Stetigkeit anzeigt. Sie können die Einschränkung bearbeiten, indem Sie auf das Symbol doppelklicken, um den Stetigkeitstyp zu ändern - <ButtonIcon type="button-constraint-align-project-G0"/> / <ButtonIcon type="button-constraint-align-project-G1"/> / <ButtonIcon type="button-constraint-align-project-G2"/>.
+                - **Hinweis:** In der Nähe des Ausrichtungs-Handles erscheint ein kleines Symbol, das die Art der Befehlsoperation und die verwendete Kontinuität anzeigt. Du kannst die Beschränkung bearbeiten, indem du einmal auf das Symbol klickst, um den Kontinuitätstyp und das Verhalten der Operation zu ändern - [Constraint-System](/plasticity-essentials/constraint-system) <ButtonIcon type="button-constraint-align-project-G0"/> / <ButtonIcon type="button-constraint-align-project-G1"/> / <ButtonIcon type="button-constraint-align-project-G2"/>.
         - **Stetigkeit:** Legen Sie die [Stetigkeit der Oberfläche](/cad-essentials/continuity-curve-and-surface) fest.
             - **G0:** Positionsstetigkeit.
             - **G1:** Tangentenstetigkeit.

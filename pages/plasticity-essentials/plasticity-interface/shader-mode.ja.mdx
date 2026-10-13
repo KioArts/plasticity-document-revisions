@@ -71,6 +71,36 @@ Ambient Occlusion is turned off by default. However, you can enable it in the Pe
 - オペレーティングシステムで隠しフォルダーを表示するオプションを有効にして、`.plasticity` ディレクトリにアクセスできるようにしてください。
 </Callout>
 
+### 着色可能なカスタムMatcap
+
+カスタムMatcapを着色するかどうかは、Matcapファイルと同じフォルダーにJSONファイルを追加することで制御できます。JSONファイルの名前は、Matcapと同じにする必要があります。
+
+たとえば、Matcapファイルが `my_matcap.png` と `my_matcap.exr` の場合、次の内容で `my_matcap.json` という名前のファイルを作成します。
+
+```json
+{
+  "isTinted": true
+}
+```
+
+着色するMatcapには `isTinted` を `true` に、着色しないMatcapには `false` に設定します。
+
+#### JSONファイルの作成
+
+1. テキストエディター（メモ帳、TextEdit、VS Codeなど）を使って、新しいテキストファイルを作成します。
+2. ファイルに次の内容を追加します。
+
+```json
+   {
+     "isTinted": true
+   }
+```
+
+3. Matcapファイルと同じ名前で、拡張子を `.json` にしてファイルを保存します（例: `my_matcap.json`）。
+4. JSONファイルをMatcapファイルと同じフォルダーに配置します。これで、Matcapは指定した着色設定を使用するようになります。
+
+![Matcapファイルと同じフォルダーに配置されたJSONファイル](/img/installing-json-file.png)
+
 ### エッジ、カーブ、フェイスの表示切り替え
 
 - エッジ、カーブ、フェイスはトグルボタンで表示/非表示を切り替えることができます。

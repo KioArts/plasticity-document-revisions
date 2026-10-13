@@ -4,55 +4,57 @@ import ButtonIcon from '/components/ButtonIcon'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
+{/* # Bridge Curve[#bridge-curve]
+
+<Reference shortcut="" command="Bridge Curve" button="Toolbar" buttonIcon='button-bridge-curve' /> */}
+
 ## Bridge Curve
 
 <CommandReference
   command="Bridge Curve"
   shortcut=""
-  button="ツールバー内"
+  button="In Toolbar"
   buttonIcon="/img/button-bridge-curve.png"
   tier="both"
 />
 
 ## 説明
 
-2 本のカーブを G0 / G1 / G2 / G3 のいずれかの連続性でブリッジします。テンション調整、オートトリム、曲率表示に対応しています。
+G0、G1、G2、G3 の連続性で、2 本のカーブの間にブリッジカーブを作成します。テンションの調整、元のカーブの自動トリム、曲率の計測が可能です。また、コンストレイントの作成にも対応しています。
 
 ## 基本的な使い方
 
 <Callout type="info">
-ポイントを選択する前に、[Object Snaps](/plasticity-essentials/plasticity-interface/snap#object-snap) の Control‑Point、Edge、Curve、Face、Axis を有効にしてください。  
-開始点と終了点は、カーブ・エッジ・フェイス上の任意の位置にスナップできます。
+ポイントを選択する前に、[Object Snaps](/plasticity-essentials/plasticity-interface/snap#object-snap) で Control-Point、Edge、Curve、Face、Axis が有効になっていることを確認してください。始点と終点は、カーブ、エッジ、フェース上の任意の位置にスナップできます。
 </Callout>
 
-1. ツールバーの <ButtonIcon type="button-bridge-curve" /> ボタンをクリックします。
-2. 開始点をクリックします。
-3. 終了点をクリックします。  
-4. コマンドダイアログとキーボードショートカットでオプションを設定します。
-     - <Kst>コマンドダイアログ</Kst>
-          - **Parameter（パラメータ）：**
-               - **Value 1/2:** 開始点／終了点の相対位置。
-          - **Sense（方向反転）：**
-               - **Sense 1/2:** 開始点／終了点の方向を反転します。
-          - **Tension 1：**
-               - **Value 1/2:** 開始点／終了点の 1〜3 番目の CV に影響するテンション。
-          - **Tension 2：**
-               - **Value 1/2:** 開始点／終了点の 2・3 番目の CV に影響するテンション。
-          - **Tension 3：**
-               - **Value 1/2:** 開始点／終了点の 3 番目の CV に影響するテンション。
-          - **Start curvature（開始側の曲率）：**
-               - **G0, G1, G2, G3:** 開始点の[カーブ連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-          - **End curvature（終了側の曲率）：**
-               - **G0, G1, G2, G3:** 終了点の[カーブ連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
-          - **Trim:** ブリッジを超えて伸びているカーブを自動トリムします。
-          - **Show curvature:** 曲率表示を切り替えます。詳細は [Toggle Curvature](/tool/toggle-curvature)。
-     - <Kst>キーボードショートカット</Kst>
-     - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z 軸:** [軸に制限する](/tool/sketching-essentials#constrain-to-an-axis)。
-     - <kbd>Tab</kbd> **連続性切り替え:** G0 → G1 → G2 → G3 を順に切り替えます。
-     - <kbd>D</kbd> **G1 テンション:** G1 連続性のテンションを調整します。
-     - <kbd>Q</kbd> **Trim:** 選択中のカーブのトリムをオン／オフします。
+1. ツールバーのボタン <ButtonIcon type="button-bridge-curve" /> をクリックします。
+2. 始点をクリックします。
+3. 終点をクリックします。  
+4. Command Dialog とキーボードショートカットでオプションを設定します。
+     - <Kst>Command Dialog</Kst>
+          - **Parameter:**
+               - **Value 1/2:** 始点/終点のセグメント上での相対位置です。
+          - **Tension G1:**
+               - **Value 1/2:** 始点/終点の 1 番目から 3 番目のコントロールバーテックス (CV) に影響するテンション値です。
+          - **Tension G2:**
+               - **Value 1/2:** 始点/終点の 2 番目と 3 番目の CV に影響するテンション値です。
+          - **Tension G3:**
+               - **Value 1/2:** 始点/終点の 3 番目の CV に影響するテンション値です。
+          - **Start curvature:**
+               - **G0, G1, G2, G3:** 始点での[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+          -  **End curvature:**
+               - **G0, G1, G2, G3:** 終点での[カーブの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。      
+          - **Trim:** オンにすると、ブリッジからはみ出しているカーブがトリムされます。
+          - **Show curvature:** カーブ上の曲率表示を切り替えます。詳しくは [Toggle Curvature](/tool/toggle-curvature) を参照してください。
+          - **Create Constraints:** ブリッジされたカーブにコンストレイントを作成し、指定した連続性を維持するとともに、さらなる調整を可能にします。これらのコンストレイントは [Constraints](/plasticity-essentials/constraint-system) メニューで編集できます。
+     - <Kst>Keyboard Shortcuts</Kst>
+     - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [X、Y、Z 軸に拘束します](/tool/sketching-essentials#constrain-to-an-axis)。
+     - <kbd>Tab</kbd> **Cycle continuity:** G0、G1、G2、G3 の連続性を切り替えます。 
+     - <kbd>D</kbd> **G1 Tension:** G1 連続性のテンションを調整します。 
+     - <kbd>Q</kbd> **Trim:** 選択したカーブのトリムのオン/オフを切り替えます。 
           
-5. コマンドダイアログの OK または右クリックで確定します。
+5. Command Dialog の OK をクリックするか、右クリックで確定します。
 
 <VideoPlayer fileName="bridge-curve"/>
 
