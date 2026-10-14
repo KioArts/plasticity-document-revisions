@@ -6,76 +6,75 @@ import { Tabs } from 'nextra/components'
 # Shader-Modus
 
 ## Shader-Modus
-- Sie können zwischen den integrierten Shadern von Plasticity wechseln, indem Sie darauf klicken. Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, werden die ausgewählten Plasticity-Matcaps auf Objekte angewendet und angezeigt.
+- Du kannst zwischen den integrierten Shadern von Plasticity wechseln, indem du sie anklickst. Wenn der [Render-Modus](/plasticity-essentials/render-mode) ausgeschaltet ist, werden die ausgewählten Plasticity-Matcaps auf den Objekten angewendet und angezeigt.
 
-- Verfügbare Matcaps:
+### Verfügbare Matcaps
 
 ![Matcaps im Shader-Modus](/img/shader-mode-preview.png)
 
-| Name | Nummer | Anwendbarkeit | Hinweis |
-| ---- | ------ | ------------- | ---- |
-| Keramik Dunkel | 1 | Standard-Erscheinungsbild | - |
-| Metall Autolack | 2 | Glänzendes Erscheinungsbild | - |
-| Dunkel Glänzend | 3 | Glänzendes Erscheinungsbild | - |
-| Verlauf | 4 | Umgebungsverlauf-Erscheinungsbild | - |
-| Keramik Glühbirne | 5 | Highlight-Checker | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
-| Farb-Matcap | 6 | Mattes Erscheinungsbild | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
-| Schwarze Silhouette | 7 | Silhouetten-Checker | - |
-| Farbige Silhouette | 8 | Silhouetten-Checker mit Farbe | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
-| Isophoten/Iso-Winkel | 9 | Statischer Oberflächenkontinuitäts-Checker | Shader wird basierend auf dem aktuellen Kamerawinkel auf das Objekt angewendet. Passen Sie die Streifendichte im Menü **"Materialoptionen"** an. |
-| Formschrägen-Checker | 10 | Formschrägen-Checker für Entformung | Der Winkel wird basierend auf der aktuellen Konstruktionsfläche angezeigt. Passen Sie die Schrägwinkel-Schwelle (blau) relativ zur Konstruktionsfläche im Menü **"Materialoptionen"** an. |
-| Horizontale Zebra-Reflexion | 11 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
-| Vertikale Zebra-Reflexion | 12 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
-| Topology Shader    |  13    |  Surface Checker                 |  Use on imported mesh files to trace or create a wireframe look for reverse engineering purposes. This is useful for analyzing complex organic shapes with intricate curves and deformations, which may not be as easily visible when using highlighters or other shaders. You can adjust the direction and line distribution in the **"Material Options"** panel. |
-| Normal Checker     |  14    |  Normal Surface Checker                 |  Use this shader to check if any surfaces are reversed. Blue indicates that the surface is facing outward, while red indicates it is facing inward. |
+| Name | Nummer | Anwendung | Hinweis |
+| ---- | ------ | --------- | ------- |
+| Ceramic Dark|   1    | Standarddarstellung |  -  |
+| Metal Carpaint   |   2    |   Glänzende Darstellung    |  -  |
+| Dark Shiny  |  3     |  Glänzende Darstellung     |  -  |
+| Gradient  |    4   |   Darstellung mit Umgebungsverlauf    |  -  |
+| Ceramic Lightbulb  |   5    |  Highlight-Prüfung     |  Wenn der [Render-Modus](/plasticity-essentials/render-mode) ausgeschaltet ist, kannst du verschiedene Materialfarben zuweisen, die in Echtzeit im Viewport angezeigt werden. |
+| Color Matcap |   6    |  Matte Darstellung   | Wenn der [Render-Modus](/plasticity-essentials/render-mode) ausgeschaltet ist, kannst du verschiedene Materialfarben zuweisen, die in Echtzeit im Viewport angezeigt werden. |
+| Black Silhouette     |  7     |  Silhouetten-Prüfung |  -   |
+| Color Silhouette    |  8     |  Silhouetten-Prüfung mit Farbe | Wenn der [Render-Modus](/plasticity-essentials/render-mode) ausgeschaltet ist, kannst du verschiedene Materialfarben zuweisen, die in Echtzeit im Viewport angezeigt werden. |
+| Isophote/Isoangle   |   9     |   Statische Prüfung der Flächenkontinuität         | Der Shader wird abhängig vom aktuellen Kamerawinkel auf das Objekt angewendet. Passe die Streifendichte im Menü **"Material Options"** an. |
+| Draft Angle          |   10    | Prüfung der Entformungsschrägen für die Formentnahme       |  Der Entformungswinkel wird abhängig von der aktuellen Konstruktionsebene auf dem Objekt angezeigt. Passe den Schwellenwert des Entformungswinkels (blau) relativ zur Konstruktionsebene im Menü **"Material Options"** an. |
+| Horizontal Zebra Reflection    |  11     |   Prüfung der Flächenkontinuität                |  Passe die Anzahl der Zebrastreifen im Menü **"Material Options"** an. |
+| Vertical Zebra Reflection     |  12     |  Prüfung der Flächenkontinuität                 |  Passe die Anzahl der Zebrastreifen im Menü **"Material Options"** an.  |
+| Topography Shader    |  13    |  Flächenprüfung                 |  Verwende ihn auf importierten Mesh-Dateien, um für das Reverse Engineering nachzuzeichnen oder eine Drahtgitter-Optik zu erzeugen. Das ist nützlich, um komplexe organische Formen mit feinen Kurven und Verformungen zu analysieren, die mit Highlightern oder anderen Shadern oft schwerer zu erkennen sind. Richtung und Linienverteilung kannst du im Bereich **"Material Options"** anpassen. |
+| Face direction     |  14    |  Prüfung der Flächennormalen                 |  Verwende diesen Shader, um zu prüfen, ob Flächen umgekehrt sind. Blau bedeutet, dass die Fläche nach außen zeigt, Rot bedeutet, dass sie nach innen zeigt. |
+| Curvature | 15 | Krümmungsanalyse | <p>Verwende diesen Shader, um Krümmungsunterschiede auf der Fläche zu prüfen. Eine Farbskala zeigt, ob die Fläche eine gleichmäßige Krümmung hat oder nicht.</p><p>**Gaussian:** Findet Wendepunkte (grün = Krümmung null), an denen die Fläche von einer Wölbung in die entgegengesetzte übergeht. Am besten geeignet, um Unstetigkeiten aufzuspüren und glatte Übergänge zu überprüfen.</p><p>**Mean:** Mittelt beide Flächenrichtungen für einen Gesamteindruck der Glätte. Weniger empfindlich als Gaussian; verwende ihn nach Korrekturen, um einen glatten Verlauf ohne Fehlalarme zu bestätigen.</p><p>**Max:** Isoliert die Richtung mit der stärksten Biegung. Wird typischerweise verwendet, um Problembereiche beim Verdicken oder Versetzen von Flächen zu finden, da er Bereiche zeigt, die sich bei einem bestimmten Versatzabstand selbst durchdringen würden. Auch nützlich, um Flächen zu vergleichen oder herauszufinden, warum eine Richtung anders gekrümmt ist als erwartet.</p> |
 
 ## Ambient Occlusion (AO)
 
-Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius (1) and falloff (2) in the Appearance section in the Preferences menu.
+Ambient Occlusion ist standardmäßig ausgeschaltet. Du kannst es jedoch im Bereich Performance im Menü [Preferences](/plasticity-essentials/preferences) aktivieren. Das Aktivieren von AO wird für Rechner mit leistungsstarken GPUs empfohlen. Das Erscheinungsbild, etwa Radius **(1)** und Falloff **(2)**, kannst du im Bereich Appearance im Menü Preferences anpassen.
 
-![Ambient Occlusion Settings](/img/ao-settings.png)
+![Ambient-Occlusion-Einstellungen](/img/ao-settings.png)
 
-## Alle Matcaps
-- Benutzerdefinierte Matcaps erscheinen unter der Kategorie "Alle Matcaps".
+## All Matcaps
+- Benutzerdefinierte Matcaps erscheinen in der Kategorie "All Matcaps".
 
 ![Benutzerdefinierte Matcaps](/img/custom-matcaps-preview.png)
 
 ### Benutzerdefinierte Matcaps installieren
 
-1. Bereiten Sie Ihre Matcap-Dateien vor (EXR und PNG mit identischen Namen).
-2. Finden Sie das Verzeichnis `.plasticity` und erstellen Sie dort einen Ordner namens "matcaps".
-
+1. Bereite deine benutzerdefinierten Matcap-Dateien vor und stelle sicher, dass EXR- und PNG-Dateien identische Namen haben.
+2. Suche das Verzeichnis `.plasticity` auf deinem Betriebssystem und erstelle darin einen neuen Ordner mit dem Namen "matcaps".
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigieren Sie zu `C:/Users/<username>/.plasticity`.
+    Navigiere zu `C:/Users/<username>/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigieren Sie zu `~/.plasticity`.
+    Navigiere zu `~/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigieren Sie zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    Navigiere zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
     </Tabs.Tab>
 </Tabs>
-
-3. Verschieben Sie die Dateien in diesen Ordner und starten Sie Plasticity neu.
+3. Verschiebe deine benutzerdefinierten Matcap-Dateien in diesen Ordner und starte Plasticity neu, um die Änderungen zu übernehmen.
 
 ![Matcaps installieren](/img/installing-matcaps-preview.png)
 
 <Callout type="info" emoji="💡">
 **Tipp**     
-- EXR- und PNG-Dateien sollten 512x512 Pixel groß sein und einen transparenten Hintergrund haben.
+- Stelle sicher, dass sowohl die EXR- als auch die PNG-Datei 512x512 Pixel groß sind und einen transparenten Hintergrund haben. Die EXR-Datei sollte außerdem mindestens einen 16-Bit-Farbbereich haben.
 </Callout>
 
 <Callout emoji="❗">
-**Note**     
-- Stellen Sie sicher, dass Sie die Option zum Anzeigen versteckter Ordner in Ihrem Betriebssystem aktivieren, um auf das Verzeichnis `.plasticity` zuzugreifen.
+**Hinweis**     
+- Aktiviere in deinem Betriebssystem die Option zum Anzeigen versteckter Ordner, um auf das Verzeichnis `.plasticity` zugreifen zu können.
 </Callout>
 
 ### Einfärbbare benutzerdefinierte Matcaps
 
-Sie können steuern, ob ein benutzerdefiniertes Matcap eingefärbt oder nicht eingefärbt wird, indem Sie eine JSON-Datei in denselben Ordner wie Ihre Matcap-Dateien legen. Die JSON-Datei muss denselben Namen wie das Matcap haben.
+Du kannst steuern, ob ein benutzerdefiniertes Matcap eingefärbt oder nicht eingefärbt ist, indem du neben deinen Matcap-Dateien eine JSON-Datei hinzufügst. Die JSON-Datei muss denselben Namen wie das Matcap haben.
 
-Wenn Ihre Matcap-Dateien beispielsweise `my_matcap.png` und `my_matcap.exr` heißen, erstellen Sie eine Datei mit dem Namen `my_matcap.json` und folgendem Inhalt:
+Wenn deine Matcap-Dateien beispielsweise `my_matcap.png` und `my_matcap.exr` heißen, erstelle eine Datei mit dem Namen `my_matcap.json` mit folgendem Inhalt:
 
 ```json
 {
@@ -83,35 +82,38 @@ Wenn Ihre Matcap-Dateien beispielsweise `my_matcap.png` und `my_matcap.exr` hei�
 }
 ```
 
-Setzen Sie `isTinted` auf `true` für ein eingefärbtes Matcap oder auf `false` für ein nicht eingefärbtes.
+Setze `isTinted` auf `true` für ein eingefärbtes Matcap oder auf `false` für ein nicht eingefärbtes.
 
 #### JSON-Datei erstellen
 
-1. Erstellen Sie mit einem beliebigen Texteditor (Notepad, TextEdit, VS Code usw.) eine neue Textdatei.
-2. Fügen Sie den folgenden Inhalt in die Datei ein:
+1. Erstelle eine neue Textdatei mit einem beliebigen Texteditor (Notepad, TextEdit, VS Code usw.).
+2. Füge Folgendes in die Datei ein:
 
 ```json
-   {
-     "isTinted": true
-   }
+       {
+         "isTinted": true
+       }
 ```
 
-3. Speichern Sie die Datei mit demselben Namen wie Ihre Matcap-Dateien und der Dateiendung `.json` (zum Beispiel `my_matcap.json`).
-4. Legen Sie die JSON-Datei in denselben Ordner wie Ihre Matcap-Dateien. Das Matcap verwendet nun die von Ihnen festgelegte Einfärbungseinstellung.
+3. Speichere die Datei unter demselben Namen wie dein Matcap (zum Beispiel `my_matcap`) und ändere die Erweiterung in `.json`.
 
-![JSON-Datei im selben Ordner wie die Matcap-Dateien](/img/installing-json-file.png)
+4. Lege die JSON-Datei im selben Ordner wie deine Matcap-Dateien ab. Das Matcap verwendet nun die von dir festgelegte Tönungseinstellung.
 
-### Zeige Kanten, Kurven und Flächen ein- oder ausblenden
+![Beispiel für die Installation einer JSON-Datei](/img/installing-json-file.png)
 
-- Sie können die Sichtbarkeit von Kanten, Kurven und Flächen mit den untenstehenden Schaltflächen umschalten.
 
-![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png)
+### Anzeige von Kanten, Kurven und Flächen umschalten
 
-| Funktion                                                        | Tastenkürzel | Schaltfläche | Befehlsname               |
-| --------------------------------------------------------------- | ------------ | ----------- | ------------------------- |
-| Umschalten der Kanten-Sichtbarkeit <br />(Deaktivieren blendet die Kanten aus.) |              | (13)        | Viewport: toggle Edges    |
-| Umschalten der Kurven-Sichtbarkeit <br />(Deaktivieren blendet die Kurven aus.) |              | (14)        | Viewport: toggle Curves   |
-| Umschalten der Flächen-Sichtbarkeit <br />(Deaktivieren blendet die Flächen aus.) |              | (15)        | Viewport: toggle Faces    |
+- Kanten, Kurven und Flächen lassen sich über die Umschalttasten ein- oder ausblenden.
 
-### See Also
-[Render Mode](/plasticity-essentials/render-mode)
+![Umschaltoptionen in All Matcaps](/img/toggle-edges-curves-faces.png)
+
+| Funktion                                                      | Tastenkürzel | Schaltfläche | Befehlsname           |
+| ------------------------------------------------------------- | ------- | ------ | ---------------------- |
+| Anzeige von Kanten umschalten <br />(Ausschalten blendet die Kanten aus.) |         | (15)   | Viewport: toggle Edges |
+| Anzeige von Kurven umschalten <br />(Ausschalten blendet die Kurven aus.) |         | (16)   | Viewport: toggle Curves |
+| Anzeige von Flächen umschalten <br />(Ausschalten blendet die Flächen aus.) |         | (17)   | Viewport: toggle Faces |
+ 
+
+### Siehe auch
+[Render-Modus](/plasticity-essentials/render-mode)

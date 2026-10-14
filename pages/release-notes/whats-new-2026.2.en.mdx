@@ -7,9 +7,9 @@ import ButtonIcon from '/components/ButtonIcon'
 
 Release date: TBD
 
-# Plasticity 26.2.0 Release Notes
+# Plasticity 26.2 Release Notes
 
-{/* Plasticity 26.2.0 introduces a new Assets system, a Studio-only Constraints system, and a new Project Align command, along with improvements to Edge Align, Vertex Align, Move, Slide, Square, Join, Transform, and Boolean. This release also brings a faster PolySpline rendering strategy, mesh snap visualization, customizable edge colors, tintable matcaps, and a number of interface refinements across the Outliner, panels, and gizmos. */}
+Plasticity 26.2.0 introduces a new Assets system, a Studio only Constraints system, and a new Project Align command, along with improvements to Edge Align, Vertex Align, Move, Slide, Square, Join, Transform, and Boolean. This release also brings a faster PolySpline rendering strategy, mesh snap visualization, customizable edge colors, tintable matcaps, and a number of interface refinements across the Outliner, panels, and gizmos.
 
 ## 1. New Commands
 
@@ -91,6 +91,20 @@ The corresponding constraint icons are displayed in the viewport, and clicking o
 </div>
 
 Learn more: [Constraint System](/tool/sketching-essentials#constraint-system)
+
+### Gaussian Shader
+- **New Gaussian Shader**   
+New **Curvature Analysis** shader is available in the Shader Mode panel. It colors your surface so you can instantly see where it curves smoothly and where it doesn't. 
+
+Choose from three modes: **Gaussian** to catch sudden changes, **Mean** to confirm overall smoothness, and **Max** to spot areas that could cause problems when thickening or offsetting.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Gaussian Shader Example](/release/26.2/gaussian-shader-example.svg)
+</Center>
+
+Learn more: [Shader Mode](/plasticity-essentials/plasticity-interface/shader-mode)
 
 ---
 
@@ -300,7 +314,7 @@ Learn more: [Extend](/sketch/extend)
 - **New Visual Hint for Failure**       
 When a **Boolean**, **Hollow**, or **Thicken** operation fails, the geometry where the issue occurs is now highlighted in red, so you can quickly find and fix the problem.
 
----
+<br/>
 
 <Center 
 width="500px"
@@ -309,7 +323,7 @@ caption="The red highlight indicates the area where the Boolean operation failed
 ![Boolean failure hint](/release/26.2/boolean-failure-hint.gif)
 </Center>
 
----
+<br/>
 
 <Center 
 width="500px"
@@ -318,7 +332,7 @@ caption="The red highlight indicates the area where the Hollow operation failed.
 ![Hollow failure hint](/release/26.2/hollow-failure-hint.gif)
 </Center>
 
----
+<br/>
 
 <Center 
 width="500px"
@@ -356,11 +370,11 @@ Learn more: [Slide](/solid/slide)
 ### Outliner Sticky Header
 - **Sticky Header:** The Outliner now has a sticky header that remains visible while scrolling through the list of many objects.
 
-{/* <Center 
-width="400px"
+<Center 
+width="320px"
 borderRadius="8px">
-![Constraints Example](/release/26.2/3d-cube-styling.png)
-</Center> */}
+![Constraints Example](/release/26.2/sticky-header.gif)
+</Center>
 
 ### Viewport and Navigation
 - **Viewport Cube:** Refreshed visual styling and added a right-click context menu for quick access to view options.
@@ -449,7 +463,8 @@ borderRadius="8px">
 |-----|---------|---------|
 | <kbd>J</kbd> | Join | Outliner |
 | <kbd>B</kbd> | Toggle Boundary Alignment | Edge Align |
-| <kbd>P</kbd> | Toggle Partial Alignment | Edge Align / Vertex Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Edge Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Vertex Align |
 
 ### Experimental Features
 

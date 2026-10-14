@@ -1,0 +1,475 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
+import { Center } from '/components/Center'
+import { SideBySide } from '/components/SideBySide'
+import ButtonIcon from '/components/ButtonIcon'
+
+リリース日: TBD
+
+# Plasticity 26.2 リリースノート
+
+Plasticity 26.2.0 では、新しいアセットシステム、Studio 専用のコンストレイントシステム、新コマンド Project Align を導入しました。あわせて、Edge Align、Vertex Align、Move、Slide、Square、Join、Transform、Boolean が改善されています。また、PolySpline のレンダリングの高速化、メッシュスナップの可視化、エッジカラーのカスタマイズ、色付け可能なマットキャップ、そしてアウトライナー、パネル、ギズモにわたる多数のインターフェースの改良も含まれています。
+
+## 1. 新しいコマンド
+
+### Project Align   
+**Project Align** は、ターゲットサーフェスのエッジに沿った CV を、ベクトル方向またはサーフェスの法線に従って、参照サーフェスに揃えます。**Constrained** と **xNURBS** の 2 つのソルバーから選べます。xNURBS では、整列を誘導する参照カーブが必要です。Studio のみで利用できます。
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Project Align の例](/release/26.2/project-align-example-01.gif)
+</Center>
+
+詳細: [Project Align](/solid/project-align)
+
+### Home View
+- **アイソメトリック Home View**    
+Plasticity に、ビューポートを標準のアイソメトリックビューに戻す **Home View** が追加されました。3D ビューポートのキューブを右クリックするか、新しい `Viewport: Home View` コマンドで利用できます。
+
+詳細: [View Cube](/plasticity-essentials/plasticity-interface/view-cube)
+
+### 表示切り替えコマンド
+- **画像、メッシュ、コンストレイントの切り替え**    
+新しい `Viewport: Toggle Images`、`Viewport: Toggle Meshes`、`Viewport: Toggle Constraints` コマンドで、アウトライナーでオブジェクトを選択して手動で非表示にしなくても、画像、メッシュ、コンストレイントのビューポート上の表示をすばやく切り替えられます。
+
+詳細: [Toggle Object States](/plasticity-essentials/plasticity-interface/outliner#operations-by-command-name)
+
+### Select All Constraints
+- **Select All Constraints**    
+`Select All Constraints` コマンドで、シーン内のすべてのコンストレイントを一度に選択できます。コンストレイントは現在 Studio 専用で、まだファイルには保存されません。この[章](/release-notes/whats-new-2026.2#constraint-system)をご覧ください。
+
+詳細: [Selecting Objects](/plasticity-essentials/selecting-objects#selecting-with-commands)
+
+---
+
+## 2. 新機能
+
+### アセットシステム
+- **アセットのマーク、エクスポート、共有**  
+Plasticity に、アセットのマーク、エクスポート、共有のための一連のワークフローが追加されました。アウトライナーの新しい **Assets** タブを開き、アセットフォルダを選んで、アセットをビューポートにドラッグするだけで配置できます。ボルトや機械部品など、ドキュメント内で最終的なパーツを組み立てる際によく再利用するパーツの繰り返し作業を効率化します。
+
+<Center 
+width="600px"
+borderRadius="8px">
+![アセットパネルの例](/release/26.2/assets-menu-example.gif)
+</Center>
+
+詳細: [Assets](/plasticity-essentials/plasticity-interface/assets)
+
+### コンストレイントシステム
+- **コンストレイントの作成と維持**    
+Plasticity に新しい**コンストレイントシステム**が導入されました。使用するコマンドに応じてコンストレイントを作成でき、ジオメトリを変形しても自動的に維持されます。この機能は Studio 専用で、コンストレイントはまだファイルには保存されません。
+
+<Center 
+width="600px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/constraint-align-example.gif)
+</Center>
+
+次のコマンドがコンストレイントに対応しています。
+
+| コマンド名 | オプション | 備考 |
+|:---|---| --- |
+| [Square](/solid/square) | 連続性を G0、G1、G2、Free から指定、Partial Alignment の調整、Boundary の調整、解析設定 | コンストレイントを作成するオプションあり | 
+| [Project Align](/solid/project-align) | 連続性を G0、G1、G2、Free から指定、Partial Alignment の調整、Boundary の調整、解析設定 |  コンストレイントを自動的に作成 |
+| [Surface Align](/solid/surface-align) | 連続性を G0、G1、G2、Free から指定、Partial Alignment の調整、Boundary の調整、解析設定 | コンストレイントを作成するオプションあり |
+| [Edge Align](/solid/edge-align) | 連続性を G0、G1、G2、G3 から指定 | コンストレイントを作成するオプションあり |
+| [Vertex Align](/sketch/vertex-align) | 連続性を G0、G1、G2、G3 から指定 | コンストレイントを作成するオプションあり |
+| [Bridge Curve](/sketch/bridge-curve) | 連続性を G0、G1、G2、G3 から指定 |  コンストレイントを作成するオプションあり |
+| [Bridge Vertex](/sketch/bridge-vertex) | 連続性を G0、G1、G2、G3 から指定 | コンストレイントを作成するオプションあり |
+| [Bridge Edge](/sketch/bridge-edge) | 連続性を G0、G1、G2、G3 から指定 | コンストレイントを作成するオプションあり |
+
+
+対応するコンストレイントのアイコンがビューポートに表示されます。一度クリックすると Constraint Options メニューが開き、サーフェスコンストレイントとカーブコンストレイントそれぞれの設定を調整できます。
+
+<br/>
+
+<div style={{textAlign: 'center'}}>
+<img src="/release/26.2/constraint-options-menu.png" alt="Constraint Options メニュー" width="160" />
+</div>
+
+詳細: [Constraint System](/tool/sketching-essentials#constraint-system)
+
+### Gaussian シェーダー
+- **新しい Gaussian シェーダー**   
+新しい **Curvature Analysis** シェーダーが Shader Mode パネルに追加されました。サーフェスに色を付けて、滑らかに曲がっている箇所とそうでない箇所をひと目で確認できます。 
+
+3 つのモードから選べます。急な変化を見つける **Gaussian**、全体的な滑らかさを確認する **Mean**、厚み付けやオフセットの際に問題になりそうな箇所を見つける **Max** です。
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Gaussian シェーダーの例](/release/26.2/gaussian-shader-example.svg)
+</Center>
+
+詳細: [Shader Mode](/plasticity-essentials/plasticity-interface/shader-mode)
+
+---
+
+## 3. 機能の改善
+
+### スナップ   
+
+- **新しいスナップポイント:** カーブやエッジがセクションプレーンおよび軸平面と交差すると、新しいスナップポイントが表示されます。3D では、Section Snaps 用の `Section`、Plane Snaps 用の `YZ`、`XZ` です。
+
+<Center 
+width="550px"
+borderRadius="8px">
+![スナップの例](/release/26.2/new-snaps-example.svg)
+</Center>
+
+- **インスタンス上のスナップポイント:** **[Create Instance](/solid/create-instance)** コマンドでインスタンス化したオブジェクトが、Plasticity で現在利用できるすべてのスナップポイントに対応しました。
+
+詳細: [Snapping](/plasticity-essentials/plasticity-interface/snap)
+
+## 4. コマンドの改善
+
+### Edge Align
+
+**Align** コマンドは **Edge Align** に名称変更され、ソルブとバウンダリー処理が複数改善されました。
+
+- **新しい Collinear ソルブオプション**    
+**Collinear** は Class A スタイルのモデリング向けの新しいソルバーオプションで、2 つのサーフェス間の整列の方法を制御する 2 つの動作オプション、**Symmetric** と **Asymmetric** があります。共有するバウンダリーエッジに沿って、両方のサーフェスの CV ハルをどのように調整し、整理されたきれいなグリッドを形成するかを決めます。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/collinear-behavior-image.png)
+</Center>
+
+- **新しい Skew バウンダリーオプション**    
+新しい **Skew** バウンダリーオプションが展開式のセクションに追加され、整列時にバウンダリーエッジをどれだけ傾けるかを制御できます。Skew 角度は、ビューポート内のギズモのハンドルで調整するか、**Start** と **End** の値を入力して調整できます。この機能を使うには、少なくとも G1 連続性が必要です。 
+
+<Center 
+width="500px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/skew-boundary-angle.svg)
+</Center>
+
+- **Partial Alignment の改善**    
+**Partial Alignment** に、エッジに沿ってスライドさせるギズモが追加され、整列をどこまで及ぼすかを細かく調整できます。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/partial-alignment-gizmo.svg)
+</Center>
+
+- **Edge Align の動作改善**    
+**Edge Align** が、カーブと同じ方法でサーフェスのエッジも整列できるようになり、正確にエッジをクリックする必要がなくなりました。**Face** または **Sheet and Solid Selection Mode** では、2 つのシートのバウンダリーエッジの近くであればどこをクリックしても、正しくペアリングされます。
+
+- **新しいキーバインド**    
+**Edge Align** の使用中は、<kbd>B</kbd> でバウンダリーアライメントのオン/オフ、<kbd>P</kbd> でパーシャルアライメントのオン/オフを切り替えられます。
+
+詳細: [Edge Align](/solid/edge-align)
+
+---
+
+### Vertex Align
+
+- **Partial Alignment の改善**    
+Partial Alignment が、セグメントに沿ってスライドさせるギズモに対応し、より細かく制御できるようになりました。
+
+- **新しいキーバインド**    
+パーシャルアライメントのオン/オフを切り替える新しいキーバインド <kbd>P</kbd> が追加されました。
+
+詳細: [Vertex Align](/sketch/vertex-align)
+
+---
+
+### Bridge Curve
+- **ギズモの改善**    
+  Bridge Curve コマンドのギズモが再設計され、2 種類のハンドルが用意されました。
+
+  - **パラメータハンドル:** ブリッジされるカーブの始点と終点を設定します。
+
+    - <Center 
+      width="150px"
+      borderRadius="8px">
+      ![プレースホルダー](/release/26.2/drag-handles.gif)
+      </Center>
+
+  - **Sense Direction ハンドル:** ブリッジされるカーブが、それぞれの元のカーブにどの方向で接続するかを制御します。
+
+    - <Center 
+      width="150px"
+      borderRadius="8px">
+      ![プレースホルダー](/release/26.2/sense-direction.gif)
+      </Center>
+
+  Sense Direction をギズモで直接制御できるようになったため、ダイアログから **Sense** オプションは削除されました。
+
+<Center 
+width="500px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/bridge-curve-new-gizmo.png)
+</Center>
+
+詳細: [Bridge Curve](/sketch/bridge-curve)
+
+### Move
+- **自動呼び出し**    
+アイテムを選択すると **Move** が自動的に呼び出されるようになりました。**Preferences > Commands** で無効にできます。
+- **ギズモ変形の累積**    
+同じ方向への連続した Move ギズモのドラッグが、ドラッグごとに表示値がリセットされるのではなく、1 つの合計値として累積されるようになりました。
+- **ミラー設定の保持**    
+ミラー設定が、次回以降の使用時にも保持されるようになりました。
+- **軸に平行な平面でのミラー整列**    
+ミラーを有効にしてコントロールポイントを移動する際、現在のコンストラクションプレーンが軸に平行な場合は、相対的な XYZ 軸ではなくワールド軸が使われるようになりました。
+
+詳細: [Move](/common/move)
+
+---
+
+### Rotate
+- **進捗の視覚インジケーター**     
+Rotate ギズモの使用中に、選択をどれだけ回転させたかを示す視覚インジケーターが表示されるようになりました。
+
+<Center 
+width="450px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/rotate-gizmo-progress.png)
+</Center>
+
+- **ギズモ変形の累積**    
+同じ方向への連続した Rotate ギズモのドラッグが、ドラッグごとに表示値がリセットされるのではなく、1 つの合計値として累積されるようになりました。
+
+詳細: [Rotate](/common/rotate)
+
+---
+
+{/* ### Mirror Command
+- **Mirror alignment on axis-aligned planes**    
+When using the Mirror command, world axes are now used instead of relative XYZ axes if the current construction plane is axis-aligned.
+
+Learn more: [Mirror](/common/mirror)
+
+--- */}
+
+### PolySplines
+- **Point Selection Mode での PolySpline CV の編集**    
+PolySpline ボディの CV を **Point Selection Mode** で移動できるようになりました。メッシュボディの頂点を移動するのと同様に、Plasticity 内で PolySpline ジオメトリに対して直接行えます。
+
+<Center 
+width="550px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/polyspline-cv-editing.gif)
+</Center>
+
+- **PolySpline CV の複製**      
+**[Duplicate](/common/duplicate)** コマンドを使うと、PolySpline オブジェクト上で選択した CV を、構造と編集可能性を保ったまま複製できます。PolySpline のトポロジーには特定の構築ルールがあります。複製した CV に十分なサポートジオメトリがない場合は、有効な PolySpline トポロジーに再構築されます。
+
+<Center 
+width="550px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/polyspline-duplicate-polycv.gif)
+</Center>
+
+- **PolySpline CV の削除**     
+フェースに対して **[Remove Nominal Surface](/solid/remove-nominal-surface)** コマンドを使うと、PolySpline の CV を削除できます。この操作は破壊的なので、適用する前に選択内容を確認してください。
+
+詳細: [PolySplines](/solid/polyspline)
+
+  ---
+
+### Duplicate
+- **後処理の更新**    
+サーフェスラインを持つフェースを複製しても、冗長なトポロジーが削除されなくなり、元のサーフェス情報が保持されます。不要なサーフェスラインを削除したい場合は、**[Delete Redundant Topology](/solid/delete-redundant-topology)** コマンドを使用してください。
+
+詳細: [Duplicate](/common/duplicate)
+
+---
+
+### Offset Curve
+- **隣接する頂点を越えた拡張**   
+頂点のオフセットが、隣接する頂点で制限されず、その先まで続けられるようになりました。
+
+<Center 
+width="550px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/offset-vertex-upgrade.gif)
+</Center>
+
+詳細: [Offset Curve](/sketch/offset-curve)
+
+---
+
+### Extend
+- **シートの自然な延長**    
+トリムされていないシートを自然に延長する際に、modify と unmodify のオプションが使えるようになりました。これにより、新しいサーフェス作成の開始位置を示すサーフェスラインが追加されます。自然延長とスキュー延長の両方に対応しています。
+
+<Center 
+width="550px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/exthend-sheet-naturally-modify-options.gif)
+</Center>
+
+詳細: [Extend](/sketch/extend)
+
+---
+
+### Boolean、Hollow、Thicken
+- **失敗を示す新しい視覚ヒント**       
+**Boolean**、**Hollow**、**Thicken** の操作が失敗した場合、問題が発生しているジオメトリが赤く強調表示されるようになり、問題をすばやく見つけて修正できます。
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="赤いハイライトは、Boolean 操作が失敗した箇所を示しています。">
+![Boolean 失敗のヒント](/release/26.2/boolean-failure-hint.gif)
+</Center>
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="赤いハイライトは、Hollow 操作が失敗した箇所を示しています。">
+![Hollow 失敗のヒント](/release/26.2/hollow-failure-hint.gif)
+</Center>
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="赤いハイライトは、Thicken 操作が失敗した箇所を示しています。">
+![Thicken 失敗のヒント](/release/26.2/thicken-failure-hint.gif)
+</Center>
+
+詳細: [Boolean](/solid/boolean)、[Hollow](/solid/hollow)、[Thicken](/solid/thicken)
+
+### Square
+- **シートボディの入力に対応**    
+Square が、単一の矩形フェースを持つシートであれば、シートボディを入力として受け付けるようになりました。**Sheet and Body Selection Mode** では、Refit Surface が自動的に適用されます。以前はこの入力は無効でエラーになっていました。
+
+詳細: [Square](/solid/square)
+
+---
+
+### Slide
+- **プロポーショナルフォールオフに対応**      
+プロポーショナルフォールオフに対応しました。複数のサーフェスを同時にスライドすると、それらの UV 方向が調和されます。
+
+<Center 
+width="550px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/slide-falloff-command.gif)
+</Center>
+
+詳細: [Slide](/solid/slide)
+
+---
+
+## 5. インターフェースの改善
+
+### アウトライナーの固定ヘッダー
+- **固定ヘッダー:** アウトライナーに固定ヘッダーが追加され、多数のオブジェクトのリストをスクロールしても常に表示されます。
+
+<Center 
+width="320px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/sticky-header.gif)
+</Center>
+
+### ビューポートとナビゲーション
+- **ビューポートキューブ:** 見た目を刷新し、ビューのオプションにすばやくアクセスできる右クリックのコンテキストメニューを追加しました。
+
+<Center 
+width="400px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/3d-cube-styling.png)
+</Center>
+
+- **新しいギズモの外観:** 有効にすると、投影方向を示す円形の平面が表示されます。これは、ミラーコマンドを含む、投影を伴うすべてのコマンドに適用されます。
+
+<Center 
+width="220px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/new-projection-gizmo.gif)
+</Center>
+
+- **メッシュスナップ:** メッシュにスナップするときに、部分的なワイヤーフレームを表示し、スナップ先のフェースを三角形として示すことで、視覚的にハイライトします。
+
+<Center 
+width="220px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/mesh-snapping.gif)
+</Center>
+
+### パネルとダイアログ
+- **Assets パネル:** 検索クエリ、複数パックの選択、コンテキストメニューに対応しました。
+- **Curvature パネル:** 現在のビューに合わせてコームのサイズを自動調整するボタン(autosize combs)を追加しました。押すと、曲率コームが現在のビューに収まるよう自動的にリサイズされます。ズームインやズームアウトをしたときや、曲率コームが小さすぎてよく見えないときに便利です。
+
+<Center 
+width="300px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/curvature-panel-autosize.png)
+</Center>
+
+- **Render Mode パネル:** カーブ、エッジ、フェース、コンストレイントの表示を切り替える新しいアイコンボタンを追加しました。
+
+<Center 
+width="240px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/icons-for-viewport.png)
+</Center>
+
+- **Units パネル:** デフォルトに戻すボタンを削除しました。
+- **ファイルタブ:** 右クリックでコンテキストメニューが表示されるようになりました。.Plasticity ファイルの場所をファイルエクスプローラーですばやく開いたり、バックアップファイルを参照したりできます。さらに、現在開いているファイルに変更を加えた場合は、最後に保存した状態に戻すこともできます。
+
+<Center 
+width="240px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/file-tab-context-menu.png)
+</Center>
+
+- **長いダイアログ:** スクロールすると、コマンドダイアログの下端に軽いフェードアウト効果が表示されるようになりました。
+
+---
+
+### ビジュアルのカスタマイズ
+- **Appearance:** エッジとインスタンスエッジの色を **Preferences > Appearance** でカスタマイズできるようになりました。
+- **マットキャップ:** カスタムマットキャップに **JSON** ファイルを含めて、色付けの有無を指定できるようになりました。[Matcaps](/plasticity-essentials/plasticity-interface/shader-mode#tintable-custom-matcaps) をご覧ください。
+
+### コンテキストメニュー
+- **P メニュー:** P メニューに新しいアイコンが追加されました。
+
+<Center 
+width="300px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/p-menu-icons.png)
+</Center>
+
+- **アウトライナー:** アウトライナーの **Outliner**、**Materials**、**Assets** の各セクションに新しいアイコンが追加されました。
+
+<Center 
+width="300px"
+borderRadius="8px">
+![コンストレイントの例](/release/26.2/outliner-materials-assets-icons.png)
+</Center>
+
+---
+
+## 6. その他
+
+### 新しいキーバインド
+
+| キー | コマンド | コンテキスト |
+|-----|---------|---------|
+| <kbd>J</kbd> | Join | Outliner |
+| <kbd>B</kbd> | Toggle Boundary Alignment | Edge Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Edge Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Vertex Align |
+
+### 実験的機能
+
+- **自動 Move コマンド:** ユーザーのフィードバックを集める目的で、アイテムを選択すると Move が自動的に呼び出されるようになりました。不要な場合は Preferences で無効にできます。
+
+## 過去のアップデート情報
+
+- 2026 年 4 月 16 日 [Version 2026.1](/release-notes/whats-new-2026.1)

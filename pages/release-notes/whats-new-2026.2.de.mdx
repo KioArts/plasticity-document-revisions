@@ -1,0 +1,475 @@
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Tabs } from 'nextra/components'
+import { Center } from '/components/Center'
+import { SideBySide } from '/components/SideBySide'
+import ButtonIcon from '/components/ButtonIcon'
+
+Veröffentlichungsdatum: TBD
+
+# Plasticity 26.2 Versionshinweise
+
+Plasticity 26.2.0 führt ein neues Assets-System, ein nur in Studio verfügbares Constraints-System und den neuen Befehl Project Align ein. Außerdem gibt es Verbesserungen bei Edge Align, Vertex Align, Move, Slide, Square, Join, Transform und Boolean. Diese Version bringt zudem eine schnellere Rendering-Strategie für PolySplines, die Visualisierung von Mesh-Snaps, anpassbare Kantenfarben, einfärbbare Matcaps und zahlreiche Verbesserungen der Oberfläche in Outliner, Panels und Gizmos.
+
+## 1. Neue Befehle
+
+### Project Align   
+**Project Align** richtet die CVs entlang der Kante einer Zielfläche an einer Referenzfläche aus, entweder entlang einer Vektorrichtung oder entlang der Flächennormalen. Du kannst zwischen den Solvern **Constrained** und **xNURBS** wählen; xNURBS benötigt eine Referenzkurve, die die Ausrichtung führt. Nur in Studio verfügbar.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Project-Align-Beispiel](/release/26.2/project-align-example-01.gif)
+</Center>
+
+Mehr erfahren: [Project Align](/solid/project-align)
+
+### Home View
+- **Isometrische Home View**    
+Plasticity enthält jetzt eine **Home View**, die den Viewport auf eine isometrische Standardansicht zurücksetzt. Du erreichst sie per Rechtsklick auf den 3D-Viewport-Würfel oder über den neuen Befehl `Viewport: Home View`.
+
+Mehr erfahren: [View Cube](/plasticity-essentials/plasticity-interface/view-cube)
+
+### Befehle zum Umschalten der Sichtbarkeit
+- **Bilder, Meshes und Constraints umschalten**    
+Die neuen Befehle `Viewport: Toggle Images`, `Viewport: Toggle Meshes` und `Viewport: Toggle Constraints` schalten die Sichtbarkeit von Bildern, Meshes und Constraints im Viewport schnell um, ohne dass du sie erst im Outliner auswählen und manuell ausblenden musst.
+
+Mehr erfahren: [Toggle Object States](/plasticity-essentials/plasticity-interface/outliner#operations-by-command-name)
+
+### Select All Constraints
+- **Select All Constraints**    
+Mit dem Befehl `Select All Constraints` wählst du alle Constraints in der Szene auf einmal aus. Beachte, dass Constraints derzeit nur in Studio verfügbar sind und noch nicht in der Datei gespeichert werden – siehe dieses [Kapitel](/release-notes/whats-new-2026.2#constraint-system).
+
+Mehr erfahren: [Selecting Objects](/plasticity-essentials/selecting-objects#selecting-with-commands)
+
+---
+
+## 2. Neue Funktionen
+
+### Assets-System
+- **Assets markieren, exportieren und teilen**  
+Plasticity bietet jetzt einen vollständigen Workflow zum Markieren, Exportieren und Teilen von Assets. Öffne den neuen Tab **Assets** im Outliner, wähle einen Asset-Ordner und ziehe ein Asset direkt in den Viewport, um es zu platzieren. Das beschleunigt wiederkehrende Modellierarbeiten, etwa bei Schrauben, mechanischen Bauteilen und anderen Teilen, die du beim Zusammenbau eines fertigen Teils in einem Dokument oft wiederverwendest.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Beispiel für das Assets-Panel](/release/26.2/assets-menu-example.gif)
+</Center>
+
+Mehr erfahren: [Assets](/plasticity-essentials/plasticity-interface/assets)
+
+### Constraint-System
+- **Constraints erstellen und beibehalten**    
+Plasticity führt jetzt ein neues **Constraint-System** ein. Damit kannst du je nach verwendetem Befehl Constraints erstellen, die beim Transformieren der Geometrie automatisch erhalten bleiben. Diese Funktion ist nur in Studio verfügbar, und Constraints werden noch nicht in der Datei gespeichert.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/constraint-align-example.gif)
+</Center>
+
+Die folgenden Befehle unterstützen Constraints: 
+
+| Befehl | Option | Hinweis |
+|:---|---| --- |
+| [Square](/solid/square) | Kontinuität wählen: G0, G1, G2 oder Free; Anpassung der Partial Alignment; Anpassung der Boundary; Analyseeinstellungen | Option zum Erstellen von Constraints | 
+| [Project Align](/solid/project-align) | Kontinuität wählen: G0, G1, G2 oder Free; Anpassung der Partial Alignment; Anpassung der Boundary; Analyseeinstellungen |  Erstellt Constraints automatisch |
+| [Surface Align](/solid/surface-align) | Kontinuität wählen: G0, G1, G2 oder Free; Anpassung der Partial Alignment; Anpassung der Boundary; Analyseeinstellungen | Option zum Erstellen von Constraints |
+| [Edge Align](/solid/edge-align) | Kontinuität wählen: G0, G1, G2 oder G3 | Option zum Erstellen von Constraints |
+| [Vertex Align](/sketch/vertex-align) | Kontinuität wählen: G0, G1, G2 oder G3 | Option zum Erstellen von Constraints |
+| [Bridge Curve](/sketch/bridge-curve) | Kontinuität wählen: G0, G1, G2 oder G3 |  Option zum Erstellen von Constraints |
+| [Bridge Vertex](/sketch/bridge-vertex) | Kontinuität wählen: G0, G1, G2 oder G3 | Option zum Erstellen von Constraints |
+| [Bridge Edge](/sketch/bridge-edge) | Kontinuität wählen: G0, G1, G2 oder G3 | Option zum Erstellen von Constraints |
+
+
+Die zugehörigen Constraint-Symbole werden im Viewport angezeigt. Ein einzelner Klick darauf öffnet das Menü Constraint Options, in dem du die jeweiligen Einstellungen für Flächen- und Kurven-Constraints anpassen kannst.
+
+<br/>
+
+<div style={{textAlign: 'center'}}>
+<img src="/release/26.2/constraint-options-menu.png" alt="Menü Constraint Options" width="160" />
+</div>
+
+Mehr erfahren: [Constraint System](/tool/sketching-essentials#constraint-system)
+
+### Gaussian Shader
+- **Neuer Gaussian Shader**   
+Der neue Shader **Curvature Analysis** ist im Panel Shader Mode verfügbar. Er färbt deine Fläche ein, sodass du sofort siehst, wo sie sich gleichmäßig krümmt und wo nicht. 
+
+Du kannst zwischen drei Modi wählen: **Gaussian**, um plötzliche Änderungen zu erkennen, **Mean**, um die allgemeine Glätte zu bestätigen, und **Max**, um Bereiche zu finden, die beim Verdicken oder Versetzen Probleme verursachen könnten.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Beispiel für den Gaussian Shader](/release/26.2/gaussian-shader-example.svg)
+</Center>
+
+Mehr erfahren: [Shader Mode](/plasticity-essentials/plasticity-interface/shader-mode)
+
+---
+
+## 3. Verbesserungen von Funktionen
+
+### Snaps   
+
+- **Neuer Snap-Punkt:** Wenn Kurven und Kanten die Schnittebene (Section Plane) und die Achsenebenen kreuzen, werden neue Snap-Punkte angezeigt: `Section` für Section Snaps sowie `YZ` und `XZ` für Plane Snaps in 3D.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Snaps-Beispiel](/release/26.2/new-snaps-example.svg)
+</Center>
+
+- **Snap-Punkte auf Instanzen:** Objekte, die mit dem Befehl **[Create Instance](/solid/create-instance)** instanziert wurden, unterstützen jetzt alle derzeit in Plasticity verfügbaren Snap-Punkte.
+
+Mehr erfahren: [Snapping](/plasticity-essentials/plasticity-interface/snap)
+
+## 4. Verbesserungen von Befehlen
+
+### Edge Align
+
+Der Befehl **Align** wurde in **Edge Align** umbenannt und bietet mehrere Verbesserungen beim Lösen und bei der Behandlung von Rändern.
+
+- **Neue Solver-Option Collinear**    
+**Collinear** ist eine neue Solver-Option für Modellierung im Class-A-Stil. Sie bietet zwei Verhaltensoptionen, die steuern, wie die Ausrichtung zwischen zwei Flächen erfolgt: **Symmetric** und **Asymmetric**. Sie bestimmt, wie die CV-Hüllen beider Flächen angepasst werden, um entlang der gemeinsamen Randkante ein sauberes, geordnetes Raster zu bilden.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/collinear-behavior-image.png)
+</Center>
+
+- **Neue Boundary-Option Skew**    
+Die neue Boundary-Option **Skew** ist in einem aufklappbaren Bereich verfügbar und steuert, wie stark sich die Randkanten bei der Ausrichtung neigen. Den Skew-Winkel kannst du mit den Gizmo-Handles im Viewport anpassen oder indem du die Werte **Start** und **End** eingibst. Beachte, dass dafür mindestens G1-Kontinuität erforderlich ist. 
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/skew-boundary-angle.svg)
+</Center>
+
+- **Verbesserungen bei Partial Alignment**    
+**Partial Alignment** hat jetzt ein Gleit-Gizmo entlang der Kante, mit dem du einstellen kannst, wie weit sich die Ausrichtung erstreckt.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/partial-alignment-gizmo.svg)
+</Center>
+
+- **Verbessertes Verhalten von Edge Align**    
+**Edge Align** kann jetzt Flächenkanten genauso ausrichten wie Kurven; du musst nicht mehr exakt auf die Kante klicken. Im **Face**- oder **Sheet and Solid Selection Mode** kannst du irgendwo in der Nähe der Randkanten der beiden Sheets klicken, und sie werden korrekt gepaart.
+
+- **Neue Tastenkürzel**    
+Während du **Edge Align** verwendest, schaltest du mit <kbd>B</kbd> die Boundary-Ausrichtung und mit <kbd>P</kbd> die Partial Alignment ein oder aus.
+
+Mehr erfahren: [Edge Align](/solid/edge-align)
+
+---
+
+### Vertex Align
+
+- **Verbesserungen bei Partial Alignment**    
+Partial Alignment unterstützt jetzt ein Gleit-Gizmo entlang des Segments für feinere Kontrolle.
+
+- **Neues Tastenkürzel**    
+Neues Tastenkürzel <kbd>P</kbd> zum Ein- und Ausschalten der Partial Alignment
+
+Mehr erfahren: [Vertex Align](/sketch/vertex-align)
+
+---
+
+### Bridge Curve
+- **Verbessertes Gizmo**    
+  Der Befehl Bridge Curve hat jetzt ein neu gestaltetes Gizmo mit zwei Arten von Handles:
+
+  - **Parameter-Handles:** Legen den Start- und den Endpunkt der überbrückenden Kurve fest.
+
+    - <Center 
+      width="150px"
+      borderRadius="8px">
+      ![Platzhalter](/release/26.2/drag-handles.gif)
+      </Center>
+
+  - **Sense-Direction-Handle:** Steuert die Richtung, in der die überbrückende Kurve an die jeweiligen Ausgangskurven anschließt.
+
+    - <Center 
+      width="150px"
+      borderRadius="8px">
+      ![Platzhalter](/release/26.2/sense-direction.gif)
+      </Center>
+
+  Da die Sense Direction jetzt direkt im Gizmo gesteuert wird, wurde die Option **Sense** aus dem Dialog entfernt.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/bridge-curve-new-gizmo.png)
+</Center>
+
+Mehr erfahren: [Bridge Curve](/sketch/bridge-curve)
+
+### Move
+- **Automatischer Aufruf**    
+**Move** wird jetzt automatisch aufgerufen, wenn du Elemente auswählst. Das lässt sich unter **Preferences > Commands** deaktivieren.
+- **Zusammenfassen von Gizmo-Transformationen**    
+Aufeinanderfolgende Move-Gizmo-Ziehvorgänge in dieselbe Richtung werden jetzt zu einem Gesamtwert addiert, statt dass jeder Zug den angezeigten Wert zurücksetzt.
+- **Dauerhafte Mirror-Einstellungen**    
+Mirror-Einstellungen werden jetzt zwischen den Verwendungen gespeichert.
+- **Mirror-Ausrichtung auf achsenparallelen Ebenen**    
+Wenn du Kontrollpunkte mit aktiviertem Mirror verschiebst, werden jetzt die Weltachsen statt der relativen XYZ-Achsen verwendet, falls die aktuelle Konstruktionsebene achsenparallel ist.
+
+Mehr erfahren: [Move](/common/move)
+
+---
+
+### Rotate
+- **Visuelle Fortschrittsanzeige**     
+Bei Verwendung des Rotate-Gizmos zeigt eine visuelle Anzeige jetzt, wie weit du die Auswahl gedreht hast.
+
+<Center 
+width="450px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/rotate-gizmo-progress.png)
+</Center>
+
+- **Zusammenfassen von Gizmo-Transformationen**    
+Aufeinanderfolgende Rotate-Gizmo-Ziehvorgänge in dieselbe Richtung werden jetzt zu einem Gesamtwert addiert, statt dass jeder Zug den angezeigten Wert zurücksetzt.
+
+Mehr erfahren: [Rotate](/common/rotate)
+
+---
+
+{/* ### Mirror Command
+- **Mirror alignment on axis-aligned planes**    
+When using the Mirror command, world axes are now used instead of relative XYZ axes if the current construction plane is axis-aligned.
+
+Learn more: [Mirror](/common/mirror)
+
+--- */}
+
+### PolySplines
+- **Bearbeiten von PolySpline-CVs im Point Selection Mode**    
+CVs von PolySpline-Körpern lassen sich jetzt im **Point Selection Mode** verschieben, ähnlich wie die Eckpunkte eines Mesh-Körpers. Das ist nun direkt auf PolySpline-Geometrie in Plasticity möglich.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/polyspline-cv-editing.gif)
+</Center>
+
+- **PolySpline-CVs duplizieren**      
+Verwende den Befehl **[Duplicate](/common/duplicate)**, um ausgewählte CVs eines PolySpline-Objekts zu duplizieren, wobei ihre Struktur und Bearbeitbarkeit erhalten bleiben. Die PolySpline-Topologie folgt bestimmten Konstruktionsregeln. Wenn die duplizierten CVs nicht genügend Stützgeometrie haben, werden sie zu einer gültigen PolySpline-Topologie neu aufgebaut.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/polyspline-duplicate-polycv.gif)
+</Center>
+
+- **PolySpline-CVs entfernen**     
+Verwende den Befehl **[Remove Nominal Surface](/solid/remove-nominal-surface)** auf einer Fläche, um PolySpline-CVs zu entfernen. Dieser Vorgang ist destruktiv, prüfe also deine Auswahl, bevor du ihn anwendest.
+
+Mehr erfahren: [PolySplines](/solid/polyspline)
+
+  ---
+
+### Duplicate
+- **Aktualisierte Nachbearbeitung**    
+Beim Duplizieren von Flächen mit Surface Lines wird redundante Topologie nicht mehr gelöscht, sondern die rohen Flächeninformationen bleiben erhalten. Wenn du die unnötigen Surface Lines entfernen möchtest, verwende den Befehl **[Delete Redundant Topology](/solid/delete-redundant-topology)**.
+
+Mehr erfahren: [Duplicate](/common/duplicate)
+
+---
+
+### Offset Curve
+- **Über benachbarte Vertices hinaus erweitern**   
+Beim Versetzen eines Vertex kannst du jetzt über benachbarte Vertices hinausgehen, statt begrenzt zu werden.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/offset-vertex-upgrade.gif)
+</Center>
+
+Mehr erfahren: [Offset Curve](/sketch/offset-curve)
+
+---
+
+### Extend
+- **Sheet natürlich erweitern**    
+Das natürliche Erweitern eines ungetrimmten Sheets unterstützt jetzt die Optionen Modify und Unmodify. Dabei wird eine Surface Line hinzugefügt, die den Beginn der neuen Flächenerzeugung markiert. Das funktioniert bei natürlicher und bei Skew-Erweiterung.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/exthend-sheet-naturally-modify-options.gif)
+</Center>
+
+Mehr erfahren: [Extend](/sketch/extend)
+
+---
+
+### Boolean, Hollow und Thicken
+- **Neuer visueller Hinweis bei Fehlern**       
+Wenn ein **Boolean**-, **Hollow**- oder **Thicken**-Vorgang fehlschlägt, wird die Geometrie, an der das Problem auftritt, jetzt rot hervorgehoben, damit du das Problem schnell findest und beheben kannst.
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="Die rote Hervorhebung zeigt den Bereich, in dem der Boolean-Vorgang fehlgeschlagen ist.">
+![Hinweis bei Boolean-Fehler](/release/26.2/boolean-failure-hint.gif)
+</Center>
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="Die rote Hervorhebung zeigt den Bereich, in dem der Hollow-Vorgang fehlgeschlagen ist.">
+![Hinweis bei Hollow-Fehler](/release/26.2/hollow-failure-hint.gif)
+</Center>
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="Die rote Hervorhebung zeigt den Bereich, in dem der Thicken-Vorgang fehlgeschlagen ist.">
+![Hinweis bei Thicken-Fehler](/release/26.2/thicken-failure-hint.gif)
+</Center>
+
+Mehr erfahren: [Boolean](/solid/boolean), [Hollow](/solid/hollow), [Thicken](/solid/thicken)
+
+### Square
+- **Unterstützung von Sheet-Körpern als Eingabe**    
+Square akzeptiert jetzt einen Sheet-Körper als Eingabe, sofern das Sheet eine einzelne rechteckige Fläche hat. Im **Sheet and Body Selection Mode** wird automatisch Refit Surface angewendet. Zuvor war diese Eingabe ungültig und führte zu einem Fehler.
+
+Mehr erfahren: [Square](/solid/square)
+
+---
+
+### Slide
+- **Unterstützung von Proportional Falloff**      
+Unterstützt jetzt Proportional Falloff. Wenn du mehrere Flächen gleichzeitig verschiebst (Slide), werden ihre UV-Richtungen aufeinander abgestimmt.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/slide-falloff-command.gif)
+</Center>
+
+Mehr erfahren: [Slide](/solid/slide)
+
+---
+
+## 5. Verbesserungen der Oberfläche
+
+### Fixierte Kopfzeile im Outliner
+- **Fixierte Kopfzeile:** Der Outliner hat jetzt eine fixierte Kopfzeile, die beim Scrollen durch eine lange Objektliste sichtbar bleibt.
+
+<Center 
+width="320px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/sticky-header.gif)
+</Center>
+
+### Viewport und Navigation
+- **Viewport-Würfel:** Überarbeitetes Erscheinungsbild und neues Kontextmenü per Rechtsklick für schnellen Zugriff auf Ansichtsoptionen.
+
+<Center 
+width="400px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/3d-cube-styling.png)
+</Center>
+
+- **Neues Gizmo-Erscheinungsbild:** Wenn aktiviert, wird eine kreisförmige Ebene angezeigt, die die Projektionsrichtung angibt. Das gilt für alle Befehle mit Projektionsvorgängen, einschließlich der Mirror-Befehle.
+
+<Center 
+width="220px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/new-projection-gizmo.gif)
+</Center>
+
+- **Mesh Snapping:** Hebt das Snappen an ein Mesh visuell hervor, indem ein teilweises Drahtgitter angezeigt wird, das die Fläche, an der gesnappt wird, als Dreieck darstellt.
+
+<Center 
+width="220px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/mesh-snapping.gif)
+</Center>
+
+### Panels und Dialoge
+- **Assets-Panel:** Suchanfragen, Mehrfachauswahl von Packs und Kontextmenüs.
+- **Curvature-Panel:** Neue Schaltfläche zum automatischen Anpassen der Kämme (Autosize Combs) an die aktuelle Ansicht. Nach dem Klicken passen sich die Curvature Combs automatisch an die aktuelle Ansicht an. Das ist nützlich beim Hinein- oder Herauszoomen oder wenn die Curvature Combs zu klein sind, um sie deutlich zu erkennen.
+
+<Center 
+width="300px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/curvature-panel-autosize.png)
+</Center>
+
+- **Render-Mode-Panel:** Neue Symbolschaltflächen zum Umschalten der Sichtbarkeit von Kurven, Kanten, Flächen und Constraints.
+
+<Center 
+width="240px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/icons-for-viewport.png)
+</Center>
+
+- **Units-Panel:** Die Schaltfläche zum Zurücksetzen auf die Standardwerte wurde entfernt.
+- **Datei-Tab:** Hat jetzt ein Kontextmenü per Rechtsklick. Damit kannst du schnell den Speicherort deiner .Plasticity-Datei im Datei-Explorer anzeigen oder die Backup-Dateien durchsuchen. Außerdem kannst du, wenn du Änderungen an der aktuell geöffneten Datei vorgenommen hast, auf den zuletzt gespeicherten Stand zurückkehren.
+
+<Center 
+width="240px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/file-tab-context-menu.png)
+</Center>
+
+- **Lange Dialoge:** Beim Scrollen gibt es jetzt am unteren Rand des Befehlsdialogs einen leichten Ausblendeffekt.
+
+---
+
+### Visuelle Anpassung
+- **Appearance:** Die Farben von Kanten und Instanzkanten lassen sich jetzt unter **Preferences > Appearance** anpassen.
+- **Matcaps:** Benutzerdefinierte Matcaps können jetzt eine **JSON**-Datei enthalten, die festlegt, ob sie eingefärbt oder nicht eingefärbt sind – siehe [Matcaps](/plasticity-essentials/plasticity-interface/shader-mode#tintable-custom-matcaps).
+
+### Kontextmenüs
+- **P-Menü:** Das P-Menü enthält jetzt neue Symbole.
+
+<Center 
+width="300px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/p-menu-icons.png)
+</Center>
+
+- **Outliner:** Neue Symbole für die Bereiche **Outliner**, **Materials** und **Assets** im Outliner.
+
+<Center 
+width="300px"
+borderRadius="8px">
+![Constraints-Beispiel](/release/26.2/outliner-materials-assets-icons.png)
+</Center>
+
+---
+
+## 6. Sonstiges
+
+### Neue Tastenkürzel
+
+| Taste | Befehl | Kontext |
+|-----|---------|---------|
+| <kbd>J</kbd> | Join | Outliner |
+| <kbd>B</kbd> | Toggle Boundary Alignment | Edge Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Edge Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Vertex Align |
+
+### Experimentelle Funktionen
+
+- **Automatischer Move-Befehl:** Move wird jetzt automatisch aufgerufen, wenn du Elemente auswählst, um Feedback von Nutzern zu sammeln. Kann in den Preferences deaktiviert werden, falls unerwünscht.
+
+## Frühere Update-Informationen
+
+- 16. April 2026 [Version 2026.1](/release-notes/whats-new-2026.1)
