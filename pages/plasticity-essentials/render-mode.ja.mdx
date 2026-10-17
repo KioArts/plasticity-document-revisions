@@ -3,96 +3,94 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Tabs } from 'nextra/components'
 
-# Render Mode
+# レンダーモード
 
-## Render Mode
+## レンダーモード
 
-レンダーモードは画面右上のビュー モードメニューにあります。球体アイコン **(1)** をクリックすると有効になります。オンにすると、ビューポートのシェーディングが更新され、オブジェクトがよりレンダリングされた見た目になります。
+レンダーモードは、画面右上のビューモードメニューにあります。球体のアイコン **(1)** をクリックすると有効になります。オンにすると、ビューポートのシェーディングが更新され、オブジェクトがよりレンダリングされた見た目で表示されます。
 
-![レンダーモードボタン](/img/render-mode-button.png)
+![Render Mode Button](/img/render-mode-button.png)
 
-Plasticityの組み込みHDRIはクリックすることで切り替えられます。選択したHDRIはすぐに環境に適用され、シーンが即座に更新されます。ただし、ビューポートの背景には影響しません。
+Plasticityに内蔵されているHDRIは、クリックして切り替えることができます。選択したHDRIはすぐに環境に適用され、シーンも即座に更新されますが、ビューポートの背景には影響しません。
 
-- 利用可能なHDRI：
+- 利用可能なHDRI: 
 
 ![Render Mode Button](/img/render-mode-preview-1.png)
 
-| Name | Number | Applicability | 
+| 名前 | 番号 | 用途 | 
 | ---- | ------ | ------------- | 
-| Small Studio | 1 | Default Appearance | 
-| Plasticity Studio 1| 2 | Three-Point Light Setup| 
-| Plasticity Studio 2| 3 | Highlight Checker | 
-| Plasticity Vertical Stripes | 4 | Highlight Checker | 
-| Outdoor Cloudy | 5 | Ambient Gradient Appearance | 
-| Kloofendal Puresky | 6 | Sky/Outdoor Appearance | 
-| Peppermint Powerplant | 7 | Indoor Appearance | 
-| Small Studio 2 | 8 | Three-Point Light Setup | 
-
-## Ambient Occlusion (AO)
-
-レンダーモードが有効になると、アンビエントオクルージョンは常にアクティブになります。半径（1）と減衰（2）の値は、[設定](/plasticity-essentials/preferences) メニューの「外観」セクションで変更できます。変更はリアルタイムで適用されます。
-
-![Ambient Occlusion Settings](/img/ao-settings.png)
+| Small Studio | 1 | デフォルトの外観 | 
+| Plasticity Studio 1| 2 | 3点照明セットアップ | 
+| Plasticity Studio 2| 3 | ハイライトチェッカー | 
+| Plasticity Vertical Stripes | 4 | ハイライトチェッカー | 
+| Outdoor Cloudy | 5 | 環境グラデーションの外観 | 
+| Kloofendal Puresky | 6 | 空/屋外の外観 | 
+| Peppermint Powerplant | 7 | 屋内の外観 | 
+| Small Studio 2 | 8 | 3点照明セットアップ | 
 
 ## All Environment
 
-- カスタムHDRIは「すべての環境」カテゴリに表示されます。
+- カスタムHDRIは「All Environment」カテゴリに表示されます。
 
 ![Custom Environment](/img/custom-hdri-preview.png)
 
 ### カスタムHDRIのインストール
 
-1. カスタムHDRIファイルを準備し、EXRファイルとPNGファイルの名前が同一であることを確認してください。
+1. カスタムHDRIファイルを用意します。EXRファイルとPNGファイルの名前は同一にしてください。
 2. お使いのOSで `.plasticity` ディレクトリを見つけ、「environments」という名前の新しいフォルダを作成します。
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigate to `C:/Users/<username>/.plasticity`.
+    `C:/Users/<username>/.plasticity` に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `~/.plasticity`.
+    `~/.plasticity` に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity` に移動します。
     </Tabs.Tab>
 </Tabs>
-3. カスタムHDRIファイルをこのフォルダに移動し、Plasticityを再起動して変更を適用します。
+3. カスタムHDRIファイルをこのフォルダに移動し、Plasticityを再起動して変更を反映します。
 
-![HDRIのインストール](/img/installing-hdri-preview.png)
+![Installing HDRI](/img/installing-hdri-preview.png)
 
 <Callout type="info" emoji="💡">
-**ヒント**  
-- EXRファイルにはファイルサイズを最適化するために1K解像度を推奨します（必要に応じて高解像度もサポートされています）。PNGファイルは任意の1:1比率で構いませんが、透明背景の512×512ピクセルが推奨されます。両ファイルともに16ビット以上のカラーデプスで保存してください。
+**ヒント**     
+- ファイルサイズを抑えるため、EXRファイルは1K解像度の使用を推奨します(必要に応じてより高い解像度もサポートされています)。PNGファイルは1:1の比率であれば任意のサイズで構いませんが、背景が透明な512x512ピクセルを推奨します。どちらのファイルも、16ビット以上のカラー深度で保存してください。
 </Callout>
 
 <Callout emoji="❗">
-**Note**     
-- お使いのOSで隠しフォルダを表示する設定を有効にして、`.plasticity` ディレクトリにアクセスできるようにしてください。
+**注意**     
+- `.plasticity` ディレクトリにアクセスするには、お使いのOSで隠しフォルダを表示するオプションを有効にしてください。
 </Callout>
 
-### Options
+### オプション
 
-- Under the Options menu can be found "Rotation" and "Intensity".
+- Optionsメニューには、**Rotation**(回転)、**Intensity**(強度)、**AO Radius**(AO半径)、**AO Falloff**(AO減衰)があります。
 
 ![Options](/img/options-rotation-intensity-1.png)
 
-| オプション  | ボタン | 機能                                                                                                    |
-| ---------- | ------ | ----------------------------------------------------------------------------------------------------- |
-| 回転       | (9)    | 選択したHDRIをワールドZ軸周りに回転させます。左または右にドラッグするか、-180から180の範囲で値を入力します。（デフォルト：0）        |
-| 強度       | (10)    | 選択したHDRIの明るさを調整します。左または右にドラッグするか、0から10の範囲で値を入力します。（デフォルト：1.0）                        |
- 
- ### Toggle Show Edges, Curves, and Faces
+| オプション     | ボタン | 機能|
+| ---------- | :------: | ------- | 
+| Rotation   |    (9)    |  左右にドラッグするか、-180から180の間の値を入力して、選択したHDRIをワールドのZ軸まわりに回転させます。(デフォルト: 0)      |
+| Intensity  |    (10)    |  選択したHDRIの明るさを調整します。左右にドラッグするか、0から10の間の値を入力します。(デフォルト: 1.0)    |
+| AO Radius  |    (11)    |  アンビエントオクルージョン効果の半径を調整します。左右にドラッグするか、0から1000の間の値を入力します。(デフォルト: 15)    |
+| AO Falloff |    (12)    |  アンビエントオクルージョン効果の減衰を調整します。左右にドラッグするか、0.0から10.0の間の値を入力します。(デフォルト: 0.5)    |
 
-- エッジ、カーブ、および面は、切り替えボタンを使って表示または非表示にできます。
+ ### エッジ、カーブ、フェースの表示切り替え
+
+- エッジ、カーブ、フェースは、切り替えボタンで表示/非表示にできます。
 
 ![Toggle Options in Options](/img/option-toggle-edges-curves-faces.png)
 
-| 機能                                                        | ボタン | コマンド名                  |
-| ----------------------------------------------------------- | ------ | --------------------------- |
-| Toggle show Edges <br />(オフにするとエッジが非表示になります。) | (11)   | Viewport: toggle Edges    |
-| Toggle show Curves <br />(オフにするとカーブが非表示になります。) | (12)   | Viewport: toggle Curves    |
-| Toggle show Faces <br />(オフにすると面が非表示になります。)         | (13)   | Viewport: toggle Faces  |
+| 機能                                                      |  ボタン | コマンド名           |
+| ------------------------------------------------------------- |  ------ | ---------------------- |
+| エッジの表示を切り替え <br />(オフにするとエッジが非表示になります。) | (13)   | Viewport: toggle edges |
+| カーブの表示を切り替え <br />(オフにするとカーブが非表示になります。) | (14)   | Viewport: toggle curves |
+| フェースの表示を切り替え <br />(オフにするとフェースが非表示になります。) |  (15)   | Viewport: toggle faces |
+| 拘束の表示を切り替え <br />(オフにすると拘束が非表示になります。) |  (16)   | Viewport: toggle constraints |
+ 
 
-
-### See Also
+## 関連項目
 [Shader Mode](/plasticity-essentials/plasticity-interface/shader-mode)
+
 [Set Material](/common/set-material)

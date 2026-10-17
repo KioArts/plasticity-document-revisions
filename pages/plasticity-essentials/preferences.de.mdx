@@ -1,44 +1,51 @@
 import { Tabs } from 'nextra/components'
 
+# Einstellungen
 
-# Einstellungen  
+Um das Einstellungsfenster zu öffnen, klicken Sie oben links auf das P-Menü und wählen Sie **Preferences**.
+Plasticity muss neu gestartet werden, wenn Sie die Einstellungen ändern.
 
-Um das Einstellungsfenster zu öffnen, klicken Sie auf das P-Menü in der oberen linken Ecke und wählen Sie **Einstellungen**.  
-Nach Änderungen der Einstellungen muss Plasticity neu gestartet werden.  
+## Navigation
 
-## Navigation  
+### Rotationsmodus
 
-### Navigationseinstellungen  
+- **Tumble:** 
+    - Dreht die Ansicht um eine feste vertikale Achse, wobei die Aufwärtsrichtung fixiert bleibt. Eine Mausbewegung nach links/rechts dreht horizontal, nach oben/unten vertikal, die Ansicht kann sich jedoch nicht neigen oder auf den Kopf stellen. (Standard: **Ausgewählt**)
 
-- **Zoom auf Cursor**:  
-    - Wenn aktiviert, zoomt die Ansicht auf die Cursorposition. (Standard: **Aktiviert**)  
-- **Rotation um Cursor**:  
-    - Wenn aktiviert, dreht sich die Ansicht um die Cursorposition. (Standard: **Aktiviert**)  
-- **Vertikales Zoomen**:  
-    - Wenn aktiviert, kann mit vertikalem Ziehen mittels <kbd>Strg + Mittlere Maustaste</kbd> gezoomt werden. (Standard: **Aktiviert**)  
-- **Zoomrichtung umkehren**:  
-    - Wenn aktiviert, wird die Zoomrichtung invertiert. (Standard: **Deaktiviert**)  
-- **Scrollrichtung umkehren**:  
-    - Wenn aktiviert, wird die Scrollrichtung des Mausrads invertiert. (Standard: **Deaktiviert**)  
+- **Arcball:** 
+    - Dreht die Ansicht frei um alle drei Achsen ohne Achsenbeschränkung. Die Mausbewegung wird auf die Oberfläche einer imaginären Kugel um die Szene abgebildet, was eine vollständige 360-Grad-Drehung in jede Richtung ermöglicht.
 
-### Navigations-Presets  
+### Navigationseinstellungen
 
-- Sie können Voreinstellungen für die Steuerung wie in anderer 3D-Software wählen.  
+- **Zoom to cursor** (Zoom zum Cursor):
+    - Wenn aktiviert, wird an der Cursorposition gezoomt. (Standard: **Aktiviert**)
+- **Rotate around cursor** (Um den Cursor drehen):
+    - Wenn aktiviert, wird die Ansicht um die Cursorposition gedreht. (Standard: **Aktiviert**)
+- **Zoom vertical:**
+    - Wenn aktiviert, wird mit vertikalem Ziehen über <kbd>Strg + Mittlere Maustaste</kbd> hinein- bzw. herausgezoomt. (Standard: **Aktiviert**)
+- **Invert zoom direction** (Zoomrichtung umkehren):
+    - Wenn aktiviert, wird die Zoomrichtung umgekehrt. (Standard: **Deaktiviert**)
+- **Invert wheel direction** (Mausradrichtung umkehren):
+    - Wenn aktiviert, wird die Richtung des Mausrads umgekehrt. (Standard: **Deaktiviert**)
 
-## Leistung  
+### Navigationsvoreinstellungen
 
-- Sie können die GPU-Renderqualität und die CPU-Facettenqualität festlegen.  
+- Sie können Voreinstellungen wählen, die den Steuerungen anderer 3D-Software entsprechen.
+
+## Leistung
+
+Sie können die GPU-Rendering-Qualität und die CPU-Facettenqualität festlegen sowie Ambient Occlusion im Shader-Modus aktivieren oder deaktivieren.
 
 ## Sprache
 
-Sie können die Sprache in Plasticity wechseln. Änderungen werden in Echtzeit übernommen und erfordern keinen Neustart.
+Sie können die Sprache direkt in Plasticity wechseln. Änderungen werden in Echtzeit übernommen und erfordern keinen Neustart.
 
 Verfügbare Sprachen:
 
-| Language | Note |
+| Sprache | Hinweis |
 | -------- | ---- |
 | Deutsch | |
-| English | (Default: Selected) |
+| English | (Standard: Ausgewählt) |
 | Español | |
 | Italiano | |
 | 日本語 | |
@@ -46,53 +53,82 @@ Verfügbare Sprachen:
 | 中文 | |
 | 繁體中文 | |
 
-## Erscheinungsbild  
+## Erscheinungsbild
 
-- Sie können Akzentfarben, unterstützende Farben, Hintergrundfarben des Viewports und Rasterfarben auswählen.  
-- Zusätzliche Optionen zur Steuerung der Größe von Kontrollpunkten, Scheitelpunkten, Kanten und Kurvensegmenten.  
+Passen Sie die Farben der Benutzeroberfläche und des Viewports an und ändern Sie die Größe von Kontrollpunkten, Vertices, Kanten und Kurvensegmenten.
 
-### Ambient Occlusion (AO)
+### UI-Farben
 
-- Passen Sie das Erscheinungsbild der Umgebungsverdeckung (Ambient Occlusion) im Ansichtsfenster mithilfe der Einstellungen Radius **(1)** und Falloff **(2)** an. Beachten Sie, dass der Radiuswert als Prozentsatz Ihrer aktuellen Längeneinheit angegeben wird. Wenn Sie beispielsweise Meter verwenden und einen Wert von 10 eingeben, entspricht dies 0,1 Metern. Der Radius kann Werte zwischen 0 und 1000 annehmen, während Falloff von 0,0 bis 10,0 reicht. (Standardwerte: 15 und 0,5)
+- **Accent Colors (Akzentfarben):** Legen Sie die Hauptfarben der Plasticity-Oberfläche fest. Änderungen werden in Echtzeit übernommen.
+- **Supporting Colors (Ergänzende Farben):** Legen Sie die Sekundärfarben der Oberfläche fest. Betrifft Hervorhebungen aktiver Gruppen, verbundene CVs und ähnliche Elemente.
+- **Neutral Colors (Neutrale Farben):** Legen Sie die Hintergrundfarben für Menüs und Symbolleisten fest.
+- **Viewport Colors (Viewport-Farben):** Legen Sie die Hintergrundfarbe des Viewports fest.
+  - **Choose Custom Color (Benutzerdefinierte Farbe wählen):** Geben Sie eine eigene Farbe an.
+- **Grid Colors (Rasterfarben):** Legen Sie die Farbe des Rasters fest.
+  - **Choose Custom Color (Benutzerdefinierte Farbe wählen):** Geben Sie eine eigene Farbe an.
+- **Regular Edge Color (Farbe regulärer Kanten):** Legen Sie die Farbe regulärer Kanten fest.
+- **Instance Edge Color (Farbe von Instanzkanten):** Legen Sie die Farbe von Instanzkanten fest.
+- **Measurement Color (Messfarbe):** Legen Sie die Farbe der Messlinien fest.
+  - **Choose Custom Color (Benutzerdefinierte Farbe wählen):** Geben Sie eine eigene Farbe an.
 
-![Ambient Occlusion Settings](/img/ao-settings.png)
+### Eigenschaften
 
-## Sicherung
+- **Control Points (Kontrollpunkte):** Legen Sie die Größe der Kontrollpunkte auf Kurven fest.
+- **Vertices:** Legen Sie die Größe der Vertices auf Kurven fest.
+- **Edges (Kanten):** Legen Sie die Größe der Kanten auf Flächen (Sheets) und Volumenkörpern fest.
+- **Curve Segments (Kurvensegmente):** Legen Sie die Stärke der Kurvenlinien fest.
+- **Viewport Gizmo Size (Größe des Viewport-Gizmos):** Legen Sie die Größe des Viewport-Gizmos fest.
+- **UI Standard Spacing (Standardabstand der Oberfläche):** Legen Sie Innen- und Außenabstände von UI-Elementen wie Symbolleisten und Menüs fest.
+- **Zoom Factor (Zoomfaktor):** Legen Sie die Zoom-Empfindlichkeit fest.
+- **Constraints (Bedingungen):**
+    - **Always show constraints:** Zeigt Bedingungsbeschriftungen immer im Viewport an.
+    - **Only show constraints on hover:** Zeigt Bedingungsbeschriftungen nur an, wenn der Mauszeiger über dem betroffenen Objekt steht.
 
-- Sie können Sicherungen anlegen, um für Notfälle gerüstet zu sein.  
-- Wenn ungespeicherte Dateien zu fehlen scheinen, prüfen Sie die folgenden Verzeichnisse:
+## Backup
+
+- Sie können Backups für Notfälle erstellen.
+- Falls ungespeicherte Dateien fehlen, überprüfen Sie die folgenden Verzeichnisse:
+
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigate to `C:\Users\<UserName>\AppData\Local\Temp\plasticity` or `C:\Users\<UserName>\AppData\Local\Temp\plasticity-backup`.
+    Navigieren Sie zu `C:\Users\<UserName>\AppData\Local\Temp\plasticity` oder `C:\Users\<UserName>\AppData\Local\Temp\plasticity-backup`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `/var/folders/<random>/T/plasticity` or `/var/folders/<random>/T/plasticity-backup`.
+    Navigieren Sie zu `/var/folders/<random>/T/plasticity` oder `/var/folders/<random>/T/plasticity-backup`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `/tmp/plasticity` or `/tmp/plasticity-backup`.
+    Navigieren Sie zu `/tmp/plasticity` oder `/tmp/plasticity-backup`.
     </Tabs.Tab>
 </Tabs>
 
-## Server  
+## Netzwerk
 
-- Konfigurieren Sie den Server für die Verwendung mit der Blender-Bridge.  
-- Standardmäßig: Host: localhost, Port: 8980. Diese Werte müssen mit den Einstellungen im Blender-Addon übereinstimmen.  
+### Blender Bridge
 
-## Web‑Veröffentlichung
+- **Enable (Aktivieren):** Ermöglicht Plasticity die Verbindung zu Blender über das Blender-Bridge-Plugin. (Standard: **Aktiviert**)
+- **Host:** Geben Sie die Host-Adresse für die Blender-Bridge-Verbindung an. (Standard: **localhost**)
+- **Port:** Geben Sie die Portnummer für die Blender-Bridge-Verbindung an. (Standard: **5000**)
 
-Schalte den Befehl [**Auf Plasticity Share veröffentlichen**](/common/publish-to-plasticity-share) ein oder aus. (Standard: Aus)
+### Web Publishing
 
-## SpaceMouse  
+- **Enable (Aktivieren):** Ermöglicht Plasticity die Verbindung zum Web-Publishing-Dienst. (Standard: **Deaktiviert**)
 
-- Einstellungen für die Nutzung der 3Dconnexion SpaceMouse.  
-- Die SpaceMouse Compact, SpaceMouse Pro und SpaceMouse Enterprise sind unter Windows und macOS bestätigt. Die Funktionalität unter Linux ist nicht bestätigt.  
-- Steuerung der Schwenkgeschwindigkeit, Rotationsgeschwindigkeit und Zoomgeschwindigkeit.  
+### Versionsupdates
 
-## Allgemein  
+- Beim Start nach Updates suchen: Sucht beim Start von Plasticity automatisch nach Updates. (Standard: **Aktiviert**)
 
-- Automatische Befehlsaufrufe wie Versatz, Extrusion und Abrundung basierend auf der aktuellen Auswahl.  
-    - Wenn aktiviert, werden Befehle wie Versatz, Extrusion und Abrundung automatisch basierend auf der aktuellen Auswahl aufgerufen. (Standard: **Aktiviert**)  
+## SpaceMouse
 
-## Erweitert  
+- Dies sind die Einstellungen für die Verwendung der 3Dconnexion SpaceMouse.
+- Die Modelle SpaceMouse Compact, SpaceMouse Pro und SpaceMouse Enterprise funktionieren nachweislich unter Windows und macOS. Der Betrieb unter Linux ist nicht bestätigt.
+- Steuern Sie Pan-Geschwindigkeit, Rotationsgeschwindigkeit und Zoomgeschwindigkeit.
 
-- Sie können die letzte aktive Sitzung beim Start von Plasticity aktivieren oder deaktivieren. (Standard: **Aktiviert**)  
+## Befehle
+
+- **Auto-invoke commands (Befehle automatisch aufrufen):** Wenn aktiviert, werden Befehle automatisch anhand der aktuellen Auswahl aufgerufen. (Standard: **Aktiviert**)
+
+- **Extrude:** (Standard: **Aktiviert**)
+- **Push-face:** (Standard: **Aktiviert**)
+- **Extend Sheet:** (Standard: **Aktiviert**)
+- **Fillet:** (Standard: **Aktiviert**)
+- **Move:** (Standard: **Aktiviert**)

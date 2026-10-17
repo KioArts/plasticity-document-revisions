@@ -28,12 +28,6 @@ You can switch between Plasticity's built-in HDRIs by clicking on them. The sele
 | Peppermint Powerplant | 7 | Indoor Appearance | 
 | Small Studio 2 | 8 | Three-Point Light Setup | 
 
-## Ambient Occlusion (AO)
-
-When Render Mode is enabled, Ambient Occlusion remains always active. You can modify the radius **(1)** and falloff **(2)** values in the Appearance section in the [Preferences](/plasticity-essentials/preferences) menu. Changes are applied in real time.
-
-![Ambient Occlusion Settings](/img/ao-settings.png)
-
 ## All Environment
 
 - Custom HDRIs appear under the "All Environment" category.
@@ -71,15 +65,17 @@ When Render Mode is enabled, Ambient Occlusion remains always active. You can mo
 
 ### Options
 
-- Under the Options menu can be found "Rotation" and "Intensity".
+- Under the Options menu can be found **Rotation**, **Intensity**, **AO Radius** and **AO Falloff**.
 
 ![Options](/img/options-rotation-intensity-1.png)
 
 | Option     | Button | Function|
-| -----------| ------ | ------- | 
+| ---------- | :------: | ------- | 
 | Rotation   |    (9)    |  Adjust the rotation of the selected HDRI around the world Z-axis by dragging left or right, or by entering a specific value between -180 and 180. (Default: 0)      |
 | Intensity  |    (10)    |  Controls the brightness of the selected HDRI. Drag left or right, or enter a value between 0 and 10. (Default: 1.0)    |
- 
+| AO Radius  |    (11)    |  Adjusts the radius of the ambient occlusion effect. Drag left or right, or enter a value between 0 and 1000. (Default: 15)    |
+| AO Falloff |    (12)    |  Adjusts the falloff of the ambient occlusion effect. Drag left or right, or enter a value between 0.0 and 10.0. (Default: 0.5)    |
+
  ### Toggle Show Edges, Curves, and Faces
 
 - Edges, curves, and faces can be shown or hidden using the toggle buttons.
@@ -88,9 +84,10 @@ When Render Mode is enabled, Ambient Occlusion remains always active. You can mo
 
 | Function                                                      |  Button | Command Name           |
 | ------------------------------------------------------------- |  ------ | ---------------------- |
-| Toggle show Edges <br />(Turning this off will hide the Edges.) | (11)   | Viewport: toggle Edges |
-| Toggle show Curves <br />(Turning this off will hide the Curves.) | (12)   | Viewport: toggle Curves |
-| Toggle show Faces <br />(Turning this off will hide the Faces.) |  (13)   | Viewport: toggle Faces |
+| Toggle show Edges <br />(Turning this off will hide the Edges.) | (13)   | Viewport: toggle edges |
+| Toggle show Curves <br />(Turning this off will hide the Curves.) | (14)   | Viewport: toggle curves |
+| Toggle show Faces <br />(Turning this off will hide the Faces.) |  (15)   | Viewport: toggle faces |
+| Toggle show Constraints <br />(Turning this off will hide the Constraints.) |  (16)   | Viewport: toggle constraints |
  
 
 ## See Also

@@ -112,7 +112,8 @@ Learn more: [Shader Mode](/plasticity-essentials/plasticity-interface/shader-mod
 
 ### Snaps   
 
-- **New Snap Point:** When curves and edges cross the section plane and axis planes, it will display new snapping points that are `Section` for Section Snaps and `YZ`, `XZ` for Plane Snaps in 3D.
+- **New Snap Point**    
+When curves and edges cross the section plane and axis planes, it will display new snapping points that are `Section` for Section Snaps and `YZ`, `XZ` for Plane Snaps in 3D.
 
 <Center 
 width="550px"
@@ -120,9 +121,19 @@ borderRadius="8px">
 ![Snaps Example](/release/26.2/new-snaps-example.svg)
 </Center>
 
-- **Snap Points on Instances:** Objects that have been instanced with **[Create Instance](/solid/create-instance)** command now support all snap points currently available in Plasticity.
+- **Snap Points on Instances**    
+Objects that have been instanced with **[Create Instance](/solid/create-instance)** command now support all snap points currently available in Plasticity.
 
 Learn more: [Snapping](/plasticity-essentials/plasticity-interface/snap)
+
+### File Import
+- **.Plasticity File Import Improvements**    
+Importing a .Plasticity file now supports meshes, images, and instances. This provides a significant workflow improvement for users who want to import a file with multiple objects, and have them all come in as they were saved.
+
+Learn more: [Import/Export](/plasticity-essentials/import-export)
+
+### View Cube
+- **Improved Orientation:** Clicking a face on the **View Cube** now orients the camera to the closest matching orientation. This works similarly to construction planes created from a face with a selected edge, which aligns that edge as closely as possible to the current camera orientation.
 
 ## 4. Command Improvements
 
@@ -238,16 +249,6 @@ Consecutive Rotate gizmo drags in the same direction now accumulate into a singl
 
 Learn more: [Rotate](/common/rotate)
 
----
-
-{/* ### Mirror Command
-- **Mirror alignment on axis-aligned planes**    
-When using the Mirror command, world axes are now used instead of relative XYZ axes if the current construction plane is axis-aligned.
-
-Learn more: [Mirror](/common/mirror)
-
---- */}
-
 ### PolySplines Command
 - **PolySpline CV editing in Point Selection Mode**    
 CVs of PolySpline bodies can now be moved in **Point Selection Mode**, similar to moving the vertex points of a mesh body. This is now possible directly on PolySpline geometry within Plasticity.
@@ -272,15 +273,23 @@ Use the **[Remove Nominal Surface](/solid/remove-nominal-surface)** command on a
 
 Learn more: [PolySplines](/solid/polyspline)
 
-  ---
-
 ### Duplicate Command
 - **Post-processing update**    
 Duplicating faces that have surface lines no longer deletes redundant topology, instead it will keep the raw surface information. If you wish to remove the unnecessary surface lines, see **[Delete Redundant Topology](/solid/delete-redundant-topology)** command.
 
 Learn more: [Duplicate](/common/duplicate)
 
----
+### Deform Command
+- **Extended Support**    
+Deform command now supports accepting curves as reference and target, rather only faces. This allows for more flexible and extensible deformation of geometry objects.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/deform-curve-support.gif)
+</Center>
+
+Learn more: [Deform](/sketch/deform)
 
 ### Offset Curve Command
 - **Extend Beyond Adjacent Vertices**   
@@ -294,8 +303,6 @@ borderRadius="8px">
 
 Learn more: [Offset Curve](/sketch/offset-curve)
 
----
-
 ### Extend Command
 - **Extend Sheet Naturally**    
 Extending a untrimmed sheet naturally now supports modify and unmodify option. This adds a surface line, marking the beginning of the new surface creation. It supports in natural and skew extension.
@@ -307,8 +314,6 @@ borderRadius="8px">
 </Center>
 
 Learn more: [Extend](/sketch/extend)
-
----
 
 ### Boolean, Hollow, and Thicken Commands
 - **New Visual Hint for Failure**       
@@ -349,8 +354,6 @@ Square now accepts a sheet body as input, as long as the sheet has a single rect
 
 Learn more: [Square](/solid/square)
 
----
-
 ### Slide Command
 - **Proportional Falloff Support**      
 Now supports proportional falloff. When you slide multiple surfaces at once, their UV directions are harmonized.
@@ -363,11 +366,17 @@ borderRadius="8px">
 
 Learn more: [Slide](/solid/slide)
 
----
-
 ## 5. Interface Improvements
 
-### Outliner Sticky Header
+### Outliner
+- **New Context Menu Action:** The Outliner now has a context menu action to **Add to Isolation**. Right-click on an object in the Outliner and select "Add to Isolation" to add the object to the current isolation layer, allowing you to work with it in isolation from other objects.
+
+<Center 
+width="300px"
+borderRadius="8px">
+![Constraints Example](/img/outliner-add-to-isolation.png)
+</Center>
+
 - **Sticky Header:** The Outliner now has a sticky header that remains visible while scrolling through the list of many objects.
 
 <Center 
@@ -429,8 +438,6 @@ borderRadius="8px">
 </Center>
 
 - **Long dialogs:** Scrolling down now includes a slight fade-away effect at the bottom of the command dialogue.
-
----
 
 ### Visual Customization
 - **Appearance:** Colors of edges and instance edges can now be customized in **Preferences > Appearance**.
