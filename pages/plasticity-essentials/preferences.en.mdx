@@ -66,6 +66,8 @@ Customize colors for the UI and viewport, and adjust the size of control points,
   - **Choose Custom Color:** Specify a custom color.
 - **Grid Colors:** Set the grid color.
   - **Choose Custom Color:** Specify a custom color.
+- **Regular Edge Color:** Set the color for regular edges.
+- **Instance Edge Color:** Set the color for instance edges.
 - **Measurement Color:** Set the color for measurement lines.
   - **Choose Custom Color:** Specify a custom color.
 
@@ -75,14 +77,12 @@ Customize colors for the UI and viewport, and adjust the size of control points,
 - **Vertices:** Specify the size of vertices on curves.
 - **Edges:** Specify the size of edges on sheets and solids.
 - **Curve Segments:** Specify the thickness of curve lines.
+- **Viewport Gizmo Size:** Specify the size of the [View Cube](/plasticity-essentials/plasticity-interface/view-cube).
 - **UI Standard Spacing:** Specify the padding and spacing of UI elements such as toolbars and menus.
 - **Zoom Factor:** Specify the zoom sensitivity.
-
-### Ambient Occlusion (AO)
-
-Adjust the **Ambient Occlusion** appearance in the viewport using the **Radius (1)** and **Falloff (2)** settings. The Radius value is a percentage of your current length unit. For example, with meters, a value of 10 converts to 0.1 meters. Radius ranges from 0 to 1000 and Falloff from 0.0 to 10.0 (defaults: 15 and 0.5).
-
-![Ambient Occlusion Settings](/img/ao-settings.png)
+- **Constraints:**
+    - **Always show constraints:** Always show constraint labels in the viewport.
+    - **Only show constraints on hover:** Only show constraint labels when hovering over the constrained object.
 
 ## Backup
 
@@ -101,14 +101,21 @@ Adjust the **Ambient Occlusion** appearance in the viewport using the **Radius (
     </Tabs.Tab>
 </Tabs>
 
-## Server
+## Network
 
-- Configure the server to be used with the Blender Bridge.
-- The default is Host: localhost, Port: 8980. Match these values with the settings in the Blender addon.
+### Blender Bridge
 
-## Web Publishing
+- **Enable:** Allows Plasticity to connect to Blender via the Blender Bridge plugin. (Default: **Enabled**)
+- **Host:** Specify the host address for the Blender Bridge connection. (Default: **localhost**)
+- **Port:** Specify the port number for the Blender Bridge connection. (Default: **5000**)
 
-Turn on or off [**Publish to Plasticity Share**](/common/publish-to-plasticity-share) command. (Default: Off)
+### Web Publishing
+
+- **Enable:** Allows Plasticity to connect to the Web Publishing service. (Default: **Disabled**)
+
+### Version Updates
+
+- Check for updates on startup: Automatically checks for updates when Plasticity starts. (Default: **Enabled**)
 
 ## SpaceMouse
 
@@ -116,11 +123,12 @@ Turn on or off [**Publish to Plasticity Share**](/common/publish-to-plasticity-s
 - The SpaceMouse Compact, SpaceMouse Pro, and SpaceMouse Enterprise have been confirmed to work on Windows and macOS. Operation on Linux is unconfirmed.
 - Control Pan Speed, Rotate Speed, and Zoom Speed.
 
-## General
+## Commands
 
-- Automatic invoke commands like offset, extrude, and fillet, based on the current selection.
-    - When enabled, automatically calls commands such as offset, extrude, and fillet based on the current selection (Default: **Enabled**).
+- **Auto-invoke commands:** When enabled, commands are automatically invoked based on the current selection. (Default: **Enabled**)
 
-## Advanced
-
-- You can enable or disable the last active session on startup in Plasticity. (Default: **Enabled**)
+- **Extrude:** (Default: **Enabled**)
+- **Push-face:** (Default: **Enabled**)
+- **Extend Sheet:** (Default: **Enabled**)
+- **Fillet:** (Default: **Enabled**)
+- **Move:** (Default: **Enabled**)

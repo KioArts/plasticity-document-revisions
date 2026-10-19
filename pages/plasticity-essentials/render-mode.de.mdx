@@ -3,95 +3,94 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Tabs } from 'nextra/components'
 
-# Render Mode
+# Render-Modus
 
-## Render Mode
+## Render-Modus
 
-Der Render-Modus befindet sich im Menü „Ansichtsmodus“ oben rechts auf dem Bildschirm. Sie können ihn aktivieren, indem Sie auf das Kugel-Symbol **(1)** klicken. Sobald er eingeschaltet ist, wird die Schattierung im Viewport aktualisiert, um Ihre Objekte mit einem realistischeren Render-Look anzuzeigen.
+Der Render-Modus befindet sich im Menü „View Mode" (Ansichtsmodus) in der oberen rechten Ecke des Bildschirms. Sie können ihn aktivieren, indem Sie auf das Kugelsymbol **(1)** klicken. Sobald er eingeschaltet ist, wird die Schattierung im Viewport aktualisiert und zeigt Ihre Objekte in einer realistischeren, gerenderten Darstellung.
 
-![Render-Modus Button](/img/render-mode-button.png)
+![Render Mode Button](/img/render-mode-button.png)
 
-Sie können zwischen den integrierten HDRIs von Plasticity wechseln, indem Sie darauf klicken. Das ausgewählte HDRI wird sofort auf die Umgebung angewendet und die Szene wird umgehend aktualisiert – dies wirkt sich jedoch nicht auf den Viewport-Hintergrund aus.
+Sie können zwischen den in Plasticity integrierten HDRIs wechseln, indem Sie darauf klicken. Das ausgewählte HDRI wird sofort auf die Umgebung angewendet und aktualisiert die Szene unmittelbar, wirkt sich jedoch nicht auf den Hintergrund des Viewports aus.
 
-- Verfügbare HDRIs:
+- Verfügbare HDRIs: 
 
 ![Render Mode Button](/img/render-mode-preview-1.png)
 
-| Name | Number | Applicability | 
+| Name | Nummer | Anwendungsbereich | 
 | ---- | ------ | ------------- | 
-| Small Studio | 1 | Default Appearance | 
-| Plasticity Studio 1| 2 | Three-Point Light Setup| 
-| Plasticity Studio 2| 3 | Highlight Checker | 
-| Plasticity Vertical Stripes | 4 | Highlight Checker | 
-| Outdoor Cloudy | 5 | Ambient Gradient Appearance | 
-| Kloofendal Puresky | 6 | Sky/Outdoor Appearance | 
-| Peppermint Powerplant | 7 | Indoor Appearance | 
-| Small Studio 2 | 8 | Three-Point Light Setup | 
-
-## Ambient Occlusion (AO)
-
-Wenn der Render-Modus aktiviert ist, bleibt Ambient Occlusion immer eingeschaltet. Sie können die Werte für Radius (1) und Abfall (2) im Abschnitt „Aussehen“ im Menü [Einstellungen](/plasticity-essentials/preferences) ändern. Änderungen werden in Echtzeit übernommen.
-
-![Ambient Occlusion Settings](/img/ao-settings.png)
+| Small Studio | 1 | Standarddarstellung | 
+| Plasticity Studio 1| 2 | Dreipunkt-Beleuchtung | 
+| Plasticity Studio 2| 3 | Highlight-Prüfung | 
+| Plasticity Vertical Stripes | 4 | Highlight-Prüfung | 
+| Outdoor Cloudy | 5 | Darstellung mit Umgebungsverlauf | 
+| Kloofendal Puresky | 6 | Himmel-/Außendarstellung | 
+| Peppermint Powerplant | 7 | Innenraumdarstellung | 
+| Small Studio 2 | 8 | Dreipunkt-Beleuchtung | 
 
 ## All Environment
 
-- Eigene HDRIs erscheinen unter der Kategorie „Alle Umgebungen“.
+- Benutzerdefinierte HDRIs erscheinen in der Kategorie „All Environment".
 
 ![Custom Environment](/img/custom-hdri-preview.png)
 
-### Installation benutzerdefinierter HDRIs
+### Benutzerdefinierte HDRIs installieren
 
-1. Bereiten Sie Ihre benutzerdefinierten HDRI-Dateien vor, und stellen Sie sicher, dass EXR- und PNG-Dateien den gleichen Namen haben.
-2. Finden Sie das `.plasticity`-Verzeichnis auf Ihrem Betriebssystem und erstellen Sie einen neuen Ordner mit dem Namen „environments“.
+1. Bereiten Sie Ihre benutzerdefinierten HDRI-Dateien vor und stellen Sie sicher, dass EXR- und PNG-Dateien identische Namen haben.
+2. Suchen Sie das Verzeichnis `.plasticity` auf Ihrem Betriebssystem und erstellen Sie darin einen neuen Ordner mit dem Namen „environments".
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigate to `C:/Users/<username>/.plasticity`.
+    Navigieren Sie zu `C:/Users/<username>/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `~/.plasticity`.
+    Navigieren Sie zu `~/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    Navigieren Sie zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
     </Tabs.Tab>
 </Tabs>
-3. Verschieben Sie Ihre benutzerdefinierten HDRI-Dateien in diesen Ordner und starten Sie Plasticity neu, um die Änderungen anzuwenden.
+3. Verschieben Sie Ihre benutzerdefinierten HDRI-Dateien in diesen Ordner und starten Sie Plasticity anschließend neu, um die Änderungen zu übernehmen.
 
-![Installation von HDRI](/img/installing-hdri-preview.png)
+![Installing HDRI](/img/installing-hdri-preview.png)
 
 <Callout type="info" emoji="💡">
-**Tipp**  
-- Es wird empfohlen, für die EXR-Datei eine Auflösung von 1K zu verwenden, um die Dateigröße zu optimieren (höhere Auflösungen werden bei Bedarf unterstützt). Die PNG-Datei kann ein beliebiges Seitenverhältnis von 1:1 haben, empfohlen werden jedoch 512×512 Pixel mit transparentem Hintergrund. Beide Dateien sollten mit mindestens 16 Bit Farbtiefe gespeichert werden.
+**Tipp**     
+- Es wird empfohlen, für die EXR-Datei eine Auflösung von 1K zu verwenden, um die Dateigrößen gering zu halten (höhere Auflösungen werden bei Bedarf aber unterstützt). Die PNG-Datei kann ein beliebiges 1:1-Seitenverhältnis haben, empfohlen werden jedoch 512x512 Pixel mit transparentem Hintergrund. Beide Dateien sollten mit einer Farbtiefe von mindestens 16 Bit gespeichert werden.
 </Callout>
 
 <Callout emoji="❗">
-**Note**     
-- Stellen Sie sicher, dass Sie in Ihrem Betriebssystem die Option zum Anzeigen versteckter Ordner aktivieren, um auf das `.plasticity`-Verzeichnis zugreifen zu können.
+**Hinweis**     
+- Aktivieren Sie in Ihrem Betriebssystem die Option zum Anzeigen versteckter Ordner, um auf das Verzeichnis `.plasticity` zugreifen zu können.
 </Callout>
 
-### Options
+### Optionen
 
-- Under the Options menu can be found "Rotation" and "Intensity".
+- Im Menü „Options" finden Sie **Rotation**, **Intensity** (Intensität), **AO Radius** und **AO Falloff**.
 
 ![Options](/img/options-rotation-intensity-1.png)
 
-| Option    | Button | Funktion                                                                                          |
-| --------- | ------ | ------------------------------------------------------------------------------------------------ |
-| Rotation  | (9)    | Passt die Rotation des ausgewählten HDRI um die Welt-Z-Achse an, durch Ziehen nach links oder rechts oder Eingabe eines Wertes zwischen -180 und 180. (Standard: 0) |
-| Intensität| (10)    | Steuert die Helligkeit des ausgewählten HDRI. Ziehen Sie nach links oder rechts oder geben Sie einen Wert zwischen 0 und 10 ein. (Standard: 1,0)                 |
- 
- ### Toggle Show Edges, Curves, and Faces
+| Option     | Schaltfläche | Funktion|
+| ---------- | :------: | ------- | 
+| Rotation   |    (9)    |  Passt die Drehung des ausgewählten HDRI um die Z-Achse der Welt an, indem Sie nach links oder rechts ziehen oder einen bestimmten Wert zwischen -180 und 180 eingeben. (Standard: 0)      |
+| Intensity  |    (10)    |  Steuert die Helligkeit des ausgewählten HDRI. Ziehen Sie nach links oder rechts oder geben Sie einen Wert zwischen 0 und 10 ein. (Standard: 1.0)    |
+| AO Radius  |    (11)    |  Passt den Radius des Ambient-Occlusion-Effekts an. Ziehen Sie nach links oder rechts oder geben Sie einen Wert zwischen 0 und 1000 ein. (Standard: 15)    |
+| AO Falloff |    (12)    |  Passt den Abfall (Falloff) des Ambient-Occlusion-Effekts an. Ziehen Sie nach links oder rechts oder geben Sie einen Wert zwischen 0.0 und 10.0 ein. (Standard: 0.5)    |
 
-- Kanten, Kurven und Flächen können über die Umschalt-Schaltflächen ein- oder ausgeblendet werden.
+ ### Anzeige von Kanten, Kurven und Flächen umschalten
+
+- Kanten, Kurven und Flächen können über die Umschalttasten ein- oder ausgeblendet werden.
 
 ![Toggle Options in Options](/img/option-toggle-edges-curves-faces.png)
- 
-| Funktion                                                      | Button | Befehlsname               |
-| -------------------------------------------------------------|--------|---------------------------|
-| Toggle show Edges  <br />(Deaktivieren blendet die Kanten aus.) | (11)   | Viewport: toggle Edges |
-| Toggle show Curves <br />(Deaktivieren blendet die Kurven aus.) | (12)   | Viewport: toggle Curves |
-| Toggle show Faces <br />(Deaktivieren blendet die Flächen aus.) | (13)   | Viewport: toggle Faces |
 
-### See Also
+| Funktion                                                      |  Schaltfläche | Befehlsname           |
+| ------------------------------------------------------------- |  ------ | ---------------------- |
+| Kanten anzeigen umschalten <br />(Wenn Sie dies ausschalten, werden die Kanten ausgeblendet.) | (13)   | Viewport: toggle edges |
+| Kurven anzeigen umschalten <br />(Wenn Sie dies ausschalten, werden die Kurven ausgeblendet.) | (14)   | Viewport: toggle curves |
+| Flächen anzeigen umschalten <br />(Wenn Sie dies ausschalten, werden die Flächen ausgeblendet.) |  (15)   | Viewport: toggle faces |
+| Bedingungen anzeigen umschalten <br />(Wenn Sie dies ausschalten, werden die Bedingungen ausgeblendet.) |  (16)   | Viewport: toggle constraints |
+ 
+
+## Siehe auch
 [Shader Mode](/plasticity-essentials/plasticity-interface/shader-mode)
+
 [Set Material](/common/set-material)

@@ -18,48 +18,47 @@ import Kst from '/components/KeyboardShortcutsTitle'
   tier="both"
 />
 
-## Description
+## Beschreibung
 
-Bridges two Curves with G0, G1, G2, or G3 continuity. Tension is adjustable, auto trim is supported, and curvature measurement is available.
+Erstellt eine Brückenkurve zwischen zwei Kurven mit G0-, G1-, G2- oder G3-Kontinuität. Sie können die Spannung anpassen, die Ausgangskurven automatisch trimmen und die Krümmung messen. Der Befehl unterstützt außerdem das Erstellen von Constraints.
 
-## Basic Usage
+## Grundlegende Verwendung
 
 <Callout type="info">
-Before selecting points, ensure that Control-Point, Edge, Curve, Face, and Axis are enabled in [Object Snaps](/plasticity-essentials/plasticity-interface/snap#object-snap). The starting and ending points can be snapped to any location on a Curve, Edge, or Face.
+Stellen Sie vor dem Auswählen von Punkten sicher, dass Control-Point, Edge, Curve, Face und Axis in den [Object Snaps](/plasticity-essentials/plasticity-interface/snap#object-snap) aktiviert sind. Start- und Endpunkt können an jeder beliebigen Stelle einer Kurve, einer Kante oder einer Fläche einrasten.
 </Callout>
 
-1. Click the button <ButtonIcon type="button-bridge-curve" /> on the Toolbar.
-2. Click on the starting point
-3. Click on the ending point.  
-4. Set the options in the Command Dialog and Keyboard Shortcuts.
+1. Klicken Sie in der Toolbar auf die Schaltfläche <ButtonIcon type="button-bridge-curve" />.
+2. Klicken Sie auf den Startpunkt.
+3. Klicken Sie auf den Endpunkt.  
+4. Legen Sie die Optionen im Command Dialog und über die Tastenkürzel fest.
      - <Kst>Command Dialog</Kst>
           - **Parameter:**
-               - **Value 1/2:** The relative position on the segment of the starting point/ending point.
-          - **Sense:** 
-               - **Sense 1/2:** Reverse the direction of the starting point/ending point.
-          - **Tension 1:**
-               - **Value 1/2:** The tension value affected 1st Control-Vertex(CV) to 3rd CV of the starting point/ending point.
-          - **Tension 2:**
-               - **Value 1/2:** The tension value affected 2nd CV and 3rd CV of the starting point/ending point.
-          - **Tension 3:**
-               - **Value 1/2:** The tension value affected 3rd CV of the starting point/ending point.
+               - **Value 1/2:** Die relative Position des Startpunkts/Endpunkts auf dem Segment.
+          - **Tension G1:**
+               - **Value 1/2:** Der Spannungswert, der auf den 1. bis 3. Kontrollpunkt (Control-Vertex, CV) des Startpunkts/Endpunkts wirkt.
+          - **Tension G2:**
+               - **Value 1/2:** Der Spannungswert, der auf den 2. und 3. CV des Startpunkts/Endpunkts wirkt.
+          - **Tension G3:**
+               - **Value 1/2:** Der Spannungswert, der auf den 3. CV des Startpunkts/Endpunkts wirkt.
           - **Start curvature:**
-               - **G0, G1, G2, G3:** Specify the [continuity of the  Curve](/cad-essentials/continuity-curve-and-surface) at the starting point.
+               - **G0, G1, G2, G3:** Legen Sie die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Startpunkt fest.
           -  **End curvature:**
-               - **G0, G1, G2, G3:** Specify the [continuity of the  Curve](/cad-essentials/continuity-curve-and-surface) at the ending point.      
-          - **Trim:** When turned on, any Curve that extends beyond the bridge will be trimmed.
-          - **Show curvature:** Toggles the curvature visualization on the curve. Learn more in [Toggle Curvature](/tool/toggle-curvature).
+               - **G0, G1, G2, G3:** Legen Sie die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Endpunkt fest.      
+          - **Trim:** Wenn aktiviert, wird jede Kurve, die über die Brücke hinausragt, getrimmt.
+          - **Show curvature:** Schaltet die Krümmungsdarstellung auf der Kurve ein oder aus. Mehr dazu unter [Toggle Curvature](/tool/toggle-curvature).
+          - **Create Constraints:** Erstellt Constraints auf den überbrückten Kurven, um die festgelegte Kontinuität beizubehalten und weitere Anpassungen zu ermöglichen. Sie können diese Constraints im Menü [Constraints](/plasticity-essentials/constraint-system) bearbeiten.
      - <Kst>Keyboard Shortcuts</Kst>
-     - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Constrain to the X, Y, or Z-axis](/tool/sketching-essentials#constrain-to-an-axis).
-     - <kbd>Tab</kbd> **Cycle continuity:** Toggle between G0, G1, G2, and G3 continuity. 
-     - <kbd>D</kbd> **G1 Tension:** Adjust the tension for G1 continuity. 
-     - <kbd>Q</kbd> **Trim:** Toggle trim on or off for the selected curves. 
+     - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+     - <kbd>Tab</kbd> **Cycle continuity:** Wechselt zwischen G0-, G1-, G2- und G3-Kontinuität. 
+     - <kbd>D</kbd> **G1 Tension:** Passt die Spannung für die G1-Kontinuität an. 
+     - <kbd>Q</kbd> **Trim:** Schaltet das Trimmen für die ausgewählten Kurven ein oder aus. 
           
-5. Confirm with OK in the Command Dialog or right-click.
+5. Bestätigen Sie mit OK im Command Dialog oder per Rechtsklick.
 
 <VideoPlayer fileName="bridge-curve"/>
 
-## See also
+## Siehe auch
 - [Bridge](bridge)
 - [Bridge Vertex](bridge-vertex)
 - [Bridge Edge](bridge-edge)

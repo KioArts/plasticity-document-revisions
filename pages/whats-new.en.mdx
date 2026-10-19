@@ -5,390 +5,478 @@ import { Center } from '/components/Center'
 import { SideBySide } from '/components/SideBySide'
 import ButtonIcon from '/components/ButtonIcon'
 
-Release date: April 16, 2026
+Release date: October 19, 2026
 
-# Plasticity 2026.1 Release Notes
+# Plasticity 26.2 Release Notes
 
-Plasticity 2026.1 adds new commands including PolySplines, Export Hidden Line, and Slot, along with improvements to existing commands like Extrude, Align, Place, and Mirror. You'll also find a number of interface updates in this release, including Outliner search, Construction Plane 2D Snapping, SpaceMouse refinements, and higher numerical precision across sketching commands.
+Plasticity 26.2.0 introduces a new Assets system, a Studio only Constraints system, and a new Project Align command, along with improvements to Edge Align, Vertex Align, Move, Slide, Square, Join, Transform, and Boolean. This release also brings a faster PolySpline rendering strategy, mesh snap visualization, customizable edge colors, tintable matcaps, and a number of interface refinements across the Outliner, panels, and gizmos.
 
 ## 1. New Commands
 
-### PolySplines
-- **Convert Mesh Objects to NURBS Surfaces**    
-PolySplines is a new third-party command that converts mesh objects into editable NURBS surfaces in Plasticity, generating clean single and multi-span surfaces with G2 continuity. This is a Studio only feature and works well alongside the Blender Bridge addon.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![PolySplines Example](/img/polyspline-example.svg)
-</Center>
-
-Learn more: [PolySplines](/solid/polyspline), [Blender Bridge (Working With PolySplines)](/blender/how-to-use#working-with-polysplines)
-
-### Export Hidden Line
-- **Create Technical SVG Drawings from 3D Objects**    
-Export Hidden Line is a new command that generates technical SVG drawings from your 3D model. It supports hidden edge display, line styling, object shader export, hatching with multiple methods, line coloring, and a grid view template for automatic object positioning. 
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Export Hidden Line Example Image](/release/26.1/export-hidden-line.svg)
-</Center>
-
-[Learn more](/plasticity-essentials/export-hidden-line)
-
-### Slot
-- **Create a Slot from a Curve**    
-Creates a closed slot shape by offsetting an open curve symmetrically on both sides with capped ends. Useful for mechanical parts such as bolt slots, ventilation cutouts, and similar profiles.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Slot GIF](/release/26.1/slot-example.gif)
-</Center>
-
-[Learn more](/sketch/slot)
-
-## 2. Modeling Enhancements
-
-### Gizmo Distance Input
-- **Unified Gizmo Controls**    
-Commands that share the Gizmo can now use <kbd>Tab</kbd> to enter a precise distance value. This allows for faster, more consistent input when adjusting transformations. The following commands support this behavior:
-
-
-| Command            | Description                          |
-|--------------------|--------------------------------------|
-| [Move](/common/move)                 | Specify XYZ Gizmo distance value     |
-| [Rotate](/common/rotate)             | Specify XYZ Gizmo distance value     |
-| [Scale](/common/scale)               | Specify XYZ Gizmo distance value     |
-| [Push Face](/solid/offset-face)      | Specify distance value via Gizmo     |
-| [Extrude](/solid/extrude)            | Specify distance value via Gizmo     |
-| [Thicken](/solid/thicken-face)       | Specify distance value via Gizmo     |
-
-{/* <Center 
-width="500px"
-borderRadius="8px">
-![Gizmo Distance GIF](/release/26.1/gizmo-distance-shortcut.gif)
-</Center> */}
-
-### Numerical Precision
-- **Higher Precision**  
-Commands that use the input function (<kbd>=</kbd>) now copy up to 8 decimal places with <kbd>Ctrl + C</kbd> (e.g., `30.345` copies as `30.34587689`).
-
-| Category | Commands |
-|---|---|
-| **Curves** | [Line](/tool/line), [Spline Curve](/tool/spline-curve), [Control Point Curve](/tool/control-point-curve) |
-| **Circles** | [Center Circle](/tool/center-circle), [Two Point Circle](/tool/two-point-circle), [Three Point Circle](/tool/three-point-circle), [Tangent Circle](/tool/tangent-circle), [Ellipse](/tool/ellipse) |
-| **Arcs** | [Center Point Arc](/tool/center-point-arc), [Three Point Arc](/tool/three-point-arc), [Tangent Arc](/tool/tangent-arc) |
-| **Rectangles** | [Corner Rectangle](/tool/corner-rectangle), [Center Rectangle](/tool/center-rectangle), [Three Point Rectangle](/tool/three-point-rectangle) |
-| **3D Primitives** | [Sphere](/tool/sphere), [Corner Box](/tool/corner-box), [Center Box](/tool/center-box), [Three Point Box](/tool/three-point-box), [Cylinder](/tool/cylinder), [Dimension](/tool/measure) |
-
-### Export OBJ Command
-- **Scale and Up Axis Controls**    
-The OBJ exporter now includes a Scale field and Up Axis toggle. Scale applies a multiplier to all exported coordinates, allowing correct unit conversion for the target application. Up Axis sets the orientation of the exported geometry to match the conventions of the receiving software.
-
-<Center 
-width="400px"
-border ="1px solid rgb(140, 140, 140)"
-borderRadius="8px">
-![Export OBJ - Scale and Up Axis Controls](/release/26.1/export-obj-scale-axis.png)
-</Center>
-
-**Scale and Up Axis Reference**
-
-| Software | Default Unit | If working in cm | If working in mm | Up Axis |
-|---|---|---|---|---|
-| Blender | Meter | `0.01` | `0.001` | Z up |
-| Unreal Engine | Centimeter | `1.0` | `0.1` | Z up |
-| Maya | Centimeter | `1.0` | `0.1` | Y up |
-| Unity | Meter | `0.01` | `0.001` | Y up |
-| 3ds Max | Inch | `0.3937` | `0.03937` | Z up |
-| Cinema 4D | Centimeter | `1.0` | `0.1` | Y up |
-
-[Learn more](/plasticity-essentials/export-obj)
-
-### Export STL Command
-- **Overriding Length Unit**    
-Exporting to STL now allows you to override the length unit used during export. 
-
-<Center 
-width="400px"
-border ="1px solid rgb(140, 140, 140)"
-borderRadius="8px">
-![Export OBJ - Scale and Up Axis Controls](/release/26.1/export-stl-length-unit.png)
-</Center>
-
-The available units are:
-
-| Available Unit | Example Conversion |
-|----------------|--------------------------------------------------------------|
-| Millimeter     | `1` mm = `0.1` cm = `0.001` m = `0.03937` in = `0.003281` ft           |
-| Centimeter     | `1` cm = `10` mm = `0.01` m = `0.3937` in = `0.03281` ft               |
-| Meter          | `1` m = `1000` mm = `100` cm = `39.37` in = `3.28084` ft               |
-| Inch           | `1` in = `25.4` mm = `2.54` cm = `0.0254` m = `0.08333` ft             |
-| Foot           | `1` ft = `304.8` mm = `30.48` cm = `0.3048` m = `12` in                |
-
-## 3. General Improvements
-
-### Preference Menu
-- **Preference Menu** - The menu can now be dragged and repositioned within the Plasticity window.
-- **Rotation Mode** - A new **Arcball** rotation mode is now available, rotating the view freely across all three axes by mapping mouse movement to an imaginary sphere around the scene for full 360 degree rotation in any direction.
-- **Measurement Color** - A new color setting in the **Appearance** section lets you customize the color of Measurement Lines and Measurement Units displayed in sketching tools.
-
-### SpaceMouse
-- **Behavior** - General improvements and tweaks have been made to make SpaceMouse behaviour more consistent with other software. Updating to the latest driver for your device is recommended. Changes include:
-    - **Directions** - Up/Down directions are now reversed.
-    - **Speed** - Default speed has been recalibrated to better match the expected feel in other applications.
-    - **Lock Horizon** - A new option in *Preferences > SpaceMouse* to toggle roll behaviour.
-
-### Keyboard Overlay
-- **Background Toggle** - The shortcut overlay now switches from white to a dark background when used on very light scenes.
-
-### Menu Panels
-- **Expand and Collapse Speed** - Expanding and collapsing Menu Panels is now faster.
-
-### Assets Panel
-- **Keybinding Support** - The Assets panel now supports navigation using the arrow keys.
-
-### Axial Gizmos
-- **Axis Visibility Update** - Axial gizmos now fade out when directly facing the camera.
-
-### Save File Window
-- **Save File** - Plasticity now prompts a dialog asking whether you want to save any unsaved changes.
-
-### Thumbnail Display
-- **MacOS File Identification** - Thumbnail previews are now supported on macOS.
-
-### Window Application Size
-- **Window Handling** - Plasticity now behaves more predictably when resized to small dimensions on Windows.
-- **Command Dialogs** - Command dialogues now include a scroll bar for navigating long lists of options.
-
-## 4. New Features
-
-### Control Point Mode
-- **Intersection Point Visualization**  
-When in Control Point selection mode, a small dot appears anywhere two curves intersect or where vertices are connected. This gives a clear indication that the curves are truly connected.
+### Project Align   
+**Project Align** aligns the CVs along a target surface's edge to a reference surface, following either a vector direction or the surface normal. Choose between **Constrained** and **xNURBS** solvers, xNURBS requires a reference curve to guide the alignment. Available in Studio only.
 
 <Center 
 width="600px"
 borderRadius="8px">
-![Feature Example](/release/26.1/point-mode-visualization-change.svg)
+![Project Align Example](/release/26.2/project-align-example-01.gif)
 </Center>
 
-[Learn More](/tool/sketching-essentials#accurate-snap)
+Learn more: [Project Align](/solid/project-align)
+
+### Home View
+- **Isometric Home View**    
+Plasticity now includes a **Home View** that returns the viewport to a standard isometric view. Access it by right-clicking on the 3D viewport cube, or by using the new `Viewport: Home View` command.
+
+Learn more: [View Cube](/plasticity-essentials/plasticity-interface/view-cube)
+
+### Toggle Visibility Commands
+- **Toggle Images, Meshes, and Constraints**    
+New `Viewport: Toggle Images`, `Viewport: Toggle Meshes`, and `Viewport: Toggle Constraints` commands quickly toggle the visibility of images, meshes, and constraints in the viewport, without needing to select them in the Outliner and turn off their visibility manually.
+
+Learn more: [Toggle Object States](/plasticity-essentials/plasticity-interface/outliner#operations-by-command-name)
+
+### Select All Constraints
+- **Select All Constraints**    
+Select all constraints in the scene at once with `Select All Constraints` command. Note that constraints are currently Studio only, and are not yet saved with the file - see this [chapter](/release-notes/whats-new-2026.2#constraint-system).
+
+Learn more: [Selecting Objects](/plasticity-essentials/selecting-objects#selecting-with-commands)
+
+---
+
+## 2. New Features
+
+### Assets System
+- **Mark, Export, and Share Assets**  
+Plasticity now has a full workflow for marking, exporting, and sharing assets. Open the new **Assets** tab in the Outliner, pick an asset folder, and drag an asset straight into the viewport to place it. This speeds up repetitive modeling work such as bolts, mechanical components, and other parts you reuse often when assembling a final part in a document.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Assets Panel Example](/release/26.2/assets-menu-example.gif)
+</Center>
+
+Learn more: [Assets](/plasticity-essentials/plasticity-interface/assets)
+
+### Constraint System
+- **Create and Maintain Constraints**    
+Plasticity now introduces a new **Constraint System** that lets you create constraints based on the command used, which stay enforced automatically as you transform geometry. This is a Studio only feature, and constraints aren't yet saved with the file.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/constraint-align-example.gif)
+</Center>
+
+The following commands support constraints: 
+
+| Command Name | Option | Note |
+|:---|---| --- |
+| [Square](/solid/square) | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | Option to create constraints | 
+| [Project Align](/solid/project-align) | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings |  Automatically creates constraints |
+| [Surface Align](/solid/surface-align) | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | Option to create constraints |
+| [Edge Align](/solid/edge-align) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints |
+| [Vertex Align](/sketch/vertex-align) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints |
+| [Bridge Curve](/sketch/bridge-curve) | Specify the Continuity between G0, G1, G2, or G3 |  Option to create constraints |
+| [Bridge Vertex](/sketch/bridge-vertex) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints |
+| [Bridge Edge](/sketch/bridge-edge) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints |
+
+
+The corresponding constraint icons are displayed in the viewport, and clicking once on them opens the Constraint Options menu, where you can adjust their respective settings for Surface and Curve constraints.
+
+<br/>
+
+<div style={{textAlign: 'center'}}>
+<img src="/release/26.2/constraint-options-menu.png" alt="Constraint Options Menu" width="160" />
+</div>
+
+Learn more: [Constraint System](/tool/sketching-essentials#constraint-system)
+
+### Gaussian Shader
+- **New Gaussian Shader**   
+New **Curvature Analysis** shader is available in the Shader Mode panel. It colors your surface so you can instantly see where it curves smoothly and where it doesn't. 
+
+Choose from three modes: **Gaussian** to catch sudden changes, **Mean** to confirm overall smoothness, and **Max** to spot areas that could cause problems when thickening or offsetting.
+
+<Center 
+width="600px"
+borderRadius="8px">
+![Gaussian Shader Example](/release/26.2/gaussian-shader-example.svg)
+</Center>
+
+Learn more: [Shader Mode](/plasticity-essentials/plasticity-interface/shader-mode)
+
+---
+
+## 3. Feature Improvements
+
+### Snaps   
+
+- **New Snap Point**    
+When curves and edges cross the section plane and axis planes, it will display new snapping points that are `Section` for Section Snaps and `YZ`, `XZ` for Plane Snaps in 3D.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Snaps Example](/release/26.2/new-snaps-example.svg)
+</Center>
+
+- **Snap Points on Instances**    
+Objects that have been instanced with **[Create Instance](/solid/create-instance)** command now support all snap points currently available in Plasticity.
+
+Learn more: [Snapping](/plasticity-essentials/plasticity-interface/snap)
+
+### File Import
+- **.Plasticity File Import Improvements**    
+Importing a .Plasticity file now supports meshes, images, and instances. This provides a significant workflow improvement for users who want to import a file with multiple objects, and have them all come in as they were saved.
+
+Learn more: [Import/Export](/plasticity-essentials/import-export)
+
+### View Cube
+- **Improved Orientation:** Clicking a face on the **View Cube** now orients the camera to the closest matching orientation. This works similarly to construction planes created from a face with a selected edge, which aligns that edge as closely as possible to the current camera orientation.
+
+## 4. Command Improvements
+
+### Edge Align
+
+**Align** command has been renamed to **Edge Align**, with several improvements to solving and boundary handling.
+
+- **New Collinear solving option**    
+**Collinear** is a new solver option for Class A style modeling, offering two behavioral options that control how alignment happens between two surfaces: **Symmetric** and **Asymmetric**. It governs how the CV hulls of both surfaces are adjusted to form a clean, organized grid along the shared boundary edge.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/collinear-behavior-image.png)
+</Center>
+
+- **New Skew boundary option**    
+New **Skew** boundary option is available in an expandable section, letting you control how much boundary edges tilt during alignment. The skew angle can be adjusted using the Gizmo handles in the viewport or entering the **Start** and **End** values. Note that this requires at least G1 continuity to work. 
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/skew-boundary-angle.svg)
+</Center>
+
+- **Partial alignment improvements**    
+**Partial Alignment** now has a sliding gizmo along the edge, so you can dial in how far the alignment extends.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/partial-alignment-gizmo.svg)
+</Center>
+
+- **Improved Edge Align behavior**    
+**Edge Align** now supports aligning surface edges the same way it aligns curves, you no longer need to click the exact edge. In **Face** or **Sheet and Solid Selection Mode**, you can click anywhere near the boundary edges of the two sheets, and they'll be paired correctly.
+
+- **New keybindings**    
+While using **Edge Align**, press <kbd>B</kbd> to toggle boundary alignment on or off, and <kbd>P</kbd> to toggle partial alignment on or off.
+
+Learn more: [Edge Align](/solid/edge-align)
+
+---
+
+### Vertex Align
+
+- **Partial alignment improvements**    
+Partial alignment now supports a sliding gizmo along the segment for finer control.
+
+- **New keybinding**    
+New <kbd>P</kbd> keybinding to toggle partial alignment
+
+Learn more: [Vertex Align](/sketch/vertex-align)
+
+---
+
+### Bridge Curve
+- **Improved Gizmo**    
+  The Bridge Curve command now has a redesigned Gizmo with two types of handles:
+
+  - **Parameter handles:** Set the start and end points of the bridged curve.
+
+    - <Center 
+      width="150px"
+      borderRadius="8px">
+      ![Placeholder](/release/26.2/drag-handles.gif)
+      </Center>
+
+  - **Sense Direction handle:** Controls the direction in which the bridged curve connects to each of the source curves.
+
+    - <Center 
+      width="150px"
+      borderRadius="8px">
+      ![Placeholder](/release/26.2/sense-direction.gif)
+      </Center>
+
+  Because the Sense Direction is now controlled directly in the Gizmo, the **Sense** option has been removed from the dialog.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/bridge-curve-new-gizmo.png)
+</Center>
+
+Learn more: [Bridge Curve](/sketch/bridge-curve)
+
+### Move Command
+- **Automatic invocation**    
+**Move** is now automatically invoked when selecting items. This can be disabled in **Preferences > Commands**.
+- **Gizmo transform coalescing**    
+Consecutive Move gizmo drags in the same direction now accumulate into a single total, instead of each drag resetting the displayed value.
+- **Persistent mirror settings**    
+Mirror settings are now remembered between uses.
+- **Mirror alignment on axis-aligned planes**    
+When moving control points with mirror enabled, world axes are now used instead of relative XYZ axes if the current construction plane is axis-aligned.
+
+Learn more: [Move](/common/move)
+
+---
+
+### Rotate Command
+- **Visual progress indicator**     
+When using the Rotate gizmo, a visual indicator now shows how far you've rotated the selection.
+
+<Center 
+width="450px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/rotate-gizmo-progress.png)
+</Center>
+
+- **Gizmo transform coalescing**    
+Consecutive Rotate gizmo drags in the same direction now accumulate into a single total, instead of each drag resetting the displayed value.
+
+Learn more: [Rotate](/common/rotate)
+
+### PolySplines Command
+- **PolySpline CV editing in Point Selection Mode**    
+CVs of PolySpline bodies can now be moved in **Point Selection Mode**, similar to moving the vertex points of a mesh body. This is now possible directly on PolySpline geometry within Plasticity.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/polyspline-cv-editing.gif)
+</Center>
+
+- **Duplicate PolySpline CVs**      
+Use the **[Duplicate](/common/duplicate)** command to duplicate selected CVs on a PolySpline object while preserving their structure and editability. PolySpline topology follows specific construction rules. If the duplicated CVs don't have enough support geometry, they are rebuilt into a valid PolySpline topology.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/polyspline-duplicate-polycv.gif)
+</Center>
+
+- **Remove PolySpline CVs**     
+Use the **[Remove Nominal Surface](/solid/remove-nominal-surface)** command on a face to remove PolySpline CVs. This operation is destructive, so check your selection before applying it.
+
+Learn more: [PolySplines](/solid/polyspline)
+
+### Duplicate Command
+- **Post-processing Update**    
+Duplicating faces that have surface lines no longer deletes redundant topology, instead it will keep the raw surface information. If you wish to remove the unnecessary surface lines, see **[Delete Redundant Topology](/solid/delete-redundant-topology)** command.
+
+Learn more: [Duplicate](/common/duplicate)
+
+### Deform Command
+- **Extended Support**    
+Deform command now supports accepting curves as reference and target, rather only faces. This allows for more flexible and extensible deformation of geometry objects.
+
+<Center 
+width="500px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/deform-curve-support.gif)
+</Center>
+
+Learn more: [Deform](/sketch/deform)
+
+### Offset Curve Command
+- **Extend Beyond Adjacent Vertices**   
+Offsetting a vertex can now continue past adjacent vertices instead of being clamped.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/offset-vertex-upgrade.gif)
+</Center>
+
+Learn more: [Offset Curve](/sketch/offset-curve)
+
+### Extend Command
+- **Extend Sheet Naturally**    
+Extending a untrimmed sheet naturally now supports modify and unmodify option. This adds a surface line, marking the beginning of the new surface creation. It supports in natural and skew extension.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/exthend-sheet-naturally-modify-options.gif)
+</Center>
+
+Learn more: [Extend](/sketch/extend)
+
+### Boolean, Hollow, and Thicken Commands
+- **New Visual Hint for Failure**       
+When a **Boolean**, **Hollow**, or **Thicken** operation fails, the geometry where the issue occurs is now highlighted in red, so you can quickly find and fix the problem.
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="The red highlight indicates the area where the Boolean operation failed.">
+![Boolean failure hint](/release/26.2/boolean-failure-hint.gif)
+</Center>
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="The red highlight indicates the area where the Hollow operation failed.">
+![Hollow failure hint](/release/26.2/hollow-failure-hint.gif)
+</Center>
+
+<br/>
+
+<Center 
+width="500px"
+borderRadius="8px"
+caption="The red highlight indicates the area where the Thicken operation failed.">
+![Thicken failure hint](/release/26.2/thicken-failure-hint.gif)
+</Center>
+
+Learn more: [Boolean](/solid/boolean), [Hollow](/solid/hollow), [Thicken](/solid/thicken)
+
+### Square Command
+- **Sheet Body Input Support**    
+Square now accepts a sheet body as input, as long as the sheet has a single rectangular face. In **Sheet and Body Selection Mode**, it automatically applies Refit Surface. Previously, this input was invalid and caused an error.
+
+Learn more: [Square](/solid/square)
+
+### Slide Command
+- **Proportional Falloff Support**      
+Now supports proportional falloff. When you slide multiple surfaces at once, their UV directions are harmonized.
+
+<Center 
+width="550px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/slide-falloff-command.gif)
+</Center>
+
+Learn more: [Slide](/solid/slide)
+
+## 5. Interface Improvements
 
 ### Outliner
-- **Search Field**  
-The Outliner now includes a search field, accessible via <kbd>Ctrl + F</kbd> or the search icon, making it easier to find specific objects in crowded scenes.
+- **New Context Menu Action:** The Outliner now has a context menu action to **Add to Isolation**. Right-click on an object in the Outliner and select "Add to Isolation" to add the object to the current isolation layer, allowing you to work with it in isolation from other objects.
 
 <Center 
-width="315px"
+width="300px"
 borderRadius="8px">
-![Feature Example](/release/26.1/outliner-search-field.png)
+![Constraints Example](/img/outliner-add-to-isolation.png)
 </Center>
 
-[Learn More](/plasticity-essentials/plasticity-interface/outliner#locate-objects-in-the-outliner)
-
-- **Active Collection**  
-Double clicking a group in the Outliner now sets it as the **Active Collection**. Any newly modeled, imported, or created objects will automatically be placed into that group. A visual highlight indicates which collection is currently active.  
+- **Sticky Header:** The Outliner now has a sticky header that remains visible while scrolling through the list of many objects.
 
 <Center 
-width="125px"
+width="320px"
 borderRadius="8px">
-![Active Collection](/release/26.1/toggle-active-collection.svg)
+![Constraints Example](/release/26.2/sticky-header.gif)
 </Center>
 
-<Center 
-width="280px"
-borderRadius="8px">
-![Active Collection](/release/26.1/toggle-active-collection.png)
-</Center>
-[Learn More](/plasticity-essentials/plasticity-interface/outliner#active-collection)
-
-
-### Construction Plane
-- **2D Snapping**   
-A new **2D Snapping** option has been added to the Planes menu. When enabled and an active construction plane is set, all picked points are projected onto that plane. Dragging points moves them along the construction plane rather than in 3D space, and related interactions follow the plane's orientation.
-
-<Center 
-width="270px"
-borderRadius="8px">
-![2D Snapping](/release/26.1/planes-2d-snapping.png)
-</Center>
-
-[Learn More](/plasticity-essentials/plasticity-interface/construction-plane#using-2d-snapping)
-
-### Materials
-- **Material Preservation**     
-Copying and pasting objects with inherited materials into a newly opened scene window now correctly preserves those materials.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Copy and Paste Materials GIF](/release/26.1/material-copy-paste-window.gif)
-</Center>
-
-- **Density Attribute**     
-The Material menu now includes a Density field, allowing you to specify a material's density. Units can be adjusted in the Units section, and final mass calculations are displayed in the Selection menu.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Density Attribute GIF](/release/26.1/material-density.gif)
-</Center>
-
-[Learn More](/common/set-material)
-
-## 5. Improved Commands
-
-### Align Command
-- **Align Curves**  
-The Align command now supports aligning two curves to G0, G1, G2, and G3 continuity. It supports Vertex to Vertex and Curve to Curve alignment, including polylines and geometric shapes such as circles and polygons. A new selection order algorithm has also been added, making it easier to handle cases where a vertex is shared or overlapped by two curves.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![PolySplines Example](/release/26.1/align-curve-example.gif)
-</Center>
-
-[Learn more](/sketch/align-vertex)
-
-### Place Command
-- **Expanded Object Support**   
-The Place command now supports placing both Mesh and Instance objects, giving you more control when working with these object types. When placing an instance, only Face and Edge snap points are supported. For Mesh objects, Vertex and Face snap points are supported.
-
-- **Create Instances**  
-The command now supports creating instances directly when placing objects.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![PolySplines Example](/release/26.1/place-command.gif)
-</Center>
-
-[Learn more](/common/place)
-
-### Mirror Command
-- **Create Instances**  
-The Mirror command can now create instances when the **Make instances** option is enabled, and it can be invoked with <kbd>I</kbd>.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![PolySplines Example](/release/26.1/mirror-command.gif)
-</Center>
-
-[Learn More](/common/mirror)
-
-### Extrude Command
-- **Edge Extrusion**    
-The Extrude command now allows you to extrude surface edges directly.
-
-- **Toggle Individual or Direction Mode**   
-The **Extrude** command now includes a new mode toggle. *Individual* mode extrudes each surface along its own normal direction, while *Direction* mode extrudes all selected surfaces along a single unified direction.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Extrude Direction and Individual GIF](/release/26.1/extrude-directions.gif)
-</Center>
-
-[Learn more](/solid/extrude)
-
-### Patch Command 
-- **Region Patching**  
-The Patch command now accepts Regions as valid input, which was previously unsupported.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Patch Regions](/release/26.1/patch-command.gif)
-</Center>
-
-[Learn More](/solid/patch)
-
-### Tangent Circle Command
-- **Inline Radius Input**    
-The Tangent Circle now displays an inline radius input, making it easy to see and round the radius value during creation. Previously, this was hidden, making it difficult to enter a precise value within the allowed range.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Tangent Circle](/release/26.1/tangent-circle-inline.gif)
-</Center>
-
-[Learn More](/tool/tangent-circle)
-
-### Curve Array Command
-- **New Alignment**  
-The Curve Array command now includes a new alignment mode called **Transport**. Unlike *Normal* or *Parallel*, which rely on local normal calculations, Transport uses a stable frame that smoothly follows the curve. This prevents twisting or flipping and keeps objects correctly oriented even along complex, organic paths.
-
-<Center 
-width="500px"
-borderRadius="8px">
-![Curve Array](/release/26.1/curve-array-transport.gif)
-</Center>
-
-[Learn More](/common/curve-array)
-
-### Rotate / Move / Scale Command 
-- **XYZ Color Chips**  
-The dialog includes color chips that correspond to the XYZ coordinate system making it easier to understand which axis each option affects.
+### Viewport and Navigation
+- **Viewport Cube:** Refreshed visual styling and added a right-click context menu for quick access to view options.
 
 <Center 
 width="400px"
 borderRadius="8px">
-![Transform Commands Chips](/release/26.1/dialogue-xyz-color.png)
+![Constraints Example](/release/26.2/3d-cube-styling.png)
 </Center>
 
-- **Transform Instances Inversely**     
-Transformation commands now include an **Advanced** section with a **Transform Instances Inversely** option. When enabled, transformations apply only to the parent object while its instances remain in place.
+- **New Gizmo Appearance:** When enabled, a circular plane is displayed to indicate the direction of projection. This applies to all commands that involve projecting operations, including the mirror commands.
 
 <Center 
-width="500px"
+width="220px"
 borderRadius="8px">
-![Transform Inversely](/release/26.1/move-inverse-transformation.gif)
+![Constraints Example](/release/26.2/new-projection-gizmo.gif)
 </Center>
 
-- **Freestyle Sub-Option**  
-It's now possible to Freestyle Rotate and Scale faces on solid and sheet objects.
+- **Mesh Snapping:** Visually highlights when snapping to a mesh by displaying a partial wireframe, showing the face being snapped to as a triangle.
 
-Learn More: [Rotate](/common/rotate), [Scale](/common/scale), [Move](/common/move)
+<Center 
+width="220px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/mesh-snapping.gif)
+</Center>
 
-### Pipe Command
-- **Label Clarification**   
-The term *Section Size* has been renamed to *Diameter* to better reflect its purpose and avoid ambiguity.
+### Panels and Dialogs
+- **Assets Panel:** Search queries, multi-pack selection, and context menus.
+- **Curvature Panel:** New autosize combs button for the current view. Once pressed, curvature combs will automatically resize to fit the current view. This is useful when zooming in or out, or when the curvature combs are too small to see clearly.
 
-[Learn More](/solid/pipe)
+<Center 
+width="300px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/curvature-panel-autosize.png)
+</Center>
 
-### Sweep Command
-- **From Radians to Degrees**  
-The Sweep command now uses degrees to define the twist angle. Holding <kbd>Ctrl</kbd> snaps the value in 5 degree increments for easier precise adjustments. 
+- **Render Mode Panel:** New icon buttons to toggle visibility of curves, edges, faces, and constraints.
 
-- **Boolean Operations**    
-The command now includes Boolean operation support. When actively sweeping an object you can perform boolean operations. 
+<Center 
+width="240px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/icons-for-viewport.png)
+</Center>
 
-[Learn More](/solid/sweep)
+- **Units Panel:** Removed the reset-to-default button.
+- **File Tab:** Now has a context menu when you right-click on it. You can quickly reveal the location of your .Plasticity file in your file explorer, or browse the backup files. Lastly, when you've made any changes in the current open file, you can revert to its last saved state.
 
-### Revolve Command
-- **Boolean Operations**   
-The command now supports boolean operations while actively revolving an object. 
+<Center 
+width="240px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/file-tab-context-menu.png)
+</Center>
 
-[Learn More](/solid/revolve)
+- **Long dialogs:** Scrolling down now includes a slight fade-away effect at the bottom of the command dialogue.
 
-### Hollow Command
-- **Hollow Multiple Bodies**   
-The Hollow command can now hollow multiple bodies at once.
+### Visual Customization
+- **Appearance:** Colors of edges and instance edges can now be customized in **Preferences > Appearance**.
+- **Matcaps:** Custom matcaps can now include a **JSON** file to specify whether they are tinted or untinted - see [Matcaps](/plasticity-essentials/plasticity-interface/shader-mode#tintable-custom-matcaps).
 
-[Learn More](/solid/hollow)
+### Context Menus
+- **P-menu:** New icons for the P-menu now are included.
 
-### Bridge Command
-- **Remember Settings**     
-The Bridge command now remembers continuity settings (G0, G1, G2, G3) between uses.
+<Center 
+width="300px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/p-menu-icons.png)
+</Center>
 
-[Learn More](/sketch/bridge)
+- **Outliner:** New icons for the Outliner section included for the **Outliner**, **Materials**, and **Assets** sections.
 
+<Center 
+width="300px"
+borderRadius="8px">
+![Constraints Example](/release/26.2/outliner-materials-assets-icons.png)
+</Center>
+
+---
+
+## 6. Miscellaneous
+
+### New Keybindings
+
+| Key | Command | Context |
+|-----|---------|---------|
+| <kbd>J</kbd> | Join | Outliner |
+| <kbd>B</kbd> | Toggle Boundary Alignment | Edge Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Edge Align |
+| <kbd>P</kbd> | Toggle Partial Alignment | Vertex Align |
+
+### Experimental Features
+
+- **Automatic Move Command:** Move is now automatically invoked when selecting items, with the goal of gathering user feedback. Can be disabled in Preferences if undesired.
 
 ## Past Update Information
 
-- December 15, 2025 [Version 2025.3](/release-notes/whats-new-2025.3)
+- April 16, 2026 [Version 2026.1](/release-notes/whats-new-2026.1)

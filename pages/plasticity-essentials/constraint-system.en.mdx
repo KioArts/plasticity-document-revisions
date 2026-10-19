@@ -1,0 +1,40 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import { Callout } from 'nextra/components'
+
+
+## Constraint System[#constraint-system]
+
+- The **Constraint System** lets you constrain a surface or curve based on the command executed on it. This forms a relationship between geometry, building a live-editing network where connected objects update together.
+- Clicking once on the constraint icon opens the **Constraint Options** menu, where you can adjust the constraint settings for the specific command.
+
+<Callout type="warning">
+This feature is only available in the **Studio** version of Plasticity.
+</Callout>
+
+<Callout type="info">
+Currently, constraints cannot be saved in the project file. They are only active during the current session.
+</Callout>
+
+<VideoPlayer fileName="sketching-tips-6"/>
+
+### Surface Constraint
+
+- Constraints can be applied to solid commands, allowing you to control the behavior of the resulting geometry. The following table lists the available solid commands and their constraint options:
+
+| Command Name | Option | Note |
+| ------- | ------- | ------- |
+| [Square](/solid/square) | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | Option to create constraints; Remembers last used **Create Constraints** setting |
+| [Surface Align](/solid/surface-align) | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | Option to create constraints |
+| [Project Align](/solid/project-align) | Specify the Continuity between G0, G1, G2, or Free; Partial Alignment adjustment; Boundary adjustment; Analysis settings | Automatically creates constraints |
+
+### Curve Constraint
+
+- Constraints can also be applied to curve commands, allowing you to control the behavior of the resulting geometry. The following table lists the available curve commands and their constraint options:
+
+| Command Name | Option | Note |
+| ------- | ------- | ------- |
+| [Vertex Align](/sketch/vertex-align) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints |
+| [Bridge Curve](/sketch/bridge-curve) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints; Remembers last used **Create Constraints** setting |
+| [Bridge Vertex](/sketch/bridge-vertex) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints; Remembers last used **Create Constraints** setting |
+| [Bridge Edge](/sketch/bridge-edge) | Specify the Continuity between G0, G1, G2, or G3 | Option to create constraints; Remembers last used **Create Constraints** setting |

@@ -1,44 +1,51 @@
 import { Tabs } from 'nextra/components'
 
+# Preferences
 
-# 設定  
+Preferences ウィンドウを開くには、左上の P メニューをクリックして **Preferences** を選択します。
+設定を変更した場合は、Plasticity を再起動する必要があります。
 
-設定ウィンドウを開くには、左上の P メニューをクリックし、**設定** を選択します。  
-設定を変更した後は、Plasticity を再起動する必要があります。  
+## Navigation
 
-## ナビゲーション  
+### Rotation Mode
 
-### ナビゲーション設定  
+- **Tumble:** 
+    - 固定された垂直軸を中心にビューを回転させ、上方向を固定したままにします。マウスを左右に動かすと水平方向に、上下に動かすと垂直方向に回転しますが、ビューをロールさせたり上下逆さまにしたりすることはできません。（デフォルト：**選択済み**）
 
-- **カーソルにズーム**:  
-    - 有効にすると、ズームがカーソル位置に向かって行われます。（デフォルト: **有効**）  
-- **カーソルを中心に回転**:  
-    - 有効にすると、ビューがカーソル位置を中心に回転します。（デフォルト: **有効**）  
-- **垂直ズーム**:  
-    - 有効にすると、<kbd>Ctrl + 中ボタン</kbd> で上下にドラッグしてズームできます。（デフォルト: **有効**）  
-- **ズーム方向を反転**:  
-    - 有効にすると、ズームの方向が逆になります。（デフォルト: **無効**）  
-- **ホイール方向を反転**:  
-    - 有効にすると、マウスホイールのスクロール方向が逆になります。（デフォルト: **無効**）  
+- **Arcball:** 
+    - 軸の制約なしに、3 軸すべてでビューを自由に回転させます。マウスの動きはシーンを囲む仮想の球体の表面にマッピングされ、あらゆる方向に 360 度自由に回転できます。
 
-### ナビゲーションプリセット  
+### Navigation Settings
 
-- 他の 3D ソフトウェアと同じコントロールのプリセットを選択できます。  
+- **Zoom to cursor**:
+    - 有効にすると、カーソル位置を中心にズームします。（デフォルト：**有効**）
+- **Rotate around cursor**:
+    - 有効にすると、カーソル位置を中心にビューが回転します。（デフォルト：**有効**）
+- **Zoom vertical**:
+    - 有効にすると、<kbd>Ctrl + 中ボタン</kbd>を使った垂直方向のドラッグでズームイン／ズームアウトできます。（デフォルト：**有効**）
+- **Invert zoom direction**:
+    - 有効にすると、ズームの方向が反転します。（デフォルト：**無効**）
+- **Invert wheel direction**:
+    - 有効にすると、マウスホイールの方向が反転します。（デフォルト：**無効**）
 
-## パフォーマンス  
+### Navigation Presets
 
-- GPU のレンダリング品質と CPU の面品質を設定できます。  
+- 他の 3D ソフトウェアと同じ操作方法になるプリセットを選択できます。
 
-## 言語
+## Performance
 
-Plasticity 内で言語を切り替えることができます。変更はリアルタイムで適用され、再起動は不要です。
+GPU レンダリング品質と CPU ファセット品質を指定したり、Shader Mode での Ambient Occlusion を有効／無効にしたりできます。
 
-利用可能な言語:
+## Language
 
-| Language | Note |
+Plasticity 内で言語を切り替えられます。変更はリアルタイムで適用され、再起動は不要です。
+
+利用可能な言語：
+
+| 言語 | 備考 |
 | -------- | ---- |
 | Deutsch | |
-| English | (Default: Selected) |
+| English | （デフォルト：選択済み） |
 | Español | |
 | Italiano | |
 | 日本語 | |
@@ -46,57 +53,58 @@ Plasticity 内で言語を切り替えることができます。変更はリア
 | 中文 | |
 | 繁體中文 | |
 
-## 外観  
+## Appearance
 
-- アクセントカラー、サポートカラー、ビューポートの背景色、グリッドカラーを選択できます。  
-- コントロールポイント、頂点、エッジ、カーブセグメントのサイズを制御するための追加オプションがあります。  
+UI とビューポートの色をカスタマイズしたり、コントロールポイント、頂点、エッジ、カーブセグメントのサイズを調整したりできます。
 
-## バックアップ  
+### UI Colors
 
-- 緊急時に備えてバックアップを作成できます。  
+- **Accent Colors:** Plasticity UI の主要な色を設定します。変更はリアルタイムで適用されます。
+- **Supporting Colors:** UI の補助的な色を設定します。アクティブなグループのハイライトや接続された CV などの関連要素に影響します。
+- **Neutral Colors:** メニューとツールバーの背景色を設定します。
+- **Viewport Colors:** ビューポートの背景色を設定します。
+  - **Choose Custom Color:** カスタムカラーを指定します。
+- **Grid Colors:** グリッドの色を設定します。
+  - **Choose Custom Color:** カスタムカラーを指定します。
+- **Regular Edge Color:** 通常のエッジの色を設定します。
+- **Instance Edge Color:** インスタンスのエッジの色を設定します。
+- **Measurement Color:** 計測線の色を設定します。
+  - **Choose Custom Color:** カスタムカラーを指定します。
 
-### アンビエントオクルージョン（AO）
+### Properties
 
-- ビューポートのアンビエントオクルージョンの見た目は、半径 **(1)** とフォールオフ **(2)** の設定を使用して調整します。半径の値は現在の長さ単位のパーセンテージであることに注意してください。例えば、メートルを使用していて10と入力した場合、0.1メートルに変換されます。半径は0から1000の範囲で設定でき、フォールオフは0.0から10.0の範囲です。（デフォルト値：15と0.5）
+- **Control Points:** カーブ上のコントロールポイントのサイズを指定します。
+- **Vertices:** カーブ上の頂点のサイズを指定します。
+- **Edges:** シートとソリッド上のエッジのサイズを指定します。
+- **Curve Segments:** カーブ線の太さを指定します。
+- **Viewport Gizmo Size:** [View Cube](/plasticity-essentials/plasticity-interface/view-cube) のサイズを指定します。
+- **UI Standard Spacing:** ツールバーやメニューなどの UI 要素のパディングと間隔を指定します。
+- **Zoom Factor:** ズームの感度を指定します。
+- **Constraints:**
+    - **Always show constraints:** ビューポートにコンストレイントのラベルを常に表示します。
+    - **Only show constraints on hover:** 拘束されているオブジェクトにカーソルを合わせたときのみ、コンストレイントのラベルを表示します。
 
-![Ambient Occlusion Settings](/img/ao-settings.png)
+## Backup
 
-## バックアップ
+- 緊急時に備えてバックアップを作成できます。
+- 保存していないファイルが見当たらない場合は、次のディレクトリを確認してください。
 
-- 緊急時に備えてバックアップを取得できます。  
-- 未保存のファイルが見当たらない場合は、次のディレクトリを確認してください：
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigate to `C:\Users\<UserName>\AppData\Local\Temp\plasticity` or `C:\Users\<UserName>\AppData\Local\Temp\plasticity-backup`.
+    `C:\Users\<UserName>\AppData\Local\Temp\plasticity` または `C:\Users\<UserName>\AppData\Local\Temp\plasticity-backup` に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `/var/folders/<random>/T/plasticity` or `/var/folders/<random>/T/plasticity-backup`.
+    `/var/folders/<random>/T/plasticity` または `/var/folders/<random>/T/plasticity-backup` に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigate to `/tmp/plasticity` or `/tmp/plasticity-backup`.
+    `/tmp/plasticity` または `/tmp/plasticity-backup` に移動します。
     </Tabs.Tab>
 </Tabs>
 
-## サーバー  
+## Network
 
-- Blender Bridge で使用するサーバーを設定します。  
-- デフォルトの設定: ホスト: localhost, ポート: 8980。Blender アドオンの設定と一致させる必要があります。  
+### Blender Bridge
 
-## ウェブ公開
-
-[**Plasticity Share に公開**](/common/publish-to-plasticity-share) コマンドをオンまたはオフに切り替えます。（デフォルト：オフ）
-
-## SpaceMouse  
-
-- 3Dconnexion SpaceMouse の設定。  
-- SpaceMouse Compact、SpaceMouse Pro、SpaceMouse Enterprise は Windows と macOS で動作確認済み。Linux での動作は未確認。  
-- パン速度、回転速度、ズーム速度を調整できます。  
-
-## 一般  
-
-- オフセット、押し出し、フィレットなどのコマンドを現在の選択に基づいて自動実行します。  
-    - 有効にすると、オフセット、押し出し、フィレットなどのコマンドが自動的に実行されます。（デフォルト: **有効**）  
-
-## 詳細設定  
-
-- Plasticity 起動時に前回の作業セッションを復元するかどうかを設定できます。（デフォルト: **有効**）  
+- **Enable:** Blender Bridge プラグインを介して Plasticity が Blender に接続できるようにします。（デフォルト：**有効**）
+- **Host:** Blender Bridge 接続のホストアドレスを指定します。（デフォルト：**localhost**）
+- **Port:** Blender Bridge

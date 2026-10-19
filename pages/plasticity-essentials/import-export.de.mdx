@@ -1,37 +1,37 @@
 # Import/Export
 
-Sie können Import- und Exportoperationen über die Optionen **"Importieren/Anhängen"** und **"Exportieren"** im P-Menü durchführen. Das Ziehen und Ablegen von Dateien in den 3D-Viewport ist ebenfalls möglich. <br/>
+Import- und Exportvorgänge können Sie über die Optionen **„Import/Append"** und **„Export"** im P-Menü durchführen. Sie können Dateien auch per Drag-and-drop in den 3D-Viewport ziehen. <br/> 
 
 Die folgenden Dateiformate werden unterstützt:
 
-## Importieren [#file-import]
+## Import [#file-import]
 
-| Dateiformat                 | Indie-Lizenz | Studio-Lizenz |                                                                  |
-| --------------------------- | :------------: | :-------------: | ---------------------------------------------------------------- |
-| Plasticity (*.plasticity)   | ✓           | ✓            |                                                                  |
-| STEP (*.stp; *.step)        | ✓           | ✓            |                                                                  |
-| ParaSolid (*.x_t; *.x_b)    | ✓           | ✓            |                                                                  |
-| Wavefront OBJ (*.obj)       | ✓           | ✓            |                                                                  |
-| FBX (*.FBX)                 | ✓           | ✓            |                                                                  |
-| STL (*.stl)                 | ✓           | ✓            |                                                                  |
-| Vector Image (*.SVG)         | ✓            | ✓             |  **Hinweis:** Wenn Sie ein Vektorbild mit mehr als 700 Kurven pro Ebene importieren, wird die Region nicht angezeigt, da das Rendern der blauen Überlagerung sehr rechenintensiv ist.  |
-| Bild (*.png; *.jpg; *.jpeg) | ✓           | ✓            | Weitere Details finden Sie [hier](importing-reference-images). |
-| 3MF (*.3mf)                  |               | ✓             |                                                      |
-| IGES (*.igs; *.iges)        |              | ✓            |                                                                  |
-| SAT (*sat)                  |              | ✓            |                                                                  |
-| Rhino (*.3dm)          |               | ✓ | Unterstützt nur BREP/NURBS/Kurvendaten. |
-| DXF/DWG (*.dxf; *.dwg) |               | ✓ | Nur unter Windows; unterstützt ausschließlich 2‑D‑Kurven. |
+| Dateiformat                  | Indie-Lizenz | Studio-Lizenz |                                                      |
+| ---------------------------- | :-------------: | :--------------: | ---------------------------------------------------- |
+| plasticity (*.plasticity)    | ✓            | ✓             | **Hinweis:** Der Import einer .Plasticity-Datei unterstützt jetzt Meshes, Bilder und Instanzen. |
+| STEP (*.stp; *.step)         | ✓            | ✓             |                                                       |
+| ParaSolid (*.x_t; *.x_b)     | ✓            | ✓             |                                                      |
+| Wavefront OBJ (*.obj)        | ✓            | ✓             |                                                      |
+| FBX (*.FBX)                  | ✓            | ✓             |                                                      |
+| STL (*.stl)                  | ✓            | ✓             |                                                        | 
+| Vektorbild (*.SVG)         | ✓            | ✓             | **Hinweis:** Beim Import eines Vektorbilds mit mehr als 700 Kurven pro Ebene wird die Region nicht angezeigt, da das Rendern der blauen Überlagerung rechenintensiv wird. |
+| Bild (*.png; *.jpg; *.jpeg) | ✓            | ✓             | Details finden Sie [hier](importing-reference-images). |
+| 3MF (*.3mf)                  | ✓            | ✓             |                                                      |
+| IGES (*.igs; *.iges)         |               | ✓             |                                                      |
+| SAT (*sat)                   |               | ✓             |                                                      |
+| Rhino (*.3dm)                |               | ✓             | Unterstützt nur BREP-/NURBS-/Kurvendaten. |
+| DXF/DWG (*.dxf; *.dwg)       |               | ✓             | Unterstützt nur 2D-Kurven; nur unter Windows verfügbar.  |
 
-## Exportieren [#file-export]
+## Export [#file-export]
 
-| Dateiformat                     | Indie‑Lizenz | Studio‑Lizenz | Eigenständiger Befehl im Befehls‑Palette | Hinweis |
-|---------------------------------|:------------:|:-------------:|-------------------------------------------|---------|
-| Plasticity (*.plasticity)       | ✓            | ✓             | –                                         | –       |
-| STEP (*.stp; *.step)            | ✓            | ✓             | Export STEP                               | –       |
-| Parasolid (*.x_t; *.x_b)        | ✓            | ✓             | Export Parasolid                          | –       |
-| Wavefront OBJ (*.obj)           | ✓            | ✓             | Export OBJ                                | Details siehe [hier](export-obj). |
-| STL (*.stl)                     | ✓            | ✓             | Export STL                                | –       |
-| Vektorbild (*.svg)              | ✓            | ✓             | Export SVG                                | Verfügbar ab Version 25.3.0 Beta. |
-| 3MF (*.3mf)                     | ✓            | ✓             | Export 3MF                                | –       |
-| IGES (*.igs; *.iges)            | –            | ✓             | Export IGES                               | –       |
-| SAT (*.sat)                     | –            | ✓             | Export SAT                                | –       |
+| Dateiformat                | Indie-Lizenz | Studio-Lizenz | Eigenständiger Befehl in der Befehlspalette | Hinweis |
+| -------------------------- | :-------------: | :--------------: | -------------------------------------- | ---- |
+| Plasticity  (*.plasticity) | ✓            | ✓             |   -   |    |
+| STEP  (*.stp; *.step)      | ✓            | ✓             | Export STEP |  |
+| ParaSolid  (*.x_t; *.x_b)  | ✓            | ✓             | Export Parasolid |  |
+| Wavefront OBJ (*.obj)      | ✓            | ✓             | Export Obj | Details finden Sie [hier](export-obj).  |
+| STL  (*.stl)               | ✓            | ✓             | Export Stl |   |
+| Vektorbild (*.SVG)       | ✓            | ✓             | Export Svg | Details finden Sie [hier](export-svg). |
+| 3MF (*.3mf)                | ✓            | ✓             | Export 3mf |   |
+| IGES  (*.igs; *.iges)      |              | ✓             | Export Iges |  |
+| SAT  (*sat)                |              | ✓             | Export SAT |  |

@@ -5,10 +5,10 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## 複製
 
-{/* <Reference shortcut="Shift + D" command="複製" button="In Command Bar" buttonIcon='button-duplicate' /> */}
+{/* <Reference shortcut="Shift + D" command="Duplicate" button="In Command Bar" buttonIcon='button-duplicate' /> */}
 
 <CommandReference
-  command="複製"
+  command="Duplicate"
   shortcut="Shift + D"
   button="In Command Bar"
   buttonIcon="/img/button-duplicate.png"
@@ -17,28 +17,32 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## 説明
 
-オブジェクトを複製し、移動ギズモを使用して移動します。単一軸の制限またはフリースタイル移動が可能です。ピボットは調整可能です。
+オブジェクトを複製し、移動ギズモを使って移動します。単一軸への制約やフリースタイルでの移動が可能です。ピボットは調整できます。
 
 <Callout type="info">
-**注意:** 複数のリージョンを複製する場合、結合された形状として複製されます。
+**注意:**
+- 複数の**リージョン**を複製すると、1つの結合された形状として複製されます。
+- サーフェスラインを持つ複数の**フェイス**を選択して複製した場合、複製されたサーフェスから冗長なトポロジーは削除されません。
 </Callout>
 
 ## 基本的な使い方
 
 1. 複製したいオブジェクトを選択します。
-2. <kbd>Shift + D</kbd>を押します。
-3. 表示された移動ギズモを使用して移動します。
+2. <kbd>Shift + D</kbd> を押します。
+3. 表示された移動ギズモを使って移動します。
 4. コマンドダイアログとキーボードショートカットでオプションを設定します。
    - <Kst>コマンドダイアログ</Kst>
       - **XYZ:** X、Y、Z軸の移動量を指定します。
    - <Kst>キーボードショートカット</Kst>
-      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X、Y、またはZ軸に制限](/tool/sketching-essentials#constrain-to-an-axis)します。
-      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z平面:** X、Y、またはZ平面に制限します。
-      - <kbd>G</kbd> **スクリーンスペース:** 見える平面に制限します。
-      - <kbd>F</kbd> **フリースタイル:** クリックして開始点と終了点を指定し、移動の方向と距離を決定します。
+      - <kbd>G</kbd> **スクリーン空間:** 表示されている平面に制限します。
+      - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z軸:** [X軸、Y軸、またはZ軸に制約します](/tool/sketching-essentials#constrain-to-an-axis)。
+      - <kbd>Shift + X</kbd>/ <kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X、Y、Z平面:** X平面、Y平面、またはZ平面に制約します。
+      - <kbd>F</kbd> **フリースタイル:** クリックして始点と終点を指定すると、それによって移動の方向と距離が決まります。
       - <kbd>V</kbd> **ピボット:** クリックしてギズモの位置を指定します。
-      - <kbd>W</kbd> **ワールド座標:** ギズモの座標軸をワールド座標に変更します。
-4. コマンドダイアログのOKまたは右クリックで確定します。
+      - <kbd>Alt + V</kbd> **ピボットを削除:** 設定されたピボットを削除します。
+      - <kbd>W</kbd> **方向:** ギズモの座標軸を別の方向に変更します。
+4. コマンドダイアログのOKボタン、または右クリックで確定します。
+
 
 <VideoPlayer fileName="duplicate"/>
 

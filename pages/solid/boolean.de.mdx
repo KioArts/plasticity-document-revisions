@@ -17,7 +17,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## Beschreibung
 
-Kombinieren, subtrahieren oder schneiden Sie mehrere Objekte in beliebiger Kombination von Solids und Sheets.
+Kombinieren, subtrahieren oder überschneiden Sie mehrere Objekte in beliebiger Kombination aus Volumenkörpern und Flächen. Schlägt der Vorgang fehl, wird die Problemstelle durch einen roten visuellen Hinweis hervorgehoben, um die Fehlersuche bei den ausgewählten Objekten zu erleichtern. Boolesche Operationen sind ein leistungsstarkes Werkzeug, um komplexe Formen und Körper aus einfacheren zusammenzusetzen.
 
 ## Grundlegende Nutzung
 
@@ -34,11 +34,11 @@ Kombinieren, subtrahieren oder schneiden Sie mehrere Objekte in beliebiger Kombi
    - <Kst>Command Dialog</Kst>
       - **Keep Tools:** Führt Boolesche Operationen durch, ohne die Werkzeugobjekte zu verändern.
       - **Opetation:**
-         - **Union:** Verbindet Ziel- und Werkzeugobjekt zu einem gemeinsamen Volumenkörper.
-         - **Difference:** Entfernt das Werkzeugobjekt vom Zielobjekt.
-         - **Intersect:** Erstellt einen Volumenkörper an der Schnittstelle zwischen Ziel- und Werkzeugobjekt.
-         - **Slice:** Erstellt Volumenkörper an den Schnittflächen mit dem Zielobjekt und behält die restlichen Volumen bei.
-         - **Region:** Erstellt Volumenkörper aus geschlossenen Bereichen innerhalb der Sammlung von Körpern (Volumenkörper und Flächen).
+         - <ButtonIcon type="button-boolean-union"/>**Union:** Verbindet Ziel- und Werkzeugobjekt zu einem gemeinsamen Volumenkörper.
+         - <ButtonIcon type="button-boolean-difference"/>**Difference:** Entfernt das Werkzeugobjekt vom Zielobjekt.
+         - <ButtonIcon type="button-boolean-intersect"/>**Intersect:** Erstellt einen Volumenkörper an der Schnittstelle zwischen Ziel- und Werkzeugobjekt.
+         - <ButtonIcon type="button-boolean-slice"/>**Slice:** Erstellt Volumenkörper an den Schnittflächen mit dem Zielobjekt und behält die restlichen Volumen bei.
+         - <ButtonIcon type="button-boolean-region"/>**Region:** Erstellt Volumenkörper aus geschlossenen Bereichen innerhalb der Sammlung von Körpern (Volumenkörper und Flächen).
          - Für Unterschiede in den Ergebnissen je nach Operation siehe den Abschnitt [Normal Boolean Operations](#normal-boolean-operations).
       - **Advanced:**
          - **Target Material:** Bestimmt, wie das Zielobjekt während der Booleschen Operation behandelt wird – entweder als Volumenkörper oder als Fläche. Diese Einstellung beeinflusst, wie das Werkzeugobjekt mit dem Zielobjekt interagiert, insbesondere bei Operationen wie Differenz und Schnittmenge.

@@ -1,0 +1,79 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+# Materialien
+
+Der Bereich „Materials" zeigt alle Materialien an, die im aktuellen Plasticity-Projekt verwendet werden. 
+
+![Materials](/img/materials.png)
+
+## Angezeigte Materialien
+
+- Jedes von Ihnen erstellte Material erscheint im Bereich **Used Materials** (Verwendete Materialien).  
+- Wenn Sie die Eigenschaften eines Materials ändern, werden alle Objekte, die es verwenden, in Echtzeit aktualisiert.  
+- Materialien können nicht aus der Liste entfernt werden; sie verschwinden erst, nachdem alle Objekte, die auf sie verweisen, aus der Szene gelöscht wurden.  
+- Um ein Material anderen Objekten zuzuweisen, ziehen Sie es einfach per Drag-and-drop aus dem Bereich **Used Materials** oder **Materials Library** (Materialbibliothek) auf das Zielobjekt.  
+
+## Materialien auswählen
+
+- Ein Rechtsklick auf ein Material öffnet die Option „Select All with This Material" (Alle mit diesem Material auswählen), mit der Sie schnell alle Objekte auswählen können, die dasselbe Material verwenden.
+
+![Select Objects with Shared Materials](/img/materials-select-materials.png)
+
+## Physikalische Materialien
+
+Im unteren Bereich des Materialfelds finden Sie eine große Auswahl an physikalischen Materialien (Physical Materials), die mit Plasticity geliefert werden. Damit sie korrekt dargestellt werden, stellen Sie sicher, dass der [Render-Modus](/plasticity-essentials/render-mode) aktiviert ist, damit die Shader auf den Objekten sichtbar sind. 
+
+### Physikalische Materialien bearbeiten
+
+Jedes Material wird mit einer Voreinstellung geliefert, die einzigartige Materialeigenschaften in der Kategorie **Texture** enthält. Sie können diese Eigenschaften bearbeiten, indem Sie die Taste <kbd>M</kbd> auf Ihrer Tastatur drücken.
+
+- **Texture scale (Texturskalierung):** Passt die Gesamtskalierung der Textur an.
+- **Blending (Überblendung):** Steuert die Überblendung der triplanaren Projektion. Ein Wert von 0 wendet die maximale Überblendung an, während 7 an den Rändern keine Überblendung anwendet. Nützlich, um sichtbare Nähte zu verbergen.
+- **Rotate (Drehen):** Dreht das auf das Objekt angewendete Material.
+            - **Rotate X:** Dreht das gesamte Material um die X-Achse in Weltkoordinaten.
+            - **Rotate Y:** Dreht das gesamte Material um die Y-Achse in Weltkoordinaten.
+            - **Rotate Z:** Dreht das gesamte Material um die Z-Achse in Weltkoordinaten.
+
+![Physical Material - Edit](/img/physical-materials.png)
+
+{/* <VideoPlayer fileName="physical-material"/> */}
+
+### Angezeigte Materialien
+
+Unten finden Sie eine tabellarische Liste aller verfügbaren physikalischen Materialien zur Vorschau:
+
+| Name   | Miniaturvorschau   | Name   | Miniaturvorschau    |
+|:------:|:---------------------:|:------:|:----------------------:|
+|Aluminum |![Aluminum](/img/aluminum.png)| Brass   | ![Brass](/img/brass.png)  |
+|Aluminum Brushed|![Aluminum Brushed](/img/aluminum-brushed.png)| Brass Oxidized  | ![Brass Oxidized](/img/brass-oxidized.png)   |
+|Aluminum Matte|![Aluminum Matte](/img/aluminum-matte.png)| Car Paint   | ![Car Paint](/img/car-paint.png) |
+|Gold Foil | ![Gold Foil](/img/gold-foil.png)  | Concrete     | ![Concrete](/img/concrete.png)  |
+|White Plastic | ![White Plastic](/img/white-plastic.png) | Royal Blue Linen      | ![Royal Blue Linen](/img/royal-blue-linen.png)  |
+|Rubber | ![Rubber](/img/rubber.png) | Porcelain Fabric  | ![Porcelain Fabric](/img/porcelain-fabric.png)  |
+|Plastic Rough | ![Plastic Rough](/img/plastic-rough.png)  | Brown Leather     | ![Brown Leather](/img/brown-leather.png) |
+|Nickel | ![Nickel](/img/nickel.png)  | Milan Polished Marble     | ![Milan Polished Marble](/img/milan-polished-marble.png)   |
+|Nickel Oxidized | ![Nickel Oxidized](/img/nickel-oxidized.png)   | Cathedral Tile     | ![Cathedral Tile](/img/cathedral-tile.png) |
+|Iron | ![Iron](/img/iron.png)  | Stainless Steel Brushed     | ![Stainless Steel Brushed](/img/stainless-steel-brushed.png) |
+|Gold | ![Gold](/img/gold.png)   |  Simple Plaster    | ![Simple Plaster](/img/simple-plaster.png)  |
+|Copper | ![Copper](/img/copper.png)   |Sandstone    | ![Sandstone](/img/sandstone.png) |
+|Copper Oxidized    | ![Copper Oxidized](/img/copper-oxidized.png)  |  Perforated Metal    | ![Perforated Metal](/img/perforated-netal.png) |
+|Copper Brushed   | ![Copper Brushed](/img/copper-brushed.png)  | Hex Metal    | ![Hex Metal](/img/hex-metal.png) |
+|Copper Old    | ![Copper Old](/img/copper-old.png)   | Wood Dark Maple    | ![Wood Dark Maple](/img/wood-dark-maple.png)  |
+|Chrome    | ![Chrome](/img/chrome.png)   | Wood Painted Green    | ![Wood Painted Green](/img/wood-painted-green.png)   |
+|Bronze    | ![Bronze](/img/bronze.png)   | Wood Walnut    | ![Wood Walnut](/img/wood-walnut.png)  |
+|Bronze Oxidized    | ![Bronze Oxidized](/img/bronze-oxidized.png)   |    |    |
+
+
+
+<Callout type="info">
+**Hinweis**
+- Beim Export des Objekts als Mesh- oder CAD-Datei bleiben die Eigenschaften der physikalischen Materialien beim Import in DCC-Software (Digital Content Creation) wie Blender oder Maya nicht erhalten. Diese Materialien sind für die Visualisierung innerhalb von Plasticity gedacht, sodass Sie das Konzept eines Objekts mithilfe von Material-Shadern präsentieren können.
+</Callout>
+
+## Siehe auch
+- [Set Material](/common/set-material)
+- [View Mode](/plasticity-essentials/plasticity-interface/view-mode)

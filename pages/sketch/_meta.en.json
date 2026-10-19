@@ -17,8 +17,8 @@
   "slide-curve-cv": "Slide Curve CV",
 
   "---align": { "type": "separator", "title": "Align" },
-  "align": "Align",
-  "align-vertex": "Align Vertex",
+  "edge-align": "Edge Align",
+  "vertex-align": "Vertex Align",
 
   "---extend": { "type": "separator", "title": "Extend" },
   "extend": "Extend",

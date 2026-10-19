@@ -1,54 +1,69 @@
 import React from "react";
 
 /**
- * Center – a simple wrapper that always stays horizontally centred.
+ * Center – a wrapper that keeps its content horizontally centred and
+ * can show a small caption underneath.
  *
  * Props
  * -----
- * children       – content placed inside <Center>
+ * children       – content placed inside <Center> (image, GIF, video…)
+ * caption        – optional small text shown below the content
+ *                  (string or JSX, e.g. text with a link)
  * marginTop      – space above the whole block (default: "1rem")
  * width          – optional width of the centred box (e.g. "400px")
  * border         – CSS border string (e.g. "2px solid #ddd")
- * borderRadius   – CSS border‑radius (e.g. "8px")
- * style          – extra inline styles for the wrapper itself
+ * borderRadius   – CSS border-radius (e.g. "8px")
+ * style          – extra inline styles for the outer wrapper
+ * captionStyle   – extra inline styles for the caption
  */
 export const Center = ({
   children,
+  caption,
   marginTop = "1rem",
   width,
   border,
   borderRadius,
   style = {},
+  captionStyle = {},
 }) => {
-  /* -------------------------------------------------------------
-   * 1️⃣ Wrapper style – the visible frame that we also want to be
-   *    centred on the page.
-   * ----------------------------------------------------------- */
+  /* Outer wrapper: centred on the page, holds the frame and the caption */
   const wrapperStyle = {
-    // When a width is supplied we keep a normal flex container.
-    // When width is omitted we use `inline-flex` so the element
-    // shrinks to fit its content and can still be centred via
-    // margin‑auto.
-    display: width ? "flex" : "inline-flex",
-    justifyContent: "center",
+    display: "flex",
+    flexDirection: "column",
     alignItems: "center",
-    marginTop,               // space above the block
-    marginLeft: "auto",      // centre horizontally
-    marginRight: "auto",
-    ...(width && { width }), // only set width when it exists
-    border,
-    borderRadius,
-    overflow: "hidden",      // clip the image to the radius
+    margin: `${marginTop} auto 0`, // resets default <figure> margins
+    width: width || "fit-content",
+    maxWidth: "100%",
     ...style,
   };
 
-  /* -------------------------------------------------------------
-   * 2️⃣ Child style – make images (or any block) behave nicely.
-   * ----------------------------------------------------------- */
+  /* Frame: the visible border/radius that clips the image */
+  const frameStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    border,
+    borderRadius,
+    overflow: "hidden",
+  };
+
+  /* Caption: small, muted text; inherits the theme colour so it works
+     in both light and dark mode */
+  const captionBaseStyle = {
+    marginTop: "0.5rem",
+    fontSize: "0.85rem",
+    lineHeight: 1.4,
+    textAlign: "center",
+    opacity: 0.7,
+    ...captionStyle,
+  };
+
+  /* Make images (or any block) behave nicely inside the frame */
   const childExtraStyle = {
-    maxWidth: "100%", // keep natural size unless it would overflow
+    maxWidth: "100%",
     height: "auto",
-    display: "block", // removes any inline‑element gap
+    display: "block",
   };
 
   const styledChild = React.isValidElement(children)
@@ -58,7 +73,12 @@ export const Center = ({
           ...childExtraStyle,
         },
       })
-    : children; // fallback for non‑element children
+    : children;
 
-  return <div style={wrapperStyle}>{styledChild}</div>;
+  return (
+    <figure style={wrapperStyle}>
+      <div style={frameStyle}>{styledChild}</div>
+      {caption && <figcaption style={captionBaseStyle}>{caption}</figcaption>}
+    </figure>
+  );
 };

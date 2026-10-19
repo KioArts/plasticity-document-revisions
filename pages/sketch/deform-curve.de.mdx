@@ -17,7 +17,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
   buttonIcon={<img src="/img/button-deform.png" alt="Deform Icon" />}
 /> */}
 
-## Kurve deformieren
+## Kurve verformen
 
 <CommandReference
   command="Deform"
@@ -29,33 +29,38 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## Beschreibung
 
-Wickelt vorhandene Kurven auf eine regelmäßige oder unregelmäßige Oberfläche. Dieses Werkzeug projiziert oder passt ausgewählte Kurven direkt auf die Zielgeometrie an, wobei ihre Form erhalten bleibt und sie sich gleichzeitig den Konturen der darunterliegenden Oberfläche anpassen. Es eignet sich für Aufgaben wie Gravurpfade, das Definieren von Trennlinien oder das Festlegen von Führungskurven.
+Wickelt vorhandene Kurven auf regelmäßige und unregelmäßige Oberflächen. Dieses Werkzeug projiziert bzw. passt ausgewählte Kurven direkt an die Zielgeometrie an, wobei ihre Form erhalten bleibt und sie gleichzeitig an die Konturen der darunterliegenden Oberfläche angepasst werden. Es ist nützlich für Aufgaben wie das Erstellen von Gravurpfaden, das Definieren von Trennlinien oder das Anlegen von Hilfskurven.
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie die Kurven aus, die Sie verformen möchten.
-2. Geben Sie **Deform** in der Befehlspalette ein.
-3. Wählen Sie eine Referenzfläche aus, auf der die vorhandenen Kurven als neutrale Ebene platziert sind.
-4. Wählen Sie die Zielfläche aus, mit der die Kurven deformiert werden sollen.
+1. Wählen Sie die Kurven aus, die Sie umwickeln möchten.
+2. Geben Sie **Deform** in die Command Palette ein.
+3. Wählen Sie eine Referenzentität als neutrale Ebene:
+      - **Flächen:** Wählen Sie eine Fläche als Referenz für die Verformung.
+            - Weitere Informationen dazu, wie Sie eine korrekt abgebildete Fläche als Referenzfläche erzeugen, finden Sie unter [Kurvenverformung mit dem Befehl „Unwrap Face"](#curve-deformation-using-the-unwrap-face-command).
+      - **Kurven:** Wählen Sie eine Kurve als Referenz für die Verformung. Es wird empfohlen, die Referenzkurve als gerade Linie anzulegen, um unerwünschte Verformungen und spätere Fehler zu vermeiden.
+4. Wählen Sie die Zielentität aus, mit der die Kurven verformt werden sollen:
+      - **Flächen:** Wählen Sie eine Fläche als Ziel für die Verformung.
+      - **Kurven:** Wählen Sie eine Kurve als Ziel für die Verformung. Nur möglich, wenn eine Kurve als Referenzentität verwendet wird.
 5. Legen Sie die Optionen im Befehlsdialog fest.
     - <Kst>Command Dialog</Kst>
-          - **Skalierung:** Skalierung im **U, V, N**-Wert.
-          - **Versatz:** Versatz im **U, V, N**-Wert.
-          - **Spiegeln:**
-                - **Spiegel:** Spiegelt die deformierten Kurven in der Z-Achse.
-                - **UV:** Dreht die U- und V-Orientierung der deformierten Kurven um.
-                - **Normal:** Dreht die Normale der deformierten Kurven um.
-          - **Werkzeuge behalten:** Führt die Deformationsoperation durch und lässt die Werkzeugobjekte dabei unverändert.
-6. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+          - **Skalierung:** Skalierung in den Werten **U, V, N**. 
+          - **Versatz:** Versatz in den Werten **U, V, N**. 
+          - **Spiegeln/Umkehren:** 
+                - **Spiegeln:** Spiegelt die verformten Kurven an der Z-Achse.
+                - **UV:** Vertauscht die U- und V-Ausrichtung der verformten Kurven.
+                - **Normale:** Kehrt die Normale der verformten Kurven um.
+          - **Werkzeuge behalten:** Führt die Verformung aus und lässt die Werkzeugobjekte unverändert.
+6. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="deform-curve"/>
 
 <Callout type="info">
-Skalierung und Versatz verwenden ein **UVN**-Koordinatensystem anstelle des **XYZ**-Koordinatensystems bei der Anpassung des parametrischen Werts. Dies ermöglicht es, die Ausrichtung der deformierten Objekte an einem bestimmten Punkt in Bezug auf die Zielfläche zu definieren. Weitere Informationen zum UVN-Koordinatensystem finden Sie [hier](/cad-essentials/uvn-coordinate-system).
+Skalierung und Versatz verwenden beim Anpassen des parametrischen Werts ein **UVN**-Koordinatensystem anstelle des **XYZ**-Koordinatensystems. So können Sie die Ausrichtung der verformten Objekte an einem bestimmten Punkt in Bezug auf die Zieloberfläche festlegen. Weitere Informationen zum UVN-Koordinatensystem erhalten Sie [hier](/cad-essentials/uvn-coordinate-system).
 </Callout>
 
-### Kurvendeformation mit dem Befehl „Fläche entfalten"
+### Kurvenverformung mit dem Befehl „Unwrap Face"
 
-Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den Befehl [Fläche entfalten](/solid/unwrap-face) aus der Befehlspalette auf dem Zielobjekt. Dadurch wird eine korrekt zugeordnete Oberfläche generiert, die dann als genaue Referenzfläche verwendet werden kann.
+Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den Befehl [Unwrap Face](/solid/unwrap-face) aus der Command Palette auf dem Zielobjekt. Dadurch wird eine korrekt abgebildete Fläche erzeugt, die anschließend als präzise Referenzfläche dienen kann.
 
 <VideoPlayer fileName="deform-curve-unwrap"/>

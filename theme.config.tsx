@@ -75,6 +75,22 @@ const config: DocsThemeConfig = {
     text: <></>,
   },
 
+  feedback: {
+    content: () => {
+      const { locale } = useRouter();
+      const text = {
+        en: "Need help or found an issue?",
+        de: "Brauchen Sie Hilfe oder haben Sie ein Problem gefunden?",
+        ja: "ヘルプが必要ですか、それとも問題を見つけましたか？",
+      };
+      return <>{text[locale] || text.en}</>;
+    },
+    useLink: () => {
+      const { locale, defaultLocale} = useRouter();
+      return locale === defaultLocale ? "/support" : '/${locale}support';
+    },
+  },
+
   gitTimestamp: ({ timestamp }) => (
     <span>Last updated on {timestamp.toLocaleDateString()}</span>
   ),

@@ -4,21 +4,7 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-{/* # Slide Curve CVs
-
-<Reference shortcut="Shift + G" command="Slide" button="" /> */}
-
-{/* <HeadBannerThumbnail
-  src="/videos/banner/slide-curve-cv.mp4"
-  alt="Slide Curve CV Preview"
-  title="Slide Curve CV"
-  command="Slide"
-  shortcut="Shift + G"
-  button="In Command Palette"
-  buttonIcon={<img src="/img/button-reverse.png" alt="Reverse Icon" />}
-/> */}
-
-## Kurven-CVs verschieben
+## Kurven-CVs verschieben (Slide)
 
 <CommandReference
   command="Slide"
@@ -30,28 +16,39 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## Beschreibung
 
-Verschiebt Kontrollscheitelpunkte (CVs) entlang der Tangentialrichtung des durch die Spline-Kurve definierten Steuerkäfigs.
+Verschiebt Kontrollpunkte (CVs) entlang der tangentialen Richtung des durch die Spline-Kurve definierten Kontrollnetzes. Das Verschieben mehrerer CVs ermöglicht proportionale Anpassungen, die weiche Übergänge entlang der Kurve erzeugen, einschließlich eines Spiegeleffekts relativ zur aktiven Konstruktionsebene.
 
 ## Grundlegende Verwendung
 
 1. Wählen Sie einen oder mehrere CVs aus, die Sie verschieben möchten.
-2. Drücken Sie <kbd>Shift + G</kbd>, um den Verschieben-Befehl zu aktivieren.
-3. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-   - <Kst>Command Dialog</Kst>
-      - **Distanz:** Gibt die Distanz der verschobenen CVs an.
-   - <Kst>Keyboard Shortcuts</Kst>
-      - <kbd>Ctrl + Z</kbd> **Rückgängig:** Macht die letzte Befehlsausführung rückgängig und stellt den vorherigen Zustand wieder her.
-      - <kbd>U</kbd> **Positives U:** Verschiebt in positiver U-Richtung.
-      - <kbd>Shift + U</kbd> **Negatives U:** Verschiebt in negativer U-Richtung.
+2. Drücken Sie <kbd>Shift + G</kbd>, um den Befehl Slide zu aktivieren.
+3. Stellen Sie die Optionen im Befehlsdialog und bei den Tastenkombinationen ein.
+   - <Kst>Befehlsdialog</Kst>
+      - **Distance:** Legt die Distanz der verschobenen CVs fest.
+      - **Advanced:** Zusätzliche Optionen für eine präzisere Steuerung der Slide-Operation.
+        - **Proportional:** Legt fest, wie sich die Verschiebung auf die umliegenden CVs auswirkt.
+          - **None:** Keine Auswirkung auf umliegende CVs.
+          - **All:** Alle umliegenden CVs werden von der Verschiebung beeinflusst und bewegen sich proportional gemäß den U/V-Falloff-Einstellungen.
+          - **Selected:** Nur die ausgewählten CVs werden von der Verschiebung beeinflusst; der zuletzt ausgewählte CV aktiviert den Slide-Gizmo-Griff.
+        - **Falloff U:** Legt den Falloff-Wert in U-Richtung fest.
+        - **Falloff V:** Legt den Falloff-Wert in V-Richtung fest.
+        - **Mirror:** Wendet einen Spiegeleffekt relativ zur aktiven Konstruktionsebene an. Die Spiegelachsen richten sich entweder nach der globalen Konstruktionsebene oder einer benutzerdefinierten Konstruktionsebene.
+          - **None:** Es ist keine Spiegelebene festgelegt.
+          - **X/Y/Z:** Spiegelt entlang der X-, Y- oder Z-Achse.
+   - <Kst>Tastenkombinationen</Kst>
+      - <kbd>Ctrl + Z</kbd> **Undo:** Macht die letzte Befehlsausführung rückgängig und stellt den vorherigen Zustand wieder her.
+      - <kbd>U</kbd> **Positive U:** Verschiebt in positive U-Richtung.
+      - <kbd>Shift + U</kbd> **Negative U:** Verschiebt in negative U-Richtung.
       - <kbd>N</kbd> **Normal:** Verschiebt in Normalenrichtung.
-3. Gizmo-Handles mit spezifischen Richtungssteuerungen erscheinen. Verwenden Sie diese, um CVs zu verschieben und ihre Positionen präzise anzupassen.
-4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+3. Gizmo-Griffe mit spezifischen Richtungssteuerungen erscheinen. Verwenden Sie diese, um CVs präzise zu bewegen und ihre Position anzupassen.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="slide-curve"/>
 
-<Callout type="info" emoji="💡">
-*-* Der Verschieben-Befehl enthält eine Umschaltfunktion, mit der Sie durch Halten von <kbd>Ctrl</kbd> zwischen Vorschau- und Aktivmodus wechseln können. So können Sie die Ergebnisse vor und nach der Ausführung des Befehls vergleichen.
-*-* Nur Spline-Kurven können bearbeitet werden, reguläre Linien hingegen nicht.
+<Callout type="info">   
+Hinweis: 
+  - Der Slide-Befehl verfügt über eine Umschaltfunktion, mit der Sie durch Gedrückthalten von <kbd>Ctrl</kbd> zwischen Vorschau- und Aktivmodus wechseln können. So lassen sich die Ergebnisse vor und nach dem Befehl vergleichen.     
+  - Nur Spline-Kurven können bearbeitet werden, gewöhnliche Linien hingegen nicht.
 </Callout>
 
 ## Siehe auch

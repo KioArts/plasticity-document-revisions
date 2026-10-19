@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 163 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-2057,-2389)">
+        <g id="View-Cube---Axis-Arrows" serif:id="View Cube - Axis Arrows" transform="matrix(0.418057,0,0,0.418515,1217.65,1638.3)">
+            <clipPath id="_clip1">
+                <path d="M2396.74,1818.63L2396.74,2125.38C2396.74,2138.57 2386.03,2149.27 2372.82,2149.27L2032.47,2149.27C2019.26,2149.27 2008.55,2138.57 2008.55,2125.38L2008.55,1818.63C2008.55,1805.44 2019.26,1794.74 2032.47,1794.74L2372.82,1794.74C2386.03,1794.74 2396.74,1805.44 2396.74,1818.63Z"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(0.852954,0,0,0.77899,295.349,421.045)">
+                    <rect x="2008.55" y="1763.43" width="455.122" height="455.122" style="fill:rgb(35,35,37);"/>
+                </g>
+                <g transform="matrix(0.852954,0,0,0.77899,295.349,421.045)">
+                    <rect x="2008.55" y="1763.43" width="455.122" height="455.122" style="fill:rgb(35,35,37);"/>
+                </g>
+                <g transform="matrix(0.89376,0,0,0.89376,234.01,209.506)">
+                    <g>
+                        <g id="Z">
+                            <g transform="matrix(0.767341,0,0,0.767341,538.083,421.968)">
+                                <circle cx="2169.26" cy="1849.3" r="40.631" style="fill:rgb(85,160,224);"/>
+                            </g>
+                            <path d="M2202.64,1934.62L2202.64,1889.15" style="fill:none;stroke:rgb(85,160,224);stroke-width:10.98px;"/>
+                            <g transform="matrix(0.615176,0,0,0.615176,905.286,698.181)">
+                                <g transform="matrix(83.3333,0,0,83.3333,2083.94,1887.35)">
+                                    <path d="M0.556,-0.052L0.556,-0L0.066,-0L0.066,-0.052L0.556,-0.052ZM0.54,-0.667L0.082,-0L0.044,-0L0.044,-0.046L0.501,-0.711L0.54,-0.711L0.54,-0.667ZM0.514,-0.711L0.514,-0.659L0.057,-0.659L0.057,-0.711L0.514,-0.711Z" style="fill:rgb(35,35,37);fill-rule:nonzero;"/>
+                                </g>
+                                <g transform="matrix(83.3333,0,0,83.3333,2135.25,1887.35)">
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Y">
+                            <g transform="matrix(-0.5,0.866025,-0.866025,-0.5,5049.59,1115.96)">
+                                <path d="M2202.64,1934.62L2202.64,1889.15" style="fill:none;stroke:rgb(179,213,78);stroke-width:10.99px;"/>
+                            </g>
+                            <g transform="matrix(-0.383671,0.664537,-0.664537,-0.383671,4415.11,1370.97)">
+                                <circle cx="2169.26" cy="1849.3" r="40.631" style="fill:rgb(179,213,78);"/>
+                            </g>
+                            <g transform="matrix(0.615176,0,0,0.615176,1056.54,960.166)">
+                                <g transform="matrix(83.3333,0,0,83.3333,2083.94,1887.35)">
+                                    <path d="M0.083,-0.711L0.299,-0.324L0.516,-0.711L0.585,-0.711L0.329,-0.268L0.329,-0L0.268,-0L0.268,-0.268L0.012,-0.711L0.083,-0.711Z" style="fill:rgb(35,35,37);fill-rule:nonzero;"/>
+                                </g>
+                                <g transform="matrix(83.3333,0,0,83.3333,2135.29,1887.35)">
+                                </g>
+                            </g>
+                        </g>
+                        <g id="X">
+                            <g transform="matrix(-0.5,-0.866025,0.866025,-0.5,1558.35,4931.05)">
+                                <path d="M2202.64,1934.62L2202.64,1889.15" style="fill:none;stroke:rgb(237,68,89);stroke-width:10.98px;"/>
+                            </g>
+                            <g transform="matrix(-0.383671,-0.664537,0.664537,-0.383671,1654.74,4254.07)">
+                                <circle cx="2169.26" cy="1849.3" r="40.631" style="fill:rgb(237,68,89);"/>
+                            </g>
+                            <g transform="matrix(0.615176,0,0,0.615176,753.447,960.166)">
+                                <g transform="matrix(83.3333,0,0,83.3333,2083.94,1887.35)">
+                                    <path d="M0.106,-0.711L0.306,-0.411L0.507,-0.711L0.578,-0.711L0.343,-0.361L0.585,-0L0.514,-0L0.306,-0.31L0.099,-0L0.027,-0L0.27,-0.361L0.035,-0.711L0.106,-0.711Z" style="fill:rgb(35,35,37);fill-rule:nonzero;"/>
+                                </g>
+                                <g transform="matrix(83.3333,0,0,83.3333,2136.39,1887.35)">
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Çube" transform="matrix(1,0,0,1,67.2913,16.18)">
+                            <g transform="matrix(0.866025,-0.5,0.866025,0.5,-1464.91,1976.24)">
+                                <rect x="2055.37" y="1992.3" width="109.559" height="109.559" style="fill:rgb(176,150,126);stroke:black;stroke-width:0.91px;stroke-linecap:butt;"/>
+                            </g>
+                            <g transform="matrix(0.866025,-0.5,0,1,355.353,1034.87)">
+                                <rect x="2055.37" y="1992.3" width="109.559" height="109.559" style="fill:rgb(41,41,43);stroke:black;stroke-width:1.58px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                            </g>
+                            <g transform="matrix(-0.866025,-0.5,0,1,3915.35,1034.87)">
+                                <rect x="2055.37" y="1992.3" width="109.559" height="109.559" style="fill:rgb(113,119,128);stroke:black;stroke-width:1.58px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

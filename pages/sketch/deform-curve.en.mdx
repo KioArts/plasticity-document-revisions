@@ -35,8 +35,13 @@ Wrap existing curves onto a regular and irregular surface. This tool projects or
 
 1. Select the curves you want to wrap.
 2. Type **Deform** in the Command Palette.
-3. Select a reference face where the existing curves are placed at as a neutral plane.
-4. Select the target face to deform curves with.
+3. Select a reference entity as a neutral plane:
+      - **Faces:** Select a face to use as a reference for the deformation.
+            - Check out [Curve Deformation Using the Unwrap Face Command](#curve-deformation-using-the-unwrap-face-command) for more information on how to generate a correctly mapped surface to use as a reference face.
+      - **Curves:** Select a curve to use as a reference for the deformation. It's adviced to make the reference curve a straight line to avoid unwanted deformation and errors later on.
+4. Select the target entity to deform curves with:
+      - **Faces:** Select a face to use as a target for the deformation.
+      - **Curves:** Select a curve to use as a target for the deformation. Only possible when Curve is a reference entity.
 5. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
           - **Scale:** Scale in **U, V, N** Value. 

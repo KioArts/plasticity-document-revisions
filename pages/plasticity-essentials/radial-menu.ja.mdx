@@ -1,49 +1,49 @@
 import VideoPlayer from '/components/VideoPlayer';
 import { Tabs } from 'nextra/components'
 
-# Radial Menu（ラジアルメニュー）
+# ラジアルメニュー
 
-ラジアルメニューは、コマンドを実行するための円形のインターフェースです。Plasticityで利用可能なすべてのコマンドを実行できます。デフォルトでは、「Selection mode」と「Viewport settings」という2つのラジアルメニューがあります。さらに、ユーザーは独自のラジアルメニューを作成することもできます。
+ラジアルメニューは、コマンドを実行するための円形のインターフェースです。Plasticityで利用できるすべてのコマンドを実行できます。デフォルトでは、**「Selection mode」**と**「Viewport settings」**の2つのラジアルメニューが用意されています。さらに、ユーザー独自のラジアルメニューを作成することもできます。
 
 ![Radial Menu](/img/radial-menu.png)
 
 ## ラジアルメニューのセットアップ
 
-デフォルトの「Selection mode」と「Viewport settings」ラジアルメニューを使用するには、いくつかの設定が必要です。
+デフォルトの**「Selection mode」**および**「Viewport settings」**ラジアルメニューを使用するには、セットアップが必要です。
 
-1. 以下の2つのファイルをダウンロードしてください。クリックするとテキストの内容が表示されます。右上の"ダウンロード"をクリックしてください。 
+1. 次の2つのテキストファイルをダウンロードします。クリックするとテキストの内容が表示されます。右上の「Download」をクリックしてください。
     - [selection-mode.radial.json](https://app.box.com/s/xrh5xjepvcio33fvmy4thbc00ady5p4k)
     - [viewport-settings.radial.json](https://app.box.com/s/g9hlphfr4shjhkf2c5gfdknnxudq8ouu)
-2. ダウンロードしたファイルをPlasticityの3Dビューポートにドロップします。
-3. 画面上に変化はありませんが、ラジアルメニューの定義が読み込まれて使用する準備ができています。
+2. ダウンロードしたファイルをPlasticityの3Dビューポートにドラッグ&ドロップします。
+3. 画面上に目に見える変化はありませんが、ラジアルメニューの定義が読み込まれ、使用できる状態になります。
 
-ラジアルメニューにアクセスするためのショートカットを割り当てる必要があります。
+ラジアルメニューを呼び出すには、ショートカットを割り当てる必要があります。
 
-4. <kbd>F</kbd>キーを押して、コマンドパレットを開きます。
-5. コマンドパレットに「menu」と入力します。そうすると、「Radial Menu: Selection Mode」と「Radial Menu: Viewport Settings」のエントリが表示されます。
-6. 「Radial Menu: Selection Mode」を右クリックして、ショートカットを割り当てます。ショートカットの割り当て方法については、[このセクション](command-palette#assign-a-shortcut)を参照してください。
-7. 「Radial Menu: Viewport Settings」を右クリックして、ショートカットを割り当てます。
-8. 割り当てたショートカットを押すことで、作成したラジアルメニューを表示できます。
+4. <kbd>F</kbd>キーを押してコマンドパレットを開きます。
+5. コマンドパレットに「menu」と入力します。**「Radial Menu: Selection Mode」**と**「Radial Menu: Viewport Settings」**の項目が表示されます。
+6. **「Radial Menu: Selection Mode」**を右クリックして、ショートカットを割り当てます。ショートカットの割り当て方法については、[こちらのセクション](/plasticity-essentials/plasticity-interface/command-palette#assign-a-shortcut)をご覧ください。
+7. **「Radial Menu: Viewport Settings」**を右クリックして、ショートカットを割り当てます。
+8. 割り当てたショートカットを押すと、ラジアルメニューが表示されます。
 
-## ラジアルメニューの使用方法
+## ラジアルメニューの使い方
 
-他のコマンドと同様に、ショートカットを押してラジアルメニューを表示します。
+他のコマンドと同様に、ショートカットを押すことでラジアルメニューを表示できます。
 
-1. 事前に設定したショートカットを押します。
+1. 先ほど設定したショートカットを押します。
 2. カーソルを中心にラジアルメニューが表示されます。
-3. メニューの項目をクリックすると、コマンドが実行されます。
-4. または、ショートカットキーを押したまま、項目にカーソルを合わせて、キーを離すと、コマンドが実行されます。
+3. メニュー内の項目をクリックして、コマンドを実行します。
+4. または、ショートカットキーを押したまま項目の上にカーソルを移動し、キーを離すとコマンドが実行されます。
 
 <VideoPlayer fileName="radial-menu"/>
 
 ## 新しいラジアルメニューの作成
 
-任意のコマンドでラジアルメニューを作成できます。メニューの名前とそのコマンドはテキストファイルで設定されます。<br />
-例として、"Spline Curve"、"Bridge"、および"Lock Selected"を含む"My Menu"ラジアルメニューをデザインし、ショートカット<kbd>Ctrl + Shift + F</kbd>でアクセスできるようにします。
+任意のコマンドでラジアルメニューを作成できます。メニュー名とコマンドは、テキストファイルで設定します。<br />
+ここでは例として、「Spline Curve」「Bridge」「Lock Selected」を含む「My Menu」ラジアルメニューを作成し、ショートカット<kbd>Ctrl + Shift + F</kbd>で呼び出せるようにします。
 
 1. テキストエディタを開き、新しいドキュメントを作成します。
 2. ドキュメントを「mymenu.radial.json」というファイル名で保存します。
-3. 次の内容を入力します：
+3. 次の内容を入力します。
 
 ```json filename="mymenu.radial.json" copy 
 {
@@ -68,84 +68,81 @@ import { Tabs } from 'nextra/components'
     ]
 }
 ```
+説明:(//で始まる説明は参考用であり、実際のファイルには含めないでください。)
 
-説明：（//で始まる説明は参考のためだけにあり、実際のファイルには含めないでください）
-- **name:** ラジアルメニューのタイトルを表します。任意の名前を選択できます。コマンドパレットに表示され、「Radial Menu: (name)」の形式になります。
-- **command:** ラジアルメニューの一意の識別子です。既存のコマンドとの競合を避けるために、作者の名前などのユニークな要素を取り入れることを検討してください。
-- **items:** ラジアルメニューに統合されるコマンドのリストです。複数のコマンドを含めることができます。
-    - **command:** 組み込むコマンドの内部名称です。これらの指定のリストは[こちら](#internal-designation-for-the-command)で見ることができます。
-    - **icon:** ラジアルメニューに表示されるアイコンを示します。プリセットのアイコンがないコマンドもあることに注意してください。
-    - **label:** ラジアルメニューの中心に表示されるラベルです。対応するアイコンがない場合、ラベルの最初の2文字が表示されます。
-
+- **name:** ラジアルメニューのタイトルです。好きな名前を付けられます。コマンドパレットに「Radial Menu: (name)」という形式で表示されます。
+- **command:** ラジアルメニューの一意の識別子です。既存のコマンドとの競合を避けるため、作成者名などの固有の要素を含めることをおすすめします。
+- **items:** ラジアルメニューに組み込むコマンドの一覧です。複数のコマンドを追加できます。
+    - **command:** 組み込むコマンドの内部名称です。内部名称の一覧は[こちら](#コマンドの内部名称)をご覧ください。
+    - **icon:** ラジアルメニューに表示されるアイコンです。コマンドによっては、あらかじめ設定されたアイコンがない場合があります。
+    - **label:** ラジアルメニューの中央に表示されるラベルです。対応するアイコンがない場合は、ラベルの最初の2文字が表示されます。
 ```json
 {
-    "name": "My Menu",      // Represents the radial menu's title
-    "command": "your-name:mymenu",   // A unique identifier for the radial menu
+    "name": "My Menu",      // ラジアルメニューのタイトル
+    "command": "your-name:mymenu",   // ラジアルメニューの一意の識別子
     "items": [
         {
-            "command": "command:curve",  // The internal designation for the command to be incorporated
-            "icon": "curve",             // Denotes the icon that appears in the radial menu
-            "label": "Curve"             // The central label in the radial menu
+            "command": "command:curve",  // 組み込むコマンドの内部名称
+            "icon": "curve",             // ラジアルメニューに表示されるアイコン
+            "label": "Curve"             // ラジアルメニューの中央に表示されるラベル
         },
         ...
     ]
 }
 ```
-
 4. ファイルを保存します。
-5. 作成したファイルをPlasticityの3Dビューポートにドロップします。
-6. 画面上に変化はありませんが、ラジアルメニューの定義が読み込まれて使用する準備ができています。
-7. <kbd>F</kbd>キーを押して、コマンドパレットを開きます。
-8. コマンドパレットに「menu」と入力すると、読み込まれたラジアルメニューの一覧が表示されます。
-9. 「Radial Menu: My Menu」を右クリックして、ショートカット<kbd>Ctrl + Shift + F</kbd>を割り当てます。ショートカットの割り当て方法については、[このセクション](command-palette#assign-a-shortcut)を参照してください。
-10. これで、ショートカット<kbd>Ctrl + Shift + F</kbd>を押すことで、作成したラジアルメニューを表示できます。
+5. 作成したファイルをPlasticityの3Dビューポートにドラッグ&ドロップします。
+6. 画面上に目に見える変化はありませんが、ラジアルメニューの定義が読み込まれ、使用できる状態になります。
+7. <kbd>F</kbd>キーを押してコマンドパレットを開きます。
+8. コマンドパレットに「menu」と入力すると、読み込まれているすべてのラジアルメニューの一覧が表示されます。
+9. 「Radial Menu: My Menu」を右クリックして、ショートカット<kbd>Ctrl + Shift + F</kbd>を割り当てます。ショートカットの割り当て方法については、[こちらのセクション](command-palette#assign-a-shortcut)をご覧ください。
+10. ショートカット<kbd>Ctrl + Shift + F</kbd>を押すと、作成したラジアルメニューが表示されます。
 
 ## ラジアルメニューの編集
 
-設定のために作成したファイルは、Plasticityの設定フォルダーに保存されています。このファイルを編集することで、ラジアルメニューを編集できます。
+設定用に作成したファイルは、Plasticityの設定フォルダに保存されています。これらのファイルを編集することで、ラジアルメニューを変更できます。
 
-1. 設定フォルダーを開きます
+1. 設定フォルダを開きます。
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    `C:\Users\<user name>\.plasticity\radials` を開きます。
+    `C:\Users\<username>\.plasticity\radials`に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    不可視フォルダを表示する設定にしてください。<br />
-    `/Users/<user name>/.plasticity/radials/` を開きます。
+    隠しフォルダを表示する設定を有効にします。<br />
+    `/Users/<username>/.plasticity/radials/`に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    Plasticityの設定フォルダーを開きます。
+    Plasticityの設定フォルダを開きます。
     </Tabs.Tab>
 </Tabs>
-2. フォルダ内に設定ファイルがあります。このファイルをテキストエディタで開きます。
-3. 新規作成時と同じ要領で、ファイルを編集します。
+2. フォルダ内の設定ファイルを探し、テキストエディタで開きます。
+3. 作成時と同じ手順でファイルを編集します。
 4. ファイルを保存します。
-5. 保存したファイルを、Plasticityの3Dビューポートにドロップします。
-6. これで設定し直したラジアルメニューが使用できるようになります。
+5. 保存したファイルをPlasticityの3Dビューポートにドラッグ&ドロップします。
+6. これで、更新したラジアルメニューを使用できます。
 
 ## ラジアルメニューの削除
 
-Plasticityの設定フォルダーにあるファイルを削除することで、ラジアルメニューを削除できます。
+特定のフォルダにある特定のファイルを削除することで、ラジアルメニューを削除できます。
 
-1. 設定フォルダーを開きます
+1. 該当のフォルダを開きます。
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    `C:\Users\<user name>\.plasticity\radials` を開きます。
+    `C:\Users\<username>\.plasticity\radials`に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    不可視フォルダを表示する設定にしてください。<br />
-    `/Users/<user name>/.plasticity/radials/` を開きます。
+    隠しフォルダを表示する設定を有効にします。<br />
+    `/Users/<username>/.plasticity/radials/`に移動します。
     </Tabs.Tab>
     <Tabs.Tab>
-    Plasticityの設定フォルダーを開きます。
+    Plasticityの設定フォルダを開きます。
     </Tabs.Tab>
 </Tabs>
-2. フォルダ内に設定用ファイルがあります。削除したいファイルをフォルダから取り出すと、ラジアルメニューが削除されます。
+2. フォルダ内に設定ファイルがあります。削除したいファイルをフォルダから取り除くと、そのラジアルメニューが削除されます。
 
+## ラジアルメニューから別のラジアルメニューを呼び出す方法
 
-## ラジアルメニューからラジアルメニューを呼び出す方法
-
-1. 呼び出されるラジアルメニューを作成します。ここではこのようなラジアルメニューを定義しました。
+1. 呼び出したいラジアルメニューを作成します。ここでは、次のようにラジアルメニューを定義したものとします。
 ```json filename="2nd-my-menu.radial.json" copy 
 {
     "name": "2nd My Menu",
@@ -170,7 +167,7 @@ Plasticityの設定フォルダーにあるファイルを削除することで�
 }
 ```
 
-2. このラジアルメニューを「Selection mode」ラジアルメニューから呼び出すには、itemsの最後に次の項目を追加します。この項目のcommandには、呼び出されるラジアルメニューのcommandの前に"view:radial:"を付け足した言葉を指定します。
+2. このラジアルメニューを「Selection mode」ラジアルメニューから呼び出すには、items の末尾に次の項目を追加します。この項目の command には、呼び出したいラジアルメニューの command の前に「view:radial:」を付けた文字列を指定します。
 
 ```json  copy 
 {
@@ -179,7 +176,8 @@ Plasticityの設定フォルダーにあるファイルを削除することで�
     "label": "2nd"
 }
 ```
-その結果、selection-mode.radial.jsonはこのようになります
+
+その結果、selection-mode.radial.json は次のようになります。
 
 ```json  filename="selection-mode.radial.json" copy 
 {
@@ -215,11 +213,12 @@ Plasticityの設定フォルダーにあるファイルを削除することで�
 }
 ```
 
-これで「Selection mode」ラジアルメニューから、「2nd My Menu」ラジアルメニューを呼び出すことができるようになります。
+これで、「Selection mode」ラジアルメニューから「2nd My Menu」ラジアルメニューを呼び出せるようになります。
 
 
 
-### 組み込むコマンドの内部名称
+
+## コマンドの内部名称
 
 ```
 1. Commands
@@ -258,6 +257,7 @@ command:dimension
 command:dissolve
 command:draft-face
 command:duplicate
+command:edge-align
 command:export-obj
 command:export-stl
 command:export3mf
@@ -301,10 +301,11 @@ command:paste-with-placement
 command:patch
 command:pipe
 command:place
+command:poly-splines
 command:polygon
 command:project
+command:project-align
 command:push-face
-command:polysplines
 command:radial-array
 command:raise-degree
 command:rebuild
@@ -320,6 +321,7 @@ command:scale
 command:section-analysis
 command:select-adjacent
 command:select-all
+command:select-all-constraints
 command:select-all-curves
 command:select-next-entity-collection
 command:select-previous-entity-collection
@@ -417,12 +419,16 @@ viewport:focus
 viewport:navigate:back
 viewport:navigate:bottom
 viewport:navigate:front
+viewport:navigate:home
 viewport:navigate:left
 viewport:navigate:right
 viewport:navigate:selection
 viewport:navigate:top
+viewport:toggle-constraints
 viewport:toggle-edges
 viewport:toggle-faces
+viewport:toggle-images
+viewport:toggle-meshes
 viewport:toggle-orthographic
 viewport:toggle-overlays
 viewport:toggle-render-mode

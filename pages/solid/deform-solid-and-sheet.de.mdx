@@ -3,57 +3,62 @@ import Reference from '/components/Reference'
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-## Volumen- und Flächenkörper verformen
+## Volumenkörper und Flächen verformen
 
-{/* <Reference shortcut="" command="Verformen" button="" /> */}
+{/* <Reference shortcut="" command="Deform" button="" /> */}
 
 <CommandReference
-  command="Verformen"
+  command="Deform"
   shortcut=""
-  button="In der Befehlspalette"
+  button="In Command Palette"
   buttonIcon="/img/button-deform.png"
   tier="both"
 />
 
 ## Beschreibung
 
-Wickelt bestehende Volumen- und Flächenkörper auf eine reguläre oder irreguläre Oberfläche.
+Wickelt vorhandene Volumenkörper- und Flächenobjekte auf regelmäßige und unregelmäßige Oberflächen. Unterstützt jetzt auch das Verformen von Objekten mithilfe von Kurven als Referenz.
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie die Objekte aus, die Sie verformen möchten.
-2. Geben Sie **Verformen** in der Befehlspalette ein.
-3. Wählen Sie eine Referenzfläche als Neutralebene.
-4. Wählen Sie die Zielfläche aus, auf die die Objekte verformt werden sollen.
+1. Wählen Sie die Objekte aus, die Sie umwickeln möchten.
+2. Geben Sie **Deform** in die Command Palette ein.
+3. Wählen Sie eine Referenzentität als neutrale Ebene:
+      - **Flächen:** Wählen Sie eine Fläche als Referenz für die Verformung.
+            - Weitere Informationen dazu, wie Sie eine korrekt abgebildete Fläche als Referenzfläche erzeugen, finden Sie unter [Flächenverformung mit dem Befehl „Unwrap Face"](#surface-deformation-using-the-unwrap-face-command).
+      - **Kurven:** Wählen Sie eine Kurve als Referenz für die Verformung. Es wird empfohlen, die Referenzkurve als gerade Linie anzulegen, um unerwünschte Verformungen und spätere Fehler zu vermeiden.
+4. Wählen Sie die Zielentität aus, mit der die Objekte verformt werden sollen:
+      - **Flächen:** Wählen Sie eine Fläche als Ziel für die Verformung.
+      - **Kurven:** Wählen Sie eine Kurve als Ziel für die Verformung. Nur möglich, wenn eine Kurve als Referenzentität verwendet wird.
 5. Legen Sie die Optionen im Befehlsdialog fest.
-    - <Kst>Befehlsdialog</Kst>
-          - **Skalierung:** Skalierung in **U-, V-, N**-Richtung.  
-          - **Versatz:** Versatz in **U-, V-, N**-Richtung.
-          - **Umkehren:** 
-                - **Spiegeln:** Spiegelt die verformten Objekte horizontal relativ zur Oberfläche.
-                - **UV:** Kehrt die U- und V-Ausrichtung der verformten Objekte um.
-                - **Normalen:** Kehrt die Normale der verformten Objekte um.
-          - **Neu verblenden:** Verblendet die verformten Objekte neu. Berechnet die Verrundungen neu und überträgt sie erneut, um unerwünschte Verformungen zu entfernen.
-          - **Werkzeuge behalten:** Führt die Verformung durch, ohne die Werkzeugobjekte zu verändern.
+    - <Kst>Command Dialog</Kst>
+          - **Skalierung:** Skalierung in den Werten **U, V, N**.  
+          - **Versatz:** Versatz in den Werten **U, V, N**.
+          - **Spiegeln/Umkehren:** 
+                - **Spiegeln:** Spiegelt die verformten Objekte horizontal relativ zur Oberfläche. 
+                - **UV:** Vertauscht die U- und V-Ausrichtung der verformten Objekte.
+                - **Normale:** Kehrt die Normale der verformten Objekte um.
+          - **Neu verrunden:** Berechnet die Verrundungen der verformten Objekte neu und überträgt sie erneut, wodurch unerwünschte Verformungen entfernt werden.
+          - **Werkzeuge behalten:** Führt die Verformung aus und lässt die Werkzeugobjekte unverändert.
 6. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="deform-solid"/>
 
-<Callout type="info" emoji="ℹ️">
-Skalierung und Versatz verwenden ein **UVN**-Koordinatensystem anstelle eines **XYZ**-Koordinatensystems, um den parametrischen Wert anzupassen. Dadurch können Sie die Orientierung der verformten Objekte an einem bestimmten Punkt relativ zur Zielfläche definieren. Weitere Informationen zum UVN-Koordinatensystem finden Sie [hier](/cad-essentials/uvn-coordinate-system).
+<Callout type="info">
+Skalierung und Versatz verwenden beim Anpassen des parametrischen Werts ein **UVN**-Koordinatensystem anstelle des **XYZ**-Koordinatensystems. So können Sie die Ausrichtung der verformten Objekte an einem bestimmten Punkt in Bezug auf die Zieloberfläche festlegen. Weitere Informationen zum UVN-Koordinatensystem erhalten Sie [hier](/cad-essentials/uvn-coordinate-system).
 </Callout>
 
-### Oberflächenverformung mit dem Befehl „Fläche abwickeln“
+### Flächenverformung mit dem Befehl „Unwrap Face"
 
-Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den Befehl „Fläche abwickeln“ aus der Befehlspalette für das Zielobjekt. Dadurch wird eine korrekt abgebildete Oberfläche erzeugt, die als präzise Referenzfläche verwendet werden kann. Dies funktioniert bei offenen Flächen, die nicht periodisch oder geschlossen sind. Wenn die Oberfläche periodisch oder geschlossen ist, lesen Sie das folgende Kapitel – [Oberflächenverformung auf geschlossenen Flächen](/solid/deform-solid-and-sheet#surface-deformation-on-closed-surfaces).
+Um unerwünschte Verformungen oder ungenaue Platzierungen zu vermeiden, verwenden Sie den Befehl „Unwrap Face" aus der Command Palette auf dem Zielobjekt. Dadurch wird eine korrekt abgebildete Fläche erzeugt, die anschließend als präzise Referenzfläche dienen kann. Dies funktioniert bei offenen Flächen, die weder periodisch noch geschlossen sind. Ist die Fläche periodisch oder geschlossen, lesen Sie das folgende Kapitel – [Flächenverformung auf geschlossenen Flächen](/solid/deform-solid-and-sheet#surface-deformation-on-closed-surfaces).
 
 <VideoPlayer fileName="deform-solid-unwrap"/>
 
-### Oberflächenverformung auf geschlossenen Flächen
+### Flächenverformung auf geschlossenen Flächen
 
-Das Verformen von Objekten auf geschlossenen (periodischen) Flächen erfordert entweder das Fragmentieren der Oberfläche oder das Aufteilen des zu verformenden Objekts (falls möglich). Dies ist notwendig, da sich die Geometrie beim Wickeln um eine geschlossene Oberfläche selbst überschneidet, was zu Verbindungs- und Stetigkeitsproblemen führt.
+Das Verformen von Objekten auf geschlossenen (periodischen) Flächen erfordert entweder das Fragmentieren der Fläche oder das Teilen des Objekts, das umwickelt wird (falls zutreffend). Dies ist notwendig, weil sich die Geometrie beim Umwickeln einer geschlossenen Fläche selbst schneidet, was zu Problemen bei der Verbindung und Kontinuität führt.
 
 <VideoPlayer fileName="deform-solid-unwrap-closed"/>
 
 ## Siehe auch
-- [Kopieren mit Platzierung](/common/copy-with-placement)
+- [Copy with Placement](/common/copy-with-placement)

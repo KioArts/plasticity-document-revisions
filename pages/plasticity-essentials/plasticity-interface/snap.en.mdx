@@ -6,10 +6,10 @@ import ButtonIcon from '/components/ButtonIcon'
 
 - You can use limited snapping features on respective Meshes and Images.
 
-   | Type                | Snap target | Tip help |
-   | ------------------- | ----------- | -------- |
-   | Mesh (OBJ, STL, FBX, 3MF)| Vertex/Face | Vertex/Face|
-   | Image (.PNG, .JPG, .JPEG)| Corner | Corner | 
+   | Type                      | Snap target | Tip help    |
+   | ------------------------- | ----------- | ----------- |
+   | Mesh (OBJ, STL, FBX, 3MF) | Vertex/Face | Vertex/Face |
+   | Image (.PNG, .JPG, .JPEG) | Corner      | Corner      |
 
 ## Object Snap[#object-snap]
 
@@ -18,20 +18,40 @@ import ButtonIcon from '/components/ButtonIcon'
 - 1. You can use snapping to snap your cursor to features while drawing or moving objects.
 - 2. To toggle the object snapping, click the toggle button in the "Snapping" window located on the right sidebar. To toggle different types of snapping, click on "Object Snaps" section window and adjust the options.
 - 3. To temporarily enable snapping, hold the <kbd>Ctrl</kbd> key. Snapping is automatically enabled when drawing Curves.
-- 4. To temporarily disable snapping, press <kbd>Shift + X</kbd> key. This will allow you to temporarily disable different types of snaps if you are currently locked onto one. You can repeatedly press the button until you reached the desired snap type.  
-- 5. You can snap to points on various types of objects: Control-Vertex, Curve, Region, Edge, Face, and Measurement. A snap target appears as a small black dot.
-- 6. Tip help appears when you point to a snap target. Click when the tip help is visible to snap accurately.
+- 4. To temporarily disable snapping, press <kbd>Shift + X</kbd> key. This will allow you to temporarily disable different types of snaps if you are currently locked onto one. You can repeatedly press the button until you reached the desired snap type.
+- 5. You can snap to points on various types of objects: Control-Vertex, Curve, Region, Edge, Face, Measurement, and Section. A snap target appears as a small black dot.
+- 6. Objects instanced with the **[Create Instance](/solid/create-instance)** command support all of these snap points too.
+- 7. Tip help appears when you point to a snap target. Click when the tip help is visible to snap accurately.
 
-    | Snap target    | Tip help                                                                                                                     |
-    | -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-    | Control-Vertex | CV                                                                                                                           |
-    | Curve          | Curve, Beginning, End, Middle, Closest, Intersection, X, Y, Z, XY, YZ, ZX, Center, 1/4, 3/4, Perpendicular, Tangent, Tan/Tan |
-    | Region         | Region, Center                                                                                                               |
-    | Edge           | Edge, End, Middle                                                                                                            |
-    | Face           | Face, Center                                                                                                                 |
-    | Measurement Point | Measurement                                                                                                               |
+    | Snap target       | Tip help                                                                                                                                  |
+    | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+    | Control-Vertex    | CV                                                                                                                                        |
+    | Curve             | Curve, Beginning, End, Middle, Closest, Intersection, X, Y, Z, XY, YZ, ZX, Center, 1/4, 3/4, Perpendicular, Tangent, Tan/Tan, Section     |
+    | Region            | Region, Center                                                                                                                            |
+    | Edge              | Edge, End, Middle, YZ, XZ, Section                                                                                                        |
+    | Face              | Face, Center                                                                                                                              |
+    | Measurement Point | Measurement                                                                                                                               |
+    | Section           | Section                                                                                                                                   |
 
-- You can execute the object snapping in the Command Palette; **Toggle object snapping**. 
+- You can execute the object snapping in the Command Palette; **Toggle object snapping**.
+
+## Plane and Section Snaps[#plane-and-section-snaps]
+
+### Section plane snap[#section-plane-snap]
+
+![Section snap](/img/snap-section.svg)
+
+- Snaps to the point where an edge or curve intersects the active section plane.
+- The tip help shows the plane and the host entity, for example `Section,Edge`.
+- Use this to place points exactly where a cut passes through your geometry.
+
+### YZ / XZ plane snap[#plane-snap]
+
+![YZ plane snap](/img/snap-yz-plane.svg)
+
+- Snaps to the point where an edge or curve intersects the **YZ** or **XZ** plane.
+- Previously, snaps were only available where an edge or curve crossed the X, Y or Z axes. These now extend into 3D, so the snap works on the full plane rather than only on the axis line.
+- The tip help lists the plane followed by the entity it was found on, for example `YZ,Edge,Face`.
 
 ## Sketch Tips
 

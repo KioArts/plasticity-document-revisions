@@ -17,7 +17,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
   buttonIcon={<img src="/img/button-bridge-curve.png" alt="Bridge Curve Icon" />}
 /> */}
 
-## Scheitelpunkt verbinden
+## Bridge Vertex
 
 <CommandReference
   command="Bridge"
@@ -29,33 +29,41 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## Beschreibung
 
-Verbindet zwei Scheitelpunkte mit G0-, G1-, G2- oder G3-Kontinuität. Die Spannung ist einstellbar und die Krümmungsmessung wird unterstützt.
+Überbrückt zwei Eckpunkte mit G0-, G1-, G2- oder G3-Kontinuität. Die Spannung ist einstellbar, und die Krümmung kann gemessen werden.
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie zwei Scheitelpunkte aus, die Sie verbinden möchten.
-2. Verwenden Sie den Befehl **Verbinden** in der Befehlspalette oder drücken Sie alternativ <kbd>L</kbd>.
-3. Legen Sie die Optionen im Befehlsdialog und den Tastaturkürzeln fest.
-     - <Kst>Command Dialog</Kst>
-          - **Spannung 1:**
-               - **Wert 1/2:** Der Spannungswert beeinflusst den 1. Kontrollscheitelpunkt (CV) bis zum 3. CV des Start-/Endpunkts.
-          - **Spannung 2:**
-               - **Wert 1/2:** Der Spannungswert beeinflusst den 2. CV und 3. CV des Start-/Endpunkts.
-          - **Spannung 3:**
-               - **Wert 1/2:** Der Spannungswert beeinflusst den 3. CV des Start-/Endpunkts.
-          - **Startkrümmung:**
-               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Startpunkt an.
-          - **Endkrümmung:**
-               - **G0, G1, G2, G3:** Gibt die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Endpunkt an.
+1. Wählen Sie die beiden Eckpunkte aus, die Sie überbrücken möchten.
+2. Verwenden Sie den Befehl **Bridge** in der Command Palette oder drücken Sie alternativ <kbd>L</kbd>.
+3. Legen Sie die Optionen im Command Dialog und über die Tastenkürzel fest. 
+          - <Kst>Command Dialog</Kst>
+          - **Parameter:**
+               - **Value 1/2:** Die relative Position des Startpunkts/Endpunkts auf dem Segment.
+          - **Tension G1:**
+               - **Value 1/2:** Der Spannungswert, der auf den 1. bis 3. Kontrollpunkt (Control-Vertex, CV) des Startpunkts/Endpunkts wirkt.
+          - **Tension G2:**
+               - **Value 1/2:** Der Spannungswert, der auf den 2. und 3. CV des Startpunkts/Endpunkts wirkt.
+          - **Tension G3:**
+               - **Value 1/2:** Der Spannungswert, der auf den 3. CV des Startpunkts/Endpunkts wirkt.
+          - **Start curvature:**
+               - **G0, G1, G2, G3:** Legen Sie die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Startpunkt fest.
+          -  **End curvature:**
+               - **G0, G1, G2, G3:** Legen Sie die [Kontinuität der Kurve](/cad-essentials/continuity-curve-and-surface) am Endpunkt fest.      
+          - **Trim:** Wenn aktiviert, wird jede Kurve, die über die Brücke hinausragt, getrimmt.
+          - **Show curvature:** Schaltet die Krümmungsdarstellung auf der Kurve ein oder aus. Mehr dazu unter [Toggle Curvature](/tool/toggle-curvature).
+          - **Create Constraints:** Erstellt Constraints auf den überbrückten Kurven, um die festgelegte Kontinuität beizubehalten und weitere Anpassungen zu ermöglichen. Sie können diese Constraints im Menü [Constraints](/plasticity-essentials/constraint-system) bearbeiten.
      - <Kst>Keyboard Shortcuts</Kst>
-          - <kbd>Tab</kbd> **Kontinuität wechseln:** Wechselt zwischen G0-, G1-, G2- und G3-Kontinuität.
-          - <kbd>D</kbd> **G1-Spannung:** Passt die Spannung für G1-Kontinuität an.
-4. Bestätigen Sie mit OK im Befehlsdialog oder durch Rechtsklick.
+     - <kbd>X</kbd>/ <kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Auf die X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
+     - <kbd>Tab</kbd> **Cycle continuity:** Wechselt zwischen G0-, G1-, G2- und G3-Kontinuität. 
+     - <kbd>D</kbd> **G1 Tension:** Passt die Spannung für die G1-Kontinuität an. 
+     - <kbd>Q</kbd> **Trim:** Schaltet das Trimmen für die ausgewählten Kurven ein oder aus.      
+4. Bestätigen Sie mit OK im Command Dialog oder per Rechtsklick.
 
 <VideoPlayer fileName="bridge-vertex"/>
 
+
 ## Siehe auch
-- [Verbinden](bridge)
-- [Kurve verbinden](bridge-curve)
-- [Kante verbinden](bridge-edge)
-- [Zusammenfügen](join)
+- [Bridge](bridge)
+- [Bridge Curve](bridge-curve)
+- [Bridge Edge](bridge-edge)
+- [Join](join)

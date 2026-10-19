@@ -36,8 +36,9 @@
   "remove-nominal-surface": "Remove Nominal Surface",
 
   "---draft": { "type": "separator", "title": "Draft and Align" },
-  "align": "Align",
-  "align-surface": "Align Surface",
+  "edge-align": "Edge Align",
+  "surface-align": "Surface Align",
+  "project-align": "Project Align",
   "draft-face": "Draft Face",
 
   "---extend": { "type": "separator", "title": "Extend" },

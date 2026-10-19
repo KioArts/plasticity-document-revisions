@@ -4,20 +4,6 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-{/* # Slide Curve CVs
-
-<Reference shortcut="Shift + G" command="Slide" button="" /> */}
-
-{/* <HeadBannerThumbnail
-  src="/videos/banner/slide-curve-cv.mp4"
-  alt="Slide Curve CV Preview"
-  title="Slide Curve CV"
-  command="Slide"
-  shortcut="Shift + G"
-  button="In Command Palette"
-  buttonIcon={<img src="/img/button-reverse.png" alt="Reverse Icon" />}
-/> */}
-
 ## Slide Curve CVs
 
 <CommandReference
@@ -30,7 +16,7 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## Description
 
-Slide Control-Vertices (CVs) along the tangential direction of the control cage defined by the spline curve.
+Slide Control-Vertices (CVs) along the tangential direction of the control cage defined by the spline curve. Sliding multiple CVs allows for proportional adjustments creating smooth transitions along the curve, and including a mirror effect relative to the active construction plane.
 
 ## Basic Usage
 
@@ -39,6 +25,16 @@ Slide Control-Vertices (CVs) along the tangential direction of the control cage 
 3. Set the options in the Command Dialog and Keyboard Shortcuts.
    - <Kst>Command Dialog</Kst>
       - **Distance:** Specify the distance of moved CVs.
+      - **Advanced:** Additional options for more precise control over the slide operation.
+        - **Proportional:** Select how the slide affects the surrounding CVs.
+          - **None:** No influence on surrounding CVs.
+          - **All:** All surrounding CVs are affected by the slide and move proportionally based on the U/V falloff settings.
+          - **Selected:** Only the selected CVs are affected by the slide, last selected CV will invoke the Slide Gizmo handle.
+        - **Falloff U:** Specify the falloff amount in U direction.
+        - **Falloff V:** Specify the falloff amount in V direction.
+        - **Mirror:** Apply a mirror effect relative to the active construction plane. The mirroring axes adapt to either the global construction plane or a custom defined construction plane.
+          - **None:** No mirror plane is specified.
+          - **X/Y/Z:** Mirror in either X, Y, and Z axes.
    - <Kst>Keyboard Shortcuts</Kst>
       - <kbd>Ctrl + Z</kbd> **Undo:** Revert the last command execution, restoring the previous state.
       - <kbd>U</kbd> **Positive U:** Slide in a positive U direction.
@@ -49,9 +45,10 @@ Slide Control-Vertices (CVs) along the tangential direction of the control cage 
 
 <VideoPlayer fileName="slide-curve"/>
 
-<Callout type="info" emoji="💡">   
-*-* The Slide command includes a toggle feature that lets you switch between preview and active mode by holding down <kbd>Ctrl</kbd>. This allows you to compare the before-and-after results of the command.     
-*-* Only Spline Curves can be manipulated, whereas regular lines cannot. 
+<Callout type="info">   
+Note: 
+  - The Slide command includes a toggle feature that lets you switch between preview and active mode by holding down <kbd>Ctrl</kbd>. This allows you to compare the before-and-after results of the command.     
+  - Only Spline Curves can be manipulated, whereas regular lines cannot.
 </Callout>
 
 ## See also

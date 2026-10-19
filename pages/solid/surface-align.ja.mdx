@@ -1,0 +1,87 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+## Surface Align
+
+<CommandReference
+  command="Edge Align"
+  shortcut=""
+  button="コマンドパレットで"
+  buttonIcon="/img/button-align.png"
+  tier="studio"
+/>
+
+## 説明
+
+Edge Align は xNURBS コマンドをベースにしたツールで、あるサーフェスエッジを別のエッジに合わせ、位置 **(G0)**、接線 **(G1)**、または曲率 **(G2)** の連続性を確保します。基準となるエッジとターゲットとなるエッジの2つを選択します。ターゲットエッジは、基準エッジの形状と滑らかさに従うように変形されます。追加のコントロールでは、より良い遷移結果を得るためにサーフェスの次数とスパンを編集できます。アライメントには制約(コンストレイント)を適用でき、結果として生成されるジオメトリの挙動を制御できます。
+
+## 基本的な使い方
+
+1. 移動させるターゲットエッジを選択し、次に位置合わせの基準となるリファレンスエッジを選択します。
+2. コマンドパレットに **Edge Align** と入力します。
+3. コマンドダイアログでオプションを設定します。
+    - <Kst>コマンドダイアログ</Kst>
+        - **Solver:** サーフェスの位置合わせに使用するソルバーを選択します。
+            - **XNurbs:** xNURBS ソルバーを使用してサーフェスを位置合わせします。
+            - **Collinear:** Collinear ソルバーを使用してサーフェスを位置合わせします。
+        - **Continuity:** **G0, G1, G2** [サーフェスの連続性](/cad-essentials/continuity-curve-and-surface)を指定します。
+                - サーフェス上の黒い円をクリックすることで、連続性を個別に指定できます。
+        - **Blending:** サーフェスのブレンディングをさらに調整し、ターゲットとリファレンスのサーフェス間の遷移方法を制御します。
+            - **Blend extra rows:** サーフェスの位置合わせ時にブレンドするコントロールポイント(CV)の行数を選択します。0 に設定するとブレンディングは行われず、値を大きくするほど多くの行がブレンドされ、より滑らかな接続になります。値が総行数以上になると、サーフェスはターゲットに完全に一致するように調整されます。
+            - **Input shape influence:** 元の形状が位置合わせ後の結果にどの程度影響するかを調整します。これは **Blend extra rows** が有効な場合に効果を発揮します。
+        - **Tension:** サーフェスの曲率遷移を調整します。
+        - **Partial Alignment:** 新しいサーフェスの始点と終点でのブレンド方法を制御します。
+                - **Partial start:** サーフェスの始点がターゲットとどの程度ブレンドするかを調整します。
+                - **Partial end:** サーフェスの終点がターゲットとどの程度ブレンドするかを調整します。
+        - **Boundary:** UV フローの条件を指定します。
+            - **Natural:** UV フローに関する要件はありません。
+            - **Normal:** UV アイソカーブが互いに垂直になるように維持します。
+            - **Next:** 境界条件が比較的平坦な場合に、垂直な UV フローを生成します。
+            - **Adjacent:** 生成されたサーフェスの V アイソカーブを隣接するカーブに合わせます。
+            - **Skew:** 生成されたサーフェスの境界の終端を、スキュー(傾斜)によってカスタマイズします。
+        - **Surface Rebuild:** より良い位置合わせ結果を得るために、サーフェスを再構築して次数とスパンを調整します。
+            - **Degree:** UV の次数の値を指定します。
+            - **Spans:** UV のスパン値を指定します。
+        - **Symmetry:** 位置合わせ中に、駆動側サーフェスとリファレンスサーフェスが互いにどのように影響し合うかを指定します。
+            - **Symmetric:** 両方のサーフェスが互いに向かって調整されます。各辺の CV は、共有する境界エッジがコリニア(同一直線上)を保ち、G1 の行が両側で接線を保つように移動します。両方のサーフェスが他の接続されたジオメトリから参照されており、どちらも固定として扱いたくない場合に使用します。
+            - **Asymmetric(デフォルト):** 駆動側サーフェスのみが調整されます。その CV ハルは、変化しないリファレンスサーフェスに一致するように移動します。これは **Edge Align** の従来からの動作です。
+            - **Match tangent length ratio:** 駆動側サーフェスの接線長比をリファレンスサーフェスのものに一致させ、CV の分布が同じ比率に従うようにします。
+
+                <img src="/release/26.2/collinear-behavior-image.png" width="550" />
+
+        - **Analysis:** 選択したサーフェスエッジの連続性を一時的に解析します。
+            - **Continuity:** エッジの連続性を検証します。
+                - **G0:** 位置連続性のチェック。
+                - **G1:** 接線連続性のチェック。
+                - **G2:** 曲率連続性のチェック。
+            - **G0 Scale / G1 Scale / G2 Scale:**
+                - それぞれの連続性チェックの許容誤差スケールを調整します。
+        - **コンストレイントを作成:** 指定した連続性を維持するために、整列したカーブにコンストレイントを作成し、さらなる調整を可能にします。これらのコンストレイントは[コンストレイント](/plasticity-essentials/constraint-system)メニューで編集できます。
+    - <Kst>キーボードショートカット</Kst>
+        - <kbd>C</kbd> **Create constraints:** 制約(コンストレイント)の作成のオン/オフを切り替えます。
+        - <kbd>P</kbd> **Partial alignment:** 部分的なアライメントのオン/オフを切り替え、パラメトリックな値を手動またはアロー型ギズモハンドルで調整します。
+        - <kbd>B</kbd> **Boundary skew:** 境界スキューの始点と終点を切り替え、パラメトリックな値を手動またはハンドルギズモで調整します。
+        - <kbd>Tab</kbd> **Cycle continuity:** 連続性オプションを順に切り替えます。
+        - <kbd>Ctrl</kbd> **Show original:** 元のサーフェスの状態を表示します(クワジモード)。
+4. コマンドダイアログで OK を押すか、右クリックして確定します。
+
+<VideoPlayer fileName="align-1"/>
+
+<Callout>
+**注意**    
+Align ツールを効果的に使用するには、サーフェスが **B スプライン** サーフェスである必要があります。サーフェスを再構築するには、**[Rebuild](/solid/rebuild)(Explicit Control)** コマンド、または **[Square](/solid/square)(Refit Face)** コマンドを使用できます。
+</Callout>
+
+<Callout type="info">
+**接続されたシート間のエッジを選択する**
+
+詳しくは、[選択のコンテキストメニュー](/plasticity-essentials/selecting-objects#selection-context-menu)を参照してください。
+
+</Callout>
+
+## 関連項目
+- [Edge Align(スケッチセクション内)](/sketch/edge-align)
+- [Project Align](/solid/project-align)

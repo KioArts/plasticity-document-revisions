@@ -36,11 +36,13 @@ Create reusable duplicates of curves. An **instance**, similarly to instancing s
 
 Because curve instances are read-only copies of their source, they can't be edited independently. They also hide the CV (control-vertex) layout, which makes them visually distinct from the original curve.
 
-<Callout>
+<Callout type="info">
 1. Use the **Create Instance** command on curves when you need many identical details that need to be consistent and symmetrical.
 2. Instances work with array commands such as [**Curve Array**](/common/curve-array), [**Radial Array**](/common/radial-array), and [**Rectangular Array**](/common/rectangular-array).  
 3. Instances can also be used with the [**Mirror**](/common/mirror) command, enabling live symmetry where changes to the master geometry updates all mirrored instances automatically.
-4. Cannot use [**Place**](/common/place) and [**Copy with Placement**](/common/copy-with-placement) commands on created instances for now.
+4. Use the [**Place**](/common/place) command on created instances to place them on objects, manually adding surface detail where needed.
+5. Instances in 26.2 version support all snapping points - See [**Snapping**](/plasticity-essentials/plasticity-interface/snap) for more information.
+6. Cannot use [**Copy with Placement**](/common/copy-with-placement) commands on created instances for now.
 </Callout>
 
 ## Basic Usage

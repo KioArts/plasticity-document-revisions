@@ -3,85 +3,118 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Tabs } from 'nextra/components'
 
-# Shader-Modus
+# Shader Mode
 
-## Shader-Modus
-- Sie können zwischen den integrierten Shadern von Plasticity wechseln, indem Sie darauf klicken. Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, werden die ausgewählten Plasticity-Matcaps auf Objekte angewendet und angezeigt.
+## Shader Mode
+- Du kannst zwischen den integrierten Shadern von Plasticity wechseln, indem du sie anklickst. Wenn der [Render mode](/plasticity-essentials/render-mode) ausgeschaltet ist, werden die ausgewählten Plasticity-Matcaps auf die Objekte angewendet und angezeigt.
 
-- Verfügbare Matcaps:
+### Verfügbare Matcaps
 
-![Matcaps im Shader-Modus](/img/shader-mode-preview.png)
+![Matcaps in Shader Mode](/img/shader-mode-preview.png)
 
-| Name | Nummer | Anwendbarkeit | Hinweis |
-| ---- | ------ | ------------- | ---- |
-| Keramik Dunkel | 1 | Standard-Erscheinungsbild | - |
-| Metall Autolack | 2 | Glänzendes Erscheinungsbild | - |
-| Dunkel Glänzend | 3 | Glänzendes Erscheinungsbild | - |
-| Verlauf | 4 | Umgebungsverlauf-Erscheinungsbild | - |
-| Keramik Glühbirne | 5 | Highlight-Checker | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
-| Farb-Matcap | 6 | Mattes Erscheinungsbild | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
-| Schwarze Silhouette | 7 | Silhouetten-Checker | - |
-| Farbige Silhouette | 8 | Silhouetten-Checker mit Farbe | Wenn der [Render-Modus](/plasticity-essentials/render-mode) deaktiviert ist, können unterschiedliche Materialfarben in Echtzeit im Ansichtsfenster angezeigt werden. |
-| Isophoten/Iso-Winkel | 9 | Statischer Oberflächenkontinuitäts-Checker | Shader wird basierend auf dem aktuellen Kamerawinkel auf das Objekt angewendet. Passen Sie die Streifendichte im Menü **"Materialoptionen"** an. |
-| Formschrägen-Checker | 10 | Formschrägen-Checker für Entformung | Der Winkel wird basierend auf der aktuellen Konstruktionsfläche angezeigt. Passen Sie die Schrägwinkel-Schwelle (blau) relativ zur Konstruktionsfläche im Menü **"Materialoptionen"** an. |
-| Horizontale Zebra-Reflexion | 11 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
-| Vertikale Zebra-Reflexion | 12 | Oberflächenkontinuitäts-Checker | Adjust the number of zebra stripes in the **"Material Options"** menu. |
-| Topology Shader    |  13    |  Surface Checker                 |  Use on imported mesh files to trace or create a wireframe look for reverse engineering purposes. This is useful for analyzing complex organic shapes with intricate curves and deformations, which may not be as easily visible when using highlighters or other shaders. You can adjust the direction and line distribution in the **"Material Options"** panel. |
-| Normal Checker     |  14    |  Normal Surface Checker                 |  Use this shader to check if any surfaces are reversed. Blue indicates that the surface is facing outward, while red indicates it is facing inward. |
+| Name | Nummer | Anwendungsbereich | Hinweis |
+| ---- | ------ | ----------------- | ------- |
+| Ceramic Dark|   1    | Standarddarstellung |  -  |
+| Metal Carpaint   |   2    |   Glänzende Darstellung    |  -  |
+| Dark Shiny  |  3     |  Glänzende Darstellung     |  -  |
+| Gradient  |    4   |   Darstellung mit Umgebungsverlauf    |  -  |
+| Ceramic Lightbulb  |   5    |  Highlight-Prüfung     |  Wenn der [Render Mode](/plasticity-essentials/render-mode) ausgeschaltet ist, kannst du verschiedene Materialfarben zuweisen, die in Echtzeit im Viewport angezeigt werden. |
+| Color Matcap |   6    |  Matte Darstellung   | Wenn der [Render Mode](/plasticity-essentials/render-mode) ausgeschaltet ist, kannst du verschiedene Materialfarben zuweisen, die in Echtzeit im Viewport angezeigt werden. |
+| Black Silhouette     |  7     |  Silhouetten-Prüfung |  -   |
+| Color Silhouette    |  8     |  Silhouetten-Prüfung mit Farbe | Wenn der [Render Mode](/plasticity-essentials/render-mode) ausgeschaltet ist, kannst du verschiedene Materialfarben zuweisen, die in Echtzeit im Viewport angezeigt werden. |
+| Isophote/Isoangle   |   9     |   Statische Prüfung der Flächenkontinuität         | Der Shader wird abhängig vom aktuellen Kamerawinkel auf das Objekt angewendet. Die Streifendichte kannst du im Menü **"Material Options"** anpassen. |
+| Draft Angle          |   10    | Prüfung der Entformungsschrägen für die Formentnahme       |  Der Entformungswinkel wird auf dem Objekt anhand der aktuellen Konstruktionsebene angezeigt. Den Schwellenwert des Entformungswinkels (blau) relativ zur Konstruktionsebene kannst du im Menü **"Material Options"** anpassen. |
+| Horizontal Zebra Reflection    |  11     |   Prüfung der Flächenkontinuität                |  Die Anzahl der Zebrastreifen kannst du im Menü **"Material Options"** anpassen. |
+| Vertical Zebra Reflection     |  12     |  Prüfung der Flächenkontinuität                 |  Die Anzahl der Zebrastreifen kannst du im Menü **"Material Options"** anpassen.  |
+| Topography Shader    |  13    |  Flächenprüfung                 |  Verwende ihn bei importierten Mesh-Dateien, um eine Drahtgitter-Optik nachzuzeichnen oder zu erzeugen, z. B. für Reverse Engineering. Das ist hilfreich bei der Analyse komplexer organischer Formen mit feinen Kurven und Verformungen, die mit Highlightern oder anderen Shadern möglicherweise nicht so leicht erkennbar sind. Richtung und Linienverteilung kannst du im Panel **"Material Options"** anpassen. |
+| Face direction     |  14    |  Prüfung der Flächennormalen                 |  Verwende diesen Shader, um zu prüfen, ob Flächen umgekehrt sind. Blau bedeutet, dass die Fläche nach außen zeigt, Rot, dass sie nach innen zeigt. |
+| Curvature | 15 | Krümmungsanalyse | <p>Verwende diesen Shader, um Krümmungsunterschiede auf der Fläche mithilfe einer Farbskala zu prüfen und zu erkennen, ob die Fläche eine gleichmäßige Krümmung aufweist.</p><p>**Gaussian:** Findet Wendepunkte (grün = Krümmung null), an denen die Fläche von einer Wölbung in die entgegengesetzte übergeht. Am besten geeignet, um Unstetigkeiten zu finden und glatte Übergänge zu validieren.</p><p>**Mean:** Mittelt beide Flächenrichtungen und gibt so einen Gesamteindruck der Glätte. Weniger empfindlich als Gaussian; verwende ihn nach Korrekturen, um den glatten Verlauf ohne Fehlalarme zu prüfen.</p><p>**Max:** Isoliert die Richtung mit der stärksten Biegung. Wird typischerweise verwendet, um Problemstellen beim Verdicken oder Versetzen von Flächen zu finden, da er Bereiche zeigt, die sich bei einem bestimmten Versatzabstand selbst durchdringen würden. Außerdem nützlich, um Flächen zu vergleichen oder herauszufinden, warum eine Richtung anders gekrümmt ist als erwartet.</p> |
 
 ## Ambient Occlusion (AO)
 
-Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius (1) and falloff (2) in the Appearance section in the Preferences menu.
+Ambient Occlusion ist standardmäßig ausgeschaltet. Du kannst sie jedoch im Abschnitt Performance im Menü [Preferences](/plasticity-essentials/preferences) aktivieren. Die Aktivierung von AO wird für Rechner mit High-End-Grafikkarten empfohlen. Das Erscheinungsbild, etwa Radius **(1)** und Falloff **(2)**, kannst du im Abschnitt Options im Render Mode anpassen.
 
-![Ambient Occlusion Settings](/img/ao-settings.png)
+![Ambient Occlusion Settings](/img/render-mode-ao-settings.png)
 
-## Alle Matcaps
-- Benutzerdefinierte Matcaps erscheinen unter der Kategorie "Alle Matcaps".
+## All Matcaps
+- Benutzerdefinierte Matcaps erscheinen in der Kategorie "All Matcaps".
 
-![Benutzerdefinierte Matcaps](/img/custom-matcaps-preview.png)
+![Custom Matcaps](/img/custom-matcaps-preview.png)
 
 ### Benutzerdefinierte Matcaps installieren
 
-1. Bereiten Sie Ihre Matcap-Dateien vor (EXR und PNG mit identischen Namen).
-2. Finden Sie das Verzeichnis `.plasticity` und erstellen Sie dort einen Ordner namens "matcaps".
-
+1. Bereite deine benutzerdefinierten Matcap-Dateien vor und stelle sicher, dass EXR- und PNG-Dateien identische Namen haben.
+2. Suche das Verzeichnis `.plasticity` auf deinem Betriebssystem und erstelle darin einen neuen Ordner mit dem Namen "matcaps".
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigieren Sie zu `C:/Users/<username>/.plasticity`.
+    Navigiere zu `C:/Users/<username>/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigieren Sie zu `~/.plasticity`.
+    Navigiere zu `~/.plasticity`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Navigieren Sie zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
+    Navigiere zu `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity`.
     </Tabs.Tab>
 </Tabs>
+3. Verschiebe deine benutzerdefinierten Matcap-Dateien in diesen Ordner und starte Plasticity anschließend neu, um die Änderungen zu übernehmen.
 
-3. Verschieben Sie die Dateien in diesen Ordner und starten Sie Plasticity neu.
-
-![Matcaps installieren](/img/installing-matcaps-preview.png)
+![Installing Matcaps](/img/installing-matcaps-preview.png)
 
 <Callout type="info" emoji="💡">
 **Tipp**     
-- EXR- und PNG-Dateien sollten 512x512 Pixel groß sein und einen transparenten Hintergrund haben.
+- Stelle sicher, dass sowohl die EXR- als auch die PNG-Datei 512x512 Pixel groß sind und einen transparenten Hintergrund haben. Die EXR-Datei sollte außerdem mindestens einen 16-Bit-Farbbereich haben.
 </Callout>
 
 <Callout emoji="❗">
-**Note**     
-- Stellen Sie sicher, dass Sie die Option zum Anzeigen versteckter Ordner in Ihrem Betriebssystem aktivieren, um auf das Verzeichnis `.plasticity` zuzugreifen.
+**Hinweis**     
+- Aktiviere in deinem Betriebssystem die Option zum Anzeigen versteckter Ordner, um auf das Verzeichnis `.plasticity` zuzugreifen.
 </Callout>
 
-### Zeige Kanten, Kurven und Flächen ein- oder ausblenden
+### Einfärbbare benutzerdefinierte Matcaps
 
-- Sie können die Sichtbarkeit von Kanten, Kurven und Flächen mit den untenstehenden Schaltflächen umschalten.
+Du kannst festlegen, ob ein benutzerdefiniertes Matcap eingefärbt (tinted) oder nicht eingefärbt (untinted) ist, indem du neben deinen Matcap-Dateien eine JSON-Datei hinzufügst. Die JSON-Datei muss denselben Namen wie das Matcap haben.
+
+Wenn deine Matcap-Dateien beispielsweise `my_matcap.png` und `my_matcap.exr` heißen, erstelle eine Datei mit dem Namen `my_matcap.json` mit folgendem Inhalt:
+
+```json
+{
+  "isTinted": true
+}
+```
+
+Setze `isTinted` auf `true` für ein eingefärbtes Matcap oder auf `false` für ein nicht eingefärbtes.
+
+#### JSON-Datei erstellen
+
+1. Erstelle mit einem beliebigen Texteditor (Notepad, TextEdit, VS Code usw.) eine neue Textdatei.
+2. Füge Folgendes in die Datei ein:
+
+```json
+       {
+         "isTinted": true
+       }
+```
+
+3. Speichere die Datei unter demselben Namen wie dein Matcap (zum Beispiel `my_matcap`) und ändere die Dateiendung in `.json`.
+
+4. Lege die JSON-Datei im selben Ordner wie deine Matcap-Dateien ab. Das Matcap verwendet nun die von dir festgelegte Tint-Einstellung.
+
+![Installing JSON File Example](/img/installing-json-file.png)
+
+
+### Kanten, Kurven und Flächen ein- und ausblenden
+
+- Kanten, Kurven und Flächen können über die Schaltflächen ein- oder ausgeblendet werden.
 
 ![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png)
 
-| Funktion                                                        | Tastenkürzel | Schaltfläche | Befehlsname               |
-| --------------------------------------------------------------- | ------------ | ----------- | ------------------------- |
-| Umschalten der Kanten-Sichtbarkeit <br />(Deaktivieren blendet die Kanten aus.) |              | (13)        | Viewport: toggle Edges    |
-| Umschalten der Kurven-Sichtbarkeit <br />(Deaktivieren blendet die Kurven aus.) |              | (14)        | Viewport: toggle Curves   |
-| Umschalten der Flächen-Sichtbarkeit <br />(Deaktivieren blendet die Flächen aus.) |              | (15)        | Viewport: toggle Faces    |
+| Funktion                                                      | Tastenkürzel | Schaltfläche | Befehlsname           |
+| ------------------------------------------------------------- | ------- | ------ | ---------------------- |
+| Kanten ein-/ausblenden <br />(Wenn du dies ausschaltest, werden die Kanten ausgeblendet.) |         | (15)   | Viewport: toggle Edges |
+| Kurven ein-/ausblenden <br />(Wenn du dies ausschaltest, werden die Kurven ausgeblendet.) |       | (16)   | Viewport: toggle Curves |
+| Flächen ein-/ausblenden <br />(Wenn du dies ausschaltest, werden die Flächen ausgeblendet.) |         | (17)   | Viewport: toggle Faces |
+| Constraints ein-/ausblenden <br />(Wenn du dies ausschaltest, werden die Constraints ausgeblendet.) |         | (18)   | Viewport: toggle Constraints |
+ 
 
-### See Also
+### Siehe auch
 [Render Mode](/plasticity-essentials/render-mode)

@@ -4,35 +4,55 @@ import ButtonIcon from '/components/ButtonIcon';
 import { Callout } from 'nextra/components'
 import Kst from '/components/KeyboardShortcutsTitle'
 
-# Slide Surface CVs
+## Flächen-CV verschieben (Slide)
 
-<Reference shortcut="Shift + G" command="Slide" button="" />
+{/* <Reference shortcut="Shift + G" command="Slide" button="" /> */}
 
-Bewege CVs entlang der tangentialen Richtung des CV-Hulls, wobei der Oberflächenfluss beibehalten wird, während die Punktpositionen angepasst werden.
+<CommandReference
+  command="Slide"
+  shortcut=""
+  button="In Command Palette"
+  buttonIcon="/img/button-slide.png"
+  tier="both"
+/>
+
+## Beschreibung
+
+Verschiebt CVs entlang der tangentialen Richtung der CV-Hülle und bewahrt dabei den Flächenverlauf, während die Punktpositionen angepasst werden. Das Verschieben mehrerer CVs ermöglicht proportionale Anpassungen, die weiche Übergänge entlang der Fläche erzeugen, einschließlich eines Spiegeleffekts relativ zur aktiven Konstruktionsebene.
 
 ## Grundlegende Verwendung
 
-1. Wählen Sie ein CV oder mehrere CVs aus, die Sie verschieben möchten.
-2. Drücken Sie <kbd>Shift + G</kbd>, um den Verschieben-Befehl zu aktivieren.
-3. Stellen Sie die Optionen im Befehlsdialog und den Tastenkombinationen ein.
+1. Wählen Sie einen oder mehrere CVs aus, die Sie verschieben möchten.
+2. Drücken Sie <kbd>Shift + G</kbd>, um den Befehl Slide zu aktivieren.
+3. Stellen Sie die Optionen im Befehlsdialog und bei den Tastenkombinationen ein.
    - <Kst>Befehlsdialog</Kst>
-      - **Entfernung:** Geben Sie die Verschiebungsdistanz der CVs an.
+      - **Distance:** Legt die Distanz der verschobenen CVs fest.
+      - **Advanced:** Zusätzliche Optionen für eine präzisere Steuerung der Slide-Operation.
+        - **Proportional:** Legt fest, wie sich die Verschiebung auf die umliegenden CVs auswirkt.
+          - **None:** Keine Auswirkung auf umliegende CVs.
+          - **All:** Alle umliegenden CVs werden von der Verschiebung beeinflusst und bewegen sich proportional gemäß den U/V-Falloff-Einstellungen.
+          - **Selected:** Nur die ausgewählten CVs werden von der Verschiebung beeinflusst; der zuletzt ausgewählte CV aktiviert den Slide-Gizmo-Griff.
+        - **Falloff U:** Legt den Falloff-Wert in U-Richtung fest.
+        - **Falloff V:** Legt den Falloff-Wert in V-Richtung fest.
+        - **Mirror:** Wendet einen Spiegeleffekt relativ zur aktiven Konstruktionsebene an. Die Spiegelachsen richten sich entweder nach der globalen Konstruktionsebene oder einer benutzerdefinierten Konstruktionsebene.
+          - **None:** Es ist keine Spiegelebene festgelegt.
+          - **X/Y/Z:** Spiegelt entlang der X-, Y- oder Z-Achse.
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Ctrl + Z</kbd> **Rückgängig:** Setzt die letzte Befehlsausführung zurück und stellt den vorherigen Zustand wieder her.
-      - <kbd>U</kbd> **Positives U:** Verschieben in eine positive U-Richtung.
-      - <kbd>Shift + U</kbd> **Negatives U:** Verschieben in eine negative U-Richtung.
-      - <kbd>N</kbd> **Normal:** Verschieben in eine normale Richtung.
-      - <kbd>V</kbd> **Positives V:** Verschieben in eine positive V-Richtung.
-      - <kbd>Shift + V</kbd> **Negatives V:** Verschieben in eine negative V-Richtung.
-4. Gizmo-Steuerelemente erscheinen mit spezifischen Richtungssteuerungen. Verwenden Sie diese, um CVs zu verschieben und ihre Positionen präzise anzupassen.
-5. Bestätigen Sie mit OK im Befehlsdialog oder mit der rechten Maustaste.
+      - <kbd>Ctrl + Z</kbd> **Undo:** Macht die letzte Befehlsausführung rückgängig und stellt den vorherigen Zustand wieder her.
+      - <kbd>U</kbd> **Positive U:** Verschiebt in positive U-Richtung.
+      - <kbd>Shift + U</kbd> **Negative U:** Verschiebt in negative U-Richtung.
+      - <kbd>N</kbd> **Normal:** Verschiebt in Normalenrichtung.
+      - <kbd>V</kbd> **Positive V:** Verschiebt in positive V-Richtung.
+      - <kbd>Shift + V</kbd> **Negative V:** Verschiebt in negative V-Richtung.
+3. Gizmo-Griffe mit spezifischen Richtungssteuerungen erscheinen. Verwenden Sie diese, um CVs präzise zu bewegen und ihre Position anzupassen.
+4. Bestätigen Sie mit OK im Befehlsdialog oder per Rechtsklick.
 
 <VideoPlayer fileName="slide"/>
 
-<Callout type="info" emoji="💡">
-**Tipp**
-- Der Verschieben-Befehl enthält eine Umschaltfunktion, mit der Sie zwischen Vorschau- und Aktivmodus wechseln können, indem Sie <kbd>Ctrl</kbd> gedrückt halten. So können Sie die Ergebnisse des Befehls vor und nach der Ausführung vergleichen.
+<Callout type="info">
+**Hinweis**
+- Der Slide-Befehl verfügt über eine Umschaltfunktion, mit der Sie durch Gedrückthalten von <kbd>Ctrl</kbd> zwischen Vorschau- und Aktivmodus wechseln können. So lassen sich die Ergebnisse vor und nach dem Befehl vergleichen. 
 </Callout>
 
 ## Siehe auch
-- [Steuerelementpunkt verschieben](/common/move#move-control-point)
+- [Kontrollpunkt verschieben](/common/move#move-control-point)

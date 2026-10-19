@@ -17,14 +17,19 @@ import Kst from '/components/KeyboardShortcutsTitle'
 
 ## Description
 
-Wrap existing solid and sheet objects onto a regular and irregular surface.
+Wrap existing solid and sheet objects onto a regular and irregular surface. Now supports deforming objects using curves as reference.
 
 ## Basic Usage
 
 1. Select the objects you want to wrap.
 2. Type **Deform** in the Command Palette.
-3. Select a reference face as a neutral plane.
-4. Select the target face to deform objects with.
+3. Select a reference entity as a neutral plane:
+      - **Faces:** Select a face to use as a reference for the deformation.
+            - Check out [Surface Deformation Using the Unwrap Face Command](#surface-deformation-using-the-unwrap-face-command) for more information on how to generate a correctly mapped surface to use as a reference face.
+      - **Curves:** Select a curve to use as a reference for the deformation. It's adviced to make the reference curve a straight line to avoid unwanted deformation and errors later on.
+4. Select the target entity to deform objects with:
+      - **Faces:** Select a face to use as a target for the deformation.
+      - **Curves:** Select a curve to use as a target for the deformation. Only possible when Curve is a reference entity.
 5. Set the options in the Command Dialog.
     - <Kst>Command Dialog</Kst>
           - **Scale:** Scale in **U, V, N** Value.  
@@ -39,7 +44,7 @@ Wrap existing solid and sheet objects onto a regular and irregular surface.
 
 <VideoPlayer fileName="deform-solid"/>
 
-<Callout type="info" emoji="ℹ️">
+<Callout type="info">
 Scale and Offset uses a **UVN** coordinate system instead of **XYZ** coordinate system when adjusting the parametric value, allowing you to define the orientation of the deformed objects at a specific point in relation to the target surface. For more information on the UVN coordiante system, click [here](/cad-essentials/uvn-coordinate-system).
 </Callout>
 

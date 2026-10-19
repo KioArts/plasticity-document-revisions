@@ -1,0 +1,79 @@
+import VideoPlayer from '/components/VideoPlayer';
+import ButtonIcon from '/components/ButtonIcon'
+import Kst from '/components/KeyboardShortcutsTitle'
+import Reference from '/components/Reference'
+import { Callout } from 'nextra/components'
+
+# マテリアル
+
+マテリアルセクションには、現在のPlasticityプロジェクトで使用されているすべてのマテリアルが表示されます。 
+
+![Materials](/img/materials.png)
+
+## 表示されるマテリアル
+
+- 作成したすべてのマテリアルは、**Used Materials**(使用中のマテリアル)セクションに表示されます。  
+- マテリアルのプロパティを変更すると、そのマテリアルを使用しているすべてのオブジェクトがリアルタイムで更新されます。  
+- マテリアルはリストから削除できません。そのマテリアルを参照しているすべてのオブジェクトがシーンから削除された場合にのみ、リストから消えます。  
+- マテリアルを他のオブジェクトに割り当てるには、**Used Materials** または **Materials Library**(マテリアルライブラリ)セクションから対象のオブジェクトにドラッグ&ドロップするだけです。  
+
+## マテリアルの選択
+
+- マテリアルを右クリックすると「Select All with This Material」(このマテリアルを持つものをすべて選択)オプションが表示され、そのマテリアルを共有するすべてのオブジェクトをすばやく選択できます。
+
+![Select Objects with Shared Materials](/img/materials-select-materials.png)
+
+## 物理マテリアル
+
+マテリアルパネルの下部には、Plasticityに付属する豊富な物理マテリアル(Physical Materials)が用意されています。正しく表示するには、[レンダーモード](/plasticity-essentials/render-mode)を有効にして、オブジェクト上でシェーダーが可視化されるようにしてください。 
+
+### 物理マテリアルの編集
+
+各マテリアルには、**Texture**カテゴリに固有のマテリアルプロパティを含むプリセットが付属しています。キーボードの <kbd>M</kbd> を押すと、これらのプロパティを編集できます。
+
+- **Texture scale(テクスチャスケール):** テクスチャ全体のスケールを調整します。
+- **Blending(ブレンド):** トライプラナー投影のブレンドを制御します。値0では最大のブレンドが適用され、7では境界部分にブレンドが適用されません。目立つ継ぎ目を隠すのに便利です。
+- **Rotate(回転):** オブジェクトに適用されたマテリアルを回転します。
+            - **Rotate X:** ワールド座標のX軸を中心にマテリアル全体を回転します。
+            - **Rotate Y:** ワールド座標のY軸を中心にマテリアル全体を回転します。
+            - **Rotate Z:** ワールド座標のZ軸を中心にマテリアル全体を回転します。
+
+![Physical Material - Edit](/img/physical-materials.png)
+
+{/* <VideoPlayer fileName="physical-material"/> */}
+
+### 表示されるマテリアル
+
+以下は、プレビュー可能なすべての物理マテリアルの一覧表です。
+
+| 名前   | サムネイルプレビュー   | 名前   | サムネイルプレビュー    |
+|:------:|:---------------------:|:------:|:----------------------:|
+|Aluminum |![Aluminum](/img/aluminum.png)| Brass   | ![Brass](/img/brass.png)  |
+|Aluminum Brushed|![Aluminum Brushed](/img/aluminum-brushed.png)| Brass Oxidized  | ![Brass Oxidized](/img/brass-oxidized.png)   |
+|Aluminum Matte|![Aluminum Matte](/img/aluminum-matte.png)| Car Paint   | ![Car Paint](/img/car-paint.png) |
+|Gold Foil | ![Gold Foil](/img/gold-foil.png)  | Concrete     | ![Concrete](/img/concrete.png)  |
+|White Plastic | ![White Plastic](/img/white-plastic.png) | Royal Blue Linen      | ![Royal Blue Linen](/img/royal-blue-linen.png)  |
+|Rubber | ![Rubber](/img/rubber.png) | Porcelain Fabric  | ![Porcelain Fabric](/img/porcelain-fabric.png)  |
+|Plastic Rough | ![Plastic Rough](/img/plastic-rough.png)  | Brown Leather     | ![Brown Leather](/img/brown-leather.png) |
+|Nickel | ![Nickel](/img/nickel.png)  | Milan Polished Marble     | ![Milan Polished Marble](/img/milan-polished-marble.png)   |
+|Nickel Oxidized | ![Nickel Oxidized](/img/nickel-oxidized.png)   | Cathedral Tile     | ![Cathedral Tile](/img/cathedral-tile.png) |
+|Iron | ![Iron](/img/iron.png)  | Stainless Steel Brushed     | ![Stainless Steel Brushed](/img/stainless-steel-brushed.png) |
+|Gold | ![Gold](/img/gold.png)   |  Simple Plaster    | ![Simple Plaster](/img/simple-plaster.png)  |
+|Copper | ![Copper](/img/copper.png)   |Sandstone    | ![Sandstone](/img/sandstone.png) |
+|Copper Oxidized    | ![Copper Oxidized](/img/copper-oxidized.png)  |  Perforated Metal    | ![Perforated Metal](/img/perforated-netal.png) |
+|Copper Brushed   | ![Copper Brushed](/img/copper-brushed.png)  | Hex Metal    | ![Hex Metal](/img/hex-metal.png) |
+|Copper Old    | ![Copper Old](/img/copper-old.png)   | Wood Dark Maple    | ![Wood Dark Maple](/img/wood-dark-maple.png)  |
+|Chrome    | ![Chrome](/img/chrome.png)   | Wood Painted Green    | ![Wood Painted Green](/img/wood-painted-green.png)   |
+|Bronze    | ![Bronze](/img/bronze.png)   | Wood Walnut    | ![Wood Walnut](/img/wood-walnut.png)  |
+|Bronze Oxidized    | ![Bronze Oxidized](/img/bronze-oxidized.png)   |    |    |
+
+
+
+<Callout type="info">
+**注意**
+- オブジェクトをメッシュまたはCADファイルとしてエクスポートした場合、BlenderやMayaなどのDCC(Digital Content Creation)ソフトウェアにインポートしても、物理マテリアルのプロパティは保持されません。これらのマテリアルはPlasticity内での可視化を目的としており、マテリアルシェーダーを使ってオブジェクトのコンセプトを提示できるようにするものです。
+</Callout>
+
+## 関連項目
+- [Set Material](/common/set-material)
+- [View Mode](/plasticity-essentials/plasticity-interface/view-mode)

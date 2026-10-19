@@ -8,7 +8,7 @@ import { Tabs } from 'nextra/components'
 ## Shader Mode
 - You can switch between Plasticity's built-in shaders by clicking on them. When [Render mode](/plasticity-essentials/render-mode) is off, selected Plasticity matcaps will be applied and displayed on objects.
 
-- Available matcaps:
+### Available Matcaps
 
 ![Matcaps in Shader Mode](/img/shader-mode-preview.png)
 
@@ -28,12 +28,13 @@ import { Tabs } from 'nextra/components'
 | Vertical Zebra Reflection     |  12     |  Surface Continuity Checker                 |  Adjust the number of zebra stripes in the **"Material Options"** menu.  |
 | Topography Shader    |  13    |  Surface Checker                 |  Use on imported mesh files to trace or create a wireframe look for reverse engineering purposes. This is useful for analyzing complex organic shapes with intricate curves and deformations, which may not be as easily visible when using highlighters or other shaders. You can adjust the direction and line distribution in the **"Material Options"** panel. |
 | Face direction     |  14    |  Normal Surface Checker                 |  Use this shader to check if any surfaces are reversed. Blue indicates that the surface is facing outward, while red indicates it is facing inward. |
+| Curvature | 15 | Curvature Analysis Checker | <p>Use this shader to check for curvature variations across the surface using a colormap to visualize whether the surface has consistent curvature or not.</p><p>**Gaussian:** Finds inflection points (green = zero curvature) where the surface transitions from bulging one way to the opposite. Best for catching discontinuities and validating smooth transitions.</p><p>**Mean:** Averages both surface directions for an overall smoothness read. Less sensitive than Gaussian; use after fixes to verify smooth flow without false alarms.</p><p>**Max:** Isolates the direction with the highest bending. Typically used to find problematic areas when thickening or offsetting surfaces, since it reveals regions that would self-intersect at a given offset distance. Also useful for comparing surfaces or debugging why one direction curves differently than expected.</p> |
 
 ## Ambient Occlusion (AO)
 
-Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius **(1)** and falloff **(2)** in the Appearance section in the Preferences menu.
+Ambient Occlusion is turned off by default. However, you can enable it in the Performance section in the [Preferences](/plasticity-essentials/preferences) menu. Enabling AO is recommended for machines with high-end GPUs. You can adjust its appearance such as the radius **(1)** and falloff **(2)** in the Options section in Render Mode.
 
-![Ambient Occlusion Settings](/img/ao-settings.png)
+![Ambient Occlusion Settings](/img/render-mode-ao-settings.png)
 
 ## All Matcaps
 - Custom matcaps appear under the "All Matcaps" category.
@@ -69,6 +70,38 @@ Ambient Occlusion is turned off by default. However, you can enable it in the Pe
 - Make sure you enable the option to view hidden folders in your operating system to access the `.plasticity` directory.
 </Callout>
 
+### Tintable Custom Matcaps
+
+You can control whether a custom matcap is tinted or untinted by adding a JSON file next to your matcap files. The JSON file must have the same name as the matcap.
+
+For example, if your matcap files are `my_matcap.png` and `my_matcap.exr`, create a file named `my_matcap.json` with the following content:
+
+```json
+{
+  "isTinted": true
+}
+```
+
+Set `isTinted` to `true` for a tinted matcap, or `false` for an untinted one.
+
+#### Creating JSON File
+
+1. Create a new text file using any text editor (Notepad, TextEdit, VS Code, etc.).
+2. Paste the following into the file:
+
+    ```json
+       {
+         "isTinted": true
+       }
+    ```
+
+3. Save the file with the same name as your matcap (for example, `my_matcap`), and change the extension to `.json`.
+
+4. Place the JSON file in the same folder as your matcap files. The matcap will now use the tint setting you specified.
+
+![Installing JSON File Example](/img/installing-json-file.png)
+
+
 ### Toggle Show Edges, Curves, and Faces
 
 - Edges, curves, and faces can be shown or hidden using the toggle buttons.
@@ -78,8 +111,9 @@ Ambient Occlusion is turned off by default. However, you can enable it in the Pe
 | Function                                                      | Shortcut | Button | Command Name           |
 | ------------------------------------------------------------- | ------- | ------ | ---------------------- |
 | Toggle show Edges <br />(Turning this off will hide the Edges.) |         | (15)   | Viewport: toggle Edges |
-| Toggle show Curves <br />(Turning this off will hide the Curves.) |         | (16)   | Viewport: toggle Curves |
+| Toggle show Curves <br />(Turning this off will hide the Curves.) |       | (16)   | Viewport: toggle Curves |
 | Toggle show Faces <br />(Turning this off will hide the Faces.) |         | (17)   | Viewport: toggle Faces |
+| Toggle show Constraints <br />(Turning this off will hide the Constraints.) |         | (18)   | Viewport: toggle Constraints |
  
 
 ### See Also
