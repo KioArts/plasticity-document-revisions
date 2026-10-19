@@ -3,48 +3,48 @@ import Reference from '/components/Reference'
 import Kst from '/components/KeyboardShortcutsTitle'
 import { Tabs } from 'nextra/components'
 
-# シェーダーモード
+# Shader Mode
 
-## シェーダーモード
-- Plasticityに内蔵されているシェーダーは、クリックして切り替えることができます。[レンダーモード](/plasticity-essentials/render-mode)がオフのときは、選択したPlasticityのマットキャップがオブジェクトに適用されて表示されます。
+## Shader Mode
+- Plasticity に組み込まれているシェーダーは、クリックすることで切り替えられます。[Render mode](/plasticity-essentials/render-mode) がオフの場合、選択した Plasticity のマットキャップがオブジェクトに適用されて表示されます。
 
 ### 利用可能なマットキャップ
 
 ![Matcaps in Shader Mode](/img/shader-mode-preview.png)
 
 | 名前 | 番号 | 用途 | 備考 |
-| ---- | ------ | ------------- | ---- |
+| ---- | ---- | ---- | ---- |
 | Ceramic Dark|   1    | デフォルトの外観 |  -  |
 | Metal Carpaint   |   2    |   光沢のある外観    |  -  |
 | Dark Shiny  |  3     |  光沢のある外観     |  -  |
 | Gradient  |    4   |   環境グラデーションの外観    |  -  |
-| Ceramic Lightbulb  |   5    |  ハイライトチェッカー     |  [レンダーモード](/plasticity-essentials/render-mode)がオフのときは、異なるマテリアルカラーを割り当てて、ビューポートにリアルタイムで表示できます。 |
-| Color Matcap |   6    |  マットな外観   | [レンダーモード](/plasticity-essentials/render-mode)がオフのときは、異なるマテリアルカラーを割り当てて、ビューポートにリアルタイムで表示できます。 |
-| Black Silhouette     |  7     |  シルエットチェッカー |  -   |
-| Color Silhouette    |  8     |  カラー付きシルエットチェッカー | [レンダーモード](/plasticity-essentials/render-mode)がオフのときは、異なるマテリアルカラーを割り当てて、ビューポートにリアルタイムで表示できます。 |
-| Isophote/Isoangle   |   9     |   静的なサーフェス連続性チェッカー         | シェーダーは現在のカメラ角度に基づいてオブジェクトに適用されます。縞の密度は **「Material Options」** メニューで調整できます。 |
-| Draft Angle          |   10    | 金型抜き用の抜き勾配チェッカー       |  抜き角度は、現在の構築平面に基づいてオブジェクト上に表示されます。構築平面を基準とした抜き角度のしきい値(青)は、**「Material Options」** メニューで調整できます。 |
-| Horizontal Zebra Reflection    |  11     |   サーフェス連続性チェッカー                |  ゼブラ縞の本数は **「Material Options」** メニューで調整できます。 |
-| Vertical Zebra Reflection     |  12     |  サーフェス連続性チェッカー                 |  ゼブラ縞の本数は **「Material Options」** メニューで調整できます。  |
-| Topography Shader    |  13    |  サーフェスチェッカー                 |  インポートしたメッシュファイルに使用すると、リバースエンジニアリング目的でトレースしたり、ワイヤーフレーム風の見た目を作成したりできます。複雑な曲線や変形を持つ有機的な形状の解析に便利で、ハイライターや他のシェーダーでは見えにくい場合があります。方向と線の分布は **「Material Options」** パネルで調整できます。 |
-| Face direction     |  14    |  サーフェス法線チェッカー                 |  このシェーダーを使用して、反転しているサーフェスがないか確認できます。青はサーフェスが外向き、赤は内向きであることを示します。 |
-| Curvature | 15 | 曲率解析チェッカー | <p>このシェーダーを使用すると、カラーマップでサーフェス全体の曲率の変化を可視化し、曲率が一定かどうかを確認できます。</p><p>**Gaussian:** 変曲点(緑 = 曲率ゼロ)、つまりサーフェスが一方向への膨らみから反対方向へ移り変わる箇所を見つけます。不連続の検出や、滑らかな遷移の検証に最適です。</p><p>**Mean:** 2つのサーフェス方向を平均して、全体的な滑らかさを把握します。Gaussianより感度が低く、修正後に誤検出なく滑らかな流れを確認するのに使用します。</p><p>**Max:** 最も大きく曲がっている方向を抽出します。サーフェスの厚み付けやオフセットを行う際に、特定のオフセット距離で自己交差する領域を示すため、問題のある箇所を見つけるのによく使われます。また、サーフェスの比較や、一方向の曲がり方が想定と異なる理由のデバッグにも役立ちます。</p> |
+| Ceramic Lightbulb  |   5    |  ハイライトチェック     |  [Render Mode](/plasticity-essentials/render-mode) がオフの場合、異なるマテリアルカラーを割り当てて、ビューポートでリアルタイムに表示できます。 |
+| Color Matcap |   6    |  マットな外観   | [Render Mode](/plasticity-essentials/render-mode) がオフの場合、異なるマテリアルカラーを割り当てて、ビューポートでリアルタイムに表示できます。 |
+| Black Silhouette     |  7     |  シルエットチェック |  -   |
+| Color Silhouette    |  8     |  カラー付きシルエットチェック | [Render Mode](/plasticity-essentials/render-mode) がオフの場合、異なるマテリアルカラーを割り当てて、ビューポートでリアルタイムに表示できます。 |
+| Isophote/Isoangle   |   9     |   静的なサーフェス連続性チェック         | シェーダーは現在のカメラアングルに基づいてオブジェクトに適用されます。ストライプの密度は **"Material Options"** メニューで調整できます。 |
+| Draft Angle          |   10    | 金型の抜き勾配チェック       |  抜き角度は現在のコンストラクションプレーンに基づいてオブジェクト上に表示されます。コンストラクションプレーンを基準とした抜き角度のしきい値（青）は **"Material Options"** メニューで調整できます。 |
+| Horizontal Zebra Reflection    |  11     |   サーフェス連続性チェック                |  ゼブラストライプの本数は **"Material Options"** メニューで調整できます。 |
+| Vertical Zebra Reflection     |  12     |  サーフェス連続性チェック                 |  ゼブラストライプの本数は **"Material Options"** メニューで調整できます。  |
+| Topography Shader    |  13    |  サーフェスチェック                 |  インポートしたメッシュファイルに使用すると、リバースエンジニアリング用にトレースしたり、ワイヤーフレーム風の表示を作成したりできます。ハイライターや他のシェーダーでは見えにくい、複雑な曲線や変形を持つ有機的な形状の分析に便利です。方向とラインの分布は **"Material Options"** パネルで調整できます。 |
+| Face direction     |  14    |  法線サーフェスチェック                 |  このシェーダーを使って、反転しているサーフェスがないかを確認できます。青はサーフェスが外向き、赤は内向きであることを示します。 |
+| Curvature | 15 | 曲率解析チェック | <p>このシェーダーを使うと、カラーマップによってサーフェス全体の曲率の変化を可視化し、曲率が一定かどうかを確認できます。</p><p>**Gaussian:** サーフェスがある方向の膨らみから反対方向の膨らみへ切り替わる変曲点（緑 = 曲率ゼロ）を検出します。不連続の発見やスムーズな遷移の検証に最適です。</p><p>**Mean:** 両方向の曲率を平均して、全体的な滑らかさを把握します。Gaussian よりも感度が低く、修正後に誤検出なしで滑らかな流れを確認する際に使用します。</p><p>**Max:** 最も大きく曲がっている方向を抽出します。サーフェスのシック化（厚み付け）やオフセットの際に、指定したオフセット距離で自己交差する領域を示すため、問題箇所の特定に使われます。サーフェス同士の比較や、ある方向だけ想定と異なる曲がり方をする原因のデバッグにも役立ちます。</p> |
 
-## アンビエントオクルージョン (AO)
+## Ambient Occlusion (AO)
 
-アンビエントオクルージョンはデフォルトでオフになっています。ただし、[環境設定](/plasticity-essentials/preferences)メニューのPerformanceセクションで有効にできます。ハイエンドGPUを搭載したマシンではAOの有効化を推奨します。半径 **(1)** や減衰 **(2)** などの見た目は、レンダーモードのOptionsセクションで調整できます。
+Ambient Occlusion はデフォルトでオフになっています。[Preferences](/plasticity-essentials/preferences) メニューの Performance セクションで有効にできます。AO の有効化は、ハイエンド GPU を搭載したマシンで推奨されます。半径 **(1)** やフォールオフ **(2)** などの外観は、Render Mode の Options セクションで調整できます。
 
 ![Ambient Occlusion Settings](/img/render-mode-ao-settings.png)
 
 ## All Matcaps
-- カスタムマットキャップは「All Matcaps」カテゴリに表示されます。
+- カスタムマットキャップは "All Matcaps" カテゴリに表示されます。
 
 ![Custom Matcaps](/img/custom-matcaps-preview.png)
 
 ### カスタムマットキャップのインストール
 
-1. カスタムマットキャップファイルを用意します。EXRファイルとPNGファイルの名前は同一にしてください。
-2. お使いのOSで `.plasticity` ディレクトリを見つけ、「matcaps」という名前の新しいフォルダを作成します。
+1. カスタムマットキャップのファイルを用意します。EXR ファイルと PNG ファイルの名前は同一にしてください。
+2. お使いのオペレーティングシステムで `.plasticity` ディレクトリを探し、"matcaps" という名前の新しいフォルダを作成します。
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
     `C:/Users/<username>/.plasticity` に移動します。
@@ -56,25 +56,25 @@ import { Tabs } from 'nextra/components'
     `C:/usr/lib/plasticity/resources/app/.webpack/main/dot-plasticity` に移動します。
     </Tabs.Tab>
 </Tabs>
-3. カスタムマットキャップファイルをこのフォルダに移動し、Plasticityを再起動して変更を反映します。
+3. カスタムマットキャップのファイルをこのフォルダに移動し、Plasticity を再起動して変更を反映させます。
 
 ![Installing Matcaps](/img/installing-matcaps-preview.png)
 
 <Callout type="info" emoji="💡">
 **ヒント**     
-- EXRファイルとPNGファイルの両方を、背景が透明な512x512ピクセルにしてください。EXRファイルは、16ビット以上のカラー範囲にする必要もあります。
+- EXR ファイルと PNG ファイルは、どちらも背景が透明な 512x512 ピクセルにしてください。また、EXR ファイルは少なくとも 16 ビットのカラーレンジにする必要があります。
 </Callout>
 
 <Callout emoji="❗">
 **注意**     
-- `.plasticity` ディレクトリにアクセスするには、お使いのOSで隠しフォルダを表示するオプションを有効にしてください。
+- `.plasticity` ディレクトリにアクセスするには、お使いのオペレーティングシステムで隠しフォルダを表示するオプションを有効にしてください。
 </Callout>
 
-### 着色可能なカスタムマットキャップ
+### ティント可能なカスタムマットキャップ
 
-マットキャップファイルの隣にJSONファイルを追加することで、カスタムマットキャップを着色する(tinted)か、しない(untinted)かを制御できます。JSONファイルの名前は、マットキャップと同じにする必要があります。
+マットキャップのファイルと同じ場所に JSON ファイルを追加することで、カスタムマットキャップをティント（着色）あり／なしのどちらにするかを制御できます。JSON ファイルの名前はマットキャップと同じにする必要があります。
 
-たとえば、マットキャップファイルが `my_matcap.png` と `my_matcap.exr` の場合、次の内容で `my_matcap.json` というファイルを作成します。
+たとえば、マットキャップのファイルが `my_matcap.png` と `my_matcap.exr` の場合、次の内容で `my_matcap.json` というファイルを作成します。
 
 ```json
 {
@@ -82,11 +82,11 @@ import { Tabs } from 'nextra/components'
 }
 ```
 
-着色するマットキャップには `isTinted` を `true` に、着色しないものには `false` に設定します。
+ティントありのマットキャップにするには `isTinted` を `true`、ティントなしにするには `false` に設定します。
 
-#### JSONファイルの作成
+#### JSON ファイルの作成
 
-1. 任意のテキストエディタ(メモ帳、TextEdit、VS Codeなど)で新しいテキストファイルを作成します。
+1. 任意のテキストエディタ（メモ帳、TextEdit、VS Code など）で新しいテキストファイルを作成します。
 2. ファイルに次の内容を貼り付けます。
 
 ```json
@@ -95,24 +95,25 @@ import { Tabs } from 'nextra/components'
        }
 ```
 
-3. マットキャップと同じ名前(例: `my_matcap`)でファイルを保存し、拡張子を `.json` に変更します。
+3. マットキャップと同じ名前（例：`my_matcap`）でファイルを保存し、拡張子を `.json` に変更します。
 
-4. JSONファイルを、マットキャップファイルと同じフォルダに配置します。これでマットキャップは、指定した着色設定を使用するようになります。
+4. JSON ファイルをマットキャップのファイルと同じフォルダに置きます。これで、マットキャップは指定したティント設定を使用するようになります。
 
 ![Installing JSON File Example](/img/installing-json-file.png)
 
 
 ### エッジ、カーブ、フェースの表示切り替え
 
-- エッジ、カーブ、フェースは、切り替えボタンで表示/非表示にできます。
+- エッジ、カーブ、フェースは、切り替えボタンで表示／非表示にできます。
 
 ![Toggle Options in All Matcaps](/img/toggle-edges-curves-faces.png)
 
 | 機能                                                      | ショートカット | ボタン | コマンド名           |
 | ------------------------------------------------------------- | ------- | ------ | ---------------------- |
-| エッジの表示を切り替え <br />(オフにするとエッジが非表示になります。) |         | (15)   | Viewport: toggle Edges |
-| カーブの表示を切り替え <br />(オフにするとカーブが非表示になります。) |         | (16)   | Viewport: toggle Curves |
-| フェースの表示を切り替え <br />(オフにするとフェースが非表示になります。) |         | (17)   | Viewport: toggle Faces |
+| エッジの表示切り替え <br />（オフにするとエッジが非表示になります。） |         | (15)   | Viewport: toggle Edges |
+| カーブの表示切り替え <br />（オフにするとカーブが非表示になります。） |       | (16)   | Viewport: toggle Curves |
+| フェースの表示切り替え <br />（オフにするとフェースが非表示になります。） |         | (17)   | Viewport: toggle Faces |
+| コンストレイントの表示切り替え <br />（オフにするとコンストレイントが非表示になります。） |         | (18)   | Viewport: toggle Constraints |
  
 
 ### 関連項目
