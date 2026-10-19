@@ -3,47 +3,47 @@ import { Tabs } from 'nextra/components'
 
 # Radialmenü
 
-Das Radialmenü ist eine kreisförmige Schnittstelle zum Ausführen von Befehlen. Sie können alle in Plasticity verfügbaren Befehle ausführen. Standardmäßig gibt es zwei Radialmenüs: "Selection mode" und "Viewport settings". Zusätzlich können Benutzer ihre eigenen benutzerdefinierten Radialmenüs erstellen.
+Das Radialmenü ist eine kreisförmige Oberfläche zum Ausführen von Befehlen. Du kannst damit alle in Plasticity verfügbaren Befehle ausführen. Standardmäßig gibt es zwei Radialmenüs: **"Selection mode"** und **"Viewport settings"**. Zusätzlich können Benutzer eigene Radialmenüs erstellen.
 
-![Radialmenü](/img/radial-menu.png)
+![Radial Menu](/img/radial-menu.png)
 
-## Einrichten des Radialmenü
+## Radialmenü einrichten
 
-Um die standardmäßigen Radialmenüs "Selection mode" und "Viewport settings" zu verwenden, ist eine Einrichtung erforderlich.
+Um die standardmäßigen Radialmenüs **"Selection mode"** und **"Viewport settings"** zu verwenden, ist eine Einrichtung erforderlich.
 
-1. Laden Sie die folgenden zwei Textdateien herunter: Wenn Sie klicken, wird der Inhalt des Textes angezeigt. Klicken Sie oben rechts auf "Download".
+1. Lade die folgenden zwei Textdateien herunter: Beim Anklicken wird der Inhalt der Datei angezeigt. Klicke oben rechts auf "Download".
     - [selection-mode.radial.json](https://app.box.com/s/xrh5xjepvcio33fvmy4thbc00ady5p4k)
     - [viewport-settings.radial.json](https://app.box.com/s/g9hlphfr4shjhkf2c5gfdknnxudq8ouu)
-2. Ziehen Sie die heruntergeladenen Dateien in Plasticitys 3D-Viewport.
-3. Obwohl keine sichtbaren Änderungen auf dem Bildschirm erfolgen, ist die Definition des Radialmenüs nun geladen und einsatzbereit.
+2. Ziehe die heruntergeladenen Dateien per Drag & Drop in den 3D-Viewport von Plasticity.
+3. Auch wenn auf dem Bildschirm keine sichtbare Änderung erscheint, ist die Definition des Radialmenüs jetzt geladen und einsatzbereit.
 
-Sie müssen Tastenkombinationen zuweisen, um auf die Radialmenüs zuzugreifen.
+Du musst Tastenkürzel zuweisen, um auf die Radialmenüs zuzugreifen.
 
-4. Drücken Sie die <kbd>F</kbd>-Taste, um die Command Palette zu öffnen.
-5. Geben Sie "menu" in die Command Palette ein. Sie sehen Einträge für "Radial Menu: Selection Mode" und "Radial Menu: Viewport Settings".
-6. Klicken Sie mit der rechten Maustaste auf "Radial Menu: Selection Mode" und weisen Sie eine Tastenkombination zu. Für Anweisungen zum Zuweisen von Tastenkombinationen siehe [diesen Abschnitt](command-palette#assign-a-shortcut).
-7. Klicken Sie mit der rechten Maustaste auf "Radial Menu: Viewport Settings" und weisen Sie eine Tastenkombination zu.
-8. Jetzt können Sie das Radialmenü anzeigen, indem Sie die zugewiesene Tastenkombination drücken.
+4. Drücke die Taste <kbd>F</kbd>, um die Befehlspalette zu öffnen.
+5. Gib "menu" in die Befehlspalette ein. Du siehst die Einträge **"Radial Menu: Selection Mode"** und **"Radial Menu: Viewport Settings"**.
+6. Klicke mit der rechten Maustaste auf **"Radial Menu: Selection Mode"** und weise ein Tastenkürzel zu. Eine Anleitung zum Zuweisen von Tastenkürzeln findest du in [diesem Abschnitt](/plasticity-essentials/plasticity-interface/command-palette#assign-a-shortcut).
+7. Klicke mit der rechten Maustaste auf **"Radial Menu: Viewport Settings"** und weise ein Tastenkürzel zu.
+8. Wenn du jetzt das zugewiesene Tastenkürzel drückst, wird das Radialmenü angezeigt.
 
-## Verwendung des Radialmenü
+## Radialmenü verwenden
 
-Wie bei anderen Befehlen können Sie das Radialmenü anzeigen, indem Sie seine Tastenkombination drücken.
+Wie andere Befehle kannst du das Radialmenü durch Drücken seines Tastenkürzels anzeigen.
 
-1. Drücken Sie die zuvor eingerichtete Tastenkombination.
-2. Das Radialmenü wird zentriert zu Ihrem Cursor angezeigt.
-3. Klicken Sie auf einen Artikel im Menü, um den Befehl auszuführen.
-4. Alternativ können Sie die Tastenkombination gedrückt halten, über einen Artikel fahren und die Taste loslassen, um den Befehl auszuführen.
+1. Drücke das Tastenkürzel, das du zuvor eingerichtet hast.
+2. Das Radialmenü erscheint zentriert um deinen Cursor.
+3. Klicke auf einen Eintrag im Menü, um den Befehl auszuführen.
+4. Alternativ kannst du die Kürzeltaste gedrückt halten, mit dem Cursor über einen Eintrag fahren und die Taste loslassen, um den Befehl auszuführen.
 
 <VideoPlayer fileName="radial-menu"/>
 
-## Erstellen eines neuen Radialmenü
+## Neues Radialmenü erstellen
 
-Sie können ein Radialmenü mit einem gewünschten Befehl erstellen. Der Menüname und seine Befehle werden in einer Textdatei festgelegt. <br />
-Zum Beispiel entwerfen wir ein "My Menu" Radialmenü mit "Spline Curve", "Bridge" und "Lock Selected", zugänglich über die Tastenkombination <kbd>Strg + Umschalt + F</kbd>.
+Du kannst ein Radialmenü mit beliebigen Befehlen erstellen. Der Menüname und die Befehle werden in einer Textdatei festgelegt. <br />
+Als Beispiel erstellen wir ein Radialmenü "My Menu" mit "Spline Curve", "Bridge" und "Lock Selected", das über das Tastenkürzel <kbd>Ctrl + Shift + F</kbd> erreichbar ist.
 
-1. Öffnen Sie einen Texteditor und erstellen Sie ein neues Dokument.
-2. Speichern Sie das Dokument mit dem Dateinamen "mymenu.radial.json".
-3. Geben Sie folgendes ein:
+1. Öffne einen Texteditor und erstelle ein neues Dokument.
+2. Speichere das Dokument unter dem Dateinamen "mymenu.radial.json".
+3. Gib Folgendes ein:
 
 ```json filename="mymenu.radial.json" copy 
 {
@@ -68,83 +68,81 @@ Zum Beispiel entwerfen wir ein "My Menu" Radialmenü mit "Spline Curve", "Bridge
     ]
 }
 ```
-Erklärung: (Bitte beachten Sie, dass die Erklärungen, die mit // beginnen, nur zur Referenz dienen und nicht in die tatsächliche Datei aufgenommen werden sollten.)
-- **name:** Stellt den Titel des Radialmenüs dar. Sie können einen beliebigen Namen wählen. Er wird in der Befehlspalette angezeigt und nimmt das Format "Radial Menu: (name)" an.
-- **command:** Ein eindeutiger Bezeichner für das Radialmenü. Um Konflikte mit vorhandenen Befehlen zu vermeiden, ziehen Sie in Betracht, den Namen des Autors oder andere einzigartige Elemente einzubeziehen.
-- **items:** Listet die in das Radialmenü integrierten Befehle auf. Sie können mehrere Befehle einfügen.
-    - **command:** Die interne Bezeichnung für den zu integrierenden Befehl. Eine Liste dieser Bezeichnungen finden Sie [hier](#internal-designation-for-the-command).
-    - **icon:** Gibt das Symbol an, das im Radialmenü erscheint. Beachten Sie, dass einige Befehle möglicherweise kein voreingestelltes Symbol haben.
-    - **label:** Das zentrale Label im Radialmenü. Wenn es kein entsprechendes Symbol gibt, werden die ersten beiden Zeichen des Labels angezeigt.
+Erklärung: (Bitte beachte, dass die mit // beginnenden Erklärungen nur zur Orientierung dienen und nicht in die eigentliche Datei übernommen werden dürfen.)
 
+- **name:** Der Titel des Radialmenüs. Du kannst einen beliebigen Namen wählen. Er wird in der Befehlspalette angezeigt und erhält das Format "Radial Menu: (name)".
+- **command:** Eine eindeutige Kennung für das Radialmenü. Um Konflikte mit bestehenden Befehlen zu vermeiden, solltest du den Namen des Autors oder andere eindeutige Elemente einbauen.
+- **items:** Listet die Befehle auf, die in das Radialmenü integriert sind. Du kannst mehrere Befehle hinzufügen.
+    - **command:** Die interne Bezeichnung des Befehls, der eingebunden werden soll. Eine Liste dieser Bezeichnungen findest du [hier](#interne-bezeichnung-des-befehls).
+    - **icon:** Das Symbol, das im Radialmenü erscheint. Beachte, dass manche Befehle möglicherweise kein voreingestelltes Symbol haben.
+    - **label:** Die zentrale Beschriftung im Radialmenü. Wenn kein passendes Symbol vorhanden ist, werden die ersten zwei Zeichen der Beschriftung angezeigt.
 ```json
 {
-    "name": "My Menu",      // Stellt den Titel des Radialmenüs dar
-    "command": "your-name:mymenu",   // Ein eindeutiger Bezeichner für das Radialmenü
+    "name": "My Menu",      // Der Titel des Radialmenüs
+    "command": "your-name:mymenu",   // Eine eindeutige Kennung für das Radialmenü
     "items": [
         {
-            "command": "command:curve",  // Die interne Bezeichnung für den zu integrierenden Befehl
-            "icon": "curve",             // Bezeichnet das Symbol, das im Radialmenü erscheint
-            "label": "Curve"             // Das zentrale Label im Radialmenü
+            "command": "command:curve",  // Die interne Bezeichnung des einzubindenden Befehls
+            "icon": "curve",             // Das Symbol, das im Radialmenü erscheint
+            "label": "Curve"             // Die zentrale Beschriftung im Radialmenü
         },
         ...
     ]
 }
 ```
+4. Speichere die Datei.
+5. Ziehe die erstellte Datei per Drag & Drop in den 3D-Viewport von Plasticity.
+6. Auch wenn auf dem Bildschirm keine sichtbare Änderung erscheint, ist die Definition des Radialmenüs jetzt geladen und einsatzbereit.
+7. Drücke die Taste <kbd>F</kbd>, um die Befehlspalette zu öffnen.
+8. Gib "menu" in die Befehlspalette ein, um eine Liste aller geladenen Radialmenüs zu sehen.
+9. Klicke mit der rechten Maustaste auf "Radial Menu: My Menu" und weise das Tastenkürzel <kbd>Ctrl + Shift + F</kbd> zu. Eine Anleitung zum Zuweisen von Tastenkürzeln findest du in [diesem Abschnitt](command-palette#assign-a-shortcut).
+10. Wenn du jetzt das Tastenkürzel <kbd>Ctrl + Shift + F</kbd> drückst, wird das von dir erstellte Radialmenü angezeigt.
 
-4. Speichern Sie die Datei.
-5. Ziehen Sie die erstellte Datei per Drag & Drop in die 3D-Ansicht von Plasticity.
-6. Auch wenn keine sichtbaren Änderungen auf dem Bildschirm auftreten, ist die Definition des Radialmenüs jetzt geladen und einsatzbereit.
-7. Drücken Sie die <kbd>F</kbd> Taste, um die Befehlspalette zu öffnen.
-8. Geben Sie "menu" in die Befehlspalette ein, um eine Liste aller geladenen Radialmenüs anzuzeigen.
-9. Klicken Sie mit der rechten Maustaste auf "Radial Menu: My Menu" und weisen Sie eine Verknüpfung <kbd>Strg + Umschalt + F</kbd> zu. Anweisungen zum Zuweisen von Verknüpfungen finden Sie in [diesem Abschnitt](command-palette#assign-a-shortcut).
-10. Jetzt können Sie das von Ihnen erstellte Radialmenü anzeigen, indem Sie die Verknüpfung <kbd>Strg + Umschalt + F</kbd> drücken.
+## Radialmenü bearbeiten
 
-## Ein Radialmenü bearbeiten
+Die Dateien, die du für die Konfiguration erstellt hast, werden im Einstellungsordner von Plasticity gespeichert. Durch Bearbeiten dieser Dateien kannst du das Radialmenü ändern.
 
-Die von Ihnen für die Konfiguration erstellten Dateien werden im Plasticity-Einstellungsordner gespeichert. Durch das Bearbeiten dieser Dateien können Sie das Radialmenü ändern.
-
-1. Öffnen Sie den Einstellungsordner:
+1. Öffne den Einstellungsordner:
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigieren Sie zu `C:\Users\<user name>\.plasticity\radials`.
+    Navigiere zu `C:\Users\<username>\.plasticity\radials`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Aktivieren Sie die Einstellung, um versteckte Ordner anzuzeigen.<br />
-    Navigieren Sie zu `/Users/<user name>/.plasticity/radials/`.
+    Aktiviere die Einstellung zum Anzeigen versteckter Ordner.<br />
+    Navigiere zu `/Users/<username>/.plasticity/radials/`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Öffnen Sie den Plasticity-Einstellungsordner.
+    Öffne den Einstellungsordner von Plasticity.
     </Tabs.Tab>
 </Tabs>
-2. Suchen Sie die Konfigurationsdatei im Ordner und öffnen Sie diese Datei mit einem Texteditor.
-3. Bearbeiten Sie die Datei gemäß den gleichen Schritten, mit denen Sie sie erstellt haben.
-4. Speichern Sie die Datei.
-5. Ziehen Sie die gespeicherte Datei per Drag & Drop in die 3D-Ansicht von Plasticity.
-6. Jetzt können Sie das aktualisierte Radialmenü verwenden.
+2. Suche die Konfigurationsdatei im Ordner. Öffne sie mit einem Texteditor.
+3. Bearbeite die Datei nach denselben Schritten wie beim Erstellen.
+4. Speichere die Datei.
+5. Ziehe die gespeicherte Datei per Drag & Drop in den 3D-Viewport von Plasticity.
+6. Jetzt kannst du das aktualisierte Radialmenü verwenden.
 
-## Ein Radialmenü entfernen
+## Radialmenü entfernen
 
-Sie können ein Radialmenü entfernen, indem Sie eine bestimmte Datei in einem bestimmten Ordner löschen.
+Du kannst ein Radialmenü entfernen, indem du eine bestimmte Datei in einem bestimmten Ordner löschst.
 
-1. Öffnen Sie den angegebenen Ordner:
+1. Öffne den angegebenen Ordner:
 <Tabs items={['Windows', 'macOS', 'Linux']}>
     <Tabs.Tab>
-    Navigieren Sie zu `C:\Users\<user name>\.plasticity\radials`.
+    Navigiere zu `C:\Users\<username>\.plasticity\radials`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Aktivieren Sie die Einstellung, um versteckte Ordner anzuzeigen.<br />
-    Navigieren Sie zu `/Users/<user name>/.plasticity/radials/`.
+    Aktiviere die Einstellung zum Anzeigen versteckter Ordner.<br />
+    Navigiere zu `/Users/<username>/.plasticity/radials/`.
     </Tabs.Tab>
     <Tabs.Tab>
-    Öffnen Sie den Plasticity-Konfigurationsordner.
+    Öffne den Konfigurationsordner von Plasticity.
     </Tabs.Tab>
 </Tabs>
-2. Im Ordner finden Sie Konfigurationsdateien. Entfernen Sie die Datei, die Sie aus dem Ordner löschen möchten, und das Radialmenü wird entfernt.
+2. Im Ordner findest du Konfigurationsdateien. Entferne die Datei, die du löschen möchtest, aus dem Ordner, und das Radialmenü wird entfernt.
 
-## Wie man ein Radialmenü aus einem Radialmenü aufruft
+## So rufst du ein Radialmenü aus einem Radialmenü auf
 
-1. Erstellen Sie das Radialmenü, das aufgerufen werden soll. In diesem Fall wurde ein Radialmenü wie folgt definiert:
-
+1. Erstelle das Radialmenü, das aufgerufen werden soll. In diesem Fall wurde ein Radialmenü wie folgt definiert.
 ```json filename="2nd-my-menu.radial.json" copy 
 {
     "name": "2nd My Menu",
@@ -169,7 +167,7 @@ Sie können ein Radialmenü entfernen, indem Sie eine bestimmte Datei in einem b
 }
 ```
 
-2. Um dieses Radialmenü aus dem Radialmenü "Selection mode" aufzurufen, fügen Sie das folgende Element am Ende der Elemente hinzu. Im Befehl dieses Elements geben Sie das Wort an, indem Sie "view:radial:" vor den Befehl des aufzurufenden Radialmenüs setzen.
+2. Um dieses Radialmenü aus dem Radialmenü "Selection mode" aufzurufen, füge am Ende der Items den folgenden Eintrag hinzu. Gib im command dieses Eintrags die Kennung des aufzurufenden Radialmenüs an, indem du "view:radial:" davor setzt.
 
 ```json  copy 
 {
@@ -179,7 +177,7 @@ Sie können ein Radialmenü entfernen, indem Sie eine bestimmte Datei in einem b
 }
 ```
 
-Als Ergebnis wird die Datei selection-mode.radial.json folgendermaßen aussehen:
+Die Datei selection-mode.radial.json sieht dann so aus:
 
 ```json  filename="selection-mode.radial.json" copy 
 {
@@ -215,12 +213,12 @@ Als Ergebnis wird die Datei selection-mode.radial.json folgendermaßen aussehen:
 }
 ```
 
-Nun können Sie aus dem "Selection mode" Radialmenü das "2nd My Menu" Radialmenü aufrufen.
+Jetzt kannst du aus dem Radialmenü "Selection mode" das Radialmenü "2nd My Menu" aufrufen.
 
 
 
 
-## Interne Bezeichnung für den Befehl
+## Interne Bezeichnung des Befehls
 
 ```
 1. Commands
@@ -259,6 +257,7 @@ command:dimension
 command:dissolve
 command:draft-face
 command:duplicate
+command:edge-align
 command:export-obj
 command:export-stl
 command:export3mf
@@ -302,10 +301,11 @@ command:paste-with-placement
 command:patch
 command:pipe
 command:place
+command:poly-splines
 command:polygon
 command:project
+command:project-align
 command:push-face
-command:polysplines
 command:radial-array
 command:raise-degree
 command:rebuild
@@ -321,6 +321,7 @@ command:scale
 command:section-analysis
 command:select-adjacent
 command:select-all
+command:select-all-constraints
 command:select-all-curves
 command:select-next-entity-collection
 command:select-previous-entity-collection
@@ -418,12 +419,16 @@ viewport:focus
 viewport:navigate:back
 viewport:navigate:bottom
 viewport:navigate:front
+viewport:navigate:home
 viewport:navigate:left
 viewport:navigate:right
 viewport:navigate:selection
 viewport:navigate:top
+viewport:toggle-constraints
 viewport:toggle-edges
 viewport:toggle-faces
+viewport:toggle-images
+viewport:toggle-meshes
 viewport:toggle-orthographic
 viewport:toggle-overlays
 viewport:toggle-render-mode

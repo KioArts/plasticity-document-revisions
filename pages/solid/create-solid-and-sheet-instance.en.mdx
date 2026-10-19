@@ -21,7 +21,7 @@ import { Center } from '/components/Center'
 
 Create reusable duplicates of a Solid or Sheet object without copying the underlying geometry. An instance stores transformation data (position, pivot point, rotation, scale), material data and references the original Solid object, so any change to the master geometry is reflected instantly in all its instances. 
 
-Instances are read-only copies of their parent and cannot be edited independently. They appear with a medium to light gray surface edge color to clearly differentiate them from the original object.
+Instances are read-only copies of their parent and cannot be edited independently. They appear with a medium to light gray surface edge color to clearly differentiate them from the original object - however this can be customized in **Preferences > Appearance**.
 
 <Callout type="info">
 **Note:**    
@@ -29,9 +29,11 @@ Instances are read-only copies of their parent and cannot be edited independentl
 2. Instances work with array commands such as [**Curve Array**](/common/curve-array), [**Radial Array**](/common/radial-array), and [**Rectangular Array**](/common/rectangular-array).  
 3. Instances can also be used with the [**Mirror**](/common/mirror) command, enabling live symmetry where changes to the master geometry updates all mirrored instances automatically.
 4. Use the [**Place**](/common/place) command on created instances to place them on objects, manually adding surface detail where needed.
-5. You can now specify the color of the instance edges in the **Appearance** section of the [**Preferences**](/plasticity-essentials/preferences) menu. The default color is light gray, but you can change it to any color you prefer.
-6. Cannot use [**Copy with Placement**](/common/copy-with-placement) command on created instances for now.
+5. Instances in 26.2 version support all snapping points - See [**Snapping**](/plasticity-essentials/plasticity-interface/snap) for more information.
+6. You can now specify the color of the instance edges in the **Appearance** section of the [**Preferences**](/plasticity-essentials/preferences) menu. The default color is light gray, but you can change it to any color you prefer.
+7. Cannot use [**Copy with Placement**](/common/copy-with-placement) command on created instances for now.
 </Callout>
+
 ## Basic Usage
 
 1. Select the Solid or Sheet you want to use as the parent object.

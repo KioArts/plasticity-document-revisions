@@ -25,11 +25,13 @@ import { Center } from '/components/Center'
 
 <Callout type="info">
 **注意:**    
-1. ファスナー、パネル、繰り返し構造要素など、多数の同一パーツが必要で、かつモデルを軽量かつ管理しやすい状態に保ちたい場合は、**インスタンスを作成**コマンドを使用してください。 
-2. インスタンスは、[**カーブ配列**](/common/curve-array)、[**放射状配列**](/common/radial-array)、[**矩形配列**](/common/rectangular-array)などの配列コマンドと連携して使用できます。  
-3. インスタンスは[**ミラー**](/common/mirror)コマンドとも使用でき、マスタージオメトリへの変更がすべてのミラーインスタンスに自動的に反映されるライブシンメトリが実現できます。
-4. 作成したインスタンスに[**配置**](/common/place)コマンドを使用して、オブジェクト上に配置し、必要に応じてサーフェスの詳細を手動で追加できます。
-5. 現時点では、作成したインスタンスに[**配置してコピー**](/common/copy-with-placement)コマンドを使用することはできません。
+1. ファスナー、パネル、繰り返しの構造要素など、同一のパーツが多数必要な場合は、モデルを軽量に保ち、メンテナンスしやすくするために**Create Instance**コマンドを使用します。 
+2. インスタンスは、[**Curve Array**](/common/curve-array)、[**Radial Array**](/common/radial-array)、[**Rectangular Array**](/common/rectangular-array)などのアレイコマンドで使用できます。  
+3. インスタンスは[**Mirror**](/common/mirror)コマンドでも使用でき、マスタージオメトリへの変更がすべてのミラーインスタンスに自動的に反映されるライブシンメトリーを実現できます。
+4. 作成したインスタンスに対して[**Place**](/common/place)コマンドを使用すると、オブジェクト上に配置でき、必要に応じて手動でサーフェスのディテールを追加できます。
+5. バージョン26.2のインスタンスは、すべてのスナップポイントに対応しています。詳細は[**スナップ**](/plasticity-essentials/plasticity-interface/snap)をご覧ください。
+6. インスタンスのエッジの色を、[**環境設定**](/plasticity-essentials/preferences)メニューの**Appearance**セクションで指定できるようになりました。デフォルトの色はライトグレーですが、お好みの色に変更できます。
+7. 現時点では、作成したインスタンスに対して[**Copy with Placement**](/common/copy-with-placement)コマンドは使用できません。
 </Callout>
 
 ## 基本的な使い方
