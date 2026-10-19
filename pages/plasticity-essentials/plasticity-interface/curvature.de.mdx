@@ -5,27 +5,34 @@ import { Center } from '/components/Center'
 
 # Krümmung
 
-Das Krümmungs‑Menü befindet sich im rechten Seitenpanel und bietet direkte Kontrolle über die Anzeige von Krümmungs‑ und Kontinuitäts‑Kämmen für die Befehle [Krümmung umschalten](/tool/toggle-curvature) und [Kontinuität messen](/tool/measure-continuity).
+Das Krümmungsmenü befindet sich im rechten Seitenbereich und bietet direkte Kontrolle über die Anzeige des Krümmungs- und Stetigkeitskamms für die Befehle [Krümmung umschalten](/tool/toggle-curvature) und [Stetigkeit messen](/tool/measure-continuity).
 
 <Center 
 width="400px">
 ![Krümmungsmenü](/img/curvature-menu.svg)
 </Center>
 
-## Krümmungs‑Kamm anpassen
+## Krümmungskamm anpassen
 
-Um den Krümmungs‑Kamm zu ändern, klicken und ziehen Sie nach links oder rechts, oder geben Sie manuell einen Wert im Feld **Kamm‑Skala** ein (Standard: 0.1).  
+Um den Krümmungskamm anzupassen, klicken und ziehen Sie nach links oder rechts, oder geben Sie manuell einen Wert in das Feld „Kammskalierung“ ein (Standard: 0,1). 
 
 <Center 
 width="270px">
-![Kamm‑Skala](/img/comb-scale.png)
+![Kammskalierung](/img/comb-scale.png)
 </Center>
 
-## Kontinuitäts‑Kamm anpassen
-
-Für die Kontinuitätsanalyse befinden sich die G0‑, G1‑ und G2‑Steuerungen unterhalb des Feldes **Kamm‑Skala**. Die Option **Maxima anzeigen**, verfügbar im Befehl **Kontinuität messen**, aktiviert die Anzeige numerischer Abweichungswerte und Kontinuitäts‑Indikatoren entlang der Kurve bzw. Kante.  
+Alternativ klicken Sie auf die Schaltfläche „Automatische Größe“, die sich rechts neben dem Feld für die Kammskalierung befindet, um die Kammskalierung automatisch anhand des Viewport-Zooms anzupassen.
 
 <Center 
 width="270px">
-![Kontinuitäts‑Skala und Maxima](/img/continuity-scale-and-max.png)
+![Kammskalierung](/img/comb-autoscale.png)
+</Center>
+
+## Stetigkeitskamm anpassen
+
+Für die Stetigkeitsanalyse befinden sich die Regler G0, G1 und G2 unterhalb des Felds „Kammskalierung“. Die Option *Maxima anzeigen*, die in „Stetigkeit messen“ verfügbar ist, aktiviert die Anzeige numerischer Abweichungswerte und Stetigkeitsindikatoren entlang der Kurve und der Kante.
+
+<Center 
+width="270px">
+![Stetigkeitsskalierung und Maxima](/img/continuity-scale-and-max.png)
 </Center>
