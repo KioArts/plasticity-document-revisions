@@ -34,11 +34,11 @@ Kombinieren, subtrahieren oder überschneiden Sie mehrere Objekte in beliebiger 
    - <Kst>Command Dialog</Kst>
       - **Keep Tools:** Führt Boolesche Operationen durch, ohne die Werkzeugobjekte zu verändern.
       - **Opetation:**
-         - <ButtonIcon type="button-boolean-union"/>**Union:** Verbindet Ziel- und Werkzeugobjekt zu einem gemeinsamen Volumenkörper.
-         - <ButtonIcon type="button-boolean-difference"/>**Difference:** Entfernt das Werkzeugobjekt vom Zielobjekt.
-         - <ButtonIcon type="button-boolean-intersect"/>**Intersect:** Erstellt einen Volumenkörper an der Schnittstelle zwischen Ziel- und Werkzeugobjekt.
-         - <ButtonIcon type="button-boolean-slice"/>**Slice:** Erstellt Volumenkörper an den Schnittflächen mit dem Zielobjekt und behält die restlichen Volumen bei.
-         - <ButtonIcon type="button-boolean-region"/>**Region:** Erstellt Volumenkörper aus geschlossenen Bereichen innerhalb der Sammlung von Körpern (Volumenkörper und Flächen).
+         - <ButtonIcon type="button-boolean-union"/>**Vereinigung:** Fügt das Boolean-Zielobjekt und das Werkzeug zu einem Objekt zusammen.
+         - <ButtonIcon type="button-boolean-difference"/>**Differenz:** Entfernt das Werkzeug aus dem Boolean-Zielobjekt.
+         - <ButtonIcon type="button-boolean-intersect"/>**Schnittmenge:** Erstellt einen Volumenkörper an der Schnittstelle zwischen dem Boolean-Zielobjekt und dem Werkzeug.
+         - <ButtonIcon type="button-boolean-slice"/>**Zusammenführen:** Erstellt Volumenkörper an den Schnittstellen mit dem Boolean-Zielobjekt und behält die übrigen Volumenkörper bei.
+         - <ButtonIcon type="button-boolean-region"/>**Bereich:** Erstellt Volumenkörper aus geschlossenen Bereichen innerhalb der Sammlung von Körpern (Volumenkörper und Flächen).
          - Für Unterschiede in den Ergebnissen je nach Operation siehe den Abschnitt [Normal Boolean Operations](#normal-boolean-operations).
       - **Advanced:**
          - **Target Material:** Bestimmt, wie das Zielobjekt während der Booleschen Operation behandelt wird – entweder als Volumenkörper oder als Fläche. Diese Einstellung beeinflusst, wie das Werkzeugobjekt mit dem Zielobjekt interagiert, insbesondere bei Operationen wie Differenz und Schnittmenge.
@@ -53,16 +53,14 @@ Kombinieren, subtrahieren oder überschneiden Sie mehrere Objekte in beliebiger 
             - **Outside:** Behandelt den Körper als massives Objekt von außen, basierend auf der Normalrichtung des Zielobjekts.
          - Für Unterschiede in den Ergebnissen je nach Operation siehe den Abschnitt [Advanced Boolean Operation Differences](#advanced-boolean-operations-differences).
    - <Kst>Tastenkombinationen</Kst>
-      - <kbd>Shift + Q</kbd> **Slice:** Wie oben beschrieben.
-      - <kbd>Q</kbd> **Union:** Wie oben beschrieben.
-      - <kbd>W</kbd> **Difference:** Wie oben beschrieben.
-      - <kbd>Shift + E</kbd> **Intersect:** Wie oben beschrieben.
-      - <kbd>T</kbd> **Keep Tool:** Wie oben beschrieben.
-      - <kbd>G</kbd> **Move:** Bewegen Sie das Werkzeug auf die gleiche Weise wie den **Move** Befehl.
-      - <kbd>R</kbd> **Rotate:** Drehen Sie das Werkzeug auf die gleiche Weise wie den **Rotate** Befehl.
-      - <kbd>S</kbd> **Scale:** Skalieren Sie das Werkzeug auf die gleiche Weise wie den **Scale** Befehl.
-      - <kbd>X</kbd>/<kbd>Y</kbd>/<kbd>Z</kbd> **X/Y/Z-axis:** [Auf X-, Y- oder Z-Achse beschränken](/tool/sketching-essentials#constrain-to-an-axis).
-      - <kbd>Shift + X</kbd>/<kbd>Shift + Y</kbd>/<kbd>Shift + Z</kbd> **X, Y, Z plane:** Auf die X-, Y- oder Z-Ebene beschränken.
+      - <kbd>Shift + Q</kbd> **Schneiden:** Verwendet die Zusammenführen-Operation.
+      - <kbd>Q</kbd> **Vereinigung:** Verwendet die Vereinigungsoperation.
+      - <kbd>W</kbd> **Differenz:** Verwendet die Differenzoperation.
+      - <kbd>Shift + E</kbd> **Schnittmenge:** Verwendet die Schnittmengenoperation.
+      - <kbd>T</kbd> **Werkzeug beibehalten:** Verwendet die Operation „Werkzeug beibehalten“.
+      - <kbd>G</kbd> **Verschieben:** Verschiebt das Werkzeug auf die gleiche Weise wie der Befehl **[Verschieben](/common/move)**.
+      - <kbd>R</kbd> **Drehen:** Dreht das Werkzeug auf die gleiche Weise wie der Befehl **[Drehen](/common/rotate)**.
+      - <kbd>S</kbd> **Skalieren:** Skaliert das Werkzeug auf die gleiche Weise wie der Befehl **[Skalieren](/common/scale)**.      
 4. Bestätigen Sie mit OK im Befehlsdialog oder Rechtsklick.
 
 <VideoPlayer fileName="boolean-0"/>
